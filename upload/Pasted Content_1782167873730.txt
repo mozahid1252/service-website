@@ -1,0 +1,1555 @@
+Role: You are the same World-Class Web Developer who built this portfolio website. এখন আমি তোমাকে 7টা specific, critical problems এর exact fix দিচ্ছি। তুমি শুধু এই 7টা section fix করবে — বাকি সব হুবহু same রাখবে।
+________________________________________
+⚠️ IRON RULE:
+text
+┌─────────────────────────────────────────────────┐
+│              REVISION MASTER RULE               │
+│                                                 │
+│  ✅ শুধু এই 7টা problem fix করবে               │
+│  ✅ প্রতিটা fix exactly as described            │
+│  ✅ Content একটা word ও change করবে না         │
+│  ✅ বাকি সব section untouched থাকবে            │
+│                                                 │
+│  ❌ Extra changes করবে না                      │
+│  ❌ Working sections touch করবে না             │
+│  ❌ কোনো content remove করবে না               │
+│  ❌ Corki/rotating border animation             │
+│     case studies বা process boxes এ নয়        │
+└─────────────────────────────────────────────────┘
+________________________________________
+🔧 PROBLEM 1 — "MOST CHOSEN" Badge: Hidden হয়ে গেছে Fix করো
+Problem: Service packages এ "⭐ Most Chosen" badge টা hide হয়ে গেছে — দেখা যাচ্ছে না।
+Root Cause & Fix:
+CSS
+/* MOST CHOSEN BADGE — Visibility Fix */
+
+/* The badge wrapper — must be OUTSIDE the card,
+   positioned above it */
+.most-chosen-badge-wrapper {
+  position: absolute;
+  top: -18px;           /* Sits above the card top edge */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;          /* Above everything */
+  white-space: nowrap;
+}
+
+/* The badge itself */
+.most-chosen-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, #F5A623, #F7D774);
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 20px;
+  box-shadow:
+    0 0 20px rgba(245, 166, 35, 0.60),
+    0 0 40px rgba(245, 166, 35, 0.30),
+    0 4px 12px rgba(0, 0, 0, 0.40);
+
+  /* Pulse animation — draws attention */
+  animation: badgePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(245, 166, 35, 0.60),
+      0 0 40px rgba(245, 166, 35, 0.30);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(245, 166, 35, 0.90),
+      0 0 60px rgba(245, 166, 35, 0.50),
+      0 0 80px rgba(245, 166, 35, 0.25);
+  }
+}
+
+/* Star icon */
+.most-chosen-badge .badge-star {
+  font-size: 13px;
+}
+
+/* CRITICAL: The parent card wrapper must have:
+   position: relative
+   overflow: visible  ← THIS is what was hiding it!
+   padding-top: 20px  ← Space for the badge
+*/
+.package-outer-wrapper.growth {
+  position: relative;
+  overflow: visible;    /* ← KEY FIX: was hidden before */
+  padding-top: 20px;    /* ← Space above for badge */
+  margin-top: 20px;     /* ← Extra top space in grid */
+}
+
+/* Also ensure the inner card doesn't clip it */
+.package-inner-card {
+  overflow: visible;    /* ← Must NOT be hidden */
+}
+HTML Structure Fix:
+HTML
+<!-- CORRECT structure — badge ABOVE the card -->
+<div class="package-outer-wrapper growth"
+     style="position:relative; overflow:visible;">
+
+  <!-- Badge sits here — FIRST child, absolute positioned -->
+  <div class="most-chosen-badge-wrapper">
+    <span class="most-chosen-badge">
+      <span class="badge-star">⭐</span>
+      Most Chosen
+    </span>
+  </div>
+
+  <!-- Card content below -->
+  <div class="package-inner-card">
+    <!-- ... card content ... -->
+  </div>
+
+</div>
+________________________________________
+🔧 PROBLEM 2 — Data Infrastructure Table: More Unique + Professional + Thicker Borders
+Problem: Table টা plain দেখাচ্ছে — text professional না, borders পাতলা
+Complete Table Redesign:
+CSS
+/* ============================================
+   INFRASTRUCTURE COMPARISON TABLE — REDESIGN
+   More unique, professional, thick borders
+   ============================================ */
+
+/* Table outer wrapper — glowing card box */
+.infra-table-wrapper {
+  position: relative;
+  border-radius: 24px;
+  padding: 3px;              /* Thicker border space */
+  margin-top: 56px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 198, 255, 0.80) 0%,
+    rgba(139, 92, 246, 0.80) 50%,
+    rgba(245, 166, 35, 0.80) 100%
+  );
+  box-shadow:
+    0 0 60px rgba(0, 198, 255, 0.15),
+    0 0 60px rgba(139, 92, 246, 0.15),
+    0 0 60px rgba(245, 166, 35, 0.15),
+    0 30px 80px rgba(0, 0, 0, 0.60);
+  animation: tableGlow 5s ease-in-out infinite;
+}
+
+@keyframes tableGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 60px rgba(0,198,255,0.12),
+      0 0 60px rgba(139,92,246,0.12),
+      0 0 60px rgba(245,166,35,0.12);
+  }
+  33% {
+    box-shadow:
+      0 0 100px rgba(0,198,255,0.28),
+      0 0 40px rgba(139,92,246,0.08);
+  }
+  66% {
+    box-shadow:
+      0 0 40px rgba(0,198,255,0.08),
+      0 0 100px rgba(245,166,35,0.28);
+  }
+}
+
+/* Table inner */
+.infra-table-inner {
+  background: rgba(6, 10, 17, 0.98);
+  border-radius: 21px;
+  overflow: hidden;
+}
+
+/* Table base */
+table.infra-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── HEADER ROW ── */
+.infra-table thead tr {
+  background: linear-gradient(
+    90deg,
+    rgba(5, 8, 15, 1) 0%,
+    rgba(0, 198, 255, 0.10) 33%,
+    rgba(139, 92, 246, 0.10) 66%,
+    rgba(245, 166, 35, 0.10) 100%
+  );
+  border-bottom: 3px solid rgba(255,255,255,0.08);
+}
+
+/* Header cells */
+.infra-table thead th {
+  padding: 24px 28px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Feature column header */
+.infra-table thead th:nth-child(1) {
+  text-align: left;
+  color: rgba(255,255,255,0.40);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+/* BASIC column header */
+.infra-table thead th:nth-child(2) {
+  color: #00C6FF;
+  text-shadow:
+    0 0 20px rgba(0,198,255,0.80),
+    0 0 40px rgba(0,198,255,0.40);
+  border-bottom: 4px solid #00C6FF;  /* THICK colored border */
+  border-left: 3px solid rgba(0,198,255,0.20);
+  border-right: 3px solid rgba(0,198,255,0.20);
+}
+
+/* FULL PIPELINE column header */
+.infra-table thead th:nth-child(3) {
+  color: #8B5CF6;
+  text-shadow:
+    0 0 20px rgba(139,92,246,0.80),
+    0 0 40px rgba(139,92,246,0.40);
+  border-bottom: 4px solid #8B5CF6;  /* THICK colored border */
+  border-left: 3px solid rgba(139,92,246,0.20);
+  border-right: 3px solid rgba(139,92,246,0.20);
+}
+
+/* FULL + AUTOMATION column header */
+.infra-table thead th:nth-child(4) {
+  color: #F5A623;
+  text-shadow:
+    0 0 20px rgba(245,166,35,0.80),
+    0 0 40px rgba(245,166,35,0.40);
+  border-bottom: 4px solid #F5A623;  /* THICK colored border */
+  border-left: 3px solid rgba(245,166,35,0.20);
+  border-right: 3px solid rgba(245,166,35,0.20);
+}
+
+/* ── HEADER ICON BADGES ── */
+/* Add small icon/pill above each column name */
+.col-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.col-badge.basic {
+  background: rgba(0,198,255,0.12);
+  color: #00C6FF;
+  border: 1px solid rgba(0,198,255,0.30);
+}
+
+.col-badge.pipeline {
+  background: rgba(139,92,246,0.12);
+  color: #8B5CF6;
+  border: 1px solid rgba(139,92,246,0.30);
+}
+
+.col-badge.auto {
+  background: rgba(245,166,35,0.12);
+  color: #F5A623;
+  border: 1px solid rgba(245,166,35,0.30);
+}
+
+/* ── BODY ROWS ── */
+.infra-table tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.25s ease;
+  position: relative;
+}
+
+/* Alternating row tint */
+.infra-table tbody tr:nth-child(even) {
+  background: rgba(255,255,255,0.018);
+}
+
+/* Row hover — subtle cyan wash */
+.infra-table tbody tr:hover {
+  background: rgba(0,198,255,0.04);
+}
+
+/* ── BODY CELLS ── */
+.infra-table tbody td {
+  padding: 18px 28px;
+  font-size: 14px;
+  vertical-align: middle;
+  border-left: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Feature name column */
+.infra-table tbody td:first-child {
+  text-align: left;
+  color: rgba(255,255,255,0.65);
+  font-weight: 500;
+  font-size: 13.5px;
+  letter-spacing: 0.3px;
+  border-left: none;
+  padding-left: 32px;
+}
+
+/* Column data cells — centered */
+.infra-table tbody td:nth-child(2) {
+  text-align: center;
+  border-left: 2px solid rgba(0,198,255,0.12);
+  border-right: 1px solid rgba(0,198,255,0.06);
+}
+
+.infra-table tbody td:nth-child(3) {
+  text-align: center;
+  border-left: 2px solid rgba(139,92,246,0.12);
+  border-right: 1px solid rgba(139,92,246,0.06);
+}
+
+.infra-table tbody td:nth-child(4) {
+  text-align: center;
+  border-left: 2px solid rgba(245,166,35,0.12);
+  border-right: 2px solid rgba(245,166,35,0.12);
+}
+
+/* ── CHECK / CROSS MARKS ── */
+.check-cyan {
+  color: #00C6FF;
+  font-size: 20px;
+  text-shadow: 0 0 12px rgba(0,198,255,0.70);
+  display: inline-block;
+  animation: checkGlow 3s ease-in-out infinite;
+}
+
+.check-purple {
+  color: #8B5CF6;
+  font-size: 20px;
+  text-shadow: 0 0 12px rgba(139,92,246,0.70);
+  display: inline-block;
+}
+
+.check-gold {
+  color: #F5A623;
+  font-size: 20px;
+  text-shadow: 0 0 12px rgba(245,166,35,0.70);
+  display: inline-block;
+}
+
+.cross-dim {
+  color: rgba(255,255,255,0.12);
+  font-size: 18px;
+  display: inline-block;
+}
+
+/* Text values like "2–3", "All" */
+.table-text-value {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.table-text-value.cyan   { color: #00C6FF; }
+.table-text-value.purple { color: #8B5CF6; }
+.table-text-value.gold   { color: #F5A623; }
+
+/* Subtle check glow pulse */
+@keyframes checkGlow {
+  0%, 100% { text-shadow: 0 0 12px rgba(0,198,255,0.70); }
+  50%       { text-shadow: 0 0 24px rgba(0,198,255,1.00),
+                            0 0 40px rgba(0,198,255,0.50); }
+}
+
+/* ── FOOTER ROW — Price Summary ── */
+.infra-table tfoot tr {
+  background: linear-gradient(
+    90deg,
+    rgba(5,8,15,1),
+    rgba(0,198,255,0.06) 33%,
+    rgba(139,92,246,0.06) 66%,
+    rgba(245,166,35,0.08)
+  );
+  border-top: 3px solid rgba(255,255,255,0.08);
+}
+
+.infra-table tfoot td {
+  padding: 20px 28px;
+  font-weight: 800;
+  font-size: 15px;
+}
+HTML Table Structure (Professional Text):
+HTML
+<div class="infra-table-wrapper">
+  <div class="infra-table-inner">
+    <table class="infra-table">
+      <thead>
+        <tr>
+          <th>
+            <span style="color:rgba(255,255,255,0.35);
+              font-size:11px;letter-spacing:3px;">
+              CAPABILITIES
+            </span>
+          </th>
+          <th>
+            <div class="col-badge basic">STARTER</div>
+            <div>Basic Setup</div>
+          </th>
+          <th>
+            <div class="col-badge pipeline">PRO</div>
+            <div>Full Pipeline</div>
+          </th>
+          <th>
+            <div class="col-badge auto">ELITE</div>
+            <div>Full + Automation</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cloud Infrastructure</td>
+          <td><span class="check-cyan">✓</span></td>
+          <td><span class="check-purple">✓</span></td>
+          <td><span class="check-gold">✓</span></td>
+        </tr>
+        <tr>
+          <td>Platform API Connections</td>
+          <td>
+            <span class="table-text-value cyan">2–3</span>
+          </td>
+          <td>
+            <span class="table-text-value purple">All</span>
+          </td>
+          <td>
+            <span class="table-text-value gold">All</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Data Pipeline Build</td>
+          <td><span class="check-cyan">✓</span></td>
+          <td><span class="check-purple">✓</span></td>
+          <td><span class="check-gold">✓</span></td>
+        </tr>
+        <tr>
+          <td>Data Cleaning</td>
+          <td><span class="check-cyan">✓</span></td>
+          <td><span class="check-purple">✓</span></td>
+          <td><span class="check-gold">✓</span></td>
+        </tr>
+        <tr>
+          <td>Multi-Platform Merge</td>
+          <td><span class="cross-dim">✕</span></td>
+          <td><span class="check-purple">✓</span></td>
+          <td><span class="check-gold">✓</span></td>
+        </tr>
+        <tr>
+          <td>BigQuery Load Script</td>
+          <td><span class="cross-dim">✕</span></td>
+          <td><span class="check-purple">✓</span></td>
+          <td><span class="check-gold">✓</span></td>
+        </tr>
+        <tr>
+          <td>Dashboard Connection</td>
+          <td><span class="cross-dim">✕</span></td>
+          <td><span class="check-purple">✓</span></td>
+          <td><span class="check-gold">✓</span></td>
+        </tr>
+        <tr>
+          <td>Automated Scheduling</td>
+          <td><span class="cross-dim">✕</span></td>
+          <td><span class="cross-dim">✕</span></td>
+          <td><span class="check-gold">✓</span></td>
+        </tr>
+        <tr>
+          <td>Error Alerts</td>
+          <td><span class="cross-dim">✕</span></td>
+          <td><span class="cross-dim">✕</span></td>
+          <td><span class="check-gold">✓</span></td>
+        </tr>
+        <tr>
+          <td>Credential Security</td>
+          <td><span class="cross-dim">✕</span></td>
+          <td><span class="cross-dim">✕</span></td>
+          <td><span class="check-gold">✓</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+________________________________________
+🔧 PROBLEM 3 — Case Studies: Replace Corki/Rotating Animation → New Unique Animations
+Problem: Case study cards এ corki/rotating border animation remove করে নতুন animation দিতে হবে। Colors ও lighting same রাখতে হবে।
+Replace with these NEW animations (NO rotating border):
+CSS
+/* ============================================
+   CASE STUDY CARDS — NEW ANIMATIONS
+   (Corki/rotating border REMOVED)
+   Colors + lighting = SAME as before
+   ============================================ */
+
+/* ── ANIMATION 1: Breathing Glow Pulse ──
+   Card এর outer glow slowly breathes in/out
+   Like a living organism */
+
+.case-card-wrapper {
+  /* Remove any conic-gradient / rotate-border */
+  animation: breatheGlow 4s ease-in-out infinite;
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease;
+}
+
+/* Each card has slight offset — feels organic */
+.case-card-wrapper:nth-child(1) { animation-delay: 0.0s; }
+.case-card-wrapper:nth-child(2) { animation-delay: 0.6s; }
+.case-card-wrapper:nth-child(3) { animation-delay: 1.2s; }
+.case-card-wrapper:nth-child(4) { animation-delay: 1.8s; }
+.case-card-wrapper:nth-child(5) { animation-delay: 2.4s; }
+.case-card-wrapper:nth-child(6) { animation-delay: 3.0s; }
+.case-card-wrapper:nth-child(7) { animation-delay: 3.6s; }
+
+/* Breathing glow — each card uses its own color var */
+@keyframes breatheGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 20px var(--case-glow-dim),
+      0 8px 40px rgba(0,0,0,0.50);
+  }
+  50% {
+    box-shadow:
+      0 0 50px var(--case-glow-bright),
+      0 0 100px var(--case-glow-mid),
+      0 12px 60px rgba(0,0,0,0.60);
+  }
+}
+
+/* ── ANIMATION 2: Shimmer Sweep on Hover ──
+   A light sweeps across the card once on hover */
+
+.case-card-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer element */
+.case-card-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255,255,255,0.04) 50%,
+    transparent 70%
+  );
+  transform: skewX(-15deg);
+  transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.case-card-wrapper:hover .case-card-inner::before {
+  left: 150%;    /* Sweeps across — left to right */
+}
+
+/* ── ANIMATION 3: Border Glow Intensify ──
+   Static border that pulses brighter on hover */
+
+.case-card-inner {
+  border: 1px solid var(--case-border-dim);
+  transition: border-color 0.4s ease;
+}
+
+.case-card-wrapper:hover .case-card-inner {
+  border-color: var(--case-border-bright);
+}
+
+/* ── ANIMATION 4: Float Up on Hover ──
+   Card lifts and scales slightly */
+
+.case-card-wrapper:hover {
+  transform: translateY(-10px) scale(1.015);
+}
+
+/* ── ANIMATION 5: Scroll Entrance ──
+   Cards fade + slide up when scrolled into view */
+
+.case-card-wrapper {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.case-card-wrapper.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ── ANIMATION 6: Profit Number Pulse ──
+   The big profit number has a subtle glow pulse */
+
+.profit-after-value {
+  animation: profitPulse 3s ease-in-out infinite;
+}
+
+@keyframes profitPulse {
+  0%, 100% { opacity: 0.90; }
+  50%       { opacity: 1.00;
+              text-shadow: 0 0 30px currentColor; }
+}
+
+/* ── PER-CARD COLOR VARIABLES ──
+   Same colors as before — just plug in here */
+
+.case-card-wrapper.zara {
+  --case-glow-dim:    rgba(0,230,118,0.15);
+  --case-glow-mid:    rgba(0,230,118,0.10);
+  --case-glow-bright: rgba(0,230,118,0.40);
+  --case-border-dim:    rgba(0,230,118,0.20);
+  --case-border-bright: rgba(0,230,118,0.60);
+}
+
+.case-card-wrapper.pace {
+  --case-glow-dim:    rgba(255,140,0,0.15);
+  --case-glow-mid:    rgba(255,140,0,0.10);
+  --case-glow-bright: rgba(255,140,0,0.40);
+  --case-border-dim:    rgba(255,140,0,0.20);
+  --case-border-bright: rgba(255,140,0,0.60);
+}
+
+.case-card-wrapper.noire {
+  --case-glow-dim:    rgba(255,255,255,0.08);
+  --case-glow-mid:    rgba(255,255,255,0.05);
+  --case-glow-bright: rgba(255,255,255,0.20);
+  --case-border-dim:    rgba(255,255,255,0.12);
+  --case-border-bright: rgba(255,255,255,0.35);
+}
+
+.case-card-wrapper.luna {
+  --case-glow-dim:    rgba(245,166,35,0.15);
+  --case-glow-mid:    rgba(245,166,35,0.10);
+  --case-glow-bright: rgba(245,166,35,0.40);
+  --case-border-dim:    rgba(245,166,35,0.22);
+  --case-border-bright: rgba(245,166,35,0.65);
+}
+
+.case-card-wrapper.urbannest {
+  --case-glow-dim:    rgba(0,198,255,0.15);
+  --case-glow-mid:    rgba(0,198,255,0.10);
+  --case-glow-bright: rgba(0,198,255,0.40);
+  --case-border-dim:    rgba(0,198,255,0.20);
+  --case-border-bright: rgba(0,198,255,0.60);
+}
+
+.case-card-wrapper.paw {
+  --case-glow-dim:    rgba(168,85,247,0.15);
+  --case-glow-mid:    rgba(168,85,247,0.10);
+  --case-glow-bright: rgba(168,85,247,0.40);
+  --case-border-dim:    rgba(168,85,247,0.20);
+  --case-border-bright: rgba(168,85,247,0.60);
+}
+
+.case-card-wrapper.lumiere {
+  --case-glow-dim:    rgba(244,114,182,0.15);
+  --case-glow-mid:    rgba(244,114,182,0.10);
+  --case-glow-bright: rgba(244,114,182,0.40);
+  --case-border-dim:    rgba(244,114,182,0.20);
+  --case-border-bright: rgba(244,114,182,0.60);
+}
+
+/* JavaScript for scroll reveal */
+JavaScript
+// Scroll reveal — IntersectionObserver
+const caseCards = document.querySelectorAll('.case-card-wrapper');
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('in-view');
+        }, i * 120);
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+caseCards.forEach(card => revealObserver.observe(card));
+________________________________________
+🔧 PROBLEM 4 — "The Infrastructure Behind The Insights": 2x Lighting + Different Colors + Animation
+Problem: Infrastructure section এর 4 boxes এ lighting কম, সব same color, animation নেই
+Fix — 4 Boxes, 4 Colors, 2x Stronger Lighting + Animation:
+CSS
+/* ============================================
+   INFRASTRUCTURE SECTION — 4 TECH BOXES
+   2x more lighting + different colors
+   + new animations (NO rotating border)
+   ============================================ */
+
+/* All 4 boxes — base */
+.infra-tech-card {
+  position: relative;
+  border-radius: 18px;
+  padding: 32px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* ── Shimmer on hover (same as case studies) ── */
+.infra-tech-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255,255,255,0.045) 50%,
+    transparent 70%
+  );
+  transform: skewX(-15deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+
+.infra-tech-card:hover::before { left: 150%; }
+
+/* ── Corner accent light ── */
+.infra-tech-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  opacity: 0.08;
+  filter: blur(60px);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.infra-tech-card:hover::after { opacity: 0.18; }
+
+/* Hover lift */
+.infra-tech-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* ── BOX 1: Programming & Analytics — CYAN ── */
+.infra-card-programming {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1) 0%,
+    rgba(0,198,255,0.09) 100%
+  );
+  border: 1px solid rgba(0,198,255,0.30);
+
+  /* 2x stronger box-shadow */
+  box-shadow:
+    0 0 0 1px rgba(0,198,255,0.10),
+    0 8px 40px rgba(0,0,0,0.50),
+    0 0 60px rgba(0,198,255,0.18),   /* 2x glow */
+    0 0 120px rgba(0,198,255,0.10),  /* far glow */
+    inset 0 1px 0 rgba(0,198,255,0.20),
+    inset 0 0 80px rgba(0,198,255,0.05);
+
+  animation: infraGlow1 4s ease-in-out infinite;
+}
+
+.infra-card-programming::after {
+  background: radial-gradient(
+    circle, #00C6FF, transparent 70%);
+}
+
+@keyframes infraGlow1 {
+  0%,100% {
+    box-shadow:
+      0 0 60px rgba(0,198,255,0.18),
+      0 0 120px rgba(0,198,255,0.08);
+  }
+  50% {
+    box-shadow:
+      0 0 80px rgba(0,198,255,0.35),  /* 2x peak */
+      0 0 160px rgba(0,198,255,0.18),
+      inset 0 0 60px rgba(0,198,255,0.08);
+  }
+}
+
+.infra-card-programming:hover {
+  box-shadow:
+    0 0 80px rgba(0,198,255,0.40),
+    0 0 160px rgba(0,198,255,0.25),
+    0 20px 60px rgba(0,0,0,0.60),
+    inset 0 0 60px rgba(0,198,255,0.08);
+  border-color: rgba(0,198,255,0.65);
+}
+
+/* ── BOX 2: Cloud & Data Warehousing — PURPLE ── */
+.infra-card-cloud {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1) 0%,
+    rgba(139,92,246,0.09) 100%
+  );
+  border: 1px solid rgba(139,92,246,0.30);
+  box-shadow:
+    0 0 0 1px rgba(139,92,246,0.10),
+    0 8px 40px rgba(0,0,0,0.50),
+    0 0 60px rgba(139,92,246,0.18),
+    0 0 120px rgba(139,92,246,0.10),
+    inset 0 1px 0 rgba(139,92,246,0.20),
+    inset 0 0 80px rgba(139,92,246,0.05);
+
+  animation: infraGlow2 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.infra-card-cloud::after {
+  background: radial-gradient(
+    circle, #8B5CF6, transparent 70%);
+}
+
+@keyframes infraGlow2 {
+  0%,100% {
+    box-shadow:
+      0 0 60px rgba(139,92,246,0.18),
+      0 0 120px rgba(139,92,246,0.08);
+  }
+  50% {
+    box-shadow:
+      0 0 80px rgba(139,92,246,0.35),
+      0 0 160px rgba(139,92,246,0.18),
+      inset 0 0 60px rgba(139,92,246,0.08);
+  }
+}
+
+.infra-card-cloud:hover {
+  box-shadow:
+    0 0 80px rgba(139,92,246,0.40),
+    0 0 160px rgba(139,92,246,0.25),
+    0 20px 60px rgba(0,0,0,0.60);
+  border-color: rgba(139,92,246,0.65);
+}
+
+/* ── BOX 3: Visualization & BI — GOLD ── */
+.infra-card-visualization {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1) 0%,
+    rgba(245,166,35,0.09) 100%
+  );
+  border: 1px solid rgba(245,166,35,0.30);
+  box-shadow:
+    0 0 0 1px rgba(245,166,35,0.10),
+    0 8px 40px rgba(0,0,0,0.50),
+    0 0 60px rgba(245,166,35,0.18),
+    0 0 120px rgba(245,166,35,0.10),
+    inset 0 1px 0 rgba(245,166,35,0.20),
+    inset 0 0 80px rgba(245,166,35,0.05);
+
+  animation: infraGlow3 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.infra-card-visualization::after {
+  background: radial-gradient(
+    circle, #F5A623, transparent 70%);
+}
+
+@keyframes infraGlow3 {
+  0%,100% {
+    box-shadow:
+      0 0 60px rgba(245,166,35,0.18),
+      0 0 120px rgba(245,166,35,0.08);
+  }
+  50% {
+    box-shadow:
+      0 0 80px rgba(245,166,35,0.35),
+      0 0 160px rgba(245,166,35,0.18),
+      inset 0 0 60px rgba(245,166,35,0.08);
+  }
+}
+
+.infra-card-visualization:hover {
+  box-shadow:
+    0 0 80px rgba(245,166,35,0.40),
+    0 0 160px rgba(245,166,35,0.25),
+    0 20px 60px rgba(0,0,0,0.60);
+  border-color: rgba(245,166,35,0.65);
+}
+
+/* ── BOX 4: Platform Integrations — GREEN ── */
+.infra-card-platforms {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1) 0%,
+    rgba(0,230,118,0.09) 100%
+  );
+  border: 1px solid rgba(0,230,118,0.30);
+  box-shadow:
+    0 0 0 1px rgba(0,230,118,0.10),
+    0 8px 40px rgba(0,0,0,0.50),
+    0 0 60px rgba(0,230,118,0.18),
+    0 0 120px rgba(0,230,118,0.10),
+    inset 0 1px 0 rgba(0,230,118,0.20),
+    inset 0 0 80px rgba(0,230,118,0.05);
+
+  animation: infraGlow4 4s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+.infra-card-platforms::after {
+  background: radial-gradient(
+    circle, #00E676, transparent 70%);
+}
+
+@keyframes infraGlow4 {
+  0%,100% {
+    box-shadow:
+      0 0 60px rgba(0,230,118,0.18),
+      0 0 120px rgba(0,230,118,0.08);
+  }
+  50% {
+    box-shadow:
+      0 0 80px rgba(0,230,118,0.35),
+      0 0 160px rgba(0,230,118,0.18),
+      inset 0 0 60px rgba(0,230,118,0.08);
+  }
+}
+
+.infra-card-platforms:hover {
+  box-shadow:
+    0 0 80px rgba(0,230,118,0.40),
+    0 0 160px rgba(0,230,118,0.25),
+    0 20px 60px rgba(0,0,0,0.60);
+  border-color: rgba(0,230,118,0.65);
+}
+
+/* ── Icon color per box ── */
+.infra-card-programming .infra-card-icon { color: #00C6FF; }
+.infra-card-cloud       .infra-card-icon { color: #8B5CF6; }
+.infra-card-visualization .infra-card-icon { color: #F5A623; }
+.infra-card-platforms   .infra-card-icon { color: #00E676; }
+________________________________________
+🔧 PROBLEM 5 — Technical Portfolio Cards: Same as Problem 4 + Different Colors + Animation
+Problem: Technical Portfolio section এর cards এ Problem 4 এর মতো 2x lighting, different colors, new animations দিতে হবে — NO rotating border
+CSS
+/* ============================================
+   TECHNICAL PORTFOLIO CARDS — 3 PROJECT CARDS
+   Different colors per card + animations
+   NO rotating border — use breathing glow
+   ============================================ */
+
+/* All portfolio cards — base */
+.portfolio-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 36px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+/* Shimmer on hover */
+.portfolio-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255,255,255,0.05) 50%,
+    transparent 70%
+  );
+  transform: skewX(-15deg);
+  transition: left 0.8s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.portfolio-card:hover::before { left: 150%; }
+
+/* Hover lift */
+.portfolio-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+/* ── CARD 1: Behavioral Funnel — CYAN ── */
+.portfolio-card-behavioral {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1) 0%,
+    rgba(0,198,255,0.08) 100%
+  );
+  border: 1px solid rgba(0,198,255,0.28);
+  box-shadow:
+    0 0 50px rgba(0,198,255,0.18),
+    0 0 100px rgba(0,198,255,0.10),
+    0 8px 40px rgba(0,0,0,0.50),
+    inset 0 1px 0 rgba(0,198,255,0.20);
+  animation: portGlow1 4.5s ease-in-out infinite;
+}
+
+@keyframes portGlow1 {
+  0%,100% {
+    box-shadow:
+      0 0 50px rgba(0,198,255,0.18),
+      0 8px 40px rgba(0,0,0,0.50);
+  }
+  50% {
+    box-shadow:
+      0 0 80px rgba(0,198,255,0.38),
+      0 0 150px rgba(0,198,255,0.18),
+      0 8px 60px rgba(0,0,0,0.60);
+  }
+}
+
+.portfolio-card-behavioral:hover {
+  box-shadow:
+    0 0 80px rgba(0,198,255,0.45),
+    0 0 160px rgba(0,198,255,0.25),
+    0 20px 60px rgba(0,0,0,0.60);
+  border-color: rgba(0,198,255,0.60);
+}
+
+/* ── CARD 2: Financial Data Warehouse — GOLD ── */
+.portfolio-card-financial {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1) 0%,
+    rgba(245,166,35,0.08) 100%
+  );
+  border: 1px solid rgba(245,166,35,0.28);
+  box-shadow:
+    0 0 50px rgba(245,166,35,0.18),
+    0 0 100px rgba(245,166,35,0.10),
+    0 8px 40px rgba(0,0,0,0.50),
+    inset 0 1px 0 rgba(245,166,35,0.20);
+  animation: portGlow2 4.5s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes portGlow2 {
+  0%,100% {
+    box-shadow:
+      0 0 50px rgba(245,166,35,0.18),
+      0 8px 40px rgba(0,0,0,0.50);
+  }
+  50% {
+    box-shadow:
+      0 0 80px rgba(245,166,35,0.38),
+      0 0 150px rgba(245,166,35,0.18),
+      0 8px 60px rgba(0,0,0,0.60);
+  }
+}
+
+.portfolio-card-financial:hover {
+  box-shadow:
+    0 0 80px rgba(245,166,35,0.45),
+    0 0 160px rgba(245,166,35,0.25),
+    0 20px 60px rgba(0,0,0,0.60);
+  border-color: rgba(245,166,35,0.60);
+}
+
+/* ── CARD 3: Churn & Retention — PURPLE ── */
+.portfolio-card-churn {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1) 0%,
+    rgba(139,92,246,0.08) 100%
+  );
+  border: 1px solid rgba(139,92,246,0.28);
+  box-shadow:
+    0 0 50px rgba(139,92,246,0.18),
+    0 0 100px rgba(139,92,246,0.10),
+    0 8px 40px rgba(0,0,0,0.50),
+    inset 0 1px 0 rgba(139,92,246,0.20);
+  animation: portGlow3 4.5s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+@keyframes portGlow3 {
+  0%,100% {
+    box-shadow:
+      0 0 50px rgba(139,92,246,0.18),
+      0 8px 40px rgba(0,0,0,0.50);
+  }
+  50% {
+    box-shadow:
+      0 0 80px rgba(139,92,246,0.38),
+      0 0 150px rgba(139,92,246,0.18),
+      0 8px 60px rgba(0,0,0,0.60);
+  }
+}
+
+.portfolio-card-churn:hover {
+  box-shadow:
+    0 0 80px rgba(139,92,246,0.45),
+    0 0 160px rgba(139,92,246,0.25),
+    0 20px 60px rgba(0,0,0,0.60);
+  border-color: rgba(139,92,246,0.60);
+}
+
+/* Tag pills — color per card */
+.portfolio-card-behavioral .tech-tag {
+  background: rgba(0,198,255,0.10);
+  border: 1px solid rgba(0,198,255,0.30);
+  color: #00C6FF;
+}
+
+.portfolio-card-financial .tech-tag {
+  background: rgba(245,166,35,0.10);
+  border: 1px solid rgba(245,166,35,0.30);
+  color: #F5A623;
+}
+
+.portfolio-card-churn .tech-tag {
+  background: rgba(139,92,246,0.10);
+  border: 1px solid rgba(139,92,246,0.30);
+  color: #8B5CF6;
+}
+
+/* Section title accent — "Technical Portfolio" */
+/* Keep existing — don't change */
+________________________________________
+🔧 PROBLEM 6 — Testimonials: Hover Animation + 2x Different Color Lighting Per Card
+Problem: Testimonial cards এ cursor সামনে নিলে নড়াচড়া নেই। প্রতিটার জন্য আলাদা 2x stronger color lighting দরকার। "$12.4K/mo→$29.8K/mo" এর colors হুবহু same রাখতে হবে।
+CSS
+/* ============================================
+   TESTIMONIAL CARDS — Hover + Unique Colors
+   Revenue numbers ($12.4K → $29.8K) UNTOUCHED
+   ============================================ */
+
+/* All testimonial cards — base transition */
+.testimonial-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 32px;
+  cursor: default;
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+  overflow: hidden;
+}
+
+/* Hover: lift + slight scale */
+.testimonial-card:hover {
+  transform: translateY(-10px) scale(1.025);
+}
+
+/* Shimmer sweep on hover */
+.testimonial-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255,255,255,0.04) 50%,
+    transparent 70%
+  );
+  transform: skewX(-15deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.testimonial-card:hover::before { left: 150%; }
+
+/* ── 6 CARDS — 6 UNIQUE COLORS ── */
+
+/* Card 1: Marcus T. (NOIRE Collective) — Silver/White */
+.testimonial-card-1 {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1),
+    rgba(255,255,255,0.04)
+  );
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 0 40px rgba(255,255,255,0.06),
+    0 0 80px rgba(255,255,255,0.03),
+    0 8px 40px rgba(0,0,0,0.50);
+  animation: testGlow1 5s ease-in-out infinite;
+}
+
+.testimonial-card-1:hover {
+  box-shadow:
+    0 0 70px rgba(255,255,255,0.18),  /* 2x */
+    0 0 140px rgba(255,255,255,0.10),
+    0 20px 60px rgba(0,0,0,0.60);
+  border-color: rgba(255,255,255,0.30);
+}
+
+@keyframes testGlow1 {
+  0%,100% { box-shadow: 0 0 40px rgba(255,255,255,0.06); }
+  50%      { box-shadow: 0 0 70px rgba(255,255,255,0.14); }
+}
+
+/* Card 2: Daniel G. (PACE Performance) — Orange */
+.testimonial-card-2 {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1),
+    rgba(255,140,0,0.07)
+  );
+  border: 1px solid rgba(255,140,0,0.22);
+  box-shadow:
+    0 0 40px rgba(255,140,0,0.12),
+    0 0 80px rgba(255,140,0,0.06),
+    0 8px 40px rgba(0,0,0,0.50);
+  animation: testGlow2 5s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.testimonial-card-2:hover {
+  box-shadow:
+    0 0 70px rgba(255,140,0,0.30),  /* 2x */
+    0 0 140px rgba(255,140,0,0.16),
+    0 20px 60px rgba(0,0,0,0.60);
+  border-color: rgba(255,140,0,0.55);
+}
+
+@keyframes testGlow2 {
+  0%,100% { box-shadow: 0 0 40px rgba(255,140,0,0.12); }
+  50%      { box-shadow: 0 0 70px rgba(255,140,0,0.25); }
+}
+
+/* Card 3: Sofia M. (LUNA Jewelry) — Gold */
+.testimonial-card-3 {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1),
+    rgba(245,166,35,0.07)
+  );
+  border: 1px solid rgba(245,166,35,0.22);
+  box-shadow:
+    0 0 40px rgba(245,166,35,0.12),
+    0 0 80px rgba(245,166,35,0.06),
+    0 8px 40px rgba(0,0,0,0.50);
+  animation: testGlow3 5s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.testimonial-card-3:hover {
+  box-shadow:
+    0 0 70px rgba(245,166,35,0.30),  /* 2x */
+    0 0 140px rgba(245,166,35,0.16),
+    0 20px 60px rgba(0,0,0,0.60);
+  border-color: rgba(245,166,35,0.55);
+}
+
+@keyframes testGlow3 {
+  0%,100% { box-shadow: 0 0 40px rgba(245,166,35,0.12); }
+  50%      { box-shadow: 0 0 70px rgba(245,166,35,0.25); }
+}
+
+/* Card 4: Sarah K. (UrbanNest) — Cyan */
+.testimonial-card-4 {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1),
+    rgba(0,198,255,0.07)
+  );
+  border: 1px solid rgba(0,198,255,0.22);
+  box-shadow:
+    0 0 40px rgba(0,198,255,0.12),
+    0 0 80px rgba(0,198,255,0.06),
+    0 8px 40px rgba(0,0,0,0.50);
+  animation: testGlow4 5s ease-in-out infinite;
+  animation-delay: 2.4s;
+}
+
+.testimonial-card-4:hover {
+  box-shadow:
+    0 0 70px rgba(0,198,255,0.30),  /* 2x */
+    0 0 140px rgba(0,198,255,0.16),
+    0 20px 60px rgba(0,0,0,0.60);
+  border-color: rgba(0,198,255,0.55);
+}
+
+@keyframes testGlow4 {
+  0%,100% { box-shadow: 0 0 40px rgba(0,198,255,0.12); }
+  50%      { box-shadow: 0 0 70px rgba(0,198,255,0.25); }
+}
+
+/* Card 5: James C. (PawPerfect) — Purple */
+.testimonial-card-5 {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1),
+    rgba(168,85,247,0.07)
+  );
+  border: 1px solid rgba(168,85,247,0.22);
+  box-shadow:
+    0 0 40px rgba(168,85,247,0.12),
+    0 0 80px rgba(168,85,247,0.06),
+    0 8px 40px rgba(0,0,0,0.50);
+  animation: testGlow5 5s ease-in-out infinite;
+  animation-delay: 3.2s;
+}
+
+.testimonial-card-5:hover {
+  box-shadow:
+    0 0 70px rgba(168,85,247,0.30),  /* 2x */
+    0 0 140px rgba(168,85,247,0.16),
+    0 20px 60px rgba(0,0,0,0.60);
+  border-color: rgba(168,85,247,0.55);
+}
+
+@keyframes testGlow5 {
+  0%,100% { box-shadow: 0 0 40px rgba(168,85,247,0.12); }
+  50%      { box-shadow: 0 0 70px rgba(168,85,247,0.25); }
+}
+
+/* Card 6: Priya S. (LUMIERE) — Pink */
+.testimonial-card-6 {
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1),
+    rgba(244,114,182,0.07)
+  );
+  border: 1px solid rgba(244,114,182,0.22);
+  box-shadow:
+    0 0 40px rgba(244,114,182,0.12),
+    0 0 80px rgba(244,114,182,0.06),
+    0 8px 40px rgba(0,0,0,0.50);
+  animation: testGlow6 5s ease-in-out infinite;
+  animation-delay: 4.0s;
+}
+
+.testimonial-card-6:hover {
+  box-shadow:
+    0 0 70px rgba(244,114,182,0.30),  /* 2x */
+    0 0 140px rgba(244,114,182,0.16),
+    0 20px 60px rgba(0,0,0,0.60);
+  border-color: rgba(244,114,182,0.55);
+}
+
+@keyframes testGlow6 {
+  0%,100% { box-shadow: 0 0 40px rgba(244,114,182,0.12); }
+  50%      { box-shadow: 0 0 70px rgba(244,114,182,0.25); }
+}
+
+/* ── Revenue numbers — DO NOT TOUCH ──
+   $12.4K/mo → $29.8K/mo এর existing
+   color styles হুবহু same রাখো          */
+________________________________________
+🔧 PROBLEM 7 — Featured Quote Box (Bottom Testimonial): Animation + Different Color + No Rotating Border
+Problem: নিচের বড় featured quote box টায় animation নেই, color নেই — কিন্তু rotating/corki border দেওয়া যাবে না
+CSS
+/* ============================================
+   FEATURED QUOTE BOX — Bottom testimonial
+   Breathing glow + shimmer — NO rotating border
+   ============================================ */
+
+.featured-quote-box {
+  position: relative;
+  border-radius: 24px;
+  padding: 56px 64px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+  /* Silver/Pearl color theme — premium feel */
+  background: linear-gradient(
+    145deg,
+    rgba(8,13,20,1) 0%,
+    rgba(180,180,220,0.05) 50%,
+    rgba(8,13,20,1) 100%
+  );
+  border: 1px solid rgba(200,200,240,0.18);
+
+  /* Breathing glow — subtle silver/white */
+  box-shadow:
+    0 0 60px rgba(200,200,240,0.08),
+    0 0 120px rgba(200,200,240,0.04),
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 20px 80px rgba(0,0,0,0.60);
+
+  animation: quoteGlow 5s ease-in-out infinite;
+}
+
+@keyframes quoteGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 60px rgba(200,200,240,0.08),
+      0 0 120px rgba(200,200,240,0.04),
+      0 20px 80px rgba(0,0,0,0.60);
+  }
+  50% {
+    box-shadow:
+      0 0 100px rgba(200,200,240,0.18),  /* 2x peak */
+      0 0 200px rgba(200,200,240,0.10),
+      inset 0 0 80px rgba(200,200,240,0.04),
+      0 20px 80px rgba(0,0,0,0.60);
+  }
+}
+
+/* Hover lift */
+.featured-quote-box:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 120px rgba(200,200,240,0.22),
+    0 0 240px rgba(200,200,240,0.12),
+    0 30px 80px rgba(0,0,0,0.65);
+  border-color: rgba(200,200,240,0.35);
+}
+
+/* Corner ambient light — top left */
+.featured-quote-box::before {
+  content: '';
+  position: absolute;
+  top: -40px; left: -40px;
+  width: 250px; height: 250px;
+  background: radial-gradient(
+    circle,
+    rgba(200,200,255,0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  animation: cornerLight 6s ease-in-out infinite;
+}
+
+@keyframes cornerLight {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 1.0; transform: scale(1.2); }
+}
+
+/* Shimmer sweep on hover */
+.featured-quote-box::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 30%,
+    rgba(255,255,255,0.03) 50%,
+    transparent 70%
+  );
+  transform: skewX(-15deg);
+  transition: left 1.0s ease;
+  pointer-events: none;
+}
+
+.featured-quote-box:hover::after { left: 160%; }
+
+/* Quote marks — bigger, glowing */
+.featured-quote-box .quote-mark {
+  color: rgba(200,200,240,0.20);
+  font-size: 80px;
+  line-height: 1;
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 20px; left: 32px;
+  animation: quoteMark 5s ease-in-out infinite;
+}
+
+@keyframes quoteMark {
+  0%,100% { opacity: 0.20; }
+  50%      { opacity: 0.40; }
+}
+
+/* Quote text — keep existing styling */
+/* Author name — keep existing */
+/* DO NOT change any text content */
+________________________________________
+📋 FINAL FIX CHECKLIST:
+text
+┌─────────────────────────────────────────────────┐
+│        ALL 7 PROBLEMS — FINAL CHECKLIST         │
+│                                                 │
+│  PROBLEM 1 — Most Chosen Badge:                │
+│  ☐ Badge visible again (overflow:visible fix)  │
+│  ☐ Positioned above growth card                │
+│  ☐ Gold pulsing glow animation                 │
+│                                                 │
+│  PROBLEM 2 — Infra Table:                      │
+│  ☐ Thicker outer border (3px gradient)         │
+│  ☐ Column headers: cyan/purple/gold colored    │
+│  ☐ Thick bottom border per column (4px)        │
+│  ☐ Side borders per data column (2-3px)        │
+│  ☐ Professional text (STARTER/PRO/ELITE)       │
+│  ☐ Col badges (pill above header)              │
+│  ☐ Check marks glowing colored                 │
+│  ☐ Table glow animation (multi-color)          │
+│                                                 │
+│  PROBLEM 3 — Case Studies:                     │
+│  ☐ Rotating/corki animation REMOVED            │
+│  ☐ Breathing glow pulse (staggered)            │
+│  ☐ Shimmer sweep on hover                      │
+│  ☐ Float up on hover (-10px)                   │
+│  ☐ Scroll entrance stagger                     │
+│  ☐ Colors + lighting = same as before          │
+│                                                 │
+│  PROBLEM 4 — Infra Section Boxes:              │
+│  ☐ Programming → Cyan (2x glow)               │
+│  ☐ Cloud → Purple (2x glow)                   │
+│  ☐ Visualization → Gold (2x glow)             │
+│  ☐ Platforms → Green (2x glow)                │
+│  ☐ Breathing animation per box                 │
+│  ☐ Shimmer on hover                           │
+│  ☐ NO rotating border                          │
+│                                                 │
+│  PROBLEM 5 — Tech Portfolio Cards:             │
+│  ☐ Behavioral → Cyan                          │
+│  ☐ Financial → Gold                           │
+│  ☐ Churn → Purple                             │
+│  ☐ Breathing glow per card                     │
+│  ☐ Shimmer on hover                           │
+│  ☐ Tech tag pills colored per card             │
+│  ☐ NO rotating border                          │
+│                                                 │
+│  PROBLEM 6 — Testimonials:                     │
+│  ☐ All 6 cards → hover lift animation         │
+│  ☐ Shimmer sweep on hover                      │
+│  ☐ 6 unique colors (silver/orange/gold/        │
+│     cyan/purple/pink)                          │
+│  ☐ 2x stronger hover lighting                  │
+│  ☐ Breathing glow per card (staggered)         │
+│  ☐ Revenue numbers ($12.4K→$29.8K) UNTOUCHED  │
+│                                                 │
+│  PROBLEM 7 — Featured Quote Box:              │
+│  ☐ Silver/pearl breathing glow                 │
+│  ☐ Hover lift animation                        │
+│  ☐ Corner ambient light                        │
+│  ☐ Shimmer sweep on hover                      │
+│  ☐ NO rotating border                          │
+│  ☐ All content same                            │
+│                                                 │
+│  UNTOUCHED SECTIONS:                           │
+│  ☐ Navbar, Hero, Quick Proof                   │
+│  ☐ About section                               │
+│  ☐ Service packages                            │
+│  ☐ Add-on packages                             │
+│  ☐ Process section                             │
+│  ☐ Contact + Footer                            │
+│  ☐ All text content                            │
+│                                                 │
+└─────────────────────────────────────────────────┘
+________________________________________
+________________________________________
+Tone: Obsessively precise — every animation intentional, every color meaningful, zero bloat।
+⚡ এখনই সব 7টা problem fix করো — complete updated HTML file দাও।
+
