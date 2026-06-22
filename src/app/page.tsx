@@ -33,7 +33,7 @@ const TRUST_STATS = [
 const QUICK_PROOF_CARDS = [
   {
     store: 'UrbanNest Home Decor',
-    niche: 'Home Decor & Lifestyle — Shopify',
+    niche: 'Home Decor & Lifestyle, Shopify',
     illusion: '$23K/month revenue, growing steadily. Owner thought the business was healthy.',
     reality: '$3,460/month net profit. 14.4% net margin. The #1 best-seller (Boho Macramé) was quietly losing $769 per quarter.',
     findings: [
@@ -41,7 +41,7 @@ const QUICK_PROOF_CARDS = [
       'Mobile converting 2.76x worse than desktop.',
       'A 20% promo sale actually erased margins, dropping profit by 41%.',
     ],
-    result: '$7,800/month net profit within 60 days. Ad budget flipped from Facebook to Google — 1.86x higher customer LTV.',
+    result: '$7,800/month net profit within 60 days. Ad budget flipped from Facebook to Google 1.86x higher customer LTV.',
     quote: '"I literally could not sleep after watching your Loom video."',
     author: 'Sarah K., UrbanNest Founder',
     investment: '$800',
@@ -51,9 +51,9 @@ const QUICK_PROOF_CARDS = [
   },
   {
     store: 'PawPerfect Premium',
-    niche: 'Pet Supplies — Shopify + Meta Ads',
+    niche: 'Pet Supplies, Shopify + Meta Ads',
     illusion: '$54K/month revenue. 4.9★ reviews. Looked like a thriving brand from the outside.',
-    reality: '$12,400/month net profit — and shrinking. Margins had compressed 8% YoY as ad costs per customer rose 73% in 3 years.',
+    reality: '$12,400/month net profit and shrinking. Margins had compressed 8% YoY as ad costs per customer rose 73% in 3 years.',
     findings: [
       'Facebook ads targeting "senior pets" (LTV $134) instead of "new pet parents" (LTV $847).',
       'Zero referral program despite 67% of Champions coming from word-of-mouth.',
@@ -68,9 +68,9 @@ const QUICK_PROOF_CARDS = [
   },
   {
     store: 'LUMIÈRE Beauty Co.',
-    niche: 'Skincare & Beauty — Shopify + Google Ads',
+    niche: 'Skincare & Beauty, Shopify + Google Ads',
     illusion: '$67K/month revenue. Stable. Profitable. No obvious problems.',
-    reality: 'Plateaued for 8 consecutive months. Champions buying 8.4x/year against a 12–14x benchmark — leaving $6,785/month in untouched revenue on the table.',
+    reality: 'Plateaued for 8 consecutive months. Champions buying 8.4x/year against a 12–14x benchmark, leaving $6,785/month in untouched revenue on the table.',
     findings: [
       'Black Friday discount cohorts had 4.1x lower LTV and 81% churn compared to educational content cohorts.',
       'Meta Broad campaigns were silently destroying $8,963 in value every month.',
@@ -89,22 +89,22 @@ const WHY_ME_REASONS = [
   {
     num: '01',
     title: 'I Expose the Agency Illusion',
-    text: 'Your agency tells you your ROAS is 4.2x and everything is performing well. I dig into the actual data and show you that your True Profit ROAS — after cost of goods, returns, and shipping — is 0.83x. Meaning you are paying to lose money on every single sale. I don\'t report vanity metrics. I report net profit. Those are very different numbers — and only one of them pays your bills.',
+    text: 'Your agency tells you your ROAS is 4.2x and everything is performing well. I dig into the actual data and show you that your True Profit ROAS, after cost of goods, returns, and shipping, is 0.83x. Meaning you are paying to lose money on every single sale. I don\'t report vanity metrics. I report net profit. Those are very different numbers, and only one of them pays your bills.',
   },
   {
     num: '02',
     title: 'Enterprise Infrastructure. Without the $150K Salary.',
-    text: 'Hiring a full-time in-house data engineer and analyst costs over $150,000 a year. You don\'t need that. I bring the exact same enterprise-level stack — SQL, Python, BigQuery, Power BI — and build a permanent, automated data pipeline for your store at a fraction of that cost. You get the infrastructure. Without the overhead.',
+    text: 'Hiring a full-time in-house data engineer and analyst costs over $150,000 a year. You don\'t need that. I bring the exact same enterprise-level stack, SQL, Python, BigQuery, Power BI, and build a permanent, automated data pipeline for your store at a fraction of that cost. You get the infrastructure. Without the overhead.',
   },
   {
     num: '03',
-    title: 'From Data to Decision in Days — Not Months.',
-    text: 'Most consultants take 8–12 weeks to deliver a strategy document you\'ll never fully implement. I deliver your complete E-Commerce Health Check in 7 days. Why? Because if your store is bleeding $1,690 a month in hidden losses, you don\'t have 3 months. You need to know exactly what to fix this week — not next quarter.',
+    title: 'From Data to Decision in Days, Not Months.',
+    text: 'Most consultants take 8–12 weeks to deliver a strategy document you\'ll never fully implement. I deliver your complete E-Commerce Health Check in 7 days. Why? Because if your store is bleeding $1,690 a month in hidden losses, you don\'t have 3 months. You need to know exactly what to fix this week, not next quarter.',
   },
   {
     num: '04',
     title: 'I Find Revenue You Already Have.',
-    text: 'The majority of profit improvements I deliver require zero increase in ad spend. I don\'t tell you to "spend more to scale." I find the hidden revenue already sitting inside your business — by fixing your mobile checkout experience, reallocating budget to your highest-LTV channels, or activating the email list you\'ve been ignoring for months. More profit. Same traffic. Same spend.',
+    text: 'The majority of profit improvements I deliver require zero increase in ad spend. I don\'t tell you to "spend more to scale." I find the hidden revenue already sitting inside your business by fixing your mobile checkout experience, reallocating budget to your highest-LTV channels, or activating the email list you\'ve been ignoring for months. More profit. Same traffic. Same spend.',
   },
 ];
 
@@ -155,7 +155,7 @@ const CORE_PACKAGES = [
     tier: 'ADVANCED',
     price: '$1,500 – $2,500',
     timeline: 'One-time · 20–30 day delivery',
-    description: 'Your complete analytics engine — built once, runs forever. 15 total analyses including cohorts, forecasts, and live dashboards.',
+    description: 'Your complete analytics engine, built once, runs forever. 15 total analyses including cohorts, forecasts, and live dashboards.',
     features: [
       'Everything in Growth, plus 6 advanced analyses',
       'Complete Cohort Analysis & 90-Day Sales Forecast',
@@ -207,7 +207,7 @@ const ADD_ON_PACKAGES = [
   {
     name: 'Product Portfolio Audit',
     price: '$350 – $800 · 7–14 Days',
-    problem: '"50+ SKUs — I don\'t know what to focus on."',
+    problem: '"50+ SKUs, I don\'t know what to focus on."',
     promise: 'You will know which products to invest in, optimize, or cut, the true profit margin on every SKU in your catalog, and exactly which products to bundle together to increase AOV.',
   },
   {
@@ -341,7 +341,7 @@ const GITHUB_PROJECTS = [
 
 const TESTIMONIALS = [
   {
-    quote: '"The phone call on Day 5 of the analysis—when I was told my net profit was $84—is the most important phone call of my business life. I cried. I called my husband. He held me. Then he said: \'Now you know. Now you can fix it.\'"',
+    quote: '"The phone call on Day 5 of the analysis, when I was told my net profit was $84, is the most important phone call of my business life. I cried. I called my husband. He held me. Then he said: \'Now you know. Now you can fix it.\'"',
     author: 'Aisha R., ZARA Organics',
     profit: '$84/year ➔ $48,400/month',
     featured: true,
@@ -382,17 +382,17 @@ const PROCESS_STEPS = [
   {
     num: 1,
     title: 'Discovery & Strategy',
-    text: 'You book a call, we assess your business needs, and you select the analytics package that fits your store (Starter, Growth, Advanced, or Retainer). No guessing—we map exactly which platforms hold your data.',
+    text: 'You book a call, we assess your business needs, and you select the analytics package that fits your store (Starter, Growth, Advanced, or Retainer). No guessing, we map exactly which platforms hold your data.',
   },
   {
     num: 2,
     title: 'The Engineering Foundation',
-    text: 'This is the behind-the-scenes engineering most analysts skip. We build your cloud infrastructure and connect your APIs. EXTRACT: We securely pull raw data from Shopify, GA4, Meta Ads, Google Ads, and Klaviyo. CLEAN: We align currencies, date formats, and timezones so everything speaks the same language. MERGE: We combine all platforms into one clean master table—your single source of truth. CONNECT: We pipe the unified data directly into the dashboard. You don\'t touch a single line of code.',
+    text: 'This is the behind-the-scenes engineering most analysts skip. We build your cloud infrastructure and connect your APIs. EXTRACT: We securely pull raw data from Shopify, GA4, Meta Ads, Google Ads, and Klaviyo. CLEAN: We align currencies, date formats, and timezones so everything speaks the same language. MERGE: We combine all platforms into one clean master table, your single source of truth. CONNECT: We pipe the unified data directly into the dashboard. You don\'t touch a single line of code.',
   },
   {
     num: 3,
     title: 'The Deep Analysis',
-    text: 'With clean, reliable data flowing into our systems, the detective work begins. We run the RFM segmentation models, cohort analyses, funnel audits, true profit margin deep-dives, and churn predictions ETC. We don\'t just look at what happened—we uncover why it happened.',
+    text: 'With clean, reliable data flowing into our systems, the detective work begins. We run the RFM segmentation models, cohort analyses, funnel audits, true profit margin deep-dives, and churn predictions ETC. We don\'t just look at what happened, we uncover why it happened.',
   },
   {
     num: 4,
@@ -402,7 +402,7 @@ const PROCESS_STEPS = [
   {
     num: 5,
     title: 'Execution & Monitoring (Ongoing)',
-    text: 'You implement the fixes—like pausing losing ads, flipping budgets, or sending win-back emails. If you are a Retainer client, I monitor your live dashboard 24/7, sending proactive anomaly alerts and updating your forecasts so today\'s insights never go stale.',
+    text: 'You implement the fixes, like pausing losing ads, flipping budgets, or sending win-back emails. If you are a Retainer client, I monitor your live dashboard 24/7, sending proactive anomaly alerts and updating your forecasts so today\'s insights never go stale.',
   },
 ];
 
@@ -632,21 +632,18 @@ function HeroSection() {
         {/* Pre-Headline */}
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="w-12 h-[2px] bg-[#00C6FF]" />
-          <span className="section-label">For E-Commerce Founders Who Are Selling More — But Keeping Less.</span>
+          <span className="section-label">For E-Commerce Founders Who Are Selling More, But Keeping Less.</span>
         </div>
 
         {/* Main Headline */}
-        <h1
-          className="font-[family-name:var(--font-syne)] font-extrabold leading-[1.1] text-white mb-6"
-          style={{ fontSize: 'clamp(32px, 5vw, 72px)' }}
-        >
+        <h1 className="hero-headline mb-6">
           {typedText}
           <span className="inline-block w-[3px] h-[0.8em] bg-[#00C6FF] ml-1 align-middle" style={{ animation: 'blink 1s infinite' }} />
         </h1>
 
         {/* Sub-Headline */}
         <p className="text-[#8899AA] text-base sm:text-lg max-w-[620px] mx-auto leading-relaxed mb-10">
-          I find exactly where your money is leaking — across your products, your ads, and your customers — and show you how to stop it. No confusing reports. No generic advice. Just a clear picture of what is hurting your profit and a specific plan to fix it.
+          I find exactly where your money is leaking across your products, your ads, and your customers and show you how to stop it. No confusing reports. No generic advice. Just a clear picture of what is hurting your profit and a specific plan to fix it.
         </p>
 
         {/* CTA Buttons */}
@@ -656,7 +653,7 @@ function HeroSection() {
             className="px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
             style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
           >
-            Find My Profit Leaks — Free 20-Min Call
+            Find My Profit Leaks, Free 20-Min Call
           </a>
           <a
             href="#case-studies"
@@ -693,7 +690,7 @@ function QuickProofSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">Quick Proof</span>
-          <h2 className="font-[family-name:var(--font-syne)] text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
             Real Stores. Real Numbers. Real Results.
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -750,7 +747,7 @@ function QuickProofSection() {
 
               <div className="border-l-2 border-[#00C6FF] pl-4 mb-5">
                 <p className="text-[#8899AA] text-sm italic">{card.quote}</p>
-                <p className="text-[#445566] text-xs mt-1">— {card.author}</p>
+                <p className="text-[#445566] text-xs mt-1">{card.author}</p>
               </div>
 
               <div className="overflow-hidden rounded-lg border border-[rgba(0,198,255,0.1)]">
@@ -824,10 +821,10 @@ function AboutSection() {
           {/* Right - Content */}
           <div>
             <span className="section-label">The Analyst Behind the Data</span>
-            <h2 className="font-[family-name:var(--font-syne)] text-[clamp(28px,3.5vw,44px)] font-extrabold text-white mt-3 mb-2 leading-tight">
+            <h2 className="section-headline text-[clamp(28px,3.5vw,44px)] font-extrabold text-white mt-3 mb-2 leading-tight">
               I Don&apos;t Just Read Dashboards.
             </h2>
-            <h3 className="font-[family-name:var(--font-syne)] text-[clamp(20px,2.5vw,32px)] font-bold gradient-text mb-6">
+            <h3 className="section-headline text-[clamp(20px,2.5vw,32px)] font-bold gradient-text mb-6">
               I Build the Engine That Powers Them.
             </h3>
 
@@ -838,10 +835,10 @@ function AboutSection() {
             <div className="mt-5 mb-6">
               <div className="text-[#00C6FF] text-sm font-semibold tracking-widest uppercase mb-3">What I Do</div>
               <p className="text-[#8899AA] text-base leading-relaxed mb-3">
-                Most analysts only look at the surface — pulling basic Shopify reports and guessing at trends. I go deeper.
+                Most analysts only look at the surface, pulling basic Shopify reports and guessing at trends. I go deeper.
               </p>
               <p className="text-[#8899AA] text-base leading-relaxed mb-3">
-                Before any analysis can begin, your data needs to be properly connected, cleaned, and structured. That is the behind-the-scenes engineering work I handle — connecting Shopify, GA4, Meta Ads, and Klaviyo into one unified source of truth using SQL, Python, and BigQuery.
+                Before any analysis can begin, your data needs to be properly connected, cleaned, and structured. That is the behind-the-scenes engineering work I handle, connecting Shopify, GA4, Meta Ads, and Klaviyo into one unified source of truth using SQL, Python, and BigQuery.
               </p>
               <p className="text-[#8899AA] text-base leading-relaxed mb-3">
                 Once the foundation is solid, I translate that raw, complex data into clear, profitable decisions.
@@ -850,31 +847,8 @@ function AboutSection() {
                 E-commerce founders are often flying blind. Misled by vanity metrics. Handed agency reports claiming &quot;4.2x ROAS&quot; while their bank accounts quietly empty out. Working 11-hour days to make $11 an hour in real profit. My job is to find exactly where the money is leaking, tell you precisely what to fix first, and build the systems so it never happens again.
               </p>
               <p className="text-[#8899AA] text-base leading-relaxed">
-                You don&apos;t need to touch a single line of code. Your job is to make decisions on clean, reliable data. My job is to make sure that data exists — and that it tells you the truth.
+                You don&apos;t need to touch a single line of code. Your job is to make decisions on clean, reliable data. My job is to make sure that data exists, and that it tells you the truth.
               </p>
-            </div>
-
-            {/* Why Me - 4 Principles */}
-            <div className="mb-8">
-              <div className="text-[#00C6FF] text-sm font-semibold tracking-widest uppercase mb-4">Why Me: The 4 Principles That Shape Every Engagement</div>
-              <div className="space-y-4">
-                {[
-                  { num: '01', title: 'I speak business, not jargon.', text: 'Every report is written so that a business owner — not a data scientist — can read it, understand it, and act on it immediately. If you need a glossary to read my work, I have failed.' },
-                  { num: '02', title: 'I deliver decisions, not data dumps.', text: 'You will never receive a spreadsheet full of numbers with no context. Every single finding comes with a specific, prioritized recommendation and a clear reason why it matters to your bottom line.' },
-                  { num: '03', title: 'I focus on your actual problem.', text: 'Every engagement is designed around the specific challenge your business is facing right now — not a generic template copy-pasted from the last client. Your data is unique. Your analysis should be too.' },
-                  { num: '04', title: 'I build for action, not admiration.', text: 'Dashboards and reports that sit unopened are worthless. Everything I build is designed to be used — by you and your team, every day, to make faster and better decisions with complete confidence.' },
-                ].map((item) => (
-                  <div
-                    key={item.num}
-                    className="border-l-2 border-[#00C6FF] pl-4 py-2 hover:bg-[rgba(0,198,255,0.03)] transition-colors cursor-default"
-                  >
-                    <div className="text-white font-semibold text-sm">
-                      <span className="gradient-text mr-2">{item.num}.</span>{item.title}
-                    </div>
-                    <p className="text-[#8899AA] text-sm leading-relaxed mt-1">{item.text}</p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* By The Numbers */}
@@ -925,6 +899,41 @@ function AboutSection() {
   );
 }
 
+function WhyMeSection() {
+  const sectionRef = useScrollReveal();
+  return (
+    <section className="bg-[#0A0F18] py-20 sm:py-28" ref={sectionRef}>
+      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
+          <span className="section-label">WHY ME</span>
+          <h2 className="section-headline text-[clamp(28px,4vw,48px)] text-white mt-3 mb-4">
+            The 4 Principles That Shape Every Engagement
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            { num: '01', title: 'I speak business, not jargon.', text: 'Every report is written so that a business owner, not a data scientist, can read it, understand it, and act on it immediately. If you need a glossary to read my work, I have failed.' },
+            { num: '02', title: 'I deliver decisions, not data dumps.', text: 'You will never receive a spreadsheet full of numbers with no context. Every single finding comes with a specific, prioritized recommendation and a clear reason why it matters to your bottom line.' },
+            { num: '03', title: 'I focus on your actual problem.', text: 'Every engagement is designed around the specific challenge your business is facing right now, not a generic template copy-pasted from the last client. Your data is unique. Your analysis should be too.' },
+            { num: '04', title: 'I build for action, not admiration.', text: 'Dashboards and reports that sit unopened are worthless. Everything I build is designed to be used, by you and your team, every day, to make faster and better decisions with complete confidence.' },
+          ].map((item) => (
+            <div
+              key={item.num}
+              className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]"
+              style={{ background: 'rgba(13,21,32,0.7)', border: '1px solid rgba(0,198,255,0.12)', boxShadow: '0 0 30px rgba(0,198,255,0.05)' }}
+            >
+              <div className="text-5xl font-bold gradient-text mb-3">{item.num}</div>
+              <h3 className="text-white font-bold text-lg mb-3">{item.title}</h3>
+              <p className="text-[#8899AA] text-sm leading-relaxed">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function WhyWorkWithMeSection() {
   const sectionRef = useScrollReveal();
   return (
@@ -938,17 +947,17 @@ function WhyWorkWithMeSection() {
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">The Unfair Advantage</span>
-          <h2 className="font-[family-name:var(--font-syne)] text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
+          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
             Don&apos;t Hire an Agency.
           </h2>
-          <h3 className="font-[family-name:var(--font-syne)] text-[clamp(22px,3vw,36px)] font-bold gradient-text mb-6">
+          <h3 className="section-headline text-[clamp(22px,3vw,36px)] font-bold gradient-text mb-6">
             Hire a Profit Detective.
           </h3>
           <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed mb-3">
-            Marketing agencies are paid to spend your money. They show you vanity metrics like &quot;4.2x ROAS&quot; to justify their retainers — while your actual bank account quietly empties out.
+            Marketing agencies are paid to spend your money. They show you vanity metrics like &quot;4.2x ROAS&quot; to justify their retainers, while your actual bank account quietly empties out.
           </p>
           <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
-            I am paid to find your money. I don&apos;t look at surface-level reports and call it analysis. I engineer your raw data — from Shopify, GA4, Meta Ads, and Klaviyo and uncover the truth your current dashboards are hiding from you.
+            I am paid to find your money. I don&apos;t look at surface-level reports and call it analysis. I engineer your raw data from Shopify, GA4, Meta Ads, and Klaviyo and uncover the truth your current dashboards are hiding from you.
           </p>
           <p className="text-white font-semibold mt-4">Here is why founders trust me with their life&apos;s work.</p>
         </div>
@@ -980,7 +989,7 @@ function WhyWorkWithMeSection() {
           <p className="text-[#F0F4F8] text-base leading-relaxed italic mb-4">
             &quot;I fired my $2,500/month agency because their &apos;amazing dashboards&apos; still left me broke. The Health Check found the exact holes in my business in 7 days. I wish I had done this two years earlier.&quot;
           </p>
-          <p className="text-[#8899AA] text-sm mb-4">— Marcus T., NOIRE Collective</p>
+          <p className="text-[#8899AA] text-sm mb-4">Marcus T., NOIRE Collective</p>
 
           <div className="overflow-hidden rounded-lg border border-[rgba(0,198,255,0.15)]">
             <table className="w-full text-sm">
@@ -1016,11 +1025,11 @@ function ServicesSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">Choose Your Starting Point</span>
-          <h2 className="font-[family-name:var(--font-syne)] text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
             Services
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
-            Every engagement delivers a clear finding, a specific action plan, and a direct conversation — not a data dump.
+            Every engagement delivers a clear finding, a specific action plan, and a direct conversation, not a data dump.
           </p>
         </div>
 
@@ -1029,14 +1038,12 @@ function ServicesSection() {
           <h3 className="text-white text-xl font-bold mb-2">Part 1: Core E-Commerce Packages</h3>
           <p className="text-[#8899AA] text-sm mb-8">Three tiers, one retainer. Designed to meet your store wherever it is today.</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {CORE_PACKAGES.map((pkg) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+            {CORE_PACKAGES.slice(0, 3).map((pkg) => (
               <div
                 key={pkg.tier}
-                className={`relative bg-[#0D1520] rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 ${
-                  pkg.featured
-                    ? 'border-2 border-[rgba(0,198,255,0.4)] shadow-[0_0_40px_rgba(0,198,255,0.15)]'
-                    : 'border border-[rgba(0,198,255,0.12)] hover:border-[rgba(0,198,255,0.3)]'
+                className={`relative rounded-2xl p-6 sm:p-8 ${
+                  pkg.tier === 'STARTER' ? 'card-starter' : pkg.tier === 'GROWTH' ? 'card-growth' : 'card-advanced'
                 }`}
               >
                 {pkg.featured && (
@@ -1084,17 +1091,62 @@ function ServicesSection() {
               </div>
             ))}
           </div>
+          {/* Retainer full width */}
+          {(() => {
+            const pkg = CORE_PACKAGES[3];
+            return (
+              <div className="card-retainer rounded-2xl p-8 sm:p-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
+                    <h4 className="text-white text-lg font-bold mb-1">{pkg.name}</h4>
+                    <div className="flex items-baseline gap-2 mb-1">
+                      <span className="gradient-text-gold text-xl font-bold">{pkg.price}</span>
+                    </div>
+                    <div className="text-[#8899AA] text-xs mb-4">{pkg.timeline}</div>
+                    <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>
+                    <ul className="space-y-2 mb-5">
+                      {pkg.features.map((f, fi) => (
+                        <li key={fi} className="flex items-start gap-2 text-sm text-[#F0F4F8]">
+                          <Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <div className="mb-5">
+                      <div className="text-[#00C6FF] text-xs font-semibold mb-1">Best For:</div>
+                      <p className="text-[#8899AA] text-sm">{pkg.bestFor}</p>
+                    </div>
+                    <div className="p-4 rounded-lg bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.1)] mb-5">
+                      <div className="text-[#00C6FF] text-xs font-semibold mb-2">Our Promise To You:</div>
+                      <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
+                    </div>
+                    <div className="flex flex-wrap gap-3">
+                      <a href="#contact" className="px-5 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
+                        style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
+                        {pkg.cta}
+                      </a>
+                      <button className="px-5 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.2)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.05)] inline-flex items-center gap-2">
+                        <Download size={14} /> Download PDF
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
         </div>
 
         {/* Part 2: Add-On Packages */}
         <div className="mb-20">
           <h3 className="text-white text-xl font-bold mb-2">Part 2: Specialized Add-On Packages</h3>
           <p className="text-[#00C6FF] text-base font-semibold mb-1">Have One Specific Problem?</p>
-          <p className="text-[#8899AA] text-sm mb-8">Six focused audits — each one built around a single critical business question. Delivered in 7–14 days.</p>
+          <p className="text-[#8899AA] text-sm mb-8">Six focused audits, each one built around a single critical business question. Delivered in 7–14 days.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {ADD_ON_PACKAGES.map((pkg, i) => (
-              <div key={i} className="bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 transition-all duration-300 hover:border-[rgba(0,198,255,0.3)] hover:-translate-y-1">
+              <div key={i} className="addon-card p-6">
                 <h4 className="text-white font-bold text-base mb-1">{pkg.name}</h4>
                 <div className="gradient-text-gold text-sm font-semibold mb-3">{pkg.price}</div>
                 <div className="mb-3">
@@ -1105,13 +1157,16 @@ function ServicesSection() {
                   <div className="text-[#00E676] text-xs font-semibold mb-1">Our Promise:</div>
                   <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
                 </div>
+                <a href="#contact" className="book-btn">
+                  Book the {pkg.name} →
+                </a>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-8">
             <button className="px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] inline-flex items-center gap-2">
-              <Download size={14} /> Download Full Add-On Details — PDF
+              <Download size={14} /> Download Full Add-On Details PDF
             </button>
           </div>
         </div>
@@ -1127,7 +1182,7 @@ function ServicesSection() {
           {/* Bundle Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {DATA_BUNDLES.map((bundle, i) => (
-              <div key={i} className="bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 transition-all duration-300 hover:border-[rgba(0,198,255,0.3)]">
+              <div key={i} className={`rounded-2xl p-6 ${i === 0 ? 'infra-card-basic' : i === 1 ? 'infra-card-pipeline' : 'infra-card-automation'}`}>
                 <h4 className="text-white font-bold text-lg mb-2">{bundle.name}</h4>
                 <p className="text-[#8899AA] text-sm mb-3">{bundle.bestFor}</p>
                 <div className="flex items-center justify-between">
@@ -1140,13 +1195,16 @@ function ServicesSection() {
                     <div className="gradient-text-gold text-sm font-bold">{bundle.investment}</div>
                   </div>
                 </div>
+                <a href="#contact" className={`book-btn ${i === 0 ? 'basic-book' : i === 1 ? 'pipeline-book' : 'auto-book'}`}>
+                  Book the {bundle.name} →
+                </a>
               </div>
             ))}
           </div>
 
           {/* Comparison Table */}
           <div className="overflow-x-auto mb-8">
-            <table className="w-full text-sm border border-[rgba(0,198,255,0.1)] rounded-xl overflow-hidden">
+            <table className="infra-table w-full text-sm">
               <thead>
                 <tr className="bg-[rgba(0,198,255,0.05)]">
                   <th className="px-4 py-3 text-left text-[#8899AA] font-semibold">Feature</th>
@@ -1207,7 +1265,7 @@ function ServicesSection() {
 
           <div className="text-center">
             <button className="px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] inline-flex items-center gap-2">
-              <Download size={14} /> Download Data Setup Presentation — PDF
+              <Download size={14} /> Download Data Setup Presentation PDF
             </button>
           </div>
         </div>
@@ -1218,12 +1276,13 @@ function ServicesSection() {
 
 function CaseStudiesSection() {
   const sectionRef = useScrollReveal();
+  const caseCardClasses = ['case-card-zara', 'case-card-pace', 'case-card-noire', 'case-card-luna'];
   return (
     <section id="case-studies" className="bg-[#020408] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">The Receipts</span>
-          <h2 className="font-[family-name:var(--font-syne)] text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+          <h2 className="section-headline text-[clamp(28px,4vw,48px)] text-white mt-3 mb-4">
             Featured Case Studies
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -1232,8 +1291,8 @@ function CaseStudiesSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {CASE_STUDIES.map((cs, i) => (
-            <div key={i} className="bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(0,198,255,0.3)]">
+          {CASE_STUDIES.slice(0, 4).map((cs, i) => (
+            <div key={i} className={`case-study-card ${caseCardClasses[i]} p-6 sm:p-8`}>
               <div className="flex items-start justify-between gap-3 mb-3">
                 <h3 className="text-white font-bold text-lg">{cs.store}</h3>
               </div>
@@ -1270,10 +1329,78 @@ function CaseStudiesSection() {
               </div>
 
               <button className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
-                <Download size={14} /> Download Full {cs.store} Case Study — PDF
+                <Download size={14} /> Download Full {cs.store} Case Study PDF
               </button>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <a href="#case-studies-2" className="inline-flex items-center gap-2 text-[#00C6FF] font-semibold hover:gap-3 transition-all">
+            See More Case Studies ↓
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CaseStudies2Section() {
+  const sectionRef = useScrollReveal();
+  const caseCardClasses = ['case-card-urbannest', 'case-card-paw', 'case-card-lumiere'];
+  return (
+    <section id="case-studies-2" className="bg-[#0A0F18] py-20 sm:py-28" ref={sectionRef}>
+      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+          {CASE_STUDIES.slice(4).map((cs, i) => (
+            <div key={i} className={`case-study-card ${caseCardClasses[i]} p-6 sm:p-8`}>
+              <div className="flex items-start justify-between gap-3 mb-3">
+                <h3 className="text-white font-bold text-lg">{cs.store}</h3>
+              </div>
+              <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF] mb-2">
+                {cs.niche}
+              </div>
+              <p className="text-[#F0F4F8] font-semibold text-sm mb-4">{cs.title}</p>
+
+              <div className="space-y-3 mb-5">
+                <div>
+                  <div className="flex items-center gap-2 text-[#FF4444] text-xs font-semibold mb-1">
+                    <AlertTriangle size={12} /> The Nightmare
+                  </div>
+                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.nightmare}</p>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 text-[#F5A623] text-xs font-semibold mb-1">
+                    <Lightbulb size={12} /> The Revelation
+                  </div>
+                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.revelation}</p>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 text-[#00C6FF] text-xs font-semibold mb-1">
+                    <Zap size={12} /> The Turnaround
+                  </div>
+                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.turnaround}</p>
+                </div>
+                <div className="p-3 rounded-lg bg-[rgba(0,230,118,0.08)] border border-[rgba(0,230,118,0.15)]">
+                  <div className="flex items-center gap-2 text-[#00E676] text-xs font-semibold mb-1">
+                    <Rocket size={12} /> The Result
+                  </div>
+                  <p className="text-[#F0F4F8] text-sm font-semibold">{cs.result}</p>
+                </div>
+              </div>
+
+              <button className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+                <Download size={14} /> Download Full {cs.store} Case Study PDF
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105"
+            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
+            <Download size={14} /> Download Full Case Studies PDF
+          </button>
         </div>
       </div>
     </section>
@@ -1287,7 +1414,7 @@ function TechPortfolioSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">The Engineering Behind The Insights</span>
-          <h2 className="font-[family-name:var(--font-syne)] text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
             Technical Portfolio
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -1346,11 +1473,11 @@ function TestimonialsSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">Founders, Transformed</span>
-          <h2 className="font-[family-name:var(--font-syne)] text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
             Testimonials
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
-            Don&apos;t take my word for it. Listen to the founders who were running fast in the wrong direction—until the data showed them the truth.
+            Don&apos;t take my word for it. Listen to the founders who were running fast in the wrong direction, until the data showed them the truth.
           </p>
         </div>
 
@@ -1359,31 +1486,38 @@ function TestimonialsSection() {
           <div className="glass rounded-2xl p-8 sm:p-10 max-w-4xl mx-auto mb-12 text-center"
             style={{ boxShadow: '0 0 40px rgba(0,198,255,0.1)' }}>
             <p className="text-[#F0F4F8] text-lg sm:text-xl leading-relaxed italic mb-6">{featured.quote}</p>
-            <p className="text-[#8899AA] text-sm mb-2">— {featured.author}</p>
-            <div className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold gradient-text-gold"
-              style={{ background: 'rgba(245,166,35,0.1)', border: '1px solid rgba(245,166,35,0.2)' }}>
-              Profit: {featured.profit}
+            <p className="text-[#8899AA] text-sm mb-2">{featured.author}</p>
+            <div className="flex justify-center">
+              <div className="profit-badge">
+                <span className="profit-before">$84/year</span>
+                <span className="profit-arrow">➔</span>
+                <span className="profit-after">$48,400/month</span>
+              </div>
             </div>
           </div>
         )}
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {grid.map((t, i) => (
-            <div key={i} className="bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 transition-all duration-300 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_0_30px_rgba(0,198,255,0.1)]">
-              <div className="flex gap-0.5 mb-3">
-                {[...Array(5)].map((_, si) => (
-                  <Star key={si} size={14} className="text-[#F5A623] fill-[#F5A623]" />
-                ))}
+          {grid.map((t, i) => {
+            const parts = t.profit.split(' ➔ ');
+            return (
+              <div key={i} className="testimonial-card">
+                <div className="flex gap-0.5 mb-3">
+                  {[...Array(5)].map((_, si) => (
+                    <Star key={si} size={14} className="text-[#F5A623] fill-[#F5A623]" />
+                  ))}
+                </div>
+                <p className="text-[#8899AA] text-sm leading-relaxed italic mb-4">{t.quote}</p>
+                <p className="text-[#F0F4F8] text-sm font-medium mb-2">{t.author}</p>
+                <div className="profit-badge">
+                  <span className="profit-before">{parts[0]}</span>
+                  <span className="profit-arrow">➔</span>
+                  <span className="profit-after">{parts[1]}</span>
+                </div>
               </div>
-              <p className="text-[#8899AA] text-sm leading-relaxed italic mb-4">{t.quote}</p>
-              <p className="text-[#F0F4F8] text-sm font-medium mb-2">— {t.author}</p>
-              <div className="inline-block px-3 py-1 rounded-full text-xs font-semibold gradient-text-gold"
-                style={{ background: 'rgba(245,166,35,0.08)', border: '1px solid rgba(245,166,35,0.15)' }}>
-                Profit: {t.profit}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
@@ -1403,11 +1537,11 @@ function ProcessSection() {
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">The Engagement Flow</span>
-          <h2 className="font-[family-name:var(--font-syne)] text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
+          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
             Setup is Not an Add-on. It is the Foundation.
           </h2>
           <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
-            Every engagement flows through the same disciplined sequence—from hire to insight. You make the decisions; I handle the engineering, the data cleaning, and the math. Here is exactly how we transform your raw data into profit:
+            Every engagement flows through the same disciplined sequence, from hire to insight. You make the decisions; I handle the engineering, the data cleaning, and the math. Here is exactly how we transform your raw data into profit:
           </p>
         </div>
 
@@ -1438,7 +1572,7 @@ function ProcessSection() {
           <p className="text-[#F0F4F8] text-base leading-relaxed italic mb-2">
             &quot;The Health Check showed me something that destroyed and rebuilt me at the same time: I wasn&apos;t failing because of bad products. I was failing because I had no idea what was actually happening in my own business.&quot;
           </p>
-          <p className="text-[#8899AA] text-sm">— Marcus T., NOIRE Collective</p>
+          <p className="text-[#8899AA] text-sm">Marcus T., NOIRE Collective</p>
         </div>
       </div>
     </section>
@@ -1452,14 +1586,14 @@ function TechStackSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">The Infrastructure Behind The Insights</span>
-          <h2 className="font-[family-name:var(--font-syne)] text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
+          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
             Enterprise Engineering. Without the $150K Salary.
           </h2>
           <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
             Shopify&apos;s default reports only tell 10% of the story. To find the hidden profit, you need to connect, warehouse, and model your data properly.
           </p>
           <p className="text-[#8899AA] text-sm max-w-3xl mx-auto leading-relaxed mt-2">
-            I bring the exact same tech stack used by Fortune 500 companies—and build it custom for your store. You get enterprise-grade data infrastructure without the $150,000/year in-house data engineer salary.
+            I bring the exact same tech stack used by Fortune 500 companies, and build it custom for your store. You get enterprise-grade data infrastructure without the $150,000/year in-house data engineer salary.
           </p>
         </div>
 
@@ -1522,14 +1656,14 @@ function ContactSection() {
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">Let&apos;s Find Your Next $10,000.</span>
-          <h2 className="font-[family-name:var(--font-syne)] text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
+          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
             Stop Guessing. Start Knowing.
           </h2>
           <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
             Every struggling store already has the data. What it doesn&apos;t have is someone willing to read it honestly, explain it clearly, and act on it decisively.
           </p>
           <p className="text-[#8899AA] text-sm max-w-3xl mx-auto mt-2">
-            If your revenue is growing but something doesn&apos;t add up—you&apos;re probably right. The data knows. Let&apos;s read it together.
+            If your revenue is growing but something doesn&apos;t add up, you&apos;re probably right. The data knows. Let&apos;s read it together.
           </p>
         </div>
 
@@ -1699,7 +1833,7 @@ function Footer() {
               </div>
             </div>
             <p className="text-[#8899AA] text-sm leading-relaxed">
-              We transform raw data into clear, profitable decisions. We don&apos;t just deliver numbers — we deliver answers, direction, and results.
+              We transform raw data into clear, profitable decisions. We don&apos;t just deliver numbers, we deliver answers, direction, and results.
             </p>
           </div>
 
@@ -1790,9 +1924,11 @@ export default function PortfolioPage() {
       <HeroSection />
       <QuickProofSection />
       <AboutSection />
+      <WhyMeSection />
       <WhyWorkWithMeSection />
       <ServicesSection />
       <CaseStudiesSection />
+      <CaseStudies2Section />
       <TechPortfolioSection />
       <TestimonialsSection />
       <ProcessSection />
