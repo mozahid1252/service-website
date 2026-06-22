@@ -1,0 +1,2002 @@
+     1→     1→'use client';
+     2→     2→
+     3→     3→import React, { useEffect, useRef, useState, useCallback } from 'react';
+     4→     4→import Image from 'next/image';
+     5→     5→import {
+     6→     6→  Menu, X, ChevronDown, Mail, Linkedin, Phone, Github,
+     7→     7→  Check, Star, ArrowRight, Download, ExternalLink,
+     8→     8→  BarChart3, TrendingUp, Users, Shield, Zap, Database,
+     9→     9→  Code2, Cloud, LineChart, Plug, FileText, Clock,
+    10→    10→  AlertTriangle, Target, Lightbulb, Rocket
+    11→    11→} from 'lucide-react';
+    12→    12→
+    13→    13→/* ──────────────────────────────────────────
+    14→    14→   DATA CONSTANTS
+    15→    15→   ────────────────────────────────────────── */
+    16→    16→
+    17→    17→const NAV_LINKS = [
+    18→    18→  { label: 'Home', href: '#hero' },
+    19→    19→  { label: 'About', href: '#about' },
+    20→    20→  { label: 'Services', href: '#services' },
+    21→    21→  { label: 'Case Studies', href: '#case-studies' },
+    22→    22→  { label: 'Process', href: '#process' },
+    23→    23→  { label: 'Contact', href: '#contact' },
+    24→    24→];
+    25→    25→
+    26→    26→const TRUST_STATS = [
+    27→    27→  { value: '$53.5M+', label: 'Revenue Tracked' },
+    28→    28→  { value: '2.75M+', label: 'Data Events Processed' },
+    29→    29→  { value: '6+', label: 'Industries Served' },
+    30→    30→  { value: '0', label: 'Lines of Code You Touch' },
+    31→    31→];
+    32→    32→
+    33→    33→const QUICK_PROOF_CARDS = [
+    34→    34→  {
+    35→    35→    store: 'UrbanNest Home Decor',
+    36→    36→    niche: 'Home Decor & Lifestyle, Shopify',
+    37→    37→    illusion: '$23K/month revenue, growing steadily. Owner thought the business was healthy.',
+    38→    38→    reality: '$3,460/month net profit. 14.4% net margin. The #1 best-seller (Boho Macramé) was quietly losing $769 per quarter.',
+    39→    39→    findings: [
+    40→    40→      '71% cart abandonment caused by forced account creation.',
+    41→    41→      'Mobile converting 2.76x worse than desktop.',
+    42→    42→      'A 20% promo sale actually erased margins, dropping profit by 41%.',
+    43→    43→    ],
+    44→    44→    result: '$7,800/month net profit within 60 days. Ad budget flipped from Facebook to Google 1.86x higher customer LTV.',
+    45→    45→    quote: '"I literally could not sleep after watching your Loom video."',
+    46→    46→    author: 'Sarah K., UrbanNest Founder',
+    47→    47→    investment: '$800',
+    48→    48→    timeline: '60 days',
+    49→    49→    profitAdded: '+$4,340/mo',
+    50→    50→    roi: '10x',
+    51→    51→  },
+    52→    52→  {
+    53→    53→    store: 'PawPerfect Premium',
+    54→    54→    niche: 'Pet Supplies, Shopify + Meta Ads',
+    55→    55→    illusion: '$54K/month revenue. 4.9★ reviews. Looked like a thriving brand from the outside.',
+    56→    56→    reality: '$12,400/month net profit and shrinking. Margins had compressed 8% YoY as ad costs per customer rose 73% in 3 years.',
+    57→    57→    findings: [
+    58→    58→      'Facebook ads targeting "senior pets" (LTV $134) instead of "new pet parents" (LTV $847).',
+    59→    59→      'Zero referral program despite 67% of Champions coming from word-of-mouth.',
+    60→    60→    ],
+    61→    61→    result: '$29,840/month net profit within 45 days. Ad targeting flipped to new pet parents. Pet birthday email automation activated.',
+    62→    62→    quote: '"The data wasn\'t just revenue. It was relationships waiting to happen."',
+    63→    63→    author: 'James C., PawPerfect Founder',
+    64→    64→    investment: '$600',
+    65→    65→    timeline: '45 days',
+    66→    66→    profitAdded: '+$17,440/mo',
+    67→    67→    roi: '29x',
+    68→    68→  },
+    69→    69→  {
+    70→    70→    store: 'LUMIÈRE Beauty Co.',
+    71→    71→    niche: 'Skincare & Beauty, Shopify + Google Ads',
+    72→    72→    illusion: '$67K/month revenue. Stable. Profitable. No obvious problems.',
+    73→    73→    reality: 'Plateaued for 8 consecutive months. Champions buying 8.4x/year against a 12–14x benchmark, leaving $6,785/month in untouched revenue on the table.',
+    74→    74→    findings: [
+    75→    75→      'Black Friday discount cohorts had 4.1x lower LTV and 81% churn compared to educational content cohorts.',
+    76→    76→      'Meta Broad campaigns were silently destroying $8,963 in value every month.',
+    77→    77→    ],
+    78→    78→    result: '$41,380/month net profit within 60–75 days. Budget reallocated to Google Brand and Content. Product bundles launched. Discount strategy rebuilt from the ground up.',
+    79→    79→    quote: '"I had been working harder and getting worse customers. For two years."',
+    80→    80→    author: 'Priya S., LUMIÈRE Founder',
+    81→    81→    investment: '$650',
+    82→    82→    timeline: '60–75 days',
+    83→    83→    profitAdded: '+$22,980/mo',
+    84→    84→    roi: '35x',
+    85→    85→  },
+    86→    86→];
+    87→    87→
+    88→    88→const WHY_ME_REASONS = [
+    89→    89→  {
+    90→    90→    num: '01',
+    91→    91→    title: 'I Expose the Agency Illusion',
+    92→    92→    text: 'Your agency tells you your ROAS is 4.2x and everything is performing well. I dig into the actual data and show you that your True Profit ROAS, after cost of goods, returns, and shipping, is 0.83x. Meaning you are paying to lose money on every single sale. I don\'t report vanity metrics. I report net profit. Those are very different numbers, and only one of them pays your bills.',
+    93→    93→  },
+    94→    94→  {
+    95→    95→    num: '02',
+    96→    96→    title: 'Enterprise Infrastructure. Without the $150K Salary.',
+    97→    97→    text: 'Hiring a full-time in-house data engineer and analyst costs over $150,000 a year. You don\'t need that. I bring the exact same enterprise-level stack, SQL, Python, BigQuery, Power BI, and build a permanent, automated data pipeline for your store at a fraction of that cost. You get the infrastructure. Without the overhead.',
+    98→    98→  },
+    99→    99→  {
+   100→   100→    num: '03',
+   101→   101→    title: 'From Data to Decision in Days, Not Months.',
+   102→   102→    text: 'Most consultants take 8–12 weeks to deliver a strategy document you\'ll never fully implement. I deliver your complete E-Commerce Health Check in 7 days. Why? Because if your store is bleeding $1,690 a month in hidden losses, you don\'t have 3 months. You need to know exactly what to fix this week, not next quarter.',
+   103→   103→  },
+   104→   104→  {
+   105→   105→    num: '04',
+   106→   106→    title: 'I Find Revenue You Already Have.',
+   107→   107→    text: 'The majority of profit improvements I deliver require zero increase in ad spend. I don\'t tell you to "spend more to scale." I find the hidden revenue already sitting inside your business by fixing your mobile checkout experience, reallocating budget to your highest-LTV channels, or activating the email list you\'ve been ignoring for months. More profit. Same traffic. Same spend.',
+   108→   108→  },
+   109→   109→];
+   110→   110→
+   111→   111→const CORE_PACKAGES = [
+   112→   112→  {
+   113→   113→    tag: 'STOP THE BLEED.',
+   114→   114→    name: 'E-Commerce Health Check',
+   115→   115→    tier: 'STARTER',
+   116→   116→    price: '$150 – $300',
+   117→   117→    timeline: 'One-time · 5–7 day delivery',
+   118→   118→    description: 'A 90-day forensic audit across sales, funnel, customers, and true product profitability.',
+   119→   119→    features: [
+   120→   120→      '4 focused analyses (Sales, Funnel, Customers, Profit)',
+   121→   121→      'Executive Summary PDF (2-3 pages)',
+   122→   122→      'Visual Dashboard (Looker Studio / Power BI)',
+   123→   123→      'Action Priority List (This week / Month / Later)',
+   124→   124→      '30-min Video Walkthrough',
+   125→   125→      '1 Round of Revision',
+   126→   126→    ],
+   127→   127→    bestFor: 'Stores doing $5K–$50K/mo who suspect something\'s off but don\'t know what.',
+   128→   128→    promise: 'After this package, you will know exactly where your store is losing potential revenue, which products are actually making you money, and the top 3 things to fix this week to see measurable results.',
+   129→   129→    cta: 'Book the Health Check →',
+   130→   130→    featured: false,
+   131→   131→  },
+   132→   132→  {
+   133→   133→    tag: 'SCALE WHAT WORKS.',
+   134→   134→    name: 'Revenue Growth Accelerator',
+   135→   135→    tier: 'GROWTH',
+   136→   136→    price: '$400 – $1,000',
+   137→   137→    timeline: 'One-time · 10–14 day delivery',
+   138→   138→    description: 'Full RFM, channel LTV:CAC, cohort truth, bundle strategy, and an interactive intelligence dashboard.',
+   139→   139→    features: [
+   140→   140→      'Everything in Starter, plus 5 deeper analyses',
+   141→   141→      'Full 8-segment RFM Customer Segmentation',
+   142→   142→      'Channel LTV:CAC & Marketing Audit',
+   143→   143→      'Cross-sell & Bundle Opportunity Analysis',
+   144→   144→      'Interactive Dashboard + Klaviyo-ready CSV',
+   145→   145→      '60-min Strategy Call + 30-day Roadmap',
+   146→   146→    ],
+   147→   147→    bestFor: 'Stores doing $20K–$200K/mo ready to break through the plateau.',
+   148→   148→    promise: 'After this package, you will know exactly which customers to focus on (and what to say to each group), which marketing channels are wasting your money, and how to implement product bundles that immediately increase your average order value.',
+   149→   149→    cta: 'Book the Growth Package →',
+   150→   150→    featured: true,
+   151→   151→  },
+   152→   152→  {
+   153→   153→    tag: 'LIVE IN THE DATA.',
+   154→   154→    name: 'Data-Driven Growth System',
+   155→   155→    tier: 'ADVANCED',
+   156→   156→    price: '$1,500 – $2,500',
+   157→   157→    timeline: 'One-time · 20–30 day delivery',
+   158→   158→    description: 'Your complete analytics engine, built once, runs forever. 15 total analyses including cohorts, forecasts, and live dashboards.',
+   159→   159→    features: [
+   160→   160→      'Everything in Growth, plus 6 advanced analyses',
+   161→   161→      'Complete Cohort Analysis & 90-Day Sales Forecast',
+   162→   162→      'Profit Margin Deep Dive (True per-product profit)',
+   163→   163→      'Live Custom KPI Dashboard (Auto-refreshing)',
+   164→   164→      'Discount & Return Pattern Analysis',
+   165→   165→      '90-min Strategy Session + 60-day Email Support',
+   166→   166→    ],
+   167→   167→    bestFor: 'Stores doing $100K+/mo that demand permanent data vigilance.',
+   168→   168→    promise: 'After this package, you will never make a major business decision without data to back it up. You will know your most valuable customers, most profitable products, and have a live dashboard that gives you your business pulse in under 5 minutes each morning.',
+   169→   169→    cta: 'Apply for Advanced →',
+   170→   170→    featured: false,
+   171→   171→  },
+   172→   172→  {
+   173→   173→    tag: 'NEVER GO STALE.',
+   174→   174→    name: 'Analytics Partner Retainer',
+   175→   175→    tier: 'RETAINER',
+   176→   176→    price: '$500 – $1,200 /mo',
+   177→   177→    timeline: 'Ongoing (Min. 2-month commitment)',
+   178→   178→    description: 'Your dedicated data analyst. A 4-week rhythm that keeps your business moving forward with continuous insight.',
+   179→   179→    features: [
+   180→   180→      'Monthly Performance & Customer Health Reports',
+   181→   181→      'Marketing Efficiency Review & Forward Planning',
+   182→   182→      '4 Ad-hoc Analyses per month',
+   183→   183→      '48-hr Email / Slack response',
+   184→   184→      'Proactive Anomaly Alerts',
+   185→   185→      'Dashboard Maintenance & 45-min Monthly Call',
+   186→   186→    ],
+   187→   187→    bestFor: 'Ongoing growth, live monitoring, and seasonal shifts.',
+   188→   188→    promise: 'With this retainer, today\'s insight will never become outdated next month. We will detect problems between analyses before they cost you money, ensure your implemented changes are actually working, and keep you prepared for seasonal shifts before they catch you off guard.',
+   189→   189→    cta: 'Become a Retainer Client →',
+   190→   190→    featured: false,
+   191→   191→  },
+   192→   192→];
+   193→   193→
+   194→   194→const ADD_ON_PACKAGES = [
+   195→   195→  {
+   196→   196→    name: 'Marketing Spend Audit',
+   197→   197→    price: '$300 – $600 · 7–10 Days',
+   198→   198→    problem: '"My ROAS is declining and I don\'t know why."',
+   199→   199→    promise: 'You will know which channels are genuinely profitable vs. creating an illusion, the true cost of acquiring a customer through each platform, and exactly which campaigns to scale, pause, or kill.',
+   200→   200→    cssClass: 'marketing',
+   201→   201→  },
+   202→   202→  {
+   203→   203→    name: 'Customer Retention Audit',
+   204→   204→    price: '$350 – $700 · 7–12 Days',
+   205→   205→    problem: '"Customers buy once and disappear."',
+   206→   206→    promise: 'You will know which customers are about to leave (and how to reach them before they do), which channels bring loyal customers, and have an upload-ready segmented list for immediate retention campaigns.',
+   207→   207→    cssClass: 'retention',
+   208→   208→  },
+   209→   209→  {
+   210→   210→    name: 'Product Portfolio Audit',
+   211→   211→    price: '$350 – $800 · 7–14 Days',
+   212→   212→    problem: '"50+ SKUs, I don\'t know what to focus on."',
+   213→   213→    promise: 'You will know which products to invest in, optimize, or cut, the true profit margin on every SKU in your catalog, and exactly which products to bundle together to increase AOV.',
+   214→   214→    cssClass: 'portfolio',
+   215→   215→  },
+   216→   216→  {
+   217→   217→    name: 'CRO Audit',
+   218→   218→    price: '$250 – $500 · 7–10 Days',
+   219→   219→    problem: '"Traffic is there but nobody\'s buying."',
+   220→   220→    promise: 'You will know exactly where visitors are abandoning (and why), which fixes will have the highest impact, and have a prioritized action list to increase conversion by 20–40% using your existing traffic.',
+   221→   221→    cssClass: 'cro',
+   222→   222→  },
+   223→   223→  {
+   224→   224→    name: 'Profitability Audit',
+   225→   225→    price: '$350 – $700 · 8–12 Days',
+   226→   226→    problem: '"Revenue grows but profit doesn\'t."',
+   227→   227→    promise: 'You will know your true profit margin on every product/channel, exactly where revenue is leaking into cost, if your promotions are eroding profit, and when your cash will be tight in coming months.',
+   228→   228→    cssClass: 'profitability',
+   229→   229→  },
+   230→   230→  {
+   231→   231→    name: 'Operations Efficiency Audit',
+   232→   232→    price: '$400 – $800 · 10–14 Days',
+   233→   233→    problem: '"Returns climbing, inventory out of control."',
+   234→   234→    promise: 'You will know which suppliers are causing financial problems, exactly how much inventory to order (and when based on 90-day demand), the true cost of your return rate, and how to free up cash locked in dead stock.',
+   235→   235→    cssClass: 'operations',
+   236→   236→  },
+   237→   237→];
+   238→   238→
+   239→   239→const DATA_BUNDLES = [
+   240→   240→  { name: 'Basic Setup', bestFor: 'One-time analysis clients (2-3 platforms)', timeline: '2–3 Days', investment: '$150 – $300', cssClass: 'infra-wrapper-basic' },
+   241→   241→  { name: 'Full Pipeline Setup', bestFor: 'Ongoing/recurring clients (All APIs + Merge)', timeline: '5–7 Days', investment: '$500 – $900', cssClass: 'infra-wrapper-pipeline' },
+   242→   242→  { name: 'Full Pipeline + Automation', bestFor: 'Live dashboard & retainer clients (Auto-updating)', timeline: '7–10 Days', investment: '$700 – $1,200', cssClass: 'infra-wrapper-auto' },
+   243→   243→];
+   244→   244→
+   245→   245→const BUNDLE_FEATURES = [
+   246→   246→  { feature: 'Cloud Infrastructure', basic: true, full: true, auto: true },
+   247→   247→  { feature: 'Platform API Connections', basic: '2–3', full: 'All', auto: 'All' },
+   248→   248→  { feature: 'Data Pipeline Build', basic: true, full: true, auto: true },
+   249→   249→  { feature: 'Data Cleaning', basic: true, full: true, auto: true },
+   250→   250→  { feature: 'Multi-Platform Merge', basic: false, full: true, auto: true },
+   251→   251→  { feature: 'BigQuery Load Script', basic: false, full: true, auto: true },
+   252→   252→  { feature: 'Dashboard Connection', basic: false, full: true, auto: true },
+   253→   253→  { feature: 'Automated Scheduling', basic: false, full: false, auto: true },
+   254→   254→  { feature: 'Error Alerts', basic: false, full: false, auto: true },
+   255→   255→  { feature: 'Credential Security', basic: false, full: false, auto: true },
+   256→   256→];
+   257→   257→
+   258→   258→const CASE_STUDIES = [
+   259→   259→  {
+   260→   260→    store: 'ZARA Organics',
+   261→   261→    title: 'The $89K/Month Store That Was Actually Bankrupt',
+   262→   262→    niche: 'Organic Wellness & Supplements',
+   263→   263→    nightmare: '$89K/mo revenue, celebrating a record year. Actual net profit for the entire year was only $84. Margin collapsed from 24% to 10.9%.',
+   264→   264→    revelation: '46% of her customer base was permanently "Lost." Free organic content channels generated 4.2x more LTV than $18K/mo paid ads.',
+   265→   265→    turnaround: 'Shifted from an ad-spend business to a content/community business. Built a live Looker Studio dashboard.',
+   266→   266→    result: 'Profit went from $7/mo to $48,400/mo.',
+   267→   267→    cssClass: 'zara',
+   268→   268→    tagline: 'A $7/month profit hidden inside $89K in revenue.',
+   269→   269→    caseType: 'turnaround',
+   270→   270→  },
+   271→   271→  {
+   272→   272→    store: 'PACE Performance',
+   273→   273→    title: 'All Speed, No Strategy: The Marathon Runner\'s Store',
+   274→   274→    niche: 'Fitness & Running Gear',
+   275→   275→    nightmare: '$41K/mo revenue, running his business like a marathon. Thought he was making $9K/mo profit; he was actually making $425/mo.',
+   276→   276→    revelation: 'His free TikTok race videos brought in customers worth $524 LTV, while his $8,400/mo paid ads brought customers worth $9 LTV.',
+   277→   277→    turnaround: 'Cut ad spend by 70%, killed low-margin/high-return fitness products, leaned into authentic race-day content.',
+   278→   278→    result: 'Profit jumped from $425/mo to $31,400/mo in 30 days.',
+   279→   279→    cssClass: 'pace',
+   280→   280→    tagline: 'His $8,400/mo ads brought customers worth $9 LTV.',
+   281→   281→    caseType: 'scale',
+   282→   282→  },
+   283→   283→  {
+   284→   284→    store: 'NOIRE Collective',
+   285→   285→    title: 'From Panic to $33K/Month Profit in 73 Days',
+   286→   286→    niche: 'Premium Urban Streetwear',
+   287→   287→    nightmare: '72 hours from shutting down. $38K/mo revenue but losing $1,690/mo. An agency claimed 4.2x ROAS, but true profit ROAS was 0.83x.',
+   288→   288→    revelation: 'Discount addiction and a 24.7% unit return rate from inconsistent sizing were silently bleeding the business dry.',
+   289→   289→    turnaround: 'Detoxed discounts (17.6% → 4.8%), cut Facebook/TikTok ads by 70%, unified size charts, rebuilt mobile checkout.',
+   290→   290→    result: 'Profit went from -$1.7K/mo to +$33,040/mo in 73 days.',
+   291→   291→    cssClass: 'noire',
+   292→   292→    tagline: '72 hours from permanent closure. Data saved it.',
+   293→   293→    caseType: 'diagnostic',
+   294→   294→  },
+   295→   295→  {
+   296→   296→    store: 'LUNA Jewelry Co.',
+   297→   297→    title: 'The Store Gifting Away Its Own Profit',
+   298→   298→    niche: 'Handcrafted Jewelry',
+   299→   299→    nightmare: 'Making $30K/mo but working 11 hrs/day, 6 days a week, for just $11.59/hour.',
+   300→   300→    revelation: 'She was giving away $115,956/year in "free" services (gift wrap, engraving, shipping). Her bestseller earned her $8.20/hour.',
+   301→   301→    turnaround: 'Added a $12 engraving fee, $4.99 premium gift wrap, raised free shipping threshold, and flipped ad budget from Meta to Pinterest. Took 4 hours to implement.',
+   302→   302→    result: 'Hourly rate jumped to $66.81/hr. Monthly profit went from $3.3K to $18,900/mo.',
+   303→   303→    cssClass: 'luna',
+   304→   304→    tagline: 'Working 11 hrs/day. Earning $11.59/hour.',
+   305→   305→    caseType: 'turnaround',
+   306→   306→  },
+   307→   307→  {
+   308→   308→    store: 'UrbanNest Home Decor',
+   309→   309→    title: 'How a $23K/Month Store Discovered They Were Bleeding $4,200 Every Month',
+   310→   310→    niche: 'Home Decor & Lifestyle',
+   311→   311→    nightmare: '$23K/mo revenue, growing steadily, but only $3K net profit. A 20% promo sale spiked revenue but actually wiped out margins, dropping profit by 41%.',
+   312→   312→    revelation: 'The #1 best-seller (Boho Macramé) was secretly losing $769/quarter. Forced account creation was causing a 71% cart abandonment rate.',
+   313→   313→    turnaround: 'Paused losing ads, enabled guest checkout, flipped ad budget from Facebook to Google (which had 1.86x higher LTV), and sent win-back emails to at-risk customers.',
+   314→   314→    result: 'Profit jumped from $3.4K/mo to $7,800/mo in 60 days.',
+   315→   315→    cssClass: 'urbannest',
+   316→   316→    tagline: 'Best-seller was silently losing $769/quarter.',
+   317→   317→    caseType: 'diagnostic',
+   318→   318→  },
+   319→   319→  {
+   320→   320→    store: 'PawPerfect Premium',
+   321→   321→    title: 'How Data Saved $312,000 in Annual Revenue',
+   322→   322→    niche: 'Pet Supplies & Wellness',
+   323→   323→    nightmare: '$54K/mo revenue, 4.9★ reviews. Margins were shrinking because ad costs per customer rose 73% in 3 years.',
+   324→   324→    revelation: 'Ads targeted "senior pet owners" (LTV $134) who churned when pets died. Customers acquired with puppies generated 6.3x more LTV ($847). Zero referral program despite 67% of Champions coming from word-of-mouth.',
+   325→   325→    turnaround: 'Flipped ad targeting from senior to puppy parents. Created pet birthday and milestone email automation.',
+   326→   326→    result: 'Profit jumped from $12.4K/mo to $29,840/mo in 45 days.',
+   327→   327→    cssClass: 'paw',
+   328→   328→    tagline: 'Targeting wrong customers. $312K/year consequence.',
+   329→   329→    caseType: 'scale',
+   330→   330→  },
+   331→   331→  {
+   332→   332→    store: 'LUMIÈRE Beauty Co.',
+   333→   333→    title: 'How a $67K/Month Brand Discovered a Hidden $89K/Month Business',
+   334→   334→    niche: 'Skincare & Beauty',
+   335→   335→    nightmare: 'Plateaued at $67K/mo for 8 consecutive months. Profitable but stuck, leaving money on the table.',
+   336→   336→    revelation: 'Black Friday discount cohorts had 4.1x LOWER LTV and 81% churn compared to educational content cohorts. Meta Broad ads were destroying $8,963 in value.',
+   337→   337→    turnaround: 'Stopped chasing holiday discount revenue. Replicated best cohorts, created product bundles, and reallocated ad spend to Google Brand and Content.',
+   338→   338→    result: 'Profit jumped from $18.4K/mo to $41,380/mo in 45 days.',
+   339→   339→    cssClass: 'lumiere',
+   340→   340→    tagline: 'Plateaued 8 months. Black Friday was the villain.',
+   341→   341→    caseType: 'scale',
+   342→   342→  },
+   343→   343→];
+   344→   344→
+   345→   345→const GITHUB_PROJECTS = [
+   346→   346→  {
+   347→   347→    name: 'Behavioral Funnel & Conversion',
+   348→   348→    subtitle: 'Processing 2.75M Raw E-Commerce Events',
+   349→   349→    stack: ['SQL', 'Python', 'Power BI'],
+   350→   350→    engineering: 'Engineered an end-to-end pipeline processing 2.75 million raw e-commerce events. Implemented a 30-minute inactivity session rule using LAG() window functions to accurately define user behavior.',
+   351→   351→    impact: 'Surfaced a 76.8% cart abandonment profile. Ran 5 A/B tests (t-tests, Chi-Square, ANOVA) in Python to uncover "Hidden Gem" products, identifying $50,000 in untapped revenue with zero additional ad spend.',
+   352→   352→  },
+   353→   353→  {
+   354→   354→    name: 'Financial Data Warehouse',
+   355→   355→    subtitle: 'Star-Schema Warehouse Tracking $53.5M Revenue',
+   356→   356→    stack: ['PostgreSQL', 'Power BI', 'DAX'],
+   357→   357→    engineering: 'Architected a centralized PostgreSQL data warehouse consolidating 52 weeks of transactional data (10,000+ records) into a normalized star schema. Built 20+ DAX measures using SUMX iterators and CALCULATE filters.',
+   358→   358→    impact: 'Powered a 2-page executive dashboard with 39 visuals for proactive risk management. Reconciled 100% of data between PostgreSQL and Power BI, saving the team 15+ hours per week in manual reporting.',
+   359→   359→  },
+   360→   360→  {
+   361→   361→    name: 'Churn & Retention Analytics',
+   362→   362→    subtitle: '11-Tier RFM Segmentation of 96K Customers',
+   363→   363→    stack: ['Python', 'SQL', 'Power BI', 'Excel'],
+   364→   364→    engineering: 'Performed comprehensive EDA on 100K+ orders using Python (Pandas, Seaborn) and SQL. Built an 11-tier RFM segmentation model and computed Customer Lifetime Value (CLV) using cohort retention matrices.',
+   365→   365→    impact: 'Exposed a critical 85% Month-1 churn rate and a 97% one-time buyer rate. Pareto analysis revealed 20% of categories drove 80% of revenue, identifying a $120,000 revenue opportunity via At-Risk customer re-engagement.',
+   366→   366→  },
+   367→   367→];
+   368→   368→
+   369→   369→const TESTIMONIALS = [
+   370→   370→  {
+   371→   371→    quote: '"The phone call on Day 5 of the analysis, when I was told my net profit was $84, is the most important phone call of my business life. I cried. I called my husband. He held me. Then he said: \'Now you know. Now you can fix it.\'"',
+   372→   372→    author: 'Aisha R., ZARA Organics',
+   373→   373→    profit: '$84/year ➔ $48,400/month',
+   374→   374→    featured: true,
+   375→   375→  },
+   376→   376→  {
+   377→   377→    quote: '"I was 72 hours from closing my business. The Health Check showed me something that destroyed and rebuilt me at the same time: I wasn\'t failing because of bad products. I was failing because I had no idea what was actually happening in my own business."',
+   378→   378→    author: 'Marcus T., NOIRE Collective',
+   379→   379→    profit: '-$1.7K/mo ➔ +$33K/mo in 73 days',
+   380→   380→  },
+   381→   381→  {
+   382→   382→    quote: '"In running, we have a concept called junk miles. Miles that feel productive because you\'re moving. But they don\'t make you faster. My $8,400/month in ads were junk miles. The best investment I\'ve ever made cost less than my running shoes."',
+   383→   383→    author: 'Daniel O., PACE Performance',
+   384→   384→    profit: '$425/mo ➔ $31,400/mo',
+   385→   385→  },
+   386→   386→  {
+   387→   387→    quote: '"I was earning $11.59 an hour. Running a business I worked 11 hours a day to build. The Health Check showed me three things I was giving away for free that I should have been charging for. My brand identity is the jewelry. Not the freebies."',
+   388→   388→    author: 'Sofia M., LUNA Jewelry Co.',
+   389→   389→    profit: 'Hourly Rate: $11.59 ➔ $66.81',
+   390→   390→  },
+   391→   391→  {
+   392→   392→    quote: '"I literally could not sleep after watching your Loom video. I paused the Macramé ads the same night. I had NO IDEA I was losing money on my best-selling product. I\'ve been promoting it for 8 months!"',
+   393→   393→    author: 'Sarah K., UrbanNest Home Decor',
+   394→   394→    profit: '$3.4K/mo ➔ $7.8K/mo',
+   395→   395→  },
+   396→   396→  {
+   397→   397→    quote: '"My favorite result from this analysis has nothing to do with money. It\'s the email I now send to customers when their dog turns 7 years old. The data wasn\'t just revenue. It was relationships waiting to happen. I just needed someone to show me how to see it."',
+   398→   398→    author: 'James C., PawPerfect Premium',
+   399→   399→    profit: '$12.4K/mo ➔ $29.8K/mo',
+   400→   400→  },
+   401→   401→  {
+   402→   402→    quote: '"I want to be careful with how I say this, because I don\'t want it to sound like an exaggeration. I paid $650 for a Growth Package. In 45 days my monthly net profit went from $18,400 to $41,380. I didn\'t launch new products. I didn\'t increase my ad spend. I just finally understood what my data was telling me."',
+   403→   403→    author: 'Priya S., LUMIÈRE Beauty Co.',
+   404→   404→    profit: '$18.4K/mo ➔ $41.3K/mo',
+   405→   405→  },
+   406→   406→];
+   407→   407→
+   408→   408→const PROCESS_STEPS = [
+   409→   409→  {
+   410→   410→    num: 1,
+   411→   411→    title: 'Discovery & Strategy',
+   412→   412→    text: 'You book a call, we assess your business needs, and you select the analytics package that fits your store (Starter, Growth, Advanced, or Retainer). No guessing, we map exactly which platforms hold your data.',
+   413→   413→  },
+   414→   414→  {
+   415→   415→    num: 2,
+   416→   416→    title: 'The Engineering Foundation',
+   417→   417→    text: 'This is the behind-the-scenes engineering most analysts skip. We build your cloud infrastructure and connect your APIs. EXTRACT: We securely pull raw data from Shopify, GA4, Meta Ads, Google Ads, and Klaviyo. CLEAN: We align currencies, date formats, and timezones so everything speaks the same language. MERGE: We combine all platforms into one clean master table, your single source of truth. CONNECT: We pipe the unified data directly into the dashboard. You don\'t touch a single line of code.',
+   418→   418→  },
+   419→   419→  {
+   420→   420→    num: 3,
+   421→   421→    title: 'The Deep Analysis',
+   422→   422→    text: 'With clean, reliable data flowing into our systems, the detective work begins. We run the RFM segmentation models, cohort analyses, funnel audits, true profit margin deep-dives, and churn predictions ETC. We don\'t just look at what happened, we uncover why it happened.',
+   423→   423→  },
+   424→   424→  {
+   425→   425→    num: 4,
+   426→   426→    title: 'The Delivery & Strategy Call (Day 15)',
+   427→   427→    text: 'You don\'t receive a data dump. You receive a plain-language Executive PDF, a visual dashboard, and a prioritized action plan. We hop on a strategy call (30 to 90 minutes, depending on your package) where I explain every finding and tell you exactly what to fix first.',
+   428→   428→  },
+   429→   429→  {
+   430→   430→    num: 5,
+   431→   431→    title: 'Execution & Monitoring (Ongoing)',
+   432→   432→    text: 'You implement the fixes, like pausing losing ads, flipping budgets, or sending win-back emails. If you are a Retainer client, I monitor your live dashboard 24/7, sending proactive anomaly alerts and updating your forecasts so today\'s insights never go stale.',
+   433→   433→  },
+   434→   434→];
+   435→   435→
+   436→   436→const TECH_STACK = [
+   437→   437→  {
+   438→   438→    category: 'Programming & Analytics',
+   439→   439→    icon: Code2,
+   440→   440→    description: 'The languages used to process millions of rows and run statistical models.',
+   441→   441→    items: [
+   442→   442→      { name: 'Python (Pandas, Seaborn)', desc: 'For deep EDA, A/B testing (t-tests, ANOVA), and churn modeling.' },
+   443→   443→      { name: 'SQL', desc: 'For extracting, joining, and transforming raw data across multiple platforms.' },
+   444→   444→      { name: 'Statistical Modeling', desc: 'Moving beyond "gut feelings" to mathematically proven truths.' },
+   445→   445→    ],
+   446→   446→  },
+   447→   447→  {
+   448→   448→    category: 'Cloud & Data Warehousing',
+   449→   449→    icon: Cloud,
+   450→   450→    description: 'The backend infrastructure where your unified source of truth lives.',
+   451→   451→    items: [
+   452→   452→      { name: 'Google Cloud Platform (GCP)', desc: 'Secure, scalable cloud infrastructure.' },
+   453→   453→      { name: 'BigQuery', desc: 'Enterprise data warehousing for lightning-fast queries.' },
+   454→   454→      { name: 'PostgreSQL', desc: 'Relational database management for structured star-schema models.' },
+   455→   455→    ],
+   456→   456→  },
+   457→   457→  {
+   458→   458→    category: 'Visualization & BI',
+   459→   459→    icon: LineChart,
+   460→   460→    description: 'Where the complex math becomes a simple, actionable dashboard for you.',
+   461→   461→    items: [
+   462→   462→      { name: 'Looker Studio', desc: 'Live, auto-refreshing, custom KPI dashboards.' },
+   463→   463→      { name: 'Power BI', desc: 'Advanced business intelligence with 20+ DAX measures.' },
+   464→   464→      { name: 'Excel', desc: 'Simplified KPI summary sheets for immediate team action.' },
+   465→   465→    ],
+   466→   466→  },
+   467→   467→  {
+   468→   468→    category: 'Platform Integrations',
+   469→   469→    icon: Plug,
+   470→   470→    description: 'The APIs we connect so your data actually talks to each other.',
+   471→   471→    items: [
+   472→   472→      { name: 'Shopify', desc: 'Orders, Customers, Products' },
+   473→   473→      { name: 'GA4', desc: 'Funnel, Sessions, Conversions' },
+   474→   474→      { name: 'Meta Ads & Google Ads', desc: 'True ROAS, Spend, CAC' },
+   475→   475→      { name: 'Klaviyo', desc: 'Email performance, Segmentation, Churn triggers' },
+   476→   476→    ],
+   477→   477→  },
+   478→   478→];
+   479→   479→
+   480→   480→/* ──────────────────────────────────────────
+   481→   481→   UTILITY COMPONENTS
+   482→   482→   ────────────────────────────────────────── */
+   483→   483→
+   484→   484→function useScrollReveal() {
+   485→   485→  const ref = useRef<HTMLDivElement>(null);
+   486→   486→  return ref;
+   487→   487→}
+   488→   488→
+   489→   489→function Counter({ target, prefix = '', suffix = '' }: { target: number; prefix?: string; suffix?: string }) {
+   490→   490→  const [count, setCount] = useState(0);
+   491→   491→  const ref = useRef<HTMLSpanElement>(null);
+   492→   492→  const hasAnimated = useRef(false);
+   493→   493→
+   494→   494→  useEffect(() => {
+   495→   495→    const el = ref.current;
+   496→   496→    if (!el) return;
+   497→   497→    const runAnimation = () => {
+   498→   498→      if (hasAnimated.current) return;
+   499→   499→      hasAnimated.current = true;
+   500→   500→      const duration = 2000;
+   501→   501→      const start = performance.now();
+   502→   502→      const animate = (now: number) => {
+   503→   503→        const elapsed = now - start;
+   504→   504→        const progress = Math.min(elapsed / duration, 1);
+   505→   505→        const eased = 1 - Math.pow(1 - progress, 3);
+   506→   506→        setCount(Math.floor(eased * target));
+   507→   507→        if (progress < 1) requestAnimationFrame(animate);
+   508→   508→      };
+   509→   509→      requestAnimationFrame(animate);
+   510→   510→    };
+   511→   511→    const observer = new IntersectionObserver(
+   512→   512→      ([entry]) => {
+   513→   513→        if (entry.isIntersecting) {
+   514→   514→          runAnimation();
+   515→   515→        }
+   516→   516→      },
+   517→   517→      { threshold: 0.1 }
+   518→   518→    );
+   519→   519→    observer.observe(el);
+   520→   520→    // Fallback: start animation after 3s even if observer doesn't fire
+   521→   521→    const fallback = setTimeout(runAnimation, 3000);
+   522→   522→    return () => {
+   523→   523→      observer.disconnect();
+   524→   524→      clearTimeout(fallback);
+   525→   525→    };
+   526→   526→  }, [target]);
+   527→   527→
+   528→   528→  return <span ref={ref}>{prefix}{count.toLocaleString()}{suffix}</span>;
+   529→   529→}
+   530→   530→
+   531→   531→/* ──────────────────────────────────────────
+   532→   532→   SECTION COMPONENTS
+   533→   533→   ────────────────────────────────────────── */
+   534→   534→
+   535→   535→function Navbar() {
+   536→   536→  const [scrolled, setScrolled] = useState(false);
+   537→   537→  const [mobileOpen, setMobileOpen] = useState(false);
+   538→   538→  const [activeSection, setActiveSection] = useState('');
+   539→   539→
+   540→   540→  useEffect(() => {
+   541→   541→    const onScroll = () => setScrolled(window.scrollY > 50);
+   542→   542→    window.addEventListener('scroll', onScroll, { passive: true });
+   543→   543→
+   544→   544→    // Active section tracking
+   545→   545→    const sectionIds = NAV_LINKS.map(l => l.href.replace('#', ''));
+   546→   546→    const observer = new IntersectionObserver(
+   547→   547→      (entries) => {
+   548→   548→        entries.forEach((entry) => {
+   549→   549→          if (entry.isIntersecting) {
+   550→   550→            setActiveSection('#' + entry.target.id);
+   551→   551→          }
+   552→   552→        });
+   553→   553→      },
+   554→   554→      { rootMargin: '-20% 0px -60% 0px' }
+   555→   555→    );
+   556→   556→    sectionIds.forEach(id => {
+   557→   557→      const el = document.getElementById(id);
+   558→   558→      if (el) observer.observe(el);
+   559→   559→    });
+   560→   560→
+   561→   561→    return () => {
+   562→   562→      window.removeEventListener('scroll', onScroll);
+   563→   563→      observer.disconnect();
+   564→   564→    };
+   565→   565→  }, []);
+   566→   566→
+   567→   567→  return (
+   568→   568→    <>
+   569→   569→      <nav
+   570→   570→        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+   571→   571→          scrolled
+   572→   572→            ? 'bg-[rgba(2,4,8,0.92)] backdrop-blur-xl shadow-lg'
+   573→   573→            : 'bg-transparent'
+   574→   574→        }`}
+   575→   575→        style={{ borderBottom: scrolled ? '1px solid rgba(0,198,255,0.08)' : 'none' }}
+   576→   576→      >
+   577→   577→        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
+   578→   578→          <a href="#hero" className="flex items-center gap-3 group">
+   579→   579→            <Image src="/images/logo.png" alt="Logo" width={44} height={44} className="rounded-lg transition-transform duration-300 group-hover:scale-105" />
+   580→   580→            <div className="hidden sm:block">
+   581→   581→              <div className="text-sm font-bold text-white leading-tight">Mozahidul Islam</div>
+   582→   582→              <div className="text-[11px] text-[#8899AA] leading-tight">E-Commerce Growth Analyst</div>
+   583→   583→            </div>
+   584→   584→          </a>
+   585→   585→
+   586→   586→          <div className="hidden lg:flex items-center gap-8">
+   587→   587→            {NAV_LINKS.map((link) => (
+   588→   588→              <a
+   589→   589→                key={link.href}
+   590→   590→                href={link.href}
+   591→   591→                className={`text-sm font-medium tracking-wide transition-colors duration-200 ${
+   592→   592→                  activeSection === link.href
+   593→   593→                    ? 'nav-link-active'
+   594→   594→                    : 'text-[#8899AA] hover:text-[#00C6FF]'
+   595→   595→                }`
+   596→   596→                }
+   597→   597→              >
+   598→   598→                {link.label}
+   599→   599→              </a>
+   600→   600→            ))}
+   601→   601→            <a
+   602→   602→              href="#contact"
+   603→   603→              className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+   604→   604→              style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
+   605→   605→            >
+   606→   606→              Book a Discovery Call
+   607→   607→            </a>
+   608→   608→          </div>
+   609→   609→
+   610→   610→          <button
+   611→   611→            onClick={() => setMobileOpen(!mobileOpen)}
+   612→   612→            className="lg:hidden text-white p-2 hover:text-[#00C6FF] transition-colors"
+   613→   613→            aria-label="Toggle menu"
+   614→   614→          >
+   615→   615→            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+   616→   616→          </button>
+   617→   617→        </div>
+   618→   618→      </nav>
+   619→   619→
+   620→   620→      {/* Mobile Menu Overlay */}
+   621→   621→      <div
+   622→   622→        className={`fixed inset-0 z-40 bg-[rgba(2,4,8,0.97)] backdrop-blur-xl flex flex-col items-center justify-center gap-8 transition-all duration-400 ${
+   623→   623→          mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+   624→   624→        }`}
+   625→   625→      >
+   626→   626→        {NAV_LINKS.map((link, i) => (
+   627→   627→          <a
+   628→   628→            key={link.href}
+   629→   629→            href={link.href}
+   630→   630→            onClick={() => setMobileOpen(false)}
+   631→   631→            className={`text-2xl font-medium transition-all duration-300 ${
+   632→   632→              mobileOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+   633→   633→            } ${
+   634→   634→              activeSection === link.href ? 'text-[#00C6FF]' : 'text-white hover:text-[#00C6FF]'
+   635→   635→            }`}
+   636→   636→            style={{ transitionDelay: mobileOpen ? `${i * 60}ms` : '0ms' }}
+   637→   637→          >
+   638→   638→            {link.label}
+   639→   639→          </a>
+   640→   640→        ))}
+   641→   641→        <a
+   642→   642→          href="#contact"
+   643→   643→          onClick={() => setMobileOpen(false)}
+   644→   644→          className="btn-press mt-4 px-8 py-3 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105"
+   645→   645→          style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}
+   646→   646→        >
+   647→   647→          Book a Discovery Call
+   648→   648→        </a>
+   649→   649→      </div>
+   650→   650→    </>
+   651→   651→  );
+   652→   652→}
+   653→   653→
+   654→   654→function HeroSection() {
+   655→   655→  const [typedText, setTypedText] = useState('');
+   656→   656→  const fullText = 'Your Store Is Making Revenue. Something Else Is Keeping The Profit.';
+   657→   657→  const typingDone = useRef(false);
+   658→   658→
+   659→   659→  useEffect(() => {
+   660→   660→    if (typingDone.current) return;
+   661→   661→    let i = 0;
+   662→   662→    const timer = setInterval(() => {
+   663→   663→      if (i < fullText.length) {
+   664→   664→        setTypedText(fullText.slice(0, i + 1));
+   665→   665→        i++;
+   666→   666→      } else {
+   667→   667→        typingDone.current = true;
+   668→   668→        clearInterval(timer);
+   669→   669→      }
+   670→   670→    }, 30);
+   671→   671→    return () => clearInterval(timer);
+   672→   672→  }, []);
+   673→   673→
+   674→   674→  return (
+   675→   675→    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+   676→   676→      {/* Background Photo */}
+   677→   677→      <div className="absolute inset-0">
+   678→   678→        <Image
+   679→   679→          src="/images/photo2.jpg"
+   680→   680→          alt="Hero background"
+   681→   681→          fill
+   682→   682→          sizes="100vw"
+   683→   683→          className="object-cover opacity-[0.10]"
+   684→   684→          style={{ filter: 'blur(1px)' }}
+   685→   685→          priority
+   686→   686→        />
+   687→   687→      </div>
+   688→   688→      {/* Dark Overlay */}
+   689→   689→      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(2,4,8,0.96) 0%, rgba(8,13,20,0.92) 100%)' }} />
+   690→   690→      {/* Grid Pattern */}
+   691→   691→      <div className="absolute inset-0 grid-bg" />
+   692→   692→
+   693→   693→      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+   694→   694→        {/* Floating Particles */}
+   695→   695→        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+   696→   696→          {[...Array(12)].map((_, i) => (
+   697→   697→            <div
+   698→   698→              key={i}
+   699→   699→              className="hero-particle"
+   700→   700→              style={{
+   701→   701→                left: `${8 + (i * 7.5) % 85}%`,
+   702→   702→                top: `${15 + (i * 11) % 70}%`,
+   703→   703→                animationDelay: `${i * 0.7}s`,
+   704→   704→                animationDuration: `${6 + (i % 4) * 2}s`,
+   705→   705→                width: `${3 + (i % 3) * 2}px`,
+   706→   706→                height: `${3 + (i % 3) * 2}px`,
+   707→   707→              }}
+   708→   708→            />
+   709→   709→          ))}
+   710→   710→        </div>
+   711→   711→
+   712→   712→        {/* Pre-Headline */}
+   713→   713→        <div className="flex items-center justify-center gap-3 mb-6">
+   714→   714→          <div className="w-12 h-[2px] bg-[#00C6FF]" />
+   715→   715→          <span className="section-label">For E-Commerce Founders Who Are Selling More, But Keeping Less.</span>
+   716→   716→        </div>
+   717→   717→
+   718→   718→        {/* Main Headline */}
+   719→   719→        <h1 className="hero-headline mb-6">
+   720→   720→          {typedText}
+   721→   721→          <span className="inline-block w-[3px] h-[0.8em] bg-[#00C6FF] ml-1 align-middle" style={{ animation: 'blink 1s infinite' }} />
+   722→   722→        </h1>
+   723→   723→
+   724→   724→        {/* Sub-Headline */}
+   725→   725→        <p className="text-[#8899AA] text-base sm:text-lg max-w-[620px] mx-auto leading-relaxed mb-10">
+   726→   726→          I find exactly where your money is leaking across your products, your ads, and your customers and show you how to stop it. No confusing reports. No generic advice. Just a clear picture of what is hurting your profit and a specific plan to fix it.
+   727→   727→        </p>
+   728→   728→
+   729→   729→        {/* CTA Buttons */}
+   730→   730→        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+   731→   731→          <a
+   732→   732→            href="#contact"
+   733→   733→            className="btn-press px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+   734→   734→            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
+   735→   735→          >
+   736→   736→            Find My Profit Leaks, Free 20-Min Call
+   737→   737→          </a>
+   738→   738→          <a
+   739→   739→            href="#case-studies"
+   740→   740→            className="btn-press px-8 py-3.5 rounded-md text-base font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:border-[#00C6FF] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)]"
+   741→   741→          >
+   742→   742→            See Client Results
+   743→   743→          </a>
+   744→   744→        </div>
+   745→   745→
+   746→   746→        {/* Trust Bar */}
+   747→   747→        <div className="reveal-stagger grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+   748→   748→          {TRUST_STATS.map((stat, i) => (
+   749→   749→            <div key={i} className="glass rounded-xl p-4 text-center transition-all duration-300 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_0_20px_rgba(0,198,255,0.1)]">
+   750→   750→              <div className="gradient-text text-xl sm:text-2xl font-bold">{stat.value}</div>
+   751→   751→              <div className="text-[#8899AA] text-xs mt-1">{stat.label}</div>
+   752→   752→            </div>
+   753→   753→          ))}
+   754→   754→        </div>
+   755→   755→
+   756→   756→        {/* Scroll Indicator */}
+   757→   757→        <div className="mt-16 flex flex-col items-center gap-2">
+   758→   758→          <span className="text-[#445566] text-xs tracking-widest uppercase">Scroll</span>
+   759→   759→          <ChevronDown className="text-[#00C6FF] animate-bounce" size={20} />
+   760→   760→        </div>
+   761→   761→      </div>
+   762→   762→    </section>
+   763→   763→  );
+   764→   764→}
+   765→   765→
+   766→   766→function QuickProofSection() {
+   767→   767→  const sectionRef = useScrollReveal();
+   768→   768→  return (
+   769→   769→    <section className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
+   770→   770→      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   771→   771→        <div className="text-center mb-14">
+   772→   772→          <span className="section-label">Quick Proof</span>
+   773→   773→          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+   774→   774→            Real Stores. Real Numbers. Real Results.
+   775→   775→          </h2>
+   776→   776→          <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
+   777→   777→            Every single finding below came from data these founders already had. They just couldn&apos;t see it.
+   778→   778→          </p>
+   779→   779→        </div>
+   780→   780→
+   781→   781→        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+   782→   782→          {QUICK_PROOF_CARDS.map((card, i) => (
+   783→   783→            <div
+   784→   784→              key={i}
+   785→   785→              className="bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] group"
+   786→   786→            >
+   787→   787→              <div className="flex items-center justify-between mb-4">
+   788→   788→                <h3 className="text-white font-bold text-lg">{card.store}</h3>
+   789→   789→              </div>
+   790→   790→              <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF] mb-5">
+   791→   791→                {card.niche}
+   792→   792→              </div>
+   793→   793→
+   794→   794→              <div className="mb-4">
+   795→   795→                <div className="flex items-center gap-2 text-[#FF4444] text-sm font-semibold mb-2">
+   796→   796→                  <AlertTriangle size={14} /> The Illusion
+   797→   797→                </div>
+   798→   798→                <p className="text-[#8899AA] text-sm leading-relaxed">{card.illusion}</p>
+   799→   799→              </div>
+   800→   800→
+   801→   801→              <div className="mb-4">
+   802→   802→                <div className="flex items-center gap-2 text-[#F5A623] text-sm font-semibold mb-2">
+   803→   803→                  <AlertTriangle size={14} /> The Reality
+   804→   804→                </div>
+   805→   805→                <p className="text-[#F0F4F8] text-sm leading-relaxed">{card.reality}</p>
+   806→   806→              </div>
+   807→   807→
+   808→   808→              <div className="mb-4">
+   809→   809→                <div className="flex items-center gap-2 text-[#00C6FF] text-sm font-semibold mb-2">
+   810→   810→                  <Target size={14} /> What We Found
+   811→   811→                </div>
+   812→   812→                <ul className="space-y-1">
+   813→   813→                  {card.findings.map((f, fi) => (
+   814→   814→                    <li key={fi} className="text-[#8899AA] text-sm leading-relaxed flex gap-2">
+   815→   815→                      <span className="text-[#00C6FF] mt-1 shrink-0">•</span>{f}
+   816→   816→                    </li>
+   817→   817→                  ))}
+   818→   818→                </ul>
+   819→   819→              </div>
+   820→   820→
+   821→   821→              <div className="mb-5 p-3 rounded-lg bg-[rgba(0,230,118,0.08)] border border-[rgba(0,230,118,0.15)]">
+   822→   822→                <div className="flex items-center gap-2 text-[#00E676] text-sm font-semibold mb-1">
+   823→   823→                  <Check size={14} /> The Result
+   824→   824→                </div>
+   825→   825→                <p className="text-[#F0F4F8] text-sm leading-relaxed">{card.result}</p>
+   826→   826→              </div>
+   827→   827→
+   828→   828→              <div className="border-l-2 border-[#00C6FF] pl-4 mb-5">
+   829→   829→                <p className="text-[#8899AA] text-sm italic">{card.quote}</p>
+   830→   830→                <p className="text-[#445566] text-xs mt-1">{card.author}</p>
+   831→   831→              </div>
+   832→   832→
+   833→   833→              <div className="overflow-hidden rounded-lg border border-[rgba(0,198,255,0.1)]">
+   834→   834→                <table className="w-full text-xs">
+   835→   835→                  <thead>
+   836→   836→                    <tr className="bg-[rgba(0,198,255,0.05)]">
+   837→   837→                      <th className="px-3 py-2 text-left text-[#8899AA] font-medium">Investment</th>
+   838→   838→                      <th className="px-3 py-2 text-left text-[#8899AA] font-medium">Timeline</th>
+   839→   839→                      <th className="px-3 py-2 text-left text-[#8899AA] font-medium">Profit Added</th>
+   840→   840→                      <th className="px-3 py-2 text-left text-[#8899AA] font-medium">ROI</th>
+   841→   841→                    </tr>
+   842→   842→                  </thead>
+   843→   843→                  <tbody>
+   844→   844→                    <tr>
+   845→   845→                      <td className="px-3 py-2 text-[#F0F4F8]">{card.investment}</td>
+   846→   846→                      <td className="px-3 py-2 text-[#F0F4F8]">{card.timeline}</td>
+   847→   847→                      <td className="px-3 py-2 text-[#00E676] font-semibold">{card.profitAdded}</td>
+   848→   848→                      <td className="px-3 py-2 gradient-text-gold font-bold">{card.roi}</td>
+   849→   849→                    </tr>
+   850→   850→                  </tbody>
+   851→   851→                </table>
+   852→   852→              </div>
+   853→   853→            </div>
+   854→   854→          ))}
+   855→   855→        </div>
+   856→   856→
+   857→   857→        <div className="text-center mt-10">
+   858→   858→          <p className="text-[#8899AA] text-base mb-4">These aren&apos;t edge cases. This is what happens when you stop running your store on gut feeling and start running it on data.</p>
+   859→   859→          <a href="#case-studies" className="inline-flex items-center gap-2 text-[#00C6FF] font-semibold hover:gap-3 transition-all">
+   860→   860→            See The Full Case Studies <ArrowRight size={16} />
+   861→   861→          </a>
+   862→   862→        </div>
+   863→   863→      </div>
+   864→   864→    </section>
+   865→   865→  );
+   866→   866→}
+   867→   867→
+   868→   868→function AboutSection() {
+   869→   869→  const sectionRef = useScrollReveal();
+   870→   870→  return (
+   871→   871→    <section id="about" className="bg-[#020408] py-20 sm:py-28" ref={sectionRef}>
+   872→   872→      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   873→   873→        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12" style={{ alignItems: 'stretch' }}>
+   874→   874→          {/* Left - Photo */}
+   875→   875→          <div className="relative h-full min-h-[600px]">
+   876→   876→            <div className="relative h-full min-h-[600px] rounded-[20px] overflow-hidden border-2 border-[rgba(0,198,255,0.2)]" style={{ boxShadow: '0 0 40px rgba(0,198,255,0.15)' }}>
+   877→   877→              <Image
+   878→   878→                src="/images/photo1.jpg"
+   879→   879→                alt="Mozahidul Islam - E-Commerce Growth Analyst"
+   880→   880→                fill
+   881→   881→                sizes="(max-width: 1024px) 100vw, 45vw"
+   882→   882→                className="object-cover"
+   883→   883→                priority
+   884→   884→              />
+   885→   885→            </div>
+   886→   886→            {/* Floating Stats */}
+   887→   887→            <div className="absolute -right-4 top-8 glass rounded-xl px-4 py-3" style={{ animation: 'float 6s ease-in-out infinite' }}>
+   888→   888→              <div className="gradient-text text-lg font-bold">$53.5M+</div>
+   889→   889→              <div className="text-[#8899AA] text-xs">Revenue Tracked</div>
+   890→   890→            </div>
+   891→   891→            <div className="absolute -left-4 bottom-24 glass rounded-xl px-4 py-3" style={{ animation: 'float 6s ease-in-out infinite 2s' }}>
+   892→   892→              <div className="gradient-text-gold text-lg font-bold">3 Years</div>
+   893→   893→              <div className="text-[#8899AA] text-xs">Experience</div>
+   894→   894→            </div>
+   895→   895→            <div className="absolute -right-4 bottom-8 glass rounded-xl px-4 py-3" style={{ animation: 'float 6s ease-in-out infinite 4s' }}>
+   896→   896→              <div className="text-[#00E676] text-lg font-bold">Available <span className="inline-block w-2 h-2 rounded-full bg-[#00E676] animate-pulse" /></div>
+   897→   897→              <div className="text-[#8899AA] text-xs">For Projects</div>
+   898→   898→            </div>
+   899→   899→          </div>
+   900→   900→
+   901→   901→          {/* Right - Content */}
+   902→   902→          <div>
+   903→   903→            <span className="section-label">The Analyst Behind the Data</span>
+   904→   904→            <h2 className="section-headline text-[clamp(28px,3.5vw,44px)] font-extrabold text-white mt-3 mb-2 leading-tight">
+   905→   905→              I Don&apos;t Just Read Dashboards.
+   906→   906→            </h2>
+   907→   907→            <h3 className="section-headline text-[clamp(20px,2.5vw,32px)] font-bold gradient-text mb-6">
+   908→   908→              I Build the Engine That Powers Them.
+   909→   909→            </h3>
+   910→   910→
+   911→   911→            <p className="text-[#8899AA] text-base leading-relaxed mb-2">
+   912→   912→              Hi, I&apos;m <strong className="text-white">Mozahidul Islam</strong>, E-Commerce Growth Analyst. (3 Years Of Experienced)
+   913→   913→            </p>
+   914→   914→
+   915→   915→            <div className="mt-5 mb-6">
+   916→   916→              <div className="text-[#00C6FF] text-sm font-semibold tracking-widest uppercase mb-3 flex items-center gap-2">
+   917→   917→                <span className="w-8 h-[2px] bg-[#00C6FF]" /> What I Do
+   918→   918→              </div>
+   919→   919→              <p className="text-[#8899AA] text-base leading-relaxed mb-3">
+   920→   920→                Most analysts only look at the surface, pulling basic Shopify reports and guessing at trends. <strong>I go deeper.</strong>
+   921→   921→              </p>
+   922→   922→              <p className="text-[#8899AA] text-base leading-relaxed mb-3">
+   923→   923→                Before any analysis can begin, your data needs to be properly connected, cleaned, and structured. That is the behind-the-scenes engineering work I handle, <strong>connecting Shopify, GA4, Meta Ads, and Klaviyo</strong> into <strong>one unified source of truth</strong> using <strong>SQL, Python, and BigQuery</strong>.
+   924→   924→              </p>
+   925→   925→              <p className="text-[#8899AA] text-base leading-relaxed mb-3">
+   926→   926→                Once the foundation is solid, I translate that <strong>raw, complex data into clear, profitable decisions</strong>.
+   927→   927→              </p>
+   928→   928→              <p className="text-[#8899AA] text-base leading-relaxed mb-3">
+   929→   929→                E-commerce founders are often <strong>flying blind</strong>. Misled by <strong>vanity metrics</strong>. Handed agency reports claiming <strong>&quot;4.2x ROAS&quot;</strong> while their bank accounts quietly empty out. Working 11-hour days to make $11 an hour in real profit. My job is to <strong>find exactly where the money is leaking</strong>, <strong>tell you precisely what to fix first</strong>, and <strong>build the systems so it never happens again</strong>.
+   930→   930→              </p>
+   931→   931→              <p className="text-[#8899AA] text-base leading-relaxed">
+   932→   932→                <strong>You don&apos;t need to touch a single line of code</strong>. <strong>Your job is to make decisions on clean, reliable data</strong>. <strong>My job is to make sure that data exists</strong>, and that it tells you the truth.
+   933→   933→              </p>
+   934→   934→            </div>
+   935→   935→
+   936→   936→            {/* By The Numbers */}
+   937→   937→            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+   938→   938→              {[
+   939→   939→                { value: 53.5, prefix: '$', suffix: 'M+', label: 'Revenue Tracked & Analyzed' },
+   940→   940→                { value: 2.75, prefix: '', suffix: 'M+', label: 'Raw Data Events Processed' },
+   941→   941→                { value: 47, prefix: '', suffix: '+', label: 'Analyses Delivered' },
+   942→   942→                { value: 3, prefix: '', suffix: '', label: 'Industries Served' },
+   943→   943→              ].map((stat, i) => (
+   944→   944→                <div key={i} className="text-center p-4 glass rounded-xl">
+   945→   945→                  <div className="gradient-text text-2xl font-bold">
+   946→   946→                    <Counter target={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
+   947→   947→                  </div>
+   948→   948→                  <div className="text-[#8899AA] text-xs mt-1">{stat.label}</div>
+   949→   949→                </div>
+   950→   950→              ))}
+   951→   951→            </div>
+   952→   952→
+   953→   953→            {/* Credentials */}
+   954→   954→            <div className="glass rounded-xl p-5 mb-6">
+   955→   955→              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+   956→   956→                <div>
+   957→   957→                  <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-1">Education</div>
+   958→   958→                  <div className="text-white text-sm font-medium">University of Rajshahi</div>
+   959→   959→                </div>
+   960→   960→                <div>
+   961→   961→                  <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-1">Languages</div>
+   962→   962→                  <div className="text-white text-sm font-medium">English | Bengali | Hindi | Urdu</div>
+   963→   963→                </div>
+   964→   964→              </div>
+   965→   965→            </div>
+   966→   966→
+   967→   967→            {/* CTA */}
+   968→   968→            <div className="flex flex-wrap gap-4">
+   969→   969→              <button className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
+   970→   970→                style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
+   971→   971→                <Download size={16} /> Download CV
+   972→   972→              </button>
+   973→   973→              <a href="#case-studies" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2">
+   974→   974→                <BarChart3 size={16} /> See My Projects
+   975→   975→              </a>
+   976→   976→            </div>
+   977→   977→          </div>
+   978→   978→        </div>
+   979→   979→      </div>
+   980→   980→    </section>
+   981→   981→  );
+   982→   982→}
+   983→   983→
+   984→   984→function WhyMeSection() {
+   985→   985→  const sectionRef = useScrollReveal();
+   986→   986→  return (
+   987→   987→    <section className="bg-[#0A0F18] py-20 sm:py-28" ref={sectionRef}>
+   988→   988→      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   989→   989→        <div className="text-center mb-14">
+   990→   990→          <span className="section-label">WHY ME</span>
+   991→   991→          <h2 className="section-headline text-[clamp(28px,4vw,48px)] text-white mt-3 mb-4">
+   992→   992→            The 4 Principles That Shape Every Engagement
+   993→   993→          </h2>
+   994→   994→        </div>
+   995→   995→
+   996→   996→        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-6">
+   997→   997→          {[
+   998→   998→            { num: '01', title: 'I speak business, not jargon.', text: 'Every report is written so that a business owner, not a data scientist, can read it, understand it, and act on it immediately. If you need a glossary to read my work, I have failed.', cssClass: 'principle-card-01' },
+   999→   999→            { num: '02', title: 'I deliver decisions, not data dumps.', text: 'You will never receive a spreadsheet full of numbers with no context. Every single finding comes with a specific, prioritized recommendation and a clear reason why it matters to your bottom line.', cssClass: 'principle-card-02' },
+  1000→  1000→            { num: '03', title: 'I focus on your actual problem.', text: 'Every engagement is designed around the specific challenge your business is facing right now, not a generic template copy-pasted from the last client. Your data is unique. Your analysis should be too.', cssClass: 'principle-card-03' },
+  1001→  1001→            { num: '04', title: 'I build for action, not admiration.', text: 'Dashboards and reports that sit unopened are worthless. Everything I build is designed to be used, by you and your team, every day, to make faster and better decisions with complete confidence.', cssClass: 'principle-card-04' },
+  1002→  1002→          ].map((item) => (
+  1003→  1003→            <div
+  1004→  1004→              key={item.num}
+  1005→  1005→              className={`rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)] ${item.cssClass}`}
+  1006→  1006→            >
+  1007→  1007→              <div className="text-5xl font-bold gradient-text mb-3">{item.num}</div>
+  1008→  1008→              <h3 className="text-white font-bold text-lg mb-3">{item.title}</h3>
+  1009→  1009→              <p className="text-[#8899AA] text-sm leading-relaxed">{item.text}</p>
+  1010→  1010→            </div>
+  1011→  1011→          ))}
+  1012→  1012→        </div>
+  1013→  1013→      </div>
+  1014→  1014→    </section>
+  1015→  1015→  );
+  1016→  1016→}
+  1017→  1017→
+  1018→  1018→function WhyWorkWithMeSection() {
+  1019→  1019→  const sectionRef = useScrollReveal();
+  1020→  1020→  return (
+  1021→  1021→    <section className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
+  1022→  1022→      {/* Background Photo */}
+  1023→  1023→      <div className="absolute inset-0">
+  1024→  1024→        <Image src="/images/photo3.jpg" alt="Background" fill sizes="100vw" className="object-cover opacity-[0.10]" />
+  1025→  1025→      </div>
+  1026→  1026→      <div className="absolute inset-0 bg-[rgba(2,4,8,0.92)]" />
+  1027→  1027→
+  1028→  1028→      <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  1029→  1029→        <div className="text-center mb-14">
+  1030→  1030→          <span className="section-label">The Unfair Advantage</span>
+  1031→  1031→          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
+  1032→  1032→            Don&apos;t Hire an Agency.
+  1033→  1033→          </h2>
+  1034→  1034→          <h3 className="section-headline text-[clamp(22px,3vw,36px)] font-bold gradient-text mb-6">
+  1035→  1035→            Hire a Profit Detective.
+  1036→  1036→          </h3>
+  1037→  1037→          <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed mb-3">
+  1038→  1038→            Marketing agencies are paid to spend your money. They show you vanity metrics like &quot;4.2x ROAS&quot; to justify their retainers, while your actual bank account quietly empties out.
+  1039→  1039→          </p>
+  1040→  1040→          <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
+  1041→  1041→            I am paid to find your money. I don&apos;t look at surface-level reports and call it analysis. I engineer your raw data from Shopify, GA4, Meta Ads, and Klaviyo and uncover the truth your current dashboards are hiding from you.
+  1042→  1042→          </p>
+  1043→  1043→          <p className="text-white font-semibold mt-4">Here is why founders trust me with their life&apos;s work.</p>
+  1044→  1044→        </div>
+  1045→  1045→
+  1046→  1046→        {/* 4 Reasons */}
+  1047→  1047→        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+  1048→  1048→          {WHY_ME_REASONS.map((reason) => (
+  1049→  1049→            <div
+  1050→  1050→              key={reason.num}
+  1051→  1051→              className="glass rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)] hover:border-[rgba(0,198,255,0.3)]"
+  1052→  1052→            >
+  1053→  1053→              <div className="flex items-start gap-4">
+  1054→  1054→                <div className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold"
+  1055→  1055→                  style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
+  1056→  1056→                  <span className="text-[#020408]">{reason.num}</span>
+  1057→  1057→                </div>
+  1058→  1058→                <div>
+  1059→  1059→                  <h3 className="text-white font-bold text-lg mb-3">{reason.title}</h3>
+  1060→  1060→                  <p className="text-[#8899AA] text-sm leading-relaxed">{reason.text}</p>
+  1061→  1061→                </div>
+  1062→  1062→              </div>
+  1063→  1063→            </div>
+  1064→  1064→          ))}
+  1065→  1065→        </div>
+  1066→  1066→
+  1067→  1067→        {/* Marcus Testimonial */}
+  1068→  1068→        <div className="glass rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto">
+  1069→  1069→          <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-4">What A Founder Says</div>
+  1070→  1070→          <p className="text-[#F0F4F8] text-base leading-relaxed italic mb-4">
+  1071→  1071→            &quot;I fired my $2,500/month agency because their &apos;amazing dashboards&apos; still left me broke. The Health Check found the exact holes in my business in 7 days. I wish I had done this two years earlier.&quot;
+  1072→  1072→          </p>
+  1073→  1073→          <p className="text-[#8899AA] text-sm mb-4">Marcus T., NOIRE Collective</p>
+  1074→  1074→
+  1075→  1075→          <div className="overflow-hidden rounded-lg border border-[rgba(0,198,255,0.15)]">
+  1076→  1076→            <table className="w-full text-sm">
+  1077→  1077→              <thead>
+  1078→  1078→                <tr className="bg-[rgba(0,198,255,0.05)]">
+  1079→  1079→                  <th className="px-4 py-2 text-left text-[#FF4444] font-semibold">Before</th>
+  1080→  1080→                  <th className="px-4 py-2 text-left text-[#00E676] font-semibold">After</th>
+  1081→  1081→                  <th className="px-4 py-2 text-left text-[#F5A623] font-semibold">Time</th>
+  1082→  1082→                </tr>
+  1083→  1083→              </thead>
+  1084→  1084→              <tbody>
+  1085→  1085→                <tr>
+  1086→  1086→                  <td className="px-4 py-3 text-[#FF4444]">-$1,690/mo net profit</td>
+  1087→  1087→                  <td className="px-4 py-3 text-[#00E676] font-semibold">+$33,040/mo net profit</td>
+  1088→  1088→                  <td className="px-4 py-3 text-[#F5A623]">73 days</td>
+  1089→  1089→                </tr>
+  1090→  1090→              </tbody>
+  1091→  1091→            </table>
+  1092→  1092→          </div>
+  1093→  1093→          <p className="text-[#8899AA] text-xs mt-3 leading-relaxed">
+  1094→  1094→            How: Discount addiction detoxed (17.6% → 4.8%). Facebook &amp; TikTok ads cut by 70% and reallocated to organic/Google. Unified size charts to stop a 24.7% unit return rate. Mobile checkout rebuilt. Win-back email sent to 6,063 dormant customers.
+  1095→  1095→          </p>
+  1096→  1096→        </div>
+  1097→  1097→      </div>
+  1098→  1098→    </section>
+  1099→  1099→  );
+  1100→  1100→}
+  1101→  1101→
+  1102→  1102→function ServicesSection() {
+  1103→  1103→  const sectionRef = useScrollReveal();
+  1104→  1104→  return (
+  1105→  1105→    <section id="services" className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
+  1106→  1106→      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  1107→  1107→        <div className="text-center mb-14">
+  1108→  1108→          <span className="section-label">Choose Your Starting Point</span>
+  1109→  1109→          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+  1110→  1110→            Services
+  1111→  1111→          </h2>
+  1112→  1112→          <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
+  1113→  1113→            Every engagement delivers a clear finding, a specific action plan, and a direct conversation, not a data dump.
+  1114→  1114→          </p>
+  1115→  1115→        </div>
+  1116→  1116→
+  1117→  1117→        {/* Part 1: Core Packages */}
+  1118→  1118→        <div className="mb-20">
+  1119→  1119→          <h3 className="text-white text-xl font-bold mb-2">Part 1: Core E-Commerce Packages</h3>
+  1120→  1120→          <p className="text-[#8899AA] text-sm mb-8">Three tiers, one retainer. Designed to meet your store wherever it is today.</p>
+  1121→  1121→
+  1122→  1122→          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+  1123→  1123→            {CORE_PACKAGES.slice(0, 3).map((pkg) => (
+  1124→  1124→              <div
+  1125→  1125→                key={pkg.tier}
+  1126→  1126→                className={`service-card-wrapper ${pkg.tier.toLowerCase()} transition-transform duration-300`}
+  1127→  1127→              >
+  1128→  1128→                {pkg.featured && (
+  1129→  1129→                  <div className="most-chosen-badge-wrapper">
+  1130→  1130→                    <span className="most-chosen-badge">
+  1131→  1131→                      <span>⭐</span> Most Chosen
+  1132→  1132→                    </span>
+  1133→  1133→                  </div>
+  1134→  1134→                )}
+  1135→  1135→                <div className="service-card-inner">
+  1136→  1136→
+  1137→  1137→                <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
+  1138→  1138→                <h4 className="text-white text-lg font-bold mb-1">{pkg.name}</h4>
+  1139→  1139→                <div className="flex items-baseline gap-2 mb-1">
+  1140→  1140→                  <span className="gradient-text-gold text-xl font-bold">{pkg.price}</span>
+  1141→  1141→                </div>
+  1142→  1142→                <div className="text-[#8899AA] text-xs mb-4">{pkg.timeline}</div>
+  1143→  1143→                <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>
+  1144→  1144→
+  1145→  1145→                <ul className="space-y-2 mb-5">
+  1146→  1146→                  {pkg.features.map((f, fi) => (
+  1147→  1147→                    <li key={fi} className="flex items-start gap-2 text-sm text-[#F0F4F8]">
+  1148→  1148→                      <Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> {f}
+  1149→  1149→                    </li>
+  1150→  1150→                  ))}
+  1151→  1151→                </ul>
+  1152→  1152→
+  1153→  1153→                <div className="mb-5">
+  1154→  1154→                  <div className="text-[#00C6FF] text-xs font-semibold mb-1">Best For:</div>
+  1155→  1155→                  <p className="text-[#8899AA] text-sm">{pkg.bestFor}</p>
+  1156→  1156→                </div>
+  1157→  1157→
+  1158→  1158→                <div className="p-4 rounded-lg bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.1)] mb-5">
+  1159→  1159→                  <div className="text-[#00C6FF] text-xs font-semibold mb-2">Our Promise To You:</div>
+  1160→  1160→                  <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
+  1161→  1161→                </div>
+  1162→  1162→
+  1163→  1163→                <a href="#contact" className="service-book-btn">{pkg.cta}</a>
+  1164→  1164→                </div>
+  1165→  1165→              </div>
+  1166→  1166→            ))}
+  1167→  1167→          </div>
+  1168→  1168→          {/* Retainer full width */}
+  1169→  1169→          {(() => {
+  1170→  1170→            const pkg = CORE_PACKAGES[3];
+  1171→  1171→            return (
+  1172→  1172→              <div className="service-card-wrapper retainer">
+  1173→  1173→                <div className="service-card-inner">
+  1174→  1174→                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+  1175→  1175→                  <div>
+  1176→  1176→                    <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
+  1177→  1177→                    <h4 className="text-white text-lg font-bold mb-1">{pkg.name}</h4>
+  1178→  1178→                    <div className="flex items-baseline gap-2 mb-1">
+  1179→  1179→                      <span className="gradient-text-gold text-xl font-bold">{pkg.price}</span>
+  1180→  1180→                    </div>
+  1181→  1181→                    <div className="text-[#8899AA] text-xs mb-4">{pkg.timeline}</div>
+  1182→  1182→                    <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>
+  1183→  1183→                    <ul className="space-y-2 mb-5">
+  1184→  1184→                      {pkg.features.map((f, fi) => (
+  1185→  1185→                        <li key={fi} className="flex items-start gap-2 text-sm text-[#F0F4F8]">
+  1186→  1186→                          <Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> {f}
+  1187→  1187→                        </li>
+  1188→  1188→                      ))}
+  1189→  1189→                    </ul>
+  1190→  1190→                  </div>
+  1191→  1191→                  <div>
+  1192→  1192→                    <div className="mb-5">
+  1193→  1193→                      <div className="text-[#00C6FF] text-xs font-semibold mb-1">Best For:</div>
+  1194→  1194→                      <p className="text-[#8899AA] text-sm">{pkg.bestFor}</p>
+  1195→  1195→                    </div>
+  1196→  1196→                    <div className="p-4 rounded-lg bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.1)] mb-5">
+  1197→  1197→                      <div className="text-[#00C6FF] text-xs font-semibold mb-2">Our Promise To You:</div>
+  1198→  1198→                      <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
+  1199→  1199→                    </div>
+  1200→  1200→                    <a href="#contact" className="service-book-btn">{pkg.cta}</a>
+  1201→  1201→                  </div>
+  1202→  1202→                </div>
+  1203→  1203→                </div>
+  1204→  1204→              </div>
+  1205→  1205→            );
+  1206→  1206→          })()}
+  1207→  1207→        </div>
+  1208→  1208→
+  1209→  1209→        {/* Part 2: Add-On Packages */}
+  1210→  1210→        <div className="mb-20">
+  1211→  1211→          <h3 className="text-white text-xl font-bold mb-2">Part 2: Specialized Add-On Packages</h3>
+  1212→  1212→          <p className="text-[#00C6FF] text-base font-semibold mb-1">Have One Specific Problem?</p>
+  1213→  1213→          <p className="text-[#8899AA] text-sm mb-8">Six focused audits, each one built around a single critical business question. Delivered in 7–14 days.</p>
+  1214→  1214→
+  1215→  1215→          <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  1216→  1216→            {ADD_ON_PACKAGES.map((pkg, i) => (
+  1217→  1217→              <div key={i} className={`addon-card-wrapper ${pkg.cssClass}`}>
+  1218→  1218→                <div className="addon-card-inner">
+  1219→  1219→                <h4 className="text-white font-bold text-base mb-1">{pkg.name}</h4>
+  1220→  1220→                <div className="gradient-text-gold text-sm font-semibold mb-3">{pkg.price}</div>
+  1221→  1221→                <div className="mb-3">
+  1222→  1222→                  <div className="text-[#FF4444] text-xs font-semibold mb-1">Problem:</div>
+  1223→  1223→                  <p className="text-[#8899AA] text-sm">{pkg.problem}</p>
+  1224→  1224→                </div>
+  1225→  1225→                <div>
+  1226→  1226→                  <div className="text-[#00E676] text-xs font-semibold mb-1">Our Promise:</div>
+  1227→  1227→                  <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
+  1228→  1228→                </div>
+  1229→  1229→                <a href="#contact" className="addon-book-btn">
+  1230→  1230→                  Book the {pkg.name} →
+  1231→  1231→                </a>
+  1232→  1232→                </div>
+  1233→  1233→              </div>
+  1234→  1234→            ))}
+  1235→  1235→          </div>
+  1236→  1236→
+  1237→  1237→          <div className="text-center mt-8">
+  1238→  1238→            <button className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2">
+  1239→  1239→              <Download size={14} /> Download Full Add-On Details PDF
+  1240→  1240→            </button>
+  1241→  1241→          </div>
+  1242→  1242→        </div>
+  1243→  1243→
+  1244→  1244→        {/* Part 3: Data Infrastructure */}
+  1245→  1245→        <div>
+  1246→  1246→          <h3 className="text-white text-xl font-bold mb-2">Part 3: Data Setup &amp; Infrastructure</h3>
+  1247→  1247→          <p className="gradient-text text-base font-semibold mb-1">The Technical Foundation.</p>
+  1248→  1248→          <p className="text-[#8899AA] text-sm mb-8">
+  1249→  1249→            Before any analysis, your data must be connected and cleaned. We handle the entire backend engineering (GCP, BigQuery, API pipelines). You never touch a line of code. Pay only for what your stack actually needs.
+  1250→  1250→          </p>
+  1251→  1251→
+  1252→  1252→          {/* Bundle Cards */}
+  1253→  1253→          <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+  1254→  1254→            {DATA_BUNDLES.map((bundle, i) => (
+  1255→  1255→              <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
+  1256→  1256→                <div className="infra-card-inner">
+  1257→  1257→                <h4 className="text-white font-bold text-lg mb-2">{bundle.name}</h4>
+  1258→  1258→                <p className="text-[#8899AA] text-sm mb-3">{bundle.bestFor}</p>
+  1259→  1259→                <div className="flex items-center justify-between">
+  1260→  1260→                  <div>
+  1261→  1261→                    <div className="text-[#8899AA] text-xs">Timeline</div>
+  1262→  1262→                    <div className="text-white text-sm font-medium">{bundle.timeline}</div>
+  1263→  1263→                  </div>
+  1264→  1264→                  <div className="text-right">
+  1265→  1265→                    <div className="text-[#8899AA] text-xs">Investment</div>
+  1266→  1266→                    <div className="gradient-text-gold text-sm font-bold">{bundle.investment}</div>
+  1267→  1267→                  </div>
+  1268→  1268→                </div>
+  1269→  1269→                <a href="#contact" className="infra-book-btn">
+  1270→  1270→                  Book the {bundle.name} →
+  1271→  1271→                </a>
+  1272→  1272→                </div>
+  1273→  1273→              </div>
+  1274→  1274→            ))}
+  1275→  1275→          </div>
+  1276→  1276→
+  1277→  1277→          {/* Comparison Table */}
+  1278→  1278→          <div className="infra-table-wrapper">
+  1279→  1279→            <div className="infra-table-inner">
+  1280→  1280→            <table className="infra-table">
+  1281→  1281→              <thead>
+  1282→  1282→                <tr>
+  1283→  1283→                  <th>
+  1284→  1284→                    <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: '11px', letterSpacing: '3px' }}>
+  1285→  1285→                      CAPABILITIES
+  1286→  1286→                    </span>
+  1287→  1287→                  </th>
+  1288→  1288→                  <th>
+  1289→  1289→                    <div className="col-badge basic">STARTER</div>
+  1290→  1290→                    <div>Basic Setup</div>
+  1291→  1291→                  </th>
+  1292→  1292→                  <th>
+  1293→  1293→                    <div className="col-badge pipeline">PRO</div>
+  1294→  1294→                    <div>Full Pipeline</div>
+  1295→  1295→                  </th>
+  1296→  1296→                  <th>
+  1297→  1297→                    <div className="col-badge auto">ELITE</div>
+  1298→  1298→                    <div>Full + Automation</div>
+  1299→  1299→                  </th>
+  1300→  1300→                </tr>
+  1301→  1301→              </thead>
+  1302→  1302→              <tbody>
+  1303→  1303→                {BUNDLE_FEATURES.map((row, i) => (
+  1304→  1304→                  <tr key={i}>
+  1305→  1305→                    <td>{row.feature}</td>
+  1306→  1306→                    <td>
+  1307→  1307→                      {typeof row.basic === 'boolean' ? (
+  1308→  1308→                        row.basic ? <span className="check-cyan">✓</span> : <span className="cross-dim">✕</span>
+  1309→  1309→                      ) : (
+  1310→  1310→                        <span className="table-text-value cyan">{row.basic}</span>
+  1311→  1311→                      )}
+  1312→  1312→                    </td>
+  1313→  1313→                    <td>
+  1314→  1314→                      {typeof row.full === 'boolean' ? (
+  1315→  1315→                        row.full ? <span className="check-purple">✓</span> : <span className="cross-dim">✕</span>
+  1316→  1316→                      ) : (
+  1317→  1317→                        <span className="table-text-value purple">{row.full}</span>
+  1318→  1318→                      )}
+  1319→  1319→                    </td>
+  1320→  1320→                    <td>
+  1321→  1321→                      {typeof row.auto === 'boolean' ? (
+  1322→  1322→                        row.auto ? <span className="check-gold">✓</span> : <span className="cross-dim">✕</span>
+  1323→  1323→                      ) : (
+  1324→  1324→                        <span className="table-text-value gold">{row.auto}</span>
+  1325→  1325→                      )}
+  1326→  1326→                    </td>
+  1327→  1327→                  </tr>
+  1328→  1328→                ))}
+  1329→  1329→              </tbody>
+  1330→  1330→            </table>
+  1331→  1331→            </div>
+  1332→  1332→          </div>
+  1333→  1333→
+  1334→  1334→          {/* 15 Individual Services */}
+  1335→  1335→          <div className="glass rounded-2xl p-6 sm:p-8 mb-8">
+  1336→  1336→            <h4 className="text-white font-bold text-base mb-4">15 Individual Services Available (Pick Only What You Need)</h4>
+  1337→  1337→            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+  1338→  1338→              <div>
+  1339→  1339→                <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-2">Infra &amp; APIs</div>
+  1340→  1340→                <p className="text-[#8899AA] text-sm">Cloud Setup, Shopify, GA4, Meta Ads, Google Ads, Klaviyo Connections.</p>
+  1341→  1341→              </div>
+  1342→  1342→              <div>
+  1343→  1343→                <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-2">Pipeline &amp; Quality</div>
+  1344→  1344→                <p className="text-[#8899AA] text-sm">Pipeline Build (per platform), Pagination &amp; Rate-Limit Handling, Data Cleaning, Multi-Platform Merge Logic.</p>
+  1345→  1345→              </div>
+  1346→  1346→              <div>
+  1347→  1347→                <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-2">Loading &amp; Auto</div>
+  1348→  1348→                <p className="text-[#8899AA] text-sm">BigQuery Load Script, Automation &amp; Scheduling, Error Alerts, Credential Security, Dashboard Data-Source Connection.</p>
+  1349→  1349→              </div>
+  1350→  1350→            </div>
+  1351→  1351→          </div>
+  1352→  1352→
+  1353→  1353→          <div className="text-center">
+  1354→  1354→            <button className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2">
+  1355→  1355→              <Download size={14} /> Download Data Setup Presentation PDF
+  1356→  1356→            </button>
+  1357→  1357→          </div>
+  1358→  1358→        </div>
+  1359→  1359→      </div>
+  1360→  1360→    </section>
+  1361→  1361→  );
+  1362→  1362→}
+  1363→  1363→
+  1364→  1364→function CaseStudiesSection() {
+  1365→  1365→  const sectionRef = useScrollReveal();
+  1366→  1366→  return (
+  1367→  1367→    <section id="case-studies" className="bg-[#020408] py-20 sm:py-28" ref={sectionRef}>
+  1368→  1368→      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  1369→  1369→        <div className="text-center mb-14">
+  1370→  1370→          <span className="section-label">The Receipts</span>
+  1371→  1371→          <h2 className="section-headline text-[clamp(28px,4vw,48px)] text-white mt-3 mb-4">
+  1372→  1372→            Featured Case Studies
+  1373→  1373→          </h2>
+  1374→  1374→          <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
+  1375→  1375→            High revenue doesn&apos;t mean high profit. Here is what happened when founders stopped looking at vanity metrics and let me read their real data.
+  1376→  1376→          </p>
+  1377→  1377→        </div>
+  1378→  1378→
+  1379→  1379→        <div className="reveal-stagger grid grid-cols-1 lg:grid-cols-2 gap-6">
+  1380→  1380→          {CASE_STUDIES.slice(0, 4).map((cs, i) => (
+  1381→  1381→            <div key={i} className={`case-card-wrapper ${cs.cssClass}`}>
+  1382→  1382→              <div className="case-card-inner">
+  1383→  1383→              <div className="flex items-start justify-between gap-3 mb-3">
+  1384→  1384→                <h3 className="text-white font-bold text-lg">{cs.store}</h3>
+  1385→  1385→                <span className={`case-type-badge ${cs.caseType}`}>{cs.caseType}</span>
+  1386→  1386→              </div>
+  1387→  1387→              <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF] mb-2">
+  1388→  1388→                {cs.niche}
+  1389→  1389→              </div>
+  1390→  1390→              <p className="text-[#F0F4F8] font-semibold text-sm mb-2">{cs.title}</p>
+  1391→  1391→              <p className="case-tagline">{cs.tagline}</p>
+  1392→  1392→
+  1393→  1393→              <div className="space-y-3 mb-5">
+  1394→  1394→                <div>
+  1395→  1395→                  <div className="flex items-center gap-2 text-[#FF4444] text-xs font-semibold mb-1">
+  1396→  1396→                    <AlertTriangle size={12} /> The Nightmare
+  1397→  1397→                  </div>
+  1398→  1398→                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.nightmare}</p>
+  1399→  1399→                </div>
+  1400→  1400→                <div>
+  1401→  1401→                  <div className="flex items-center gap-2 text-[#F5A623] text-xs font-semibold mb-1">
+  1402→  1402→                    <Lightbulb size={12} /> The Revelation
+  1403→  1403→                  </div>
+  1404→  1404→                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.revelation}</p>
+  1405→  1405→                </div>
+  1406→  1406→                <div>
+  1407→  1407→                  <div className="flex items-center gap-2 text-[#00C6FF] text-xs font-semibold mb-1">
+  1408→  1408→                    <Zap size={12} /> The Turnaround
+  1409→  1409→                  </div>
+  1410→  1410→                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.turnaround}</p>
+  1411→  1411→                </div>
+  1412→  1412→                <div className="p-3 rounded-lg bg-[rgba(0,230,118,0.08)] border border-[rgba(0,230,118,0.15)]">
+  1413→  1413→                  <div className="flex items-center gap-2 text-[#00E676] text-xs font-semibold mb-1">
+  1414→  1414→                    <Rocket size={12} /> The Result
+  1415→  1415→                  </div>
+  1416→  1416→                  <p className="text-[#F0F4F8] text-sm font-semibold">{cs.result}</p>
+  1417→  1417→                </div>
+  1418→  1418→              </div>
+  1419→  1419→
+  1420→  1420→              <button className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+  1421→  1421→                <Download size={14} /> Download Full {cs.store} Case Study PDF
+  1422→  1422→              </button>
+  1423→  1423→              </div>
+  1424→  1424→            </div>
+  1425→  1425→          ))}
+  1426→  1426→        </div>
+  1427→  1427→
+  1428→  1428→        <div className="text-center mt-10">
+  1429→  1429→          <a href="#case-studies-2" className="btn-press inline-flex items-center gap-2 text-[#00C6FF] font-semibold hover:gap-3 transition-all">
+  1430→  1430→            See More Case Studies <ChevronDown size={16} />
+  1431→  1431→          </a>
+  1432→  1432→        </div>
+  1433→  1433→
+  1434→  1434→        {/* Section Divider */}
+  1435→  1435→        <div className="section-divider mt-20" />
+  1436→  1436→      </div>
+  1437→  1437→    </section>
+  1438→  1438→  );
+  1439→  1439→}
+  1440→  1440→
+  1441→  1441→function CaseStudies2Section() {
+  1442→  1442→  const sectionRef = useScrollReveal();
+  1443→  1443→  return (
+  1444→  1444→    <section id="case-studies-2" className="bg-[#0A0F18] py-20 sm:py-28" ref={sectionRef}>
+  1445→  1445→      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  1446→  1446→        <div className="case-studies-part2-grid mb-10">
+  1447→  1447→          {CASE_STUDIES.slice(4).map((cs, i) => (
+  1448→  1448→            <div key={i} className={`case-card-wrapper ${cs.cssClass}`}>
+  1449→  1449→              <div className="case-card-inner">
+  1450→  1450→              <div className="flex items-start justify-between gap-3 mb-3">
+  1451→  1451→                <h3 className="text-white font-bold text-lg">{cs.store}</h3>
+  1452→  1452→                <span className={`case-type-badge ${cs.caseType}`}>{cs.caseType}</span>
+  1453→  1453→              </div>
+  1454→  1454→              <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF] mb-2">
+  1455→  1455→                {cs.niche}
+  1456→  1456→              </div>
+  1457→  1457→              <p className="text-[#F0F4F8] font-semibold text-sm mb-2">{cs.title}</p>
+  1458→  1458→              <p className="case-tagline">{cs.tagline}</p>
+  1459→  1459→
+  1460→  1460→              <div className="space-y-3 mb-5">
+  1461→  1461→                <div>
+  1462→  1462→                  <div className="flex items-center gap-2 text-[#FF4444] text-xs font-semibold mb-1">
+  1463→  1463→                    <AlertTriangle size={12} /> The Nightmare
+  1464→  1464→                  </div>
+  1465→  1465→                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.nightmare}</p>
+  1466→  1466→                </div>
+  1467→  1467→                <div>
+  1468→  1468→                  <div className="flex items-center gap-2 text-[#F5A623] text-xs font-semibold mb-1">
+  1469→  1469→                    <Lightbulb size={12} /> The Revelation
+  1470→  1470→                  </div>
+  1471→  1471→                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.revelation}</p>
+  1472→  1472→                </div>
+  1473→  1473→                <div>
+  1474→  1474→                  <div className="flex items-center gap-2 text-[#00C6FF] text-xs font-semibold mb-1">
+  1475→  1475→                    <Zap size={12} /> The Turnaround
+  1476→  1476→                  </div>
+  1477→  1477→                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.turnaround}</p>
+  1478→  1478→                </div>
+  1479→  1479→                <div className="p-3 rounded-lg bg-[rgba(0,230,118,0.08)] border border-[rgba(0,230,118,0.15)]">
+  1480→  1480→                  <div className="flex items-center gap-2 text-[#00E676] text-xs font-semibold mb-1">
+  1481→  1481→                    <Rocket size={12} /> The Result
+  1482→  1482→                  </div>
+  1483→  1483→                  <p className="text-[#F0F4F8] text-sm font-semibold">{cs.result}</p>
+  1484→  1484→                </div>
+  1485→  1485→              </div>
+  1486→  1486→
+  1487→  1487→              <button className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+  1488→  1488→                <Download size={14} /> Download Full {cs.store} Case Study PDF
+  1489→  1489→              </button>
+  1490→  1490→              </div>
+  1491→  1491→            </div>
+  1492→  1492→          ))}
+  1493→  1493→        </div>
+  1494→  1494→
+  1495→  1495→        <div className="text-center">
+  1496→  1496→          <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105"
+  1497→  1497→            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
+  1498→  1498→            <Download size={14} /> Download Full Case Studies PDF
+  1499→  1499→          </button>
+  1500→  1500→        </div>
+  1501→  1501→      </div>
+  1502→  1502→    </section>
+  1503→  1503→  );
+  1504→  1504→}
+  1505→  1505→
+  1506→  1506→function TechPortfolioSection() {
+  1507→  1507→  const sectionRef = useScrollReveal();
+  1508→  1508→  return (
+  1509→  1509→    <section className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
+  1510→  1510→      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  1511→  1511→        <div className="text-center mb-14">
+  1512→  1512→          <span className="section-label">The Engineering Behind The Insights</span>
+  1513→  1513→          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+  1514→  1514→            Technical Portfolio
+  1515→  1515→          </h2>
+  1516→  1516→          <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
+  1517→  1517→            I don&apos;t just read Shopify&apos;s default reports. I build enterprise-grade analytical pipelines to process millions of raw data points.
+  1518→  1518→          </p>
+  1519→  1519→          <p className="text-[#8899AA] text-sm max-w-2xl mx-auto mt-2">
+  1520→  1520→            Most analysts rely on basic plugins. I write the code that connects your platforms, processes millions of rows, and surfaces the truth. Here is a look at the production-grade data infrastructure I build behind the scenes.
+  1521→  1521→          </p>
+  1522→  1522→        </div>
+  1523→  1523→
+  1524→  1524→        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+  1525→  1525→          {GITHUB_PROJECTS.map((proj, i) => (
+  1526→  1526→            <div key={i} className={`portfolio-card portfolio-card-${['behavioral','financial','churn'][i]}`}>
+  1527→  1527→              <h3 className="text-white font-bold text-lg mb-1">{proj.name}</h3>
+  1528→  1528→              <p className="gradient-text text-sm font-semibold mb-3">{proj.subtitle}</p>
+  1529→  1529→              <div className="flex flex-wrap gap-2 mb-4">
+  1530→  1530→                {proj.stack.map((s, si) => (
+  1531→  1531→                  <span key={si} className="tech-tag px-2.5 py-1 rounded-md text-xs font-medium">{s}</span>
+  1532→  1532→                ))}
+  1533→  1533→              </div>
+  1534→  1534→              <div className="mb-4">
+  1535→  1535→                <div className="text-[#00C6FF] text-xs font-semibold mb-1">The Engineering:</div>
+  1536→  1536→                <p className="text-[#8899AA] text-sm leading-relaxed">{proj.engineering}</p>
+  1537→  1537→              </div>
+  1538→  1538→              <div className="mb-5">
+  1539→  1539→                <div className="text-[#00E676] text-xs font-semibold mb-1">The Impact:</div>
+  1540→  1540→                <p className="text-[#F0F4F8] text-sm leading-relaxed">{proj.impact}</p>
+  1541→  1541→              </div>
+  1542→  1542→              <a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+  1543→  1543→                View Code &amp; Methodology on GitHub <ExternalLink size={14} />
+  1544→  1544→              </a>
+  1545→  1545→            </div>
+  1546→  1546→          ))}
+  1547→  1547→        </div>
+  1548→  1548→
+  1549→  1549→        {/* Bottom CTA Bar */}
+  1550→  1550→        <div className="glass rounded-2xl p-6 text-center">
+  1551→  1551→          <p className="text-white text-base mb-3">Want to see the full codebase, SQL queries, and architecture?</p>
+  1552→  1552→          <a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105"
+  1553→  1553→            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
+  1554→  1554→            🔗 Explore My Full GitHub Portfolio <ArrowRight size={16} />
+  1555→  1555→          </a>
+  1556→  1556→        </div>
+  1557→  1557→      </div>
+  1558→  1558→    </section>
+  1559→  1559→  );
+  1560→  1560→}
+  1561→  1561→
+  1562→  1562→function TestimonialsSection() {
+  1563→  1563→  const sectionRef = useScrollReveal();
+  1564→  1564→  const featured = TESTIMONIALS.find((t) => t.featured);
+  1565→  1565→  const grid = TESTIMONIALS.filter((t) => !t.featured);
+  1566→  1566→
+  1567→  1567→  return (
+  1568→  1568→    <section className="bg-[#020408] py-20 sm:py-28" ref={sectionRef}>
+  1569→  1569→      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  1570→  1570→        <div className="text-center mb-14">
+  1571→  1571→          <span className="section-label">Founders, Transformed</span>
+  1572→  1572→          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+  1573→  1573→            Testimonials
+  1574→  1574→          </h2>
+  1575→  1575→          <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
+  1576→  1576→            Don&apos;t take my word for it. Listen to the founders who were running fast in the wrong direction, until the data showed them the truth.
+  1577→  1577→          </p>
+  1578→  1578→        </div>
+  1579→  1579→
+  1580→  1580→        {/* Featured Testimonial */}
+  1581→  1581→        {featured && (
+  1582→  1582→          <div className="featured-quote-box max-w-4xl mx-auto mb-12 text-center">
+  1583→  1583→            <span className="quote-mark">&ldquo;</span>
+  1584→  1584→            <p className="text-[#F0F4F8] text-lg sm:text-xl leading-relaxed italic mb-6">{featured.quote}</p>
+  1585→  1585→            <p className="text-[#8899AA] text-sm mb-2">{featured.author}</p>
+  1586→  1586→            <div className="flex justify-center">
+  1587→  1587→              <div className="profit-badge">
+  1588→  1588→                <span className="profit-before">$84/year</span>
+  1589→  1589→                <span className="profit-arrow">➔</span>
+  1590→  1590→                <span className="profit-after">$48,400/month</span>
+  1591→  1591→              </div>
+  1592→  1592→            </div>
+  1593→  1593→          </div>
+  1594→  1594→        )}
+  1595→  1595→
+  1596→  1596→        {/* Grid */}
+  1597→  1597→        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  1598→  1598→          {grid.map((t, i) => {
+  1599→  1599→            const parts = t.profit.split(' ➔ ');
+  1600→  1600→            return (
+  1601→  1601→              <div key={i} className={`testimonial-card testimonial-card-${i + 1}`}>
+  1602→  1602→                <div className="flex gap-0.5 mb-3">
+  1603→  1603→                  {[...Array(5)].map((_, si) => (
+  1604→  1604→                    <Star key={si} size={14} className="text-[#F5A623] fill-[#F5A623]" />
+  1605→  1605→                  ))}
+  1606→  1606→                </div>
+  1607→  1607→                <p className="text-[#8899AA] text-sm leading-relaxed italic mb-4">{t.quote}</p>
+  1608→  1608→                <p className="text-[#F0F4F8] text-sm font-medium mb-2">{t.author}</p>
+  1609→  1609→                <div className="profit-badge">
+  1610→  1610→                  <span className="profit-before">{parts[0]}</span>
+  1611→  1611→                  <span className="profit-arrow">➔</span>
+  1612→  1612→                  <span className="profit-after">{parts[1]}</span>
+  1613→  1613→                </div>
+  1614→  1614→              </div>
+  1615→  1615→            );
+  1616→  1616→          })}
+  1617→  1617→        </div>
+  1618→  1618→      </div>
+  1619→  1619→    </section>
+  1620→  1620→  );
+  1621→  1621→}
+  1622→  1622→
+  1623→  1623→function ProcessSection() {
+  1624→  1624→  const sectionRef = useScrollReveal();
+  1625→  1625→  return (
+  1626→  1626→    <section id="process" className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
+  1627→  1627→      {/* Background Photo */}
+  1628→  1628→      <div className="absolute inset-0">
+  1629→  1629→        <Image src="/images/photo4.jpg" alt="Background" fill sizes="100vw" className="object-cover opacity-[0.08]" />
+  1630→  1630→      </div>
+  1631→  1631→      <div className="absolute inset-0 bg-[rgba(2,4,8,0.94)]" />
+  1632→  1632→
+  1633→  1633→      <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  1634→  1634→        <div className="text-center mb-14">
+  1635→  1635→          <span className="section-label">The Engagement Flow</span>
+  1636→  1636→          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
+  1637→  1637→            Setup is Not an Add-on. It is the Foundation.
+  1638→  1638→          </h2>
+  1639→  1639→          <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
+  1640→  1640→            Every engagement flows through the same disciplined sequence, from hire to insight. You make the decisions; I handle the engineering, the data cleaning, and the math. Here is exactly how we transform your raw data into profit:
+  1641→  1641→          </p>
+  1642→  1642→        </div>
+  1643→  1643→
+  1644→  1644→        {/* Steps */}
+  1645→  1645→        <div className="max-w-3xl mx-auto space-y-6 mb-12">
+  1646→  1646→          {PROCESS_STEPS.map((step, i) => (
+  1647→  1647→            <div key={i} className="flex gap-6 group">
+  1648→  1648→              {/* Number Circle + Vertical Line */}
+  1649→  1649→              <div className="flex flex-col items-center">
+  1650→  1650→                <div className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(0,198,255,0.4)] group-hover:scale-110"
+  1651→  1651→                  style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
+  1652→  1652→                  <span className="text-[#020408]">{step.num}</span>
+  1653→  1653→                </div>
+  1654→  1654→                {i < PROCESS_STEPS.length - 1 && (
+  1655→  1655→                  <div className="w-[2px] h-full bg-[rgba(0,198,255,0.2)] my-2 transition-all duration-500 group-hover:bg-[rgba(0,198,255,0.5)]" />
+  1656→  1656→                )}
+  1657→  1657→              </div>
+  1658→  1658→              <div className="pb-4">
+  1659→  1659→                <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[#00C6FF] transition-colors">{step.title}</h3>
+  1660→  1660→                <p className="text-[#8899AA] text-sm leading-relaxed">{step.text}</p>
+  1661→  1661→              </div>
+  1662→  1662→            </div>
+  1663→  1663→          ))}
+  1664→  1664→        </div>
+  1665→  1665→
+  1666→  1666→        {/* Bottom Quote Bar */}
+  1667→  1667→        <div className="glass rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto text-center">
+  1668→  1668→          <p className="text-[#F0F4F8] text-base leading-relaxed italic mb-2">
+  1669→  1669→            &quot;The Health Check showed me something that destroyed and rebuilt me at the same time: I wasn&apos;t failing because of bad products. I was failing because I had no idea what was actually happening in my own business.&quot;
+  1670→  1670→          </p>
+  1671→  1671→          <p className="text-[#8899AA] text-sm">Marcus T., NOIRE Collective</p>
+  1672→  1672→        </div>
+  1673→  1673→      </div>
+  1674→  1674→    </section>
+  1675→  1675→  );
+  1676→  1676→}
+  1677→  1677→
+  1678→  1678→function TechStackSection() {
+  1679→  1679→  const sectionRef = useScrollReveal();
+  1680→  1680→  return (
+  1681→  1681→    <section className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
+  1682→  1682→      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  1683→  1683→        <div className="text-center mb-14">
+  1684→  1684→          <span className="section-label">The Infrastructure Behind The Insights</span>
+  1685→  1685→          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
+  1686→  1686→            Enterprise Engineering. Without the $150K Salary.
+  1687→  1687→          </h2>
+  1688→  1688→          <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
+  1689→  1689→            Shopify&apos;s default reports only tell 10% of the story. To find the hidden profit, you need to connect, warehouse, and model your data properly.
+  1690→  1690→          </p>
+  1691→  1691→          <p className="text-[#8899AA] text-sm max-w-3xl mx-auto leading-relaxed mt-2">
+  1692→  1692→            I bring the exact same tech stack used by Fortune 500 companies, and build it custom for your store. You get enterprise-grade data infrastructure without the $150,000/year in-house data engineer salary.
+  1693→  1693→          </p>
+  1694→  1694→        </div>
+  1695→  1695→
+  1696→  1696→        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+  1697→  1697→          {TECH_STACK.map((cat, i) => {
+  1698→  1698→            const IconComp = cat.icon;
+  1699→  1699→            return (
+  1700→  1700→              <div key={i} className={`infra-tech-card infra-card-${['programming','cloud','visualization','platforms'][i]}`}>
+  1701→  1701→                <div className="flex items-center gap-3 mb-2">
+  1702→  1702→                  <IconComp size={22} className="infra-card-icon" />
+  1703→  1703→                  <h3 className="text-white font-bold text-lg">{cat.category}</h3>
+  1704→  1704→                </div>
+  1705→  1705→                <p className="text-[#8899AA] text-sm mb-5">{cat.description}</p>
+  1706→  1706→                <div className="space-y-3">
+  1707→  1707→                  {cat.items.map((item, ii) => (
+  1708→  1708→                    <div key={ii} className="flex items-start gap-3">
+  1709→  1709→                      <div className="w-1.5 h-1.5 rounded-full bg-[#00C6FF] mt-2 shrink-0" />
+  1710→  1710→                      <div>
+  1711→  1711→                        <div className="text-[#F0F4F8] text-sm font-medium">{item.name}</div>
+  1712→  1712→                        <div className="text-[#8899AA] text-xs">{item.desc}</div>
+  1713→  1713→                      </div>
+  1714→  1714→                    </div>
+  1715→  1715→                  ))}
+  1716→  1716→                </div>
+  1717→  1717→              </div>
+  1718→  1718→            );
+  1719→  1719→          })}
+  1720→  1720→        </div>
+  1721→  1721→
+  1722→  1722→        {/* Trust Bar */}
+  1723→  1723→        <div className="glass rounded-2xl p-6 text-center">
+  1724→  1724→          <p className="text-[#8899AA] text-sm leading-relaxed">
+  1725→  1725→            This is the exact stack I used to process <strong className="text-white">2.75M raw e-commerce events</strong>, build a <strong className="text-white">$53.5M financial data warehouse</strong>, and run <strong className="text-white">11-tier RFM segmentation models</strong>. No generic templates. Just pure, custom-built data engineering.
+  1726→  1726→          </p>
+  1727→  1727→        </div>
+  1728→  1728→      </div>
+  1729→  1729→    </section>
+  1730→  1730→  );
+  1731→  1731→}
+  1732→  1732→
+  1733→  1733→function ContactSection() {
+  1734→  1734→  const sectionRef = useScrollReveal();
+  1735→  1735→  const [formState, setFormState] = useState({ name: '', email: '', url: '', message: '', budget: '' });
+  1736→  1736→  const [submitted, setSubmitted] = useState(false);
+  1737→  1737→
+  1738→  1738→  const handleSubmit = useCallback((e: React.FormEvent) => {
+  1739→  1739→    e.preventDefault();
+  1740→  1740→    setSubmitted(true);
+  1741→  1741→    setTimeout(() => setSubmitted(false), 5000);
+  1742→  1742→  }, []);
+  1743→  1743→
+  1744→  1744→  return (
+  1745→  1745→    <section id="contact" className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
+  1746→  1746→      {/* Background Photo */}
+  1747→  1747→      <div className="absolute inset-0">
+  1748→  1748→        <Image src="/images/photo5.jpg" alt="Background" fill sizes="100vw" className="object-cover opacity-[0.10]" />
+  1749→  1749→      </div>
+  1750→  1750→      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(2,4,8,0.96) 0%, rgba(8,13,20,0.94) 100%)' }} />
+  1751→  1751→
+  1752→  1752→      <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  1753→  1753→        <div className="text-center mb-14">
+  1754→  1754→          <span className="section-label">Let&apos;s Find Your Next $10,000.</span>
+  1755→  1755→          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
+  1756→  1756→            Stop Guessing. Start Knowing.
+  1757→  1757→          </h2>
+  1758→  1758→          <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
+  1759→  1759→            Every struggling store already has the data. What it doesn&apos;t have is someone willing to read it honestly, explain it clearly, and act on it decisively.
+  1760→  1760→          </p>
+  1761→  1761→          <p className="text-[#8899AA] text-sm max-w-3xl mx-auto mt-2">
+  1762→  1762→            If your revenue is growing but something doesn&apos;t add up, you&apos;re probably right. The data knows. Let&apos;s read it together.
+  1763→  1763→          </p>
+  1764→  1764→        </div>
+  1765→  1765→
+  1766→  1766→        {/* Primary CTA */}
+  1767→  1767→        <div className="glass rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto mb-12 text-center"
+  1768→  1768→          style={{ boxShadow: '0 0 40px rgba(0,198,255,0.1)' }}>
+  1769→  1769→          <h3 className="text-white text-xl font-bold mb-2">Ready to find out exactly where your profit is hiding?</h3>
+  1770→  1770→          <p className="text-[#8899AA] text-sm mb-5">
+  1771→  1771→            Book a complimentary 20-minute Discovery Call. We&apos;ll understand your business, identify your most urgent data problem, and recommend the right starting point. No pressure, no jargon.
+  1772→  1772→          </p>
+  1773→  1773→          <a href="#" className="btn-press inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+  1774→  1774→            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
+  1775→  1775→            Book My Discovery Call <ArrowRight size={18} />
+  1776→  1776→          </a>
+  1777→  1777→        </div>
+  1778→  1778→
+  1779→  1779→        {/* Two columns: Form + Info */}
+  1780→  1780→        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+  1781→  1781→          {/* Contact Form */}
+  1782→  1782→          <div className="glass rounded-2xl p-6 sm:p-8">
+  1783→  1783→            <h3 className="text-white font-bold text-lg mb-5">Send a Message</h3>
+  1784→  1784→            {submitted ? (
+  1785→  1785→              <div className="text-center py-10">
+  1786→  1786→                <Check size={48} className="text-[#00E676] mx-auto mb-4" />
+  1787→  1787→                <p className="text-white text-lg font-semibold">Message Sent!</p>
+  1788→  1788→                <p className="text-[#8899AA] text-sm mt-2">I&apos;ll get back to you within 48 hours.</p>
+  1789→  1789→              </div>
+  1790→  1790→            ) : (
+  1791→  1791→              <form onSubmit={handleSubmit} className="space-y-4">
+  1792→  1792→                <div>
+  1793→  1793→                  <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Name</label>
+  1794→  1794→                  <input
+  1795→  1795→                    type="text" required
+  1796→  1796→                    value={formState.name}
+  1797→  1797→                    onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+  1798→  1798→                    className="w-full bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.12)] rounded-lg px-4 py-3 text-sm text-white placeholder-[#445566] focus:outline-none focus:border-[#00C6FF] transition-colors"
+  1799→  1799→                    placeholder="Your name"
+  1800→  1800→                  />
+  1801→  1801→                </div>
+  1802→  1802→                <div>
+  1803→  1803→                  <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Email</label>
+  1804→  1804→                  <input
+  1805→  1805→                    type="email" required
+  1806→  1806→                    value={formState.email}
+  1807→  1807→                    onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+  1808→  1808→                    className="w-full bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.12)] rounded-lg px-4 py-3 text-sm text-white placeholder-[#445566] focus:outline-none focus:border-[#00C6FF] transition-colors"
+  1809→  1809→                    placeholder="your@email.com"
+  1810→  1810→                  />
+  1811→  1811→                </div>
+  1812→  1812→                <div>
+  1813→  1813→                  <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Store URL</label>
+  1814→  1814→                  <input
+  1815→  1815→                    type="url"
+  1816→  1816→                    value={formState.url}
+  1817→  1817→                    onChange={(e) => setFormState({ ...formState, url: e.target.value })}
+  1818→  1818→                    className="w-full bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.12)] rounded-lg px-4 py-3 text-sm text-white placeholder-[#445566] focus:outline-none focus:border-[#00C6FF] transition-colors"
+  1819→  1819→                    placeholder="https://yourstore.com"
+  1820→  1820→                  />
+  1821→  1821→                </div>
+  1822→  1822→                <div>
+  1823→  1823→                  <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Budget Range</label>
+  1824→  1824→                  <select
+  1825→  1825→                    value={formState.budget}
+  1826→  1826→                    onChange={(e) => setFormState({ ...formState, budget: e.target.value })}
+  1827→  1827→                    className="w-full bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.12)] rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#00C6FF] transition-colors"
+  1828→  1828→                  >
+  1829→  1829→                    <option value="" className="bg-[#0D1520]">Select budget range</option>
+  1830→  1830→                    <option value="150-500" className="bg-[#0D1520]">$150 – $500</option>
+  1831→  1831→                    <option value="500-1000" className="bg-[#0D1520]">$500 – $1,000</option>
+  1832→  1832→                    <option value="1000-2500" className="bg-[#0D1520]">$1,000 – $2,500</option>
+  1833→  1833→                    <option value="2500+" className="bg-[#0D1520]">$2,500+</option>
+  1834→  1834→                  </select>
+  1835→  1835→                </div>
+  1836→  1836→                <div>
+  1837→  1837→                  <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Message</label>
+  1838→  1838→                  <textarea
+  1839→  1839→                    required rows={4}
+  1840→  1840→                    value={formState.message}
+  1841→  1841→                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+  1842→  1842→                    className="w-full bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.12)] rounded-lg px-4 py-3 text-sm text-white placeholder-[#445566] focus:outline-none focus:border-[#00C6FF] transition-colors resize-none"
+  1843→  1843→                    placeholder="Tell me about your store and what you're struggling with..."
+  1844→  1844→                  />
+  1845→  1845→                </div>
+  1846→  1846→                <button
+  1847→  1847→                  type="submit"
+  1848→  1848→                  className="btn-press w-full px-6 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+  1849→  1849→                  style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}
+  1850→  1850→                >
+  1851→  1851→                  Send Message
+  1852→  1852→                </button>
+  1853→  1853→              </form>
+  1854→  1854→            )}
+  1855→  1855→          </div>
+  1856→  1856→
+  1857→  1857→          {/* Contact Info */}
+  1858→  1858→          <div className="flex flex-col gap-6">
+  1859→  1859→            <div className="glass rounded-2xl p-6 sm:p-8">
+  1860→  1860→              <h3 className="text-white font-bold text-lg mb-5">Prefer to reach out directly? Let&apos;s talk.</h3>
+  1861→  1861→              <div className="space-y-4">
+  1862→  1862→                <a href="mailto:mojahidulislam101010@gmail.com" className="flex items-center gap-4 group">
+  1863→  1863→                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[rgba(0,198,255,0.1)] group-hover:bg-[rgba(0,198,255,0.2)] transition-colors">
+  1864→  1864→                    <Mail size={18} className="text-[#00C6FF]" />
+  1865→  1865→                  </div>
+  1866→  1866→                  <div>
+  1867→  1867→                    <div className="text-[#8899AA] text-xs">Email</div>
+  1868→  1868→                    <div className="text-white text-sm font-medium">mojahidulislam101010@gmail.com</div>
+  1869→  1869→                  </div>
+  1870→  1870→                </a>
+  1871→  1871→                <a href="https://linkedin.com/in/mozahidul-islam-analyst" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+  1872→  1872→                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[rgba(0,198,255,0.1)] group-hover:bg-[rgba(0,198,255,0.2)] transition-colors">
+  1873→  1873→                    <Linkedin size={18} className="text-[#00C6FF]" />
+  1874→  1874→                  </div>
+  1875→  1875→                  <div>
+  1876→  1876→                    <div className="text-[#8899AA] text-xs">LinkedIn</div>
+  1877→  1877→                    <div className="text-white text-sm font-medium">mozahidul-islam-analyst</div>
+  1878→  1878→                  </div>
+  1879→  1879→                </a>
+  1880→  1880→                <a href="https://wa.me/8801940131074" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+  1881→  1881→                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[rgba(0,198,255,0.1)] group-hover:bg-[rgba(0,198,255,0.2)] transition-colors">
+  1882→  1882→                    <Phone size={18} className="text-[#00C6FF]" />
+  1883→  1883→                  </div>
+  1884→  1884→                  <div>
+  1885→  1885→                    <div className="text-[#8899AA] text-xs">WhatsApp</div>
+  1886→  1886→                    <div className="text-white text-sm font-medium">+880 1940131074</div>
+  1887→  1887→                  </div>
+  1888→  1888→                </a>
+  1889→  1889→                <a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+  1890→  1890→                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[rgba(0,198,255,0.1)] group-hover:bg-[rgba(0,198,255,0.2)] transition-colors">
+  1891→  1891→                    <Github size={18} className="text-[#00C6FF]" />
+  1892→  1892→                  </div>
+  1893→  1893→                  <div>
+  1894→  1894→                    <div className="text-[#8899AA] text-xs">GitHub</div>
+  1895→  1895→                    <div className="text-white text-sm font-medium">mojahid1252</div>
+  1896→  1896→                  </div>
+  1897→  1897→                </a>
+  1898→  1898→              </div>
+  1899→  1899→            </div>
+  1900→  1900→
+  1901→  1901→            <a href="#" className="btn-press glass rounded-2xl p-6 flex items-center justify-center gap-3 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,198,255,0.3)] group"
+  1902→  1902→              style={{ background: 'linear-gradient(135deg, rgba(0,198,255,0.1), rgba(0,114,255,0.1))' }}>
+  1903→  1903→              <Clock size={20} className="text-[#00C6FF]" />
+  1904→  1904→              <div>
+  1905→  1905→                <div className="text-white font-bold text-base">Book Discovery Call</div>
+  1906→  1906→                <div className="text-[#8899AA] text-xs">Free 20-minute consultation</div>
+  1907→  1907→              </div>
+  1908→  1908→              <ArrowRight size={18} className="text-[#00C6FF] ml-auto group-hover:translate-x-2 transition-transform" />
+  1909→  1909→            </a>
+  1910→  1910→          </div>
+  1911→  1911→        </div>
+  1912→  1912→      </div>
+  1913→  1913→    </section>
+  1914→  1914→  );
+  1915→  1915→}
+  1916→  1916→
+  1917→  1917→function Footer() {
+  1918→  1918→  return (
+  1919→  1919→    <footer className="bg-[#020408] border-t border-[rgba(0,198,255,0.08)] pt-16 pb-20 sm:pb-16">
+  1920→  1920→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  1921→  1921→        {/* Top section with brand statement */}
+  1922→  1922→        <div className="text-center mb-12">
+  1923→  1923→          <h3 className="section-headline text-[clamp(20px,2.5vw,32px)] text-white mb-3">Stop Guessing. Start Knowing.</h3>
+  1924→  1924→          <p className="text-[#8899AA] text-base max-w-xl mx-auto mb-6">Your data already has the answers. Let me find them for you.</p>
+  1925→  1925→          <a href="#contact" className="btn-press inline-flex items-center gap-2 px-8 py-3 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+  1926→  1926→            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
+  1927→  1927→            Book Your Free Discovery Call <ArrowRight size={16} />
+  1928→  1928→          </a>
+  1929→  1929→        </div>
+  1930→  1930→
+  1931→  1931→        <div className="section-divider mb-12" />
+  1932→  1932→
+  1933→  1933→        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+  1934→  1934→          {/* Column 1: Brand */}
+  1935→  1935→          <div>
+  1936→  1936→            <div className="flex items-center gap-3 mb-4">
+  1937→  1937→              <Image src="/images/logo.png" alt="Logo" width={44} height={44} className="rounded-lg" />
+  1938→  1938→              <div>
+  1939→  1939→                <div className="text-white font-bold text-sm">Mozahidul Islam</div>
+  1940→  1940→                <div className="text-[#00C6FF] text-[11px] font-medium">E-Commerce Growth Analyst</div>
+  1941→  1941→              </div>
+  1942→  1942→            </div>
+  1943→  1943→            <p className="text-[#8899AA] text-sm leading-relaxed">
+  1944→  1944→              We transform raw data into clear, profitable decisions. We don&apos;t just deliver numbers, we deliver answers, direction, and results.
+  1945→  1945→            </p>
+  1946→  1946→          </div>
+  1947→  1947→
+  1948→  1948→          {/* Column 2: Quick Links */}
+  1949→  1949→          <div>
+  1950→  1950→            <h4 className="text-white font-bold text-sm mb-4">Quick Links</h4>
+  1951→  1951→            <ul className="space-y-2.5">
+  1952→  1952→              {[{label:'Home',href:'#hero'},{label:'About',href:'#about'},{label:'Case Studies',href:'#case-studies'},{label:'Process',href:'#process'},{label:'Contact',href:'#contact'}].map((link) => (
+  1953→  1953→                <li key={link.label}>
+  1954→  1954→                  <a href={link.href} className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5 group">
+  1955→  1955→                    <span className="w-0 group-hover:w-2 h-[1px] bg-[#00C6FF] transition-all duration-200" /> {link.label}
+  1956→  1956→                  </a>
+  1957→  1957→                </li>
+  1958→  1958→              ))}
+  1959→  1959→            </ul>
+  1960→  1960→          </div>
+  1961→  1961→
+  1962→  1962→          {/* Column 3: Services */}
+  1963→  1963→          <div>
+  1964→  1964→            <h4 className="text-white font-bold text-sm mb-4">Services</h4>
+  1965→  1965→            <ul className="space-y-2.5">
+  1966→  1966→              {['E-Commerce Health Check', 'Revenue Growth Accelerator', 'Data-Driven Growth System', 'Analytics Partner Retainer', 'Specialized Add-On Audits', 'Data Setup & Infrastructure'].map((s) => (
+  1967→  1967→                <li key={s}>
+  1968→  1968→                  <a href="#services" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors">{s}</a>
+  1969→  1969→                </li>
+  1970→  1970→              ))}
+  1971→  1971→            </ul>
+  1972→  1972→          </div>
+  1973→  1973→
+  1974→  1974→          {/* Column 4: Resources & Connect */}
+  1975→  1975→          <div>
+  1976→  1976→            <h4 className="text-white font-bold text-sm mb-4">Resources & Connect</h4>
+  1977→  1977→            <ul className="space-y-2.5">
+  1978→  1978→              <li><button className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><FileText size={12}/> Full Services PDF</button></li>
+  1979→  1979→              <li><button className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Database size={12}/> Data Setup PDF</button></li>
+  1980→  1980→              <li><a href="https://linkedin.com/in/mozahidul-islam-analyst" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Linkedin size={12}/> LinkedIn</a></li>
+  1981→  1981→              <li><a href="https://wa.me/8801940131074" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Phone size={12}/> WhatsApp</a></li>
+  1982→  1982→              <li><a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Github size={12}/> GitHub</a></li>
+  1983→  1983→              <li><a href="mailto:mojahidulislam101010@gmail.com" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Mail size={12}/> Email</a></li>
+  1984→  1984→            </ul>
+  1985→  1985→          </div>
+  1986→  1986→        </div>
+  1987→  1987→
+  1988→  1988→        {/* Bottom Bar */}
+  1989→  1989→        <div className="border-t border-[rgba(0,198,255,0.08)] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+  1990→  1990→          <p className="text-[#445566] text-sm">© 2025 Mozahidul Islam · E-Commerce Analytics. All rights reserved.</p>
+  1991→  1991→          <p className="text-[#445566] text-xs">Built with data. Designed for profit.</p>
+  1992→  1992→        </div>
+  1993→  1993→      </div>
+  1994→  1994→    </footer>
+  1995→  1995→  );
+  1996→  1996→}
+  1997→  1997→
+  1998→  1998→function MobileStickyBar() {
+  1999→  1999→  return (
+  2000→  2000→    <div className="fixed bottom-0 left-0 right-0 z-[9999] lg:hidden"
+
+[showing lines 1-2000 of 2002; use offset=2001 with limit to continue reading]

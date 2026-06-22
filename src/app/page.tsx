@@ -782,7 +782,7 @@ function QuickProofSection() {
           {QUICK_PROOF_CARDS.map((card, i) => (
             <div
               key={i}
-              className="bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] group"
+              className={`quick-proof-card-${i + 1} bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] group`}
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-white font-bold text-lg">{card.store}</h3>
@@ -1048,11 +1048,10 @@ function WhyWorkWithMeSection() {
           {WHY_ME_REASONS.map((reason) => (
             <div
               key={reason.num}
-              className="glass rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)] hover:border-[rgba(0,198,255,0.3)]"
+              className={`agency-reason-card agency-card-${reason.num}`}
             >
               <div className="flex items-start gap-4">
-                <div className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold"
-                  style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
+                <div className="reason-number shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold">
                   <span className="text-[#020408]">{reason.num}</span>
                 </div>
                 <div>
@@ -1119,20 +1118,20 @@ function ServicesSection() {
           <h3 className="text-white text-xl font-bold mb-2">Part 1: Core E-Commerce Packages</h3>
           <p className="text-[#8899AA] text-sm mb-8">Three tiers, one retainer. Designed to meet your store wherever it is today.</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div className="packages-grid mb-6">
             {CORE_PACKAGES.slice(0, 3).map((pkg) => (
               <div
                 key={pkg.tier}
-                className={`service-card-wrapper ${pkg.tier.toLowerCase()} transition-transform duration-300`}
+                className={`package-outer-wrapper service-card-wrapper ${pkg.tier.toLowerCase()}`}
               >
-                {pkg.featured && (
-                  <div className="most-chosen-badge-wrapper">
-                    <span className="most-chosen-badge">
-                      <span>⭐</span> Most Chosen
-                    </span>
-                  </div>
-                )}
-                <div className="service-card-inner">
+                <div className="package-inner-card service-card-inner">
+                  {pkg.featured && (
+                    <div className="most-chosen-badge-container">
+                      <span className="most-chosen-badge">
+                        <span className="badge-star">⭐</span> Most Chosen
+                      </span>
+                    </div>
+                  )}
 
                 <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
                 <h4 className="text-white text-lg font-bold mb-1">{pkg.name}</h4>
@@ -1160,7 +1159,7 @@ function ServicesSection() {
                   <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
                 </div>
 
-                <a href="#contact" className="service-book-btn">{pkg.cta}</a>
+                <a href="#contact" className="service-book-btn package-book-btn">{pkg.cta}</a>
                 </div>
               </div>
             ))}
@@ -1521,9 +1520,9 @@ function TechPortfolioSection() {
           </p>
         </div>
 
-        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="portfolio-cards-grid mb-8">
           {GITHUB_PROJECTS.map((proj, i) => (
-            <div key={i} className={`portfolio-card portfolio-card-${['behavioral','financial','churn'][i]}`}>
+            <div key={i} className={`portfolio-project-card portfolio-card-${['behavioral','financial','churn'][i]}`}>
               <h3 className="text-white font-bold text-lg mb-1">{proj.name}</h3>
               <p className="gradient-text text-sm font-semibold mb-3">{proj.subtitle}</p>
               <div className="flex flex-wrap gap-2 mb-4">
@@ -1532,11 +1531,11 @@ function TechPortfolioSection() {
                 ))}
               </div>
               <div className="mb-4">
-                <div className="text-[#00C6FF] text-xs font-semibold mb-1">The Engineering:</div>
+                <div className="card-label-engineering text-xs font-semibold mb-1">The Engineering:</div>
                 <p className="text-[#8899AA] text-sm leading-relaxed">{proj.engineering}</p>
               </div>
               <div className="mb-5">
-                <div className="text-[#00E676] text-xs font-semibold mb-1">The Impact:</div>
+                <div className="card-label-impact text-xs font-semibold mb-1">The Impact:</div>
                 <p className="text-[#F0F4F8] text-sm leading-relaxed">{proj.impact}</p>
               </div>
               <a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
@@ -1693,20 +1692,20 @@ function TechStackSection() {
           </p>
         </div>
 
-        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div className="infra-tech-grid mb-10">
           {TECH_STACK.map((cat, i) => {
             const IconComp = cat.icon;
             return (
               <div key={i} className={`infra-tech-card infra-card-${['programming','cloud','visualization','platforms'][i]}`}>
                 <div className="flex items-center gap-3 mb-2">
                   <IconComp size={22} className="infra-card-icon" />
-                  <h3 className="text-white font-bold text-lg">{cat.category}</h3>
+                  <h3 className="infra-card-title font-bold text-lg">{cat.category}</h3>
                 </div>
                 <p className="text-[#8899AA] text-sm mb-5">{cat.description}</p>
                 <div className="space-y-3">
                   {cat.items.map((item, ii) => (
                     <div key={ii} className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#00C6FF] mt-2 shrink-0" />
+                      <div className="infra-bullet-dot w-1.5 h-1.5 rounded-full mt-2 shrink-0" />
                       <div>
                         <div className="text-[#F0F4F8] text-sm font-medium">{item.name}</div>
                         <div className="text-[#8899AA] text-xs">{item.desc}</div>

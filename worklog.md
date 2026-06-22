@@ -116,3 +116,23 @@ Stage Summary:
 - No text content changes made, only styling/structural changes
 - Rotating/corki border animations removed from case study cards and replaced with breathing glow system
 - All new animations use non-rotating approaches (breathing glow, shimmer sweep, pulse effects)
+
+---
+Task ID: 1-5
+Agent: Main Agent
+Task: Implement 5 specific CSS and HTML fixes for portfolio website
+
+Work Log:
+- PROBLEM 1 — Technical Portfolio: Replaced `.portfolio-card` CSS class system with `.portfolio-project-card` (new base class with height:100%, flex column, updated transitions, ::before/::after lighting effects, breathing animations portBreatheCyan/Gold/Purple). Updated HTML grid to `portfolio-cards-grid`, card class to `portfolio-project-card`, engineering label to `card-label-engineering`, impact label to `card-label-impact`. Removed old portGlow1/2/3 keyframes.
+- PROBLEM 2 — Infrastructure 4 Boxes: Replaced `.infra-tech-card` CSS with new system featuring `infra-tech-grid` (2x2 grid with grid-template-rows:1fr 1fr), updated base class with min-height:320px, flex column, ::before/::after with repositioned glow, new breathing animations infraBreatheCyan/Purple/Gold/Green with stronger glow values. Added `.infra-card-title` and `.infra-bullet-dot` per-box color classes. Updated HTML grid class, added infra-card-title to h3, changed bullet dots to infra-bullet-dot class.
+- PROBLEM 3 — Most Chosen Badge: Moved badge INSIDE the `package-inner-card service-card-inner` div as first child. Replaced `most-chosen-badge-wrapper` (absolute positioned outside card) with `most-chosen-badge-container` (flex layout inside card). Added `packages-grid` for 3-column equal height, `package-outer-wrapper` for flex column, `package-inner-card` for flex:1, `package-book-btn` for margin-top:auto. Updated badge with `badge-star` class. Removed `transform: translateY(-8px)`, `padding-top: 20px`, `margin-top: 20px` from `.service-card-wrapper.growth`. Updated HTML with new class names and badge placement.
+- PROBLEM 4 — Agency Section: Added `.agency-reason-card` base class with lighting effects (::before shimmer sweep, ::after radial glow, hover transforms). Added 4 color-themed boxes: `.agency-card-01` (cyan), `.agency-card-02` (purple), `.agency-card-03` (gold), `.agency-card-04` (green), each with breathing animations (agencyGlow01-04) and `.reason-number` per-box styling. Updated HTML from `glass` class + inline style number badge to `agency-reason-card agency-card-${reason.num}` with `reason-number` class on the number element.
+- PROBLEM 5 — Quick Proof Cards: Added `.quick-proof-card-1` (cyan), `.quick-proof-card-2` (purple), `.quick-proof-card-3` (pink) CSS with 2-3x stronger lighting (!important overrides), unique border colors, gradient backgrounds, and enhanced hover states. Added `quick-proof-card-${i + 1}` class to HTML card divs. NO new animations added.
+
+Stage Summary:
+- All 5 CSS/HTML fixes implemented successfully
+- ESLint passes with no errors
+- Dev server compiles and serves pages correctly (200 status)
+- No text content changes made, only styling/structural changes
+- Kept existing `.principle-card-01` through `.principle-card-04` styles in CSS (used by WhyMeSection), while the Agency/Don't Hire section uses new `.agency-card-01` through `.agency-card-04`
+- Quick proof cards use !important overrides to ensure new lighting takes effect alongside existing Tailwind classes
