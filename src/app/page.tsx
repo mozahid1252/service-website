@@ -535,11 +535,33 @@ function Counter({ target, prefix = '', suffix = '' }: { target: number; prefix?
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+
+    // Active section tracking
+    const sectionIds = NAV_LINKS.map(l => l.href.replace('#', ''));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection('#' + entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-20% 0px -60% 0px' }
+    );
+    sectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
@@ -553,8 +575,8 @@ function Navbar() {
         style={{ borderBottom: scrolled ? '1px solid rgba(0,198,255,0.08)' : 'none' }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
-          <a href="#hero" className="flex items-center gap-3">
-            <Image src="/images/logo.png" alt="Logo" width={44} height={44} className="rounded-lg" />
+          <a href="#hero" className="flex items-center gap-3 group">
+            <Image src="/images/logo.png" alt="Logo" width={44} height={44} className="rounded-lg transition-transform duration-300 group-hover:scale-105" />
             <div className="hidden sm:block">
               <div className="text-sm font-bold text-white leading-tight">Mozahidul Islam</div>
               <div className="text-[11px] text-[#8899AA] leading-tight">E-Commerce Growth Analyst</div>
@@ -566,14 +588,19 @@ function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[#8899AA] hover:text-[#00C6FF] text-sm font-medium tracking-wide transition-colors duration-200"
+                className={`text-sm font-medium tracking-wide transition-colors duration-200 ${
+                  activeSection === link.href
+                    ? 'nav-link-active'
+                    : 'text-[#8899AA] hover:text-[#00C6FF]'
+                }`
+                }
               >
                 {link.label}
               </a>
             ))}
             <a
               href="#contact"
-              className="px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105"
+              className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
               style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
             >
               Book a Discovery Call
@@ -582,7 +609,7 @@ function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-white p-2"
+            className="lg:hidden text-white p-2 hover:text-[#00C6FF] transition-colors"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -591,28 +618,35 @@ function Navbar() {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-[rgba(2,4,8,0.97)] backdrop-blur-xl flex flex-col items-center justify-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="text-white text-2xl font-medium hover:text-[#00C6FF] transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+      <div
+        className={`fixed inset-0 z-40 bg-[rgba(2,4,8,0.97)] backdrop-blur-xl flex flex-col items-center justify-center gap-8 transition-all duration-400 ${
+          mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        {NAV_LINKS.map((link, i) => (
           <a
-            href="#contact"
+            key={link.href}
+            href={link.href}
             onClick={() => setMobileOpen(false)}
-            className="mt-4 px-8 py-3 rounded-md text-base font-semibold text-[#020408]"
-            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}
+            className={`text-2xl font-medium transition-all duration-300 ${
+              mobileOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+            } ${
+              activeSection === link.href ? 'text-[#00C6FF]' : 'text-white hover:text-[#00C6FF]'
+            }`}
+            style={{ transitionDelay: mobileOpen ? `${i * 60}ms` : '0ms' }}
           >
-            Book a Discovery Call
+            {link.label}
           </a>
-        </div>
-      )}
+        ))}
+        <a
+          href="#contact"
+          onClick={() => setMobileOpen(false)}
+          className="btn-press mt-4 px-8 py-3 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105"
+          style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}
+        >
+          Book a Discovery Call
+        </a>
+      </div>
     </>
   );
 }
@@ -645,6 +679,7 @@ function HeroSection() {
           src="/images/photo2.jpg"
           alt="Hero background"
           fill
+          sizes="100vw"
           className="object-cover opacity-[0.10]"
           style={{ filter: 'blur(1px)' }}
           priority
@@ -656,6 +691,24 @@ function HeroSection() {
       <div className="absolute inset-0 grid-bg" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+        {/* Floating Particles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          {[...Array(12)].map((_, i) => (
+            <div
+              key={i}
+              className="hero-particle"
+              style={{
+                left: `${8 + (i * 7.5) % 85}%`,
+                top: `${15 + (i * 11) % 70}%`,
+                animationDelay: `${i * 0.7}s`,
+                animationDuration: `${6 + (i % 4) * 2}s`,
+                width: `${3 + (i % 3) * 2}px`,
+                height: `${3 + (i % 3) * 2}px`,
+              }}
+            />
+          ))}
+        </div>
+
         {/* Pre-Headline */}
         <div className="flex items-center justify-center gap-3 mb-6">
           <div className="w-12 h-[2px] bg-[#00C6FF]" />
@@ -677,23 +730,23 @@ function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
           <a
             href="#contact"
-            className="px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+            className="btn-press px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
             style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
           >
             Find My Profit Leaks, Free 20-Min Call
           </a>
           <a
             href="#case-studies"
-            className="px-8 py-3.5 rounded-md text-base font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:border-[#00C6FF]"
+            className="btn-press px-8 py-3.5 rounded-md text-base font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:border-[#00C6FF] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)]"
           >
             See Client Results
           </a>
         </div>
 
         {/* Trust Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        <div className="reveal-stagger grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
           {TRUST_STATS.map((stat, i) => (
-            <div key={i} className="glass rounded-xl p-4 text-center">
+            <div key={i} className="glass rounded-xl p-4 text-center transition-all duration-300 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_0_20px_rgba(0,198,255,0.1)]">
               <div className="gradient-text text-xl sm:text-2xl font-bold">{stat.value}</div>
               <div className="text-[#8899AA] text-xs mt-1">{stat.label}</div>
             </div>
@@ -725,11 +778,11 @@ function QuickProofSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {QUICK_PROOF_CARDS.map((card, i) => (
             <div
               key={i}
-              className="bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+              className="bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] group"
             >
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-white font-bold text-lg">{card.store}</h3>
@@ -825,6 +878,7 @@ function AboutSection() {
                 src="/images/photo1.jpg"
                 alt="Mozahidul Islam - E-Commerce Growth Analyst"
                 fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover"
                 priority
               />
@@ -839,7 +893,7 @@ function AboutSection() {
               <div className="text-[#8899AA] text-xs">Experience</div>
             </div>
             <div className="absolute -right-4 bottom-8 glass rounded-xl px-4 py-3" style={{ animation: 'float 6s ease-in-out infinite 4s' }}>
-              <div className="text-[#00E676] text-lg font-bold">Available 🟢</div>
+              <div className="text-[#00E676] text-lg font-bold">Available <span className="inline-block w-2 h-2 rounded-full bg-[#00E676] animate-pulse" /></div>
               <div className="text-[#8899AA] text-xs">For Projects</div>
             </div>
           </div>
@@ -859,7 +913,9 @@ function AboutSection() {
             </p>
 
             <div className="mt-5 mb-6">
-              <div className="text-[#00C6FF] text-sm font-semibold tracking-widest uppercase mb-3">What I Do</div>
+              <div className="text-[#00C6FF] text-sm font-semibold tracking-widest uppercase mb-3 flex items-center gap-2">
+                <span className="w-8 h-[2px] bg-[#00C6FF]" /> What I Do
+              </div>
               <p className="text-[#8899AA] text-base leading-relaxed mb-3">
                 Most analysts only look at the surface, pulling basic Shopify reports and guessing at trends. <strong>I go deeper.</strong>
               </p>
@@ -910,11 +966,11 @@ function AboutSection() {
 
             {/* CTA */}
             <div className="flex flex-wrap gap-4">
-              <button className="px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
+              <button className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
                 style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
                 <Download size={16} /> Download CV
               </button>
-              <a href="#case-studies" className="px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] inline-flex items-center gap-2">
+              <a href="#case-studies" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2">
                 <BarChart3 size={16} /> See My Projects
               </a>
             </div>
@@ -937,7 +993,7 @@ function WhyMeSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
             { num: '01', title: 'I speak business, not jargon.', text: 'Every report is written so that a business owner, not a data scientist, can read it, understand it, and act on it immediately. If you need a glossary to read my work, I have failed.', cssClass: 'principle-card-01' },
             { num: '02', title: 'I deliver decisions, not data dumps.', text: 'You will never receive a spreadsheet full of numbers with no context. Every single finding comes with a specific, prioritized recommendation and a clear reason why it matters to your bottom line.', cssClass: 'principle-card-02' },
@@ -965,7 +1021,7 @@ function WhyWorkWithMeSection() {
     <section className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
       {/* Background Photo */}
       <div className="absolute inset-0">
-        <Image src="/images/photo3.jpg" alt="Background" fill className="object-cover opacity-[0.10]" />
+        <Image src="/images/photo3.jpg" alt="Background" fill sizes="100vw" className="object-cover opacity-[0.10]" />
       </div>
       <div className="absolute inset-0 bg-[rgba(2,4,8,0.92)]" />
 
@@ -988,7 +1044,7 @@ function WhyWorkWithMeSection() {
         </div>
 
         {/* 4 Reasons */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {WHY_ME_REASONS.map((reason) => (
             <div
               key={reason.num}
@@ -1067,7 +1123,7 @@ function ServicesSection() {
             {CORE_PACKAGES.slice(0, 3).map((pkg) => (
               <div
                 key={pkg.tier}
-                className={`service-card-wrapper ${pkg.tier.toLowerCase()}`}
+                className={`service-card-wrapper ${pkg.tier.toLowerCase()} transition-transform duration-300`}
               >
                 <div className="service-card-inner">
                 {pkg.featured && (
@@ -1155,7 +1211,7 @@ function ServicesSection() {
           <p className="text-[#00C6FF] text-base font-semibold mb-1">Have One Specific Problem?</p>
           <p className="text-[#8899AA] text-sm mb-8">Six focused audits, each one built around a single critical business question. Delivered in 7–14 days.</p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {ADD_ON_PACKAGES.map((pkg, i) => (
               <div key={i} className={`addon-card-wrapper ${pkg.cssClass}`}>
                 <div className="addon-card-inner">
@@ -1178,7 +1234,7 @@ function ServicesSection() {
           </div>
 
           <div className="text-center mt-8">
-            <button className="px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] inline-flex items-center gap-2">
+            <button className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2">
               <Download size={14} /> Download Full Add-On Details PDF
             </button>
           </div>
@@ -1193,7 +1249,7 @@ function ServicesSection() {
           </p>
 
           {/* Bundle Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {DATA_BUNDLES.map((bundle, i) => (
               <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
                 <div className="infra-card-inner">
@@ -1281,7 +1337,7 @@ function ServicesSection() {
           </div>
 
           <div className="text-center">
-            <button className="px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] inline-flex items-center gap-2">
+            <button className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2">
               <Download size={14} /> Download Data Setup Presentation PDF
             </button>
           </div>
@@ -1306,7 +1362,7 @@ function CaseStudiesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="reveal-stagger grid grid-cols-1 lg:grid-cols-2 gap-6">
           {CASE_STUDIES.slice(0, 4).map((cs, i) => (
             <div key={i} className={`case-card-wrapper ${cs.cssClass}`}>
               <div className="case-card-inner">
@@ -1356,10 +1412,13 @@ function CaseStudiesSection() {
         </div>
 
         <div className="text-center mt-10">
-          <a href="#case-studies-2" className="inline-flex items-center gap-2 text-[#00C6FF] font-semibold hover:gap-3 transition-all">
-            See More Case Studies ↓
+          <a href="#case-studies-2" className="btn-press inline-flex items-center gap-2 text-[#00C6FF] font-semibold hover:gap-3 transition-all">
+            See More Case Studies <ChevronDown size={16} />
           </a>
         </div>
+
+        {/* Section Divider */}
+        <div className="section-divider mt-20" />
       </div>
     </section>
   );
@@ -1448,9 +1507,9 @@ function TechPortfolioSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {GITHUB_PROJECTS.map((proj, i) => (
-            <div key={i} className="bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(0,198,255,0.3)]">
+            <div key={i} className="bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] group">
               <h3 className="text-white font-bold text-lg mb-1">{proj.name}</h3>
               <p className="gradient-text text-sm font-semibold mb-3">{proj.subtitle}</p>
               <div className="flex flex-wrap gap-2 mb-4">
@@ -1521,7 +1580,7 @@ function TestimonialsSection() {
         )}
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {grid.map((t, i) => {
             const parts = t.profit.split(' ➔ ');
             return (
@@ -1553,7 +1612,7 @@ function ProcessSection() {
     <section id="process" className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
       {/* Background Photo */}
       <div className="absolute inset-0">
-        <Image src="/images/photo4.jpg" alt="Background" fill className="object-cover opacity-[0.08]" />
+        <Image src="/images/photo4.jpg" alt="Background" fill sizes="100vw" className="object-cover opacity-[0.08]" />
       </div>
       <div className="absolute inset-0 bg-[rgba(2,4,8,0.94)]" />
 
@@ -1569,21 +1628,21 @@ function ProcessSection() {
         </div>
 
         {/* Steps */}
-        <div className="max-w-3xl mx-auto space-y-8 mb-12">
+        <div className="max-w-3xl mx-auto space-y-6 mb-12">
           {PROCESS_STEPS.map((step, i) => (
-            <div key={i} className="flex gap-6">
+            <div key={i} className="flex gap-6 group">
               {/* Number Circle + Vertical Line */}
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold shrink-0"
+                <div className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(0,198,255,0.4)] group-hover:scale-110"
                   style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
                   <span className="text-[#020408]">{step.num}</span>
                 </div>
                 {i < PROCESS_STEPS.length - 1 && (
-                  <div className="w-[2px] h-full bg-[rgba(0,198,255,0.2)] my-2" />
+                  <div className="w-[2px] h-full bg-[rgba(0,198,255,0.2)] my-2 transition-all duration-500 group-hover:bg-[rgba(0,198,255,0.5)]" />
                 )}
               </div>
               <div className="pb-4">
-                <h3 className="text-white font-bold text-lg mb-2">{step.title}</h3>
+                <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[#00C6FF] transition-colors">{step.title}</h3>
                 <p className="text-[#8899AA] text-sm leading-relaxed">{step.text}</p>
               </div>
             </div>
@@ -1620,7 +1679,7 @@ function TechStackSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {TECH_STACK.map((cat, i) => {
             const IconComp = cat.icon;
             return (
@@ -1672,7 +1731,7 @@ function ContactSection() {
     <section id="contact" className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
       {/* Background Photo */}
       <div className="absolute inset-0">
-        <Image src="/images/photo5.jpg" alt="Background" fill className="object-cover opacity-[0.10]" />
+        <Image src="/images/photo5.jpg" alt="Background" fill sizes="100vw" className="object-cover opacity-[0.10]" />
       </div>
       <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(2,4,8,0.96) 0%, rgba(8,13,20,0.94) 100%)' }} />
 
@@ -1697,7 +1756,7 @@ function ContactSection() {
           <p className="text-[#8899AA] text-sm mb-5">
             Book a complimentary 20-minute Discovery Call. We&apos;ll understand your business, identify your most urgent data problem, and recommend the right starting point. No pressure, no jargon.
           </p>
-          <a href="#" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+          <a href="#" className="btn-press inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
             style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
             Book My Discovery Call <ArrowRight size={18} />
           </a>
@@ -1772,7 +1831,7 @@ function ContactSection() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-6 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+                  className="btn-press w-full px-6 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
                   style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}
                 >
                   Send Message
@@ -1825,14 +1884,14 @@ function ContactSection() {
               </div>
             </div>
 
-            <a href="#" className="glass rounded-2xl p-6 flex items-center justify-center gap-3 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,198,255,0.3)] group"
+            <a href="#" className="btn-press glass rounded-2xl p-6 flex items-center justify-center gap-3 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,198,255,0.3)] group"
               style={{ background: 'linear-gradient(135deg, rgba(0,198,255,0.1), rgba(0,114,255,0.1))' }}>
               <Clock size={20} className="text-[#00C6FF]" />
               <div>
                 <div className="text-white font-bold text-base">Book Discovery Call</div>
                 <div className="text-[#8899AA] text-xs">Free 20-minute consultation</div>
               </div>
-              <ArrowRight size={18} className="text-[#00C6FF] ml-auto group-hover:ml-5 transition-all" />
+              <ArrowRight size={18} className="text-[#00C6FF] ml-auto group-hover:translate-x-2 transition-transform" />
             </a>
           </div>
         </div>
@@ -1843,16 +1902,28 @@ function ContactSection() {
 
 function Footer() {
   return (
-    <footer className="bg-[#020408] border-t border-[rgba(0,198,255,0.08)] pt-16 pb-24 sm:pb-16">
+    <footer className="bg-[#020408] border-t border-[rgba(0,198,255,0.08)] pt-16 pb-20 sm:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top section with brand statement */}
+        <div className="text-center mb-12">
+          <h3 className="section-headline text-[clamp(20px,2.5vw,32px)] text-white mb-3">Stop Guessing. Start Knowing.</h3>
+          <p className="text-[#8899AA] text-base max-w-xl mx-auto mb-6">Your data already has the answers. Let me find them for you.</p>
+          <a href="#contact" className="btn-press inline-flex items-center gap-2 px-8 py-3 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
+            Book Your Free Discovery Call <ArrowRight size={16} />
+          </a>
+        </div>
+
+        <div className="section-divider mb-12" />
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Column 1: Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <Image src="/images/logo.png" alt="Logo" width={52} height={52} className="rounded-lg" />
+              <Image src="/images/logo.png" alt="Logo" width={44} height={44} className="rounded-lg" />
               <div>
-                <div className="text-white font-bold text-base">Mozahidul Islam</div>
-                <div className="text-[#00C6FF] text-xs font-medium">E-Commerce Growth Analyst</div>
+                <div className="text-white font-bold text-sm">Mozahidul Islam</div>
+                <div className="text-[#00C6FF] text-[11px] font-medium">E-Commerce Growth Analyst</div>
               </div>
             </div>
             <p className="text-[#8899AA] text-sm leading-relaxed">
@@ -1863,11 +1934,11 @@ function Footer() {
           {/* Column 2: Quick Links */}
           <div>
             <h4 className="text-white font-bold text-sm mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {['Home', 'About', 'Case Studies', 'Process', 'FAQ', 'Contact'].map((link) => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase().replace(' ', '-')}`} className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors">
-                    {link}
+            <ul className="space-y-2.5">
+              {[{label:'Home',href:'#hero'},{label:'About',href:'#about'},{label:'Case Studies',href:'#case-studies'},{label:'Process',href:'#process'},{label:'Contact',href:'#contact'}].map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5 group">
+                    <span className="w-0 group-hover:w-2 h-[1px] bg-[#00C6FF] transition-all duration-200" /> {link.label}
                   </a>
                 </li>
               ))}
@@ -1877,7 +1948,7 @@ function Footer() {
           {/* Column 3: Services */}
           <div>
             <h4 className="text-white font-bold text-sm mb-4">Services</h4>
-            <ul className="space-y-2">
+            <ul className="space-y-2.5">
               {['E-Commerce Health Check', 'Revenue Growth Accelerator', 'Data-Driven Growth System', 'Analytics Partner Retainer', 'Specialized Add-On Audits', 'Data Setup & Infrastructure'].map((s) => (
                 <li key={s}>
                   <a href="#services" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors">{s}</a>
@@ -1888,22 +1959,22 @@ function Footer() {
 
           {/* Column 4: Resources & Connect */}
           <div>
-            <h4 className="text-white font-bold text-sm mb-4">Resources &amp; Connect</h4>
-            <ul className="space-y-2">
-              <li><button className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><FileText size={12}/> Download Full Services PDF</button></li>
-              <li><button className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Database size={12}/> Download Data Setup PDF</button></li>
-              <li><a href="https://linkedin.com/in/mozahidul-islam-analyst" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Linkedin size={12}/> LinkedIn Profile</a></li>
-              <li><a href="https://wa.me/8801940131074" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Phone size={12}/> WhatsApp Me</a></li>
-              <li><a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Github size={12}/> GitHub Portfolio</a></li>
-              <li><a href="mailto:mojahidulislam101010@gmail.com" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Mail size={12}/> Email Me</a></li>
+            <h4 className="text-white font-bold text-sm mb-4">Resources & Connect</h4>
+            <ul className="space-y-2.5">
+              <li><button className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><FileText size={12}/> Full Services PDF</button></li>
+              <li><button className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Database size={12}/> Data Setup PDF</button></li>
+              <li><a href="https://linkedin.com/in/mozahidul-islam-analyst" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Linkedin size={12}/> LinkedIn</a></li>
+              <li><a href="https://wa.me/8801940131074" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Phone size={12}/> WhatsApp</a></li>
+              <li><a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Github size={12}/> GitHub</a></li>
+              <li><a href="mailto:mojahidulislam101010@gmail.com" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Mail size={12}/> Email</a></li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-[rgba(0,198,255,0.08)] pt-6 text-center">
+        <div className="border-t border-[rgba(0,198,255,0.08)] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#445566] text-sm">© 2025 Mozahidul Islam · E-Commerce Analytics. All rights reserved.</p>
-          <p className="text-[#445566] text-xs mt-1">Built with data. Designed for profit.</p>
+          <p className="text-[#445566] text-xs">Built with data. Designed for profit.</p>
         </div>
       </div>
     </footer>
@@ -1913,9 +1984,9 @@ function Footer() {
 function MobileStickyBar() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-[9999] lg:hidden"
-      style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
-      <a href="#contact" className="flex items-center justify-center h-14 text-[#020408] font-bold text-sm">
-        Book a Free Discovery Call
+      style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 -4px 20px rgba(0,198,255,0.30)' }}>
+      <a href="#contact" className="btn-press flex items-center justify-center h-14 text-[#020408] font-bold text-sm gap-2">
+        <Phone size={16} /> Book a Free Discovery Call
       </a>
     </div>
   );
@@ -1927,15 +1998,21 @@ function MobileStickyBar() {
 
 export default function PortfolioPage() {
   const [progress, setProgress] = useState(0);
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       setProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
+      setShowBackToTop(scrollTop > 600);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   return (
@@ -1959,6 +2036,15 @@ export default function PortfolioPage() {
       <ContactSection />
       <Footer />
       <MobileStickyBar />
+
+      {/* Back to Top */}
+      <button
+        onClick={scrollToTop}
+        className={`back-to-top ${showBackToTop ? 'visible' : ''}`}
+        aria-label="Back to top"
+      >
+        <ChevronDown size={20} style={{ transform: 'rotate(180deg)' }} />
+      </button>
     </main>
   );
 }
