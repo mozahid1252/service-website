@@ -159,15 +159,19 @@ html {
   50% { box-shadow: 0 0 40px rgba(0,198,255,0.3); }
 }
 
-/* Scroll reveal animation classes */
+/* Scroll reveal animation - content always visible, animation is enhancement only */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  animation: revealUp 0.8s ease both;
 }
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes revealUp {
+  from {
+    opacity: 0.3;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Grid background pattern */

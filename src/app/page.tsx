@@ -456,20 +456,6 @@ const TECH_STACK = [
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add('visible');
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
   return ref;
 }
 
@@ -481,26 +467,35 @@ function Counter({ target, prefix = '', suffix = '' }: { target: number; prefix?
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const runAnimation = () => {
+      if (hasAnimated.current) return;
+      hasAnimated.current = true;
+      const duration = 2000;
+      const start = performance.now();
+      const animate = (now: number) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setCount(Math.floor(eased * target));
+        if (progress < 1) requestAnimationFrame(animate);
+      };
+      requestAnimationFrame(animate);
+    };
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated.current) {
-          hasAnimated.current = true;
-          const duration = 2000;
-          const start = performance.now();
-          const animate = (now: number) => {
-            const elapsed = now - start;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            setCount(Math.floor(eased * target));
-            if (progress < 1) requestAnimationFrame(animate);
-          };
-          requestAnimationFrame(animate);
+        if (entry.isIntersecting) {
+          runAnimation();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    // Fallback: start animation after 3s even if observer doesn't fire
+    const fallback = setTimeout(runAnimation, 3000);
+    return () => {
+      observer.disconnect();
+      clearTimeout(fallback);
+    };
   }, [target]);
 
   return <span ref={ref}>{prefix}{count.toLocaleString()}{suffix}</span>;
