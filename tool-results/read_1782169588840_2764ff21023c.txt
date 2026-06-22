@@ -1,0 +1,1568 @@
+     1→     1→     1→Role: You are the same World-Class Web Developer who built this portfolio website. এখন আমি তোমাকে 7টা specific, critical problems এর exact fix দিচ্ছি। তুমি শুধু এই 7টা section fix করবে — বাকি সব হুবহু same রাখবে।
+     2→     2→     2→
+     3→     3→     3→⚠️ IRON RULE:
+     4→     4→     4→text
+     5→     5→     5→
+     6→     6→     6→┌─────────────────────────────────────────────────┐
+     7→     7→     7→│              REVISION MASTER RULE               │
+     8→     8→     8→│                                                 │
+     9→     9→     9→│  ✅ শুধু এই 7টা problem fix করবে               │
+    10→    10→    10→│  ✅ প্রতিটা fix exactly as described            │
+    11→    11→    11→│  ✅ Content একটা word ও change করবে না         │
+    12→    12→    12→│  ✅ বাকি সব section untouched থাকবে            │
+    13→    13→    13→│                                                 │
+    14→    14→    14→│  ❌ Extra changes করবে না                      │
+    15→    15→    15→│  ❌ Working sections touch করবে না             │
+    16→    16→    16→│  ❌ কোনো content remove করবে না               │
+    17→    17→    17→│  ❌ Corki/rotating border animation             │
+    18→    18→    18→│     case studies বা process boxes এ নয়        │
+    19→    19→    19→└─────────────────────────────────────────────────┘
+    20→    20→    20→🔧 PROBLEM 1 — "MOST CHOSEN" Badge: Hidden হয়ে গেছে Fix করো
+    21→    21→    21→Problem: Service packages এ "⭐ Most Chosen" badge টা hide হয়ে গেছে — দেখা যাচ্ছে না।
+    22→    22→    22→
+    23→    23→    23→Root Cause & Fix:
+    24→    24→    24→
+    25→    25→    25→CSS
+    26→    26→    26→
+    27→    27→    27→/* MOST CHOSEN BADGE — Visibility Fix */
+    28→    28→    28→
+    29→    29→    29→/* The badge wrapper — must be OUTSIDE the card,
+    30→    30→    30→   positioned above it */
+    31→    31→    31→.most-chosen-badge-wrapper {
+    32→    32→    32→  position: absolute;
+    33→    33→    33→  top: -18px;           /* Sits above the card top edge */
+    34→    34→    34→  left: 50%;
+    35→    35→    35→  transform: translateX(-50%);
+    36→    36→    36→  z-index: 10;          /* Above everything */
+    37→    37→    37→  white-space: nowrap;
+    38→    38→    38→}
+    39→    39→    39→
+    40→    40→    40→/* The badge itself */
+    41→    41→    41→.most-chosen-badge {
+    42→    42→    42→  display: inline-flex;
+    43→    43→    43→  align-items: center;
+    44→    44→    44→  gap: 6px;
+    45→    45→    45→  padding: 6px 16px;
+    46→    46→    46→  background: linear-gradient(135deg, #F5A623, #F7D774);
+    47→    47→    47→  color: #000000;
+    48→    48→    48→  font-family: 'Inter', sans-serif;
+    49→    49→    49→  font-size: 12px;
+    50→    50→    50→  font-weight: 700;
+    51→    51→    51→  letter-spacing: 1.5px;
+    52→    52→    52→  text-transform: uppercase;
+    53→    53→    53→  border-radius: 20px;
+    54→    54→    54→  box-shadow:
+    55→    55→    55→    0 0 20px rgba(245, 166, 35, 0.60),
+    56→    56→    56→    0 0 40px rgba(245, 166, 35, 0.30),
+    57→    57→    57→    0 4px 12px rgba(0, 0, 0, 0.40);
+    58→    58→    58→
+    59→    59→    59→  /* Pulse animation — draws attention */
+    60→    60→    60→  animation: badgePulse 2.5s ease-in-out infinite;
+    61→    61→    61→}
+    62→    62→    62→
+    63→    63→    63→@keyframes badgePulse {
+    64→    64→    64→  0%, 100% {
+    65→    65→    65→    box-shadow:
+    66→    66→    66→      0 0 20px rgba(245, 166, 35, 0.60),
+    67→    67→    67→      0 0 40px rgba(245, 166, 35, 0.30);
+    68→    68→    68→  }
+    69→    69→    69→  50% {
+    70→    70→    70→    box-shadow:
+    71→    71→    71→      0 0 30px rgba(245, 166, 35, 0.90),
+    72→    72→    72→      0 0 60px rgba(245, 166, 35, 0.50),
+    73→    73→    73→      0 0 80px rgba(245, 166, 35, 0.25);
+    74→    74→    74→  }
+    75→    75→    75→}
+    76→    76→    76→
+    77→    77→    77→/* Star icon */
+    78→    78→    78→.most-chosen-badge .badge-star {
+    79→    79→    79→  font-size: 13px;
+    80→    80→    80→}
+    81→    81→    81→
+    82→    82→    82→/* CRITICAL: The parent card wrapper must have:
+    83→    83→    83→   position: relative
+    84→    84→    84→   overflow: visible  ← THIS is what was hiding it!
+    85→    85→    85→   padding-top: 20px  ← Space for the badge
+    86→    86→    86→*/
+    87→    87→    87→.package-outer-wrapper.growth {
+    88→    88→    88→  position: relative;
+    89→    89→    89→  overflow: visible;    /* ← KEY FIX: was hidden before */
+    90→    90→    90→  padding-top: 20px;    /* ← Space above for badge */
+    91→    91→    91→  margin-top: 20px;     /* ← Extra top space in grid */
+    92→    92→    92→}
+    93→    93→    93→
+    94→    94→    94→/* Also ensure the inner card doesn't clip it */
+    95→    95→    95→.package-inner-card {
+    96→    96→    96→  overflow: visible;    /* ← Must NOT be hidden */
+    97→    97→    97→}
+    98→    98→    98→HTML Structure Fix:
+    99→    99→    99→
+   100→   100→   100→HTML
+   101→   101→   101→
+   102→   102→   102→<!-- CORRECT structure — badge ABOVE the card -->
+   103→   103→   103→<div class="package-outer-wrapper growth"
+   104→   104→   104→     style="position:relative; overflow:visible;">
+   105→   105→   105→
+   106→   106→   106→  <!-- Badge sits here — FIRST child, absolute positioned -->
+   107→   107→   107→  <div class="most-chosen-badge-wrapper">
+   108→   108→   108→    <span class="most-chosen-badge">
+   109→   109→   109→      <span class="badge-star">⭐</span>
+   110→   110→   110→      Most Chosen
+   111→   111→   111→    </span>
+   112→   112→   112→  </div>
+   113→   113→   113→
+   114→   114→   114→  <!-- Card content below -->
+   115→   115→   115→  <div class="package-inner-card">
+   116→   116→   116→    <!-- ... card content ... -->
+   117→   117→   117→  </div>
+   118→   118→   118→
+   119→   119→   119→</div>
+   120→   120→   120→🔧 PROBLEM 2 — Data Infrastructure Table: More Unique + Professional + Thicker Borders
+   121→   121→   121→Problem: Table টা plain দেখাচ্ছে — text professional না, borders পাতলা
+   122→   122→   122→
+   123→   123→   123→Complete Table Redesign:
+   124→   124→   124→
+   125→   125→   125→CSS
+   126→   126→   126→
+   127→   127→   127→/* ============================================
+   128→   128→   128→   INFRASTRUCTURE COMPARISON TABLE — REDESIGN
+   129→   129→   129→   More unique, professional, thick borders
+   130→   130→   130→   ============================================ */
+   131→   131→   131→
+   132→   132→   132→/* Table outer wrapper — glowing card box */
+   133→   133→   133→.infra-table-wrapper {
+   134→   134→   134→  position: relative;
+   135→   135→   135→  border-radius: 24px;
+   136→   136→   136→  padding: 3px;              /* Thicker border space */
+   137→   137→   137→  margin-top: 56px;
+   138→   138→   138→  background: linear-gradient(
+   139→   139→   139→    135deg,
+   140→   140→   140→    rgba(0, 198, 255, 0.80) 0%,
+   141→   141→   141→    rgba(139, 92, 246, 0.80) 50%,
+   142→   142→   142→    rgba(245, 166, 35, 0.80) 100%
+   143→   143→   143→  );
+   144→   144→   144→  box-shadow:
+   145→   145→   145→    0 0 60px rgba(0, 198, 255, 0.15),
+   146→   146→   146→    0 0 60px rgba(139, 92, 246, 0.15),
+   147→   147→   147→    0 0 60px rgba(245, 166, 35, 0.15),
+   148→   148→   148→    0 30px 80px rgba(0, 0, 0, 0.60);
+   149→   149→   149→  animation: tableGlow 5s ease-in-out infinite;
+   150→   150→   150→}
+   151→   151→   151→
+   152→   152→   152→@keyframes tableGlow {
+   153→   153→   153→  0%, 100% {
+   154→   154→   154→    box-shadow:
+   155→   155→   155→      0 0 60px rgba(0,198,255,0.12),
+   156→   156→   156→      0 0 60px rgba(139,92,246,0.12),
+   157→   157→   157→      0 0 60px rgba(245,166,35,0.12);
+   158→   158→   158→  }
+   159→   159→   159→  33% {
+   160→   160→   160→    box-shadow:
+   161→   161→   161→      0 0 100px rgba(0,198,255,0.28),
+   162→   162→   162→      0 0 40px rgba(139,92,246,0.08);
+   163→   163→   163→  }
+   164→   164→   164→  66% {
+   165→   165→   165→    box-shadow:
+   166→   166→   166→      0 0 40px rgba(0,198,255,0.08),
+   167→   167→   167→      0 0 100px rgba(245,166,35,0.28);
+   168→   168→   168→  }
+   169→   169→   169→}
+   170→   170→   170→
+   171→   171→   171→/* Table inner */
+   172→   172→   172→.infra-table-inner {
+   173→   173→   173→  background: rgba(6, 10, 17, 0.98);
+   174→   174→   174→  border-radius: 21px;
+   175→   175→   175→  overflow: hidden;
+   176→   176→   176→}
+   177→   177→   177→
+   178→   178→   178→/* Table base */
+   179→   179→   179→table.infra-table {
+   180→   180→   180→  width: 100%;
+   181→   181→   181→  border-collapse: collapse;
+   182→   182→   182→  font-family: 'Inter', sans-serif;
+   183→   183→   183→}
+   184→   184→   184→
+   185→   185→   185→/* ── HEADER ROW ── */
+   186→   186→   186→.infra-table thead tr {
+   187→   187→   187→  background: linear-gradient(
+   188→   188→   188→    90deg,
+   189→   189→   189→    rgba(5, 8, 15, 1) 0%,
+   190→   190→   190→    rgba(0, 198, 255, 0.10) 33%,
+   191→   191→   191→    rgba(139, 92, 246, 0.10) 66%,
+   192→   192→   192→    rgba(245, 166, 35, 0.10) 100%
+   193→   193→   193→  );
+   194→   194→   194→  border-bottom: 3px solid rgba(255,255,255,0.08);
+   195→   195→   195→}
+   196→   196→   196→
+   197→   197→   197→/* Header cells */
+   198→   198→   198→.infra-table thead th {
+   199→   199→   199→  padding: 24px 28px;
+   200→   200→   200→  text-align: center;
+   201→   201→   201→  font-size: 13px;
+   202→   202→   202→  font-weight: 800;
+   203→   203→   203→  letter-spacing: 2px;
+   204→   204→   204→  text-transform: uppercase;
+   205→   205→   205→}
+   206→   206→   206→
+   207→   207→   207→/* Feature column header */
+   208→   208→   208→.infra-table thead th:nth-child(1) {
+   209→   209→   209→  text-align: left;
+   210→   210→   210→  color: rgba(255,255,255,0.40);
+   211→   211→   211→  font-size: 11px;
+   212→   212→   212→  letter-spacing: 3px;
+   213→   213→   213→}
+   214→   214→   214→
+   215→   215→   215→/* BASIC column header */
+   216→   216→   216→.infra-table thead th:nth-child(2) {
+   217→   217→   217→  color: #00C6FF;
+   218→   218→   218→  text-shadow:
+   219→   219→   219→    0 0 20px rgba(0,198,255,0.80),
+   220→   220→   220→    0 0 40px rgba(0,198,255,0.40);
+   221→   221→   221→  border-bottom: 4px solid #00C6FF;  /* THICK colored border */
+   222→   222→   222→  border-left: 3px solid rgba(0,198,255,0.20);
+   223→   223→   223→  border-right: 3px solid rgba(0,198,255,0.20);
+   224→   224→   224→}
+   225→   225→   225→
+   226→   226→   226→/* FULL PIPELINE column header */
+   227→   227→   227→.infra-table thead th:nth-child(3) {
+   228→   228→   228→  color: #8B5CF6;
+   229→   229→   229→  text-shadow:
+   230→   230→   230→    0 0 20px rgba(139,92,246,0.80),
+   231→   231→   231→    0 0 40px rgba(139,92,246,0.40);
+   232→   232→   232→  border-bottom: 4px solid #8B5CF6;  /* THICK colored border */
+   233→   233→   233→  border-left: 3px solid rgba(139,92,246,0.20);
+   234→   234→   234→  border-right: 3px solid rgba(139,92,246,0.20);
+   235→   235→   235→}
+   236→   236→   236→
+   237→   237→   237→/* FULL + AUTOMATION column header */
+   238→   238→   238→.infra-table thead th:nth-child(4) {
+   239→   239→   239→  color: #F5A623;
+   240→   240→   240→  text-shadow:
+   241→   241→   241→    0 0 20px rgba(245,166,35,0.80),
+   242→   242→   242→    0 0 40px rgba(245,166,35,0.40);
+   243→   243→   243→  border-bottom: 4px solid #F5A623;  /* THICK colored border */
+   244→   244→   244→  border-left: 3px solid rgba(245,166,35,0.20);
+   245→   245→   245→  border-right: 3px solid rgba(245,166,35,0.20);
+   246→   246→   246→}
+   247→   247→   247→
+   248→   248→   248→/* ── HEADER ICON BADGES ── */
+   249→   249→   249→/* Add small icon/pill above each column name */
+   250→   250→   250→.col-badge {
+   251→   251→   251→  display: inline-block;
+   252→   252→   252→  padding: 3px 10px;
+   253→   253→   253→  border-radius: 12px;
+   254→   254→   254→  font-size: 10px;
+   255→   255→   255→  font-weight: 700;
+   256→   256→   256→  letter-spacing: 1px;
+   257→   257→   257→  margin-bottom: 6px;
+   258→   258→   258→}
+   259→   259→   259→
+   260→   260→   260→.col-badge.basic {
+   261→   261→   261→  background: rgba(0,198,255,0.12);
+   262→   262→   262→  color: #00C6FF;
+   263→   263→   263→  border: 1px solid rgba(0,198,255,0.30);
+   264→   264→   264→}
+   265→   265→   265→
+   266→   266→   266→.col-badge.pipeline {
+   267→   267→   267→  background: rgba(139,92,246,0.12);
+   268→   268→   268→  color: #8B5CF6;
+   269→   269→   269→  border: 1px solid rgba(139,92,246,0.30);
+   270→   270→   270→}
+   271→   271→   271→
+   272→   272→   272→.col-badge.auto {
+   273→   273→   273→  background: rgba(245,166,35,0.12);
+   274→   274→   274→  color: #F5A623;
+   275→   275→   275→  border: 1px solid rgba(245,166,35,0.30);
+   276→   276→   276→}
+   277→   277→   277→
+   278→   278→   278→/* ── BODY ROWS ── */
+   279→   279→   279→.infra-table tbody tr {
+   280→   280→   280→  border-bottom: 1px solid rgba(255,255,255,0.05);
+   281→   281→   281→  transition: background 0.25s ease;
+   282→   282→   282→  position: relative;
+   283→   283→   283→}
+   284→   284→   284→
+   285→   285→   285→/* Alternating row tint */
+   286→   286→   286→.infra-table tbody tr:nth-child(even) {
+   287→   287→   287→  background: rgba(255,255,255,0.018);
+   288→   288→   288→}
+   289→   289→   289→
+   290→   290→   290→/* Row hover — subtle cyan wash */
+   291→   291→   291→.infra-table tbody tr:hover {
+   292→   292→   292→  background: rgba(0,198,255,0.04);
+   293→   293→   293→}
+   294→   294→   294→
+   295→   295→   295→/* ── BODY CELLS ── */
+   296→   296→   296→.infra-table tbody td {
+   297→   297→   297→  padding: 18px 28px;
+   298→   298→   298→  font-size: 14px;
+   299→   299→   299→  vertical-align: middle;
+   300→   300→   300→  border-left: 1px solid rgba(255,255,255,0.04);
+   301→   301→   301→}
+   302→   302→   302→
+   303→   303→   303→/* Feature name column */
+   304→   304→   304→.infra-table tbody td:first-child {
+   305→   305→   305→  text-align: left;
+   306→   306→   306→  color: rgba(255,255,255,0.65);
+   307→   307→   307→  font-weight: 500;
+   308→   308→   308→  font-size: 13.5px;
+   309→   309→   309→  letter-spacing: 0.3px;
+   310→   310→   310→  border-left: none;
+   311→   311→   311→  padding-left: 32px;
+   312→   312→   312→}
+   313→   313→   313→
+   314→   314→   314→/* Column data cells — centered */
+   315→   315→   315→.infra-table tbody td:nth-child(2) {
+   316→   316→   316→  text-align: center;
+   317→   317→   317→  border-left: 2px solid rgba(0,198,255,0.12);
+   318→   318→   318→  border-right: 1px solid rgba(0,198,255,0.06);
+   319→   319→   319→}
+   320→   320→   320→
+   321→   321→   321→.infra-table tbody td:nth-child(3) {
+   322→   322→   322→  text-align: center;
+   323→   323→   323→  border-left: 2px solid rgba(139,92,246,0.12);
+   324→   324→   324→  border-right: 1px solid rgba(139,92,246,0.06);
+   325→   325→   325→}
+   326→   326→   326→
+   327→   327→   327→.infra-table tbody td:nth-child(4) {
+   328→   328→   328→  text-align: center;
+   329→   329→   329→  border-left: 2px solid rgba(245,166,35,0.12);
+   330→   330→   330→  border-right: 2px solid rgba(245,166,35,0.12);
+   331→   331→   331→}
+   332→   332→   332→
+   333→   333→   333→/* ── CHECK / CROSS MARKS ── */
+   334→   334→   334→.check-cyan {
+   335→   335→   335→  color: #00C6FF;
+   336→   336→   336→  font-size: 20px;
+   337→   337→   337→  text-shadow: 0 0 12px rgba(0,198,255,0.70);
+   338→   338→   338→  display: inline-block;
+   339→   339→   339→  animation: checkGlow 3s ease-in-out infinite;
+   340→   340→   340→}
+   341→   341→   341→
+   342→   342→   342→.check-purple {
+   343→   343→   343→  color: #8B5CF6;
+   344→   344→   344→  font-size: 20px;
+   345→   345→   345→  text-shadow: 0 0 12px rgba(139,92,246,0.70);
+   346→   346→   346→  display: inline-block;
+   347→   347→   347→}
+   348→   348→   348→
+   349→   349→   349→.check-gold {
+   350→   350→   350→  color: #F5A623;
+   351→   351→   351→  font-size: 20px;
+   352→   352→   352→  text-shadow: 0 0 12px rgba(245,166,35,0.70);
+   353→   353→   353→  display: inline-block;
+   354→   354→   354→}
+   355→   355→   355→
+   356→   356→   356→.cross-dim {
+   357→   357→   357→  color: rgba(255,255,255,0.12);
+   358→   358→   358→  font-size: 18px;
+   359→   359→   359→  display: inline-block;
+   360→   360→   360→}
+   361→   361→   361→
+   362→   362→   362→/* Text values like "2–3", "All" */
+   363→   363→   363→.table-text-value {
+   364→   364→   364→  font-size: 13px;
+   365→   365→   365→  font-weight: 700;
+   366→   366→   366→  letter-spacing: 0.5px;
+   367→   367→   367→}
+   368→   368→   368→
+   369→   369→   369→.table-text-value.cyan   { color: #00C6FF; }
+   370→   370→   370→.table-text-value.purple { color: #8B5CF6; }
+   371→   371→   371→.table-text-value.gold   { color: #F5A623; }
+   372→   372→   372→
+   373→   373→   373→/* Subtle check glow pulse */
+   374→   374→   374→@keyframes checkGlow {
+   375→   375→   375→  0%, 100% { text-shadow: 0 0 12px rgba(0,198,255,0.70); }
+   376→   376→   376→  50%       { text-shadow: 0 0 24px rgba(0,198,255,1.00),
+   377→   377→   377→                            0 0 40px rgba(0,198,255,0.50); }
+   378→   378→   378→}
+   379→   379→   379→
+   380→   380→   380→/* ── FOOTER ROW — Price Summary ── */
+   381→   381→   381→.infra-table tfoot tr {
+   382→   382→   382→  background: linear-gradient(
+   383→   383→   383→    90deg,
+   384→   384→   384→    rgba(5,8,15,1),
+   385→   385→   385→    rgba(0,198,255,0.06) 33%,
+   386→   386→   386→    rgba(139,92,246,0.06) 66%,
+   387→   387→   387→    rgba(245,166,35,0.08)
+   388→   388→   388→  );
+   389→   389→   389→  border-top: 3px solid rgba(255,255,255,0.08);
+   390→   390→   390→}
+   391→   391→   391→
+   392→   392→   392→.infra-table tfoot td {
+   393→   393→   393→  padding: 20px 28px;
+   394→   394→   394→  font-weight: 800;
+   395→   395→   395→  font-size: 15px;
+   396→   396→   396→}
+   397→   397→   397→HTML Table Structure (Professional Text):
+   398→   398→   398→
+   399→   399→   399→HTML
+   400→   400→   400→
+   401→   401→   401→<div class="infra-table-wrapper">
+   402→   402→   402→  <div class="infra-table-inner">
+   403→   403→   403→    <table class="infra-table">
+   404→   404→   404→      <thead>
+   405→   405→   405→        <tr>
+   406→   406→   406→          <th>
+   407→   407→   407→            <span style="color:rgba(255,255,255,0.35);
+   408→   408→   408→              font-size:11px;letter-spacing:3px;">
+   409→   409→   409→              CAPABILITIES
+   410→   410→   410→            </span>
+   411→   411→   411→          </th>
+   412→   412→   412→          <th>
+   413→   413→   413→            <div class="col-badge basic">STARTER</div>
+   414→   414→   414→            <div>Basic Setup</div>
+   415→   415→   415→          </th>
+   416→   416→   416→          <th>
+   417→   417→   417→            <div class="col-badge pipeline">PRO</div>
+   418→   418→   418→            <div>Full Pipeline</div>
+   419→   419→   419→          </th>
+   420→   420→   420→          <th>
+   421→   421→   421→            <div class="col-badge auto">ELITE</div>
+   422→   422→   422→            <div>Full + Automation</div>
+   423→   423→   423→          </th>
+   424→   424→   424→        </tr>
+   425→   425→   425→      </thead>
+   426→   426→   426→      <tbody>
+   427→   427→   427→        <tr>
+   428→   428→   428→          <td>Cloud Infrastructure</td>
+   429→   429→   429→          <td><span class="check-cyan">✓</span></td>
+   430→   430→   430→          <td><span class="check-purple">✓</span></td>
+   431→   431→   431→          <td><span class="check-gold">✓</span></td>
+   432→   432→   432→        </tr>
+   433→   433→   433→        <tr>
+   434→   434→   434→          <td>Platform API Connections</td>
+   435→   435→   435→          <td>
+   436→   436→   436→            <span class="table-text-value cyan">2–3</span>
+   437→   437→   437→          </td>
+   438→   438→   438→          <td>
+   439→   439→   439→            <span class="table-text-value purple">All</span>
+   440→   440→   440→          </td>
+   441→   441→   441→          <td>
+   442→   442→   442→            <span class="table-text-value gold">All</span>
+   443→   443→   443→          </td>
+   444→   444→   444→        </tr>
+   445→   445→   445→        <tr>
+   446→   446→   446→          <td>Data Pipeline Build</td>
+   447→   447→   447→          <td><span class="check-cyan">✓</span></td>
+   448→   448→   448→          <td><span class="check-purple">✓</span></td>
+   449→   449→   449→          <td><span class="check-gold">✓</span></td>
+   450→   450→   450→        </tr>
+   451→   451→   451→        <tr>
+   452→   452→   452→          <td>Data Cleaning</td>
+   453→   453→   453→          <td><span class="check-cyan">✓</span></td>
+   454→   454→   454→          <td><span class="check-purple">✓</span></td>
+   455→   455→   455→          <td><span class="check-gold">✓</span></td>
+   456→   456→   456→        </tr>
+   457→   457→   457→        <tr>
+   458→   458→   458→          <td>Multi-Platform Merge</td>
+   459→   459→   459→          <td><span class="cross-dim">✕</span></td>
+   460→   460→   460→          <td><span class="check-purple">✓</span></td>
+   461→   461→   461→          <td><span class="check-gold">✓</span></td>
+   462→   462→   462→        </tr>
+   463→   463→   463→        <tr>
+   464→   464→   464→          <td>BigQuery Load Script</td>
+   465→   465→   465→          <td><span class="cross-dim">✕</span></td>
+   466→   466→   466→          <td><span class="check-purple">✓</span></td>
+   467→   467→   467→          <td><span class="check-gold">✓</span></td>
+   468→   468→   468→        </tr>
+   469→   469→   469→        <tr>
+   470→   470→   470→          <td>Dashboard Connection</td>
+   471→   471→   471→          <td><span class="cross-dim">✕</span></td>
+   472→   472→   472→          <td><span class="check-purple">✓</span></td>
+   473→   473→   473→          <td><span class="check-gold">✓</span></td>
+   474→   474→   474→        </tr>
+   475→   475→   475→        <tr>
+   476→   476→   476→          <td>Automated Scheduling</td>
+   477→   477→   477→          <td><span class="cross-dim">✕</span></td>
+   478→   478→   478→          <td><span class="cross-dim">✕</span></td>
+   479→   479→   479→          <td><span class="check-gold">✓</span></td>
+   480→   480→   480→        </tr>
+   481→   481→   481→        <tr>
+   482→   482→   482→          <td>Error Alerts</td>
+   483→   483→   483→          <td><span class="cross-dim">✕</span></td>
+   484→   484→   484→          <td><span class="cross-dim">✕</span></td>
+   485→   485→   485→          <td><span class="check-gold">✓</span></td>
+   486→   486→   486→        </tr>
+   487→   487→   487→        <tr>
+   488→   488→   488→          <td>Credential Security</td>
+   489→   489→   489→          <td><span class="cross-dim">✕</span></td>
+   490→   490→   490→          <td><span class="cross-dim">✕</span></td>
+   491→   491→   491→          <td><span class="check-gold">✓</span></td>
+   492→   492→   492→        </tr>
+   493→   493→   493→      </tbody>
+   494→   494→   494→    </table>
+   495→   495→   495→  </div>
+   496→   496→   496→</div>
+   497→   497→   497→🔧 PROBLEM 3 — Case Studies: Replace Corki/Rotating Animation → New Unique Animations
+   498→   498→   498→Problem: Case study cards এ corki/rotating border animation remove করে নতুন animation দিতে হবে। Colors ও lighting same রাখতে হবে।
+   499→   499→   499→
+   500→   500→   500→Replace with these NEW animations (NO rotating border):
+   501→   501→   501→
+   502→   502→   502→CSS
+   503→   503→   503→
+   504→   504→   504→/* ============================================
+   505→   505→   505→   CASE STUDY CARDS — NEW ANIMATIONS
+   506→   506→   506→   (Corki/rotating border REMOVED)
+   507→   507→   507→   Colors + lighting = SAME as before
+   508→   508→   508→   ============================================ */
+   509→   509→   509→
+   510→   510→   510→/* ── ANIMATION 1: Breathing Glow Pulse ──
+   511→   511→   511→   Card এর outer glow slowly breathes in/out
+   512→   512→   512→   Like a living organism */
+   513→   513→   513→
+   514→   514→   514→.case-card-wrapper {
+   515→   515→   515→  /* Remove any conic-gradient / rotate-border */
+   516→   516→   516→  animation: breatheGlow 4s ease-in-out infinite;
+   517→   517→   517→  transition:
+   518→   518→   518→    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+   519→   519→   519→    box-shadow 0.4s ease;
+   520→   520→   520→}
+   521→   521→   521→
+   522→   522→   522→/* Each card has slight offset — feels organic */
+   523→   523→   523→.case-card-wrapper:nth-child(1) { animation-delay: 0.0s; }
+   524→   524→   524→.case-card-wrapper:nth-child(2) { animation-delay: 0.6s; }
+   525→   525→   525→.case-card-wrapper:nth-child(3) { animation-delay: 1.2s; }
+   526→   526→   526→.case-card-wrapper:nth-child(4) { animation-delay: 1.8s; }
+   527→   527→   527→.case-card-wrapper:nth-child(5) { animation-delay: 2.4s; }
+   528→   528→   528→.case-card-wrapper:nth-child(6) { animation-delay: 3.0s; }
+   529→   529→   529→.case-card-wrapper:nth-child(7) { animation-delay: 3.6s; }
+   530→   530→   530→
+   531→   531→   531→/* Breathing glow — each card uses its own color var */
+   532→   532→   532→@keyframes breatheGlow {
+   533→   533→   533→  0%, 100% {
+   534→   534→   534→    box-shadow:
+   535→   535→   535→      0 0 20px var(--case-glow-dim),
+   536→   536→   536→      0 8px 40px rgba(0,0,0,0.50);
+   537→   537→   537→  }
+   538→   538→   538→  50% {
+   539→   539→   539→    box-shadow:
+   540→   540→   540→      0 0 50px var(--case-glow-bright),
+   541→   541→   541→      0 0 100px var(--case-glow-mid),
+   542→   542→   542→      0 12px 60px rgba(0,0,0,0.60);
+   543→   543→   543→  }
+   544→   544→   544→}
+   545→   545→   545→
+   546→   546→   546→/* ── ANIMATION 2: Shimmer Sweep on Hover ──
+   547→   547→   547→   A light sweeps across the card once on hover */
+   548→   548→   548→
+   549→   549→   549→.case-card-inner {
+   550→   550→   550→  position: relative;
+   551→   551→   551→  overflow: hidden;
+   552→   552→   552→}
+   553→   553→   553→
+   554→   554→   554→/* Shimmer element */
+   555→   555→   555→.case-card-inner::before {
+   556→   556→   556→  content: '';
+   557→   557→   557→  position: absolute;
+   558→   558→   558→  top: 0;
+   559→   559→   559→  left: -100%;
+   560→   560→   560→  width: 60%;
+   561→   561→   561→  height: 100%;
+   562→   562→   562→  background: linear-gradient(
+   563→   563→   563→    105deg,
+   564→   564→   564→    transparent 30%,
+   565→   565→   565→    rgba(255,255,255,0.04) 50%,
+   566→   566→   566→    transparent 70%
+   567→   567→   567→  );
+   568→   568→   568→  transform: skewX(-15deg);
+   569→   569→   569→  transition: left 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+   570→   570→   570→  pointer-events: none;
+   571→   571→   571→  z-index: 2;
+   572→   572→   572→}
+   573→   573→   573→
+   574→   574→   574→.case-card-wrapper:hover .case-card-inner::before {
+   575→   575→   575→  left: 150%;    /* Sweeps across — left to right */
+   576→   576→   576→}
+   577→   577→   577→
+   578→   578→   578→/* ── ANIMATION 3: Border Glow Intensify ──
+   579→   579→   579→   Static border that pulses brighter on hover */
+   580→   580→   580→
+   581→   581→   581→.case-card-inner {
+   582→   582→   582→  border: 1px solid var(--case-border-dim);
+   583→   583→   583→  transition: border-color 0.4s ease;
+   584→   584→   584→}
+   585→   585→   585→
+   586→   586→   586→.case-card-wrapper:hover .case-card-inner {
+   587→   587→   587→  border-color: var(--case-border-bright);
+   588→   588→   588→}
+   589→   589→   589→
+   590→   590→   590→/* ── ANIMATION 4: Float Up on Hover ──
+   591→   591→   591→   Card lifts and scales slightly */
+   592→   592→   592→
+   593→   593→   593→.case-card-wrapper:hover {
+   594→   594→   594→  transform: translateY(-10px) scale(1.015);
+   595→   595→   595→}
+   596→   596→   596→
+   597→   597→   597→/* ── ANIMATION 5: Scroll Entrance ──
+   598→   598→   598→   Cards fade + slide up when scrolled into view */
+   599→   599→   599→
+   600→   600→   600→.case-card-wrapper {
+   601→   601→   601→  opacity: 0;
+   602→   602→   602→  transform: translateY(50px);
+   603→   603→   603→}
+   604→   604→   604→
+   605→   605→   605→.case-card-wrapper.in-view {
+   606→   606→   606→  opacity: 1;
+   607→   607→   607→  transform: translateY(0);
+   608→   608→   608→  transition:
+   609→   609→   609→    opacity 0.7s ease,
+   610→   610→   610→    transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+   611→   611→   611→}
+   612→   612→   612→
+   613→   613→   613→/* ── ANIMATION 6: Profit Number Pulse ──
+   614→   614→   614→   The big profit number has a subtle glow pulse */
+   615→   615→   615→
+   616→   616→   616→.profit-after-value {
+   617→   617→   617→  animation: profitPulse 3s ease-in-out infinite;
+   618→   618→   618→}
+   619→   619→   619→
+   620→   620→   620→@keyframes profitPulse {
+   621→   621→   621→  0%, 100% { opacity: 0.90; }
+   622→   622→   622→  50%       { opacity: 1.00;
+   623→   623→   623→              text-shadow: 0 0 30px currentColor; }
+   624→   624→   624→}
+   625→   625→   625→
+   626→   626→   626→/* ── PER-CARD COLOR VARIABLES ──
+   627→   627→   627→   Same colors as before — just plug in here */
+   628→   628→   628→
+   629→   629→   629→.case-card-wrapper.zara {
+   630→   630→   630→  --case-glow-dim:    rgba(0,230,118,0.15);
+   631→   631→   631→  --case-glow-mid:    rgba(0,230,118,0.10);
+   632→   632→   632→  --case-glow-bright: rgba(0,230,118,0.40);
+   633→   633→   633→  --case-border-dim:    rgba(0,230,118,0.20);
+   634→   634→   634→  --case-border-bright: rgba(0,230,118,0.60);
+   635→   635→   635→}
+   636→   636→   636→
+   637→   637→   637→.case-card-wrapper.pace {
+   638→   638→   638→  --case-glow-dim:    rgba(255,140,0,0.15);
+   639→   639→   639→  --case-glow-mid:    rgba(255,140,0,0.10);
+   640→   640→   640→  --case-glow-bright: rgba(255,140,0,0.40);
+   641→   641→   641→  --case-border-dim:    rgba(255,140,0,0.20);
+   642→   642→   642→  --case-border-bright: rgba(255,140,0,0.60);
+   643→   643→   643→}
+   644→   644→   644→
+   645→   645→   645→.case-card-wrapper.noire {
+   646→   646→   646→  --case-glow-dim:    rgba(255,255,255,0.08);
+   647→   647→   647→  --case-glow-mid:    rgba(255,255,255,0.05);
+   648→   648→   648→  --case-glow-bright: rgba(255,255,255,0.20);
+   649→   649→   649→  --case-border-dim:    rgba(255,255,255,0.12);
+   650→   650→   650→  --case-border-bright: rgba(255,255,255,0.35);
+   651→   651→   651→}
+   652→   652→   652→
+   653→   653→   653→.case-card-wrapper.luna {
+   654→   654→   654→  --case-glow-dim:    rgba(245,166,35,0.15);
+   655→   655→   655→  --case-glow-mid:    rgba(245,166,35,0.10);
+   656→   656→   656→  --case-glow-bright: rgba(245,166,35,0.40);
+   657→   657→   657→  --case-border-dim:    rgba(245,166,35,0.22);
+   658→   658→   658→  --case-border-bright: rgba(245,166,35,0.65);
+   659→   659→   659→}
+   660→   660→   660→
+   661→   661→   661→.case-card-wrapper.urbannest {
+   662→   662→   662→  --case-glow-dim:    rgba(0,198,255,0.15);
+   663→   663→   663→  --case-glow-mid:    rgba(0,198,255,0.10);
+   664→   664→   664→  --case-glow-bright: rgba(0,198,255,0.40);
+   665→   665→   665→  --case-border-dim:    rgba(0,198,255,0.20);
+   666→   666→   666→  --case-border-bright: rgba(0,198,255,0.60);
+   667→   667→   667→}
+   668→   668→   668→
+   669→   669→   669→.case-card-wrapper.paw {
+   670→   670→   670→  --case-glow-dim:    rgba(168,85,247,0.15);
+   671→   671→   671→  --case-glow-mid:    rgba(168,85,247,0.10);
+   672→   672→   672→  --case-glow-bright: rgba(168,85,247,0.40);
+   673→   673→   673→  --case-border-dim:    rgba(168,85,247,0.20);
+   674→   674→   674→  --case-border-bright: rgba(168,85,247,0.60);
+   675→   675→   675→}
+   676→   676→   676→
+   677→   677→   677→.case-card-wrapper.lumiere {
+   678→   678→   678→  --case-glow-dim:    rgba(244,114,182,0.15);
+   679→   679→   679→  --case-glow-mid:    rgba(244,114,182,0.10);
+   680→   680→   680→  --case-glow-bright: rgba(244,114,182,0.40);
+   681→   681→   681→  --case-border-dim:    rgba(244,114,182,0.20);
+   682→   682→   682→  --case-border-bright: rgba(244,114,182,0.60);
+   683→   683→   683→}
+   684→   684→   684→
+   685→   685→   685→/* JavaScript for scroll reveal */
+   686→   686→   686→JavaScript
+   687→   687→   687→
+   688→   688→   688→// Scroll reveal — IntersectionObserver
+   689→   689→   689→const caseCards = document.querySelectorAll('.case-card-wrapper');
+   690→   690→   690→const revealObserver = new IntersectionObserver(
+   691→   691→   691→  (entries) => {
+   692→   692→   692→    entries.forEach((entry, i) => {
+   693→   693→   693→      if (entry.isIntersecting) {
+   694→   694→   694→        setTimeout(() => {
+   695→   695→   695→          entry.target.classList.add('in-view');
+   696→   696→   696→        }, i * 120);
+   697→   697→   697→        revealObserver.unobserve(entry.target);
+   698→   698→   698→      }
+   699→   699→   699→    });
+   700→   700→   700→  },
+   701→   701→   701→  { threshold: 0.15 }
+   702→   702→   702→);
+   703→   703→   703→
+   704→   704→   704→caseCards.forEach(card => revealObserver.observe(card));
+   705→   705→   705→🔧 PROBLEM 4 — "The Infrastructure Behind The Insights": 2x Lighting + Different Colors + Animation
+   706→   706→   706→Problem: Infrastructure section এর 4 boxes এ lighting কম, সব same color, animation নেই
+   707→   707→   707→
+   708→   708→   708→Fix — 4 Boxes, 4 Colors, 2x Stronger Lighting + Animation:
+   709→   709→   709→
+   710→   710→   710→CSS
+   711→   711→   711→
+   712→   712→   712→/* ============================================
+   713→   713→   713→   INFRASTRUCTURE SECTION — 4 TECH BOXES
+   714→   714→   714→   2x more lighting + different colors
+   715→   715→   715→   + new animations (NO rotating border)
+   716→   716→   716→   ============================================ */
+   717→   717→   717→
+   718→   718→   718→/* All 4 boxes — base */
+   719→   719→   719→.infra-tech-card {
+   720→   720→   720→  position: relative;
+   721→   721→   721→  border-radius: 18px;
+   722→   722→   722→  padding: 32px;
+   723→   723→   723→  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+   724→   724→   724→  overflow: hidden;
+   725→   725→   725→}
+   726→   726→   726→
+   727→   727→   727→/* ── Shimmer on hover (same as case studies) ── */
+   728→   728→   728→.infra-tech-card::before {
+   729→   729→   729→  content: '';
+   730→   730→   730→  position: absolute;
+   731→   731→   731→  top: 0; left: -100%;
+   732→   732→   732→  width: 55%;
+   733→   733→   733→  height: 100%;
+   734→   734→   734→  background: linear-gradient(
+   735→   735→   735→    105deg,
+   736→   736→   736→    transparent 30%,
+   737→   737→   737→    rgba(255,255,255,0.045) 50%,
+   738→   738→   738→    transparent 70%
+   739→   739→   739→  );
+   740→   740→   740→  transform: skewX(-15deg);
+   741→   741→   741→  transition: left 0.7s ease;
+   742→   742→   742→  pointer-events: none;
+   743→   743→   743→}
+   744→   744→   744→
+   745→   745→   745→.infra-tech-card:hover::before { left: 150%; }
+   746→   746→   746→
+   747→   747→   747→/* ── Corner accent light ── */
+   748→   748→   748→.infra-tech-card::after {
+   749→   749→   749→  content: '';
+   750→   750→   750→  position: absolute;
+   751→   751→   751→  top: 0; left: 0;
+   752→   752→   752→  width: 200px;
+   753→   753→   753→  height: 200px;
+   754→   754→   754→  border-radius: 50%;
+   755→   755→   755→  opacity: 0.08;
+   756→   756→   756→  filter: blur(60px);
+   757→   757→   757→  transition: opacity 0.4s ease;
+   758→   758→   758→  pointer-events: none;
+   759→   759→   759→}
+   760→   760→   760→
+   761→   761→   761→.infra-tech-card:hover::after { opacity: 0.18; }
+   762→   762→   762→
+   763→   763→   763→/* Hover lift */
+   764→   764→   764→.infra-tech-card:hover {
+   765→   765→   765→  transform: translateY(-8px) scale(1.02);
+   766→   766→   766→}
+   767→   767→   767→
+   768→   768→   768→/* ── BOX 1: Programming & Analytics — CYAN ── */
+   769→   769→   769→.infra-card-programming {
+   770→   770→   770→  background: linear-gradient(
+   771→   771→   771→    145deg,
+   772→   772→   772→    rgba(8,13,20,1) 0%,
+   773→   773→   773→    rgba(0,198,255,0.09) 100%
+   774→   774→   774→  );
+   775→   775→   775→  border: 1px solid rgba(0,198,255,0.30);
+   776→   776→   776→
+   777→   777→   777→  /* 2x stronger box-shadow */
+   778→   778→   778→  box-shadow:
+   779→   779→   779→    0 0 0 1px rgba(0,198,255,0.10),
+   780→   780→   780→    0 8px 40px rgba(0,0,0,0.50),
+   781→   781→   781→    0 0 60px rgba(0,198,255,0.18),   /* 2x glow */
+   782→   782→   782→    0 0 120px rgba(0,198,255,0.10),  /* far glow */
+   783→   783→   783→    inset 0 1px 0 rgba(0,198,255,0.20),
+   784→   784→   784→    inset 0 0 80px rgba(0,198,255,0.05);
+   785→   785→   785→
+   786→   786→   786→  animation: infraGlow1 4s ease-in-out infinite;
+   787→   787→   787→}
+   788→   788→   788→
+   789→   789→   789→.infra-card-programming::after {
+   790→   790→   790→  background: radial-gradient(
+   791→   791→   791→    circle, #00C6FF, transparent 70%);
+   792→   792→   792→}
+   793→   793→   793→
+   794→   794→   794→@keyframes infraGlow1 {
+   795→   795→   795→  0%,100% {
+   796→   796→   796→    box-shadow:
+   797→   797→   797→      0 0 60px rgba(0,198,255,0.18),
+   798→   798→   798→      0 0 120px rgba(0,198,255,0.08);
+   799→   799→   799→  }
+   800→   800→   800→  50% {
+   801→   801→   801→    box-shadow:
+   802→   802→   802→      0 0 80px rgba(0,198,255,0.35),  /* 2x peak */
+   803→   803→   803→      0 0 160px rgba(0,198,255,0.18),
+   804→   804→   804→      inset 0 0 60px rgba(0,198,255,0.08);
+   805→   805→   805→  }
+   806→   806→   806→}
+   807→   807→   807→
+   808→   808→   808→.infra-card-programming:hover {
+   809→   809→   809→  box-shadow:
+   810→   810→   810→    0 0 80px rgba(0,198,255,0.40),
+   811→   811→   811→    0 0 160px rgba(0,198,255,0.25),
+   812→   812→   812→    0 20px 60px rgba(0,0,0,0.60),
+   813→   813→   813→    inset 0 0 60px rgba(0,198,255,0.08);
+   814→   814→   814→  border-color: rgba(0,198,255,0.65);
+   815→   815→   815→}
+   816→   816→   816→
+   817→   817→   817→/* ── BOX 2: Cloud & Data Warehousing — PURPLE ── */
+   818→   818→   818→.infra-card-cloud {
+   819→   819→   819→  background: linear-gradient(
+   820→   820→   820→    145deg,
+   821→   821→   821→    rgba(8,13,20,1) 0%,
+   822→   822→   822→    rgba(139,92,246,0.09) 100%
+   823→   823→   823→  );
+   824→   824→   824→  border: 1px solid rgba(139,92,246,0.30);
+   825→   825→   825→  box-shadow:
+   826→   826→   826→    0 0 0 1px rgba(139,92,246,0.10),
+   827→   827→   827→    0 8px 40px rgba(0,0,0,0.50),
+   828→   828→   828→    0 0 60px rgba(139,92,246,0.18),
+   829→   829→   829→    0 0 120px rgba(139,92,246,0.10),
+   830→   830→   830→    inset 0 1px 0 rgba(139,92,246,0.20),
+   831→   831→   831→    inset 0 0 80px rgba(139,92,246,0.05);
+   832→   832→   832→
+   833→   833→   833→  animation: infraGlow2 4s ease-in-out infinite;
+   834→   834→   834→  animation-delay: 1s;
+   835→   835→   835→}
+   836→   836→   836→
+   837→   837→   837→.infra-card-cloud::after {
+   838→   838→   838→  background: radial-gradient(
+   839→   839→   839→    circle, #8B5CF6, transparent 70%);
+   840→   840→   840→}
+   841→   841→   841→
+   842→   842→   842→@keyframes infraGlow2 {
+   843→   843→   843→  0%,100% {
+   844→   844→   844→    box-shadow:
+   845→   845→   845→      0 0 60px rgba(139,92,246,0.18),
+   846→   846→   846→      0 0 120px rgba(139,92,246,0.08);
+   847→   847→   847→  }
+   848→   848→   848→  50% {
+   849→   849→   849→    box-shadow:
+   850→   850→   850→      0 0 80px rgba(139,92,246,0.35),
+   851→   851→   851→      0 0 160px rgba(139,92,246,0.18),
+   852→   852→   852→      inset 0 0 60px rgba(139,92,246,0.08);
+   853→   853→   853→  }
+   854→   854→   854→}
+   855→   855→   855→
+   856→   856→   856→.infra-card-cloud:hover {
+   857→   857→   857→  box-shadow:
+   858→   858→   858→    0 0 80px rgba(139,92,246,0.40),
+   859→   859→   859→    0 0 160px rgba(139,92,246,0.25),
+   860→   860→   860→    0 20px 60px rgba(0,0,0,0.60);
+   861→   861→   861→  border-color: rgba(139,92,246,0.65);
+   862→   862→   862→}
+   863→   863→   863→
+   864→   864→   864→/* ── BOX 3: Visualization & BI — GOLD ── */
+   865→   865→   865→.infra-card-visualization {
+   866→   866→   866→  background: linear-gradient(
+   867→   867→   867→    145deg,
+   868→   868→   868→    rgba(8,13,20,1) 0%,
+   869→   869→   869→    rgba(245,166,35,0.09) 100%
+   870→   870→   870→  );
+   871→   871→   871→  border: 1px solid rgba(245,166,35,0.30);
+   872→   872→   872→  box-shadow:
+   873→   873→   873→    0 0 0 1px rgba(245,166,35,0.10),
+   874→   874→   874→    0 8px 40px rgba(0,0,0,0.50),
+   875→   875→   875→    0 0 60px rgba(245,166,35,0.18),
+   876→   876→   876→    0 0 120px rgba(245,166,35,0.10),
+   877→   877→   877→    inset 0 1px 0 rgba(245,166,35,0.20),
+   878→   878→   878→    inset 0 0 80px rgba(245,166,35,0.05);
+   879→   879→   879→
+   880→   880→   880→  animation: infraGlow3 4s ease-in-out infinite;
+   881→   881→   881→  animation-delay: 2s;
+   882→   882→   882→}
+   883→   883→   883→
+   884→   884→   884→.infra-card-visualization::after {
+   885→   885→   885→  background: radial-gradient(
+   886→   886→   886→    circle, #F5A623, transparent 70%);
+   887→   887→   887→}
+   888→   888→   888→
+   889→   889→   889→@keyframes infraGlow3 {
+   890→   890→   890→  0%,100% {
+   891→   891→   891→    box-shadow:
+   892→   892→   892→      0 0 60px rgba(245,166,35,0.18),
+   893→   893→   893→      0 0 120px rgba(245,166,35,0.08);
+   894→   894→   894→  }
+   895→   895→   895→  50% {
+   896→   896→   896→    box-shadow:
+   897→   897→   897→      0 0 80px rgba(245,166,35,0.35),
+   898→   898→   898→      0 0 160px rgba(245,166,35,0.18),
+   899→   899→   899→      inset 0 0 60px rgba(245,166,35,0.08);
+   900→   900→   900→  }
+   901→   901→   901→}
+   902→   902→   902→
+   903→   903→   903→.infra-card-visualization:hover {
+   904→   904→   904→  box-shadow:
+   905→   905→   905→    0 0 80px rgba(245,166,35,0.40),
+   906→   906→   906→    0 0 160px rgba(245,166,35,0.25),
+   907→   907→   907→    0 20px 60px rgba(0,0,0,0.60);
+   908→   908→   908→  border-color: rgba(245,166,35,0.65);
+   909→   909→   909→}
+   910→   910→   910→
+   911→   911→   911→/* ── BOX 4: Platform Integrations — GREEN ── */
+   912→   912→   912→.infra-card-platforms {
+   913→   913→   913→  background: linear-gradient(
+   914→   914→   914→    145deg,
+   915→   915→   915→    rgba(8,13,20,1) 0%,
+   916→   916→   916→    rgba(0,230,118,0.09) 100%
+   917→   917→   917→  );
+   918→   918→   918→  border: 1px solid rgba(0,230,118,0.30);
+   919→   919→   919→  box-shadow:
+   920→   920→   920→    0 0 0 1px rgba(0,230,118,0.10),
+   921→   921→   921→    0 8px 40px rgba(0,0,0,0.50),
+   922→   922→   922→    0 0 60px rgba(0,230,118,0.18),
+   923→   923→   923→    0 0 120px rgba(0,230,118,0.10),
+   924→   924→   924→    inset 0 1px 0 rgba(0,230,118,0.20),
+   925→   925→   925→    inset 0 0 80px rgba(0,230,118,0.05);
+   926→   926→   926→
+   927→   927→   927→  animation: infraGlow4 4s ease-in-out infinite;
+   928→   928→   928→  animation-delay: 3s;
+   929→   929→   929→}
+   930→   930→   930→
+   931→   931→   931→.infra-card-platforms::after {
+   932→   932→   932→  background: radial-gradient(
+   933→   933→   933→    circle, #00E676, transparent 70%);
+   934→   934→   934→}
+   935→   935→   935→
+   936→   936→   936→@keyframes infraGlow4 {
+   937→   937→   937→  0%,100% {
+   938→   938→   938→    box-shadow:
+   939→   939→   939→      0 0 60px rgba(0,230,118,0.18),
+   940→   940→   940→      0 0 120px rgba(0,230,118,0.08);
+   941→   941→   941→  }
+   942→   942→   942→  50% {
+   943→   943→   943→    box-shadow:
+   944→   944→   944→      0 0 80px rgba(0,230,118,0.35),
+   945→   945→   945→      0 0 160px rgba(0,230,118,0.18),
+   946→   946→   946→      inset 0 0 60px rgba(0,230,118,0.08);
+   947→   947→   947→  }
+   948→   948→   948→}
+   949→   949→   949→
+   950→   950→   950→.infra-card-platforms:hover {
+   951→   951→   951→  box-shadow:
+   952→   952→   952→    0 0 80px rgba(0,230,118,0.40),
+   953→   953→   953→    0 0 160px rgba(0,230,118,0.25),
+   954→   954→   954→    0 20px 60px rgba(0,0,0,0.60);
+   955→   955→   955→  border-color: rgba(0,230,118,0.65);
+   956→   956→   956→}
+   957→   957→   957→
+   958→   958→   958→/* ── Icon color per box ── */
+   959→   959→   959→.infra-card-programming .infra-card-icon { color: #00C6FF; }
+   960→   960→   960→.infra-card-cloud       .infra-card-icon { color: #8B5CF6; }
+   961→   961→   961→.infra-card-visualization .infra-card-icon { color: #F5A623; }
+   962→   962→   962→.infra-card-platforms   .infra-card-icon { color: #00E676; }
+   963→   963→   963→🔧 PROBLEM 5 — Technical Portfolio Cards: Same as Problem 4 + Different Colors + Animation
+   964→   964→   964→Problem: Technical Portfolio section এর cards এ Problem 4 এর মতো 2x lighting, different colors, new animations দিতে হবে — NO rotating border
+   965→   965→   965→
+   966→   966→   966→CSS
+   967→   967→   967→
+   968→   968→   968→/* ============================================
+   969→   969→   969→   TECHNICAL PORTFOLIO CARDS — 3 PROJECT CARDS
+   970→   970→   970→   Different colors per card + animations
+   971→   971→   971→   NO rotating border — use breathing glow
+   972→   972→   972→   ============================================ */
+   973→   973→   973→
+   974→   974→   974→/* All portfolio cards — base */
+   975→   975→   975→.portfolio-card {
+   976→   976→   976→  position: relative;
+   977→   977→   977→  border-radius: 20px;
+   978→   978→   978→  padding: 36px;
+   979→   979→   979→  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+   980→   980→   980→  overflow: hidden;
+   981→   981→   981→}
+   982→   982→   982→
+   983→   983→   983→/* Shimmer on hover */
+   984→   984→   984→.portfolio-card::before {
+   985→   985→   985→  content: '';
+   986→   986→   986→  position: absolute;
+   987→   987→   987→  top: 0; left: -100%;
+   988→   988→   988→  width: 55%;
+   989→   989→   989→  height: 100%;
+   990→   990→   990→  background: linear-gradient(
+   991→   991→   991→    105deg,
+   992→   992→   992→    transparent 30%,
+   993→   993→   993→    rgba(255,255,255,0.05) 50%,
+   994→   994→   994→    transparent 70%
+   995→   995→   995→  );
+   996→   996→   996→  transform: skewX(-15deg);
+   997→   997→   997→  transition: left 0.8s ease;
+   998→   998→   998→  pointer-events: none;
+   999→   999→   999→  z-index: 2;
+  1000→  1000→  1000→}
+  1001→  1001→  1001→
+  1002→  1002→  1002→.portfolio-card:hover::before { left: 150%; }
+  1003→  1003→  1003→
+  1004→  1004→  1004→/* Hover lift */
+  1005→  1005→  1005→.portfolio-card:hover {
+  1006→  1006→  1006→  transform: translateY(-10px) scale(1.02);
+  1007→  1007→  1007→}
+  1008→  1008→  1008→
+  1009→  1009→  1009→/* ── CARD 1: Behavioral Funnel — CYAN ── */
+  1010→  1010→  1010→.portfolio-card-behavioral {
+  1011→  1011→  1011→  background: linear-gradient(
+  1012→  1012→  1012→    145deg,
+  1013→  1013→  1013→    rgba(8,13,20,1) 0%,
+  1014→  1014→  1014→    rgba(0,198,255,0.08) 100%
+  1015→  1015→  1015→  );
+  1016→  1016→  1016→  border: 1px solid rgba(0,198,255,0.28);
+  1017→  1017→  1017→  box-shadow:
+  1018→  1018→  1018→    0 0 50px rgba(0,198,255,0.18),
+  1019→  1019→  1019→    0 0 100px rgba(0,198,255,0.10),
+  1020→  1020→  1020→    0 8px 40px rgba(0,0,0,0.50),
+  1021→  1021→  1021→    inset 0 1px 0 rgba(0,198,255,0.20);
+  1022→  1022→  1022→  animation: portGlow1 4.5s ease-in-out infinite;
+  1023→  1023→  1023→}
+  1024→  1024→  1024→
+  1025→  1025→  1025→@keyframes portGlow1 {
+  1026→  1026→  1026→  0%,100% {
+  1027→  1027→  1027→    box-shadow:
+  1028→  1028→  1028→      0 0 50px rgba(0,198,255,0.18),
+  1029→  1029→  1029→      0 8px 40px rgba(0,0,0,0.50);
+  1030→  1030→  1030→  }
+  1031→  1031→  1031→  50% {
+  1032→  1032→  1032→    box-shadow:
+  1033→  1033→  1033→      0 0 80px rgba(0,198,255,0.38),
+  1034→  1034→  1034→      0 0 150px rgba(0,198,255,0.18),
+  1035→  1035→  1035→      0 8px 60px rgba(0,0,0,0.60);
+  1036→  1036→  1036→  }
+  1037→  1037→  1037→}
+  1038→  1038→  1038→
+  1039→  1039→  1039→.portfolio-card-behavioral:hover {
+  1040→  1040→  1040→  box-shadow:
+  1041→  1041→  1041→    0 0 80px rgba(0,198,255,0.45),
+  1042→  1042→  1042→    0 0 160px rgba(0,198,255,0.25),
+  1043→  1043→  1043→    0 20px 60px rgba(0,0,0,0.60);
+  1044→  1044→  1044→  border-color: rgba(0,198,255,0.60);
+  1045→  1045→  1045→}
+  1046→  1046→  1046→
+  1047→  1047→  1047→/* ── CARD 2: Financial Data Warehouse — GOLD ── */
+  1048→  1048→  1048→.portfolio-card-financial {
+  1049→  1049→  1049→  background: linear-gradient(
+  1050→  1050→  1050→    145deg,
+  1051→  1051→  1051→    rgba(8,13,20,1) 0%,
+  1052→  1052→  1052→    rgba(245,166,35,0.08) 100%
+  1053→  1053→  1053→  );
+  1054→  1054→  1054→  border: 1px solid rgba(245,166,35,0.28);
+  1055→  1055→  1055→  box-shadow:
+  1056→  1056→  1056→    0 0 50px rgba(245,166,35,0.18),
+  1057→  1057→  1057→    0 0 100px rgba(245,166,35,0.10),
+  1058→  1058→  1058→    0 8px 40px rgba(0,0,0,0.50),
+  1059→  1059→  1059→    inset 0 1px 0 rgba(245,166,35,0.20);
+  1060→  1060→  1060→  animation: portGlow2 4.5s ease-in-out infinite;
+  1061→  1061→  1061→  animation-delay: 1.5s;
+  1062→  1062→  1062→}
+  1063→  1063→  1063→
+  1064→  1064→  1064→@keyframes portGlow2 {
+  1065→  1065→  1065→  0%,100% {
+  1066→  1066→  1066→    box-shadow:
+  1067→  1067→  1067→      0 0 50px rgba(245,166,35,0.18),
+  1068→  1068→  1068→      0 8px 40px rgba(0,0,0,0.50);
+  1069→  1069→  1069→  }
+  1070→  1070→  1070→  50% {
+  1071→  1071→  1071→    box-shadow:
+  1072→  1072→  1072→      0 0 80px rgba(245,166,35,0.38),
+  1073→  1073→  1073→      0 0 150px rgba(245,166,35,0.18),
+  1074→  1074→  1074→      0 8px 60px rgba(0,0,0,0.60);
+  1075→  1075→  1075→  }
+  1076→  1076→  1076→}
+  1077→  1077→  1077→
+  1078→  1078→  1078→.portfolio-card-financial:hover {
+  1079→  1079→  1079→  box-shadow:
+  1080→  1080→  1080→    0 0 80px rgba(245,166,35,0.45),
+  1081→  1081→  1081→    0 0 160px rgba(245,166,35,0.25),
+  1082→  1082→  1082→    0 20px 60px rgba(0,0,0,0.60);
+  1083→  1083→  1083→  border-color: rgba(245,166,35,0.60);
+  1084→  1084→  1084→}
+  1085→  1085→  1085→
+  1086→  1086→  1086→/* ── CARD 3: Churn & Retention — PURPLE ── */
+  1087→  1087→  1087→.portfolio-card-churn {
+  1088→  1088→  1088→  background: linear-gradient(
+  1089→  1089→  1089→    145deg,
+  1090→  1090→  1090→    rgba(8,13,20,1) 0%,
+  1091→  1091→  1091→    rgba(139,92,246,0.08) 100%
+  1092→  1092→  1092→  );
+  1093→  1093→  1093→  border: 1px solid rgba(139,92,246,0.28);
+  1094→  1094→  1094→  box-shadow:
+  1095→  1095→  1095→    0 0 50px rgba(139,92,246,0.18),
+  1096→  1096→  1096→    0 0 100px rgba(139,92,246,0.10),
+  1097→  1097→  1097→    0 8px 40px rgba(0,0,0,0.50),
+  1098→  1098→  1098→    inset 0 1px 0 rgba(139,92,246,0.20);
+  1099→  1099→  1099→  animation: portGlow3 4.5s ease-in-out infinite;
+  1100→  1100→  1100→  animation-delay: 3s;
+  1101→  1101→  1101→}
+  1102→  1102→  1102→
+  1103→  1103→  1103→@keyframes portGlow3 {
+  1104→  1104→  1104→  0%,100% {
+  1105→  1105→  1105→    box-shadow:
+  1106→  1106→  1106→      0 0 50px rgba(139,92,246,0.18),
+  1107→  1107→  1107→      0 8px 40px rgba(0,0,0,0.50);
+  1108→  1108→  1108→  }
+  1109→  1109→  1109→  50% {
+  1110→  1110→  1110→    box-shadow:
+  1111→  1111→  1111→      0 0 80px rgba(139,92,246,0.38),
+  1112→  1112→  1112→      0 0 150px rgba(139,92,246,0.18),
+  1113→  1113→  1113→      0 8px 60px rgba(0,0,0,0.60);
+  1114→  1114→  1114→  }
+  1115→  1115→  1115→}
+  1116→  1116→  1116→
+  1117→  1117→  1117→.portfolio-card-churn:hover {
+  1118→  1118→  1118→  box-shadow:
+  1119→  1119→  1119→    0 0 80px rgba(139,92,246,0.45),
+  1120→  1120→  1120→    0 0 160px rgba(139,92,246,0.25),
+  1121→  1121→  1121→    0 20px 60px rgba(0,0,0,0.60);
+  1122→  1122→  1122→  border-color: rgba(139,92,246,0.60);
+  1123→  1123→  1123→}
+  1124→  1124→  1124→
+  1125→  1125→  1125→/* Tag pills — color per card */
+  1126→  1126→  1126→.portfolio-card-behavioral .tech-tag {
+  1127→  1127→  1127→  background: rgba(0,198,255,0.10);
+  1128→  1128→  1128→  border: 1px solid rgba(0,198,255,0.30);
+  1129→  1129→  1129→  color: #00C6FF;
+  1130→  1130→  1130→}
+  1131→  1131→  1131→
+  1132→  1132→  1132→.portfolio-card-financial .tech-tag {
+  1133→  1133→  1133→  background: rgba(245,166,35,0.10);
+  1134→  1134→  1134→  border: 1px solid rgba(245,166,35,0.30);
+  1135→  1135→  1135→  color: #F5A623;
+  1136→  1136→  1136→}
+  1137→  1137→  1137→
+  1138→  1138→  1138→.portfolio-card-churn .tech-tag {
+  1139→  1139→  1139→  background: rgba(139,92,246,0.10);
+  1140→  1140→  1140→  border: 1px solid rgba(139,92,246,0.30);
+  1141→  1141→  1141→  color: #8B5CF6;
+  1142→  1142→  1142→}
+  1143→  1143→  1143→
+  1144→  1144→  1144→/* Section title accent — "Technical Portfolio" */
+  1145→  1145→  1145→/* Keep existing — don't change */
+  1146→  1146→  1146→🔧 PROBLEM 6 — Testimonials: Hover Animation + 2x Different Color Lighting Per Card
+  1147→  1147→  1147→Problem: Testimonial cards এ cursor সামনে নিলে নড়াচড়া নেই। প্রতিটার জন্য আলাদা 2x stronger color lighting দরকার। "$12.4K/mo→$29.8K/mo" এর colors হুবহু same রাখতে হবে।
+  1148→  1148→  1148→
+  1149→  1149→  1149→CSS
+  1150→  1150→  1150→
+  1151→  1151→  1151→/* ============================================
+  1152→  1152→  1152→   TESTIMONIAL CARDS — Hover + Unique Colors
+  1153→  1153→  1153→   Revenue numbers ($12.4K → $29.8K) UNTOUCHED
+  1154→  1154→  1154→   ============================================ */
+  1155→  1155→  1155→
+  1156→  1156→  1156→/* All testimonial cards — base transition */
+  1157→  1157→  1157→.testimonial-card {
+  1158→  1158→  1158→  position: relative;
+  1159→  1159→  1159→  border-radius: 20px;
+  1160→  1160→  1160→  padding: 32px;
+  1161→  1161→  1161→  cursor: default;
+  1162→  1162→  1162→  transition:
+  1163→  1163→  1163→    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+  1164→  1164→  1164→    box-shadow 0.4s ease,
+  1165→  1165→  1165→    border-color 0.4s ease;
+  1166→  1166→  1166→  overflow: hidden;
+  1167→  1167→  1167→}
+  1168→  1168→  1168→
+  1169→  1169→  1169→/* Hover: lift + slight scale */
+  1170→  1170→  1170→.testimonial-card:hover {
+  1171→  1171→  1171→  transform: translateY(-10px) scale(1.025);
+  1172→  1172→  1172→}
+  1173→  1173→  1173→
+  1174→  1174→  1174→/* Shimmer sweep on hover */
+  1175→  1175→  1175→.testimonial-card::before {
+  1176→  1176→  1176→  content: '';
+  1177→  1177→  1177→  position: absolute;
+  1178→  1178→  1178→  top: 0; left: -100%;
+  1179→  1179→  1179→  width: 55%;
+  1180→  1180→  1180→  height: 100%;
+  1181→  1181→  1181→  background: linear-gradient(
+  1182→  1182→  1182→    105deg,
+  1183→  1183→  1183→    transparent 30%,
+  1184→  1184→  1184→    rgba(255,255,255,0.04) 50%,
+  1185→  1185→  1185→    transparent 70%
+  1186→  1186→  1186→  );
+  1187→  1187→  1187→  transform: skewX(-15deg);
+  1188→  1188→  1188→  transition: left 0.7s ease;
+  1189→  1189→  1189→  pointer-events: none;
+  1190→  1190→  1190→  z-index: 2;
+  1191→  1191→  1191→}
+  1192→  1192→  1192→
+  1193→  1193→  1193→.testimonial-card:hover::before { left: 150%; }
+  1194→  1194→  1194→
+  1195→  1195→  1195→/* ── 6 CARDS — 6 UNIQUE COLORS ── */
+  1196→  1196→  1196→
+  1197→  1197→  1197→/* Card 1: Marcus T. (NOIRE Collective) — Silver/White */
+  1198→  1198→  1198→.testimonial-card-1 {
+  1199→  1199→  1199→  background: linear-gradient(
+  1200→  1200→  1200→    145deg,
+  1201→  1201→  1201→    rgba(8,13,20,1),
+  1202→  1202→  1202→    rgba(255,255,255,0.04)
+  1203→  1203→  1203→  );
+  1204→  1204→  1204→  border: 1px solid rgba(255,255,255,0.12);
+  1205→  1205→  1205→  box-shadow:
+  1206→  1206→  1206→    0 0 40px rgba(255,255,255,0.06),
+  1207→  1207→  1207→    0 0 80px rgba(255,255,255,0.03),
+  1208→  1208→  1208→    0 8px 40px rgba(0,0,0,0.50);
+  1209→  1209→  1209→  animation: testGlow1 5s ease-in-out infinite;
+  1210→  1210→  1210→}
+  1211→  1211→  1211→
+  1212→  1212→  1212→.testimonial-card-1:hover {
+  1213→  1213→  1213→  box-shadow:
+  1214→  1214→  1214→    0 0 70px rgba(255,255,255,0.18),  /* 2x */
+  1215→  1215→  1215→    0 0 140px rgba(255,255,255,0.10),
+  1216→  1216→  1216→    0 20px 60px rgba(0,0,0,0.60);
+  1217→  1217→  1217→  border-color: rgba(255,255,255,0.30);
+  1218→  1218→  1218→}
+  1219→  1219→  1219→
+  1220→  1220→  1220→@keyframes testGlow1 {
+  1221→  1221→  1221→  0%,100% { box-shadow: 0 0 40px rgba(255,255,255,0.06); }
+  1222→  1222→  1222→  50%      { box-shadow: 0 0 70px rgba(255,255,255,0.14); }
+  1223→  1223→  1223→}
+  1224→  1224→  1224→
+  1225→  1225→  1225→/* Card 2: Daniel G. (PACE Performance) — Orange */
+  1226→  1226→  1226→.testimonial-card-2 {
+  1227→  1227→  1227→  background: linear-gradient(
+  1228→  1228→  1228→    145deg,
+  1229→  1229→  1229→    rgba(8,13,20,1),
+  1230→  1230→  1230→    rgba(255,140,0,0.07)
+  1231→  1231→  1231→  );
+  1232→  1232→  1232→  border: 1px solid rgba(255,140,0,0.22);
+  1233→  1233→  1233→  box-shadow:
+  1234→  1234→  1234→    0 0 40px rgba(255,140,0,0.12),
+  1235→  1235→  1235→    0 0 80px rgba(255,140,0,0.06),
+  1236→  1236→  1236→    0 8px 40px rgba(0,0,0,0.50);
+  1237→  1237→  1237→  animation: testGlow2 5s ease-in-out infinite;
+  1238→  1238→  1238→  animation-delay: 0.8s;
+  1239→  1239→  1239→}
+  1240→  1240→  1240→
+  1241→  1241→  1241→.testimonial-card-2:hover {
+  1242→  1242→  1242→  box-shadow:
+  1243→  1243→  1243→    0 0 70px rgba(255,140,0,0.30),  /* 2x */
+  1244→  1244→  1244→    0 0 140px rgba(255,140,0,0.16),
+  1245→  1245→  1245→    0 20px 60px rgba(0,0,0,0.60);
+  1246→  1246→  1246→  border-color: rgba(255,140,0,0.55);
+  1247→  1247→  1247→}
+  1248→  1248→  1248→
+  1249→  1249→  1249→@keyframes testGlow2 {
+  1250→  1250→  1250→  0%,100% { box-shadow: 0 0 40px rgba(255,140,0,0.12); }
+  1251→  1251→  1251→  50%      { box-shadow: 0 0 70px rgba(255,140,0,0.25); }
+  1252→  1252→  1252→}
+  1253→  1253→  1253→
+  1254→  1254→  1254→/* Card 3: Sofia M. (LUNA Jewelry) — Gold */
+  1255→  1255→  1255→.testimonial-card-3 {
+  1256→  1256→  1256→  background: linear-gradient(
+  1257→  1257→  1257→    145deg,
+  1258→  1258→  1258→    rgba(8,13,20,1),
+  1259→  1259→  1259→    rgba(245,166,35,0.07)
+  1260→  1260→  1260→  );
+  1261→  1261→  1261→  border: 1px solid rgba(245,166,35,0.22);
+  1262→  1262→  1262→  box-shadow:
+  1263→  1263→  1263→    0 0 40px rgba(245,166,35,0.12),
+  1264→  1264→  1264→    0 0 80px rgba(245,166,35,0.06),
+  1265→  1265→  1265→    0 8px 40px rgba(0,0,0,0.50);
+  1266→  1266→  1266→  animation: testGlow3 5s ease-in-out infinite;
+  1267→  1267→  1267→  animation-delay: 1.6s;
+  1268→  1268→  1268→}
+  1269→  1269→  1269→
+  1270→  1270→  1270→.testimonial-card-3:hover {
+  1271→  1271→  1271→  box-shadow:
+  1272→  1272→  1272→    0 0 70px rgba(245,166,35,0.30),  /* 2x */
+  1273→  1273→  1273→    0 0 140px rgba(245,166,35,0.16),
+  1274→  1274→  1274→    0 20px 60px rgba(0,0,0,0.60);
+  1275→  1275→  1275→  border-color: rgba(245,166,35,0.55);
+  1276→  1276→  1276→}
+  1277→  1277→  1277→
+  1278→  1278→  1278→@keyframes testGlow3 {
+  1279→  1279→  1279→  0%,100% { box-shadow: 0 0 40px rgba(245,166,35,0.12); }
+  1280→  1280→  1280→  50%      { box-shadow: 0 0 70px rgba(245,166,35,0.25); }
+  1281→  1281→  1281→}
+  1282→  1282→  1282→
+  1283→  1283→  1283→/* Card 4: Sarah K. (UrbanNest) — Cyan */
+  1284→  1284→  1284→.testimonial-card-4 {
+  1285→  1285→  1285→  background: linear-gradient(
+  1286→  1286→  1286→    145deg,
+  1287→  1287→  1287→    rgba(8,13,20,1),
+  1288→  1288→  1288→    rgba(0,198,255,0.07)
+  1289→  1289→  1289→  );
+  1290→  1290→  1290→  border: 1px solid rgba(0,198,255,0.22);
+  1291→  1291→  1291→  box-shadow:
+  1292→  1292→  1292→    0 0 40px rgba(0,198,255,0.12),
+  1293→  1293→  1293→    0 0 80px rgba(0,198,255,0.06),
+  1294→  1294→  1294→    0 8px 40px rgba(0,0,0,0.50);
+  1295→  1295→  1295→  animation: testGlow4 5s ease-in-out infinite;
+  1296→  1296→  1296→  animation-delay: 2.4s;
+  1297→  1297→  1297→}
+  1298→  1298→  1298→
+  1299→  1299→  1299→.testimonial-card-4:hover {
+  1300→  1300→  1300→  box-shadow:
+  1301→  1301→  1301→    0 0 70px rgba(0,198,255,0.30),  /* 2x */
+  1302→  1302→  1302→    0 0 140px rgba(0,198,255,0.16),
+  1303→  1303→  1303→    0 20px 60px rgba(0,0,0,0.60);
+  1304→  1304→  1304→  border-color: rgba(0,198,255,0.55);
+  1305→  1305→  1305→}
+  1306→  1306→  1306→
+  1307→  1307→  1307→@keyframes testGlow4 {
+  1308→  1308→  1308→  0%,100% { box-shadow: 0 0 40px rgba(0,198,255,0.12); }
+  1309→  1309→  1309→  50%      { box-shadow: 0 0 70px rgba(0,198,255,0.25); }
+  1310→  1310→  1310→}
+  1311→  1311→  1311→
+  1312→  1312→  1312→/* Card 5: James C. (PawPerfect) — Purple */
+  1313→  1313→  1313→.testimonial-card-5 {
+  1314→  1314→  1314→  background: linear-gradient(
+  1315→  1315→  1315→    145deg,
+  1316→  1316→  1316→    rgba(8,13,20,1),
+  1317→  1317→  1317→    rgba(168,85,247,0.07)
+  1318→  1318→  1318→  );
+  1319→  1319→  1319→  border: 1px solid rgba(168,85,247,0.22);
+  1320→  1320→  1320→  box-shadow:
+  1321→  1321→  1321→    0 0 40px rgba(168,85,247,0.12),
+  1322→  1322→  1322→    0 0 80px rgba(168,85,247,0.06),
+  1323→  1323→  1323→    0 8px 40px rgba(0,0,0,0.50);
+  1324→  1324→  1324→  animation: testGlow5 5s ease-in-out infinite;
+  1325→  1325→  1325→  animation-delay: 3.2s;
+  1326→  1326→  1326→}
+  1327→  1327→  1327→
+  1328→  1328→  1328→.testimonial-card-5:hover {
+  1329→  1329→  1329→  box-shadow:
+  1330→  1330→  1330→    0 0 70px rgba(168,85,247,0.30),  /* 2x */
+  1331→  1331→  1331→    0 0 140px rgba(168,85,247,0.16),
+  1332→  1332→  1332→    0 20px 60px rgba(0,0,0,0.60);
+  1333→  1333→  1333→  border-color: rgba(168,85,247,0.55);
+  1334→  1334→  1334→}
+  1335→  1335→  1335→
+  1336→  1336→  1336→@keyframes testGlow5 {
+  1337→  1337→  1337→  0%,100% { box-shadow: 0 0 40px rgba(168,85,247,0.12); }
+  1338→  1338→  1338→  50%      { box-shadow: 0 0 70px rgba(168,85,247,0.25); }
+  1339→  1339→  1339→}
+  1340→  1340→  1340→
+  1341→  1341→  1341→/* Card 6: Priya S. (LUMIERE) — Pink */
+  1342→  1342→  1342→.testimonial-card-6 {
+  1343→  1343→  1343→  background: linear-gradient(
+  1344→  1344→  1344→    145deg,
+  1345→  1345→  1345→    rgba(8,13,20,1),
+  1346→  1346→  1346→    rgba(244,114,182,0.07)
+  1347→  1347→  1347→  );
+  1348→  1348→  1348→  border: 1px solid rgba(244,114,182,0.22);
+  1349→  1349→  1349→  box-shadow:
+  1350→  1350→  1350→    0 0 40px rgba(244,114,182,0.12),
+  1351→  1351→  1351→    0 0 80px rgba(244,114,182,0.06),
+  1352→  1352→  1352→    0 8px 40px rgba(0,0,0,0.50);
+  1353→  1353→  1353→  animation: testGlow6 5s ease-in-out infinite;
+  1354→  1354→  1354→  animation-delay: 4.0s;
+  1355→  1355→  1355→}
+  1356→  1356→  1356→
+  1357→  1357→  1357→.testimonial-card-6:hover {
+  1358→  1358→  1358→  box-shadow:
+  1359→  1359→  1359→    0 0 70px rgba(244,114,182,0.30),  /* 2x */
+  1360→  1360→  1360→    0 0 140px rgba(244,114,182,0.16),
+  1361→  1361→  1361→    0 20px 60px rgba(0,0,0,0.60);
+  1362→  1362→  1362→  border-color: rgba(244,114,182,0.55);
+  1363→  1363→  1363→}
+  1364→  1364→  1364→
+  1365→  1365→  1365→@keyframes testGlow6 {
+  1366→  1366→  1366→  0%,100% { box-shadow: 0 0 40px rgba(244,114,182,0.12); }
+  1367→  1367→  1367→  50%      { box-shadow: 0 0 70px rgba(244,114,182,0.25); }
+  1368→  1368→  1368→}
+  1369→  1369→  1369→
+  1370→  1370→  1370→/* ── Revenue numbers — DO NOT TOUCH ──
+  1371→  1371→  1371→   $12.4K/mo → $29.8K/mo এর existing
+  1372→  1372→  1372→   color styles হুবহু same রাখো          */
+  1373→  1373→  1373→🔧 PROBLEM 7 — Featured Quote Box (Bottom Testimonial): Animation + Different Color + No Rotating Border
+  1374→  1374→  1374→Problem: নিচের বড় featured quote box টায় animation নেই, color নেই — কিন্তু rotating/corki border দেওয়া যাবে না
+  1375→  1375→  1375→
+  1376→  1376→  1376→CSS
+  1377→  1377→  1377→
+  1378→  1378→  1378→/* ============================================
+  1379→  1379→  1379→   FEATURED QUOTE BOX — Bottom testimonial
+  1380→  1380→  1380→   Breathing glow + shimmer — NO rotating border
+  1381→  1381→  1381→   ============================================ */
+  1382→  1382→  1382→
+  1383→  1383→  1383→.featured-quote-box {
+  1384→  1384→  1384→  position: relative;
+  1385→  1385→  1385→  border-radius: 24px;
+  1386→  1386→  1386→  padding: 56px 64px;
+  1387→  1387→  1387→  overflow: hidden;
+  1388→  1388→  1388→  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  1389→  1389→  1389→
+  1390→  1390→  1390→  /* Silver/Pearl color theme — premium feel */
+  1391→  1391→  1391→  background: linear-gradient(
+  1392→  1392→  1392→    145deg,
+  1393→  1393→  1393→    rgba(8,13,20,1) 0%,
+  1394→  1394→  1394→    rgba(180,180,220,0.05) 50%,
+  1395→  1395→  1395→    rgba(8,13,20,1) 100%
+  1396→  1396→  1396→  );
+  1397→  1397→  1397→  border: 1px solid rgba(200,200,240,0.18);
+  1398→  1398→  1398→
+  1399→  1399→  1399→  /* Breathing glow — subtle silver/white */
+  1400→  1400→  1400→  box-shadow:
+  1401→  1401→  1401→    0 0 60px rgba(200,200,240,0.08),
+  1402→  1402→  1402→    0 0 120px rgba(200,200,240,0.04),
+  1403→  1403→  1403→    inset 0 1px 0 rgba(255,255,255,0.08),
+  1404→  1404→  1404→    0 20px 80px rgba(0,0,0,0.60);
+  1405→  1405→  1405→
+  1406→  1406→  1406→  animation: quoteGlow 5s ease-in-out infinite;
+  1407→  1407→  1407→}
+  1408→  1408→  1408→
+  1409→  1409→  1409→@keyframes quoteGlow {
+  1410→  1410→  1410→  0%, 100% {
+  1411→  1411→  1411→    box-shadow:
+  1412→  1412→  1412→      0 0 60px rgba(200,200,240,0.08),
+  1413→  1413→  1413→      0 0 120px rgba(200,200,240,0.04),
+  1414→  1414→  1414→      0 20px 80px rgba(0,0,0,0.60);
+  1415→  1415→  1415→  }
+  1416→  1416→  1416→  50% {
+  1417→  1417→  1417→    box-shadow:
+  1418→  1418→  1418→      0 0 100px rgba(200,200,240,0.18),  /* 2x peak */
+  1419→  1419→  1419→      0 0 200px rgba(200,200,240,0.10),
+  1420→  1420→  1420→      inset 0 0 80px rgba(200,200,240,0.04),
+  1421→  1421→  1421→      0 20px 80px rgba(0,0,0,0.60);
+  1422→  1422→  1422→  }
+  1423→  1423→  1423→}
+  1424→  1424→  1424→
+  1425→  1425→  1425→/* Hover lift */
+  1426→  1426→  1426→.featured-quote-box:hover {
+  1427→  1427→  1427→  transform: translateY(-6px);
+  1428→  1428→  1428→  box-shadow:
+  1429→  1429→  1429→    0 0 120px rgba(200,200,240,0.22),
+  1430→  1430→  1430→    0 0 240px rgba(200,200,240,0.12),
+  1431→  1431→  1431→    0 30px 80px rgba(0,0,0,0.65);
+  1432→  1432→  1432→  border-color: rgba(200,200,240,0.35);
+  1433→  1433→  1433→}
+  1434→  1434→  1434→
+  1435→  1435→  1435→/* Corner ambient light — top left */
+  1436→  1436→  1436→.featured-quote-box::before {
+  1437→  1437→  1437→  content: '';
+  1438→  1438→  1438→  position: absolute;
+  1439→  1439→  1439→  top: -40px; left: -40px;
+  1440→  1440→  1440→  width: 250px; height: 250px;
+  1441→  1441→  1441→  background: radial-gradient(
+  1442→  1442→  1442→    circle,
+  1443→  1443→  1443→    rgba(200,200,255,0.06) 0%,
+  1444→  1444→  1444→    transparent 70%
+  1445→  1445→  1445→  );
+  1446→  1446→  1446→  pointer-events: none;
+  1447→  1447→  1447→  animation: cornerLight 6s ease-in-out infinite;
+  1448→  1448→  1448→}
+  1449→  1449→  1449→
+  1450→  1450→  1450→@keyframes cornerLight {
+  1451→  1451→  1451→  0%, 100% { opacity: 0.5; transform: scale(1); }
+  1452→  1452→  1452→  50%       { opacity: 1.0; transform: scale(1.2); }
+  1453→  1453→  1453→}
+  1454→  1454→  1454→
+  1455→  1455→  1455→/* Shimmer sweep on hover */
+  1456→  1456→  1456→.featured-quote-box::after {
+  1457→  1457→  1457→  content: '';
+  1458→  1458→  1458→  position: absolute;
+  1459→  1459→  1459→  top: 0; left: -100%;
+  1460→  1460→  1460→  width: 50%;
+  1461→  1461→  1461→  height: 100%;
+  1462→  1462→  1462→  background: linear-gradient(
+  1463→  1463→  1463→    105deg,
+  1464→  1464→  1464→    transparent 30%,
+  1465→  1465→  1465→    rgba(255,255,255,0.03) 50%,
+  1466→  1466→  1466→    transparent 70%
+  1467→  1467→  1467→  );
+  1468→  1468→  1468→  transform: skewX(-15deg);
+  1469→  1469→  1469→  transition: left 1.0s ease;
+  1470→  1470→  1470→  pointer-events: none;
+  1471→  1471→  1471→}
+  1472→  1472→  1472→
+  1473→  1473→  1473→.featured-quote-box:hover::after { left: 160%; }
+  1474→  1474→  1474→
+  1475→  1475→  1475→/* Quote marks — bigger, glowing */
+  1476→  1476→  1476→.featured-quote-box .quote-mark {
+  1477→  1477→  1477→  color: rgba(200,200,240,0.20);
+  1478→  1478→  1478→  font-size: 80px;
+  1479→  1479→  1479→  line-height: 1;
+  1480→  1480→  1480→  font-family: Georgia, serif;
+  1481→  1481→  1481→  position: absolute;
+  1482→  1482→  1482→  top: 20px; left: 32px;
+  1483→  1483→  1483→  animation: quoteMark 5s ease-in-out infinite;
+  1484→  1484→  1484→}
+  1485→  1485→  1485→
+  1486→  1486→  1486→@keyframes quoteMark {
+  1487→  1487→  1487→  0%,100% { opacity: 0.20; }
+  1488→  1488→  1488→  50%      { opacity: 0.40; }
+  1489→  1489→  1489→}
+  1490→  1490→  1490→
+  1491→  1491→  1491→/* Quote text — keep existing styling */
+  1492→  1492→  1492→/* Author name — keep existing */
+  1493→  1493→  1493→/* DO NOT change any text content */
+  1494→  1494→  1494→📋 FINAL FIX CHECKLIST:
+  1495→  1495→  1495→text
+  1496→  1496→  1496→
+  1497→  1497→  1497→┌─────────────────────────────────────────────────┐
+  1498→  1498→  1498→│        ALL 7 PROBLEMS — FINAL CHECKLIST         │
+  1499→  1499→  1499→│                                                 │
+  1500→  1500→  1500→│  PROBLEM 1 — Most Chosen Badge:                │
+  1501→  1501→  1501→│  ☐ Badge visible again (overflow:visible fix)  │
+  1502→  1502→  1502→│  ☐ Positioned above growth card                │
+  1503→  1503→  1503→│  ☐ Gold pulsing glow animation                 │
+  1504→  1504→  1504→│                                                 │
+  1505→  1505→  1505→│  PROBLEM 2 — Infra Table:                      │
+  1506→  1506→  1506→│  ☐ Thicker outer border (3px gradient)         │
+  1507→  1507→  1507→│  ☐ Column headers: cyan/purple/gold colored    │
+  1508→  1508→  1508→│  ☐ Thick bottom border per column (4px)        │
+  1509→  1509→  1509→│  ☐ Side borders per data column (2-3px)        │
+  1510→  1510→  1510→│  ☐ Professional text (STARTER/PRO/ELITE)       │
+  1511→  1511→  1511→│  ☐ Col badges (pill above header)              │
+  1512→  1512→  1512→│  ☐ Check marks glowing colored                 │
+  1513→  1513→  1513→│  ☐ Table glow animation (multi-color)          │
+  1514→  1514→  1514→│                                                 │
+  1515→  1515→  1515→│  PROBLEM 3 — Case Studies:                     │
+  1516→  1516→  1516→│  ☐ Rotating/corki animation REMOVED            │
+  1517→  1517→  1517→│  ☐ Breathing glow pulse (staggered)            │
+  1518→  1518→  1518→│  ☐ Shimmer sweep on hover                      │
+  1519→  1519→  1519→│  ☐ Float up on hover (-10px)                   │
+  1520→  1520→  1520→│  ☐ Scroll entrance stagger                     │
+  1521→  1521→  1521→│  ☐ Colors + lighting = same as before          │
+  1522→  1522→  1522→│                                                 │
+  1523→  1523→  1523→│  PROBLEM 4 — Infra Section Boxes:              │
+  1524→  1524→  1524→│  ☐ Programming → Cyan (2x glow)               │
+  1525→  1525→  1525→│  ☐ Cloud → Purple (2x glow)                   │
+  1526→  1526→  1526→│  ☐ Visualization → Gold (2x glow)             │
+  1527→  1527→  1527→│  ☐ Platforms → Green (2x glow)                │
+  1528→  1528→  1528→│  ☐ Breathing animation per box                 │
+  1529→  1529→  1529→│  ☐ Shimmer on hover                           │
+  1530→  1530→  1530→│  ☐ NO rotating border                          │
+  1531→  1531→  1531→│                                                 │
+  1532→  1532→  1532→│  PROBLEM 5 — Tech Portfolio Cards:             │
+  1533→  1533→  1533→│  ☐ Behavioral → Cyan                          │
+  1534→  1534→  1534→│  ☐ Financial → Gold                           │
+  1535→  1535→  1535→│  ☐ Churn → Purple                             │
+  1536→  1536→  1536→│  ☐ Breathing glow per card                     │
+  1537→  1537→  1537→│  ☐ Shimmer on hover                           │
+  1538→  1538→  1538→│  ☐ Tech tag pills colored per card             │
+  1539→  1539→  1539→│  ☐ NO rotating border                          │
+  1540→  1540→  1540→│                                                 │
+  1541→  1541→  1541→│  PROBLEM 6 — Testimonials:                     │
+  1542→  1542→  1542→│  ☐ All 6 cards → hover lift animation         │
+  1543→  1543→  1543→│  ☐ Shimmer sweep on hover                      │
+  1544→  1544→  1544→│  ☐ 6 unique colors (silver/orange/gold/        │
+  1545→  1545→  1545→│     cyan/purple/pink)                          │
+  1546→  1546→  1546→│  ☐ 2x stronger hover lighting                  │
+  1547→  1547→  1547→│  ☐ Breathing glow per card (staggered)         │
+  1548→  1548→  1548→│  ☐ Revenue numbers ($12.4K→$29.8K) UNTOUCHED  │
+  1549→  1549→  1549→│                                                 │
+  1550→  1550→  1550→│  PROBLEM 7 — Featured Quote Box:              │
+  1551→  1551→  1551→│  ☐ Silver/pearl breathing glow                 │
+  1552→  1552→  1552→│  ☐ Hover lift animation                        │
+  1553→  1553→  1553→│  ☐ Corner ambient light                        │
+  1554→  1554→  1554→│  ☐ Shimmer sweep on hover                      │
+  1555→  1555→  1555→│  ☐ NO rotating border                          │
+  1556→  1556→  1556→│  ☐ All content same                            │
+  1557→  1557→  1557→│                                                 │
+  1558→  1558→  1558→│  UNTOUCHED SECTIONS:                           │
+  1559→  1559→  1559→│  ☐ Navbar, Hero, Quick Proof                   │
+  1560→  1560→  1560→│  ☐ About section                               │
+  1561→  1561→  1561→│  ☐ Service packages                            │
+  1562→  1562→  1562→│  ☐ Add-on packages                             │
+  1563→  1563→  1563→│  ☐ Process section                             │
+  1564→  1564→  1564→│  ☐ Contact + Footer                            │
+  1565→  1565→  1565→│  ☐ All text content                            │
+  1566→  1566→  1566→│                                                 │
+  1567→  1567→  1567→└─────────────────────────────────────────────────┘
+  1568→  1568→  1568→

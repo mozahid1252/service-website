@@ -1125,13 +1125,14 @@ function ServicesSection() {
                 key={pkg.tier}
                 className={`service-card-wrapper ${pkg.tier.toLowerCase()} transition-transform duration-300`}
               >
-                <div className="service-card-inner">
                 {pkg.featured && (
-                  <div className="absolute -top-3 left-6 px-4 py-1 rounded-full text-xs font-bold text-[#020408]"
-                    style={{ background: 'linear-gradient(135deg, #F5A623, #F7D774)' }}>
-                    ⭐ Most Chosen
+                  <div className="most-chosen-badge-wrapper">
+                    <span className="most-chosen-badge">
+                      <span>⭐</span> Most Chosen
+                    </span>
                   </div>
                 )}
+                <div className="service-card-inner">
 
                 <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
                 <h4 className="text-white text-lg font-bold mb-1">{pkg.name}</h4>
@@ -1276,38 +1277,51 @@ function ServicesSection() {
           {/* Comparison Table */}
           <div className="infra-table-wrapper">
             <div className="infra-table-inner">
-            <table className="infra-table w-full text-sm">
+            <table className="infra-table">
               <thead>
-                <tr className="bg-[rgba(0,198,255,0.05)]">
-                  <th className="px-4 py-3 text-left text-[#8899AA] font-semibold">Feature</th>
-                  <th className="px-4 py-3 text-center text-[#8899AA] font-semibold">Basic</th>
-                  <th className="px-4 py-3 text-center text-[#8899AA] font-semibold">Full Pipeline</th>
-                  <th className="px-4 py-3 text-center text-[#8899AA] font-semibold">Full + Automation</th>
+                <tr>
+                  <th>
+                    <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: '11px', letterSpacing: '3px' }}>
+                      CAPABILITIES
+                    </span>
+                  </th>
+                  <th>
+                    <div className="col-badge basic">STARTER</div>
+                    <div>Basic Setup</div>
+                  </th>
+                  <th>
+                    <div className="col-badge pipeline">PRO</div>
+                    <div>Full Pipeline</div>
+                  </th>
+                  <th>
+                    <div className="col-badge auto">ELITE</div>
+                    <div>Full + Automation</div>
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {BUNDLE_FEATURES.map((row, i) => (
-                  <tr key={i} className={i % 2 === 0 ? 'bg-[#0D1520]' : 'bg-[#080D14]'}>
-                    <td className="px-4 py-3 text-[#F0F4F8]">{row.feature}</td>
-                    <td className="px-4 py-3 text-center">
+                  <tr key={i}>
+                    <td>{row.feature}</td>
+                    <td>
                       {typeof row.basic === 'boolean' ? (
-                        row.basic ? <Check size={16} className="text-[#00E676] mx-auto" /> : <X size={16} className="text-[#FF4444] mx-auto" />
+                        row.basic ? <span className="check-cyan">✓</span> : <span className="cross-dim">✕</span>
                       ) : (
-                        <span className="text-[#8899AA]">{row.basic}</span>
+                        <span className="table-text-value cyan">{row.basic}</span>
                       )}
                     </td>
-                    <td className="px-4 py-3 text-center">
+                    <td>
                       {typeof row.full === 'boolean' ? (
-                        row.full ? <Check size={16} className="text-[#00E676] mx-auto" /> : <X size={16} className="text-[#FF4444] mx-auto" />
+                        row.full ? <span className="check-purple">✓</span> : <span className="cross-dim">✕</span>
                       ) : (
-                        <span className="text-[#8899AA]">{row.full}</span>
+                        <span className="table-text-value purple">{row.full}</span>
                       )}
                     </td>
-                    <td className="px-4 py-3 text-center">
+                    <td>
                       {typeof row.auto === 'boolean' ? (
-                        row.auto ? <Check size={16} className="text-[#00E676] mx-auto" /> : <X size={16} className="text-[#FF4444] mx-auto" />
+                        row.auto ? <span className="check-gold">✓</span> : <span className="cross-dim">✕</span>
                       ) : (
-                        <span className="text-[#8899AA]">{row.auto}</span>
+                        <span className="table-text-value gold">{row.auto}</span>
                       )}
                     </td>
                   </tr>
@@ -1509,12 +1523,12 @@ function TechPortfolioSection() {
 
         <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {GITHUB_PROJECTS.map((proj, i) => (
-            <div key={i} className="bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] group">
+            <div key={i} className={`portfolio-card portfolio-card-${['behavioral','financial','churn'][i]}`}>
               <h3 className="text-white font-bold text-lg mb-1">{proj.name}</h3>
               <p className="gradient-text text-sm font-semibold mb-3">{proj.subtitle}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {proj.stack.map((s, si) => (
-                  <span key={si} className="px-2.5 py-1 rounded-md text-xs font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF]">{s}</span>
+                  <span key={si} className="tech-tag px-2.5 py-1 rounded-md text-xs font-medium">{s}</span>
                 ))}
               </div>
               <div className="mb-4">
@@ -1565,8 +1579,8 @@ function TestimonialsSection() {
 
         {/* Featured Testimonial */}
         {featured && (
-          <div className="glass rounded-2xl p-8 sm:p-10 max-w-4xl mx-auto mb-12 text-center"
-            style={{ boxShadow: '0 0 40px rgba(0,198,255,0.1)' }}>
+          <div className="featured-quote-box max-w-4xl mx-auto mb-12 text-center">
+            <span className="quote-mark">&ldquo;</span>
             <p className="text-[#F0F4F8] text-lg sm:text-xl leading-relaxed italic mb-6">{featured.quote}</p>
             <p className="text-[#8899AA] text-sm mb-2">{featured.author}</p>
             <div className="flex justify-center">
@@ -1584,7 +1598,7 @@ function TestimonialsSection() {
           {grid.map((t, i) => {
             const parts = t.profit.split(' ➔ ');
             return (
-              <div key={i} className="testimonial-card">
+              <div key={i} className={`testimonial-card testimonial-card-${i + 1}`}>
                 <div className="flex gap-0.5 mb-3">
                   {[...Array(5)].map((_, si) => (
                     <Star key={si} size={14} className="text-[#F5A623] fill-[#F5A623]" />
@@ -1683,9 +1697,9 @@ function TechStackSection() {
           {TECH_STACK.map((cat, i) => {
             const IconComp = cat.icon;
             return (
-              <div key={i} className="bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 sm:p-8">
+              <div key={i} className={`infra-tech-card infra-card-${['programming','cloud','visualization','platforms'][i]}`}>
                 <div className="flex items-center gap-3 mb-2">
-                  <IconComp size={22} className="text-[#00C6FF]" />
+                  <IconComp size={22} className="infra-card-icon" />
                   <h3 className="text-white font-bold text-lg">{cat.category}</h3>
                 </div>
                 <p className="text-[#8899AA] text-sm mb-5">{cat.description}</p>

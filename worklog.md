@@ -94,3 +94,25 @@ Stage Summary:
 - Process section step circles glow on hover
 - Mobile menu has staggered slide-in animations
 - Quick links in footer have hover expand effect
+
+---
+Task ID: 1-7
+Agent: Main Agent
+Task: Implement 7 specific CSS and HTML fixes for portfolio website
+
+Work Log:
+- PROBLEM 1 — Most Chosen Badge: Moved badge OUTSIDE service-card-inner div to be first child of service-card-wrapper (so it's not clipped by overflow:hidden). Changed HTML from inline-styled div to most-chosen-badge-wrapper/most-chosen-badge classes. Added CSS for badge positioning, pulse animation, and gradient styling. Added .growth .service-card-inner { overflow: visible; } and updated .service-card-wrapper.growth with overflow: visible, padding-top: 20px, margin-top: 20px.
+- PROBLEM 2 — Data Infrastructure Table: Complete redesign. Replaced old infra-table-wrapper/inner CSS with new gradient border, tableGlow animation, redesigned thead with per-column colors/c borders/text-shadows, col-badge classes, tbody row styling with hover/zebra stripes, per-column td borders, check-cyan/check-purple/check-gold/cross-dim classes, table-text-value classes, tfoot styling. Replaced table HTML with new structure using col-badges, CSS-driven check/cross marks instead of Lucide icons.
+- PROBLEM 3 — Case Study Cards: Replaced ALL old conic-gradient/rotate-border ::before/::after with new breatheGlow animation system using CSS custom properties (--case-glow-dim, --case-glow-mid, --case-glow-bright, --case-border-dim, --case-border-bright). Added shimmer sweep on hover via ::before, set ::after to display:none. Added profitPulse animation for profit numbers. Removed old @keyframes shimmer. Updated all 7 color themes to use new variable system.
+- PROBLEM 4 — Infrastructure Section Boxes: Replaced generic bg/border classes with infra-tech-card system. Added 4 color-themed cards (infra-card-programming=cyan, infra-card-cloud=purple, infra-card-visualization=gold, infra-card-platforms=green). Each has breathing glow animation, shimmer sweep on hover, radial glow ::after, and infra-card-icon class. Removed old Tailwind hover classes from HTML.
+- PROBLEM 5 — Technical Portfolio Cards: Replaced generic card classes with portfolio-card system. Added 3 color-themed cards (portfolio-card-behavioral=cyan, portfolio-card-financial=gold, portfolio-card-churn=purple). Each has breathing glow animation, shimmer sweep, and hover effects. Added tech-tag class with per-card color variants. Removed old Tailwind hover classes from HTML.
+- PROBLEM 6 — Testimonial Cards: Replaced old simple testimonial-card CSS with full redesigned system. Added 6 unique color themes (testimonial-card-1 through 6) each with unique gradient, border, glow animation, and hover effects. Added shimmer sweep ::before on hover. Added testimonial-card-N class to HTML via dynamic className.
+- PROBLEM 7 — Featured Quote Box: Replaced glass div with featured-quote-box class. Added silver/pearl breathing glow (quoteGlow animation), cornerLight radial gradient ::before, shimmer sweep ::after, quoteMark animation for decorative quotation mark. Added quote-mark span element. Added mobile responsive padding via @media query.
+
+Stage Summary:
+- All 7 CSS/HTML fixes implemented successfully
+- ESLint passes with no errors
+- Dev server compiles and serves pages correctly (200 status)
+- No text content changes made, only styling/structural changes
+- Rotating/corki border animations removed from case study cards and replaced with breathing glow system
+- All new animations use non-rotating approaches (breathing glow, shimmer sweep, pulse effects)
