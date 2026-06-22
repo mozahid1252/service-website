@@ -197,43 +197,49 @@ const ADD_ON_PACKAGES = [
     price: '$300 – $600 · 7–10 Days',
     problem: '"My ROAS is declining and I don\'t know why."',
     promise: 'You will know which channels are genuinely profitable vs. creating an illusion, the true cost of acquiring a customer through each platform, and exactly which campaigns to scale, pause, or kill.',
+    cssClass: 'marketing',
   },
   {
     name: 'Customer Retention Audit',
     price: '$350 – $700 · 7–12 Days',
     problem: '"Customers buy once and disappear."',
     promise: 'You will know which customers are about to leave (and how to reach them before they do), which channels bring loyal customers, and have an upload-ready segmented list for immediate retention campaigns.',
+    cssClass: 'retention',
   },
   {
     name: 'Product Portfolio Audit',
     price: '$350 – $800 · 7–14 Days',
     problem: '"50+ SKUs, I don\'t know what to focus on."',
     promise: 'You will know which products to invest in, optimize, or cut, the true profit margin on every SKU in your catalog, and exactly which products to bundle together to increase AOV.',
+    cssClass: 'portfolio',
   },
   {
     name: 'CRO Audit',
     price: '$250 – $500 · 7–10 Days',
     problem: '"Traffic is there but nobody\'s buying."',
     promise: 'You will know exactly where visitors are abandoning (and why), which fixes will have the highest impact, and have a prioritized action list to increase conversion by 20–40% using your existing traffic.',
+    cssClass: 'cro',
   },
   {
     name: 'Profitability Audit',
     price: '$350 – $700 · 8–12 Days',
     problem: '"Revenue grows but profit doesn\'t."',
     promise: 'You will know your true profit margin on every product/channel, exactly where revenue is leaking into cost, if your promotions are eroding profit, and when your cash will be tight in coming months.',
+    cssClass: 'profitability',
   },
   {
     name: 'Operations Efficiency Audit',
     price: '$400 – $800 · 10–14 Days',
     problem: '"Returns climbing, inventory out of control."',
     promise: 'You will know which suppliers are causing financial problems, exactly how much inventory to order (and when based on 90-day demand), the true cost of your return rate, and how to free up cash locked in dead stock.',
+    cssClass: 'operations',
   },
 ];
 
 const DATA_BUNDLES = [
-  { name: 'Basic Setup', bestFor: 'One-time analysis clients (2-3 platforms)', timeline: '2–3 Days', investment: '$150 – $300' },
-  { name: 'Full Pipeline Setup', bestFor: 'Ongoing/recurring clients (All APIs + Merge)', timeline: '5–7 Days', investment: '$500 – $900' },
-  { name: 'Full Pipeline + Automation', bestFor: 'Live dashboard & retainer clients (Auto-updating)', timeline: '7–10 Days', investment: '$700 – $1,200' },
+  { name: 'Basic Setup', bestFor: 'One-time analysis clients (2-3 platforms)', timeline: '2–3 Days', investment: '$150 – $300', cssClass: 'infra-wrapper-basic' },
+  { name: 'Full Pipeline Setup', bestFor: 'Ongoing/recurring clients (All APIs + Merge)', timeline: '5–7 Days', investment: '$500 – $900', cssClass: 'infra-wrapper-pipeline' },
+  { name: 'Full Pipeline + Automation', bestFor: 'Live dashboard & retainer clients (Auto-updating)', timeline: '7–10 Days', investment: '$700 – $1,200', cssClass: 'infra-wrapper-auto' },
 ];
 
 const BUNDLE_FEATURES = [
@@ -258,6 +264,9 @@ const CASE_STUDIES = [
     revelation: '46% of her customer base was permanently "Lost." Free organic content channels generated 4.2x more LTV than $18K/mo paid ads.',
     turnaround: 'Shifted from an ad-spend business to a content/community business. Built a live Looker Studio dashboard.',
     result: 'Profit went from $7/mo to $48,400/mo.',
+    cssClass: 'zara',
+    tagline: 'A $7/month profit hidden inside $89K in revenue.',
+    caseType: 'turnaround',
   },
   {
     store: 'PACE Performance',
@@ -267,6 +276,9 @@ const CASE_STUDIES = [
     revelation: 'His free TikTok race videos brought in customers worth $524 LTV, while his $8,400/mo paid ads brought customers worth $9 LTV.',
     turnaround: 'Cut ad spend by 70%, killed low-margin/high-return fitness products, leaned into authentic race-day content.',
     result: 'Profit jumped from $425/mo to $31,400/mo in 30 days.',
+    cssClass: 'pace',
+    tagline: 'His $8,400/mo ads brought customers worth $9 LTV.',
+    caseType: 'scale',
   },
   {
     store: 'NOIRE Collective',
@@ -276,6 +288,9 @@ const CASE_STUDIES = [
     revelation: 'Discount addiction and a 24.7% unit return rate from inconsistent sizing were silently bleeding the business dry.',
     turnaround: 'Detoxed discounts (17.6% → 4.8%), cut Facebook/TikTok ads by 70%, unified size charts, rebuilt mobile checkout.',
     result: 'Profit went from -$1.7K/mo to +$33,040/mo in 73 days.',
+    cssClass: 'noire',
+    tagline: '72 hours from permanent closure. Data saved it.',
+    caseType: 'diagnostic',
   },
   {
     store: 'LUNA Jewelry Co.',
@@ -285,6 +300,9 @@ const CASE_STUDIES = [
     revelation: 'She was giving away $115,956/year in "free" services (gift wrap, engraving, shipping). Her bestseller earned her $8.20/hour.',
     turnaround: 'Added a $12 engraving fee, $4.99 premium gift wrap, raised free shipping threshold, and flipped ad budget from Meta to Pinterest. Took 4 hours to implement.',
     result: 'Hourly rate jumped to $66.81/hr. Monthly profit went from $3.3K to $18,900/mo.',
+    cssClass: 'luna',
+    tagline: 'Working 11 hrs/day. Earning $11.59/hour.',
+    caseType: 'turnaround',
   },
   {
     store: 'UrbanNest Home Decor',
@@ -294,6 +312,9 @@ const CASE_STUDIES = [
     revelation: 'The #1 best-seller (Boho Macramé) was secretly losing $769/quarter. Forced account creation was causing a 71% cart abandonment rate.',
     turnaround: 'Paused losing ads, enabled guest checkout, flipped ad budget from Facebook to Google (which had 1.86x higher LTV), and sent win-back emails to at-risk customers.',
     result: 'Profit jumped from $3.4K/mo to $7,800/mo in 60 days.',
+    cssClass: 'urbannest',
+    tagline: 'Best-seller was silently losing $769/quarter.',
+    caseType: 'diagnostic',
   },
   {
     store: 'PawPerfect Premium',
@@ -303,6 +324,9 @@ const CASE_STUDIES = [
     revelation: 'Ads targeted "senior pet owners" (LTV $134) who churned when pets died. Customers acquired with puppies generated 6.3x more LTV ($847). Zero referral program despite 67% of Champions coming from word-of-mouth.',
     turnaround: 'Flipped ad targeting from senior to puppy parents. Created pet birthday and milestone email automation.',
     result: 'Profit jumped from $12.4K/mo to $29,840/mo in 45 days.',
+    cssClass: 'paw',
+    tagline: 'Targeting wrong customers. $312K/year consequence.',
+    caseType: 'scale',
   },
   {
     store: 'LUMIÈRE Beauty Co.',
@@ -312,6 +336,9 @@ const CASE_STUDIES = [
     revelation: 'Black Friday discount cohorts had 4.1x LOWER LTV and 81% churn compared to educational content cohorts. Meta Broad ads were destroying $8,963 in value.',
     turnaround: 'Stopped chasing holiday discount revenue. Replicated best cohorts, created product bundles, and reallocated ad spend to Google Brand and Content.',
     result: 'Profit jumped from $18.4K/mo to $41,380/mo in 45 days.',
+    cssClass: 'lumiere',
+    tagline: 'Plateaued 8 months. Black Friday was the villain.',
+    caseType: 'scale',
   },
 ];
 
@@ -790,16 +817,15 @@ function AboutSection() {
   return (
     <section id="about" className="bg-[#020408] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12" style={{ alignItems: 'stretch' }}>
           {/* Left - Photo */}
-          <div className="relative">
-            <div className="relative rounded-[20px] overflow-hidden border-2 border-[rgba(0,198,255,0.2)]" style={{ boxShadow: '0 0 40px rgba(0,198,255,0.15)' }}>
+          <div className="relative h-full min-h-[600px]">
+            <div className="relative h-full min-h-[600px] rounded-[20px] overflow-hidden border-2 border-[rgba(0,198,255,0.2)]" style={{ boxShadow: '0 0 40px rgba(0,198,255,0.15)' }}>
               <Image
                 src="/images/photo1.jpg"
                 alt="Mozahidul Islam - E-Commerce Growth Analyst"
-                width={500}
-                height={650}
-                className="w-full h-auto object-cover"
+                fill
+                className="object-cover"
                 priority
               />
             </div>
@@ -835,19 +861,19 @@ function AboutSection() {
             <div className="mt-5 mb-6">
               <div className="text-[#00C6FF] text-sm font-semibold tracking-widest uppercase mb-3">What I Do</div>
               <p className="text-[#8899AA] text-base leading-relaxed mb-3">
-                Most analysts only look at the surface, pulling basic Shopify reports and guessing at trends. I go deeper.
+                Most analysts only look at the surface, pulling basic Shopify reports and guessing at trends. <strong>I go deeper.</strong>
               </p>
               <p className="text-[#8899AA] text-base leading-relaxed mb-3">
-                Before any analysis can begin, your data needs to be properly connected, cleaned, and structured. That is the behind-the-scenes engineering work I handle, connecting Shopify, GA4, Meta Ads, and Klaviyo into one unified source of truth using SQL, Python, and BigQuery.
+                Before any analysis can begin, your data needs to be properly connected, cleaned, and structured. That is the behind-the-scenes engineering work I handle, <strong>connecting Shopify, GA4, Meta Ads, and Klaviyo</strong> into <strong>one unified source of truth</strong> using <strong>SQL, Python, and BigQuery</strong>.
               </p>
               <p className="text-[#8899AA] text-base leading-relaxed mb-3">
-                Once the foundation is solid, I translate that raw, complex data into clear, profitable decisions.
+                Once the foundation is solid, I translate that <strong>raw, complex data into clear, profitable decisions</strong>.
               </p>
               <p className="text-[#8899AA] text-base leading-relaxed mb-3">
-                E-commerce founders are often flying blind. Misled by vanity metrics. Handed agency reports claiming &quot;4.2x ROAS&quot; while their bank accounts quietly empty out. Working 11-hour days to make $11 an hour in real profit. My job is to find exactly where the money is leaking, tell you precisely what to fix first, and build the systems so it never happens again.
+                E-commerce founders are often <strong>flying blind</strong>. Misled by <strong>vanity metrics</strong>. Handed agency reports claiming <strong>&quot;4.2x ROAS&quot;</strong> while their bank accounts quietly empty out. Working 11-hour days to make $11 an hour in real profit. My job is to <strong>find exactly where the money is leaking</strong>, <strong>tell you precisely what to fix first</strong>, and <strong>build the systems so it never happens again</strong>.
               </p>
               <p className="text-[#8899AA] text-base leading-relaxed">
-                You don&apos;t need to touch a single line of code. Your job is to make decisions on clean, reliable data. My job is to make sure that data exists, and that it tells you the truth.
+                <strong>You don&apos;t need to touch a single line of code</strong>. <strong>Your job is to make decisions on clean, reliable data</strong>. <strong>My job is to make sure that data exists</strong>, and that it tells you the truth.
               </p>
             </div>
 
@@ -913,15 +939,14 @@ function WhyMeSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
-            { num: '01', title: 'I speak business, not jargon.', text: 'Every report is written so that a business owner, not a data scientist, can read it, understand it, and act on it immediately. If you need a glossary to read my work, I have failed.' },
-            { num: '02', title: 'I deliver decisions, not data dumps.', text: 'You will never receive a spreadsheet full of numbers with no context. Every single finding comes with a specific, prioritized recommendation and a clear reason why it matters to your bottom line.' },
-            { num: '03', title: 'I focus on your actual problem.', text: 'Every engagement is designed around the specific challenge your business is facing right now, not a generic template copy-pasted from the last client. Your data is unique. Your analysis should be too.' },
-            { num: '04', title: 'I build for action, not admiration.', text: 'Dashboards and reports that sit unopened are worthless. Everything I build is designed to be used, by you and your team, every day, to make faster and better decisions with complete confidence.' },
+            { num: '01', title: 'I speak business, not jargon.', text: 'Every report is written so that a business owner, not a data scientist, can read it, understand it, and act on it immediately. If you need a glossary to read my work, I have failed.', cssClass: 'principle-card-01' },
+            { num: '02', title: 'I deliver decisions, not data dumps.', text: 'You will never receive a spreadsheet full of numbers with no context. Every single finding comes with a specific, prioritized recommendation and a clear reason why it matters to your bottom line.', cssClass: 'principle-card-02' },
+            { num: '03', title: 'I focus on your actual problem.', text: 'Every engagement is designed around the specific challenge your business is facing right now, not a generic template copy-pasted from the last client. Your data is unique. Your analysis should be too.', cssClass: 'principle-card-03' },
+            { num: '04', title: 'I build for action, not admiration.', text: 'Dashboards and reports that sit unopened are worthless. Everything I build is designed to be used, by you and your team, every day, to make faster and better decisions with complete confidence.', cssClass: 'principle-card-04' },
           ].map((item) => (
             <div
               key={item.num}
-              className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]"
-              style={{ background: 'rgba(13,21,32,0.7)', border: '1px solid rgba(0,198,255,0.12)', boxShadow: '0 0 30px rgba(0,198,255,0.05)' }}
+              className={`rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)] ${item.cssClass}`}
             >
               <div className="text-5xl font-bold gradient-text mb-3">{item.num}</div>
               <h3 className="text-white font-bold text-lg mb-3">{item.title}</h3>
@@ -1042,10 +1067,9 @@ function ServicesSection() {
             {CORE_PACKAGES.slice(0, 3).map((pkg) => (
               <div
                 key={pkg.tier}
-                className={`relative rounded-2xl p-6 sm:p-8 ${
-                  pkg.tier === 'STARTER' ? 'card-starter' : pkg.tier === 'GROWTH' ? 'card-growth' : 'card-advanced'
-                }`}
+                className={`service-card-wrapper ${pkg.tier.toLowerCase()}`}
               >
+                <div className="service-card-inner">
                 {pkg.featured && (
                   <div className="absolute -top-3 left-6 px-4 py-1 rounded-full text-xs font-bold text-[#020408]"
                     style={{ background: 'linear-gradient(135deg, #F5A623, #F7D774)' }}>
@@ -1079,14 +1103,7 @@ function ServicesSection() {
                   <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
                 </div>
 
-                <div className="flex flex-wrap gap-3">
-                  <a href="#contact" className="px-5 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
-                    style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
-                    {pkg.cta}
-                  </a>
-                  <button className="px-5 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.2)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.05)] inline-flex items-center gap-2">
-                    <Download size={14} /> Download PDF
-                  </button>
+                <a href="#contact" className="service-book-btn">{pkg.cta}</a>
                 </div>
               </div>
             ))}
@@ -1095,7 +1112,8 @@ function ServicesSection() {
           {(() => {
             const pkg = CORE_PACKAGES[3];
             return (
-              <div className="card-retainer rounded-2xl p-8 sm:p-12">
+              <div className="service-card-wrapper retainer">
+                <div className="service-card-inner">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
@@ -1122,16 +1140,9 @@ function ServicesSection() {
                       <div className="text-[#00C6FF] text-xs font-semibold mb-2">Our Promise To You:</div>
                       <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
                     </div>
-                    <div className="flex flex-wrap gap-3">
-                      <a href="#contact" className="px-5 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
-                        style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
-                        {pkg.cta}
-                      </a>
-                      <button className="px-5 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.2)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.05)] inline-flex items-center gap-2">
-                        <Download size={14} /> Download PDF
-                      </button>
-                    </div>
+                    <a href="#contact" className="service-book-btn">{pkg.cta}</a>
                   </div>
+                </div>
                 </div>
               </div>
             );
@@ -1146,7 +1157,8 @@ function ServicesSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {ADD_ON_PACKAGES.map((pkg, i) => (
-              <div key={i} className="addon-card p-6">
+              <div key={i} className={`addon-card-wrapper ${pkg.cssClass}`}>
+                <div className="addon-card-inner">
                 <h4 className="text-white font-bold text-base mb-1">{pkg.name}</h4>
                 <div className="gradient-text-gold text-sm font-semibold mb-3">{pkg.price}</div>
                 <div className="mb-3">
@@ -1157,9 +1169,10 @@ function ServicesSection() {
                   <div className="text-[#00E676] text-xs font-semibold mb-1">Our Promise:</div>
                   <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
                 </div>
-                <a href="#contact" className="book-btn">
+                <a href="#contact" className="addon-book-btn">
                   Book the {pkg.name} →
                 </a>
+                </div>
               </div>
             ))}
           </div>
@@ -1182,7 +1195,8 @@ function ServicesSection() {
           {/* Bundle Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {DATA_BUNDLES.map((bundle, i) => (
-              <div key={i} className={`rounded-2xl p-6 ${i === 0 ? 'infra-card-basic' : i === 1 ? 'infra-card-pipeline' : 'infra-card-automation'}`}>
+              <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
+                <div className="infra-card-inner">
                 <h4 className="text-white font-bold text-lg mb-2">{bundle.name}</h4>
                 <p className="text-[#8899AA] text-sm mb-3">{bundle.bestFor}</p>
                 <div className="flex items-center justify-between">
@@ -1195,15 +1209,17 @@ function ServicesSection() {
                     <div className="gradient-text-gold text-sm font-bold">{bundle.investment}</div>
                   </div>
                 </div>
-                <a href="#contact" className={`book-btn ${i === 0 ? 'basic-book' : i === 1 ? 'pipeline-book' : 'auto-book'}`}>
+                <a href="#contact" className="infra-book-btn">
                   Book the {bundle.name} →
                 </a>
+                </div>
               </div>
             ))}
           </div>
 
           {/* Comparison Table */}
-          <div className="overflow-x-auto mb-8">
+          <div className="infra-table-wrapper">
+            <div className="infra-table-inner">
             <table className="infra-table w-full text-sm">
               <thead>
                 <tr className="bg-[rgba(0,198,255,0.05)]">
@@ -1242,6 +1258,7 @@ function ServicesSection() {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
 
           {/* 15 Individual Services */}
@@ -1276,7 +1293,6 @@ function ServicesSection() {
 
 function CaseStudiesSection() {
   const sectionRef = useScrollReveal();
-  const caseCardClasses = ['case-card-zara', 'case-card-pace', 'case-card-noire', 'case-card-luna'];
   return (
     <section id="case-studies" className="bg-[#020408] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1292,14 +1308,17 @@ function CaseStudiesSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {CASE_STUDIES.slice(0, 4).map((cs, i) => (
-            <div key={i} className={`case-study-card ${caseCardClasses[i]} p-6 sm:p-8`}>
+            <div key={i} className={`case-card-wrapper ${cs.cssClass}`}>
+              <div className="case-card-inner">
               <div className="flex items-start justify-between gap-3 mb-3">
                 <h3 className="text-white font-bold text-lg">{cs.store}</h3>
+                <span className={`case-type-badge ${cs.caseType}`}>{cs.caseType}</span>
               </div>
               <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF] mb-2">
                 {cs.niche}
               </div>
-              <p className="text-[#F0F4F8] font-semibold text-sm mb-4">{cs.title}</p>
+              <p className="text-[#F0F4F8] font-semibold text-sm mb-2">{cs.title}</p>
+              <p className="case-tagline">{cs.tagline}</p>
 
               <div className="space-y-3 mb-5">
                 <div>
@@ -1331,6 +1350,7 @@ function CaseStudiesSection() {
               <button className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
                 <Download size={14} /> Download Full {cs.store} Case Study PDF
               </button>
+              </div>
             </div>
           ))}
         </div>
@@ -1347,20 +1367,22 @@ function CaseStudiesSection() {
 
 function CaseStudies2Section() {
   const sectionRef = useScrollReveal();
-  const caseCardClasses = ['case-card-urbannest', 'case-card-paw', 'case-card-lumiere'];
   return (
     <section id="case-studies-2" className="bg-[#0A0F18] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+        <div className="case-studies-part2-grid mb-10">
           {CASE_STUDIES.slice(4).map((cs, i) => (
-            <div key={i} className={`case-study-card ${caseCardClasses[i]} p-6 sm:p-8`}>
+            <div key={i} className={`case-card-wrapper ${cs.cssClass}`}>
+              <div className="case-card-inner">
               <div className="flex items-start justify-between gap-3 mb-3">
                 <h3 className="text-white font-bold text-lg">{cs.store}</h3>
+                <span className={`case-type-badge ${cs.caseType}`}>{cs.caseType}</span>
               </div>
               <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF] mb-2">
                 {cs.niche}
               </div>
-              <p className="text-[#F0F4F8] font-semibold text-sm mb-4">{cs.title}</p>
+              <p className="text-[#F0F4F8] font-semibold text-sm mb-2">{cs.title}</p>
+              <p className="case-tagline">{cs.tagline}</p>
 
               <div className="space-y-3 mb-5">
                 <div>
@@ -1392,6 +1414,7 @@ function CaseStudies2Section() {
               <button className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
                 <Download size={14} /> Download Full {cs.store} Case Study PDF
               </button>
+              </div>
             </div>
           ))}
         </div>
