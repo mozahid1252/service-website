@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {
   try {
@@ -24,15 +25,24 @@ export async function POST(request: Request) {
       },
     });
 
-    // Try to send email notification via Resend (optional - needs API key)
-    const resendKey = process.env.RESEND_API_KEY;
-    if (resendKey && resendKey !== "re_xxxxxxxxxxxx") {
+    // Send email via Gmail SMTP
+    const gmailUser = process.env.GMAIL_USER;
+    const gmailPass = process.env.GMAIL_APP_PASSWORD;
+
+    if (gmailUser && gmailPass && gmailPass !== "your_app_password_here") {
       try {
-        const { Resend } = await import("resend");
-        const resend = new Resend(resendKey);
-        await resend.emails.send({
-          from: "Portfolio <onboarding@resend.dev>",
-          to: ["mojahidulislam101010@gmail.com"],
+        const transporter = nodemailer.createTransport({
+          service: "gmail",
+          auth: {
+            user: gmailUser,
+            pass: gmailPass,
+          },
+        });
+
+        await transporter.sendMail({
+          from: `"Portfolio Contact" <${gmailUser}>`,
+          to: gmailUser,
+          replyTo: email,
           subject: `New Inquiry from ${name} — Mozahidul Islam Portfolio`,
           html: `
             <div style="font-family:'Inter',sans-serif;max-width:600px;margin:0 auto;background:#0a0f18;padding:32px;border-radius:16px;border:1px solid rgba(0,198,255,0.2);">
@@ -65,10 +75,13 @@ export async function POST(request: Request) {
             </div>
           `,
         });
+
+        console.log("Email sent successfully to", gmailUser);
       } catch (emailErr) {
         console.error("Email send failed (DB save succeeded):", emailErr);
-        // Don't fail the request - DB save already succeeded
       }
+    } else {
+      console.log("Gmail SMTP not configured. Form saved to DB only. Set GMAIL_APP_PASSWORD in .env");
     }
 
     return NextResponse.json({ success: true });
