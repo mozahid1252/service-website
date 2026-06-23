@@ -1,0 +1,1096 @@
+     1→- main
+     2→  - navigation
+     3→    - link "Logo Mozahidul Islam E-Commerce Growth Analyst" [ref=e3]
+     4→      - image "Logo"
+     5→      - StaticText "Mozahidul Islam"
+     6→      - StaticText "E-Commerce Growth Analyst"
+     7→    - link "Home" [ref=e4]
+     8→    - link "About" [ref=e5]
+     9→    - link "Services" [ref=e6]
+    10→    - link "Case Studies" [ref=e7]
+    11→    - link "Process" [ref=e8]
+    12→    - link "Contact" [ref=e9]
+    13→    - link "Book a Discovery Call" [ref=e10]
+    14→  - generic
+    15→    - link "Home" [ref=e11]
+    16→    - link "About" [ref=e12]
+    17→    - link "Services" [ref=e13]
+    18→    - link "Case Studies" [ref=e14]
+    19→    - link "Process" [ref=e15]
+    20→    - link "Contact" [ref=e16]
+    21→    - link "Book a Discovery Call" [ref=e17]
+    22→  - generic
+    23→    - image "Hero background"
+    24→    - generic
+    25→      - StaticText "FOR E-COMMERCE FOUNDERS WHO ARE SELLING MORE, BUT KEEPING LESS."
+    26→      - heading "Your Store Is Making Revenue. Something Else Is Keeping The Profit." [level=1, ref=e47]
+    27→      - paragraph
+    28→        - StaticText "I find exactly where your money is leaking across your products, your ads, and your customers and show you how to stop it. No confusing reports. No generic advice. Just a clear picture of what is hurting your profit and a specific plan to fix it."
+    29→      - link "Find My Profit Leaks, Free 20-Min Call" [ref=e48]
+    30→      - link "See Client Results" [ref=e49]
+    31→      - StaticText "$53.5M+"
+    32→      - StaticText "Revenue Tracked"
+    33→      - StaticText "2.75M+"
+    34→      - StaticText "Data Events Processed"
+    35→      - StaticText "6+"
+    36→      - StaticText "Industries Served"
+    37→      - StaticText "0"
+    38→      - StaticText "Lines of Code You Touch"
+    39→      - StaticText "SCROLL"
+    40→  - StaticText "QUICK PROOF"
+    41→  - heading "Real Stores. Real Numbers. Real Results." [level=2, ref=e18]
+    42→  - paragraph
+    43→    - StaticText "Every single finding below came from data these founders already had. They just couldn't see it."
+    44→  - heading "UrbanNest Home Decor" [level=3, ref=e19]
+    45→  - StaticText "Home Decor & Lifestyle, Shopify"
+    46→  - StaticText "The Illusion"
+    47→  - paragraph
+    48→    - StaticText "$23K/month revenue, growing steadily. Owner thought the business was healthy."
+    49→  - StaticText "The Reality"
+    50→  - paragraph
+    51→    - StaticText "$3,460/month net profit. 14.4% net margin. The #1 best-seller (Boho Macramé) was quietly losing $769 per quarter."
+    52→  - StaticText "What We Found"
+    53→  - list
+    54→    - listitem [level=1]
+    55→      - StaticText "•"
+    56→      - StaticText "71% cart abandonment caused by forced account creation."
+    57→    - listitem [level=1]
+    58→      - StaticText "•"
+    59→      - StaticText "Mobile converting 2.76x worse than desktop."
+    60→    - listitem [level=1]
+    61→      - StaticText "•"
+    62→      - StaticText "A 20% promo sale actually erased margins, dropping profit by 41%."
+    63→  - StaticText "The Result"
+    64→  - paragraph
+    65→    - StaticText "$7,800/month net profit within 60 days. Ad budget flipped from Facebook to Google 1.86x higher customer LTV."
+    66→  - paragraph
+    67→    - StaticText "\"I literally could not sleep after watching your Loom video.\""
+    68→  - paragraph
+    69→    - StaticText "Sarah K., UrbanNest Founder"
+    70→  - table
+    71→    - rowgroup
+    72→      - row
+    73→        - columnheader "Investment" [ref=e166]
+    74→        - columnheader "Timeline" [ref=e167]
+    75→        - columnheader "Profit Added" [ref=e168]
+    76→        - columnheader "ROI" [ref=e169]
+    77→    - row
+    78→      - cell "$800" [ref=e82]
+    79→      - cell "60 days" [ref=e83]
+    80→      - cell "+$4,340/mo" [ref=e84]
+    81→      - cell "10x" [ref=e85]
+    82→  - heading "PawPerfect Premium" [level=3, ref=e20]
+    83→  - StaticText "Pet Supplies, Shopify + Meta Ads"
+    84→  - StaticText "The Illusion"
+    85→  - paragraph
+    86→    - StaticText "$54K/month revenue. 4.9★ reviews. Looked like a thriving brand from the outside."
+    87→  - StaticText "The Reality"
+    88→  - paragraph
+    89→    - StaticText "$12,400/month net profit and shrinking. Margins had compressed 8% YoY as ad costs per customer rose 73% in 3 years."
+    90→  - StaticText "What We Found"
+    91→  - list
+    92→    - listitem [level=1]
+    93→      - StaticText "•"
+    94→      - StaticText "Facebook ads targeting \"senior pets\" (LTV $134) instead of \"new pet parents\" (LTV $847)."
+    95→    - listitem [level=1]
+    96→      - StaticText "•"
+    97→      - StaticText "Zero referral program despite 67% of Champions coming from word-of-mouth."
+    98→  - StaticText "The Result"
+    99→  - paragraph
+   100→    - StaticText "$29,840/month net profit within 45 days. Ad targeting flipped to new pet parents. Pet birthday email automation activated."
+   101→  - paragraph
+   102→    - StaticText "\"The data wasn't just revenue. It was relationships waiting to happen.\""
+   103→  - paragraph
+   104→    - StaticText "James C., PawPerfect Founder"
+   105→  - table
+   106→    - rowgroup
+   107→      - row
+   108→        - columnheader "Investment" [ref=e170]
+   109→        - columnheader "Timeline" [ref=e171]
+   110→        - columnheader "Profit Added" [ref=e172]
+   111→        - columnheader "ROI" [ref=e173]
+   112→    - row
+   113→      - cell "$600" [ref=e86]
+   114→      - cell "45 days" [ref=e87]
+   115→      - cell "+$17,440/mo" [ref=e88]
+   116→      - cell "29x" [ref=e89]
+   117→  - heading "LUMIÈRE Beauty Co." [level=3, ref=e21]
+   118→  - StaticText "Skincare & Beauty, Shopify + Google Ads"
+   119→  - StaticText "The Illusion"
+   120→  - paragraph
+   121→    - StaticText "$67K/month revenue. Stable. Profitable. No obvious problems."
+   122→  - StaticText "The Reality"
+   123→  - paragraph
+   124→    - StaticText "Plateaued for 8 consecutive months. Champions buying 8.4x/year against a 12–14x benchmark, leaving $6,785/month in untouched revenue on the table."
+   125→  - StaticText "What We Found"
+   126→  - list
+   127→    - listitem [level=1]
+   128→      - StaticText "•"
+   129→      - StaticText "Black Friday discount cohorts had 4.1x lower LTV and 81% churn compared to educational content cohorts."
+   130→    - listitem [level=1]
+   131→      - StaticText "•"
+   132→      - StaticText "Meta Broad campaigns were silently destroying $8,963 in value every month."
+   133→  - StaticText "The Result"
+   134→  - paragraph
+   135→    - StaticText "$41,380/month net profit within 60–75 days. Budget reallocated to Google Brand and Content. Product bundles launched. Discount strategy rebuilt from the ground up."
+   136→  - paragraph
+   137→    - StaticText "\"I had been working harder and getting worse customers. For two years.\""
+   138→  - paragraph
+   139→    - StaticText "Priya S., LUMIÈRE Founder"
+   140→  - table
+   141→    - rowgroup
+   142→      - row
+   143→        - columnheader "Investment" [ref=e174]
+   144→        - columnheader "Timeline" [ref=e175]
+   145→        - columnheader "Profit Added" [ref=e176]
+   146→        - columnheader "ROI" [ref=e177]
+   147→    - row
+   148→      - cell "$650" [ref=e90]
+   149→      - cell "60–75 days" [ref=e91]
+   150→      - cell "+$22,980/mo" [ref=e92]
+   151→      - cell "35x" [ref=e93]
+   152→  - paragraph
+   153→    - StaticText "These aren't edge cases. This is what happens when you stop running your store on gut feeling and start running it on data."
+   154→  - link "See The Full Case Studies" [ref=e22]
+   155→  - generic
+   156→    - image "Mozahidul Islam - E-Commerce Growth Analyst"
+   157→    - generic
+   158→      - StaticText "$53.5M+"
+   159→      - StaticText "Revenue Tracked"
+   160→    - generic
+   161→      - StaticText "3 Years"
+   162→      - StaticText "Experience"
+   163→    - generic
+   164→      - StaticText "Available "
+   165→      - StaticText "For Projects"
+   166→  - StaticText "THE ANALYST BEHIND THE DATA"
+   167→  - heading "I Don't Just Read Dashboards." [level=2, ref=e23]
+   168→  - heading "I Build the Engine That Powers Them." [level=3, ref=e24]
+   169→  - paragraph
+   170→    - StaticText "Hi, I'm "
+   171→    - strong
+   172→      - StaticText "Mozahidul Islam"
+   173→    - StaticText ", E-Commerce Growth Analyst. (3 Years Of Experienced)"
+   174→  - StaticText "WHAT I DO"
+   175→  - paragraph
+   176→    - StaticText "Most analysts only look at the surface, pulling basic Shopify reports and guessing at trends. "
+   177→    - strong
+   178→      - StaticText "I go deeper."
+   179→  - paragraph
+   180→    - StaticText "Before any analysis can begin, your data needs to be properly connected, cleaned, and structured. That is the behind-the-scenes engineering work I handle, "
+   181→    - strong
+   182→      - StaticText "connecting Shopify, GA4, Meta Ads, and Klaviyo"
+   183→    - StaticText " into "
+   184→    - strong
+   185→      - StaticText "one unified source of truth"
+   186→    - StaticText " using "
+   187→    - strong
+   188→      - StaticText "SQL, Python, and BigQuery"
+   189→    - StaticText "."
+   190→  - paragraph
+   191→    - StaticText "Once the foundation is solid, I translate that "
+   192→    - strong
+   193→      - StaticText "raw, complex data into clear, profitable decisions"
+   194→    - StaticText "."
+   195→  - paragraph
+   196→    - StaticText "E-commerce founders are often "
+   197→    - strong
+   198→      - StaticText "flying blind"
+   199→    - StaticText ". Misled by "
+   200→    - strong
+   201→      - StaticText "vanity metrics"
+   202→    - StaticText ". Handed agency reports claiming "
+   203→    - strong
+   204→      - StaticText "\"4.2x ROAS\""
+   205→    - StaticText " while their bank accounts quietly empty out. Working 11-hour days to make $11 an hour in real profit. My job is to "
+   206→    - strong
+   207→      - StaticText "find exactly where the money is leaking"
+   208→    - StaticText ", "
+   209→    - strong
+   210→      - StaticText "tell you precisely what to fix first"
+   211→    - StaticText ", and "
+   212→    - strong
+   213→      - StaticText "build the systems so it never happens again"
+   214→    - StaticText "."
+   215→  - paragraph
+   216→    - strong
+   217→      - StaticText "You don't need to touch a single line of code"
+   218→    - StaticText ". "
+   219→    - strong
+   220→      - StaticText "Your job is to make decisions on clean, reliable data"
+   221→    - StaticText ". "
+   222→    - strong
+   223→      - StaticText "My job is to make sure that data exists"
+   224→    - StaticText ", and that it tells you the truth."
+   225→  - generic
+   226→    - StaticText "$53M+"
+   227→  - StaticText "Revenue Tracked & Analyzed"
+   228→  - generic
+   229→    - StaticText "2M+"
+   230→  - StaticText "Raw Data Events Processed"
+   231→  - generic
+   232→    - StaticText "47+"
+   233→  - StaticText "Analyses Delivered"
+   234→  - StaticText "3"
+   235→  - StaticText "Industries Served"
+   236→  - StaticText "EDUCATION"
+   237→  - StaticText "University of Rajshahi"
+   238→  - StaticText "LANGUAGES"
+   239→  - StaticText "English | Bengali | Hindi | Urdu"
+   240→  - link "Download CV" [ref=e25]
+   241→  - link "See My Projects" [ref=e26]
+   242→  - StaticText "WHY ME"
+   243→  - heading "The 4 Principles That Shape Every Engagement" [level=2, ref=e27]
+   244→  - StaticText "01"
+   245→  - heading "I speak business, not jargon." [level=3, ref=e28]
+   246→  - paragraph
+   247→    - StaticText "Every report is written so that a business owner, not a data scientist, can read it, understand it, and act on it immediately. If you need a glossary to read my work, I have failed."
+   248→  - StaticText "02"
+   249→  - heading "I deliver decisions, not data dumps." [level=3, ref=e29]
+   250→  - paragraph
+   251→    - StaticText "You will never receive a spreadsheet full of numbers with no context. Every single finding comes with a specific, prioritized recommendation and a clear reason why it matters to your bottom line."
+   252→  - StaticText "03"
+   253→  - heading "I focus on your actual problem." [level=3, ref=e30]
+   254→  - paragraph
+   255→    - StaticText "Every engagement is designed around the specific challenge your business is facing right now, not a generic template copy-pasted from the last client. Your data is unique. Your analysis should be too."
+   256→  - StaticText "04"
+   257→  - heading "I build for action, not admiration." [level=3, ref=e31]
+   258→  - paragraph
+   259→    - StaticText "Dashboards and reports that sit unopened are worthless. Everything I build is designed to be used, by you and your team, every day, to make faster and better decisions with complete confidence."
+   260→  - generic
+   261→    - image "Background"
+   262→    - generic
+   263→      - StaticText "THE UNFAIR ADVANTAGE"
+   264→      - heading "Don't Hire an Agency." [level=2, ref=e50]
+   265→      - heading "Hire a Profit Detective." [level=3, ref=e51]
+   266→      - paragraph
+   267→        - StaticText "Marketing agencies are paid to spend your money. They show you vanity metrics like \"4.2x ROAS\" to justify their retainers, while your actual bank account quietly empties out."
+   268→      - paragraph
+   269→        - StaticText "I am paid to find your money. I don't look at surface-level reports and call it analysis. I engineer your raw data from Shopify, GA4, Meta Ads, and Klaviyo and uncover the truth your current dashboards are hiding from you."
+   270→      - paragraph
+   271→        - StaticText "Here is why founders trust me with their life's work."
+   272→      - StaticText "01"
+   273→      - heading "I Expose the Agency Illusion" [level=3, ref=e94]
+   274→      - paragraph
+   275→        - StaticText "Your agency tells you your ROAS is 4.2x and everything is performing well. I dig into the actual data and show you that your True Profit ROAS, after cost of goods, returns, and shipping, is 0.83x. Meaning you are paying to lose money on every single sale. I don't report vanity metrics. I report net profit. Those are very different numbers, and only one of them pays your bills."
+   276→      - StaticText "02"
+   277→      - heading "Enterprise Infrastructure. Without the $150K Salary." [level=3, ref=e95]
+   278→      - paragraph
+   279→        - StaticText "Hiring a full-time in-house data engineer and analyst costs over $150,000 a year. You don't need that. I bring the exact same enterprise-level stack, SQL, Python, BigQuery, Power BI, and build a permanent, automated data pipeline for your store at a fraction of that cost. You get the infrastructure. Without the overhead."
+   280→      - StaticText "03"
+   281→      - heading "From Data to Decision in Days, Not Months." [level=3, ref=e96]
+   282→      - paragraph
+   283→        - StaticText "Most consultants take 8–12 weeks to deliver a strategy document you'll never fully implement. I deliver your complete E-Commerce Health Check in 7 days. Why? Because if your store is bleeding $1,690 a month in hidden losses, you don't have 3 months. You need to know exactly what to fix this week, not next quarter."
+   284→      - StaticText "04"
+   285→      - heading "I Find Revenue You Already Have." [level=3, ref=e97]
+   286→      - paragraph
+   287→        - StaticText "The majority of profit improvements I deliver require zero increase in ad spend. I don't tell you to \"spend more to scale.\" I find the hidden revenue already sitting inside your business by fixing your mobile checkout experience, reallocating budget to your highest-LTV channels, or activating the email list you've been ignoring for months. More profit. Same traffic. Same spend."
+   288→      - StaticText "WHAT A FOUNDER SAYS"
+   289→      - paragraph
+   290→        - StaticText "\"I fired my $2,500/month agency because their 'amazing dashboards' still left me broke. The Health Check found the exact holes in my business in 7 days. I wish I had done this two years earlier.\""
+   291→      - paragraph
+   292→        - StaticText "Marcus T., NOIRE Collective"
+   293→      - table
+   294→        - rowgroup
+   295→          - row
+   296→            - columnheader "Before" [ref=e221]
+   297→            - columnheader "After" [ref=e222]
+   298→            - columnheader "Time" [ref=e223]
+   299→        - row
+   300→          - cell "-$1,690/mo net profit" [ref=e178]
+   301→          - cell "+$33,040/mo net profit" [ref=e179]
+   302→          - cell "73 days" [ref=e180]
+   303→      - paragraph
+   304→        - StaticText "How: Discount addiction detoxed (17.6% → 4.8%). Facebook & TikTok ads cut by 70% and reallocated to organic/Google. Unified size charts to stop a 24.7% unit return rate. Mobile checkout rebuilt. Win-back email sent to 6,063 dormant customers."
+   305→  - StaticText "CHOOSE YOUR STARTING POINT"
+   306→  - heading "Services" [level=2, ref=e32]
+   307→  - paragraph
+   308→    - StaticText "Every engagement delivers a clear finding, a specific action plan, and a direct conversation, not a data dump."
+   309→  - heading "Part 1: Core E-Commerce Packages" [level=3, ref=e33]
+   310→  - paragraph
+   311→    - StaticText "Three tiers, one retainer. Designed to meet your store wherever it is today."
+   312→  - generic
+   313→    - StaticText "STOP THE BLEED."
+   314→    - heading "E-Commerce Health Check" [level=4, ref=e98]
+   315→    - StaticText "$150 – $300"
+   316→    - StaticText "One-time · 5–7 day delivery"
+   317→    - paragraph
+   318→      - StaticText "A 90-day forensic audit across sales, funnel, customers, and true product profitability."
+   319→    - list
+   320→      - listitem [level=1]
+   321→        - StaticText "4 focused analyses (Sales, Funnel, Customers, Profit)"
+   322→      - listitem [level=1]
+   323→        - StaticText "Executive Summary PDF (2-3 pages)"
+   324→      - listitem [level=1]
+   325→        - StaticText "Visual Dashboard (Looker Studio / Power BI)"
+   326→      - listitem [level=1]
+   327→        - StaticText "Action Priority List (This week / Month / Later)"
+   328→      - listitem [level=1]
+   329→        - StaticText "30-min Video Walkthrough"
+   330→      - listitem [level=1]
+   331→        - StaticText "1 Round of Revision"
+   332→    - StaticText "Best For:"
+   333→    - paragraph
+   334→      - StaticText "Stores doing $5K–$50K/mo who suspect something's off but don't know what."
+   335→    - StaticText "Our Promise To You:"
+   336→    - paragraph
+   337→      - StaticText "After this package, you will know exactly where your store is losing potential revenue, which products are actually making you money, and the top 3 things to fix this week to see measurable results."
+   338→    - link "Book the Health Check →" [ref=e99]
+   339→    - link "Download Full Starter Details PDF" [ref=e100]
+   340→      - image
+   341→      - StaticText "Download Full Starter Details PDF"
+   342→  - generic
+   343→    - StaticText "⭐"
+   344→    - StaticText "MOST CHOSEN"
+   345→    - StaticText "SCALE WHAT WORKS."
+   346→    - heading "Revenue Growth Accelerator" [level=4, ref=e101]
+   347→    - StaticText "$400 – $1,000"
+   348→    - StaticText "One-time · 10–14 day delivery"
+   349→    - paragraph
+   350→      - StaticText "Full RFM, channel LTV:CAC, cohort truth, bundle strategy, and an interactive intelligence dashboard."
+   351→    - list
+   352→      - listitem [level=1]
+   353→        - StaticText "Everything in Starter, plus 5 deeper analyses"
+   354→      - listitem [level=1]
+   355→        - StaticText "Full 8-segment RFM Customer Segmentation"
+   356→      - listitem [level=1]
+   357→        - StaticText "Channel LTV:CAC & Marketing Audit"
+   358→      - listitem [level=1]
+   359→        - StaticText "Cross-sell & Bundle Opportunity Analysis"
+   360→      - listitem [level=1]
+   361→        - StaticText "Interactive Dashboard + Klaviyo-ready CSV"
+   362→      - listitem [level=1]
+   363→        - StaticText "60-min Strategy Call + 30-day Roadmap"
+   364→    - StaticText "Best For:"
+   365→    - paragraph
+   366→      - StaticText "Stores doing $20K–$200K/mo ready to break through the plateau."
+   367→    - StaticText "Our Promise To You:"
+   368→    - paragraph
+   369→      - StaticText "After this package, you will know exactly which customers to focus on (and what to say to each group), which marketing channels are wasting your money, and how to implement product bundles that immediately increase your average order value."
+   370→    - link "Book the Growth Package →" [ref=e102]
+   371→    - link "Download Full Growth Details PDF" [ref=e103]
+   372→      - image
+   373→      - StaticText "Download Full Growth Details PDF"
+   374→  - generic
+   375→    - StaticText "LIVE IN THE DATA."
+   376→    - heading "Data-Driven Growth System" [level=4, ref=e104]
+   377→    - StaticText "$1,500 – $2,500"
+   378→    - StaticText "One-time · 20–30 day delivery"
+   379→    - paragraph
+   380→      - StaticText "Your complete analytics engine, built once, runs forever. 15 total analyses including cohorts, forecasts, and live dashboards."
+   381→    - list
+   382→      - listitem [level=1]
+   383→        - StaticText "Everything in Growth, plus 6 advanced analyses"
+   384→      - listitem [level=1]
+   385→        - StaticText "Complete Cohort Analysis & 90-Day Sales Forecast"
+   386→      - listitem [level=1]
+   387→        - StaticText "Profit Margin Deep Dive (True per-product profit)"
+   388→      - listitem [level=1]
+   389→        - StaticText "Live Custom KPI Dashboard (Auto-refreshing)"
+   390→      - listitem [level=1]
+   391→        - StaticText "Discount & Return Pattern Analysis"
+   392→      - listitem [level=1]
+   393→        - StaticText "90-min Strategy Session + 60-day Email Support"
+   394→    - StaticText "Best For:"
+   395→    - paragraph
+   396→      - StaticText "Stores doing $100K+/mo that demand permanent data vigilance."
+   397→    - StaticText "Our Promise To You:"
+   398→    - paragraph
+   399→      - StaticText "After this package, you will never make a major business decision without data to back it up. You will know your most valuable customers, most profitable products, and have a live dashboard that gives you your business pulse in under 5 minutes each morning."
+   400→    - link "Apply for Advanced →" [ref=e105]
+   401→    - link "Download Full Advanced Details PDF" [ref=e106]
+   402→      - image
+   403→      - StaticText "Download Full Advanced Details PDF"
+   404→  - StaticText "NEVER GO STALE."
+   405→  - heading "Analytics Partner Retainer" [level=4, ref=e107]
+   406→  - StaticText "$500 – $1,200 /mo"
+   407→  - StaticText "Ongoing (Min. 2-month commitment)"
+   408→  - paragraph
+   409→    - StaticText "Your dedicated data analyst. A 4-week rhythm that keeps your business moving forward with continuous insight."
+   410→  - list
+   411→    - listitem [level=1]
+   412→      - StaticText "Monthly Performance & Customer Health Reports"
+   413→    - listitem [level=1]
+   414→      - StaticText "Marketing Efficiency Review & Forward Planning"
+   415→    - listitem [level=1]
+   416→      - StaticText "4 Ad-hoc Analyses per month"
+   417→    - listitem [level=1]
+   418→      - StaticText "48-hr Email / Slack response"
+   419→    - listitem [level=1]
+   420→      - StaticText "Proactive Anomaly Alerts"
+   421→    - listitem [level=1]
+   422→      - StaticText "Dashboard Maintenance & 45-min Monthly Call"
+   423→  - StaticText "Best For:"
+   424→  - paragraph
+   425→    - StaticText "Ongoing growth, live monitoring, and seasonal shifts."
+   426→  - StaticText "Our Promise To You:"
+   427→  - paragraph
+   428→    - StaticText "With this retainer, today's insight will never become outdated next month. We will detect problems between analyses before they cost you money, ensure your implemented changes are actually working, and keep you prepared for seasonal shifts before they catch you off guard."
+   429→  - link "Become a Retainer Client →" [ref=e108]
+   430→  - link "Download Full Retainer Details PDF" [ref=e109]
+   431→    - image
+   432→    - StaticText "Download Full Retainer Details PDF"
+   433→  - heading "Part 2: Specialized Add-On Packages" [level=3, ref=e34]
+   434→  - paragraph
+   435→    - StaticText "Have One Specific Problem?"
+   436→  - paragraph
+   437→    - StaticText "Six focused audits, each one built around a single critical business question. Delivered in 7–14 days."
+   438→  - generic
+   439→    - heading "Marketing Spend Audit" [level=4, ref=e110]
+   440→    - StaticText "$300 – $600 · 7–10 Days"
+   441→    - StaticText "Problem:"
+   442→    - paragraph
+   443→      - StaticText "\"My ROAS is declining and I don't know why.\""
+   444→    - StaticText "Our Promise:"
+   445→    - paragraph
+   446→      - StaticText "You will know which channels are genuinely profitable vs. creating an illusion, the true cost of acquiring a customer through each platform, and exactly which campaigns to scale, pause, or kill."
+   447→    - link "Book the Marketing Spend Audit →" [ref=e111]
+   448→      - StaticText "Book the Marketing Spend Audit →"
+   449→  - generic
+   450→    - heading "Customer Retention Audit" [level=4, ref=e112]
+   451→    - StaticText "$350 – $700 · 7–12 Days"
+   452→    - StaticText "Problem:"
+   453→    - paragraph
+   454→      - StaticText "\"Customers buy once and disappear.\""
+   455→    - StaticText "Our Promise:"
+   456→    - paragraph
+   457→      - StaticText "You will know which customers are about to leave (and how to reach them before they do), which channels bring loyal customers, and have an upload-ready segmented list for immediate retention campaigns."
+   458→    - link "Book the Customer Retention Audit →" [ref=e113]
+   459→      - StaticText "Book the Customer Retention Audit →"
+   460→  - generic
+   461→    - heading "Product Portfolio Audit" [level=4, ref=e114]
+   462→    - StaticText "$350 – $800 · 7–14 Days"
+   463→    - StaticText "Problem:"
+   464→    - paragraph
+   465→      - StaticText "\"50+ SKUs, I don't know what to focus on.\""
+   466→    - StaticText "Our Promise:"
+   467→    - paragraph
+   468→      - StaticText "You will know which products to invest in, optimize, or cut, the true profit margin on every SKU in your catalog, and exactly which products to bundle together to increase AOV."
+   469→    - link "Book the Product Portfolio Audit →" [ref=e115]
+   470→      - StaticText "Book the Product Portfolio Audit →"
+   471→  - generic
+   472→    - heading "CRO Audit" [level=4, ref=e116]
+   473→    - StaticText "$250 – $500 · 7–10 Days"
+   474→    - StaticText "Problem:"
+   475→    - paragraph
+   476→      - StaticText "\"Traffic is there but nobody's buying.\""
+   477→    - StaticText "Our Promise:"
+   478→    - paragraph
+   479→      - StaticText "You will know exactly where visitors are abandoning (and why), which fixes will have the highest impact, and have a prioritized action list to increase conversion by 20–40% using your existing traffic."
+   480→    - link "Book the CRO Audit →" [ref=e117]
+   481→      - StaticText "Book the CRO Audit →"
+   482→  - generic
+   483→    - heading "Profitability Audit" [level=4, ref=e118]
+   484→    - StaticText "$350 – $700 · 8–12 Days"
+   485→    - StaticText "Problem:"
+   486→    - paragraph
+   487→      - StaticText "\"Revenue grows but profit doesn't.\""
+   488→    - StaticText "Our Promise:"
+   489→    - paragraph
+   490→      - StaticText "You will know your true profit margin on every product/channel, exactly where revenue is leaking into cost, if your promotions are eroding profit, and when your cash will be tight in coming months."
+   491→    - link "Book the Profitability Audit →" [ref=e119]
+   492→      - StaticText "Book the Profitability Audit →"
+   493→  - generic
+   494→    - heading "Operations Efficiency Audit" [level=4, ref=e120]
+   495→    - StaticText "$400 – $800 · 10–14 Days"
+   496→    - StaticText "Problem:"
+   497→    - paragraph
+   498→      - StaticText "\"Returns climbing, inventory out of control.\""
+   499→    - StaticText "Our Promise:"
+   500→    - paragraph
+   501→      - StaticText "You will know which suppliers are causing financial problems, exactly how much inventory to order (and when based on 90-day demand), the true cost of your return rate, and how to free up cash locked in dead stock."
+   502→    - link "Book the Operations Efficiency Audit →" [ref=e121]
+   503→      - StaticText "Book the Operations Efficiency Audit →"
+   504→  - link "Download Full Add-On Details PDF" [ref=e52]
+   505→  - heading "Part 3: Data Setup & Infrastructure" [level=3, ref=e35]
+   506→  - paragraph
+   507→    - StaticText "The Technical Foundation."
+   508→  - paragraph
+   509→    - StaticText "Before any analysis, your data must be connected and cleaned. We handle the entire backend engineering (GCP, BigQuery, API pipelines). You never touch a line of code. Pay only for what your stack actually needs."
+   510→  - generic
+   511→    - heading "Basic Setup" [level=4, ref=e122]
+   512→    - paragraph
+   513→      - StaticText "One-time analysis clients (2-3 platforms)"
+   514→    - StaticText "Timeline"
+   515→    - StaticText "2–3 Days"
+   516→    - StaticText "Investment"
+   517→    - StaticText "$150 – $300"
+   518→    - link "Book the Basic Setup →" [ref=e123]
+   519→      - StaticText "Book the Basic Setup →"
+   520→  - generic
+   521→    - heading "Full Pipeline Setup" [level=4, ref=e124]
+   522→    - paragraph
+   523→      - StaticText "Ongoing/recurring clients (All APIs + Merge)"
+   524→    - StaticText "Timeline"
+   525→    - StaticText "5–7 Days"
+   526→    - StaticText "Investment"
+   527→    - StaticText "$500 – $900"
+   528→    - link "Book the Full Pipeline Setup →" [ref=e125]
+   529→      - StaticText "Book the Full Pipeline Setup →"
+   530→  - generic
+   531→    - heading "Full Pipeline + Automation" [level=4, ref=e126]
+   532→    - paragraph
+   533→      - StaticText "Live dashboard & retainer clients (Auto-updating)"
+   534→    - StaticText "Timeline"
+   535→    - StaticText "7–10 Days"
+   536→    - StaticText "Investment"
+   537→    - StaticText "$700 – $1,200"
+   538→    - link "Book the Full Pipeline + Automation →" [ref=e127]
+   539→      - StaticText "Book the Full Pipeline + Automation →"
+   540→  - table
+   541→    - rowgroup
+   542→      - row
+   543→        - columnheader "CAPABILITIES" [ref=e224]
+   544→        - columnheader "STARTER BASIC SETUP" [ref=e225]
+   545→          - StaticText "STARTER"
+   546→          - StaticText "BASIC SETUP"
+   547→        - columnheader "PRO FULL PIPELINE" [ref=e226]
+   548→          - StaticText "PRO"
+   549→          - StaticText "FULL PIPELINE"
+   550→        - columnheader "ELITE FULL + AUTOMATION" [ref=e227]
+   551→          - StaticText "ELITE"
+   552→          - StaticText "FULL + AUTOMATION"
+   553→    - row
+   554→      - cell "Cloud Infrastructure" [ref=e181]
+   555→      - cell "✓" [ref=e182]
+   556→      - cell "✓" [ref=e183]
+   557→      - cell "✓" [ref=e184]
+   558→    - row
+   559→      - cell "Platform API Connections" [ref=e185]
+   560→      - cell "2–3" [ref=e186]
+   561→      - cell "All" [ref=e187]
+   562→      - cell "All" [ref=e188]
+   563→    - row
+   564→      - cell "Data Pipeline Build" [ref=e189]
+   565→      - cell "✓" [ref=e190]
+   566→      - cell "✓" [ref=e191]
+   567→      - cell "✓" [ref=e192]
+   568→    - row
+   569→      - cell "Data Cleaning" [ref=e193]
+   570→      - cell "✓" [ref=e194]
+   571→      - cell "✓" [ref=e195]
+   572→      - cell "✓" [ref=e196]
+   573→    - row
+   574→      - cell "Multi-Platform Merge" [ref=e197]
+   575→      - cell "✕" [ref=e198]
+   576→      - cell "✓" [ref=e199]
+   577→      - cell "✓" [ref=e200]
+   578→    - row
+   579→      - cell "BigQuery Load Script" [ref=e201]
+   580→      - cell "✕" [ref=e202]
+   581→      - cell "✓" [ref=e203]
+   582→      - cell "✓" [ref=e204]
+   583→    - row
+   584→      - cell "Dashboard Connection" [ref=e205]
+   585→      - cell "✕" [ref=e206]
+   586→      - cell "✓" [ref=e207]
+   587→      - cell "✓" [ref=e208]
+   588→    - row
+   589→      - cell "Automated Scheduling" [ref=e209]
+   590→      - cell "✕" [ref=e210]
+   591→      - cell "✕" [ref=e211]
+   592→      - cell "✓" [ref=e212]
+   593→    - row
+   594→      - cell "Error Alerts" [ref=e213]
+   595→      - cell "✕" [ref=e214]
+   596→      - cell "✕" [ref=e215]
+   597→      - cell "✓" [ref=e216]
+   598→    - row
+   599→      - cell "Credential Security" [ref=e217]
+   600→      - cell "✕" [ref=e218]
+   601→      - cell "✕" [ref=e219]
+   602→      - cell "✓" [ref=e220]
+   603→  - heading "15 Individual Services Available (Pick Only What You Need)" [level=4, ref=e36]
+   604→  - StaticText "INFRA & APIS"
+   605→  - paragraph
+   606→    - StaticText "Cloud Setup, Shopify, GA4, Meta Ads, Google Ads, Klaviyo Connections."
+   607→  - StaticText "PIPELINE & QUALITY"
+   608→  - paragraph
+   609→    - StaticText "Pipeline Build (per platform), Pagination & Rate-Limit Handling, Data Cleaning, Multi-Platform Merge Logic."
+   610→  - StaticText "LOADING & AUTO"
+   611→  - paragraph
+   612→    - StaticText "BigQuery Load Script, Automation & Scheduling, Error Alerts, Credential Security, Dashboard Data-Source Connection."
+   613→  - link "Download Data Setup Presentation PDF" [ref=e53]
+   614→  - StaticText "THE RECEIPTS"
+   615→  - heading "Featured Case Studies" [level=2, ref=e37]
+   616→  - paragraph
+   617→    - StaticText "High revenue doesn't mean high profit. Here is what happened when founders stopped looking at vanity metrics and let me read their real data."
+   618→  - generic
+   619→    - heading "ZARA Organics" [level=3, ref=e128]
+   620→    - StaticText "TURNAROUND"
+   621→    - StaticText "Organic Wellness & Supplements"
+   622→    - paragraph
+   623→      - StaticText "The $89K/Month Store That Was Actually Bankrupt"
+   624→    - paragraph
+   625→      - StaticText "A $7/month profit hidden inside $89K in revenue."
+   626→    - StaticText "The Nightmare"
+   627→    - paragraph
+   628→      - StaticText "$89K/mo revenue, celebrating a record year. Actual net profit for the entire year was only $84. Margin collapsed from 24% to 10.9%."
+   629→    - StaticText "The Revelation"
+   630→    - paragraph
+   631→      - StaticText "46% of her customer base was permanently \"Lost.\" Free organic content channels generated 4.2x more LTV than $18K/mo paid ads."
+   632→    - StaticText "The Turnaround"
+   633→    - paragraph
+   634→      - StaticText "Shifted from an ad-spend business to a content/community business. Built a live Looker Studio dashboard."
+   635→    - StaticText "The Result"
+   636→    - paragraph
+   637→      - StaticText "Profit went from $7/mo to $48,400/mo."
+   638→    - link "Download Full ZARA Organics Case Study PDF" [ref=e129]
+   639→      - StaticText "Download Full ZARA Organics Case Study PDF"
+   640→  - generic
+   641→    - heading "PACE Performance" [level=3, ref=e130]
+   642→    - StaticText "SCALE"
+   643→    - StaticText "Fitness & Running Gear"
+   644→    - paragraph
+   645→      - StaticText "All Speed, No Strategy: The Marathon Runner's Store"
+   646→    - paragraph
+   647→      - StaticText "His $8,400/mo ads brought customers worth $9 LTV."
+   648→    - StaticText "The Nightmare"
+   649→    - paragraph
+   650→      - StaticText "$41K/mo revenue, running his business like a marathon. Thought he was making $9K/mo profit; he was actually making $425/mo."
+   651→    - StaticText "The Revelation"
+   652→    - paragraph
+   653→      - StaticText "His free TikTok race videos brought in customers worth $524 LTV, while his $8,400/mo paid ads brought customers worth $9 LTV."
+   654→    - StaticText "The Turnaround"
+   655→    - paragraph
+   656→      - StaticText "Cut ad spend by 70%, killed low-margin/high-return fitness products, leaned into authentic race-day content."
+   657→    - StaticText "The Result"
+   658→    - paragraph
+   659→      - StaticText "Profit jumped from $425/mo to $31,400/mo in 30 days."
+   660→    - link "Download Full PACE Performance Case Study PDF" [ref=e131]
+   661→      - StaticText "Download Full PACE Performance Case Study PDF"
+   662→  - generic
+   663→    - heading "NOIRE Collective" [level=3, ref=e132]
+   664→    - StaticText "DIAGNOSTIC"
+   665→    - StaticText "Premium Urban Streetwear"
+   666→    - paragraph
+   667→      - StaticText "From Panic to $33K/Month Profit in 73 Days"
+   668→    - paragraph
+   669→      - StaticText "72 hours from permanent closure. Data saved it."
+   670→    - StaticText "The Nightmare"
+   671→    - paragraph
+   672→      - StaticText "72 hours from shutting down. $38K/mo revenue but losing $1,690/mo. An agency claimed 4.2x ROAS, but true profit ROAS was 0.83x."
+   673→    - StaticText "The Revelation"
+   674→    - paragraph
+   675→      - StaticText "Discount addiction and a 24.7% unit return rate from inconsistent sizing were silently bleeding the business dry."
+   676→    - StaticText "The Turnaround"
+   677→    - paragraph
+   678→      - StaticText "Detoxed discounts (17.6% → 4.8%), cut Facebook/TikTok ads by 70%, unified size charts, rebuilt mobile checkout."
+   679→    - StaticText "The Result"
+   680→    - paragraph
+   681→      - StaticText "Profit went from -$1.7K/mo to +$33,040/mo in 73 days."
+   682→    - link "Download Full NOIRE Collective Case Study PDF" [ref=e133]
+   683→      - StaticText "Download Full NOIRE Collective Case Study PDF"
+   684→  - generic
+   685→    - heading "LUNA Jewelry Co." [level=3, ref=e134]
+   686→    - StaticText "TURNAROUND"
+   687→    - StaticText "Handcrafted Jewelry"
+   688→    - paragraph
+   689→      - StaticText "The Store Gifting Away Its Own Profit"
+   690→    - paragraph
+   691→      - StaticText "Working 11 hrs/day. Earning $11.59/hour."
+   692→    - StaticText "The Nightmare"
+   693→    - paragraph
+   694→      - StaticText "Making $30K/mo but working 11 hrs/day, 6 days a week, for just $11.59/hour."
+   695→    - StaticText "The Revelation"
+   696→    - paragraph
+   697→      - StaticText "She was giving away $115,956/year in \"free\" services (gift wrap, engraving, shipping). Her bestseller earned her $8.20/hour."
+   698→    - StaticText "The Turnaround"
+   699→    - paragraph
+   700→      - StaticText "Added a $12 engraving fee, $4.99 premium gift wrap, raised free shipping threshold, and flipped ad budget from Meta to Pinterest. Took 4 hours to implement."
+   701→    - StaticText "The Result"
+   702→    - paragraph
+   703→      - StaticText "Hourly rate jumped to $66.81/hr. Monthly profit went from $3.3K to $18,900/mo."
+   704→    - link "Download Full LUNA Jewelry Co. Case Study PDF" [ref=e135]
+   705→      - StaticText "Download Full LUNA Jewelry Co. Case Study PDF"
+   706→  - link "See More Case Studies" [ref=e54]
+   707→  - generic
+   708→    - heading "UrbanNest Home Decor" [level=3, ref=e136]
+   709→    - StaticText "DIAGNOSTIC"
+   710→    - StaticText "Home Decor & Lifestyle"
+   711→    - paragraph
+   712→      - StaticText "How a $23K/Month Store Discovered They Were Bleeding $4,200 Every Month"
+   713→    - paragraph
+   714→      - StaticText "Best-seller was silently losing $769/quarter."
+   715→    - StaticText "The Nightmare"
+   716→    - paragraph
+   717→      - StaticText "$23K/mo revenue, growing steadily, but only $3K net profit. A 20% promo sale spiked revenue but actually wiped out margins, dropping profit by 41%."
+   718→    - StaticText "The Revelation"
+   719→    - paragraph
+   720→      - StaticText "The #1 best-seller (Boho Macramé) was secretly losing $769/quarter. Forced account creation was causing a 71% cart abandonment rate."
+   721→    - StaticText "The Turnaround"
+   722→    - paragraph
+   723→      - StaticText "Paused losing ads, enabled guest checkout, flipped ad budget from Facebook to Google (which had 1.86x higher LTV), and sent win-back emails to at-risk customers."
+   724→    - StaticText "The Result"
+   725→    - paragraph
+   726→      - StaticText "Profit jumped from $3.4K/mo to $7,800/mo in 60 days."
+   727→    - link "Download Full UrbanNest Home Decor Case Study PDF" [ref=e137]
+   728→      - StaticText "Download Full UrbanNest Home Decor Case Study PDF"
+   729→  - generic
+   730→    - heading "PawPerfect Premium" [level=3, ref=e138]
+   731→    - StaticText "SCALE"
+   732→    - StaticText "Pet Supplies & Wellness"
+   733→    - paragraph
+   734→      - StaticText "How Data Saved $312,000 in Annual Revenue"
+   735→    - paragraph
+   736→      - StaticText "Targeting wrong customers. $312K/year consequence."
+   737→    - StaticText "The Nightmare"
+   738→    - paragraph
+   739→      - StaticText "$54K/mo revenue, 4.9★ reviews. Margins were shrinking because ad costs per customer rose 73% in 3 years."
+   740→    - StaticText "The Revelation"
+   741→    - paragraph
+   742→      - StaticText "Ads targeted \"senior pet owners\" (LTV $134) who churned when pets died. Customers acquired with puppies generated 6.3x more LTV ($847). Zero referral program despite 67% of Champions coming from word-of-mouth."
+   743→    - StaticText "The Turnaround"
+   744→    - paragraph
+   745→      - StaticText "Flipped ad targeting from senior to puppy parents. Created pet birthday and milestone email automation."
+   746→    - StaticText "The Result"
+   747→    - paragraph
+   748→      - StaticText "Profit jumped from $12.4K/mo to $29,840/mo in 45 days."
+   749→    - link "Download Full PawPerfect Premium Case Study PDF" [ref=e139]
+   750→      - StaticText "Download Full PawPerfect Premium Case Study PDF"
+   751→  - generic
+   752→    - heading "LUMIÈRE Beauty Co." [level=3, ref=e140]
+   753→    - StaticText "SCALE"
+   754→    - StaticText "Skincare & Beauty"
+   755→    - paragraph
+   756→      - StaticText "How a $67K/Month Brand Discovered a Hidden $89K/Month Business"
+   757→    - paragraph
+   758→      - StaticText "Plateaued 8 months. Black Friday was the villain."
+   759→    - StaticText "The Nightmare"
+   760→    - paragraph
+   761→      - StaticText "Plateaued at $67K/mo for 8 consecutive months. Profitable but stuck, leaving money on the table."
+   762→    - StaticText "The Revelation"
+   763→    - paragraph
+   764→      - StaticText "Black Friday discount cohorts had 4.1x LOWER LTV and 81% churn compared to educational content cohorts. Meta Broad ads were destroying $8,963 in value."
+   765→    - StaticText "The Turnaround"
+   766→    - paragraph
+   767→      - StaticText "Stopped chasing holiday discount revenue. Replicated best cohorts, created product bundles, and reallocated ad spend to Google Brand and Content."
+   768→    - StaticText "The Result"
+   769→    - paragraph
+   770→      - StaticText "Profit jumped from $18.4K/mo to $41,380/mo in 45 days."
+   771→    - link "Download Full LUMIÈRE Beauty Co. Case Study PDF" [ref=e141]
+   772→      - StaticText "Download Full LUMIÈRE Beauty Co. Case Study PDF"
+   773→  - StaticText "THE ENGINEERING BEHIND THE INSIGHTS"
+   774→  - heading "Technical Portfolio" [level=2, ref=e38]
+   775→  - paragraph
+   776→    - StaticText "I don't just read Shopify's default reports. I build enterprise-grade analytical pipelines to process millions of raw data points."
+   777→  - paragraph
+   778→    - StaticText "Most analysts rely on basic plugins. I write the code that connects your platforms, processes millions of rows, and surfaces the truth. Here is a look at the production-grade data infrastructure I build behind the scenes."
+   779→  - generic
+   780→    - heading "Behavioral Funnel & Conversion" [level=3, ref=e55]
+   781→    - paragraph
+   782→      - StaticText "Processing 2.75M Raw E-Commerce Events"
+   783→    - StaticText "SQL"
+   784→    - StaticText "Python"
+   785→    - StaticText "Power BI"
+   786→    - StaticText "The Engineering:"
+   787→    - paragraph
+   788→      - StaticText "Engineered an end-to-end pipeline processing 2.75 million raw e-commerce events. Implemented a 30-minute inactivity session rule using LAG() window functions to accurately define user behavior."
+   789→    - StaticText "The Impact:"
+   790→    - paragraph
+   791→      - StaticText "Surfaced a 76.8% cart abandonment profile. Ran 5 A/B tests (t-tests, Chi-Square, ANOVA) in Python to uncover \"Hidden Gem\" products, identifying $50,000 in untapped revenue with zero additional ad spend."
+   792→    - link "View Code & Methodology on GitHub" [ref=e56]
+   793→  - generic
+   794→    - heading "Financial Data Warehouse" [level=3, ref=e57]
+   795→    - paragraph
+   796→      - StaticText "Star-Schema Warehouse Tracking $53.5M Revenue"
+   797→    - StaticText "PostgreSQL"
+   798→    - StaticText "Power BI"
+   799→    - StaticText "DAX"
+   800→    - StaticText "The Engineering:"
+   801→    - paragraph
+   802→      - StaticText "Architected a centralized PostgreSQL data warehouse consolidating 52 weeks of transactional data (10,000+ records) into a normalized star schema. Built 20+ DAX measures using SUMX iterators and CALCULATE filters."
+   803→    - StaticText "The Impact:"
+   804→    - paragraph
+   805→      - StaticText "Powered a 2-page executive dashboard with 39 visuals for proactive risk management. Reconciled 100% of data between PostgreSQL and Power BI, saving the team 15+ hours per week in manual reporting."
+   806→    - link "View Code & Methodology on GitHub" [ref=e58]
+   807→  - generic
+   808→    - heading "Churn & Retention Analytics" [level=3, ref=e59]
+   809→    - paragraph
+   810→      - StaticText "11-Tier RFM Segmentation of 96K Customers"
+   811→    - StaticText "Python"
+   812→    - StaticText "SQL"
+   813→    - StaticText "Power BI"
+   814→    - StaticText "Excel"
+   815→    - StaticText "The Engineering:"
+   816→    - paragraph
+   817→      - StaticText "Performed comprehensive EDA on 100K+ orders using Python (Pandas, Seaborn) and SQL. Built an 11-tier RFM segmentation model and computed Customer Lifetime Value (CLV) using cohort retention matrices."
+   818→    - StaticText "The Impact:"
+   819→    - paragraph
+   820→      - StaticText "Exposed a critical 85% Month-1 churn rate and a 97% one-time buyer rate. Pareto analysis revealed 20% of categories drove 80% of revenue, identifying a $120,000 revenue opportunity via At-Risk customer re-engagement."
+   821→    - link "View Code & Methodology on GitHub" [ref=e60]
+   822→  - paragraph
+   823→    - StaticText "Want to see the full codebase, SQL queries, and architecture?"
+   824→  - link "🔗 Explore My Full GitHub Portfolio" [ref=e39]
+   825→  - StaticText "FOUNDERS, TRANSFORMED"
+   826→  - heading "Testimonials" [level=2, ref=e40]
+   827→  - paragraph
+   828→    - StaticText "Don't take my word for it. Listen to the founders who were running fast in the wrong direction, until the data showed them the truth."
+   829→  - generic
+   830→    - StaticText "“"
+   831→    - paragraph
+   832→      - StaticText "\"The phone call on Day 5 of the analysis, when I was told my net profit was $84, is the most important phone call of my business life. I cried. I called my husband. He held me. Then he said: 'Now you know. Now you can fix it.'\""
+   833→    - paragraph
+   834→      - StaticText "Aisha R., ZARA Organics"
+   835→    - StaticText "$84/year"
+   836→    - StaticText "➔"
+   837→    - StaticText "$48,400/month"
+   838→  - generic
+   839→    - paragraph
+   840→      - StaticText "\"I was 72 hours from closing my business. The Health Check showed me something that destroyed and rebuilt me at the same time: I wasn't failing because of bad products. I was failing because I had no idea what was actually happening in my own business.\""
+   841→    - paragraph
+   842→      - StaticText "Marcus T., NOIRE Collective"
+   843→    - StaticText "-$1.7K/mo"
+   844→    - StaticText "➔"
+   845→    - StaticText "+$33K/mo in 73 days"
+   846→  - generic
+   847→    - paragraph
+   848→      - StaticText "\"In running, we have a concept called junk miles. Miles that feel productive because you're moving. But they don't make you faster. My $8,400/month in ads were junk miles. The best investment I've ever made cost less than my running shoes.\""
+   849→    - paragraph
+   850→      - StaticText "Daniel O., PACE Performance"
+   851→    - StaticText "$425/mo"
+   852→    - StaticText "➔"
+   853→    - StaticText "$31,400/mo"
+   854→  - generic
+   855→    - paragraph
+   856→      - StaticText "\"I was earning $11.59 an hour. Running a business I worked 11 hours a day to build. The Health Check showed me three things I was giving away for free that I should have been charging for. My brand identity is the jewelry. Not the freebies.\""
+   857→    - paragraph
+   858→      - StaticText "Sofia M., LUNA Jewelry Co."
+   859→    - StaticText "Hourly Rate: $11.59"
+   860→    - StaticText "➔"
+   861→    - StaticText "$66.81"
+   862→  - generic
+   863→    - paragraph
+   864→      - StaticText "\"I literally could not sleep after watching your Loom video. I paused the Macramé ads the same night. I had NO IDEA I was losing money on my best-selling product. I've been promoting it for 8 months!\""
+   865→    - paragraph
+   866→      - StaticText "Sarah K., UrbanNest Home Decor"
+   867→    - StaticText "$3.4K/mo"
+   868→    - StaticText "➔"
+   869→    - StaticText "$7.8K/mo"
+   870→  - generic
+   871→    - paragraph
+   872→      - StaticText "\"My favorite result from this analysis has nothing to do with money. It's the email I now send to customers when their dog turns 7 years old. The data wasn't just revenue. It was relationships waiting to happen. I just needed someone to show me how to see it.\""
+   873→    - paragraph
+   874→      - StaticText "James C., PawPerfect Premium"
+   875→    - StaticText "$12.4K/mo"
+   876→    - StaticText "➔"
+   877→    - StaticText "$29.8K/mo"
+   878→  - generic
+   879→    - paragraph
+   880→      - StaticText "\"I want to be careful with how I say this, because I don't want it to sound like an exaggeration. I paid $650 for a Growth Package. In 45 days my monthly net profit went from $18,400 to $41,380. I didn't launch new products. I didn't increase my ad spend. I just finally understood what my data was telling me.\""
+   881→    - paragraph
+   882→      - StaticText "Priya S., LUMIÈRE Beauty Co."
+   883→    - StaticText "$18.4K/mo"
+   884→    - StaticText "➔"
+   885→    - StaticText "$41.3K/mo"
+   886→  - generic
+   887→    - image "Background"
+   888→    - generic
+   889→      - StaticText "THE ENGAGEMENT FLOW"
+   890→      - heading "Setup is Not an Add-on. It is the Foundation." [level=2, ref=e61]
+   891→      - paragraph
+   892→        - StaticText "Every engagement flows through the same disciplined sequence, from hire to insight. You make the decisions; I handle the engineering, the data cleaning, and the math. Here is exactly how we transform your raw data into profit:"
+   893→      - StaticText "1"
+   894→      - heading "Discovery & Strategy" [level=3, ref=e62]
+   895→      - paragraph
+   896→        - StaticText "You book a call, we assess your business needs, and you select the analytics package that fits your store (Starter, Growth, Advanced, or Retainer). No guessing, we map exactly which platforms hold your data."
+   897→      - StaticText "2"
+   898→      - heading "The Engineering Foundation" [level=3, ref=e63]
+   899→      - paragraph
+   900→        - StaticText "This is the behind-the-scenes engineering most analysts skip. We build your cloud infrastructure and connect your APIs. EXTRACT: We securely pull raw data from Shopify, GA4, Meta Ads, Google Ads, and Klaviyo. CLEAN: We align currencies, date formats, and timezones so everything speaks the same language. MERGE: We combine all platforms into one clean master table, your single source of truth. CONNECT: We pipe the unified data directly into the dashboard. You don't touch a single line of code."
+   901→      - StaticText "3"
+   902→      - heading "The Deep Analysis" [level=3, ref=e64]
+   903→      - paragraph
+   904→        - StaticText "With clean, reliable data flowing into our systems, the detective work begins. We run the RFM segmentation models, cohort analyses, funnel audits, true profit margin deep-dives, and churn predictions ETC. We don't just look at what happened, we uncover why it happened."
+   905→      - StaticText "4"
+   906→      - heading "The Delivery & Strategy Call (Day 15)" [level=3, ref=e65]
+   907→      - paragraph
+   908→        - StaticText "You don't receive a data dump. You receive a plain-language Executive PDF, a visual dashboard, and a prioritized action plan. We hop on a strategy call (30 to 90 minutes, depending on your package) where I explain every finding and tell you exactly what to fix first."
+   909→      - StaticText "5"
+   910→      - heading "Execution & Monitoring (Ongoing)" [level=3, ref=e66]
+   911→      - paragraph
+   912→        - StaticText "You implement the fixes, like pausing losing ads, flipping budgets, or sending win-back emails. If you are a Retainer client, I monitor your live dashboard 24/7, sending proactive anomaly alerts and updating your forecasts so today's insights never go stale."
+   913→      - paragraph
+   914→        - StaticText "\"The Health Check showed me something that destroyed and rebuilt me at the same time: I wasn't failing because of bad products. I was failing because I had no idea what was actually happening in my own business.\""
+   915→      - paragraph
+   916→        - StaticText "Marcus T., NOIRE Collective"
+   917→  - StaticText "THE INFRASTRUCTURE BEHIND THE INSIGHTS"
+   918→  - heading "Enterprise Engineering. Without the $150K Salary." [level=2, ref=e41]
+   919→  - paragraph
+   920→    - StaticText "Shopify's default reports only tell 10% of the story. To find the hidden profit, you need to connect, warehouse, and model your data properly."
+   921→  - paragraph
+   922→    - StaticText "I bring the exact same tech stack used by Fortune 500 companies, and build it custom for your store. You get enterprise-grade data infrastructure without the $150,000/year in-house data engineer salary."
+   923→  - generic
+   924→    - heading "Programming & Analytics" [level=3, ref=e67]
+   925→    - paragraph
+   926→      - StaticText "The languages used to process millions of rows and run statistical models."
+   927→    - StaticText "Python (Pandas, Seaborn)"
+   928→    - StaticText "For deep EDA, A/B testing (t-tests, ANOVA), and churn modeling."
+   929→    - StaticText "SQL"
+   930→    - StaticText "For extracting, joining, and transforming raw data across multiple platforms."
+   931→    - StaticText "Statistical Modeling"
+   932→    - StaticText "Moving beyond \"gut feelings\" to mathematically proven truths."
+   933→  - generic
+   934→    - heading "Cloud & Data Warehousing" [level=3, ref=e68]
+   935→    - paragraph
+   936→      - StaticText "The backend infrastructure where your unified source of truth lives."
+   937→    - StaticText "Google Cloud Platform (GCP)"
+   938→    - StaticText "Secure, scalable cloud infrastructure."
+   939→    - StaticText "BigQuery"
+   940→    - StaticText "Enterprise data warehousing for lightning-fast queries."
+   941→    - StaticText "PostgreSQL"
+   942→    - StaticText "Relational database management for structured star-schema models."
+   943→  - generic
+   944→    - heading "Visualization & BI" [level=3, ref=e69]
+   945→    - paragraph
+   946→      - StaticText "Where the complex math becomes a simple, actionable dashboard for you."
+   947→    - StaticText "Looker Studio"
+   948→    - StaticText "Live, auto-refreshing, custom KPI dashboards."
+   949→    - StaticText "Power BI"
+   950→    - StaticText "Advanced business intelligence with 20+ DAX measures."
+   951→    - StaticText "Excel"
+   952→    - StaticText "Simplified KPI summary sheets for immediate team action."
+   953→  - generic
+   954→    - heading "Platform Integrations" [level=3, ref=e70]
+   955→    - paragraph
+   956→      - StaticText "The APIs we connect so your data actually talks to each other."
+   957→    - StaticText "Shopify"
+   958→    - StaticText "Orders, Customers, Products"
+   959→    - StaticText "GA4"
+   960→    - StaticText "Funnel, Sessions, Conversions"
+   961→    - StaticText "Meta Ads & Google Ads"
+   962→    - StaticText "True ROAS, Spend, CAC"
+   963→    - StaticText "Klaviyo"
+   964→    - StaticText "Email performance, Segmentation, Churn triggers"
+   965→  - paragraph
+   966→    - StaticText "This is the exact stack I used to process "
+   967→    - strong
+   968→      - StaticText "2.75M raw e-commerce events"
+   969→    - StaticText ", build a "
+   970→    - strong
+   971→      - StaticText "$53.5M financial data warehouse"
+   972→    - StaticText ", and run "
+   973→    - strong
+   974→      - StaticText "11-tier RFM segmentation models"
+   975→    - StaticText ". No generic templates. Just pure, custom-built data engineering."
+   976→  - generic
+   977→    - image "Background"
+   978→    - generic
+   979→      - StaticText "LET'S FIND YOUR NEXT $10,000."
+   980→      - heading "Stop Guessing. Start Knowing." [level=2, ref=e71]
+   981→      - paragraph
+   982→        - StaticText "Every struggling store already has the data. What it doesn't have is someone willing to read it honestly, explain it clearly, and act on it decisively."
+   983→      - paragraph
+   984→        - StaticText "If your revenue is growing but something doesn't add up, you're probably right. The data knows. Let's read it together."
+   985→      - heading "Ready to find out exactly where your profit is hiding?" [level=3, ref=e72]
+   986→      - paragraph
+   987→        - StaticText "Book a complimentary 20-minute Discovery Call. We'll understand your business, identify your most urgent data problem, and recommend the right starting point. No pressure, no jargon."
+   988→      - link "Book My Discovery Call" [ref=e73]
+   989→      - link "WhatsApp Me" [ref=e74]
+   990→        - image
+   991→        - StaticText "WhatsApp Me"
+   992→      - heading "Send a Message" [level=3, ref=e75]
+   993→      - form
+   994→        - LabelText
+   995→          - StaticText "NAME"
+   996→        - textbox "Your name" [required, ref=e142]
+   997→        - LabelText
+   998→          - StaticText "EMAIL"
+   999→        - textbox "your@email.com" [required, ref=e143]
+  1000→        - LabelText
+  1001→          - StaticText "STORE URL"
+  1002→        - textbox "https://yourstore.com" [ref=e144]
+  1003→        - LabelText
+  1004→          - StaticText "BUDGET RANGE"
+  1005→        - combobox [expanded=false, ref=e145]: Select budget range
+  1006→          - MenuListPopup
+  1007→            - option "Select budget range" [selected, ref=e228]
+  1008→            - option "$150 – $500" [ref=e229]
+  1009→            - option "$500 – $1,000" [ref=e230]
+  1010→            - option "$1,000 – $2,500" [ref=e231]
+  1011→            - option "$2,500+" [ref=e232]
+  1012→        - LabelText
+  1013→          - StaticText "MESSAGE"
+  1014→        - textbox "Tell me about your store and what you're struggling with..." [required, ref=e146]
+  1015→        - button "Send Message" [ref=e147]
+  1016→      - heading "Prefer to reach out directly? Let's talk." [level=3, ref=e76]
+  1017→      - link "Email mojahidulislam101010@gmail.com" [ref=e77]
+  1018→        - StaticText "Email"
+  1019→        - StaticText "mojahidulislam101010@gmail.com"
+  1020→      - link "LinkedIn mozahidul-islam-analyst" [ref=e78]
+  1021→        - StaticText "LinkedIn"
+  1022→        - StaticText "mozahidul-islam-analyst"
+  1023→      - link "WhatsApp +880 1940131074" [ref=e79]
+  1024→        - StaticText "WhatsApp"
+  1025→        - StaticText "+880 1940131074"
+  1026→      - link "GitHub mojahid1252" [ref=e80]
+  1027→        - StaticText "GitHub"
+  1028→        - StaticText "mojahid1252"
+  1029→      - link "Book Discovery Call Free 20-minute consultation" [ref=e81]
+  1030→        - StaticText "Book Discovery Call"
+  1031→        - StaticText "Free 20-minute consultation"
+  1032→  - sectionfooter
+  1033→    - heading "Stop Guessing. Start Knowing." [level=3, ref=e42]
+  1034→    - paragraph
+  1035→      - StaticText "Your data already has the answers. Let me find them for you."
+  1036→    - link "Book Your Free Discovery Call" [ref=e43]
+  1037→    - image "Logo"
+  1038→    - StaticText "Mozahidul Islam"
+  1039→    - StaticText "E-Commerce Growth Analyst"
+  1040→    - paragraph
+  1041→      - StaticText "We transform raw data into clear, profitable decisions. We don't just deliver numbers, we deliver answers, direction, and results."
+  1042→    - heading "Quick Links" [level=4, ref=e44]
+  1043→    - list
+  1044→      - listitem [level=1]
+  1045→        - link "Home" [ref=e148]
+  1046→          - StaticText "Home"
+  1047→      - listitem [level=1]
+  1048→        - link "About" [ref=e149]
+  1049→          - StaticText "About"
+  1050→      - listitem [level=1]
+  1051→        - link "Case Studies" [ref=e150]
+  1052→          - StaticText "Case Studies"
+  1053→      - listitem [level=1]
+  1054→        - link "Process" [ref=e151]
+  1055→          - StaticText "Process"
+  1056→      - listitem [level=1]
+  1057→        - link "Contact" [ref=e152]
+  1058→          - StaticText "Contact"
+  1059→    - heading "Services" [level=4, ref=e45]
+  1060→    - list
+  1061→      - listitem [level=1]
+  1062→        - link "E-Commerce Health Check" [ref=e153]
+  1063→      - listitem [level=1]
+  1064→        - link "Revenue Growth Accelerator" [ref=e154]
+  1065→      - listitem [level=1]
+  1066→        - link "Data-Driven Growth System" [ref=e155]
+  1067→      - listitem [level=1]
+  1068→        - link "Analytics Partner Retainer" [ref=e156]
+  1069→      - listitem [level=1]
+  1070→        - link "Specialized Add-On Audits" [ref=e157]
+  1071→      - listitem [level=1]
+  1072→        - link "Data Setup & Infrastructure" [ref=e158]
+  1073→    - heading "Resources & Connect" [level=4, ref=e46]
+  1074→    - list
+  1075→      - listitem [level=1]
+  1076→        - button "Full Services PDF" [ref=e159]
+  1077→      - listitem [level=1]
+  1078→        - button "Data Setup PDF" [ref=e160]
+  1079→      - listitem [level=1]
+  1080→        - link "LinkedIn" [ref=e161]
+  1081→      - listitem [level=1]
+  1082→        - link "WhatsApp" [ref=e162]
+  1083→      - listitem [level=1]
+  1084→        - link "GitHub" [ref=e163]
+  1085→      - listitem [level=1]
+  1086→        - link "Email" [ref=e164]
+  1087→    - paragraph
+  1088→      - StaticText "© 2025 Mozahidul Islam · E-Commerce Analytics. All rights reserved."
+  1089→    - paragraph
+  1090→      - StaticText "Built with data. Designed for profit."
+  1091→  - button "Back to top" [ref=e2]
+  1092→- region "Notifications (F8)" [ref=e1]
+  1093→  - list
+  1094→- button "Open Next.js Dev Tools" [expanded=false, ref=e165]
+  1095→  - image
+  1096→- alert
