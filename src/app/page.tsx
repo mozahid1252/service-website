@@ -980,9 +980,11 @@ function QuickProofSection() {
           <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight">
             Real Stores. Real Numbers. Real Results.
           </h2>
-          <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
-            Every single finding below came from data these founders already had. They just couldn&apos;t see it.
-          </p>
+          <div className="proof-highlight-box max-w-2xl mx-auto">
+            <p className="proof-highlight-text font-bold">
+              Every single finding below came from data these founders already had. They just couldn&apos;t see it.
+            </p>
+          </div>
         </div>
 
         <div className="reveal-stagger quick-proof-grid">
