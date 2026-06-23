@@ -1289,7 +1289,7 @@ function WhyWorkWithMeSection() {
             >
               <div className="flex items-start gap-4 relative z-10">
                 <div className="reason-number shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold">
-                  <span className="text-[#020408]">{reason.num}</span>
+                  <span className="text-white">{reason.num}</span>
                 </div>
                 <div>
                   <h3 className="text-white font-bold text-lg mb-3">{reason.title}</h3>
