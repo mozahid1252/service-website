@@ -2403,8 +2403,11 @@ table.infra-table {
   text-shadow: 0 0 50px rgba(0, 198, 255, 0.50);
 }
 
-/* Second line — "Stop Guessing. Start Knowing." — slightly dimmer */
+/* Second line — "Stop Guessing. Start Knowing." — smaller (back to original size) */
 .contact-main-heading.contact-sub-heading {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -1px;
   opacity: 0.88;
   margin: 0;
 }
