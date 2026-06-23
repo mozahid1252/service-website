@@ -1424,9 +1424,9 @@ function CaseStudiesSection() {
                 </div>
               </div>
 
-              <button className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+              <a href={`/pdfs/case-${cs.cssClass}.pdf`} download={`${cs.store}_Case_Study.pdf`} className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline">
                 <Download size={14} /> Download Full {cs.store} Case Study PDF
-              </button>
+              </a>
               </div>
             </div>
           ))}
@@ -1491,19 +1491,19 @@ function CaseStudies2Section() {
                 </div>
               </div>
 
-              <button className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+              <a href={`/pdfs/case-${cs.cssClass}.pdf`} download={`${cs.store}_Case_Study.pdf`} className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline">
                 <Download size={14} /> Download Full {cs.store} Case Study PDF
-              </button>
+              </a>
               </div>
             </div>
           ))}
         </div>
 
         <div className="text-center">
-          <button className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105"
+          <a href="/pdfs/case-noire.pdf" download="NOIRE_Case_Study.pdf" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 no-underline"
             style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
             <Download size={14} /> Download Full Case Studies PDF
-          </button>
+          </a>
         </div>
       </div>
     </section>
