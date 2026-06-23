@@ -1757,8 +1757,15 @@ function ContactSection() {
       setFormState({ name: '', email: '', url: '', message: '', budget: '' });
       setTimeout(() => setSubmitted(false), 5000);
     } catch {
-      setError('Something went wrong. Please try again.');
-      setTimeout(() => setError(''), 5000);
+      // Fallback: open Gmail compose with form data
+      const subject = encodeURIComponent(`New Inquiry from ${formState.name} — Mozahidul Islam Portfolio`);
+      const body = encodeURIComponent(
+        `Name: ${formState.name}\nEmail: ${formState.email}\nStore URL: ${formState.url}\nBudget: ${formState.budget}\n\nMessage:\n${formState.message}`
+      );
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com&su=${subject}&body=${body}`, '_blank');
+      setSubmitted(true);
+      setFormState({ name: '', email: '', url: '', message: '', budget: '' });
+      setTimeout(() => setSubmitted(false), 5000);
     } finally {
       setSending(false);
     }
