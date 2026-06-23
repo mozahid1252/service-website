@@ -2366,13 +2366,14 @@ table.infra-table {
 
 .contact-main-heading {
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: clamp(32px, 7vw, 88px);
+  font-size: clamp(31px, 7vw, 87px);
   font-weight: 800;
   line-height: 1.10;
   letter-spacing: -2px;
   color: #FFFFFF;
   text-align: center;
   margin: 0 0 6px;
+  text-transform: uppercase;
 }
 
 /* "$10,000" cyan highlight on the first heading line */
@@ -2388,6 +2389,7 @@ table.infra-table {
   letter-spacing: -1px;
   opacity: 0.88;
   margin: 0;
+  text-transform: none;   /* keep only the first headline uppercase */
 }
 
 /* ============================================

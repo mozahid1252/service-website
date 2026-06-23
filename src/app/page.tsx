@@ -977,7 +977,7 @@ function QuickProofSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">Quick Proof</span>
-          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight">
             Real Stores. Real Numbers. Real Results.
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -1913,7 +1913,7 @@ function TechStackSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">The Infrastructure Behind The Insights</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight">
+          <h2 className="section-headline text-[clamp(24px,3.5vw,40px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight">
             Enterprise Engineering. Without the $150K Salary.
           </h2>
           <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
