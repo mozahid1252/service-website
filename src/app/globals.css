@@ -2272,3 +2272,111 @@ strong { color: #FFFFFF; font-weight: 700; }
   border-color: rgba(0, 230, 118, 0.20);
   background: rgba(0, 230, 118, 0.06);
 }
+
+/* ============================================
+   INFRA FEATURE LIST — inside each package card
+   (features merged from the removed comparison table)
+   Green check / Red cross icons
+   ============================================ */
+
+.infra-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 24px 0 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.infra-feature-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.2s ease, padding 0.2s ease;
+}
+
+.infra-feature-row:last-child {
+  border-bottom: none;
+}
+
+.infra-feature-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 6px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.feature-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+
+/* Green check — feature included */
+.feature-yes {
+  background: rgba(0, 200, 83, 0.12);
+  border: 1px solid rgba(0, 200, 83, 0.30);
+  color: #00C853;
+  box-shadow: 0 0 8px rgba(0, 200, 83, 0.20);
+}
+
+/* Red cross — feature not included */
+.feature-no {
+  background: rgba(255, 59, 59, 0.10);
+  border: 1px solid rgba(255, 59, 59, 0.25);
+  color: #FF3B3B;
+}
+
+.feature-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.infra-feature-row.has .feature-name {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.infra-feature-row.not .feature-name {
+  color: rgba(255, 255, 255, 0.30);
+  text-decoration: line-through;
+  text-decoration-color: rgba(255, 255, 255, 0.15);
+}
+
+.feature-note {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.infra-wrapper-basic .feature-note {
+  background: rgba(0, 198, 255, 0.12);
+  color: #00C6FF;
+  border: 1px solid rgba(0, 198, 255, 0.25);
+}
+
+.infra-wrapper-pipeline .feature-note,
+.infra-wrapper-auto .feature-note {
+  background: rgba(245, 166, 35, 0.12);
+  color: #F5A623;
+  border: 1px solid rgba(245, 166, 35, 0.25);
+}
+
+/* Hide any residual comparison table (table markup was removed) */
+.infra-table-wrapper,
+.infra-table-inner,
+table.infra-table {
+  display: none !important;
+}

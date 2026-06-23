@@ -259,6 +259,22 @@ const BUNDLE_FEATURES = [
   { feature: 'Credential Security', basic: false, full: false, auto: true },
 ];
 
+/* Tier key per bundle (indexes match DATA_BUNDLES order) */
+const BUNDLE_TIER_KEYS = ['basic', 'full', 'auto'] as const;
+
+/* Shared check / cross icons used inside each package card's feature list */
+const FeatureCheckIcon = (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
+const FeatureCrossIcon = (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
+
 const CASE_STUDIES = [
   {
     store: 'ZARA Organics',
@@ -1401,86 +1417,51 @@ function ServicesSection() {
             Before any analysis, your data must be connected and cleaned. We handle the entire backend engineering (GCP, BigQuery, API pipelines). You never touch a line of code. Pay only for what your stack actually needs.
           </p>
 
-          {/* Bundle Cards */}
+          {/* Bundle Cards — features merged in (comparison table removed) */}
           <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {DATA_BUNDLES.map((bundle, i) => (
-              <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
-                <div className="infra-card-inner">
-                <h4 className="text-white font-bold text-lg mb-2">{bundle.name}</h4>
-                <p className="text-[#8899AA] text-sm mb-3">{bundle.bestFor}</p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-[#8899AA] text-xs">Timeline</div>
-                    <div className="text-white text-sm font-medium">{bundle.timeline}</div>
+            {DATA_BUNDLES.map((bundle, i) => {
+              const tierKey = BUNDLE_TIER_KEYS[i];
+              return (
+                <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
+                  <div className="infra-card-inner">
+                  <h4 className="text-white font-bold text-lg mb-2">{bundle.name}</h4>
+                  <p className="text-[#8899AA] text-sm mb-3">{bundle.bestFor}</p>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-[#8899AA] text-xs">Timeline</div>
+                      <div className="text-white text-sm font-medium">{bundle.timeline}</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-[#8899AA] text-xs">Investment</div>
+                      <div className="gradient-text-gold text-sm font-bold">{bundle.investment}</div>
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <div className="text-[#8899AA] text-xs">Investment</div>
-                    <div className="gradient-text-gold text-sm font-bold">{bundle.investment}</div>
+                  {/* Feature List (merged from former comparison table) */}
+                  <div className="infra-feature-list">
+                    {BUNDLE_FEATURES.map((feat, fi) => {
+                      const val = feat[tierKey];
+                      const has = val === true || typeof val === 'string';
+                      const note = typeof val === 'string' ? val : null;
+                      return (
+                        <div key={fi} className={`infra-feature-row ${has ? 'has' : 'not'}`}>
+                          <span className={`feature-icon ${has ? 'feature-yes' : 'feature-no'}`}>
+                            {has ? FeatureCheckIcon : FeatureCrossIcon}
+                          </span>
+                          <span className="feature-name">
+                            {feat.feature}
+                            {note && <span className="feature-note">{note}</span>}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <a href="#contact" className="infra-book-btn">
+                    Book the {bundle.name} →
+                  </a>
                   </div>
                 </div>
-                <a href="#contact" className="infra-book-btn">
-                  Book the {bundle.name} →
-                </a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Comparison Table */}
-          <div className="infra-table-wrapper">
-            <div className="infra-table-inner">
-            <table className="infra-table">
-              <thead>
-                <tr>
-                  <th>
-                    <span style={{ color: 'rgba(255,255,255,0.35)', fontSize: '11px', letterSpacing: '3px' }}>
-                      CAPABILITIES
-                    </span>
-                  </th>
-                  <th>
-                    <div className="col-badge basic">STARTER</div>
-                    <div>Basic Setup</div>
-                  </th>
-                  <th>
-                    <div className="col-badge pipeline">PRO</div>
-                    <div>Full Pipeline</div>
-                  </th>
-                  <th>
-                    <div className="col-badge auto">ELITE</div>
-                    <div>Full + Automation</div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {BUNDLE_FEATURES.map((row, i) => (
-                  <tr key={i}>
-                    <td>{row.feature}</td>
-                    <td>
-                      {typeof row.basic === 'boolean' ? (
-                        row.basic ? <span className="check-cyan">✓</span> : <span className="cross-dim">✕</span>
-                      ) : (
-                        <span className="table-text-value cyan">{row.basic}</span>
-                      )}
-                    </td>
-                    <td>
-                      {typeof row.full === 'boolean' ? (
-                        row.full ? <span className="check-purple">✓</span> : <span className="cross-dim">✕</span>
-                      ) : (
-                        <span className="table-text-value purple">{row.full}</span>
-                      )}
-                    </td>
-                    <td>
-                      {typeof row.auto === 'boolean' ? (
-                        row.auto ? <span className="check-gold">✓</span> : <span className="cross-dim">✕</span>
-                      ) : (
-                        <span className="table-text-value gold">{row.auto}</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            </div>
+              );
+            })}
           </div>
 
           {/* 15 Individual Services */}
