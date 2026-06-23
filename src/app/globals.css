@@ -492,6 +492,37 @@ strong { color: #FFFFFF; font-weight: 700; }
 .agency-card-04:hover { box-shadow: 0 0 100px rgba(0,230,118,0.55), 0 0 200px rgba(0,230,118,0.30); border-color: rgba(0,230,118,0.70); }
 .agency-card-04 .reason-number { background: rgba(0,230,118,0.12); color: #00E676; border: 1px solid rgba(0,230,118,0.30); box-shadow: 0 0 20px rgba(0,230,118,0.30); }
 
+/* PDF Download Button */
+.pdf-download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px 24px;
+  margin-top: 12px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(0, 198, 255, 0.45);
+  background: transparent;
+  color: #00C6FF;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 0 rgba(0, 198, 255, 0), inset 0 0 0 0 rgba(0, 198, 255, 0);
+}
+.pdf-download-btn:hover {
+  border-color: rgba(0, 198, 255, 0.80);
+  color: #00C6FF;
+  background: rgba(0, 198, 255, 0.06);
+  box-shadow: 0 0 20px rgba(0, 198, 255, 0.25), 0 0 40px rgba(0, 198, 255, 0.10);
+  transform: translateY(-2px);
+}
+.pdf-download-btn svg { flex-shrink: 0; transition: transform 0.3s ease; }
+.pdf-download-btn:hover svg { transform: translateY(2px); }
+
 /* ═══════════════════════════════════════════
    PROBLEM 2: Service Package Animated Border
    ═══════════════════════════════════════════ */
