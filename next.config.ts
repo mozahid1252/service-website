@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: isExport,
   },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isExport ? "/portfolio-website" : "",
+  },
   typescript: {
     ignoreBuildErrors: true,
   },

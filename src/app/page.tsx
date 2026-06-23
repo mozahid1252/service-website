@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 
 /* GitHub Pages basePath helper */
-const basePath = process.env.NODE_ENV === 'production' && typeof window !== 'undefined' && !window.location.hostname.includes('localhost') ? '/portfolio-website' : '';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 /* ──────────────────────────────────────────
    DATA CONSTANTS
