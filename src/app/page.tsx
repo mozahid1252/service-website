@@ -1354,7 +1354,7 @@ function ServicesSection() {
 
         {/* Part 1: Core Packages */}
         <div className="mb-20">
-          <h3 className="text-white text-xl font-bold mb-2">Part 1: Core E-Commerce Packages</h3>
+          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight">Part 1: Core E-Commerce Packages</h3>
           <p className="text-[#8899AA] text-sm mb-8">Three tiers, one retainer. Designed to meet your store wherever it is today.</p>
 
           <div className="packages-grid mb-6">
@@ -1454,7 +1454,7 @@ function ServicesSection() {
 
         {/* Part 2: Add-On Packages */}
         <div className="mb-20">
-          <h3 className="text-white text-xl font-bold mb-2">Part 2: Specialized Add-On Packages</h3>
+          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight">Part 2: Specialized Add-On Packages</h3>
           <p className="text-[#00C6FF] text-base font-semibold mb-1">Have One Specific Problem?</p>
           <p className="text-[#8899AA] text-sm mb-8">Six focused audits, each one built around a single critical business question. Delivered in 7–14 days.</p>
 
@@ -1489,7 +1489,7 @@ function ServicesSection() {
 
         {/* Part 3: Data Infrastructure */}
         <div>
-          <h3 className="text-white text-xl font-bold mb-2">Part 3: Data Setup &amp; Infrastructure</h3>
+          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight">Part 3: Data Setup &amp; Infrastructure</h3>
           <p className="gradient-text text-base font-semibold mb-1">The Technical Foundation.</p>
           <p className="text-[#8899AA] text-sm mb-8">
             Before any analysis, your data must be connected and cleaned. We handle the entire backend engineering (GCP, BigQuery, API pipelines). You never touch a line of code. Pay only for what your stack actually needs.
