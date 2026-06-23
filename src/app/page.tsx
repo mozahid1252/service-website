@@ -1743,18 +1743,34 @@ function ContactSection() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = useCallback((e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    const subject = encodeURIComponent(`New Inquiry from ${formState.name} — Mozahidul Islam Portfolio`);
-    const body = encodeURIComponent(
-      `Name: ${formState.name}\nEmail: ${formState.email}\nStore URL: ${formState.url}\nBudget: ${formState.budget}\n\nMessage:\n${formState.message}`
-    );
-    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com&su=${subject}&body=${body}`, '_blank');
-    setSubmitted(true);
-    setFormState({ name: '', email: '', url: '', message: '', budget: '' });
-    setTimeout(() => setSubmitted(false), 5000);
-    setSending(false);
+    setError('');
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/mojahidulislam101010@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: formState.name,
+          email: formState.email,
+          storeUrl: formState.url,
+          budget: formState.budget,
+          message: formState.message,
+          _subject: `New Inquiry from ${formState.name} — Mozahidul Islam Portfolio`,
+          _template: 'table',
+        }),
+      });
+      if (!res.ok) throw new Error('Failed');
+      setSubmitted(true);
+      setFormState({ name: '', email: '', url: '', message: '', budget: '' });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch {
+      setError('Something went wrong. Please email us directly.');
+      setTimeout(() => setError(''), 5000);
+    } finally {
+      setSending(false);
+    }
   }, [formState]);
 
   return (
