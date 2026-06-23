@@ -2639,14 +2639,14 @@ table.infra-table {
 
 .quick-proof-card-inner {
   display: grid;
-  grid-template-columns: 380px 1px 1fr;
+  grid-template-columns: 400px 1px 1fr;
   gap: 0;
   align-items: stretch;
   min-height: 200px;
 }
 
 .qp-left-col {
-  padding: 28px 28px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2791,8 +2791,8 @@ table.infra-table {
 
 .qp-stats-row {
   display: grid;
-  /* Profit Added column gets more space so its label/value fit */
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 0.9fr) minmax(0, 1.3fr) minmax(0, 0.9fr);
+  /* Investment + Timeline + ROI get equal room; Profit Added gets a bit more */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 0.85fr);
   gap: 0;
   width: 100%;
   overflow: hidden;    /* keep inside card boundary */
@@ -2804,7 +2804,7 @@ table.infra-table {
 }
 
 .qp-stat-cell {
-  padding: 12px 6px;
+  padding: 12px 5px;
   display: flex;
   flex-direction: column;
   gap: 4px;
