@@ -397,100 +397,78 @@ strong { color: #FFFFFF; font-weight: 700; }
    ============================================ */
 .agency-reason-card {
   position: relative;
-  border-radius: 18px;
-  padding: 32px 36px;
+  border-radius: 16px;
+  padding: 28px 32px;
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-.agency-reason-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%;
-  width: 55%; height: 100%;
-  background: linear-gradient(105deg, transparent 28%, rgba(255,255,255,0.045) 50%, transparent 72%);
-  transform: skewX(-15deg);
-  transition: left 0.80s ease;
-  pointer-events: none;
-  z-index: 2;
+.agency-reason-card:hover {
+  transform: translateY(-4px);
 }
-.agency-reason-card:hover::before { left: 160%; }
-.agency-reason-card::after {
-  content: '';
-  position: absolute;
-  top: -20px; left: -20px;
-  width: 180px; height: 180px;
-  border-radius: 50%;
-  opacity: 0.08;
-  filter: blur(50px);
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-.agency-reason-card:hover::after { opacity: 0.20; }
-.agency-reason-card:hover { transform: translateY(-7px) scale(1.015); }
 
 /* BOX 01: CYAN */
 .agency-card-01 {
-  background: linear-gradient(145deg, rgba(6,10,17,1) 0%, rgba(0,198,255,0.09) 100%);
-  border: 1px solid rgba(0,198,255,0.30);
-  box-shadow: 0 0 0 1px rgba(0,198,255,0.08), 0 0 60px rgba(0,198,255,0.20), 0 0 120px rgba(0,198,255,0.10), 0 8px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(0,198,255,0.22), inset 0 0 80px rgba(0,198,255,0.05);
-  animation: agencyGlow01 4s ease-in-out infinite;
-  animation-delay: 0s;
+  background: rgba(8, 12, 20, 0.90);
+  border: 1px solid rgba(0, 198, 255, 0.22);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.40);
 }
-.agency-card-01::after { background: radial-gradient(circle, #00C6FF, transparent 70%); }
-@keyframes agencyGlow01 {
-  0%, 100% { box-shadow: 0 0 60px rgba(0,198,255,0.20), 0 0 120px rgba(0,198,255,0.10), 0 8px 40px rgba(0,0,0,0.55); }
-  50% { box-shadow: 0 0 90px rgba(0,198,255,0.42), 0 0 180px rgba(0,198,255,0.22), 0 8px 60px rgba(0,0,0,0.60), inset 0 0 60px rgba(0,198,255,0.08); }
+.agency-card-01:hover {
+  border-color: rgba(0, 198, 255, 0.55);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.50), 0 0 24px rgba(0, 198, 255, 0.20);
 }
-.agency-card-01:hover { box-shadow: 0 0 100px rgba(0,198,255,0.55), 0 0 200px rgba(0,198,255,0.30), 0 20px 70px rgba(0,0,0,0.65); border-color: rgba(0,198,255,0.70); }
-.agency-card-01 .reason-number { background: rgba(0,198,255,0.12); color: #00C6FF; border: 1px solid rgba(0,198,255,0.30); box-shadow: 0 0 20px rgba(0,198,255,0.30); }
+.agency-card-01 .reason-number {
+  background: rgba(0, 198, 255, 0.12);
+  color: #00C6FF;
+  border: 1px solid rgba(0, 198, 255, 0.28);
+}
 
 /* BOX 02: PURPLE */
 .agency-card-02 {
-  background: linear-gradient(145deg, rgba(6,10,17,1) 0%, rgba(139,92,246,0.09) 100%);
-  border: 1px solid rgba(139,92,246,0.30);
-  box-shadow: 0 0 0 1px rgba(139,92,246,0.08), 0 0 60px rgba(139,92,246,0.20), 0 0 120px rgba(139,92,246,0.10), 0 8px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(139,92,246,0.22), inset 0 0 80px rgba(139,92,246,0.05);
-  animation: agencyGlow02 4s ease-in-out infinite;
-  animation-delay: 1s;
+  background: rgba(8, 12, 20, 0.90);
+  border: 1px solid rgba(139, 92, 246, 0.22);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.40);
 }
-.agency-card-02::after { background: radial-gradient(circle, #8B5CF6, transparent 70%); }
-@keyframes agencyGlow02 {
-  0%, 100% { box-shadow: 0 0 60px rgba(139,92,246,0.20), 0 0 120px rgba(139,92,246,0.10), 0 8px 40px rgba(0,0,0,0.55); }
-  50% { box-shadow: 0 0 90px rgba(139,92,246,0.42), 0 0 180px rgba(139,92,246,0.22), 0 8px 60px rgba(0,0,0,0.60), inset 0 0 60px rgba(139,92,246,0.08); }
+.agency-card-02:hover {
+  border-color: rgba(139, 92, 246, 0.55);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.50), 0 0 24px rgba(139, 92, 246, 0.20);
 }
-.agency-card-02:hover { box-shadow: 0 0 100px rgba(139,92,246,0.55), 0 0 200px rgba(139,92,246,0.30), 0 20px 70px rgba(0,0,0,0.65); border-color: rgba(139,92,246,0.70); }
-.agency-card-02 .reason-number { background: rgba(139,92,246,0.12); color: #8B5CF6; border: 1px solid rgba(139,92,246,0.30); box-shadow: 0 0 20px rgba(139,92,246,0.30); }
+.agency-card-02 .reason-number {
+  background: rgba(139, 92, 246, 0.12);
+  color: #8B5CF6;
+  border: 1px solid rgba(139, 92, 246, 0.28);
+}
 
 /* BOX 03: GOLD */
 .agency-card-03 {
-  background: linear-gradient(145deg, rgba(6,10,17,1) 0%, rgba(245,166,35,0.09) 100%);
-  border: 1px solid rgba(245,166,35,0.30);
-  box-shadow: 0 0 0 1px rgba(245,166,35,0.08), 0 0 60px rgba(245,166,35,0.20), 0 0 120px rgba(245,166,35,0.10), 0 8px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(245,166,35,0.22);
-  animation: agencyGlow03 4s ease-in-out infinite;
-  animation-delay: 2s;
+  background: rgba(8, 12, 20, 0.90);
+  border: 1px solid rgba(245, 166, 35, 0.22);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.40);
 }
-.agency-card-03::after { background: radial-gradient(circle, #F5A623, transparent 70%); }
-@keyframes agencyGlow03 {
-  0%, 100% { box-shadow: 0 0 60px rgba(245,166,35,0.20), 0 0 120px rgba(245,166,35,0.10); }
-  50% { box-shadow: 0 0 90px rgba(245,166,35,0.42), 0 0 180px rgba(245,166,35,0.22); }
+.agency-card-03:hover {
+  border-color: rgba(245, 166, 35, 0.55);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.50), 0 0 24px rgba(245, 166, 35, 0.20);
 }
-.agency-card-03:hover { box-shadow: 0 0 100px rgba(245,166,35,0.55), 0 0 200px rgba(245,166,35,0.30); border-color: rgba(245,166,35,0.70); }
-.agency-card-03 .reason-number { background: rgba(245,166,35,0.12); color: #F5A623; border: 1px solid rgba(245,166,35,0.30); box-shadow: 0 0 20px rgba(245,166,35,0.30); }
+.agency-card-03 .reason-number {
+  background: rgba(245, 166, 35, 0.12);
+  color: #F5A623;
+  border: 1px solid rgba(245, 166, 35, 0.28);
+}
 
 /* BOX 04: GREEN */
 .agency-card-04 {
-  background: linear-gradient(145deg, rgba(6,10,17,1) 0%, rgba(0,230,118,0.09) 100%);
-  border: 1px solid rgba(0,230,118,0.30);
-  box-shadow: 0 0 0 1px rgba(0,230,118,0.08), 0 0 60px rgba(0,230,118,0.20), 0 0 120px rgba(0,230,118,0.10), 0 8px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(0,230,118,0.22);
-  animation: agencyGlow04 4s ease-in-out infinite;
-  animation-delay: 3s;
+  background: rgba(8, 12, 20, 0.90);
+  border: 1px solid rgba(0, 230, 118, 0.22);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.40);
 }
-.agency-card-04::after { background: radial-gradient(circle, #00E676, transparent 70%); }
-@keyframes agencyGlow04 {
-  0%, 100% { box-shadow: 0 0 60px rgba(0,230,118,0.20), 0 0 120px rgba(0,230,118,0.10); }
-  50% { box-shadow: 0 0 90px rgba(0,230,118,0.42), 0 0 180px rgba(0,230,118,0.22); }
+.agency-card-04:hover {
+  border-color: rgba(0, 230, 118, 0.55);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.50), 0 0 24px rgba(0, 230, 118, 0.20);
 }
-.agency-card-04:hover { box-shadow: 0 0 100px rgba(0,230,118,0.55), 0 0 200px rgba(0,230,118,0.30); border-color: rgba(0,230,118,0.70); }
-.agency-card-04 .reason-number { background: rgba(0,230,118,0.12); color: #00E676; border: 1px solid rgba(0,230,118,0.30); box-shadow: 0 0 20px rgba(0,230,118,0.30); }
+.agency-card-04 .reason-number {
+  background: rgba(0, 230, 118, 0.12);
+  color: #00E676;
+  border: 1px solid rgba(0, 230, 118, 0.28);
+}
 
 /* PDF Download Button */
 .pdf-download-btn {
@@ -2881,213 +2859,3 @@ table.infra-table {
   .qp-stat-label { font-size: 8px; letter-spacing: 0.3px; }
 }
 
-/* ============================================
-   "DON'T HIRE AN AGENCY" — 4 UNIQUE ANIMATIONS
-   Each card gets its own signature animation overlay.
-   Existing ::before/::after lighting, colors, borders, and
-   breathing glow are preserved unchanged.
-   ============================================ */
-
-/* Animation overlay layer — sits above card bg but below content */
-.card-anim-layer {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-  border-radius: inherit;
-}
-
-/* ══════════════════════════════════════════════
-   CARD 01 — "RADAR SCAN" (CYAN)
-   Horizontal glowing line scans top to bottom
-   ══════════════════════════════════════════════ */
-.agency-card-01 .card-anim-layer::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -2px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, rgba(0, 198, 255, 0.40) 20%, rgba(0, 198, 255, 1.00) 50%, rgba(0, 198, 255, 0.40) 80%, transparent 100%);
-  box-shadow: 0 0 8px rgba(0, 198, 255, 0.80), 0 0 20px rgba(0, 198, 255, 0.40), 0 4px 20px rgba(0, 198, 255, 0.20);
-  animation: radarScan 4s ease-in-out infinite;
-}
-
-.agency-card-01 .card-anim-layer::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0;
-  top: -2px;
-  height: 60px;
-  background: linear-gradient(180deg, rgba(0, 198, 255, 0.08) 0%, transparent 100%);
-  animation: radarTrail 4s ease-in-out infinite;
-}
-
-@keyframes radarScan {
-  0%   { top: -2px; opacity: 0; }
-  5%   { opacity: 1; }
-  95%  { opacity: 1; }
-  100% { top: calc(100% + 2px); opacity: 0; }
-}
-
-@keyframes radarTrail {
-  0%   { top: -60px; opacity: 0; }
-  5%   { opacity: 1; }
-  95%  { opacity: 1; }
-  100% { top: calc(100% + 2px); opacity: 0; }
-}
-
-.agency-card-01:hover .card-anim-layer::before {
-  animation-duration: 1.8s;
-  background: linear-gradient(90deg, transparent, rgba(0, 198, 255, 0.70) 30%, #00C6FF 50%, rgba(0, 198, 255, 0.70) 70%, transparent);
-  box-shadow: 0 0 16px rgba(0, 198, 255, 1.00), 0 0 40px rgba(0, 198, 255, 0.60);
-}
-
-/* ══════════════════════════════════════════════
-   CARD 02 — "CORNER SPARK" (PURPLE)
-   Bright light bursts from top-right corner
-   ══════════════════════════════════════════════ */
-.agency-card-02 .card-anim-layer::before {
-  content: '';
-  position: absolute;
-  top: -30px;
-  right: -30px;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(139, 92, 246, 1.00) 0%, rgba(139, 92, 246, 0.60) 20%, rgba(139, 92, 246, 0.20) 50%, transparent 70%);
-  animation: cornerSpark 3.5s ease-in-out infinite;
-}
-
-.agency-card-02 .card-anim-layer::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(225deg, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
-  animation: cornerRay 3.5s ease-in-out infinite;
-}
-
-@keyframes cornerSpark {
-  0%, 100% { opacity: 0.5; transform: scale(0.8); filter: blur(4px); }
-  30%      { opacity: 1;   transform: scale(1.4); filter: blur(0px); }
-  60%      { opacity: 0.7; transform: scale(1.0); filter: blur(2px); }
-}
-
-@keyframes cornerRay {
-  0%, 100% { opacity: 0.3; transform: scale(0.9); }
-  30%      { opacity: 0.8; transform: scale(1.2); }
-  60%      { opacity: 0.5; transform: scale(1.0); }
-}
-
-.agency-card-02:hover .card-anim-layer::before {
-  animation-duration: 1.5s;
-  width: 140px;
-  height: 140px;
-}
-
-/* ══════════════════════════════════════════════
-   CARD 03 — "DATA STREAM" (GOLD)
-   Vertical glowing data lines flow upward
-   ══════════════════════════════════════════════ */
-.agency-card-03 .card-anim-layer::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(0deg, transparent 0px, transparent 18px, rgba(245, 166, 35, 0.04) 18px, rgba(245, 166, 35, 0.04) 19px);
-  animation: dataStream 8s linear infinite;
-}
-
-.agency-card-03 .card-anim-layer::after {
-  content: '';
-  position: absolute;
-  left: 0; right: 0;
-  height: 120px;
-  bottom: -120px;
-  background: linear-gradient(180deg, transparent 0%, rgba(245, 166, 35, 0.06) 40%, rgba(245, 166, 35, 0.14) 60%, rgba(245, 166, 35, 0.06) 80%, transparent 100%);
-  animation: dataStreakUp 3s ease-in-out infinite;
-}
-
-@keyframes dataStream {
-  0%   { background-position: 0 0; }
-  100% { background-position: 0 -200px; }
-}
-
-@keyframes dataStreakUp {
-  0%   { bottom: -120px; opacity: 0; }
-  20%  { opacity: 1; }
-  80%  { opacity: 1; }
-  100% { bottom: calc(100% + 120px); opacity: 0; }
-}
-
-.agency-card-03:hover .card-anim-layer::after {
-  animation-duration: 1.5s;
-  background: linear-gradient(180deg, transparent 0%, rgba(245, 166, 35, 0.10) 40%, rgba(245, 166, 35, 0.24) 60%, rgba(245, 166, 35, 0.10) 80%, transparent 100%);
-}
-
-/* ══════════════════════════════════════════════
-   CARD 04 — "PULSE RING" (GREEN)
-   Concentric rings pulse outward from center
-   ══════════════════════════════════════════════ */
-.agency-card-04 .card-anim-layer::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0; height: 0;
-  border-radius: 50%;
-  border: 2px solid rgba(0, 230, 118, 0.80);
-  animation: pulseRing1 3s ease-out infinite;
-}
-
-.agency-card-04 .card-anim-layer::after {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0; height: 0;
-  border-radius: 50%;
-  border: 2px solid rgba(0, 230, 118, 0.50);
-  animation: pulseRing2 3s ease-out infinite;
-  animation-delay: 1s;
-}
-
-.pulse-ring-3 {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 0; height: 0;
-  border-radius: 50%;
-  border: 1.5px solid rgba(0, 230, 118, 0.35);
-  animation: pulseRing3 3s ease-out infinite;
-  animation-delay: 2s;
-}
-
-@keyframes pulseRing1 {
-  0%   { width: 20px; height: 20px; opacity: 1; border-color: rgba(0, 230, 118, 0.90); box-shadow: 0 0 12px rgba(0, 230, 118, 0.60); }
-  100% { width: 400px; height: 400px; opacity: 0; border-color: rgba(0, 230, 118, 0); box-shadow: 0 0 0px rgba(0, 230, 118, 0); }
-}
-
-@keyframes pulseRing2 {
-  0%   { width: 20px; height: 20px; opacity: 0.80; border-color: rgba(0, 230, 118, 0.60); }
-  100% { width: 500px; height: 500px; opacity: 0; border-color: rgba(0, 230, 118, 0); }
-}
-
-@keyframes pulseRing3 {
-  0%   { width: 20px; height: 20px; opacity: 0.60; border-color: rgba(0, 230, 118, 0.40); }
-  100% { width: 600px; height: 600px; opacity: 0; border-color: rgba(0, 230, 118, 0); }
-}
-
-.agency-card-04:hover .card-anim-layer::before {
-  animation-duration: 1.5s;
-  border-color: rgba(0, 230, 118, 1.00);
-  box-shadow: 0 0 20px rgba(0, 230, 118, 0.80);
-}
-
-.agency-card-04:hover .card-anim-layer::after {
-  animation-duration: 1.5s;
-  animation-delay: 0.5s;
-}
