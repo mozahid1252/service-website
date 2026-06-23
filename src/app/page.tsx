@@ -1358,9 +1358,9 @@ function ServicesSection() {
           </div>
 
           <div className="text-center">
-            <button className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2">
+            <a href="/pdfs/data-setup-infrastructure.pdf" download="Data_Setup_Infrastructure_Services.pdf" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
               <Download size={14} /> Download Data Setup Presentation PDF
-            </button>
+            </a>
           </div>
         </div>
       </div>
