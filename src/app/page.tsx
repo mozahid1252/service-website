@@ -1924,9 +1924,28 @@ function FAQSection() {
   );
 }
 
+/* Maps service dropdown values to human-readable labels for the email payload */
+const SERVICE_LABELS: Record<string, string> = {
+  'starter': 'E-Commerce Health Check — $150–$300',
+  'growth': 'Revenue Growth Accelerator — $400–$1,000',
+  'advanced': 'Data-Driven Growth System — $1,500–$2,500',
+  'retainer': 'Ongoing Analytics Retainer — $800–$2,000/mo',
+  'marketing-spend': 'Marketing Spend Audit — $250–$500',
+  'customer-retention': 'Customer Retention Audit — $300–$600',
+  'product-portfolio': 'Product Portfolio Audit — $250–$500',
+  'cro-audit': 'CRO & Checkout Audit — $300–$600',
+  'profitability': 'Profitability & COGS Audit — $350–$700',
+  'operations': 'Operations & Automation Audit — $400–$800',
+  'basic-setup': 'Basic Data Setup — $500–$1,000',
+  'full-pipeline': 'Full Data Pipeline — $1,200–$2,500',
+  'full-automation': 'Full Pipeline + Automation — $2,500–$5,000',
+  'not-sure': 'Not sure — help me figure it out',
+  'custom': 'Custom / Something else',
+};
+
 function ContactSection() {
   const sectionRef = useScrollReveal();
-  const [formState, setFormState] = useState({ name: '', email: '', url: '', message: '', budget: '' });
+  const [formState, setFormState] = useState({ name: '', email: '', url: '', message: '', budget: '', service: '' });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
@@ -1944,6 +1963,7 @@ function ContactSection() {
           name: formState.name,
           email: formState.email,
           storeUrl: formState.url || 'Not provided',
+          service: SERVICE_LABELS[formState.service] || 'Not selected',
           budget: formState.budget || 'Not selected',
           message: formState.message,
           subject: `New Inquiry from ${formState.name} — Mozahidul Islam Portfolio`,
@@ -1956,7 +1976,7 @@ function ContactSection() {
         throw new Error(data.message || 'Failed to send');
       }
       setSubmitted(true);
-      setFormState({ name: '', email: '', url: '', message: '', budget: '' });
+      setFormState({ name: '', email: '', url: '', message: '', budget: '', service: '' });
       setTimeout(() => setSubmitted(false), 5000);
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
@@ -2051,7 +2071,7 @@ function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Store URL</label>
+                  <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Store URL <span className="field-optional">(optional)</span></label>
                   <input
                     type="url" name="storeUrl"
                     value={formState.url}
@@ -2059,6 +2079,51 @@ function ContactSection() {
                     className="w-full bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.12)] rounded-lg px-4 py-3 text-sm text-white placeholder-[#445566] focus:outline-none focus:border-[#00C6FF] transition-colors"
                     placeholder="https://yourstore.com"
                   />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="service-select" className="form-label">
+                    What do you need help with?
+                  </label>
+                  <div className="select-wrapper">
+                    <select
+                      id="service-select"
+                      name="service"
+                      className="form-select"
+                      required
+                      value={formState.service}
+                      onChange={(e) => setFormState({ ...formState, service: e.target.value })}
+                    >
+                      <option value="" disabled>Select a service...</option>
+                      <optgroup label="── Core E-Commerce Packages ──">
+                        <option value="starter">E-Commerce Health Check — $150–$300</option>
+                        <option value="growth">Revenue Growth Accelerator — $400–$1,000</option>
+                        <option value="advanced">Data-Driven Growth System — $1,500–$2,500</option>
+                        <option value="retainer">Ongoing Analytics Retainer — $800–$2,000/mo</option>
+                      </optgroup>
+                      <optgroup label="── Specialized Add-On Audits ──">
+                        <option value="marketing-spend">Marketing Spend Audit — $250–$500</option>
+                        <option value="customer-retention">Customer Retention Audit — $300–$600</option>
+                        <option value="product-portfolio">Product Portfolio Audit — $250–$500</option>
+                        <option value="cro-audit">CRO &amp; Checkout Audit — $300–$600</option>
+                        <option value="profitability">Profitability &amp; COGS Audit — $350–$700</option>
+                        <option value="operations">Operations &amp; Automation Audit — $400–$800</option>
+                      </optgroup>
+                      <optgroup label="── Data Setup & Infrastructure ──">
+                        <option value="basic-setup">Basic Data Setup — $500–$1,000</option>
+                        <option value="full-pipeline">Full Data Pipeline — $1,200–$2,500</option>
+                        <option value="full-automation">Full Pipeline + Automation — $2,500–$5,000</option>
+                      </optgroup>
+                      <optgroup label="── Other ──">
+                        <option value="not-sure">Not sure — help me figure it out</option>
+                        <option value="custom">Custom / Something else</option>
+                      </optgroup>
+                    </select>
+                    <div className="select-arrow">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
                 <div>
                   <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Budget Range</label>

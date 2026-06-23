@@ -2071,3 +2071,117 @@ strong { color: #FFFFFF; font-weight: 700; }
   }
   .faq-cta-btn     { width: 100%; justify-content: center; }
 }
+
+/* ============================================
+   CONTACT FORM — New Fields CSS
+   (optional) tag + custom service dropdown
+   ============================================ */
+
+/* ── "(optional)" label tag ── */
+.field-optional {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.35);
+  margin-left: 6px;
+  font-style: italic;
+  text-transform: none;   /* override parent uppercase so it reads "(optional)" */
+  letter-spacing: normal;
+}
+
+/* ── Select Wrapper ── */
+.select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* ── Custom Select ── */
+.form-select {
+  width: 100%;
+  padding: 16px 48px 16px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 198, 255, 0.20);
+  background: rgba(8, 14, 24, 0.80);
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Placeholder option color */
+.form-select option[value=""][disabled] {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Focus state */
+.form-select:focus {
+  border-color: rgba(0, 198, 255, 0.60);
+  box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.10), 0 0 20px rgba(0, 198, 255, 0.15);
+}
+
+/* Optgroup label styling */
+.form-select optgroup {
+  background: rgba(8, 14, 24, 0.98);
+  color: rgba(0, 198, 255, 0.60);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 8px 0 4px;
+}
+
+/* Option styling */
+.form-select option {
+  background: rgba(8, 14, 24, 0.98);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  padding: 10px 16px;
+}
+
+.form-select option:hover,
+.form-select option:checked {
+  background: rgba(0, 198, 255, 0.15);
+  color: #FFFFFF;
+}
+
+/* ── Custom Arrow Icon ── */
+.select-arrow {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(0, 198, 255, 0.60);
+  pointer-events: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Arrow rotates when select is open/focused */
+.select-wrapper:focus-within .select-arrow {
+  transform: translateY(-50%) rotate(180deg);
+  color: #00C6FF;
+}
+
+/* ── Form Group spacing ── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* ── Form Label ── */
+.form-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.2px;
+}
