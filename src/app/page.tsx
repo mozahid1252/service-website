@@ -1737,12 +1737,32 @@ function ContactSection() {
   const sectionRef = useScrollReveal();
   const [formState, setFormState] = useState({ name: '', email: '', url: '', message: '', budget: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = useCallback((e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
-  }, []);
+    setSending(true);
+    setError('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formState),
+      });
+      if (!res.ok) {
+        throw new Error('Failed to send');
+      }
+      setSubmitted(true);
+      setFormState({ name: '', email: '', url: '', message: '', budget: '' });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch {
+      setError('Something went wrong. Please try again.');
+      setTimeout(() => setError(''), 5000);
+    } finally {
+      setSending(false);
+    }
+  }, [formState]);
 
   return (
     <section id="contact" className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
@@ -1848,11 +1868,13 @@ function ContactSection() {
                 </div>
                 <button
                   type="submit"
-                  className="btn-press w-full px-6 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+                  disabled={sending}
+                  className="btn-press w-full px-6 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(0,198,255,0.4)] disabled:opacity-60 disabled:cursor-not-allowed"
                   style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}
                 >
-                  Send Message
+                  {sending ? 'Sending...' : 'Send Message'}
                 </button>
+                {error && <p className="text-red-400 text-sm text-center mt-2">{error}</p>}
               </form>
             )}
           </div>
