@@ -30,7 +30,7 @@ const TRUST_STATS = [
   { value: '$53.5M+', label: 'Revenue Tracked' },
   { value: '2.75M+', label: 'Data Events Processed' },
   { value: '6+', label: 'Industries Served' },
-  { value: '0', label: 'Lines of Code You Touch' },
+  { value: '3', label: 'Years Experienced' },
 ];
 
 const QUICK_PROOF_CARDS = [
@@ -956,7 +956,7 @@ function AboutSection() {
                 { value: 53.5, prefix: '$', suffix: 'M+', label: 'Revenue Tracked & Analyzed' },
                 { value: 2.75, prefix: '', suffix: 'M+', label: 'Raw Data Events Processed' },
                 { value: 100, prefix: '', suffix: '+', label: 'Average Delivery' },
-                { value: 3, prefix: '', suffix: '', label: 'Industries Served' },
+                { value: 6, prefix: '', suffix: '+', label: 'Industries Served' },
               ].map((stat, i) => (
                 <div key={i} className="text-center p-4 glass rounded-xl">
                   <div className="gradient-text text-2xl font-bold">
