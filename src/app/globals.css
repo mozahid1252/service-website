@@ -1227,6 +1227,24 @@ table.infra-table {
 .package-book-btn { margin-top: auto; }
 @media (max-width: 1024px) { .packages-grid { grid-template-columns: 1fr; } }
 
+/* "rev" shortform tag — shown next to the revenue figure in package "Best For" */
+.rev-tag {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 4px;
+  background: rgba(0, 198, 255, 0.10);
+  border: 1px solid rgba(0, 198, 255, 0.25);
+  color: #00C6FF;
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+  vertical-align: middle;
+  margin: 0 2px;
+  line-height: 1.4;
+}
+
 /* ============================================
    INFRASTRUCTURE SECTION — 4 TECH BOXES
    Symmetrical 2x2 grid

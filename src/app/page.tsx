@@ -7,7 +7,7 @@ import {
   Check, Star, ArrowRight, Download, ExternalLink,
   BarChart3, TrendingUp, Users, Shield, Zap, Database,
   Code2, Cloud, LineChart, Plug, FileText, Clock,
-  AlertTriangle, Target, Lightbulb, Rocket
+  AlertTriangle, Target, Lightbulb, Rocket, MapPin
 } from 'lucide-react';
 
 /* GitHub Pages basePath helper */
@@ -187,7 +187,7 @@ const CORE_PACKAGES = [
       'Proactive Anomaly Alerts',
       'Dashboard Maintenance & 45-min Monthly Call',
     ],
-    bestFor: 'Ongoing growth, live monitoring, and seasonal shifts.',
+    bestFor: 'Stores doing $100K+/mo needing a permanent data partner.',
     promise: 'With this retainer, today\'s insight will never become outdated next month. We will detect problems between analyses before they cost you money, ensure your implemented changes are actually working, and keep you prepared for seasonal shifts before they catch you off guard.',
     cta: 'Become a Retainer Client →',
     featured: false,
@@ -529,6 +529,20 @@ function Counter({ target, prefix = '', suffix = '' }: { target: number; prefix?
   }, [target]);
 
   return <span ref={ref}>{prefix}{count.toLocaleString()}{suffix}</span>;
+}
+
+/* Renders the "Best For" text with a styled "rev" shortform tag
+   inserted right after the revenue figure (the "/mo" part). */
+function BestForText({ text }: { text: string }) {
+  const idx = text.indexOf('/mo');
+  if (idx === -1) return <>{text}</>;
+  const before = text.slice(0, idx + 3);
+  const after = text.slice(idx + 3).trimStart();
+  return (
+    <>
+      {before} <span className="rev-tag">rev</span> {after}
+    </>
+  );
 }
 
 /* ──────────────────────────────────────────
@@ -941,7 +955,7 @@ function AboutSection() {
               {[
                 { value: 53.5, prefix: '$', suffix: 'M+', label: 'Revenue Tracked & Analyzed' },
                 { value: 2.75, prefix: '', suffix: 'M+', label: 'Raw Data Events Processed' },
-                { value: 47, prefix: '', suffix: '+', label: 'Analyses Delivered' },
+                { value: 100, prefix: '', suffix: '+', label: 'Average Delivery' },
                 { value: 3, prefix: '', suffix: '', label: 'Industries Served' },
               ].map((stat, i) => (
                 <div key={i} className="text-center p-4 glass rounded-xl">
@@ -955,7 +969,7 @@ function AboutSection() {
 
             {/* Credentials */}
             <div className="glass rounded-xl p-5 mb-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div>
                   <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-1">Education</div>
                   <div className="text-white text-sm font-medium">University of Rajshahi</div>
@@ -963,6 +977,12 @@ function AboutSection() {
                 <div>
                   <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-1">Languages</div>
                   <div className="text-white text-sm font-medium">English | Bengali | Hindi | Urdu</div>
+                </div>
+                <div>
+                  <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-1 flex items-center gap-1.5">
+                    <MapPin size={14} className="shrink-0" /> Location
+                  </div>
+                  <div className="text-white text-sm font-medium">Dhaka, Bangladesh</div>
                 </div>
               </div>
             </div>
@@ -1154,7 +1174,7 @@ function ServicesSection() {
 
                 <div className="mb-5">
                   <div className="text-[#00C6FF] text-xs font-semibold mb-1">Best For:</div>
-                  <p className="text-[#8899AA] text-sm">{pkg.bestFor}</p>
+                  <p className="text-[#8899AA] text-sm"><BestForText text={pkg.bestFor} /></p>
                 </div>
 
                 <div className="p-4 rounded-lg bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.1)] mb-5">
@@ -1197,7 +1217,7 @@ function ServicesSection() {
                   <div>
                     <div className="mb-5">
                       <div className="text-[#00C6FF] text-xs font-semibold mb-1">Best For:</div>
-                      <p className="text-[#8899AA] text-sm">{pkg.bestFor}</p>
+                      <p className="text-[#8899AA] text-sm"><BestForText text={pkg.bestFor} /></p>
                     </div>
                     <div className="p-4 rounded-lg bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.1)] mb-5">
                       <div className="text-[#00C6FF] text-xs font-semibold mb-2">Our Promise To You:</div>
