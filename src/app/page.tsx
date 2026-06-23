@@ -1805,7 +1805,7 @@ function ContactSection() {
             </a>
             <button
               type="button"
-              onClick={() => { window.location.href = 'mailto:mojahidulislam101010@gmail.com?subject=Discovery%20Call%20Inquiry&body=Hi%20Mozahidul%2C%20I%20visited%20your%20portfolio%20and%20want%20to%20discuss%20my%20e-commerce%20data%20needs.'; }}
+              onClick={() => { window.open('https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com&su=Discovery+Call+Inquiry&body=Hi+Mozahidul%2C+I+visited+your+portfolio+and+want+to+discuss+my+e-commerce+data+needs.', '_blank'); }}
               className="btn-press inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-base font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(234,67,53,0.4)] cursor-pointer"
               style={{ background: 'linear-gradient(135deg, #EA4335, #C5221F)', boxShadow: '0 0 20px rgba(234,67,53,0.3)' }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -1899,7 +1899,7 @@ function ContactSection() {
             <div className="glass rounded-2xl p-6 sm:p-8">
               <h3 className="text-white font-bold text-lg mb-5">Prefer to reach out directly? Let&apos;s talk.</h3>
               <div className="space-y-4">
-                <a href="mailto:mojahidulislam101010@gmail.com" className="flex items-center gap-4 group">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com&su=Discovery+Call+Inquiry" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-[rgba(0,198,255,0.1)] group-hover:bg-[rgba(0,198,255,0.2)] transition-colors">
                     <Mail size={18} className="text-[#00C6FF]" />
                   </div>
@@ -2020,7 +2020,7 @@ function Footer() {
               <li><a href="https://linkedin.com/in/mozahidul-islam-analyst" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Linkedin size={12}/> LinkedIn</a></li>
               <li><a href="https://wa.me/8801940131074" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Phone size={12}/> WhatsApp</a></li>
               <li><a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Github size={12}/> GitHub</a></li>
-              <li><a href="mailto:mojahidulislam101010@gmail.com" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Mail size={12}/> Email</a></li>
+              <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Mail size={12}/> Email</a></li>
             </ul>
           </div>
         </div>
