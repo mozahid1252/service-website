@@ -437,15 +437,136 @@ const PROCESS_STEPS = [
   },
 ];
 
+/* Tool logo SVGs for the Infrastructure section (replace bullet dots) */
+const TOOL_LOGOS: Record<string, React.ReactNode> = {
+  python: (
+    <svg width="20" height="20" viewBox="0 0 256 255" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="pyGrad1" x1="12.959%" y1="12.039%" x2="79.639%" y2="78.201%">
+          <stop offset="0%" stopColor="#387EB8" />
+          <stop offset="100%" stopColor="#366994" />
+        </linearGradient>
+        <linearGradient id="pyGrad2" x1="19.128%" y1="20.579%" x2="90.742%" y2="88.429%">
+          <stop offset="0%" stopColor="#FFE052" />
+          <stop offset="100%" stopColor="#FFC331" />
+        </linearGradient>
+      </defs>
+      <path fill="url(#pyGrad1)" d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zM92.802 19.66a11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13 11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.13z" />
+      <path fill="url(#pyGrad2)" d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.519 33.897zm34.114-19.586a11.12 11.12 0 0 1-11.13-11.13 11.12 11.12 0 0 1 11.13-11.131 11.12 11.12 0 0 1 11.13 11.13 11.12 11.12 0 0 1-11.13 11.13z" />
+    </svg>
+  ),
+  sql: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="12" cy="5" rx="9" ry="3" fill="#00C6FF" opacity="0.9" />
+      <path d="M3 5v4c0 1.657 4.03 3 9 3s9-1.343 9-3V5" stroke="#00C6FF" strokeWidth="1.5" fill="rgba(0,198,255,0.15)" />
+      <path d="M3 9v4c0 1.657 4.03 3 9 3s9-1.343 9-3V9" stroke="#00C6FF" strokeWidth="1.5" fill="rgba(0,198,255,0.10)" />
+      <path d="M3 13v4c0 1.657 4.03 3 9 3s9-1.343 9-3v-4" stroke="#00C6FF" strokeWidth="1.5" fill="rgba(0,198,255,0.05)" />
+    </svg>
+  ),
+  stats: (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 3v18h18" stroke="#00C6FF" strokeWidth="2" strokeLinecap="round" />
+      <path d="M7 16l4-6 4 4 4-8" stroke="#00C6FF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="7" cy="16" r="1.5" fill="#00C6FF" />
+      <circle cx="11" cy="10" r="1.5" fill="#00C6FF" />
+      <circle cx="15" cy="14" r="1.5" fill="#00C6FF" />
+      <circle cx="19" cy="6" r="1.5" fill="#00C6FF" />
+    </svg>
+  ),
+  gcp: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12.19 2.5l6.93 12h-13.86l6.93-12z" fill="#EA4335" />
+      <path d="M5.26 14.5l3.47 6h6.93l-3.47-6H5.26z" fill="#FBBC04" />
+      <path d="M15.19 14.5h-6.93l3.47 6 3.46-6z" fill="#34A853" />
+      <path d="M12.19 2.5L5.26 14.5h3.46L12.19 8.5l3.47 6h3.46L12.19 2.5z" fill="#4285F4" />
+    </svg>
+  ),
+  bigquery: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L2 7l10 5 10-5-10-5z" fill="#4285F4" />
+      <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="#4285F4" strokeWidth="1.5" fill="none" />
+      <circle cx="17" cy="17" r="4" fill="#4285F4" opacity="0.9" />
+      <circle cx="17" cy="17" r="2.5" fill="#1a73e8" />
+      <path d="M20 20l2.5 2.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  ),
+  postgres: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#336791" />
+      <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z" fill="#fff" opacity="0.15" />
+      <text x="12" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="white" fontFamily="Arial">PG</text>
+    </svg>
+  ),
+  looker: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" fill="#4285F4" />
+      <circle cx="12" cy="12" r="6" fill="#EA4335" />
+      <circle cx="12" cy="12" r="3" fill="#FBBC04" />
+      <circle cx="12" cy="12" r="1.5" fill="white" />
+    </svg>
+  ),
+  powerbi: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="10" width="4" height="12" rx="1" fill="#F2C811" />
+      <rect x="8" y="6" width="4" height="16" rx="1" fill="#F2C811" opacity="0.85" />
+      <rect x="14" y="2" width="4" height="20" rx="1" fill="#F2C811" opacity="0.70" />
+      <rect x="20" y="8" width="2" height="14" rx="1" fill="#F2C811" opacity="0.50" />
+    </svg>
+  ),
+  excel: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="20" height="20" rx="3" fill="#217346" />
+      <path d="M7 8l3 4-3 4h2l2-2.5L13 16h2l-3-4 3-4h-2l-2 2.5L9 8H7z" fill="white" />
+      <rect x="14" y="8" width="6" height="1.5" rx="0.5" fill="white" opacity="0.7" />
+      <rect x="14" y="11.25" width="6" height="1.5" rx="0.5" fill="white" opacity="0.7" />
+      <rect x="14" y="14.5" width="6" height="1.5" rx="0.5" fill="white" opacity="0.7" />
+    </svg>
+  ),
+  shopify: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15.337 3.28c-.013-.1-.1-.15-.18-.16-.08-.01-1.74-.13-1.74-.13s-1.16-1.14-1.28-1.26c-.12-.12-.36-.08-.45-.06-.02 0-.38.12-.98.3C10.367.72 9.757.5 9.057.5c-1.97 0-2.92 1.47-3.23 2.96C4.787 3.65 3.947 3.9 3.337 4.1c-.03.01-.06.02-.08.04L2.027 19.5l11.5 2 6-1.5L15.337 3.28z" fill="#96BF48" />
+      <path d="M14.157 3.12c-.08-.01-1.74-.13-1.74-.13s-1.16-1.14-1.28-1.26c-.05-.05-.11-.07-.17-.07v19.86l6-1.5-2.63-16.73c-.013-.1-.1-.15-.18-.16z" fill="#5E8E3E" />
+      <path d="M9.057 7.5l-.74 2.76s-.82-.37-1.82-.37c-1.47 0-1.54.92-1.54 1.15 0 1.26 3.29 1.74 3.29 4.69 0 2.32-1.47 3.81-3.46 3.81-2.38 0-3.59-1.48-3.59-1.48l.64-2.1s1.25 1.07 2.3 1.07c.69 0 .97-.54.97-1 0-1.64-2.7-1.71-2.7-4.43 0-2.28 1.64-4.49 4.94-4.49 1.27 0 1.9.36 1.9.36z" fill="white" />
+    </svg>
+  ),
+  ga4: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z" fill="#E37400" />
+      <rect x="7" y="13" width="3" height="5" rx="1.5" fill="white" />
+      <rect x="12" y="9" width="3" height="9" rx="1.5" fill="white" />
+      <rect x="17" y="6" width="3" height="12" rx="1.5" fill="white" opacity="0.8" />
+    </svg>
+  ),
+  'meta-google': (
+    <>
+      <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2" />
+      </svg>
+      <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style={{ marginLeft: '-4px' }}>
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
+      </svg>
+    </>
+  ),
+  klaviyo: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="20" height="20" rx="4" fill="#1A1A1A" />
+      <text x="12" y="16" textAnchor="middle" fontSize="9" fontWeight="900" fill="#00FF66" fontFamily="Arial, sans-serif" letterSpacing="-0.5">KL</text>
+    </svg>
+  ),
+};
+
 const TECH_STACK = [
   {
     category: 'Programming & Analytics',
     icon: Code2,
     description: 'The languages used to process millions of rows and run statistical models.',
     items: [
-      { name: 'Python (Pandas, Seaborn)', desc: 'For deep EDA, A/B testing (t-tests, ANOVA), and churn modeling.' },
-      { name: 'SQL', desc: 'For extracting, joining, and transforming raw data across multiple platforms.' },
-      { name: 'Statistical Modeling', desc: 'Moving beyond "gut feelings" to mathematically proven truths.' },
+      { logo: 'python', name: 'Python (Pandas, Seaborn)', desc: 'For deep EDA, A/B testing (t-tests, ANOVA), and churn modeling.' },
+      { logo: 'sql', name: 'SQL', desc: 'For extracting, joining, and transforming raw data across multiple platforms.' },
+      { logo: 'stats', name: 'Statistical Modeling', desc: 'Moving beyond "gut feelings" to mathematically proven truths.' },
     ],
   },
   {
@@ -453,9 +574,9 @@ const TECH_STACK = [
     icon: Cloud,
     description: 'The backend infrastructure where your unified source of truth lives.',
     items: [
-      { name: 'Google Cloud Platform (GCP)', desc: 'Secure, scalable cloud infrastructure.' },
-      { name: 'BigQuery', desc: 'Enterprise data warehousing for lightning-fast queries.' },
-      { name: 'PostgreSQL', desc: 'Relational database management for structured star-schema models.' },
+      { logo: 'gcp', name: 'Google Cloud Platform (GCP)', desc: 'Secure, scalable cloud infrastructure.' },
+      { logo: 'bigquery', name: 'BigQuery', desc: 'Enterprise data warehousing for lightning-fast queries.' },
+      { logo: 'postgres', name: 'PostgreSQL', desc: 'Relational database management for structured star-schema models.' },
     ],
   },
   {
@@ -463,9 +584,9 @@ const TECH_STACK = [
     icon: LineChart,
     description: 'Where the complex math becomes a simple, actionable dashboard for you.',
     items: [
-      { name: 'Looker Studio', desc: 'Live, auto-refreshing, custom KPI dashboards.' },
-      { name: 'Power BI', desc: 'Advanced business intelligence with 20+ DAX measures.' },
-      { name: 'Excel', desc: 'Simplified KPI summary sheets for immediate team action.' },
+      { logo: 'looker', name: 'Looker Studio', desc: 'Live, auto-refreshing, custom KPI dashboards.' },
+      { logo: 'powerbi', name: 'Power BI', desc: 'Advanced business intelligence with 20+ DAX measures.' },
+      { logo: 'excel', name: 'Excel', desc: 'Simplified KPI summary sheets for immediate team action.' },
     ],
   },
   {
@@ -473,10 +594,10 @@ const TECH_STACK = [
     icon: Plug,
     description: 'The APIs we connect so your data actually talks to each other.',
     items: [
-      { name: 'Shopify', desc: 'Orders, Customers, Products' },
-      { name: 'GA4', desc: 'Funnel, Sessions, Conversions' },
-      { name: 'Meta Ads & Google Ads', desc: 'True ROAS, Spend, CAC' },
-      { name: 'Klaviyo', desc: 'Email performance, Segmentation, Churn triggers' },
+      { logo: 'shopify', name: 'Shopify', desc: 'Orders, Customers, Products' },
+      { logo: 'ga4', name: 'GA4', desc: 'Funnel, Sessions, Conversions' },
+      { logo: 'meta-google', name: 'Meta Ads & Google Ads', desc: 'True ROAS, Spend, CAC' },
+      { logo: 'klaviyo', name: 'Klaviyo', desc: 'Email performance, Segmentation, Churn triggers' },
     ],
   },
 ];
@@ -1730,17 +1851,19 @@ function TechStackSection() {
                   <h3 className="infra-card-title font-bold text-lg">{cat.category}</h3>
                 </div>
                 <p className="text-[#8899AA] text-sm mb-5">{cat.description}</p>
-                <div className="space-y-3">
+                <ul className="infra-tool-list">
                   {cat.items.map((item, ii) => (
-                    <div key={ii} className="flex items-start gap-3">
-                      <div className="infra-bullet-dot w-1.5 h-1.5 rounded-full mt-2 shrink-0" />
-                      <div>
-                        <div className="text-[#F0F4F8] text-sm font-medium">{item.name}</div>
-                        <div className="text-[#8899AA] text-xs">{item.desc}</div>
+                    <li key={ii} className="infra-tool-item">
+                      <div className={`tool-logo-wrap${item.logo === 'meta-google' ? ' tool-logo-double' : ''}`}>
+                        {TOOL_LOGOS[item.logo]}
                       </div>
-                    </div>
+                      <div className="tool-text">
+                        <span className="tool-name">{item.name}</span>
+                        <span className="tool-desc">{item.desc}</span>
+                      </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             );
           })}
