@@ -1755,21 +1755,25 @@ function ContactSection() {
           access_key: 'd3ac2832-f3ca-48cb-abdf-4827bc8c9d12',
           name: formState.name,
           email: formState.email,
-          storeUrl: formState.url,
-          budget: formState.budget,
+          storeUrl: formState.url || 'Not provided',
+          budget: formState.budget || 'Not selected',
           message: formState.message,
           subject: `New Inquiry from ${formState.name} — Mozahidul Islam Portfolio`,
           from_name: formState.name,
+          disable_captcha: 'true',
         }),
       });
       const data = await res.json();
-      if (!data.success) throw new Error('Failed');
+      if (!data.success) {
+        throw new Error(data.message || 'Failed to send');
+      }
       setSubmitted(true);
       setFormState({ name: '', email: '', url: '', message: '', budget: '' });
       setTimeout(() => setSubmitted(false), 5000);
-    } catch {
-      setError('Something went wrong. Please try again.');
-      setTimeout(() => setError(''), 5000);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+      setError(msg);
+      setTimeout(() => setError(''), 8000);
     } finally {
       setSending(false);
     }
