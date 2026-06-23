@@ -1192,7 +1192,7 @@ function AboutSection() {
                 </div>
                 <div>
                   <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-1">Languages</div>
-                  <div className="text-white text-sm font-medium">English | Bengali | Hindi | Urdu</div>
+                  <div className="text-white text-sm font-medium whitespace-nowrap">English | Bengali | Hindi | Urdu</div>
                 </div>
                 <div>
                   <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-1 flex items-center gap-1.5">
