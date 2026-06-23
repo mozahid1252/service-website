@@ -2880,3 +2880,214 @@ table.infra-table {
   .qp-stat-cell.profit .qp-stat-value { font-size: 9.5px; }
   .qp-stat-label { font-size: 8px; letter-spacing: 0.3px; }
 }
+
+/* ============================================
+   "DON'T HIRE AN AGENCY" — 4 UNIQUE ANIMATIONS
+   Each card gets its own signature animation overlay.
+   Existing ::before/::after lighting, colors, borders, and
+   breathing glow are preserved unchanged.
+   ============================================ */
+
+/* Animation overlay layer — sits above card bg but below content */
+.card-anim-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+/* ══════════════════════════════════════════════
+   CARD 01 — "RADAR SCAN" (CYAN)
+   Horizontal glowing line scans top to bottom
+   ══════════════════════════════════════════════ */
+.agency-card-01 .card-anim-layer::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 198, 255, 0.40) 20%, rgba(0, 198, 255, 1.00) 50%, rgba(0, 198, 255, 0.40) 80%, transparent 100%);
+  box-shadow: 0 0 8px rgba(0, 198, 255, 0.80), 0 0 20px rgba(0, 198, 255, 0.40), 0 4px 20px rgba(0, 198, 255, 0.20);
+  animation: radarScan 4s ease-in-out infinite;
+}
+
+.agency-card-01 .card-anim-layer::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  top: -2px;
+  height: 60px;
+  background: linear-gradient(180deg, rgba(0, 198, 255, 0.08) 0%, transparent 100%);
+  animation: radarTrail 4s ease-in-out infinite;
+}
+
+@keyframes radarScan {
+  0%   { top: -2px; opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { top: calc(100% + 2px); opacity: 0; }
+}
+
+@keyframes radarTrail {
+  0%   { top: -60px; opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { top: calc(100% + 2px); opacity: 0; }
+}
+
+.agency-card-01:hover .card-anim-layer::before {
+  animation-duration: 1.8s;
+  background: linear-gradient(90deg, transparent, rgba(0, 198, 255, 0.70) 30%, #00C6FF 50%, rgba(0, 198, 255, 0.70) 70%, transparent);
+  box-shadow: 0 0 16px rgba(0, 198, 255, 1.00), 0 0 40px rgba(0, 198, 255, 0.60);
+}
+
+/* ══════════════════════════════════════════════
+   CARD 02 — "CORNER SPARK" (PURPLE)
+   Bright light bursts from top-right corner
+   ══════════════════════════════════════════════ */
+.agency-card-02 .card-anim-layer::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 1.00) 0%, rgba(139, 92, 246, 0.60) 20%, rgba(139, 92, 246, 0.20) 50%, transparent 70%);
+  animation: cornerSpark 3.5s ease-in-out infinite;
+}
+
+.agency-card-02 .card-anim-layer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(225deg, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+  animation: cornerRay 3.5s ease-in-out infinite;
+}
+
+@keyframes cornerSpark {
+  0%, 100% { opacity: 0.5; transform: scale(0.8); filter: blur(4px); }
+  30%      { opacity: 1;   transform: scale(1.4); filter: blur(0px); }
+  60%      { opacity: 0.7; transform: scale(1.0); filter: blur(2px); }
+}
+
+@keyframes cornerRay {
+  0%, 100% { opacity: 0.3; transform: scale(0.9); }
+  30%      { opacity: 0.8; transform: scale(1.2); }
+  60%      { opacity: 0.5; transform: scale(1.0); }
+}
+
+.agency-card-02:hover .card-anim-layer::before {
+  animation-duration: 1.5s;
+  width: 140px;
+  height: 140px;
+}
+
+/* ══════════════════════════════════════════════
+   CARD 03 — "DATA STREAM" (GOLD)
+   Vertical glowing data lines flow upward
+   ══════════════════════════════════════════════ */
+.agency-card-03 .card-anim-layer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent 0px, transparent 18px, rgba(245, 166, 35, 0.04) 18px, rgba(245, 166, 35, 0.04) 19px);
+  animation: dataStream 8s linear infinite;
+}
+
+.agency-card-03 .card-anim-layer::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 120px;
+  bottom: -120px;
+  background: linear-gradient(180deg, transparent 0%, rgba(245, 166, 35, 0.06) 40%, rgba(245, 166, 35, 0.14) 60%, rgba(245, 166, 35, 0.06) 80%, transparent 100%);
+  animation: dataStreakUp 3s ease-in-out infinite;
+}
+
+@keyframes dataStream {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 -200px; }
+}
+
+@keyframes dataStreakUp {
+  0%   { bottom: -120px; opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { bottom: calc(100% + 120px); opacity: 0; }
+}
+
+.agency-card-03:hover .card-anim-layer::after {
+  animation-duration: 1.5s;
+  background: linear-gradient(180deg, transparent 0%, rgba(245, 166, 35, 0.10) 40%, rgba(245, 166, 35, 0.24) 60%, rgba(245, 166, 35, 0.10) 80%, transparent 100%);
+}
+
+/* ══════════════════════════════════════════════
+   CARD 04 — "PULSE RING" (GREEN)
+   Concentric rings pulse outward from center
+   ══════════════════════════════════════════════ */
+.agency-card-04 .card-anim-layer::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0; height: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 230, 118, 0.80);
+  animation: pulseRing1 3s ease-out infinite;
+}
+
+.agency-card-04 .card-anim-layer::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0; height: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 230, 118, 0.50);
+  animation: pulseRing2 3s ease-out infinite;
+  animation-delay: 1s;
+}
+
+.pulse-ring-3 {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0; height: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 230, 118, 0.35);
+  animation: pulseRing3 3s ease-out infinite;
+  animation-delay: 2s;
+}
+
+@keyframes pulseRing1 {
+  0%   { width: 20px; height: 20px; opacity: 1; border-color: rgba(0, 230, 118, 0.90); box-shadow: 0 0 12px rgba(0, 230, 118, 0.60); }
+  100% { width: 400px; height: 400px; opacity: 0; border-color: rgba(0, 230, 118, 0); box-shadow: 0 0 0px rgba(0, 230, 118, 0); }
+}
+
+@keyframes pulseRing2 {
+  0%   { width: 20px; height: 20px; opacity: 0.80; border-color: rgba(0, 230, 118, 0.60); }
+  100% { width: 500px; height: 500px; opacity: 0; border-color: rgba(0, 230, 118, 0); }
+}
+
+@keyframes pulseRing3 {
+  0%   { width: 20px; height: 20px; opacity: 0.60; border-color: rgba(0, 230, 118, 0.40); }
+  100% { width: 600px; height: 600px; opacity: 0; border-color: rgba(0, 230, 118, 0); }
+}
+
+.agency-card-04:hover .card-anim-layer::before {
+  animation-duration: 1.5s;
+  border-color: rgba(0, 230, 118, 1.00);
+  box-shadow: 0 0 20px rgba(0, 230, 118, 0.80);
+}
+
+.agency-card-04:hover .card-anim-layer::after {
+  animation-duration: 1.5s;
+  animation-delay: 0.5s;
+}

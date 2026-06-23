@@ -1287,7 +1287,11 @@ function WhyWorkWithMeSection() {
               key={reason.num}
               className={`agency-reason-card agency-card-${reason.num}`}
             >
-              <div className="flex items-start gap-4">
+              {/* Unique signature animation overlay (one per card) */}
+              <div className="card-anim-layer" aria-hidden="true">
+                {reason.num === '04' && <div className="pulse-ring-3" />}
+              </div>
+              <div className="flex items-start gap-4 relative z-10">
                 <div className="reason-number shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold">
                   <span className="text-[#020408]">{reason.num}</span>
                 </div>
