@@ -985,77 +985,103 @@ function QuickProofSection() {
           </p>
         </div>
 
-        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="reveal-stagger quick-proof-grid">
           {QUICK_PROOF_CARDS.map((card, i) => (
             <div
               key={i}
-              className={`quick-proof-card-${i + 1} bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] group`}
+              className={`quick-proof-card quick-proof-card-${i + 1} bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] group`}
             >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-white font-bold text-lg">{card.store}</h3>
-              </div>
-              <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF] mb-5">
-                {card.niche}
-              </div>
+              <div className="quick-proof-card-inner">
 
-              <div className="mb-4">
-                <div className="flex items-center gap-2 text-[#FF4444] text-sm font-semibold mb-2">
-                  <AlertTriangle size={14} /> The Illusion
+                {/* LEFT: Store identity + result + stats */}
+                <div className="qp-left-col">
+                  <div>
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="qp-store-name">{card.store}</h3>
+                    </div>
+                    <span className="qp-category-tag inline-block px-3 py-1 rounded-full text-xs font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF]">
+                      {card.niche}
+                    </span>
+                  </div>
+
+                  {/* Result highlight */}
+                  <div className="qp-result-number p-3 rounded-lg bg-[rgba(0,230,118,0.08)] border border-[rgba(0,230,118,0.15)]">
+                    <div className="flex items-center gap-2 text-[#00E676] text-sm font-semibold mb-1">
+                      <Check size={14} /> The Result
+                    </div>
+                    <p className="text-[#F0F4F8] text-sm leading-relaxed">{card.result}</p>
+                  </div>
+
+                  {/* Stats table */}
+                  <div className="overflow-hidden rounded-lg border border-[rgba(0,198,255,0.1)]">
+                    <table className="w-full text-xs">
+                      <thead>
+                        <tr className="bg-[rgba(0,198,255,0.05)]">
+                          <th className="px-3 py-2 text-left text-[#8899AA] font-medium">Investment</th>
+                          <th className="px-3 py-2 text-left text-[#8899AA] font-medium">Timeline</th>
+                          <th className="px-3 py-2 text-left text-[#8899AA] font-medium">Profit Added</th>
+                          <th className="px-3 py-2 text-left text-[#8899AA] font-medium">ROI</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="px-3 py-2 text-[#F0F4F8]">{card.investment}</td>
+                          <td className="px-3 py-2 text-[#F0F4F8]">{card.timeline}</td>
+                          <td className="px-3 py-2 text-[#00E676] font-semibold">{card.profitAdded}</td>
+                          <td className="px-3 py-2 gradient-text-gold font-bold">{card.roi}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-                <p className="text-[#8899AA] text-sm leading-relaxed">{card.illusion}</p>
-              </div>
 
-              <div className="mb-4">
-                <div className="flex items-center gap-2 text-[#F5A623] text-sm font-semibold mb-2">
-                  <AlertTriangle size={14} /> The Reality
+                {/* DIVIDER */}
+                <div className="qp-col-divider"></div>
+
+                {/* RIGHT: 2x2 content grid */}
+                <div className="qp-right-col">
+                  <div className="qp-content-grid">
+
+                    {/* The Illusion */}
+                    <div className="qp-content-block">
+                      <div className="qp-section-label flex items-center gap-2 text-[#FF4444]">
+                        <AlertTriangle size={14} /> The Illusion
+                      </div>
+                      <p className="qp-section-text">{card.illusion}</p>
+                    </div>
+
+                    {/* The Reality */}
+                    <div className="qp-content-block">
+                      <div className="qp-section-label flex items-center gap-2 text-[#F5A623]">
+                        <AlertTriangle size={14} /> The Reality
+                      </div>
+                      <p className="qp-section-text">{card.reality}</p>
+                    </div>
+
+                    {/* What We Found */}
+                    <div className="qp-content-block">
+                      <div className="qp-section-label flex items-center gap-2 text-[#00C6FF]">
+                        <Target size={14} /> What We Found
+                      </div>
+                      <ul className="qp-found-list">
+                        {card.findings.map((f, fi) => (
+                          <li key={fi}>{f}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Quote */}
+                    <div className="qp-content-block">
+                      <div className="qp-section-label" style={{ opacity: 0 }}>·</div>
+                      <p className="qp-section-text" style={{ fontStyle: 'italic', color: 'rgba(255,255,255,0.38)' }}>
+                        {card.quote}
+                        <span className="qp-quote-author">{card.author}</span>
+                      </p>
+                    </div>
+
+                  </div>
                 </div>
-                <p className="text-[#F0F4F8] text-sm leading-relaxed">{card.reality}</p>
-              </div>
 
-              <div className="mb-4">
-                <div className="flex items-center gap-2 text-[#00C6FF] text-sm font-semibold mb-2">
-                  <Target size={14} /> What We Found
-                </div>
-                <ul className="space-y-1">
-                  {card.findings.map((f, fi) => (
-                    <li key={fi} className="text-[#8899AA] text-sm leading-relaxed flex gap-2">
-                      <span className="text-[#00C6FF] mt-1 shrink-0">•</span>{f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mb-5 p-3 rounded-lg bg-[rgba(0,230,118,0.08)] border border-[rgba(0,230,118,0.15)]">
-                <div className="flex items-center gap-2 text-[#00E676] text-sm font-semibold mb-1">
-                  <Check size={14} /> The Result
-                </div>
-                <p className="text-[#F0F4F8] text-sm leading-relaxed">{card.result}</p>
-              </div>
-
-              <div className="border-l-2 border-[#00C6FF] pl-4 mb-5">
-                <p className="text-[#8899AA] text-sm italic">{card.quote}</p>
-                <p className="text-[#445566] text-xs mt-1">{card.author}</p>
-              </div>
-
-              <div className="overflow-hidden rounded-lg border border-[rgba(0,198,255,0.1)]">
-                <table className="w-full text-xs">
-                  <thead>
-                    <tr className="bg-[rgba(0,198,255,0.05)]">
-                      <th className="px-3 py-2 text-left text-[#8899AA] font-medium">Investment</th>
-                      <th className="px-3 py-2 text-left text-[#8899AA] font-medium">Timeline</th>
-                      <th className="px-3 py-2 text-left text-[#8899AA] font-medium">Profit Added</th>
-                      <th className="px-3 py-2 text-left text-[#8899AA] font-medium">ROI</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="px-3 py-2 text-[#F0F4F8]">{card.investment}</td>
-                      <td className="px-3 py-2 text-[#F0F4F8]">{card.timeline}</td>
-                      <td className="px-3 py-2 text-[#00E676] font-semibold">{card.profitAdded}</td>
-                      <td className="px-3 py-2 gradient-text-gold font-bold">{card.roi}</td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
             </div>
           ))}
