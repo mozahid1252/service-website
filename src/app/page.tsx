@@ -10,6 +10,9 @@ import {
   AlertTriangle, Target, Lightbulb, Rocket
 } from 'lucide-react';
 
+/* GitHub Pages basePath helper */
+const basePath = process.env.NODE_ENV === 'production' && typeof window !== 'undefined' && !window.location.hostname.includes('localhost') ? '/portfolio-website' : '';
+
 /* ──────────────────────────────────────────
    DATA CONSTANTS
    ────────────────────────────────────────── */
@@ -576,7 +579,7 @@ function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
           <a href="#hero" className="flex items-center gap-3 group">
-            <Image src="/images/logo.png" alt="Logo" width={44} height={44} className="rounded-lg transition-transform duration-300 group-hover:scale-105" />
+            <Image src={`${basePath}/images/logo.png`} alt="Logo" width={44} height={44} className="rounded-lg transition-transform duration-300 group-hover:scale-105" />
             <div className="hidden sm:block">
               <div className="text-sm font-bold text-white leading-tight">Mozahidul Islam</div>
               <div className="text-[11px] text-[#8899AA] leading-tight">E-Commerce Growth Analyst</div>
@@ -676,7 +679,7 @@ function HeroSection() {
       {/* Background Photo */}
       <div className="absolute inset-0">
         <Image
-          src="/images/photo2.jpg"
+          src={`${basePath}/images/photo2.jpg`}
           alt="Hero background"
           fill
           sizes="100vw"
@@ -875,7 +878,7 @@ function AboutSection() {
           <div className="relative h-full min-h-[600px]">
             <div className="relative h-full min-h-[600px] rounded-[20px] overflow-hidden border-2 border-[rgba(0,198,255,0.2)]" style={{ boxShadow: '0 0 40px rgba(0,198,255,0.15)' }}>
               <Image
-                src="/images/photo1.png"
+                src={`${basePath}/images/photo1.png`}
                 alt="Mozahidul Islam - E-Commerce Growth Analyst"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
@@ -966,7 +969,7 @@ function AboutSection() {
 
             {/* CTA */}
             <div className="flex flex-wrap gap-4">
-              <a href="/pdfs/resume.pdf" download="Mozahidul_Islam_Resume.pdf" className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 inline-flex items-center gap-2 no-underline"
+              <a href={`${basePath}/pdfs/resume.pdf`} download="Mozahidul_Islam_Resume.pdf" className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 inline-flex items-center gap-2 no-underline"
                 style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
                 <Download size={16} /> Download CV
               </a>
@@ -1021,7 +1024,7 @@ function WhyWorkWithMeSection() {
     <section className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
       {/* Background Photo */}
       <div className="absolute inset-0">
-        <Image src="/images/photo3.jpg" alt="Background" fill sizes="100vw" className="object-cover opacity-[0.10]" />
+        <Image src={`${basePath}/images/photo3.jpg`} alt="Background" fill sizes="100vw" className="object-cover opacity-[0.10]" />
       </div>
       <div className="absolute inset-0 bg-[rgba(2,4,8,0.92)]" />
 
@@ -1160,7 +1163,7 @@ function ServicesSection() {
                 </div>
 
                 <a href="#contact" className="service-book-btn package-book-btn">{pkg.cta}</a>
-                <a href={`/pdfs/${pkg.tier.toLowerCase()}-package.pdf`} download={`${pkg.tier}_Package_Details.pdf`} className="pdf-download-btn">
+                <a href={`${basePath}/pdfs/${pkg.tier.toLowerCase()}-package.pdf`} download={`${pkg.tier}_Package_Details.pdf`} className="pdf-download-btn">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                   Download Full {pkg.tier.charAt(0) + pkg.tier.slice(1).toLowerCase()} Details PDF
                 </a>
@@ -1201,7 +1204,7 @@ function ServicesSection() {
                       <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
                     </div>
                     <a href="#contact" className="service-book-btn">{pkg.cta}</a>
-                    <a href={`/pdfs/${pkg.tier.toLowerCase()}-package.pdf`} download={`${pkg.tier}_Package_Details.pdf`} className="pdf-download-btn">
+                    <a href={`${basePath}/pdfs/${pkg.tier.toLowerCase()}-package.pdf`} download={`${pkg.tier}_Package_Details.pdf`} className="pdf-download-btn">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                       Download Full Retainer Details PDF
                     </a>
@@ -1242,7 +1245,7 @@ function ServicesSection() {
           </div>
 
           <div className="text-center mt-8">
-            <a href="/pdfs/addon-packages.pdf" download="Specialized_Add-On_Packages.pdf" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
+            <a href={`${basePath}/pdfs/addon-packages.pdf`} download="Specialized_Add-On_Packages.pdf" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
               <Download size={14} /> Download Full Add-On Details PDF
             </a>
           </div>
@@ -1358,7 +1361,7 @@ function ServicesSection() {
           </div>
 
           <div className="text-center">
-            <a href="/pdfs/data-setup-infrastructure.pdf" download="Data_Setup_Infrastructure_Services.pdf" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
+            <a href={`${basePath}/pdfs/data-setup-infrastructure.pdf`} download="Data_Setup_Infrastructure_Services.pdf" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
               <Download size={14} /> Download Data Setup Presentation PDF
             </a>
           </div>
@@ -1424,7 +1427,7 @@ function CaseStudiesSection() {
                 </div>
               </div>
 
-              <a href={`/pdfs/case-${cs.cssClass}.pdf`} download={`${cs.store}_Case_Study.pdf`} className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline">
+              <a href={`${basePath}/pdfs/case-${cs.cssClass}.pdf`} download={`${cs.store}_Case_Study.pdf`} className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline">
                 <Download size={14} /> Download Full {cs.store} Case Study PDF
               </a>
               </div>
@@ -1491,7 +1494,7 @@ function CaseStudies2Section() {
                 </div>
               </div>
 
-              <a href={`/pdfs/case-${cs.cssClass}.pdf`} download={`${cs.store}_Case_Study.pdf`} className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline">
+              <a href={`${basePath}/pdfs/case-${cs.cssClass}.pdf`} download={`${cs.store}_Case_Study.pdf`} className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline">
                 <Download size={14} /> Download Full {cs.store} Case Study PDF
               </a>
               </div>
@@ -1629,7 +1632,7 @@ function ProcessSection() {
     <section id="process" className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
       {/* Background Photo */}
       <div className="absolute inset-0">
-        <Image src="/images/photo4.jpg" alt="Background" fill sizes="100vw" className="object-cover opacity-[0.08]" />
+        <Image src={`${basePath}/images/photo4.jpg`} alt="Background" fill sizes="100vw" className="object-cover opacity-[0.08]" />
       </div>
       <div className="absolute inset-0 bg-[rgba(2,4,8,0.94)]" />
 
@@ -1758,7 +1761,7 @@ function ContactSection() {
     <section id="contact" className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
       {/* Background Photo */}
       <div className="absolute inset-0">
-        <Image src="/images/photo5.jpg" alt="Background" fill sizes="100vw" className="object-cover opacity-[0.10]" />
+        <Image src={`${basePath}/images/photo5.jpg`} alt="Background" fill sizes="100vw" className="object-cover opacity-[0.10]" />
       </div>
       <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(2,4,8,0.96) 0%, rgba(8,13,20,0.94) 100%)' }} />
 
@@ -1964,7 +1967,7 @@ function Footer() {
           {/* Column 1: Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <Image src="/images/logo.png" alt="Logo" width={44} height={44} className="rounded-lg" />
+              <Image src={`${basePath}/images/logo.png`} alt="Logo" width={44} height={44} className="rounded-lg" />
               <div>
                 <div className="text-white font-bold text-sm">Mozahidul Islam</div>
                 <div className="text-[#00C6FF] text-[11px] font-medium">E-Commerce Growth Analyst</div>
