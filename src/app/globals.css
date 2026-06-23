@@ -2903,3 +2903,30 @@ table.infra-table {
   .about-text-card { padding: 18px 18px; }
   .about-text-card p { font-size: 13px !important; }
 }
+
+/* ============================================
+   TECH STACK — Highlighted intro paragraph
+   Light red rounded box, larger text
+   ============================================ */
+
+.tech-highlight-box {
+  background: rgba(255, 68, 68, 0.08);
+  border: 1px solid rgba(255, 68, 68, 0.25);
+  border-radius: 12px;
+  padding: 18px 24px;
+  box-shadow: 0 0 24px rgba(255, 68, 68, 0.10);
+}
+
+.tech-highlight-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;          /* 2 steps up from text-base (16px) */
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.90);
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .tech-highlight-text { font-size: 17px; }
+  .tech-highlight-box { padding: 14px 18px; }
+}

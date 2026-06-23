@@ -1916,9 +1916,11 @@ function TechStackSection() {
           <h2 className="section-headline text-[clamp(24px,3.5vw,40px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight">
             Enterprise Engineering. Without the $150K Salary.
           </h2>
-          <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
-            Shopify&apos;s default reports only tell 10% of the story. To find the hidden profit, you need to connect, warehouse, and model your data properly.
-          </p>
+          <div className="tech-highlight-box max-w-3xl mx-auto">
+            <p className="tech-highlight-text">
+              Shopify&apos;s default reports only tell 10% of the story. To find the hidden profit, you need to connect, warehouse, and model your data properly.
+            </p>
+          </div>
           <p className="text-[#8899AA] text-sm max-w-3xl mx-auto leading-relaxed mt-2">
             I bring the exact same tech stack used by Fortune 500 companies, and build it custom for your store. You get enterprise-grade data infrastructure without the $150,000/year in-house data engineer salary.
           </p>
