@@ -875,7 +875,7 @@ function AboutSection() {
           <div className="relative h-full min-h-[600px]">
             <div className="relative h-full min-h-[600px] rounded-[20px] overflow-hidden border-2 border-[rgba(0,198,255,0.2)]" style={{ boxShadow: '0 0 40px rgba(0,198,255,0.15)' }}>
               <Image
-                src="/images/photo1.jpg"
+                src="/images/photo1.png"
                 alt="Mozahidul Islam - E-Commerce Growth Analyst"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
