@@ -1139,29 +1139,31 @@ function AboutSection() {
               I Build the Engine That Powers Them.
             </h3>
 
-            <p className="text-[#8899AA] text-base leading-relaxed mb-2">
-              Hi, I&apos;m <strong className="text-white">Mozahidul Islam</strong>, E-Commerce Growth Analyst. (3 Years Of Experienced)
-            </p>
+            <div className="about-text-card mt-6 mb-6">
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-4">
+                Hi, I&apos;m <strong className="text-white">Mozahidul Islam</strong>, E-Commerce Growth Analyst. (3 Years Of Experienced)
+              </p>
 
-            <div className="mt-5 mb-6">
-              <div className="text-[#00C6FF] text-sm font-semibold tracking-widest uppercase mb-3 flex items-center gap-2">
-                <span className="w-8 h-[2px] bg-[#00C6FF]" /> What I Do
+              <div className="mb-4">
+                <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-3 flex items-center gap-2">
+                  <span className="w-8 h-[2px] bg-[#00C6FF]" /> What I Do
+                </div>
+                <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
+                  Most analysts only look at the surface, pulling basic Shopify reports and guessing at trends. <strong>I go deeper.</strong>
+                </p>
+                <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
+                  Before any analysis can begin, your data needs to be properly connected, cleaned, and structured. That is the behind-the-scenes engineering work I handle, <strong>connecting Shopify, GA4, Meta Ads, and Klaviyo</strong> into <strong>one unified source of truth</strong> using <strong>SQL, Python, and BigQuery</strong>.
+                </p>
+                <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
+                  Once the foundation is solid, I translate that <strong>raw, complex data into clear, profitable decisions</strong>.
+                </p>
+                <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
+                  E-commerce founders are often <strong>flying blind</strong>. Misled by <strong>vanity metrics</strong>. Handed agency reports claiming <strong>&quot;4.2x ROAS&quot;</strong> while their bank accounts quietly empty out. Working 11-hour days to make $11 an hour in real profit. My job is to <strong>find exactly where the money is leaking</strong>, <strong>tell you precisely what to fix first</strong>, and <strong>build the systems so it never happens again</strong>.
+                </p>
+                <p className="text-[#8899AA] text-sm leading-relaxed">
+                  <strong>You don&apos;t need to touch a single line of code</strong>. <strong>Your job is to make decisions on clean, reliable data</strong>. <strong>My job is to make sure that data exists</strong>, and that it tells you the truth.
+                </p>
               </div>
-              <p className="text-[#8899AA] text-base leading-relaxed mb-3">
-                Most analysts only look at the surface, pulling basic Shopify reports and guessing at trends. <strong>I go deeper.</strong>
-              </p>
-              <p className="text-[#8899AA] text-base leading-relaxed mb-3">
-                Before any analysis can begin, your data needs to be properly connected, cleaned, and structured. That is the behind-the-scenes engineering work I handle, <strong>connecting Shopify, GA4, Meta Ads, and Klaviyo</strong> into <strong>one unified source of truth</strong> using <strong>SQL, Python, and BigQuery</strong>.
-              </p>
-              <p className="text-[#8899AA] text-base leading-relaxed mb-3">
-                Once the foundation is solid, I translate that <strong>raw, complex data into clear, profitable decisions</strong>.
-              </p>
-              <p className="text-[#8899AA] text-base leading-relaxed mb-3">
-                E-commerce founders are often <strong>flying blind</strong>. Misled by <strong>vanity metrics</strong>. Handed agency reports claiming <strong>&quot;4.2x ROAS&quot;</strong> while their bank accounts quietly empty out. Working 11-hour days to make $11 an hour in real profit. My job is to <strong>find exactly where the money is leaking</strong>, <strong>tell you precisely what to fix first</strong>, and <strong>build the systems so it never happens again</strong>.
-              </p>
-              <p className="text-[#8899AA] text-base leading-relaxed">
-                <strong>You don&apos;t need to touch a single line of code</strong>. <strong>Your job is to make decisions on clean, reliable data</strong>. <strong>My job is to make sure that data exists</strong>, and that it tells you the truth.
-              </p>
             </div>
 
             {/* By The Numbers */}
