@@ -1743,34 +1743,22 @@ function ContactSection() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = useCallback(async (e: React.FormEvent) => {
+  const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    setError('');
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/mojahidulislam101010@gmail.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          name: formState.name,
-          email: formState.email,
-          storeUrl: formState.url,
-          budget: formState.budget,
-          message: formState.message,
-          _subject: `New Inquiry from ${formState.name} — Mozahidul Islam Portfolio`,
-          _template: 'table',
-        }),
-      });
-      if (!res.ok) throw new Error('Failed');
-      setSubmitted(true);
-      setFormState({ name: '', email: '', url: '', message: '', budget: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    } catch {
-      setError('Something went wrong. Please email us directly.');
-      setTimeout(() => setError(''), 5000);
-    } finally {
-      setSending(false);
+    // Submit to hidden iframe so page doesn't navigate away
+    const iframe = document.getElementById('form-iframe') as HTMLIFrameElement;
+    if (iframe) {
+      const form = e.target as HTMLFormElement;
+      form.target = 'form-iframe';
+      form.action = 'https://formsubmit.co/mojahidulislam101010@gmail.com';
+      form.method = 'POST';
+      form.submit();
     }
+    setSubmitted(true);
+    setFormState({ name: '', email: '', url: '', message: '', budget: '' });
+    setTimeout(() => setSubmitted(false), 5000);
+    setSending(false);
   }, [formState]);
 
   return (
@@ -1828,6 +1816,8 @@ function ContactSection() {
           {/* Contact Form */}
           <div className="glass rounded-2xl p-6 sm:p-8">
             <h3 className="text-white font-bold text-lg mb-5">Send a Message</h3>
+            {/* Hidden iframe for form submission without page redirect */}
+            <iframe name="form-iframe" id="form-iframe" className="hidden" style={{ display: 'none' }} title="form-submit"></iframe>
             {submitted ? (
               <div className="text-center py-10">
                 <Check size={48} className="text-[#00E676] mx-auto mb-4" />
@@ -1836,10 +1826,15 @@ function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* FormSubmit.co config - hidden fields */}
+                <input type="hidden" name="_subject" value="New Inquiry — Mozahidul Islam Portfolio" />
+                <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="" />
                 <div>
                   <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Name</label>
                   <input
-                    type="text" required
+                    type="text" required name="name"
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     className="w-full bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.12)] rounded-lg px-4 py-3 text-sm text-white placeholder-[#445566] focus:outline-none focus:border-[#00C6FF] transition-colors"
@@ -1849,7 +1844,7 @@ function ContactSection() {
                 <div>
                   <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Email</label>
                   <input
-                    type="email" required
+                    type="email" required name="email"
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     className="w-full bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.12)] rounded-lg px-4 py-3 text-sm text-white placeholder-[#445566] focus:outline-none focus:border-[#00C6FF] transition-colors"
@@ -1859,7 +1854,7 @@ function ContactSection() {
                 <div>
                   <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Store URL</label>
                   <input
-                    type="url"
+                    type="url" name="storeUrl"
                     value={formState.url}
                     onChange={(e) => setFormState({ ...formState, url: e.target.value })}
                     className="w-full bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.12)] rounded-lg px-4 py-3 text-sm text-white placeholder-[#445566] focus:outline-none focus:border-[#00C6FF] transition-colors"
@@ -1869,7 +1864,7 @@ function ContactSection() {
                 <div>
                   <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Budget Range</label>
                   <select
-                    value={formState.budget}
+                    value={formState.budget} name="budget"
                     onChange={(e) => setFormState({ ...formState, budget: e.target.value })}
                     className="w-full bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.12)] rounded-lg px-4 py-3 text-sm text-white focus:outline-none focus:border-[#00C6FF] transition-colors"
                   >
@@ -1883,7 +1878,7 @@ function ContactSection() {
                 <div>
                   <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Message</label>
                   <textarea
-                    required rows={4}
+                    required rows={4} name="message"
                     value={formState.message}
                     onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                     className="w-full bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.12)] rounded-lg px-4 py-3 text-sm text-white placeholder-[#445566] focus:outline-none focus:border-[#00C6FF] transition-colors resize-none"
