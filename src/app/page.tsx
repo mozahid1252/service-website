@@ -1743,22 +1743,36 @@ function ContactSection() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = useCallback((e: React.FormEvent) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    // Submit to hidden iframe so page doesn't navigate away
-    const iframe = document.getElementById('form-iframe') as HTMLIFrameElement;
-    if (iframe) {
-      const form = e.target as HTMLFormElement;
-      form.target = 'form-iframe';
-      form.action = 'https://formsubmit.co/mojahidulislam101010@gmail.com';
-      form.method = 'POST';
-      form.submit();
+    setError('');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'd3ac2832-f3ca-48cb-abdf-4827bc8c9d12',
+          name: formState.name,
+          email: formState.email,
+          storeUrl: formState.url,
+          budget: formState.budget,
+          message: formState.message,
+          subject: `New Inquiry from ${formState.name} — Mozahidul Islam Portfolio`,
+          from_name: formState.name,
+        }),
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error('Failed');
+      setSubmitted(true);
+      setFormState({ name: '', email: '', url: '', message: '', budget: '' });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch {
+      setError('Something went wrong. Please try again.');
+      setTimeout(() => setError(''), 5000);
+    } finally {
+      setSending(false);
     }
-    setSubmitted(true);
-    setFormState({ name: '', email: '', url: '', message: '', budget: '' });
-    setTimeout(() => setSubmitted(false), 5000);
-    setSending(false);
   }, [formState]);
 
   return (
@@ -1816,8 +1830,6 @@ function ContactSection() {
           {/* Contact Form */}
           <div className="glass rounded-2xl p-6 sm:p-8">
             <h3 className="text-white font-bold text-lg mb-5">Send a Message</h3>
-            {/* Hidden iframe for form submission without page redirect */}
-            <iframe name="form-iframe" id="form-iframe" className="hidden" style={{ display: 'none' }} title="form-submit"></iframe>
             {submitted ? (
               <div className="text-center py-10">
                 <Check size={48} className="text-[#00E676] mx-auto mb-4" />
@@ -1826,11 +1838,6 @@ function ContactSection() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
-                {/* FormSubmit.co config - hidden fields */}
-                <input type="hidden" name="_subject" value="New Inquiry — Mozahidul Islam Portfolio" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="" />
                 <div>
                   <label className="text-[#8899AA] text-xs font-semibold tracking-wider uppercase block mb-1.5">Name</label>
                   <input
