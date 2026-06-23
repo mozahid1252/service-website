@@ -1227,7 +1227,7 @@ function WhyMeSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">WHY ME</span>
-          <h2 className="section-headline text-[clamp(28px,4vw,48px)] text-white mt-3 mb-4">
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] text-white mt-3 mb-4 uppercase tracking-tight">
             The 4 Principles That Shape Every Engagement
           </h2>
         </div>
@@ -1267,10 +1267,10 @@ function WhyWorkWithMeSection() {
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">The Unfair Advantage</span>
-          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight">
             Don&apos;t Hire an Agency.
           </h2>
-          <h3 className="section-headline text-[clamp(22px,3vw,36px)] font-bold gradient-text mb-6">
+          <h3 className="section-headline text-[clamp(21px,3vw,35px)] font-bold gradient-text mb-6 uppercase tracking-tight">
             Hire a Profit Detective.
           </h3>
           <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed mb-3">
@@ -1344,7 +1344,7 @@ function ServicesSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">Choose Your Starting Point</span>
-          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight">
             Services
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -1603,7 +1603,7 @@ function CaseStudiesSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">The Receipts</span>
-          <h2 className="section-headline text-[clamp(28px,4vw,48px)] text-white mt-3 mb-4">
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] text-white mt-3 mb-4 uppercase tracking-tight">
             Featured Case Studies
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -1741,7 +1741,7 @@ function TechPortfolioSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">The Engineering Behind The Insights</span>
-          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight">
             Technical Portfolio
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -1800,7 +1800,7 @@ function TestimonialsSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">Founders, Transformed</span>
-          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-4">
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight">
             Testimonials
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -1864,7 +1864,7 @@ function ProcessSection() {
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">The Engagement Flow</span>
-          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight">
             Setup is Not an Add-on. It is the Foundation.
           </h2>
           <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
@@ -1913,7 +1913,7 @@ function TechStackSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">The Infrastructure Behind The Insights</span>
-          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight">
             Enterprise Engineering. Without the $150K Salary.
           </h2>
           <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
@@ -2436,7 +2436,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top section with brand statement */}
         <div className="text-center mb-12">
-          <h3 className="section-headline text-[clamp(20px,2.5vw,32px)] text-white mb-3">Stop Guessing. Start Knowing.</h3>
+          <h3 className="section-headline text-[clamp(19px,2.5vw,31px)] text-white mb-3 uppercase tracking-tight">Stop Guessing. Start Knowing.</h3>
           <p className="text-[#8899AA] text-base max-w-xl mx-auto mb-6">Your data already has the answers. Let me find them for you.</p>
           <a href="#contact" className="btn-press inline-flex items-center gap-2 px-8 py-3 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
             style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
