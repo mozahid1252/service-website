@@ -1500,10 +1500,6 @@ function CaseStudies2Section() {
         </div>
 
         <div className="text-center">
-          <a href="/pdfs/case-noire.pdf" download="NOIRE_Case_Study.pdf" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 no-underline"
-            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
-            <Download size={14} /> Download Full Case Studies PDF
-          </a>
         </div>
       </div>
     </section>
