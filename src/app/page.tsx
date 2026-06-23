@@ -966,10 +966,10 @@ function AboutSection() {
 
             {/* CTA */}
             <div className="flex flex-wrap gap-4">
-              <button className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 inline-flex items-center gap-2"
+              <a href="/pdfs/resume.pdf" download="Mozahidul_Islam_Resume.pdf" className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 inline-flex items-center gap-2 no-underline"
                 style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
                 <Download size={16} /> Download CV
-              </button>
+              </a>
               <a href="#case-studies" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2">
                 <BarChart3 size={16} /> See My Projects
               </a>
