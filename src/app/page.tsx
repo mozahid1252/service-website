@@ -23,6 +23,7 @@ const NAV_LINKS = [
   { label: 'Services', href: '#services' },
   { label: 'Case Studies', href: '#case-studies' },
   { label: 'Process', href: '#process' },
+  { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -1756,6 +1757,173 @@ function TechStackSection() {
   );
 }
 
+/* ──────────────────────────────────────────
+   FAQ DATA — text must stay EXACTLY as provided
+   ────────────────────────────────────────── */
+const FAQ_ITEMS = [
+  {
+    num: '01',
+    question: 'My marketing agency already provides dashboards. Why do I need you?',
+    answer: <>Agencies are paid to spend your money, and their dashboards are designed to justify their retainers. They will show you a <strong>"4.2x ROAS"</strong> while your bank account empties. I don't care about vanity metrics; I care about <strong>net profit</strong>. I act as your independent data detective, exposing the <strong>True Profit ROAS</strong> of your campaigns so you know exactly where you're actually making money.</>,
+  },
+  {
+    num: '02',
+    question: 'Do I need to have my data perfectly organized before we work together?',
+    answer: <>Absolutely not. Most founders have messy data spread across Shopify, GA4, and ad platforms that don't talk to each other. That's exactly what my <strong>Data Setup & Infrastructure</strong> service fixes. I handle <strong>100% of the backend engineering</strong> (SQL, Python, BigQuery) to clean, merge, and structure your data. <strong>You never have to touch a single line of code.</strong></>,
+  },
+  {
+    num: '03',
+    question: 'Why is there a separate fee for the Data Setup? Can\'t you just look at my Shopify dashboard?',
+    answer: <>Shopify's default dashboard only shows about <strong>10% of the picture</strong>. To find the hidden profit leaks, I have to pull raw data from all your platforms, align currencies and timezones, and merge them into <strong>one central database</strong>. This is a <strong>one-time investment</strong> that pays for itself with every decision you make going forward. You only pay for the platforms you actually use.</>,
+  },
+  {
+    num: '04',
+    question: 'I have a specific, urgent problem (like high return rates or declining ad performance). Do I have to buy a full $1,500 package?',
+    answer: <>No. If you have one critical pain point, you can choose one of my <strong>6 Specialized Add-On Audits</strong> (like the CRO Audit, Profitability Audit, or Marketing Spend Audit). These are deep-dive, standalone engagements delivered in <strong>7–14 days</strong>, starting at <strong>$250</strong>.</>,
+  },
+  {
+    num: '05',
+    question: 'My revenue is growing, but I don\'t feel like I\'m making more money. Can you help?',
+    answer: <>This is the most common scenario I see. <strong>Revenue is vanity; profit is sanity.</strong> I will run a <strong>Profit Reality Check</strong> on your top products, calculate your true margins (after COGS, ad spend, returns, and shipping), and show you exactly which <strong>"best-sellers" are quietly draining your bank account</strong>.</>,
+  },
+  {
+    num: '06',
+    question: 'How much of my time is required during the engagement?',
+    answer: <><strong>Very little.</strong> I built this process specifically for busy founders. I handle the data extraction, engineering, and analysis. You simply provide initial platform access, and then join me for the <strong>final strategy call</strong> to review the findings and action plan. You don't need to babysit the project.</>,
+  },
+  {
+    num: '07',
+    question: 'I don\'t have a marketing team. Will I actually be able to implement your recommendations?',
+    answer: <>Yes. I don't hand you a 50-page technical document and disappear. Every finding comes with a <strong>prioritized, plain-language action plan</strong> (e.g., "Pause this ad," "Enable guest checkout," "Email these 312 at-risk customers today"). Many of my clients are solo founders or small teams who implement the <strong>"quick wins" within hours of our call</strong>.</>,
+  },
+  {
+    num: '08',
+    question: 'I\'m nervous about giving access to my Shopify and ad accounts. Is my data secure?',
+    answer: <><strong>100% secure.</strong> I use strict, permission-based API connections. For live dashboard and retainer clients, I store all API keys and tokens securely using <strong>environment variables or Secret Manager</strong> — never exposed, never at risk. Your data is used solely for your analysis and is <strong>never shared</strong>.</>,
+  },
+  {
+    num: '09',
+    question: 'How fast can we start? I\'m bleeding money.',
+    answer: <>The <strong>E-Commerce Health Check</strong> is delivered in exactly <strong>5–7 days</strong>. If your business is losing <strong>$1,690 a month</strong>, you don't have 3 months to wait for a consultant to figure it out. You need to know exactly what to fix <strong>this week</strong>.</>,
+  },
+];
+
+function FAQSection() {
+  const sectionRef = useScrollReveal();
+  return (
+    <section id="faq" className="faq-section" ref={sectionRef}>
+      <div className="faq-wrap reveal">
+
+        {/* ── Header ── */}
+        <div className="faq-header">
+          <span className="faq-eyebrow">FAQ</span>
+          <h2 className="faq-title">
+            Straight Answers.
+            <span className="faq-title-accent"> No Jargon.</span>
+          </h2>
+          <p className="faq-subtitle">
+            Everything you need to know before we work together.
+          </p>
+          <div className="faq-title-bar"></div>
+        </div>
+
+        {/* ── Page 1 marker ── */}
+        <div className="faq-page-marker">
+          <div className="faq-marker-dot"></div>
+          <span className="faq-marker-text">Part One</span>
+          <div className="faq-marker-line"></div>
+        </div>
+
+        {/* Q1–Q5 */}
+        {FAQ_ITEMS.slice(0, 5).map((item) => (
+          <article className="faq-card" data-index={item.num} key={item.num}>
+            <div className="faq-card-number">{item.num}</div>
+            <div className="faq-card-body">
+              <div className="faq-card-left">
+                <div className="faq-card-q-label">
+                  <span className="faq-q-dot"></span>
+                  Question
+                </div>
+                <h3 className="faq-card-question">{item.question}</h3>
+              </div>
+              <div className="faq-card-divider"></div>
+              <div className="faq-card-right">
+                <div className="faq-card-a-label">
+                  <span className="faq-a-dot"></span>
+                  Answer
+                </div>
+                <p className="faq-card-answer">{item.answer}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+
+        {/* ── Page separator ── */}
+        <div className="faq-separator">
+          <div className="faq-sep-left"></div>
+          <div className="faq-sep-center">
+            <span className="faq-sep-label">Part Two</span>
+          </div>
+          <div className="faq-sep-right"></div>
+        </div>
+
+        {/* ── Page 2 marker ── */}
+        <div className="faq-page-marker">
+          <div className="faq-marker-dot"></div>
+          <span className="faq-marker-text">Part Two</span>
+          <div className="faq-marker-line"></div>
+        </div>
+
+        {/* Q6–Q9 */}
+        {FAQ_ITEMS.slice(5, 9).map((item) => (
+          <article className="faq-card" data-index={item.num} key={item.num}>
+            <div className="faq-card-number">{item.num}</div>
+            <div className="faq-card-body">
+              <div className="faq-card-left">
+                <div className="faq-card-q-label">
+                  <span className="faq-q-dot"></span>
+                  Question
+                </div>
+                <h3 className="faq-card-question">{item.question}</h3>
+              </div>
+              <div className="faq-card-divider"></div>
+              <div className="faq-card-right">
+                <div className="faq-card-a-label">
+                  <span className="faq-a-dot"></span>
+                  Answer
+                </div>
+                <p className="faq-card-answer">{item.answer}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+
+        {/* ── Bottom CTA ── */}
+        <div className="faq-cta">
+          <div className="faq-cta-inner">
+            <div className="faq-cta-left">
+              <p className="faq-cta-eyebrow">Still have questions?</p>
+              <h3 className="faq-cta-heading">
+                Let&apos;s find your next <span className="faq-cta-money">$10,000</span>.
+              </h3>
+            </div>
+            <div className="faq-cta-right">
+              <a href="#contact" className="faq-cta-btn">
+                Book a Complimentary 20-Minute Discovery Call
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 function ContactSection() {
   const sectionRef = useScrollReveal();
   const [formState, setFormState] = useState({ name: '', email: '', url: '', message: '', budget: '' });
@@ -2122,6 +2290,7 @@ export default function PortfolioPage() {
       <TestimonialsSection />
       <ProcessSection />
       <TechStackSection />
+      <FAQSection />
       <ContactSection />
       <Footer />
       <MobileStickyBar />
