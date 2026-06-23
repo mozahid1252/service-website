@@ -1133,7 +1133,7 @@ function AboutSection() {
           <div>
             <span className="section-label">The Analyst Behind the Data</span>
             <h2 className="section-headline text-[clamp(28px,3.5vw,44px)] font-extrabold text-white mt-3 mb-2 leading-tight">
-              I Don&apos;t Just Read Dashboards.
+              I Don&apos;t Just Build Dashboards.
             </h2>
             <h3 className="section-headline text-[clamp(20px,2.5vw,32px)] font-bold gradient-text mb-6">
               I Build the Engine That Powers Them.
