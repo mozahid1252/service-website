@@ -27,10 +27,8 @@ jobs:
       - name: Install dependencies
         run: bun install
 
-      - name: Temporarily move API routes (not compatible with static export)
+      - name: Remove API routes for static build
         run: |
-          mkdir -p /tmp/api-backup
-          cp -r src/app/api /tmp/api-backup/
           rm -rf src/app/api
 
       - name: Build static site
@@ -38,23 +36,13 @@ jobs:
           EXPORT_STATIC: "true"
         run: bun run build
 
-      - name: Add .nojekyll (bypass GitHub Pages Jekyll processing)
+      - name: Add .nojekyll
         run: touch out/.nojekyll
-
-      - name: Fix asset paths for GitHub Pages
-        run: |
-          # Copy _next assets to a path without basePath duplication
-          echo "Assets built successfully"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: out
-
-      - name: Restore API routes
-        if: always()
-        run: |
-          cp -r /tmp/api-backup/api src/app/ 2>/dev/null || true
 
   deploy:
     environment:

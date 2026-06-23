@@ -1740,35 +1740,18 @@ function ContactSection() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSubmit = useCallback(async (e: React.FormEvent) => {
+  const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
-    setError('');
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formState),
-      });
-      if (!res.ok) {
-        throw new Error('Failed to send');
-      }
-      setSubmitted(true);
-      setFormState({ name: '', email: '', url: '', message: '', budget: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    } catch {
-      // Fallback: open Gmail compose with form data
-      const subject = encodeURIComponent(`New Inquiry from ${formState.name} — Mozahidul Islam Portfolio`);
-      const body = encodeURIComponent(
-        `Name: ${formState.name}\nEmail: ${formState.email}\nStore URL: ${formState.url}\nBudget: ${formState.budget}\n\nMessage:\n${formState.message}`
-      );
-      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com&su=${subject}&body=${body}`, '_blank');
-      setSubmitted(true);
-      setFormState({ name: '', email: '', url: '', message: '', budget: '' });
-      setTimeout(() => setSubmitted(false), 5000);
-    } finally {
-      setSending(false);
-    }
+    const subject = encodeURIComponent(`New Inquiry from ${formState.name} — Mozahidul Islam Portfolio`);
+    const body = encodeURIComponent(
+      `Name: ${formState.name}\nEmail: ${formState.email}\nStore URL: ${formState.url}\nBudget: ${formState.budget}\n\nMessage:\n${formState.message}`
+    );
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com&su=${subject}&body=${body}`, '_blank');
+    setSubmitted(true);
+    setFormState({ name: '', email: '', url: '', message: '', budget: '' });
+    setTimeout(() => setSubmitted(false), 5000);
+    setSending(false);
   }, [formState]);
 
   return (
