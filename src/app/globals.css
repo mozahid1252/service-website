@@ -2785,16 +2785,17 @@ table.infra-table {
 }
 
 /* ============================================
-   QUICK PROOF STATS ROW — 4 equal cells + green highlight
-   Fixes hidden Profit Added / ROI columns
+   QUICK PROOF STATS ROW — 4 cells + green highlight
+   Asymmetric columns (Profit Added wider) + no value merge
    ============================================ */
 
 .qp-stats-row {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* Profit Added column gets more space so its label/value fit */
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 0.9fr) minmax(0, 1.3fr) minmax(0, 0.9fr);
   gap: 0;
   width: 100%;
-  overflow: visible;
+  overflow: hidden;    /* keep inside card boundary */
   margin-top: 16px;
   border-radius: 12px;
   background: linear-gradient(135deg, rgba(0, 200, 83, 0.08) 0%, rgba(0, 230, 118, 0.12) 100%);
@@ -2803,13 +2804,13 @@ table.infra-table {
 }
 
 .qp-stat-cell {
-  padding: 12px 10px;
+  padding: 12px 8px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   position: relative;
-  min-width: 0;
-  overflow: visible;
+  min-width: 0;        /* allows proper shrink */
+  overflow: hidden;    /* each cell clips itself */
 }
 
 .qp-stat-cell:not(:last-child)::after {
@@ -2822,11 +2823,18 @@ table.infra-table {
   background: rgba(0, 200, 83, 0.20);
 }
 
+/* Prevent profit + roi cells from bleeding into each other */
+.qp-stat-cell.profit,
+.qp-stat-cell.roi {
+  isolation: isolate;
+}
+
+/* ── LABEL ── */
 .qp-stat-label {
   font-family: 'Inter', sans-serif;
   font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   color: rgba(0, 200, 83, 0.65);
   white-space: nowrap;
@@ -2834,24 +2842,38 @@ table.infra-table {
   text-overflow: ellipsis;
 }
 
+/* Profit Added label — tighter spacing so "PROFIT ADDED" fits fully */
+.qp-stat-cell.profit .qp-stat-label {
+  font-size: 9px;
+  letter-spacing: 0.5px;
+}
+
+/* ── VALUE ── */
 .qp-stat-value {
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 14px;
+  font-size: clamp(13px, 2.5vw, 16px);
   font-weight: 800;
   color: #FFFFFF;
   white-space: nowrap;
-  overflow: visible;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
-/* Profit Added + ROI values — bright green */
-.qp-stat-cell.profit .qp-stat-value,
+/* Profit Added value — slightly smaller if needed + bright green */
+.qp-stat-cell.profit .qp-stat-value {
+  color: #00E676;
+  text-shadow: 0 0 14px rgba(0, 230, 118, 0.45);
+  font-size: clamp(12px, 2.2vw, 15px);
+}
+
+/* ROI value — bright green, stays in its own column */
 .qp-stat-cell.roi .qp-stat-value {
   color: #00E676;
-  text-shadow: 0 0 16px rgba(0, 230, 118, 0.50);
+  text-shadow: 0 0 14px rgba(0, 230, 118, 0.45);
 }
 
 @media (max-width: 900px) {
-  .qp-stat-cell { padding: 10px 8px; }
-  .qp-stat-value { font-size: 13px; }
-  .qp-stat-label { font-size: 8.5px; }
+  .qp-stat-cell { padding: 10px 6px; }
+  .qp-stat-value { font-size: 12px; }
+  .qp-stat-label { font-size: 8.5px; letter-spacing: 0.4px; }
 }
