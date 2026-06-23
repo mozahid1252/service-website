@@ -781,49 +781,70 @@ strong { color: #FFFFFF; font-weight: 700; }
   border-radius: 21px;
   overflow: hidden;
 }
-table.infra-table {
+/* Table — equal column widths */
+.infra-table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;       /* forces equal columns */
   font-family: 'Inter', sans-serif;
 }
+/* All columns — equal width (4 columns = 25% each) */
+.infra-table th,
+.infra-table td {
+  width: 25%;
+}
 .infra-table thead tr {
-  background: linear-gradient(90deg, rgba(5,8,15,1) 0%, rgba(0,198,255,0.10) 33%, rgba(139,92,246,0.10) 66%, rgba(245,166,35,0.10) 100%);
-  border-bottom: 3px solid rgba(255,255,255,0.08);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
 }
 .infra-table thead th {
-  padding: 24px 28px;
-  text-align: center;
-  font-size: 13px;
+  padding: 22px 24px;
   font-weight: 800;
-  letter-spacing: 2px;
+  font-size: 13px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 }
+/* Feature header (1st col) */
 .infra-table thead th:nth-child(1) {
   text-align: left;
-  color: rgba(255,255,255,0.40);
+  padding-left: 28px;
+  color: rgba(255, 255, 255, 0.40);
   font-size: 11px;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
 }
+/* BASIC header (2nd col) — CYAN light */
 .infra-table thead th:nth-child(2) {
+  text-align: center;
   color: #00C6FF;
-  text-shadow: 0 0 20px rgba(0,198,255,0.80), 0 0 40px rgba(0,198,255,0.40);
-  border-bottom: 4px solid #00C6FF;
-  border-left: 3px solid rgba(0,198,255,0.20);
-  border-right: 3px solid rgba(0,198,255,0.20);
+  text-shadow: 0 0 20px rgba(0, 198, 255, 0.80), 0 0 40px rgba(0, 198, 255, 0.40);
+  border-bottom: 3px solid rgba(0, 198, 255, 0.60);
+  background: rgba(0, 198, 255, 0.04);
+  border-left: 1px solid rgba(0, 198, 255, 0.12);
+  border-right: 1px solid rgba(0, 198, 255, 0.06);
+  padding: 22px 24px;
 }
+/* FULL PIPELINE header (3rd col) — PURPLE light */
 .infra-table thead th:nth-child(3) {
+  text-align: center;
   color: #8B5CF6;
-  text-shadow: 0 0 20px rgba(139,92,246,0.80), 0 0 40px rgba(139,92,246,0.40);
-  border-bottom: 4px solid #8B5CF6;
-  border-left: 3px solid rgba(139,92,246,0.20);
-  border-right: 3px solid rgba(139,92,246,0.20);
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.80), 0 0 40px rgba(139, 92, 246, 0.40);
+  border-bottom: 3px solid rgba(139, 92, 246, 0.60);
+  background: rgba(139, 92, 246, 0.04);
+  border-left: 1px solid rgba(139, 92, 246, 0.12);
+  border-right: 1px solid rgba(139, 92, 246, 0.06);
+  padding: 22px 24px;
 }
+/* FULL + AUTOMATION header (4th col) — GOLD light */
 .infra-table thead th:nth-child(4) {
+  text-align: center;
   color: #F5A623;
-  text-shadow: 0 0 20px rgba(245,166,35,0.80), 0 0 40px rgba(245,166,35,0.40);
-  border-bottom: 4px solid #F5A623;
-  border-left: 3px solid rgba(245,166,35,0.20);
-  border-right: 3px solid rgba(245,166,35,0.20);
+  text-shadow: 0 0 20px rgba(245, 166, 35, 0.80), 0 0 40px rgba(245, 166, 35, 0.40);
+  border-bottom: 3px solid rgba(245, 166, 35, 0.60);
+  background: rgba(245, 166, 35, 0.04);
+  border-left: 1px solid rgba(245, 166, 35, 0.12);
+  border-right: 1px solid rgba(245, 166, 35, 0.12);
+  padding: 22px 24px;
 }
 .col-badge {
   display: inline-block;
@@ -837,41 +858,53 @@ table.infra-table {
 .col-badge.basic { background: rgba(0,198,255,0.12); color: #00C6FF; border: 1px solid rgba(0,198,255,0.30); }
 .col-badge.pipeline { background: rgba(139,92,246,0.12); color: #8B5CF6; border: 1px solid rgba(139,92,246,0.30); }
 .col-badge.auto { background: rgba(245,166,35,0.12); color: #F5A623; border: 1px solid rgba(245,166,35,0.30); }
+/* All rows — same full-width bottom border */
 .infra-table tbody tr {
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   transition: background 0.25s ease;
 }
-.infra-table tbody tr:nth-child(even) { background: rgba(255,255,255,0.018); }
-.infra-table tbody tr:hover { background: rgba(0,198,255,0.04); }
+/* All td — same bottom line style (including first column) */
 .infra-table tbody td {
-  padding: 18px 28px;
+  padding: 18px 24px;
   font-size: 14px;
   vertical-align: middle;
-  border-left: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
+/* First column — same width line as others */
 .infra-table tbody td:first-child {
   text-align: left;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   font-weight: 500;
   font-size: 13.5px;
-  letter-spacing: 0.3px;
-  border-left: none;
-  padding-left: 32px;
+  padding-left: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
 }
+/* 2nd column cells — cyan tinted side border */
 .infra-table tbody td:nth-child(2) {
   text-align: center;
-  border-left: 2px solid rgba(0,198,255,0.12);
-  border-right: 1px solid rgba(0,198,255,0.06);
+  border-left: 1px solid rgba(0, 198, 255, 0.08);
+  border-right: 1px solid rgba(0, 198, 255, 0.04);
 }
+/* 3rd column cells — purple tinted */
 .infra-table tbody td:nth-child(3) {
   text-align: center;
-  border-left: 2px solid rgba(139,92,246,0.12);
-  border-right: 1px solid rgba(139,92,246,0.06);
+  border-left: 1px solid rgba(139, 92, 246, 0.08);
+  border-right: 1px solid rgba(139, 92, 246, 0.04);
 }
+/* 4th column cells — gold tinted */
 .infra-table tbody td:nth-child(4) {
   text-align: center;
-  border-left: 2px solid rgba(245,166,35,0.12);
-  border-right: 2px solid rgba(245,166,35,0.12);
+  border-left: 1px solid rgba(245, 166, 35, 0.08);
+  border-right: 1px solid rgba(245, 166, 35, 0.08);
+}
+/* Row hover */
+.infra-table tbody tr:hover td {
+  background: rgba(0, 198, 255, 0.025);
+}
+/* Alternating row tint */
+.infra-table tbody tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.012);
 }
 .check-cyan { color: #00C6FF; font-size: 20px; text-shadow: 0 0 12px rgba(0,198,255,0.70); display: inline-block; animation: checkGlow 3s ease-in-out infinite; }
 .check-purple { color: #8B5CF6; font-size: 20px; text-shadow: 0 0 12px rgba(139,92,246,0.70); display: inline-block; }
