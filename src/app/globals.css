@@ -2639,18 +2639,20 @@ table.infra-table {
 
 .quick-proof-card-inner {
   display: grid;
-  grid-template-columns: 300px 1px 1fr;
+  grid-template-columns: 380px 1px 1fr;
   gap: 0;
   align-items: stretch;
   min-height: 200px;
 }
 
 .qp-left-col {
-  padding: 28px 32px;
+  padding: 28px 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 18px;
+  overflow: visible;   /* allow stats to show, never clip */
+  min-width: 0;
 }
 
 .qp-store-name {
@@ -2780,4 +2782,76 @@ table.infra-table {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+}
+
+/* ============================================
+   QUICK PROOF STATS ROW — 4 equal cells + green highlight
+   Fixes hidden Profit Added / ROI columns
+   ============================================ */
+
+.qp-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  width: 100%;
+  overflow: visible;
+  margin-top: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0, 200, 83, 0.08) 0%, rgba(0, 230, 118, 0.12) 100%);
+  border: 1px solid rgba(0, 200, 83, 0.25);
+  box-shadow: 0 0 20px rgba(0, 200, 83, 0.10), 0 0 40px rgba(0, 200, 83, 0.05), inset 0 1px 0 rgba(0, 200, 83, 0.15);
+}
+
+.qp-stat-cell {
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  min-width: 0;
+  overflow: visible;
+}
+
+.qp-stat-cell:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 1px;
+  background: rgba(0, 200, 83, 0.20);
+}
+
+.qp-stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(0, 200, 83, 0.65);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.qp-stat-value {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: #FFFFFF;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+/* Profit Added + ROI values — bright green */
+.qp-stat-cell.profit .qp-stat-value,
+.qp-stat-cell.roi .qp-stat-value {
+  color: #00E676;
+  text-shadow: 0 0 16px rgba(0, 230, 118, 0.50);
+}
+
+@media (max-width: 900px) {
+  .qp-stat-cell { padding: 10px 8px; }
+  .qp-stat-value { font-size: 13px; }
+  .qp-stat-label { font-size: 8.5px; }
 }

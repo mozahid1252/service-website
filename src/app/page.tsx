@@ -1012,26 +1012,24 @@ function QuickProofSection() {
                     <p className="text-[#F0F4F8] text-sm leading-relaxed">{card.result}</p>
                   </div>
 
-                  {/* Stats table */}
-                  <div className="overflow-hidden rounded-lg border border-[rgba(0,198,255,0.1)]">
-                    <table className="w-full text-xs">
-                      <thead>
-                        <tr className="bg-[rgba(0,198,255,0.05)]">
-                          <th className="px-3 py-2 text-left text-[#8899AA] font-medium">Investment</th>
-                          <th className="px-3 py-2 text-left text-[#8899AA] font-medium">Timeline</th>
-                          <th className="px-3 py-2 text-left text-[#8899AA] font-medium">Profit Added</th>
-                          <th className="px-3 py-2 text-left text-[#8899AA] font-medium">ROI</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td className="px-3 py-2 text-[#F0F4F8]">{card.investment}</td>
-                          <td className="px-3 py-2 text-[#F0F4F8]">{card.timeline}</td>
-                          <td className="px-3 py-2 text-[#00E676] font-semibold">{card.profitAdded}</td>
-                          <td className="px-3 py-2 gradient-text-gold font-bold">{card.roi}</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  {/* Stats row — 4 equal cells, green highlight */}
+                  <div className="qp-stats-row">
+                    <div className="qp-stat-cell">
+                      <span className="qp-stat-label">Investment</span>
+                      <span className="qp-stat-value">{card.investment}</span>
+                    </div>
+                    <div className="qp-stat-cell">
+                      <span className="qp-stat-label">Timeline</span>
+                      <span className="qp-stat-value">{card.timeline}</span>
+                    </div>
+                    <div className="qp-stat-cell profit">
+                      <span className="qp-stat-label">Profit Added</span>
+                      <span className="qp-stat-value">{card.profitAdded}</span>
+                    </div>
+                    <div className="qp-stat-cell roi">
+                      <span className="qp-stat-label">ROI</span>
+                      <span className="qp-stat-value">{card.roi}</span>
+                    </div>
                   </div>
                 </div>
 
