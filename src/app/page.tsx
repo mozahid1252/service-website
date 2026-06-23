@@ -1545,9 +1545,6 @@ function TechPortfolioSection() {
               <a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
                 View Code &amp; Methodology on GitHub <ExternalLink size={14} />
               </a>
-              <a href="/pdfs/technical-portfolio.pdf" download="Analytical_Portfolio.pdf" className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline mt-2">
-                <Download size={14} /> Download Portfolio PDF
-              </a>
             </div>
           ))}
         </div>
