@@ -2380,3 +2380,31 @@ strong { color: #FFFFFF; font-weight: 700; }
 table.infra-table {
   display: none !important;
 }
+
+/* ============================================
+   CONTACT SECTION HEADING — "Let's Find Your Next $10,000."
+   Both lines identical large size (eyebrow promoted to heading)
+   ============================================ */
+
+.contact-main-heading {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(32px, 7vw, 88px);
+  font-weight: 800;
+  line-height: 1.10;
+  letter-spacing: -2px;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0 0 6px;
+}
+
+/* "$10,000" cyan highlight on the first heading line */
+.contact-main-heading .money-accent {
+  color: #00C6FF;
+  text-shadow: 0 0 50px rgba(0, 198, 255, 0.50);
+}
+
+/* Second line — "Stop Guessing. Start Knowing." — slightly dimmer */
+.contact-main-heading.contact-sub-heading {
+  opacity: 0.88;
+  margin: 0;
+}

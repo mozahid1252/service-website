@@ -2101,11 +2101,13 @@ function ContactSection() {
 
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="section-label">Let&apos;s Find Your Next $10,000.</span>
-          <h2 className="section-headline text-[clamp(28px,4vw,48px)] font-extrabold text-white mt-3 mb-2">
+          <h2 className="contact-main-heading">
+            Let&apos;s Find Your Next <span className="money-accent">$10,000.</span>
+          </h2>
+          <h2 className="contact-main-heading contact-sub-heading">
             Stop Guessing. Start Knowing.
           </h2>
-          <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed mt-6">
             Every struggling store already has the data. What it doesn&apos;t have is someone willing to read it honestly, explain it clearly, and act on it decisively.
           </p>
           <p className="text-[#8899AA] text-sm max-w-3xl mx-auto mt-2">
