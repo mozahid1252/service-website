@@ -1185,7 +1185,7 @@ function AboutSection() {
               {[
                 { value: 53.5, prefix: '$', suffix: 'M+', label: 'Revenue Tracked & Analyzed' },
                 { value: 3, prefix: '', suffix: '', label: 'Years Experienced' },
-                { value: 100, prefix: '', suffix: '+', label: 'Average Delivery' },
+                { value: 100, prefix: '', suffix: '+', label: 'Projects Delivered' },
                 { value: 6, prefix: '', suffix: '+', label: 'Industries Served' },
               ].map((stat, i) => (
                 <div key={i} className="text-center p-4 glass rounded-xl">
