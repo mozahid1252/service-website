@@ -2564,6 +2564,7 @@ export default function PortfolioPage() {
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   useEffect(() => {
+    /* Scroll progress + back-to-top */
     const onScroll = () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -2571,51 +2572,49 @@ export default function PortfolioPage() {
       setShowBackToTop(scrollTop > 600);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
-  /* Global scroll reveal — activates every reveal element as it enters
-     the viewport. Also activates elements already in view on load. */
-  useEffect(() => {
-    const selector = '.reveal, .reveal-stagger, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade, .count-up';
-    let io: IntersectionObserver | null = null;
-    const check = () => {
-      document.querySelectorAll<HTMLElement>(selector).forEach((el) => {
+    /* Scroll reveal — activate reveal elements as they enter view */
+    const REVEAL_SELECTOR = '.reveal, .reveal-stagger, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade, .count-up';
+    let revealIO: IntersectionObserver | null = null;
+    const checkReveals = () => {
+      document.querySelectorAll<HTMLElement>(REVEAL_SELECTOR).forEach((el) => {
         if (el.classList.contains('active')) return;
         const rect = el.getBoundingClientRect();
         const vh = window.innerHeight || document.documentElement.clientHeight;
         if (rect.top < vh - 60 && rect.bottom > 0) {
           el.classList.add('active');
-          io?.unobserve(el);
+          revealIO?.unobserve(el);
         }
       });
     };
-    io = new IntersectionObserver(
+    revealIO = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('active');
-            io?.unobserve(entry.target);
+            revealIO?.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
     );
-    document.querySelectorAll<HTMLElement>(selector).forEach((el) => io!.observe(el));
-    const onLoad = () => check();
-    const t1 = window.setTimeout(check, 100);
-    const t2 = window.setTimeout(check, 500);
-    window.addEventListener('scroll', check, { passive: true });
-    window.addEventListener('resize', check);
-    if (document.readyState === 'complete') check();
-    else window.addEventListener('load', onLoad);
+    document.querySelectorAll<HTMLElement>(REVEAL_SELECTOR).forEach((el) => revealIO!.observe(el));
+    window.addEventListener('scroll', checkReveals, { passive: true });
+    window.addEventListener('resize', checkReveals);
+    // Activate anything already in view (after a short delay for hydration)
+    const t1 = window.setTimeout(checkReveals, 100);
+    const t2 = window.setTimeout(checkReveals, 600);
+    if (document.readyState === 'complete') window.setTimeout(checkReveals, 50);
+    else window.addEventListener('load', checkReveals);
+
     return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('scroll', checkReveals);
+      window.removeEventListener('resize', checkReveals);
+      window.removeEventListener('load', checkReveals);
       window.clearTimeout(t1);
       window.clearTimeout(t2);
-      window.removeEventListener('scroll', check);
-      window.removeEventListener('resize', check);
-      window.removeEventListener('load', onLoad);
-      io?.disconnect();
+      revealIO?.disconnect();
     };
   }, []);
 
