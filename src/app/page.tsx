@@ -2574,6 +2574,26 @@ export default function PortfolioPage() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  /* Global scroll reveal — observes every reveal element once on mount */
+  useEffect(() => {
+    const selector = '.reveal, .reveal-stagger, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade, .count-up';
+    const els = Array.from(document.querySelectorAll<HTMLElement>(selector));
+    if (els.length === 0) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
