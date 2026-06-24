@@ -2957,3 +2957,14 @@ table.infra-table {
   .proof-highlight-text { font-size: 16px; }
   .proof-highlight-box { padding: 14px 18px; }
 }
+
+/* ============================================
+   HERO RATING CARD — golden stars
+   (4th trust-stat card)
+   ============================================ */
+
+.hero-rating-stars {
+  color: #FFC107;          /* golden yellow */
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 193, 7, 0.35);
+}

@@ -27,11 +27,11 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const TRUST_STATS = [
+const TRUST_STATS: { value: string; label: string; isRating?: boolean }[] = [
   { value: '$53.5M+', label: 'Revenue Tracked' },
   { value: '2.75M+', label: 'Data Events Processed' },
   { value: '6+', label: 'Industries Served' },
-  { value: '3', label: 'Years Experienced' },
+  { value: '4.9', label: '100+ events', isRating: true },
 ];
 
 const QUICK_PROOF_CARDS = [
@@ -954,8 +954,20 @@ function HeroSection() {
         <div className="reveal-stagger grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
           {TRUST_STATS.map((stat, i) => (
             <div key={i} className="glass rounded-xl p-4 text-center transition-all duration-300 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_0_20px_rgba(0,198,255,0.1)]">
-              <div className="gradient-text text-xl sm:text-2xl font-bold">{stat.value}</div>
-              <div className="text-[#8899AA] text-xs mt-1">{stat.label}</div>
+              {stat.isRating ? (
+                <>
+                  <div className="hero-rating-stars text-xl sm:text-2xl leading-none" title="4.9 out of 5 stars">★★★★★</div>
+                  <div className="text-xs mt-1.5">
+                    <span className="font-bold text-white">{stat.value}/5</span>{' '}
+                    <span className="text-[#8899AA]">· {stat.label}</span>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="gradient-text text-xl sm:text-2xl font-bold">{stat.value}</div>
+                  <div className="text-[#8899AA] text-xs mt-1">{stat.label}</div>
+                </>
+              )}
             </div>
           ))}
         </div>
