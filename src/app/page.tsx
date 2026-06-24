@@ -2169,19 +2169,19 @@ function FAQSection() {
 
 /* Maps service dropdown values to human-readable labels for the email payload */
 const SERVICE_LABELS: Record<string, string> = {
-  'starter': 'E-Commerce Health Check — $150–$300',
-  'growth': 'Revenue Growth Accelerator — $400–$1,000',
-  'advanced': 'Data-Driven Growth System — $1,500–$2,500',
-  'retainer': 'Ongoing Analytics Retainer — $500–$1,200/mo',
-  'marketing-spend': 'Marketing Spend Audit — $250–$500',
-  'customer-retention': 'Customer Retention Audit — $300–$600',
-  'product-portfolio': 'Product Portfolio Audit — $250–$500',
-  'cro-audit': 'CRO & Checkout Audit — $300–$600',
-  'profitability': 'Profitability & COGS Audit — $350–$700',
-  'operations': 'Operations & Automation Audit — $400–$800',
-  'basic-setup': 'Basic Data Setup — $150–$300',
-  'full-pipeline': 'Full Data Pipeline — $500–$900',
-  'full-automation': 'Full Pipeline + Automation — $700–$1,200',
+  'starter': 'E-Commerce Health Check',
+  'growth': 'Revenue Growth Accelerator',
+  'advanced': 'Data-Driven Growth System',
+  'retainer': 'Ongoing Analytics Retainer',
+  'marketing-spend': 'Marketing Spend Audit',
+  'customer-retention': 'Customer Retention Audit',
+  'product-portfolio': 'Product Portfolio Audit',
+  'cro-audit': 'CRO & Checkout Audit',
+  'profitability': 'Profitability & COGS Audit',
+  'operations': 'Operations & Automation Audit',
+  'basic-setup': 'Basic Data Setup',
+  'full-pipeline': 'Full Data Pipeline',
+  'full-automation': 'Full Pipeline + Automation',
   'not-sure': 'Not sure — help me figure it out',
   'custom': 'Custom / Something else',
 };
@@ -2336,23 +2336,23 @@ function ContactSection() {
                     >
                       <option value="" disabled>Select a service...</option>
                       <optgroup label="── Core E-Commerce Packages ──">
-                        <option value="starter">E-Commerce Health Check — $150–$300</option>
-                        <option value="growth">Revenue Growth Accelerator — $400–$1,000</option>
-                        <option value="advanced">Data-Driven Growth System — $1,500–$2,500</option>
-                        <option value="retainer">Ongoing Analytics Retainer — $500–$1,200/mo</option>
+                        <option value="starter">E-Commerce Health Check</option>
+                        <option value="growth">Revenue Growth Accelerator</option>
+                        <option value="advanced">Data-Driven Growth System</option>
+                        <option value="retainer">Ongoing Analytics Retainer</option>
                       </optgroup>
                       <optgroup label="── Specialized Add-On Audits ──">
-                        <option value="marketing-spend">Marketing Spend Audit — $250–$500</option>
-                        <option value="customer-retention">Customer Retention Audit — $300–$600</option>
-                        <option value="product-portfolio">Product Portfolio Audit — $250–$500</option>
-                        <option value="cro-audit">CRO &amp; Checkout Audit — $300–$600</option>
-                        <option value="profitability">Profitability &amp; COGS Audit — $350–$700</option>
-                        <option value="operations">Operations &amp; Automation Audit — $400–$800</option>
+                        <option value="marketing-spend">Marketing Spend Audit</option>
+                        <option value="customer-retention">Customer Retention Audit</option>
+                        <option value="product-portfolio">Product Portfolio Audit</option>
+                        <option value="cro-audit">CRO &amp; Checkout Audit</option>
+                        <option value="profitability">Profitability &amp; COGS Audit</option>
+                        <option value="operations">Operations &amp; Automation Audit</option>
                       </optgroup>
                       <optgroup label="── Data Setup & Infrastructure ──">
-                        <option value="basic-setup">Basic Data Setup — $150–$300</option>
-                        <option value="full-pipeline">Full Data Pipeline — $500–$900</option>
-                        <option value="full-automation">Full Pipeline + Automation — $700–$1,200</option>
+                        <option value="basic-setup">Basic Data Setup</option>
+                        <option value="full-pipeline">Full Data Pipeline</option>
+                        <option value="full-automation">Full Pipeline + Automation</option>
                       </optgroup>
                       <optgroup label="── Other ──">
                         <option value="not-sure">Not sure — help me figure it out</option>
