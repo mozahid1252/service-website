@@ -2574,23 +2574,11 @@ export default function PortfolioPage() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  /* Global scroll reveal — observes every reveal element once on mount.
-     Uses IntersectionObserver as primary trigger, plus a scroll/resize
-     fallback that also activates elements already in view (reliable in
-     static-export hydration edge cases). */
+  /* Global scroll reveal — activates every reveal element as it enters
+     the viewport. Also activates elements already in view on load. */
   useEffect(() => {
     const selector = '.reveal, .reveal-stagger, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade, .count-up';
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
-    );
+    let io: IntersectionObserver | null = null;
     const check = () => {
       document.querySelectorAll<HTMLElement>(selector).forEach((el) => {
         if (el.classList.contains('active')) return;
@@ -2598,21 +2586,36 @@ export default function PortfolioPage() {
         const vh = window.innerHeight || document.documentElement.clientHeight;
         if (rect.top < vh - 60 && rect.bottom > 0) {
           el.classList.add('active');
-          io.unobserve(el);
+          io?.unobserve(el);
         }
       });
     };
-    const els = Array.from(document.querySelectorAll<HTMLElement>(selector));
-    els.forEach((el) => io.observe(el));
-    // run an immediate check + on scroll/resize as a safety net
-    const raf = requestAnimationFrame(check);
+    io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            io?.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+    );
+    document.querySelectorAll<HTMLElement>(selector).forEach((el) => io!.observe(el));
+    const onLoad = () => check();
+    const t1 = window.setTimeout(check, 100);
+    const t2 = window.setTimeout(check, 500);
     window.addEventListener('scroll', check, { passive: true });
     window.addEventListener('resize', check);
+    if (document.readyState === 'complete') check();
+    else window.addEventListener('load', onLoad);
     return () => {
-      cancelAnimationFrame(raf);
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
       window.removeEventListener('scroll', check);
       window.removeEventListener('resize', check);
-      io.disconnect();
+      window.removeEventListener('load', onLoad);
+      io?.disconnect();
     };
   }, []);
 
