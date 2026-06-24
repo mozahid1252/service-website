@@ -22,6 +22,7 @@ const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Case Studies', href: '#case-studies' },
+  { label: 'Technical Portfolio', href: '#technical-portfolio' },
   { label: 'Process', href: '#process' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
@@ -1751,7 +1752,7 @@ function CaseStudies2Section() {
 function TechPortfolioSection() {
   const sectionRef = useScrollReveal();
   return (
-    <section className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
+    <section id="technical-portfolio" className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label">The Engineering Behind The Insights</span>
