@@ -677,6 +677,26 @@ const TECH_STACK = [
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
+    );
+    io.observe(el);
+    // also observe any reveal descendants inside (premium + classic)
+    const inner = el.querySelectorAll('.reveal, .reveal-stagger, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade, .count-up');
+    inner.forEach((node) => io.observe(node));
+    return () => io.disconnect();
+  }, []);
   return ref;
 }
 
@@ -952,7 +972,7 @@ function HeroSection() {
         </div>
 
         {/* Trust Bar */}
-        <div className="reveal-stagger grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
           {TRUST_STATS.map((stat, i) => (
             <div key={i} className="glass rounded-xl p-4 text-center transition-all duration-300 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_0_20px_rgba(0,198,255,0.1)]">
               {stat.isRating ? (
