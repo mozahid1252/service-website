@@ -4,12 +4,12 @@ const isExport = process.env.EXPORT_STATIC === "true";
 
 const nextConfig: NextConfig = {
   ...(isExport ? { output: "export" } : { output: "standalone" }),
-  ...(isExport ? { basePath: "/portfolio-website" } : {}),
+  ...(isExport ? { basePath: "/service-website" } : {}),
   images: {
     unoptimized: isExport,
   },
   env: {
-    NEXT_PUBLIC_BASE_PATH: isExport ? "/portfolio-website" : "",
+    NEXT_PUBLIC_BASE_PATH: isExport ? "/service-website" : "",
   },
   typescript: {
     ignoreBuildErrors: true,
