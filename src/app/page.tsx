@@ -30,7 +30,7 @@ const NAV_LINKS = [
 
 const TRUST_STATS: { value: string; label: string; isRating?: boolean }[] = [
   { value: '$53.5M+', label: 'Revenue Tracked' },
-  { value: '2.75M+', label: 'Data Events Processed' },
+  { value: '5+', label: 'Proved Case Study' },
   { value: '6+', label: 'Industries Served' },
   { value: '4.9', label: '100+ projects', isRating: true },
 ];
@@ -1184,7 +1184,7 @@ function AboutSection() {
             {/* By The Numbers */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
               {[
-                { value: 53.5, prefix: '$', suffix: 'M+', label: 'Revenue Tracked & Analyzed' },
+                { value: 2.75, prefix: '', suffix: 'M+', label: 'Data Events Processed' },
                 { value: 3, prefix: '', suffix: '', label: 'Years Experienced' },
                 { value: 100, prefix: '', suffix: '+', label: 'Projects Delivered' },
                 { value: 6, prefix: '', suffix: '+', label: 'Industries Served' },
