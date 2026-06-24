@@ -32,7 +32,7 @@ const TRUST_STATS: { value: string; label: string; isRating?: boolean }[] = [
   { value: '$53.5M+', label: 'Revenue Tracked' },
   { value: '2.75M+', label: 'Data Events Processed' },
   { value: '6+', label: 'Industries Served' },
-  { value: '4.9', label: '100+ events', isRating: true },
+  { value: '4.9', label: '100+ projects', isRating: true },
 ];
 
 const QUICK_PROOF_CARDS = [
