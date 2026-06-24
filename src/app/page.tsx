@@ -1184,7 +1184,7 @@ function AboutSection() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
               {[
                 { value: 53.5, prefix: '$', suffix: 'M+', label: 'Revenue Tracked & Analyzed' },
-                { value: 2.75, prefix: '', suffix: 'M+', label: 'Raw Data Events Processed' },
+                { value: 3, prefix: '', suffix: '', label: 'Years Experienced' },
                 { value: 100, prefix: '', suffix: '+', label: 'Average Delivery' },
                 { value: 6, prefix: '', suffix: '+', label: 'Industries Served' },
               ].map((stat, i) => (
