@@ -2574,11 +2574,12 @@ export default function PortfolioPage() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  /* Global scroll reveal — observes every reveal element once on mount */
+  /* Global scroll reveal — observes every reveal element once on mount.
+     Uses IntersectionObserver as primary trigger, plus a scroll/resize
+     fallback that also activates elements already in view (reliable in
+     static-export hydration edge cases). */
   useEffect(() => {
     const selector = '.reveal, .reveal-stagger, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade, .count-up';
-    const els = Array.from(document.querySelectorAll<HTMLElement>(selector));
-    if (els.length === 0) return;
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -2590,8 +2591,29 @@ export default function PortfolioPage() {
       },
       { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
     );
+    const check = () => {
+      document.querySelectorAll<HTMLElement>(selector).forEach((el) => {
+        if (el.classList.contains('active')) return;
+        const rect = el.getBoundingClientRect();
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        if (rect.top < vh - 60 && rect.bottom > 0) {
+          el.classList.add('active');
+          io.unobserve(el);
+        }
+      });
+    };
+    const els = Array.from(document.querySelectorAll<HTMLElement>(selector));
     els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    // run an immediate check + on scroll/resize as a safety net
+    const raf = requestAnimationFrame(check);
+    window.addEventListener('scroll', check, { passive: true });
+    window.addEventListener('resize', check);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', check);
+      window.removeEventListener('resize', check);
+      io.disconnect();
+    };
   }, []);
 
   const scrollToTop = useCallback(() => {
