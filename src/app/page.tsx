@@ -991,8 +991,8 @@ function HeroSection() {
                 </>
               ) : stat.isDeadline ? (
                 <>
-                  <div className="gradient-text text-base sm:text-lg font-bold leading-tight">Deadline Driven</div>
-                  <div className="text-[#8899AA] text-[11px] mt-1 leading-snug">On time, every time. No exceptions.</div>
+                  <div className="gradient-text text-xl sm:text-2xl font-bold leading-tight">On time</div>
+                  <div className="text-[#8899AA] text-xs mt-1">Deadline Driven</div>
                 </>
               ) : (
                 <>
