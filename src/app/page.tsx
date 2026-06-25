@@ -28,10 +28,11 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const TRUST_STATS: { value: string; label: string; sub?: string; isRating?: boolean; isPrivacy?: boolean }[] = [
+const TRUST_STATS: { value: string; label: string; sub?: string; isRating?: boolean; isPrivacy?: boolean; isDeadline?: boolean }[] = [
   { value: '+127%', label: 'Avg Revenue Growth' },
   { value: '5+', label: 'Proved Case Study' },
   { value: '🔒', label: 'Data Privacy', sub: '100% confidential. Your data stays yours.', isPrivacy: true },
+  { value: 'Deadline Driven', label: 'On time, every time. No exceptions.', isDeadline: true },
   { value: '4.9', label: '100+ projects', isRating: true },
 ];
 
@@ -972,7 +973,7 @@ function HeroSection() {
         </div>
 
         {/* Trust Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
           {TRUST_STATS.map((stat, i) => (
             <div key={i} className="glass rounded-xl p-4 text-center transition-all duration-300 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_0_20px_rgba(0,198,255,0.1)]">
               {stat.isRating ? (
@@ -987,6 +988,11 @@ function HeroSection() {
                 <>
                   <div className="gradient-text text-xl sm:text-2xl font-bold leading-tight">100%</div>
                   <div className="text-[#8899AA] text-xs mt-1">Data Privacy</div>
+                </>
+              ) : stat.isDeadline ? (
+                <>
+                  <div className="gradient-text text-base sm:text-lg font-bold leading-tight">Deadline Driven</div>
+                  <div className="text-[#8899AA] text-[11px] mt-1 leading-snug">On time, every time. No exceptions.</div>
                 </>
               ) : (
                 <>
