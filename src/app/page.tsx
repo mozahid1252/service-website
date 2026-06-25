@@ -985,10 +985,7 @@ function HeroSection() {
                 </>
               ) : stat.isPrivacy ? (
                 <>
-                  <div className="flex justify-center mb-0.5">
-                    <Lock size={20} className="text-[#8899AA]" />
-                  </div>
-                  <div className="gradient-text text-xl sm:text-2xl font-bold leading-tight">100% confidential.</div>
+                  <div className="gradient-text text-xl sm:text-2xl font-bold leading-tight">100%</div>
                   <div className="text-[#8899AA] text-xs mt-1">Data Privacy</div>
                 </>
               ) : (
