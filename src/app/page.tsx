@@ -29,7 +29,7 @@ const NAV_LINKS = [
 ];
 
 const TRUST_STATS: { value: string; label: string; sub?: string; isRating?: boolean; isPrivacy?: boolean }[] = [
-  { value: '$53.5M+', label: 'Revenue Tracked' },
+  { value: '+127%', label: 'Avg Revenue Growth' },
   { value: '5+', label: 'Proved Case Study' },
   { value: '🔒', label: 'Data Privacy', sub: '100% confidential. Your data stays yours.', isPrivacy: true },
   { value: '4.9', label: '100+ projects', isRating: true },
