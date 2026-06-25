@@ -1,7 +1,4 @@
 {
   "buildCommand": "bun run build:vercel",
-  "framework": "nextjs",
-  "github": {
-    "enabled": false
-  }
+  "framework": "nextjs"
 }
