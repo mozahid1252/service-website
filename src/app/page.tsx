@@ -7,7 +7,7 @@ import {
   Check, Star, ArrowRight, Download, ExternalLink,
   BarChart3, TrendingUp, Users, Shield, Zap, Database,
   Code2, Cloud, LineChart, Plug, FileText, Clock,
-  AlertTriangle, Target, Lightbulb, Rocket, MapPin, Calendar
+  AlertTriangle, Target, Lightbulb, Rocket, MapPin, Calendar, Lock
 } from 'lucide-react';
 
 /* GitHub Pages basePath helper */
@@ -28,10 +28,10 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const TRUST_STATS: { value: string; label: string; isRating?: boolean }[] = [
+const TRUST_STATS: { value: string; label: string; sub?: string; isRating?: boolean; isPrivacy?: boolean }[] = [
   { value: '$53.5M+', label: 'Revenue Tracked' },
   { value: '5+', label: 'Proved Case Study' },
-  { value: '6+', label: 'Industries Served' },
+  { value: '🔒', label: 'Data Privacy', sub: '100% confidential. Your data stays yours.', isPrivacy: true },
   { value: '4.9', label: '100+ projects', isRating: true },
 ];
 
@@ -982,6 +982,14 @@ function HeroSection() {
                     <span className="font-bold text-white">{stat.value}/5</span>{' '}
                     <span className="text-[#8899AA]">· {stat.label}</span>
                   </div>
+                </>
+              ) : stat.isPrivacy ? (
+                <>
+                  <div className="flex justify-center mb-1.5">
+                    <Lock size={22} className="text-[#8899AA]" />
+                  </div>
+                  <div className="text-white text-sm font-bold">{stat.label}</div>
+                  <div className="text-[#8899AA] text-[11px] mt-1 leading-snug">{stat.sub}</div>
                 </>
               ) : (
                 <>
