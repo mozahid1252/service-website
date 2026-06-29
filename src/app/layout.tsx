@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Syne, Anton, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-
+import { GoogleAnalytics } from '@next/third-parties/google';
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -54,6 +54,7 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-inter), sans-serif" }}
       >
         {children}
+        <GoogleAnalytics gaId="G-NETNBH6KZ4" />
         <Toaster />
       </body>
     </html>
