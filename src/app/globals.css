@@ -1605,25 +1605,25 @@ strong { color: #FFFFFF; font-weight: 700; }
    EXISTING animations UNTOUCHED
    ============================================ */
 .quick-proof-card-1 {
-  border-color: rgba(0,198,255,0.28) !important;
-  box-shadow: 0 0 0 1px rgba(0,198,255,0.08), 0 0 50px rgba(0,198,255,0.22), 0 0 100px rgba(0,198,255,0.12), 0 0 160px rgba(0,198,255,0.06), 0 8px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(0,198,255,0.18), inset 0 0 60px rgba(0,198,255,0.04) !important;
-  background: linear-gradient(145deg, rgba(6,10,17,1) 0%, rgba(0,198,255,0.08) 100%) !important;
+  border: 1px solid rgba(0, 198, 255, 0.15) !important;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.5) !important;
+  background: #08090C !important;
 }
-.quick-proof-card-1:hover { box-shadow: 0 0 80px rgba(0,198,255,0.45), 0 0 160px rgba(0,198,255,0.28), 0 0 240px rgba(0,198,255,0.14), 0 20px 70px rgba(0,0,0,0.65), inset 0 0 60px rgba(0,198,255,0.07) !important; border-color: rgba(0,198,255,0.65) !important; }
+.quick-proof-card-1:hover { transform: translateY(-4px); box-shadow: 0 18px 48px rgba(0,0,0,0.6) !important; border-color: rgba(0, 198, 255, 0.3) !important; }
 
 .quick-proof-card-2 {
-  border-color: rgba(168,85,247,0.28) !important;
-  box-shadow: 0 0 0 1px rgba(168,85,247,0.08), 0 0 50px rgba(168,85,247,0.22), 0 0 100px rgba(168,85,247,0.12), 0 0 160px rgba(168,85,247,0.06), 0 8px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(168,85,247,0.18), inset 0 0 60px rgba(168,85,247,0.04) !important;
-  background: linear-gradient(145deg, rgba(6,10,17,1) 0%, rgba(168,85,247,0.08) 100%) !important;
+  border: 1px solid rgba(0, 198, 255, 0.15) !important;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.5) !important;
+  background: #08090C !important;
 }
-.quick-proof-card-2:hover { box-shadow: 0 0 80px rgba(168,85,247,0.45), 0 0 160px rgba(168,85,247,0.28), 0 0 240px rgba(168,85,247,0.14), 0 20px 70px rgba(0,0,0,0.65), inset 0 0 60px rgba(168,85,247,0.07) !important; border-color: rgba(168,85,247,0.65) !important; }
+.quick-proof-card-2:hover { transform: translateY(-4px); box-shadow: 0 18px 48px rgba(0,0,0,0.6) !important; border-color: rgba(0, 198, 255, 0.3) !important; }
 
 .quick-proof-card-3 {
-  border-color: rgba(244,114,182,0.28) !important;
-  box-shadow: 0 0 0 1px rgba(244,114,182,0.08), 0 0 50px rgba(244,114,182,0.22), 0 0 100px rgba(244,114,182,0.12), 0 0 160px rgba(244,114,182,0.06), 0 8px 40px rgba(0,0,0,0.55), inset 0 1px 0 rgba(244,114,182,0.18), inset 0 0 60px rgba(244,114,182,0.04) !important;
-  background: linear-gradient(145deg, rgba(6,10,17,1) 0%, rgba(244,114,182,0.08) 100%) !important;
+  border: 1px solid rgba(0, 198, 255, 0.15) !important;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.5) !important;
+  background: #08090C !important;
 }
-.quick-proof-card-3:hover { box-shadow: 0 0 80px rgba(244,114,182,0.45), 0 0 160px rgba(244,114,182,0.28), 0 0 240px rgba(244,114,182,0.14), 0 20px 70px rgba(0,0,0,0.65), inset 0 0 60px rgba(244,114,182,0.07) !important; border-color: rgba(244,114,182,0.65) !important; }
+.quick-proof-card-3:hover { transform: translateY(-4px); box-shadow: 0 18px 48px rgba(0,0,0,0.6) !important; border-color: rgba(0, 198, 255, 0.3) !important; }
 
 /* ============================================
    FAQ — BRAND NEW CARD STYLE
@@ -2399,12 +2399,12 @@ table.infra-table {
 
 /* Second line — "Stop Guessing. Start Knowing." — smaller (back to original size) */
 .contact-main-heading.contact-sub-heading {
-  font-size: clamp(28px, 4vw, 48px);
+  font-size: clamp(22px, 3.5vw, 36px);
   font-weight: 800;
   letter-spacing: -1px;
   opacity: 0.88;
   margin: 0;
-  text-transform: none;   /* keep only the first headline uppercase */
+  text-transform: uppercase;
 }
 
 /* ============================================
@@ -2996,6 +2996,18 @@ table.infra-table {
   }
 }
 
+/* Individual star spans — need their own gradient since parent uses transparent fill */
+.hero-star {
+  display: inline-block;
+  background: linear-gradient(135deg, #00C6FF, #0072FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  transform: scale(0) rotate(-45deg);
+  animation: heroStarPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
 /* ============================================
    PREMIUM SCROLL REVEAL ANIMATIONS
    (Hero excluded — used in About, Services, etc.)
@@ -3062,4 +3074,161 @@ table.infra-table {
     transform: none !important;
     transition: none !important;
   }
+}
+
+/* ============================================
+   ABOUT SECTION — Staggered heading reveal
+   (3 lines fade-up with increasing delays)
+   ============================================ */
+
+.about-stagger-1 { transition-delay: 0.1s !important; }
+.about-stagger-2 { transition-delay: 0.3s !important; }
+.about-stagger-3 { transition-delay: 0.5s !important; }
+
+/* ============================================
+   HERO TRUST BAR — Staggered card load + star pop-in
+   Cards fade-up one by one on page load;
+   stars pop in one by one after cards appear
+   ============================================ */
+
+.hero-stat-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroCardIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes heroCardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Each star pops in individually */
+.hero-star {
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0) rotate(-45deg);
+  animation: heroStarPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes heroStarPop {
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stat-card { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .hero-star { opacity: 1 !important; transform: none !important; animation: none !important; }
+}
+
+/* ============================================
+   HERO SUB-HEADLINE — green color override
+   (keeps section-label styling but changes color to green)
+   ============================================ */
+
+.hero-sub-headline {
+  color: #00C6FF !important;
+  -webkit-text-fill-color: #00C6FF !important;
+}
+
+/* ============================================
+   TRUTH CARD BOX — light green transparent card
+   for the "Marketing agencies..." description
+   ============================================ */
+
+.truth-card-box {
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 12px;
+  padding: 24px 28px;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.05);
+}
+
+/* ============================================
+   CONTACT SECTION — Highlighted description text
+   Green color, bold, with light glow, slightly smaller
+   ============================================ */
+
+.contact-highlight-text {
+  color: #22C55E !important;
+  font-weight: 700;
+  font-size: 15px;
+  text-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+}
+
+/* ============================================
+   QUICK PROOF — Red glowing text (no box)
+   ============================================ */
+
+.proof-red-glow {
+  color: #00C6FF;
+  text-shadow: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  padding: 0;
+}
+
+/* ============================================
+   QUICK PROOF — Red high-glow + word-by-word animation
+   ============================================ */
+
+.quick-proof-text {
+  color: #00C6FF;
+  text-shadow: none;
+}
+
+.qpw {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.quick-proof-text.active .qpw {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   STOP GUESSING / START KNOWING — word-by-word animation
+   Used in Contact + Footer
+   ============================================ */
+
+.sgw {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.sg-sk-text.active .sgw {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   PART HEADINGS — Premium gold with high glow
+   + word-by-word animation
+   ============================================ */
+
+.part-gold-heading {
+  color: #A855F7 !important;
+  text-shadow:
+    0 0 4px rgba(168, 85, 247, 0.45),
+    0 0 9px rgba(168, 85, 247, 0.35),
+    0 0 18px rgba(168, 85, 247, 0.23),
+    0 0 32px rgba(168, 85, 247, 0.19),
+    0 0 50px rgba(168, 85, 247, 0.14),
+    0 0 75px rgba(168, 85, 247, 0.09) !important;
+}
+
+.part-gold-heading .sgw {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }

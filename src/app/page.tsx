@@ -28,12 +28,12 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const TRUST_STATS: { value: string; label: string; sub?: string; isRating?: boolean; isPrivacy?: boolean; isDeadline?: boolean }[] = [
-  { value: '+127%', label: 'Avg Revenue Growth' },
-  { value: '5+', label: 'Proved Case Study' },
-  { value: '🔒', label: 'Data Privacy', sub: '100% confidential. Your data stays yours.', isPrivacy: true },
-  { value: 'Deadline Driven', label: 'On time, every time. No exceptions.', isDeadline: true },
-  { value: '4.9', label: '100+ projects', isRating: true },
+const TRUST_STATS: { target?: number; prefix?: string; suffix?: string; value?: string; label: string; isRating?: boolean; isPrivacy?: boolean; isDeadline?: boolean; ratingLabel?: string }[] = [
+  { target: 127, prefix: '+', suffix: '%', label: 'Avg Revenue Growth' },
+  { target: 5, prefix: '', suffix: '+', label: 'Proved Case Study' },
+  { target: 100, prefix: '', suffix: '%', label: 'Data Privacy', isPrivacy: true },
+  { value: 'On time', label: 'Deadline Driven', isDeadline: true },
+  { target: 4.9, prefix: '', suffix: '', isRating: true, ratingLabel: '100+ projects' },
 ];
 
 const QUICK_PROOF_CARDS = [
@@ -718,7 +718,7 @@ function Counter({ target, prefix = '', suffix = '' }: { target: number; prefix?
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
-        setCount(Math.floor(eased * target));
+        setCount(eased * target);
         if (progress < 1) requestAnimationFrame(animate);
       };
       requestAnimationFrame(animate);
@@ -740,7 +740,11 @@ function Counter({ target, prefix = '', suffix = '' }: { target: number; prefix?
     };
   }, [target]);
 
-  return <span ref={ref}>{prefix}{count.toLocaleString()}{suffix}</span>;
+  // Format: integers use toLocaleString, decimals keep up to 2 decimals (strip trailing zeros)
+  const display = Number.isInteger(target)
+    ? Math.floor(count).toLocaleString()
+    : parseFloat(count.toFixed(2)).toString();
+  return <span ref={ref}>{prefix}{display}{suffix}</span>;
 }
 
 /* Renders the "Best For" text with a styled "rev" shortform tag
@@ -951,9 +955,9 @@ function HeroSection() {
         </h1>
 
         {/* Sub-Headline */}
-        <p className="text-[#8899AA] text-base sm:text-lg max-w-[620px] mx-auto leading-relaxed mb-10">
+        <span className="section-label max-w-[620px] mx-auto block mb-10 leading-relaxed hero-sub-headline">
           I find exactly where your money is leaking across your products, your ads, and your customers and show you how to stop it. No confusing reports. No generic advice. Just a clear picture of what is hurting your profit and a specific plan to fix it.
-        </p>
+        </span>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
@@ -975,29 +979,37 @@ function HeroSection() {
         {/* Trust Bar */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
           {TRUST_STATS.map((stat, i) => (
-            <div key={i} className="glass rounded-xl p-4 text-center transition-all duration-300 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_0_20px_rgba(0,198,255,0.1)]">
+            <div key={i} className={`hero-stat-card glass rounded-xl p-4 text-center transition-all duration-300 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_0_20px_rgba(0,198,255,0.1)]`} style={{ animationDelay: `${0.3 + i * 0.15}s` }}>
               {stat.isRating ? (
                 <>
-                  <div className="hero-rating-stars text-xl sm:text-2xl leading-none" title="4.9 out of 5 stars">★★★★★</div>
-                  <div className="text-xs mt-1.5">
-                    <span className="font-bold text-white">{stat.value}/5</span>{' '}
-                    <span className="text-[#8899AA]">· {stat.label}</span>
+                  <div className="hero-rating-stars text-xl sm:text-2xl leading-none" title="4.9 out of 5 stars">
+                    {[1, 2, 3, 4, 5].map((s) => (
+                      <span key={s} className="hero-star" style={{ animationDelay: `${0.8 + s * 0.15}s` }}>★</span>
+                    ))}
                   </div>
+                  <div className="font-bold text-white text-sm mt-1.5">
+                    <Counter target={stat.target || 0} prefix={stat.prefix || ''} suffix={stat.suffix || '/5'} />
+                  </div>
+                  <div className="text-[#8899AA] text-xs mt-0.5 uppercase">{stat.ratingLabel}</div>
                 </>
               ) : stat.isPrivacy ? (
                 <>
-                  <div className="gradient-text text-xl sm:text-2xl font-bold leading-tight">100%</div>
-                  <div className="text-[#8899AA] text-xs mt-1">Data Privacy</div>
+                  <div className="gradient-text text-xl sm:text-2xl font-bold leading-tight">
+                    <Counter target={stat.target || 0} prefix={stat.prefix || ''} suffix={stat.suffix || '%'} />
+                  </div>
+                  <div className="text-[#8899AA] text-xs mt-1 uppercase">{stat.label}</div>
                 </>
               ) : stat.isDeadline ? (
                 <>
-                  <div className="gradient-text text-xl sm:text-2xl font-bold leading-tight">On time</div>
-                  <div className="text-[#8899AA] text-xs mt-1">Deadline Driven</div>
+                  <div className="gradient-text text-xl sm:text-2xl font-bold leading-tight uppercase">On time</div>
+                  <div className="text-[#8899AA] text-xs mt-1 uppercase">{stat.label}</div>
                 </>
               ) : (
                 <>
-                  <div className="gradient-text text-xl sm:text-2xl font-bold">{stat.value}</div>
-                  <div className="text-[#8899AA] text-xs mt-1">{stat.label}</div>
+                  <div className="gradient-text text-xl sm:text-2xl font-bold">
+                    <Counter target={stat.target || 0} prefix={stat.prefix || ''} suffix={stat.suffix || ''} />
+                  </div>
+                  <div className="text-[#8899AA] text-xs mt-1 uppercase">{stat.label}</div>
                 </>
               )}
             </div>
@@ -1020,15 +1032,13 @@ function QuickProofSection() {
     <section className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="section-label">Quick Proof</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight">
-            Real Stores. Real Numbers. Real Results.
+          <span className="section-label reveal-up">Quick Proof</span>
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
+            The Money Was Always There. Nobody Was Looking.
           </h2>
-          <div className="proof-highlight-box max-w-2xl mx-auto">
-            <p className="proof-highlight-text font-bold">
-              Every single finding below came from data these founders already had. They just couldn&apos;t see it.
-            </p>
-          </div>
+          <p className="proof-red-glow quick-proof-text max-w-2xl mx-auto" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="qpw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>
+            Every single finding below came from data these founders already had. They just couldn&apos;t see it.
+          </p>
         </div>
 
         <div className="reveal-stagger quick-proof-grid">
@@ -1177,17 +1187,26 @@ function AboutSection() {
 
           {/* Right - Content */}
           <div>
-            <span className="section-label">The Analyst Behind the Data</span>
-            <h2 className="section-headline text-[clamp(28px,3.5vw,44px)] font-extrabold text-white mt-3 mb-2 leading-tight uppercase tracking-tight">
+            <span className="section-label about-stagger-1 reveal-up">The Analyst Behind the Data</span>
+            <h2 className="section-headline text-[clamp(28px,3.5vw,44px)] font-extrabold text-white mt-3 mb-2 leading-tight uppercase tracking-tight about-stagger-2 reveal-up">
               I Don&apos;t Just Build Dashboards.
             </h2>
-            <h3 className="section-headline text-[clamp(20px,2.5vw,32px)] font-bold gradient-text mb-6 uppercase tracking-tight">
+            <h3 className="section-headline text-[clamp(20px,2.5vw,32px)] font-bold gradient-text mb-6 uppercase tracking-tight about-stagger-3 reveal-up">
               I Build the Engine That Powers Them.
             </h3>
 
             <div className="about-text-card mt-6 mb-6">
               <p className="text-[#8899AA] text-sm leading-relaxed mb-4">
-                Hi, I&apos;m <strong className="text-white">Mozahidul Islam</strong>, E-Commerce Growth Analyst. (3 Years Of Experienced)
+                Hi, I&apos;m <strong className="text-white">Mozahidul Islam</strong>, E-Commerce Growth Analyst.
+              </p>
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
+                For 3 years, I worked behind the scenes at a Bangladesh-based agency, leading the data strategy and analysis for e-commerce clients. The kind of deep-dive work you&apos;ll see in the case studies on this site.
+              </p>
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
+                In 2026, I decided it was time to do this on my own. Not because the work changed, it&apos;s the same rigor, the same process, but because I wanted to work directly with founders, build real relationships, and skip the layers in between.
+              </p>
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-4">
+                This site is the start of that next chapter.
               </p>
 
               <div className="mb-4">
@@ -1195,19 +1214,10 @@ function AboutSection() {
                   <span className="w-8 h-[2px] bg-[#00C6FF]" /> What I Do
                 </div>
                 <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
-                  Most analysts only look at the surface, pulling basic Shopify reports and guessing at trends. <strong>I go deeper.</strong>
-                </p>
-                <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
-                  Before any analysis can begin, your data needs to be properly connected, cleaned, and structured. That is the behind-the-scenes engineering work I handle, <strong>connecting Shopify, GA4, Meta Ads, and Klaviyo</strong> into <strong>one unified source of truth</strong> using <strong>SQL, Python, and BigQuery</strong>.
-                </p>
-                <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
-                  Once the foundation is solid, I translate that <strong>raw, complex data into clear, profitable decisions</strong>.
-                </p>
-                <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
-                  E-commerce founders are often <strong>flying blind</strong>. Misled by <strong>vanity metrics</strong>. Handed agency reports claiming <strong>&quot;4.2x ROAS&quot;</strong> while their bank accounts quietly empty out. Working 11-hour days to make $11 an hour in real profit. My job is to <strong>find exactly where the money is leaking</strong>, <strong>tell you precisely what to fix first</strong>, and <strong>build the systems so it never happens again</strong>.
+                  I connect the data founders already have, <strong>Shopify, GA4, Meta Ads, Klaviyo</strong>, into one reliable source of truth, then turn it into decisions you can actually act on.
                 </p>
                 <p className="text-[#8899AA] text-sm leading-relaxed">
-                  <strong>You don&apos;t need to touch a single line of code</strong>. <strong>Your job is to make decisions on clean, reliable data</strong>. <strong>My job is to make sure that data exists</strong>, and that it tells you the truth.
+                  Not vanity metrics. Not a dashboard you check once and forget. Just a clear answer to the question every founder eventually asks: <strong>where is the money actually going?</strong>
                 </p>
               </div>
             </div>
@@ -1224,7 +1234,7 @@ function AboutSection() {
                   <div className="gradient-text text-2xl font-bold">
                     <Counter target={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
                   </div>
-                  <div className="text-[#8899AA] text-xs mt-1">{stat.label}</div>
+                  <div className="text-[#8899AA] text-xs mt-1 uppercase">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -1272,8 +1282,8 @@ function WhyMeSection() {
     <section className="bg-[#0A0F18] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="section-label">WHY ME</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] text-white mt-3 mb-4 uppercase tracking-tight">
+          <span className="section-label reveal-up">WHY ME</span>
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             The 4 Principles That Shape Every Engagement
           </h2>
         </div>
@@ -1312,18 +1322,17 @@ function WhyWorkWithMeSection() {
 
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="section-label">The Unfair Advantage</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight">
+          <span className="section-label reveal-up">The Unfair Advantage</span>
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             Don&apos;t Hire an Agency.
           </h2>
-          <h3 className="section-headline text-[clamp(21px,3vw,35px)] font-bold gradient-text mb-6 uppercase tracking-tight">
+          <h3 className="section-headline text-[clamp(21px,3vw,35px)] font-bold gradient-text mb-6 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             Hire a Profit Detective.
           </h3>
-          <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed mb-3">
-            Marketing agencies are paid to spend your money. They show you vanity metrics like &quot;4.2x ROAS&quot; to justify their retainers, while your actual bank account quietly empties out.
-          </p>
-          <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
-            I am paid to find your money. I don&apos;t look at surface-level reports and call it analysis. I engineer your raw data from Shopify, GA4, Meta Ads, and Klaviyo and uncover the truth your current dashboards are hiding from you.
+          <p className="text-[#00C6FF] text-base max-w-3xl mx-auto leading-relaxed mb-3">
+            Marketing agencies are paid to spend your money.
+            <br />
+            I am paid to find your money.
           </p>
           <p className="text-white font-semibold mt-4">Here is why founders trust me with their life&apos;s work.</p>
         </div>
@@ -1389,8 +1398,8 @@ function ServicesSection() {
     <section id="services" className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="section-label">Choose Your Starting Point</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight">
+          <span className="section-label reveal-up">Choose Your Starting Point</span>
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             Services
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -1400,7 +1409,7 @@ function ServicesSection() {
 
         {/* Part 1: Core Packages */}
         <div className="mb-20">
-          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight">Part 1: Core E-Commerce Packages</h3>
+          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 1: Core E-Commerce Packages</h3>
           <p className="text-[#8899AA] text-sm mb-8">Three tiers, one retainer. Designed to meet your store wherever it is today.</p>
 
           <div className="packages-grid mb-6">
@@ -1500,7 +1509,7 @@ function ServicesSection() {
 
         {/* Part 2: Add-On Packages */}
         <div className="mb-20">
-          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight">Part 2: Specialized Add-On Packages</h3>
+          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 2: Specialized Add-On Packages</h3>
           <p className="text-[#00C6FF] text-base font-semibold mb-1">Have One Specific Problem?</p>
           <p className="text-[#8899AA] text-sm mb-8">Six focused audits, each one built around a single critical business question. Delivered in 7–14 days.</p>
 
@@ -1535,7 +1544,7 @@ function ServicesSection() {
 
         {/* Part 3: Data Infrastructure */}
         <div>
-          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight">Part 3: Data Setup &amp; Infrastructure</h3>
+          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 3: Data Setup &amp; Infrastructure</h3>
           <p className="gradient-text text-base font-semibold mb-1">The Technical Foundation.</p>
           <p className="text-[#8899AA] text-sm mb-8">
             Before any analysis, your data must be connected and cleaned. We handle the entire backend engineering (GCP, BigQuery, API pipelines). You never touch a line of code. Pay only for what your stack actually needs.
@@ -1648,8 +1657,8 @@ function CaseStudiesSection() {
     <section id="case-studies" className="bg-[#020408] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="section-label">The Receipts</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] text-white mt-3 mb-4 uppercase tracking-tight">
+          <span className="section-label reveal-up">The Receipts</span>
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             Featured Case Studies
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -1786,16 +1795,10 @@ function TechPortfolioSection() {
     <section id="technical-portfolio" className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="section-label">The Engineering Behind The Insights</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight">
+          <span className="section-label reveal-up">The Engineering Behind The Insights</span>
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             Technical Portfolio
           </h2>
-          <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
-            I don&apos;t just read Shopify&apos;s default reports. I build enterprise-grade analytical pipelines to process millions of raw data points.
-          </p>
-          <p className="text-[#8899AA] text-sm max-w-2xl mx-auto mt-2">
-            Most analysts rely on basic plugins. I write the code that connects your platforms, processes millions of rows, and surfaces the truth. Here is a look at the production-grade data infrastructure I build behind the scenes.
-          </p>
         </div>
 
         <div className="portfolio-cards-grid mb-8">
@@ -1845,8 +1848,8 @@ function TestimonialsSection() {
     <section className="bg-[#020408] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="section-label">Founders, Transformed</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight">
+          <span className="section-label reveal-up">Founders, Transformed</span>
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             Testimonials
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -1909,13 +1912,7 @@ function ProcessSection() {
 
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="section-label">The Engagement Flow</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight">
-            Setup is Not an Add-on. It is the Foundation.
-          </h2>
-          <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed">
-            Every engagement flows through the same disciplined sequence, from hire to insight. You make the decisions; I handle the engineering, the data cleaning, and the math. Here is exactly how we transform your raw data into profit:
-          </p>
+          <span className="section-label reveal-up" style={{ fontSize: '16px', letterSpacing: '3px' }}>The Engagement Flow</span>
         </div>
 
         {/* Steps */}
@@ -1958,15 +1955,10 @@ function TechStackSection() {
     <section className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <span className="section-label">The Infrastructure Behind The Insights</span>
-          <h2 className="section-headline text-[clamp(24px,3.5vw,40px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight">
+          <span className="section-label reveal-up">The Infrastructure Behind The Insights</span>
+          <h2 className="section-headline text-[clamp(23px,3.5vw,39px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             Enterprise Engineering. Without the $150K Salary.
           </h2>
-          <div className="tech-highlight-box max-w-3xl mx-auto">
-            <p className="tech-highlight-text">
-              Shopify&apos;s default reports only tell 10% of the story. To find the hidden profit, you need to connect, warehouse, and model your data properly.
-            </p>
-          </div>
           <p className="text-[#8899AA] text-sm max-w-3xl mx-auto leading-relaxed mt-2">
             I bring the exact same tech stack used by Fortune 500 companies, and build it custom for your store. You get enterprise-grade data infrastructure without the $150,000/year in-house data engineer salary.
           </p>
@@ -2254,14 +2246,11 @@ function ContactSection() {
           <h2 className="contact-main-heading">
             Let&apos;s Find Your Next <span className="money-accent">$10,000.</span>
           </h2>
-          <h2 className="contact-main-heading contact-sub-heading">
+          <h2 className="contact-main-heading contact-sub-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw" style="color:#EF4444;text-shadow:0 0 5px rgba(239,68,68,0.5),0 0 15px rgba(239,68,68,0.45),0 0 30px rgba(239,68,68,0.35),0 0 50px rgba(239,68,68,0.2);transition-delay:0s">Stop</span> <span class="sgw" style="color:#EF4444;text-shadow:0 0 5px rgba(239,68,68,0.5),0 0 15px rgba(239,68,68,0.45),0 0 30px rgba(239,68,68,0.35),0 0 50px rgba(239,68,68,0.2);transition-delay:0.08s">Guessing.</span> <span class="sgw" style="color:#22C55E;text-shadow:0 0 5px rgba(34,197,94,0.5),0 0 15px rgba(34,197,94,0.45),0 0 30px rgba(34,197,94,0.35),0 0 50px rgba(34,197,94,0.2);transition-delay:0.16s">Start</span> <span class="sgw" style="color:#22C55E;text-shadow:0 0 5px rgba(34,197,94,0.5),0 0 15px rgba(34,197,94,0.45),0 0 30px rgba(34,197,94,0.35),0 0 50px rgba(34,197,94,0.2);transition-delay:0.24s">Knowing.</span>'; } }}>
             Stop Guessing. Start Knowing.
           </h2>
-          <p className="text-[#8899AA] text-base max-w-3xl mx-auto leading-relaxed mt-6">
+          <p className="contact-highlight-text max-w-3xl mx-auto leading-relaxed mt-6">
             Every struggling store already has the data. What it doesn&apos;t have is someone willing to read it honestly, explain it clearly, and act on it decisively.
-          </p>
-          <p className="text-[#8899AA] text-sm max-w-3xl mx-auto mt-2">
-            If your revenue is growing but something doesn&apos;t add up, you&apos;re probably right. The data knows. Let&apos;s read it together.
           </p>
         </div>
 
@@ -2480,7 +2469,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top section with brand statement */}
         <div className="text-center mb-12">
-          <h3 className="section-headline text-[clamp(19px,2.5vw,31px)] text-white mb-3 uppercase tracking-tight">Stop Guessing. Start Knowing.</h3>
+          <h3 className="section-headline text-[clamp(19px,2.5vw,31px)] mb-3 uppercase tracking-tight reveal-up sg-sk-text" style={{ transitionDelay: '0.2s' }} ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw" style="color:#EF4444;text-shadow:0 0 10px rgba(239,68,68,1),0 0 30px rgba(239,68,68,0.9),0 0 60px rgba(239,68,68,0.7),0 0 100px rgba(239,68,68,0.4);transition-delay:0s">Stop</span> <span class="sgw" style="color:#EF4444;text-shadow:0 0 10px rgba(239,68,68,1),0 0 30px rgba(239,68,68,0.9),0 0 60px rgba(239,68,68,0.7),0 0 100px rgba(239,68,68,0.4);transition-delay:0.08s">Guessing.</span> <span class="sgw" style="color:#22C55E;text-shadow:0 0 10px rgba(34,197,94,1),0 0 30px rgba(34,197,94,0.9),0 0 60px rgba(34,197,94,0.7),0 0 100px rgba(34,197,94,0.4);transition-delay:0.16s">Start</span> <span class="sgw" style="color:#22C55E;text-shadow:0 0 10px rgba(34,197,94,1),0 0 30px rgba(34,197,94,0.9),0 0 60px rgba(34,197,94,0.7),0 0 100px rgba(34,197,94,0.4);transition-delay:0.24s">Knowing.</span>'; } }}>Stop Guessing. Start Knowing.</h3>
           <p className="text-[#8899AA] text-base max-w-xl mx-auto mb-6">Your data already has the answers. Let me find them for you.</p>
           <a href="#contact" className="btn-press inline-flex items-center gap-2 px-8 py-3 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
             style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
@@ -2585,7 +2574,7 @@ export default function PortfolioPage() {
     window.addEventListener('scroll', onScroll, { passive: true });
 
     /* Scroll reveal — activate reveal elements as they enter view */
-    const REVEAL_SELECTOR = '.reveal, .reveal-stagger, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade, .count-up';
+    const REVEAL_SELECTOR = '.reveal, .reveal-stagger, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade, .count-up, .quick-proof-text, .sg-sk-text';
     let revealIO: IntersectionObserver | null = null;
     const checkReveals = () => {
       document.querySelectorAll<HTMLElement>(REVEAL_SELECTOR).forEach((el) => {
