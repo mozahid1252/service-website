@@ -1021,7 +1021,7 @@ function QuickProofSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label reveal-up">Quick Proof</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight whitespace-nowrap reveal-up" style={{ transitionDelay: '0.2s' }}>
             The Money Was Always There. Nobody Was Looking.
           </h2>
           <p className="proof-red-glow quick-proof-text max-w-2xl mx-auto" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="qpw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>
@@ -1307,18 +1307,9 @@ function WhyWorkWithMeSection() {
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label reveal-up">The Unfair Advantage</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
-            Don&apos;t Hire an Agency.
+          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight whitespace-nowrap reveal-up" style={{ transitionDelay: '0.2s' }}>
+            Don&apos;t Hire an Agency. <span className="gradient-text">Hire a Profit Detective.</span>
           </h2>
-          <h3 className="section-headline text-[clamp(21px,3vw,35px)] font-bold gradient-text mb-6 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
-            Hire a Profit Detective.
-          </h3>
-          <p className="text-[#00C6FF] text-base max-w-3xl mx-auto leading-relaxed mb-3">
-            Marketing agencies are paid to spend your money.
-            <br />
-            I am paid to find your money.
-          </p>
-          <p className="text-white font-semibold mt-4">Here is why founders trust me with their life&apos;s work.</p>
         </div>
 
         {/* 4 Reasons */}
