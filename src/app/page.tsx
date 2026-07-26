@@ -1014,10 +1014,87 @@ function HeroSection() {
   );
 }
 
+/* ── PAGE 2: WHY DATA (building pictures background + premium content) ── */
+function WhyDataSection() {
+  const sectionRef = useScrollReveal();
+  const points = [
+    { icon: TrendingUp, title: 'Stop Guessing', text: 'Your gut feeling is costing you money. Data shows exactly what works.' },
+    { icon: Target, title: 'Find Hidden Profit', text: 'Revenue is visible. Profit leaks are not. Data reveals where money disappears.' },
+    { icon: Shield, title: 'Risk-Free Decisions', text: 'Every move backed by numbers. No more hoping. Just knowing.' },
+    { icon: Zap, title: 'Act Faster', text: 'Spot problems in days, not quarters. Fix them before they drain your margins.' },
+  ];
+  return (
+    <section className="why-data-section" ref={sectionRef}>
+      {/* Cycling background slideshow — 6 premium corporate building images crossfade */}
+      <div className="qp-bg-slideshow" aria-hidden="true">
+        <div className="qp-bg-slide qp-bg-slide-1" />
+        <div className="qp-bg-slide qp-bg-slide-2" />
+        <div className="qp-bg-slide qp-bg-slide-3" />
+        <div className="qp-bg-slide qp-bg-slide-4" />
+        <div className="qp-bg-slide qp-bg-slide-5" />
+        <div className="qp-bg-slide qp-bg-slide-6" />
+      </div>
+      <div className="why-data-overlay" aria-hidden="true" />
+
+      <div className="reveal why-data-container">
+        {/* LEFT: Why Data content */}
+        <div className="why-data-left">
+          <span className="section-label reveal-up">Why Data</span>
+          <h2 className="why-data-headline reveal-up" style={{ transitionDelay: '0.15s' }}>
+            Data Doesn&apos;t Lie.<br />Gut Feelings Do.
+          </h2>
+          <p className="why-data-sub reveal-up" style={{ transitionDelay: '0.3s' }}>
+            Every store has hidden profit. Most founders never find it — because they&apos;re looking at the wrong numbers.
+          </p>
+
+          <div className="why-data-points reveal-stagger">
+            {points.map((p, i) => (
+              <div key={i} className="why-data-point">
+                <div className="why-data-point-icon" aria-hidden="true">
+                  <p.icon size={16} />
+                </div>
+                <div className="why-data-point-text">
+                  <h4>{p.title}</h4>
+                  <p>{p.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <a href="#quick-proof" className="why-data-cta reveal-up" style={{ transitionDelay: '0.5s' }}>
+            See The Proof <ArrowRight size={15} />
+          </a>
+        </div>
+
+        {/* RIGHT: floating stat card */}
+        <div className="why-data-right reveal-up" style={{ transitionDelay: '0.4s' }}>
+          <div className="why-data-stat-card">
+            <div className="why-data-stat-glow" aria-hidden="true" />
+            <span className="why-data-stat-label">Average Result</span>
+            <span className="why-data-stat-value">+127%</span>
+            <span className="why-data-stat-desc">Revenue Growth</span>
+            <div className="why-data-stat-divider" aria-hidden="true" />
+            <div className="why-data-stat-mini">
+              <div>
+                <span className="mini-v">5+</span>
+                <span className="mini-l">Proved Cases</span>
+              </div>
+              <div>
+                <span className="mini-v">10x</span>
+                <span className="mini-l">Avg ROI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function QuickProofSection() {
   const sectionRef = useScrollReveal();
   return (
-    <section className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
+    <section id="quick-proof" className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label reveal-up">Quick Proof</span>
@@ -2596,6 +2673,7 @@ export default function PortfolioPage() {
 
       <Navbar />
       <HeroSection />
+      <WhyDataSection />
       <QuickProofSection />
       <AboutSection />
       <WhyMeSection />
