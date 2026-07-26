@@ -374,35 +374,8 @@ input:focus, textarea:focus, select:focus {
 /* FIX 1A: Bold/accent-bold for strong tags */
 strong { color: #FFFFFF; font-weight: 700; }
 
-/* FIX 1C: Why Me principle cards - 4 different colors */
-.principle-card-01 {
-  border-left: 4px solid #00C6FF;
-  background: linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(0,198,255,0.08) 100%);
-  border: 1px solid rgba(0,198,255,0.20);
-  border-left: 4px solid #00C6FF;
-  box-shadow: 0 0 30px rgba(0,198,255,0.08), 0 8px 32px rgba(0,0,0,0.4);
-}
-.principle-card-02 {
-  border-left: 4px solid #F5A623;
-  background: linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(245,166,35,0.08) 100%);
-  border: 1px solid rgba(245,166,35,0.20);
-  border-left: 4px solid #F5A623;
-  box-shadow: 0 0 30px rgba(245,166,35,0.08), 0 8px 32px rgba(0,0,0,0.4);
-}
-.principle-card-03 {
-  border-left: 4px solid #00E676;
-  background: linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(0,230,118,0.08) 100%);
-  border: 1px solid rgba(0,230,118,0.20);
-  border-left: 4px solid #00E676;
-  box-shadow: 0 0 30px rgba(0,230,118,0.08), 0 8px 32px rgba(0,0,0,0.4);
-}
-.principle-card-04 {
-  border-left: 4px solid #8B5CF6;
-  background: linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(139,92,246,0.08) 100%);
-  border: 1px solid rgba(139,92,246,0.20);
-  border-left: 4px solid #8B5CF6;
-  box-shadow: 0 0 30px rgba(139,92,246,0.08), 0 8px 32px rgba(0,0,0,0.4);
-}
+/* FIX 1C: Why Me principle cards — removed (old WhyMeSection replaced;
+   .principle-card-01..04 classes no longer referenced anywhere). */
 
 /* ============================================
    "DON'T HIRE AN AGENCY" SECTION
@@ -3526,4 +3499,446 @@ table.infra-table {
   .why-data-headline { font-size: clamp(28px, 7vw, 40px); }
   .why-data-stat-value { font-size: 56px; }
   .why-data-stat-card { padding: 28px 24px; min-width: auto; width: 100%; max-width: 360px; }
+}
+
+/* ============================================
+   WHY ME SECTION — Premium design
+   Alternating number rail + glassmorphism cards
+   Reuses existing .reveal / .reveal-up / .reveal-stagger
+   classes already defined globally. Only section-specific
+   styles below.
+   ============================================ */
+
+.whyme-section {
+  position: relative;
+  padding: 120px 24px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 0%, rgba(0, 198, 255, 0.05), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 10% 100%, rgba(245, 166, 35, 0.04), transparent 70%),
+    linear-gradient(180deg, #060912 0%, #04060C 100%);
+}
+
+/* Subtle grid pattern */
+.whyme-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 85%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 85%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient glow blobs */
+.whyme-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  pointer-events: none;
+  z-index: 0;
+}
+.whyme-bg-glow-1 {
+  width: 480px;
+  height: 480px;
+  background: rgba(0, 198, 255, 0.08);
+  top: -80px;
+  right: -60px;
+}
+.whyme-bg-glow-2 {
+  width: 420px;
+  height: 420px;
+  background: rgba(245, 166, 35, 0.05);
+  bottom: -60px;
+  left: -60px;
+}
+
+.whyme-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ── HEADER ── */
+.whyme-header {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 80px;
+}
+
+.whyme-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.whyme-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 7px 16px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #00C6FF;
+  background: rgba(0, 198, 255, 0.06);
+  border: 1px solid rgba(0, 198, 255, 0.2);
+}
+
+.whyme-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00C6FF;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.7);
+  animation: whyme-dot-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes whyme-dot-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(0, 198, 255, 0.7); }
+  50% { opacity: 0.5; box-shadow: 0 0 16px rgba(0, 198, 255, 1); }
+}
+
+.whyme-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.02;
+  letter-spacing: -2px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.whyme-title-accent {
+  display: block;
+  background: linear-gradient(135deg, #00C6FF 0%, #00E676 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 0.72em;
+  margin-top: 6px;
+  letter-spacing: -1.5px;
+}
+
+.whyme-intro {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  margin: 0;
+  padding-bottom: 8px;
+  max-width: 420px;
+  justify-self: end;
+}
+
+/* ── PRINCIPLES LIST ── */
+.whyme-principles {
+  display: flex;
+  flex-direction: column;
+}
+
+.whyme-principle {
+  position: relative;
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 28px;
+  padding: 8px 0;
+}
+
+/* Connector — absolutely positioned so it doesn't break grid layout */
+.whyme-connector {
+  position: absolute;
+  left: 27px;
+  top: 72px;
+  bottom: -8px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(0, 198, 255, 0.2), transparent);
+  pointer-events: none;
+}
+
+/* Number rail */
+.whyme-num-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.whyme-num-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, rgba(13, 21, 32, 0.95), rgba(6, 11, 19, 0.95));
+  border: 1px solid rgba(0, 198, 255, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.whyme-num-text {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #00C6FF;
+  letter-spacing: -0.5px;
+}
+
+.whyme-num-line {
+  flex: 1;
+  width: 1px;
+  margin-top: 12px;
+  background: linear-gradient(180deg, rgba(0, 198, 255, 0.3), transparent);
+}
+
+/* Per-card accent colors */
+.whyme-p-2 .whyme-num-badge { border-color: rgba(0, 230, 118, 0.25); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 18px rgba(0, 230, 118, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06); }
+.whyme-p-2 .whyme-num-text { color: #00E676; }
+.whyme-p-2 .whyme-num-line { background: linear-gradient(180deg, rgba(0, 230, 118, 0.3), transparent); }
+.whyme-p-2 .whyme-icon-wrap { color: #00E676; border-color: rgba(0, 230, 118, 0.28); background: linear-gradient(135deg, rgba(0, 230, 118, 0.14), rgba(0, 230, 118, 0.03)); }
+.whyme-p-2 .whyme-keyword { color: #00E676; border-color: rgba(0, 230, 118, 0.22); background: rgba(0, 230, 118, 0.06); }
+.whyme-p-2 .whyme-card-glow { background: radial-gradient(circle at 20% 0%, rgba(0, 230, 118, 0.1), transparent 60%); }
+
+.whyme-p-3 .whyme-num-badge { border-color: rgba(245, 166, 35, 0.25); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 18px rgba(245, 166, 35, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06); }
+.whyme-p-3 .whyme-num-text { color: #F5A623; }
+.whyme-p-3 .whyme-num-line { background: linear-gradient(180deg, rgba(245, 166, 35, 0.3), transparent); }
+.whyme-p-3 .whyme-icon-wrap { color: #F5A623; border-color: rgba(245, 166, 35, 0.28); background: linear-gradient(135deg, rgba(245, 166, 35, 0.14), rgba(245, 166, 35, 0.03)); }
+.whyme-p-3 .whyme-keyword { color: #F5A623; border-color: rgba(245, 166, 35, 0.22); background: rgba(245, 166, 35, 0.06); }
+.whyme-p-3 .whyme-card-glow { background: radial-gradient(circle at 20% 0%, rgba(245, 166, 35, 0.1), transparent 60%); }
+
+.whyme-p-4 .whyme-num-badge { border-color: rgba(255, 255, 255, 0.2); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 18px rgba(255, 255, 255, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.08); }
+.whyme-p-4 .whyme-num-text { color: #FFFFFF; }
+.whyme-p-4 .whyme-num-line { background: linear-gradient(180deg, rgba(255, 255, 255, 0.25), transparent); }
+.whyme-p-4 .whyme-icon-wrap { color: #FFFFFF; border-color: rgba(255, 255, 255, 0.25); background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.03)); }
+.whyme-p-4 .whyme-keyword { color: #FFFFFF; border-color: rgba(255, 255, 255, 0.2); background: rgba(255, 255, 255, 0.06); }
+.whyme-p-4 .whyme-card-glow { background: radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.08), transparent 60%); }
+
+/* Card */
+.whyme-card {
+  position: relative;
+  overflow: hidden;
+  padding: 28px 32px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(13, 21, 32, 0.72) 0%, rgba(6, 11, 19, 0.82) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s ease, box-shadow 0.5s ease, background 0.5s ease;
+}
+
+.whyme-card-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 0%, rgba(0, 198, 255, 0.1), transparent 60%);
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.whyme-principle:hover .whyme-num-badge {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.whyme-principle:hover .whyme-card {
+  transform: translateX(8px);
+  border-color: rgba(0, 198, 255, 0.3);
+  background: linear-gradient(145deg, rgba(16, 25, 38, 0.85) 0%, rgba(8, 14, 24, 0.92) 100%);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 32px rgba(0, 198, 255, 0.08);
+}
+
+.whyme-principle:hover .whyme-card-glow {
+  opacity: 1;
+}
+
+.whyme-card-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.whyme-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: #00C6FF;
+  border: 1px solid rgba(0, 198, 255, 0.28);
+  background: linear-gradient(135deg, rgba(0, 198, 255, 0.14), rgba(0, 198, 255, 0.03));
+  transition: transform 0.4s ease;
+}
+
+.whyme-principle:hover .whyme-icon-wrap {
+  transform: scale(1.1);
+}
+
+.whyme-keyword {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #00C6FF;
+  padding: 5px 12px;
+  border-radius: 100px;
+  border: 1px solid rgba(0, 198, 255, 0.22);
+  background: rgba(0, 198, 255, 0.06);
+}
+
+.whyme-card-title {
+  position: relative;
+  z-index: 1;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  margin: 0 0 12px;
+}
+
+.whyme-card-text {
+  position: relative;
+  z-index: 1;
+  font-family: 'Inter', sans-serif;
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.whyme-card-arrow {
+  position: absolute;
+  right: 28px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whyme-principle:hover .whyme-card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: #00C6FF;
+  border-color: rgba(0, 198, 255, 0.3);
+  background: rgba(0, 198, 255, 0.08);
+}
+
+/* ── FOOTER STRIP ── */
+.whyme-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-top: 80px;
+  padding: 28px 40px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(13, 21, 32, 0.7), rgba(6, 11, 19, 0.8));
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.whyme-footer-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0 48px;
+}
+
+.whyme-footer-stat-v {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00C6FF, #00E676);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.whyme-footer-stat-l {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.whyme-footer-divider {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .whyme-header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+  .whyme-intro {
+    justify-self: start;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .whyme-section { padding: 80px 16px; }
+  .whyme-header { margin-bottom: 44px; }
+  .whyme-title { font-size: clamp(28px, 8vw, 40px); letter-spacing: -1.5px; }
+  .whyme-principle {
+    grid-template-columns: 56px 1fr;
+    gap: 16px;
+  }
+  .whyme-num-badge { width: 44px; height: 44px; border-radius: 12px; }
+  .whyme-num-text { font-size: 15px; }
+  .whyme-card { padding: 22px 20px; }
+  .whyme-card-title { font-size: 18px; }
+  .whyme-card-text { font-size: 13.5px; }
+  .whyme-card-arrow { display: none; }
+  .whyme-footer {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px 20px;
+  }
+  .whyme-footer-stat { padding: 0 20px; }
+  .whyme-footer-stat-v { font-size: 26px; }
+  .whyme-footer-divider { display: none; }
+}
+
+@media (max-width: 480px) {
+  .whyme-icon-wrap { width: 38px; height: 38px; border-radius: 10px; }
+  .whyme-card-top { margin-bottom: 12px; }
+  .whyme-keyword { font-size: 10px; padding: 4px 10px; }
 }

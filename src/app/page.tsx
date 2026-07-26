@@ -1343,32 +1343,117 @@ function AboutSection() {
 
 function WhyMeSection() {
   const sectionRef = useScrollReveal();
+  const principles = [
+    {
+      num: '01',
+      icon: FileText,
+      title: 'I speak business, not jargon.',
+      text: 'Every report is written so that a business owner, not a data scientist, can read it, understand it, and act on it immediately. If you need a glossary to read my work, I have failed.',
+      keyword: 'Clarity',
+    },
+    {
+      num: '02',
+      icon: Target,
+      title: 'I deliver decisions, not data dumps.',
+      text: 'You will never receive a spreadsheet full of numbers with no context. Every single finding comes with a specific, prioritized recommendation and a clear reason why it matters to your bottom line.',
+      keyword: 'Decisions',
+    },
+    {
+      num: '03',
+      icon: Lightbulb,
+      title: 'I focus on your actual problem.',
+      text: 'Every engagement is designed around the specific challenge your business is facing right now, not a generic template copy-pasted from the last client. Your data is unique. Your analysis should be too.',
+      keyword: 'Relevance',
+    },
+    {
+      num: '04',
+      icon: Rocket,
+      title: 'I build for action, not admiration.',
+      text: 'Dashboards and reports that sit unopened are worthless. Everything I build is designed to be used, by you and your team, every day, to make faster and better decisions with complete confidence.',
+      keyword: 'Action',
+    },
+  ];
   return (
-    <section className="bg-[#0A0F18] py-20 sm:py-28" ref={sectionRef}>
-      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="section-label reveal-up">WHY ME</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
-            The 4 Principles That Shape Every Engagement
-          </h2>
+    <section id="why-me" className="whyme-section" ref={sectionRef}>
+      {/* Ambient background layers */}
+      <div className="whyme-bg-grid" aria-hidden="true" />
+      <div className="whyme-bg-glow whyme-bg-glow-1" aria-hidden="true" />
+      <div className="whyme-bg-glow whyme-bg-glow-2" aria-hidden="true" />
+
+      <div className="whyme-inner reveal">
+        {/* ── HEADER ── */}
+        <div className="whyme-header">
+          <div className="whyme-header-left">
+            <span className="whyme-eyebrow reveal-up">
+              <span className="whyme-eyebrow-dot" aria-hidden="true" />
+              Why Me
+            </span>
+            <h2 className="whyme-title reveal-up" style={{ transitionDelay: '0.15s' }}>
+              The 4 Principles<br />
+              <span className="whyme-title-accent">That Shape Every Engagement</span>
+            </h2>
+          </div>
+          <p className="whyme-intro reveal-up" style={{ transitionDelay: '0.3s' }}>
+            Not a framework. Not a template. Just four non-negotiable standards that define how I work — and why the work actually moves the needle.
+          </p>
         </div>
 
-        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[
-            { num: '01', title: 'I speak business, not jargon.', text: 'Every report is written so that a business owner, not a data scientist, can read it, understand it, and act on it immediately. If you need a glossary to read my work, I have failed.', cssClass: 'principle-card-01' },
-            { num: '02', title: 'I deliver decisions, not data dumps.', text: 'You will never receive a spreadsheet full of numbers with no context. Every single finding comes with a specific, prioritized recommendation and a clear reason why it matters to your bottom line.', cssClass: 'principle-card-02' },
-            { num: '03', title: 'I focus on your actual problem.', text: 'Every engagement is designed around the specific challenge your business is facing right now, not a generic template copy-pasted from the last client. Your data is unique. Your analysis should be too.', cssClass: 'principle-card-03' },
-            { num: '04', title: 'I build for action, not admiration.', text: 'Dashboards and reports that sit unopened are worthless. Everything I build is designed to be used, by you and your team, every day, to make faster and better decisions with complete confidence.', cssClass: 'principle-card-04' },
-          ].map((item) => (
-            <div
-              key={item.num}
-              className={`rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)] ${item.cssClass}`}
+        {/* ── PRINCIPLES LIST ── */}
+        <div className="whyme-principles">
+          {principles.map((p, i) => (
+            <article
+              key={p.num}
+              className={`whyme-principle whyme-p-${i + 1} reveal-up`}
+              style={{ transitionDelay: `${0.4 + i * 0.12}s` }}
             >
-              <div className="text-5xl font-bold gradient-text mb-3">{item.num}</div>
-              <h3 className="text-white font-bold text-lg mb-3">{item.title}</h3>
-              <p className="text-[#8899AA] text-sm leading-relaxed">{item.text}</p>
-            </div>
+              {/* Connector line (between cards) */}
+              {i < principles.length - 1 && (
+                <span className="whyme-connector" aria-hidden="true" />
+              )}
+
+              {/* Number rail */}
+              <div className="whyme-num-rail">
+                <div className="whyme-num-badge">
+                  <span className="whyme-num-text">{p.num}</span>
+                </div>
+                <div className="whyme-num-line" aria-hidden="true" />
+              </div>
+
+              {/* Card body */}
+              <div className="whyme-card">
+                <div className="whyme-card-glow" aria-hidden="true" />
+                <div className="whyme-card-top">
+                  <div className="whyme-icon-wrap" aria-hidden="true">
+                    <p.icon size={20} strokeWidth={2} />
+                  </div>
+                  <span className="whyme-keyword">{p.keyword}</span>
+                </div>
+                <h3 className="whyme-card-title">{p.title}</h3>
+                <p className="whyme-card-text">{p.text}</p>
+                <div className="whyme-card-arrow" aria-hidden="true">
+                  <ArrowRight size={16} />
+                </div>
+              </div>
+            </article>
           ))}
+        </div>
+
+        {/* ── FOOTER STRIP ── */}
+        <div className="whyme-footer reveal-up" style={{ transitionDelay: '1s' }}>
+          <div className="whyme-footer-stat">
+            <span className="whyme-footer-stat-v">100%</span>
+            <span className="whyme-footer-stat-l">Custom Analysis</span>
+          </div>
+          <div className="whyme-footer-divider" aria-hidden="true" />
+          <div className="whyme-footer-stat">
+            <span className="whyme-footer-stat-v">0</span>
+            <span className="whyme-footer-stat-l">Generic Templates</span>
+          </div>
+          <div className="whyme-footer-divider" aria-hidden="true" />
+          <div className="whyme-footer-stat">
+            <span className="whyme-footer-stat-v">Every</span>
+            <span className="whyme-footer-stat-l">Finding Actionable</span>
+          </div>
         </div>
       </div>
     </section>
