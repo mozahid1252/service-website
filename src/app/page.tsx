@@ -906,18 +906,6 @@ function HeroSection() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Photo */}
-      <div className="absolute inset-0">
-        <Image
-          src={`${basePath}/images/photo2.jpg`}
-          alt="Hero background"
-          fill
-          sizes="100vw"
-          className="object-cover opacity-[0.10]"
-          style={{ filter: 'blur(1px)' }}
-          priority
-        />
-      </div>
       {/* Dark Overlay */}
       <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(2,4,8,0.96) 0%, rgba(8,13,20,0.92) 100%)' }} />
       {/* Grid Pattern */}
@@ -1314,10 +1302,6 @@ function WhyWorkWithMeSection() {
   const sectionRef = useScrollReveal();
   return (
     <section className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
-      {/* Background Photo */}
-      <div className="absolute inset-0">
-        <Image src={`${basePath}/images/photo3.jpg`} alt="Background" fill sizes="100vw" className="object-cover opacity-[0.10]" />
-      </div>
       <div className="absolute inset-0 bg-[rgba(2,4,8,0.92)]" />
 
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1904,10 +1888,6 @@ function ProcessSection() {
   const sectionRef = useScrollReveal();
   return (
     <section id="process" className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
-      {/* Background Photo */}
-      <div className="absolute inset-0">
-        <Image src={`${basePath}/images/photo4.jpg`} alt="Background" fill sizes="100vw" className="object-cover opacity-[0.08]" />
-      </div>
       <div className="absolute inset-0 bg-[rgba(2,4,8,0.94)]" />
 
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2235,10 +2215,6 @@ function ContactSection() {
 
   return (
     <section id="contact" className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
-      {/* Background Photo */}
-      <div className="absolute inset-0">
-        <Image src={`${basePath}/images/photo5.jpg`} alt="Background" fill sizes="100vw" className="object-cover opacity-[0.10]" />
-      </div>
       <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(2,4,8,0.96) 0%, rgba(8,13,20,0.94) 100%)' }} />
 
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
