@@ -809,7 +809,7 @@ function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
           <a href="#hero" className="flex items-center gap-3 group">
-            <Image src={`${basePath}/images/logo.png`} alt="Logo" width={44} height={44} className="rounded-lg transition-transform duration-300 group-hover:scale-105" />
+            <Image src={`${basePath}/images/logo.png`} alt="Logo" width={44} height={44} className="rounded-lg transition-transform duration-300 group-hover:scale-105 img-premium" />
             <div className="hidden sm:block">
               <div className="text-sm font-bold text-white leading-tight">Mozahidul Islam</div>
               <div className="text-[11px] text-[#8899AA] leading-tight">E-Commerce Growth Analyst</div>
@@ -1025,11 +1025,10 @@ function WhyDataSection() {
   ];
   return (
     <section className="why-data-section" ref={sectionRef}>
-      {/* Cycling background slideshow — 6 premium corporate building images crossfade */}
+      {/* Cycling background slideshow — premium corporate building images crossfade */}
       <div className="qp-bg-slideshow" aria-hidden="true">
         <div className="qp-bg-slide qp-bg-slide-1" />
         <div className="qp-bg-slide qp-bg-slide-2" />
-        <div className="qp-bg-slide qp-bg-slide-3" />
         <div className="qp-bg-slide qp-bg-slide-4" />
         <div className="qp-bg-slide qp-bg-slide-5" />
         <div className="qp-bg-slide qp-bg-slide-6" />
@@ -1231,7 +1230,7 @@ function AboutSection() {
                 alt="Mozahidul Islam - E-Commerce Growth Analyst"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-cover"
+                className="object-cover img-premium"
                 priority
               />
             </div>
@@ -2612,7 +2611,7 @@ function Footer() {
           {/* Column 1: Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <Image src={`${basePath}/images/logo.png`} alt="Logo" width={44} height={44} className="rounded-lg" />
+              <Image src={`${basePath}/images/logo.png`} alt="Logo" width={44} height={44} className="rounded-lg img-premium" />
               <div>
                 <div className="text-white font-bold text-sm">Mozahidul Islam</div>
                 <div className="text-[#00C6FF] text-[11px] font-medium">E-Commerce Growth Analyst</div>

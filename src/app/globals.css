@@ -3228,23 +3228,32 @@ table.infra-table {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0;
-  animation: qp-slideshow 48s infinite;
+  filter: brightness(1.08);
+  animation: qp-slideshow 40s infinite;
   transform: scale(1.08);
 }
 
 .qp-bg-slide-1 { background-image: url('/images/qp-bg-1.jpg'); animation-delay: 0s; }
 .qp-bg-slide-2 { background-image: url('/images/qp-bg-2.jpg'); animation-delay: 8s; }
-.qp-bg-slide-3 { background-image: url('/images/qp-bg-3.jpg'); animation-delay: 16s; }
-.qp-bg-slide-4 { background-image: url('/images/qp-bg-4.jpg'); animation-delay: 24s; }
-.qp-bg-slide-5 { background-image: url('/images/qp-bg-5.jpg'); animation-delay: 32s; }
-.qp-bg-slide-6 { background-image: url('/images/qp-bg-6.jpg'); animation-delay: 40s; }
+.qp-bg-slide-4 { background-image: url('/images/qp-bg-4.jpg'); animation-delay: 16s; }
+.qp-bg-slide-5 { background-image: url('/images/qp-bg-5.jpg'); animation-delay: 24s; }
+.qp-bg-slide-6 { background-image: url('/images/qp-bg-6.jpg'); animation-delay: 32s; }
 
 @keyframes qp-slideshow {
   0% { opacity: 0; transform: scale(1.08); }
-  2% { opacity: 1; }
-  14% { opacity: 1; transform: scale(1.12); }
+  2% { opacity: 0.92; }
+  14% { opacity: 0.92; transform: scale(1.12); }
   16.67% { opacity: 0; transform: scale(1.14); }
   100% { opacity: 0; transform: scale(1.08); }
+}
+
+/* Premium image treatment — subtle brightness + transparency applied
+   consistently to all foreground images (logo, About photo) so they
+   blend better with the dark page design while staying clearly visible.
+   Same values as the slideshow slides (brightness 1.08 / opacity 0.92). */
+.img-premium {
+  filter: brightness(1.08);
+  opacity: 0.92;
 }
 
 /* ── Section shell ── */
