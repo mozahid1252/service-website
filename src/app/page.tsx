@@ -114,6 +114,7 @@ const CORE_PACKAGES = [
     bestFor: 'Stores doing $5K+/mo',
     promise: 'After this package, you will know exactly where your store is losing potential revenue, which products are actually making you money, and the top 3 things to fix this week to see measurable results.',
     cta: 'Book the Health Check →',
+    route: '/health-check',
     featured: false,
   },
   {
@@ -134,6 +135,7 @@ const CORE_PACKAGES = [
     bestFor: 'Stores doing $10K+/mo',
     promise: 'After this package, you will know exactly which customers to focus on (and what to say to each group), which marketing channels are wasting your money, and how to implement product bundles that immediately increase your average order value.',
     cta: 'Book the Growth Package →',
+    route: '/revenue-growth-accelerator',
     featured: true,
   },
   {
@@ -154,6 +156,7 @@ const CORE_PACKAGES = [
     bestFor: 'Stores doing $50K+/mo',
     promise: 'After this package, you will never make a major business decision without data to back it up. You will know your most valuable customers, most profitable products, and have a live dashboard that gives you your business pulse in under 5 minutes each morning.',
     cta: 'Apply for Advanced →',
+    route: '/data-driven-growth-system',
     featured: false,
   },
   {
@@ -174,6 +177,7 @@ const CORE_PACKAGES = [
     bestFor: 'Stores doing $100K+/mo needing a permanent data partner.',
     promise: 'With this retainer, today\'s insight will never become outdated next month. We will detect problems between analyses before they cost you money, ensure your implemented changes are actually working, and keep you prepared for seasonal shifts before they catch you off guard.',
     cta: 'Become a Retainer Client →',
+    route: '/analytics-partner-retainer',
     featured: false,
   },
 ];
@@ -1526,6 +1530,9 @@ function ServicesSection() {
                 </div>
 
                 <a href="#contact" className="service-book-btn package-book-btn">{pkg.cta}</a>
+                <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-2 cursor-pointer no-underline w-full">
+                  <ExternalLink size={12} /> View Details
+                </a>
                 </div>
               </div>
             ))}
@@ -1571,6 +1578,9 @@ function ServicesSection() {
                       <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
                     </div>
                     <a href="#contact" className="service-book-btn">{pkg.cta}</a>
+                    <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-2 cursor-pointer no-underline w-full">
+                      <ExternalLink size={12} /> View Details
+                    </a>
                   </div>
                 </div>
                 </div>

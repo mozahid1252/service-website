@@ -1,0 +1,249 @@
+
+
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#"><img src="/images/core-packages-hero.png" alt="Logo" class="logo-img"></a>
+    <ul class="nav-links">
+      <li><a href="#problem">Infrastructure</a></li>
+      <li><a href="#included">Capabilities</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#pricing" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow reveal">Tier 3 · Advanced Package</div>
+        <h1 class="h-display reveal">Your complete <em>analytics engine.</em></h1>
+        <p class="lead reveal">Built once, runs forever. We engineer enterprise-grade BigQuery, SQL, and Looker Studio systems so your team makes decisions with absolute confidence.</p>
+        <div class="hero-ctas reveal">
+          <a href="#pricing" class="btn btn-primary btn-lg">Build the System <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#included" class="btn btn-ghost btn-lg">View Capabilities</a>
+        </div>
+      </div>
+      <div class="terminal reveal">
+        <div class="terminal-head">
+          <div class="terminal-dot red"></div>
+          <div class="terminal-dot yellow"></div>
+          <div class="terminal-dot green"></div>
+          <span style="color:#a9b7c6;font-size:12px;margin-left:8px;">analytics_engine.sql</span>
+        </div>
+        <div class="terminal-body">
+          <span class="code-line"><span class="code-comment">-- Daily Revenue Pulse Forecast</span></span>
+          <span class="code-line"><span class="code-keyword">SELECT</span></span>
+          <span class="code-line">&nbsp;&nbsp;<span class="code-var">order_date</span>,</span>
+          <span class="code-line">&nbsp;&nbsp;<span class="code-fn">SUM</span>(<span class="code-var">profit_margin</span>) <span class="code-keyword">AS</span> net_rev,</span>
+          <span class="code-line">&nbsp;&nbsp;<span class="code-fn">ML.FORECAST</span>(<span class="code-var">revenue</span>)</span>
+          <span class="code-line"><span class="code-keyword">FROM</span> `bigquery.shopify.orders`</span>
+          <span class="code-line"><span class="code-keyword">WHERE</span> <span class="code-var">cohort</span> = <span class="code-string">'2023-Q4'</span></span>
+          <span class="code-line"><span class="code-keyword">GROUP BY</span> 1;</span>
+          <br>
+          <span class="code-line"><span style="color:#27c93f;">✓ Query executed successfully.</span></span>
+          <span class="code-line"><span style="color:#cc7832;">→ Dashboard synced.</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="problem" style="background:var(--bg-2);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 60px;">
+      <div class="eyebrow center" style="justify-content:center;">The Problem</div>
+      <h2 class="h2">Spreadsheets don't scale.</h2>
+      <p class="lead" style="margin:0 auto;">At $100K+/mo, manual reporting breaks down. Data is siloed across Shopify, GA4, and ad platforms. You're reacting to yesterday's data instead of forecasting tomorrow's.</p>
+    </div>
+
+    <div class="arch-flow reveal">
+      <div class="arch-node">
+        <div class="arch-icon"><i class="fa-brands fa-shopify"></i></div>
+        <h4>Shopify</h4>
+        <p>Orders / Products</p>
+      </div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node">
+        <div class="arch-icon"><i class="fa-solid fa-database"></i></div>
+        <h4>BigQuery</h4>
+        <p>Central Warehouse</p>
+      </div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node">
+        <div class="arch-icon"><i class="fa-solid fa-code"></i></div>
+        <h4>SQL / Python</h4>
+        <p>Modeling / ML</p>
+      </div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node">
+        <div class="arch-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h4>Looker Studio</h4>
+        <p>Live Dashboards</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="included">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto;">
+      <div class="eyebrow center" style="justify-content:center;">What's Included</div>
+      <h2 class="h2">Enterprise capabilities, fully managed.</h2>
+    </div>
+
+    <div class="bento-grid">
+      <div class="bento-card large reveal">
+        <div class="bento-ic"><i class="fa-solid fa-gauge-high"></i></div>
+        <h3>Live Custom KPI Dashboard</h3>
+        <p>We design and build a fully customized live dashboard connected directly to your Shopify and GA4 data. It auto-refreshes daily and includes six tailored views: Revenue Pulse, Customer Health, Marketing Efficiency, Product Matrix, Inventory Alerts, and Profit Tracker.</p>
+        <div class="bento-stat">
+          <span>AUTO-REFRESH:</span> Daily @ 02:00 UTC<br>
+          <span>DATA SOURCES:</span> Shopify API, GA4, BigQuery
+        </div>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-ic"><i class="fa-solid fa-layer-group"></i></div>
+        <h3>Complete Cohort Analysis</h3>
+        <p>We track every monthly group of customers over 12–24 months to reveal your best-performing acquisition periods and why.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-ic"><i class="fa-solid fa-chart-line"></i></div>
+        <h3>90-Day Forecasting</h3>
+        <p>Data-driven revenue forecasts including SKU-level demand projections for your top 20 products in three scenarios.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-ic"><i class="fa-solid fa-coins"></i></div>
+        <h3>Profit Margin Deep Dive</h3>
+        <p>We calculate true profit on every product—after COGS, returns, shipping, and ad spend—mapped by segment and channel.</p>
+      </div>
+      <div class="bento-card reveal">
+        <div class="bento-ic"><i class="fa-solid fa-percent"></i></div>
+        <h3>Discount Strategy</h3>
+        <p>We analyze the true impact of every promotion, measuring revenue lift against margin erosion to find optimal discount thresholds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ideal" style="background:var(--bg-2);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto 60px;">
+      <div class="eyebrow center" style="justify-content:center;">Ideal Client</div>
+      <h2 class="h2">For scaling businesses that need infrastructure.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="reveal">
+      <div style="background:var(--card);padding:32px;border-radius:var(--radius-lg);border:1px solid var(--border);">
+        <i class="fa-solid fa-building" style="color:var(--blue);font-size:24px;margin-bottom:16px;"></i>
+        <h4 style="font-family:'Plus Jakarta Sans';font-size:18px;font-weight:600;margin-bottom:8px;">Revenue Stage</h4>
+        <p style="color:var(--muted);font-size:14px;">Stores doing $50K+/mo ready to transition from basic reporting to advanced analytics infrastructure.</p>
+      </div>
+      <div style="background:var(--card);padding:32px;border-radius:var(--radius-lg);border:1px solid var(--border);">
+        <i class="fa-solid fa-users-gear" style="color:var(--blue);font-size:24px;margin-bottom:16px;"></i>
+        <h4 style="font-family:'Plus Jakarta Sans';font-size:18px;font-weight:600;margin-bottom:8px;">Team Size</h4>
+        <p style="color:var(--muted);font-size:14px;">Businesses with marketing, ops, and inventory teams that need a single source of truth.</p>
+      </div>
+      <div style="background:var(--card);padding:32px;border-radius:var(--radius-lg);border:1px solid var(--border);">
+        <i class="fa-solid fa-rocket" style="color:var(--blue);font-size:24px;margin-bottom:16px;"></i>
+        <h4 style="font-family:'Plus Jakarta Sans';font-size:18px;font-weight:600;margin-bottom:8px;">Growth Mode</h4>
+        <p style="color:var(--muted);font-size:14px;">Scaling businesses that cannot afford to make major inventory or budget decisions blind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto;">
+      <div class="eyebrow center" style="justify-content:center;">Pricing & Investment</div>
+      <h2 class="h2">Your single source of truth.</h2>
+      <p class="lead" style="margin:0 auto;">A complete data engine for your business. Built once, runs forever.</p>
+    </div>
+    <div class="pricing-card reveal" style="margin-top:60px;">
+      <div class="badge" style="display:inline-block;padding:6px 14px;background:var(--blue-tint);color:var(--blue);border-radius:999px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;">Advanced Package</div>
+      <h3 style="font-size:28px;margin-bottom:8px;">Data-Driven Growth System</h3>
+      <div class="price">$2,000–$4,000</div>
+      <div style="font-size:14px;color:var(--muted);margin-bottom:32px;">One-time investment · Delivered in 20–30 days</div>
+      <ul class="pricing-features">
+        <li><i class="fa-solid fa-check"></i> 15 Total Analyses</li>
+        <li><i class="fa-solid fa-check"></i> 20-30 Page Report</li>
+        <li><i class="fa-solid fa-check"></i> Live Custom Dashboard</li>
+        <li><i class="fa-solid fa-check"></i> 90-Day Forecast Doc</li>
+        <li><i class="fa-solid fa-check"></i> Segmented DB Export</li>
+        <li><i class="fa-solid fa-check"></i> Budget Optimization Plan</li>
+        <li><i class="fa-solid fa-check"></i> 90-min Strategy Call</li>
+        <li><i class="fa-solid fa-check"></i> 60-Day Email Support</li>
+      </ul>
+      <a href="mailto:mojahidulislam101010@gmail.com" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;background:var(--blue);border-color:var(--blue);">Build Your System</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:var(--bg-2);">
+  <div class="container">
+    <div class="reveal" style="text-align:center;max-width:720px;margin:0 auto;">
+      <div class="eyebrow center" style="justify-content:center;">Frequently Asked Questions</div>
+      <h2 class="h2">Everything you need to know.</h2>
+    </div>
+    <div class="faq-wrap reveal">
+      <div class="faq-item active">
+        <div class="faq-q">Do we need to purchase BigQuery or Looker Studio licenses? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">We work within your existing stack. Google Looker Studio is free. BigQuery has a generous free tier, but for enterprise data volumes, a paid tier may be required. We will advise on the exact requirements during onboarding.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How is the live dashboard built? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">We use Google Looker Studio connected via BigQuery and the Shopify API. The dashboard auto-refreshes daily. We include a training video so your entire team knows how to read and interact with it.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What is the 90-Day Forecast Document? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">It's a comprehensive document containing revenue projections in 3 scenarios (best, expected, conservative), an inventory investment plan, and a cash flow outlook for the next quarter.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can you integrate our specific ad platforms? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. We standardize Google and Facebook ads out of the box. If you use TikTok, Pinterest, or Snapchat ads, we can integrate those via BigQuery transfer services as well.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:120px;">
+  <div class="container">
+    <div class="cta-final reveal">
+      <h2>Operate from a single source of truth.</h2>
+      <p>You will never again say "I don't know what's happening in my business."</p>
+      <a href="mailto:mojahidulislam101010@gmail.com" class="btn btn-primary btn-lg" style="background:var(--blue);border-color:var(--blue);">
+        <i class="fa-regular fa-envelope"></i> mojahidulislam101010@gmail.com
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/images/core-packages-hero.png" alt="Logo" class="logo-img">
+        <p>A specialized e-commerce data analytics consultancy helping online businesses transform raw data into clear, profitable decisions.</p>
+      </div>
+      <div>
+        <h5 style="font-family:'Plus Jakarta Sans';font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:16px;">Services</h5>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+          <li><a href="#" style="color:var(--ink);text-decoration:none;font-size:14px;">Health Check</a></li>
+          <li><a href="#" style="color:var(--ink);text-decoration:none;font-size:14px;">Growth Accelerator</a></li>
+          <li><a href="#" style="color:var(--ink);text-decoration:none;font-size:14px;">Growth System</a></li>
+          <li><a href="#" style="color:var(--ink);text-decoration:none;font-size:14px;">Retainer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 E-Commerce Analytics Services. All rights reserved.</span>
+      <span style="font-family:'JetBrains Mono';font-size:12px;">2026 EDITION · CONFIDENTIAL</span>
+    </div>
+  </div>
+</footer>
+
+
