@@ -346,18 +346,6 @@ const CASE_STUDIES = [
     caseType: 'scale',
   },
   {
-    store: 'NOIRE Collective',
-    title: 'From Panic to $33K/Month Profit in 73 Days',
-    niche: 'Premium Urban Streetwear',
-    nightmare: '72 hours from shutting down. $38K/mo revenue but losing $1,690/mo. An agency claimed 4.2x ROAS, but true profit ROAS was 0.83x.',
-    revelation: 'Discount addiction and a 24.7% unit return rate from inconsistent sizing were silently bleeding the business dry.',
-    turnaround: 'Detoxed discounts (17.6% → 4.8%), cut Facebook/TikTok ads by 70%, unified size charts, rebuilt mobile checkout.',
-    result: 'Profit went from -$1.7K/mo to +$33,040/mo in 73 days.',
-    cssClass: 'noire',
-    tagline: '72 hours from permanent closure. Data saved it.',
-    caseType: 'diagnostic',
-  },
-  {
     store: 'LUNA Jewelry Co.',
     title: 'The Store Gifting Away Its Own Profit',
     niche: 'Handcrafted Jewelry',
