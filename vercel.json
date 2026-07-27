@@ -1,13 +1,5 @@
 {
   "buildCommand": "bun run build:vercel",
-  "framework": "nextjs",
-  "headers": [
-    {
-      "source": "/core-packages",
-      "headers": [
-        { "key": "Content-Type", "value": "text/html; charset=utf-8" }
-      ]
-    }
-  ]
+  "framework": "nextjs"
 }
 
