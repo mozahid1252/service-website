@@ -4451,3 +4451,54 @@ table.infra-table {
   .about2-hero-divider { display: none; }
   .about2-hero-stats { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
+
+/* ============================================
+   CASE STUDIES — Compact 3-column grid
+   All 6 cards in a single section (desktop 3×2,
+   tablet 2×3, mobile 1×6). Reduced padding,
+   font sizes, and spacing for a compact fit.
+   ============================================ */
+
+.case-studies-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* Compact card — reduced padding */
+.case-card-inner-compact {
+  padding: 18px 20px !important;
+}
+
+/* Compact tagline */
+.case-tagline-compact {
+  font-size: 11px !important;
+  margin-bottom: 8px !important;
+  line-height: 1.45 !important;
+}
+
+/* Compact badge */
+.case-type-badge-compact {
+  font-size: 9px !important;
+  padding: 3px 8px !important;
+  letter-spacing: 1px !important;
+}
+
+/* Responsive: tablet 2 columns */
+@media (max-width: 1024px) {
+  .case-studies-compact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+/* Responsive: mobile 1 column */
+@media (max-width: 640px) {
+  .case-studies-compact-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .case-card-inner-compact {
+    padding: 16px 18px !important;
+  }
+}

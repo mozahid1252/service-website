@@ -1784,128 +1784,64 @@ function CaseStudiesSection() {
           </p>
         </div>
 
-        <div className="reveal-stagger grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {CASE_STUDIES.slice(0, 4).map((cs, i) => (
-            <div key={i} className={`case-card-wrapper ${cs.cssClass}`}>
-              <div className="case-card-inner">
-              <div className="flex items-start justify-between gap-3 mb-3">
-                <h3 className="text-white font-bold text-lg">{cs.store}</h3>
-                <span className={`case-type-badge ${cs.caseType}`}>{cs.caseType}</span>
+        <div className="reveal-stagger case-studies-compact-grid">
+          {CASE_STUDIES.map((cs, i) => (
+            <div key={i} className={`case-card-wrapper case-card-compact ${cs.cssClass}`}>
+              <div className="case-card-inner case-card-inner-compact">
+              <div className="flex items-start justify-between gap-2 mb-2">
+                <h3 className="text-white font-bold text-sm">{cs.store}</h3>
+                <span className={`case-type-badge case-type-badge-compact ${cs.caseType}`}>{cs.caseType}</span>
               </div>
-              <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF] mb-2">
+              <div className="inline-block px-2 py-0.5 rounded-full text-[10px] font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF] mb-2">
                 {cs.niche}
               </div>
-              <p className="text-[#F0F4F8] font-semibold text-sm mb-2">{cs.title}</p>
-              <p className="case-tagline">{cs.tagline}</p>
+              <p className="text-[#F0F4F8] font-semibold text-xs mb-1">{cs.title}</p>
+              <p className="case-tagline case-tagline-compact">{cs.tagline}</p>
 
-              <div className="space-y-3 mb-5">
+              <div className="space-y-2 mb-3">
                 <div>
-                  <div className="flex items-center gap-2 text-[#FF4444] text-xs font-semibold mb-1">
-                    <AlertTriangle size={12} /> The Nightmare
+                  <div className="flex items-center gap-1.5 text-[#FF4444] text-[10px] font-semibold mb-0.5">
+                    <AlertTriangle size={10} /> The Nightmare
                   </div>
-                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.nightmare}</p>
+                  <p className="text-[#8899AA] text-xs leading-relaxed">{cs.nightmare}</p>
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 text-[#F5A623] text-xs font-semibold mb-1">
-                    <Lightbulb size={12} /> The Revelation
+                  <div className="flex items-center gap-1.5 text-[#F5A623] text-[10px] font-semibold mb-0.5">
+                    <Lightbulb size={10} /> The Revelation
                   </div>
-                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.revelation}</p>
+                  <p className="text-[#8899AA] text-xs leading-relaxed">{cs.revelation}</p>
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 text-[#00C6FF] text-xs font-semibold mb-1">
-                    <Zap size={12} /> The Turnaround
+                  <div className="flex items-center gap-1.5 text-[#00C6FF] text-[10px] font-semibold mb-0.5">
+                    <Zap size={10} /> The Turnaround
                   </div>
-                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.turnaround}</p>
+                  <p className="text-[#8899AA] text-xs leading-relaxed">{cs.turnaround}</p>
                 </div>
-                <div className="p-3 rounded-lg bg-[rgba(0,230,118,0.08)] border border-[rgba(0,230,118,0.15)]">
-                  <div className="flex items-center gap-2 text-[#00E676] text-xs font-semibold mb-1">
-                    <Rocket size={12} /> The Result
+                <div className="p-2 rounded-lg bg-[rgba(0,230,118,0.08)] border border-[rgba(0,230,118,0.15)]">
+                  <div className="flex items-center gap-1.5 text-[#00E676] text-[10px] font-semibold mb-0.5">
+                    <Rocket size={10} /> The Result
                   </div>
-                  <p className="text-[#F0F4F8] text-sm font-semibold">{cs.result}</p>
+                  <p className="text-[#F0F4F8] text-xs font-semibold">{cs.result}</p>
                 </div>
               </div>
 
-              <a href={`${basePath}/pdfs/case-${cs.cssClass}.pdf`} download={`${cs.store}_Case_Study.pdf`} className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline">
-                <Download size={14} /> Download Full {cs.store} Case Study PDF
+              <a href={`${basePath}/pdfs/case-${cs.cssClass}.pdf`} download={`${cs.store}_Case_Study.pdf`} className="text-[#00C6FF] text-xs font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline">
+                <Download size={12} /> Download Full {cs.store} Case Study PDF
               </a>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-10">
-          <a href="#case-studies-2" className="btn-press inline-flex items-center gap-2 text-[#00C6FF] font-semibold hover:gap-3 transition-all">
-            See More Case Studies <ChevronDown size={16} />
-          </a>
         </div>
 
         {/* Section Divider */}
-        <div className="section-divider mt-20" />
+        <div className="section-divider mt-16" />
       </div>
     </section>
   );
 }
 
-function CaseStudies2Section() {
-  const sectionRef = useScrollReveal();
-  return (
-    <section id="case-studies-2" className="bg-[#0A0F18] py-20 sm:py-28" ref={sectionRef}>
-      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="case-studies-part2-grid mb-10">
-          {CASE_STUDIES.slice(4).map((cs, i) => (
-            <div key={i} className={`case-card-wrapper ${cs.cssClass}`}>
-              <div className="case-card-inner">
-              <div className="flex items-start justify-between gap-3 mb-3">
-                <h3 className="text-white font-bold text-lg">{cs.store}</h3>
-                <span className={`case-type-badge ${cs.caseType}`}>{cs.caseType}</span>
-              </div>
-              <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF] mb-2">
-                {cs.niche}
-              </div>
-              <p className="text-[#F0F4F8] font-semibold text-sm mb-2">{cs.title}</p>
-              <p className="case-tagline">{cs.tagline}</p>
-
-              <div className="space-y-3 mb-5">
-                <div>
-                  <div className="flex items-center gap-2 text-[#FF4444] text-xs font-semibold mb-1">
-                    <AlertTriangle size={12} /> The Nightmare
-                  </div>
-                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.nightmare}</p>
-                </div>
-                <div>
-                  <div className="flex items-center gap-2 text-[#F5A623] text-xs font-semibold mb-1">
-                    <Lightbulb size={12} /> The Revelation
-                  </div>
-                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.revelation}</p>
-                </div>
-                <div>
-                  <div className="flex items-center gap-2 text-[#00C6FF] text-xs font-semibold mb-1">
-                    <Zap size={12} /> The Turnaround
-                  </div>
-                  <p className="text-[#8899AA] text-sm leading-relaxed">{cs.turnaround}</p>
-                </div>
-                <div className="p-3 rounded-lg bg-[rgba(0,230,118,0.08)] border border-[rgba(0,230,118,0.15)]">
-                  <div className="flex items-center gap-2 text-[#00E676] text-xs font-semibold mb-1">
-                    <Rocket size={12} /> The Result
-                  </div>
-                  <p className="text-[#F0F4F8] text-sm font-semibold">{cs.result}</p>
-                </div>
-              </div>
-
-              <a href={`${basePath}/pdfs/case-${cs.cssClass}.pdf`} download={`${cs.store}_Case_Study.pdf`} className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline">
-                <Download size={14} /> Download Full {cs.store} Case Study PDF
-              </a>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center">
-        </div>
-      </div>
-    </section>
-  );
-}
+/* CaseStudies2Section removed — all 6 case studies now render in the
+   single #case-studies section in a 3-column compact grid. */
 
 function TechPortfolioSection() {
   const sectionRef = useScrollReveal();
@@ -2742,7 +2678,7 @@ export default function PortfolioPage() {
       <WhyWorkWithMeSection />
       <ServicesSection />
       <CaseStudiesSection />
-      <CaseStudies2Section />
+      {/* CaseStudies2Section removed — all 6 cards now in #case-studies */}
       <TechPortfolioSection />
       <TestimonialsSection />
       <ProcessSection />
