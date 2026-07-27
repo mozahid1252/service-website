@@ -1254,35 +1254,9 @@ function AboutSection() {
                 </div>
               ))}
             </div>
-
-            {/* Personal info */}
-            <div className="about2-info reveal-up" style={{ transitionDelay: '0.6s' }}>
-              <div className="about2-info-item">
-                <span className="about2-info-label">Education</span>
-                <span className="about2-info-value">University of Rajshahi</span>
-              </div>
-              <div className="about2-info-item">
-                <span className="about2-info-label">Languages</span>
-                <span className="about2-info-value">English • Bengali • Hindi • Urdu</span>
-              </div>
-              <div className="about2-info-item">
-                <span className="about2-info-label">Location</span>
-                <span className="about2-info-value">Dhaka, Bangladesh</span>
-              </div>
-            </div>
-
-            {/* CTA buttons */}
-            <div className="about2-cta reveal-up" style={{ transitionDelay: '0.7s' }}>
-              <a href={`${basePath}/pdfs/resume.pdf`} download="Mozahidul_Islam_Resume.pdf" className="about2-btn about2-btn-primary">
-                <Download size={16} /> Download CV
-              </a>
-              <a href="#case-studies" className="about2-btn about2-btn-secondary">
-                <BarChart3 size={16} /> See My Projects
-              </a>
-            </div>
           </div>
 
-          {/* RIGHT — Photo + floating stat cards */}
+          {/* RIGHT — Photo + floating stat cards + personal info + CTA */}
           <div className="about2-right reveal-up" style={{ transitionDelay: '0.3s' }}>
             <div className="about2-photo-wrap">
               <div className="about2-photo-frame">
@@ -1305,6 +1279,32 @@ function AboutSection() {
                 <span className="about2-float-v">3 Years</span>
                 <span className="about2-float-l">Experience</span>
               </div>
+            </div>
+
+            {/* Personal info — moved below profile picture */}
+            <div className="about2-info reveal-up" style={{ transitionDelay: '0.6s', marginTop: '32px' }}>
+              <div className="about2-info-item">
+                <span className="about2-info-label">Education</span>
+                <span className="about2-info-value">University of Rajshahi</span>
+              </div>
+              <div className="about2-info-item">
+                <span className="about2-info-label">Languages</span>
+                <span className="about2-info-value">English • Bengali • Hindi • Urdu</span>
+              </div>
+              <div className="about2-info-item">
+                <span className="about2-info-label">Location</span>
+                <span className="about2-info-value">Dhaka, Bangladesh</span>
+              </div>
+            </div>
+
+            {/* CTA buttons — moved below personal info */}
+            <div className="about2-cta reveal-up" style={{ transitionDelay: '0.7s', marginTop: '20px' }}>
+              <a href={`${basePath}/pdfs/resume.pdf`} download="Mozahidul_Islam_Resume.pdf" className="about2-btn about2-btn-primary">
+                <Download size={16} /> Download CV
+              </a>
+              <a href="#case-studies" className="about2-btn about2-btn-secondary">
+                <BarChart3 size={16} /> See My Projects
+              </a>
             </div>
           </div>
         </div>
