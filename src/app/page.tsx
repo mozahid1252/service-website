@@ -1574,7 +1574,7 @@ function ServicesSection() {
           {/* View Details — opens the Core E-Commerce Packages landing page */}
           <div className="text-center mt-2 mb-10">
             <a href={`${basePath}/core-packages`} target="_blank" rel="noopener noreferrer" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
-              <ExternalLink size={14} /> View Details
+              <ExternalLink size={14} /> Core E-Commerce Packages Full Details
             </a>
           </div>
 
@@ -1657,7 +1657,7 @@ function ServicesSection() {
 
           <div className="text-center mt-8">
             <a href={`${basePath}/specialized-add-on-packages`} target="_blank" rel="noopener noreferrer" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
-              <ExternalLink size={14} /> View Details
+              <ExternalLink size={14} /> Specialized Add-On Packages Full Details
             </a>
           </div>
         </div>
@@ -1761,18 +1761,18 @@ function ServicesSection() {
                 </React.Fragment>
               ))}
             </div>
-          </div>
 
-          {/* Custom Infrastructure — View Details button for the individual services box */}
-          <div className="text-center mb-8">
-            <a href={`${basePath}/custom-infrastructure`} target="_blank" rel="noopener noreferrer" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
-              <ExternalLink size={14} /> View Details
-            </a>
+            {/* Custom Infrastructure — View Details button (inside the card) */}
+            <div className="text-center mt-6">
+              <a href={`${basePath}/custom-infrastructure`} target="_blank" rel="noopener noreferrer" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
+                <ExternalLink size={14} /> View Details
+              </a>
+            </div>
           </div>
 
           <div className="text-center">
             <a href={`${basePath}/data-setup-infrastructure`} target="_blank" rel="noopener noreferrer" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
-              <ExternalLink size={14} /> View Data Setup &amp; Infrastructure Details
+              <ExternalLink size={14} /> View Data Setup &amp; Infrastructure Full Details
             </a>
           </div>
         </div>
