@@ -1689,7 +1689,7 @@ strong { color: #FFFFFF; font-weight: 700; }
 }
 
 /* ══════════════════════════════════════════
-   FAQ CARD — Brand New Split Layout
+   FAQ CARD — Accordion layout (vertical: question row + collapsible answer)
    ══════════════════════════════════════════ */
 
 .faq-card {
@@ -1732,6 +1732,13 @@ strong { color: #FFFFFF; font-weight: 700; }
   box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 70px rgba(0,198,255,0.18), 0 0 130px rgba(0,198,255,0.08) !important;
 }
 
+/* Highlight the card while it's open */
+.faq-card.open {
+  border-top-color: rgba(0,198,255,0.85);
+  border-color: rgba(0,198,255,0.35);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 70px rgba(0,198,255,0.22), 0 0 130px rgba(0,198,255,0.10) !important;
+}
+
 /* ── Watermark Number ── */
 .faq-card-number {
   position: absolute;
@@ -1749,27 +1756,41 @@ strong { color: #FFFFFF; font-weight: 700; }
   transition: color 0.38s ease;
 }
 
-.faq-card:hover .faq-card-number {
-  color: rgba(0,198,255,0.07);
+.faq-card:hover .faq-card-number,
+.faq-card.open .faq-card-number {
+  color: rgba(0,198,255,0.08);
 }
 
-/* ── Card Body — Split Layout ── */
+/* ── Card Body — Vertical accordion layout ── */
 .faq-card-body {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 42% 1px 1fr;
-  gap: 0;
-  min-height: 160px;
-}
-
-/* ── LEFT: Question Side ── */
-.faq-card-left {
-  padding: 36px 40px 36px 44px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 14px;
+}
+
+/* ── Question row (clickable button) ── */
+.faq-card-left {
+  /* reset button defaults */
+  all: unset;
+  /* re-establish layout */
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 32px 96px 32px 44px;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: relative;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+}
+
+.faq-card-left:focus-visible {
+  outline: 2px solid rgba(0,198,255,0.7);
+  outline-offset: -2px;
+  border-radius: 18px 18px 0 0;
 }
 
 .faq-card-q-label {
@@ -1782,6 +1803,7 @@ strong { color: #FFFFFF; font-weight: 700; }
   letter-spacing: 2.5px;
   text-transform: uppercase;
   color: rgba(0,198,255,0.55);
+  flex-shrink: 0;
 }
 
 .faq-q-dot {
@@ -1801,25 +1823,101 @@ strong { color: #FFFFFF; font-weight: 700; }
   line-height: 1.55;
   margin: 0;
   letter-spacing: -0.2px;
+  flex: 1;
 }
 
-/* ── CENTER: Vertical Divider ── */
+/* ── +/- Toggle icon (cross-faded) ── */
+.faq-toggle {
+  position: relative;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,198,255,0.30);
+  background: rgba(0,198,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-card-left:hover .faq-toggle {
+  border-color: rgba(0,198,255,0.55);
+  background: rgba(0,198,255,0.12);
+  box-shadow: 0 0 18px rgba(0,198,255,0.20);
+}
+
+.faq-card.open .faq-toggle {
+  border-color: rgba(0,198,255,0.65);
+  background: rgba(0,198,255,0.18);
+  box-shadow: 0 0 22px rgba(0,198,255,0.30);
+}
+
+.faq-toggle-icon {
+  position: absolute;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  color: #00C6FF;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* + visible when closed, hidden when open */
+.faq-toggle-plus {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+.faq-toggle-minus {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.6);
+}
+.faq-card.open .faq-toggle-plus {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.6);
+}
+.faq-card.open .faq-toggle-minus {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+/* ── Divider between question and answer (horizontal, only visible when open) ── */
 .faq-card-divider {
-  width: 1px;
-  background: linear-gradient(180deg, transparent 5%, rgba(0,198,255,0.25) 30%, rgba(0,198,255,0.40) 50%, rgba(0,198,255,0.25) 70%, transparent 95%);
-  transition: background 0.38s ease;
+  height: 1px;
+  width: 100%;
+  margin: 0;
+  background: linear-gradient(90deg, transparent 5%, rgba(0,198,255,0.25) 30%, rgba(0,198,255,0.40) 50%, rgba(0,198,255,0.25) 70%, transparent 95%);
+  opacity: 0;
+  transform: scaleX(0.92);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.faq-card.open .faq-card-divider {
+  opacity: 1;
+  transform: scaleX(1);
+  background: linear-gradient(90deg, transparent 5%, rgba(0,198,255,0.45) 30%, rgba(0,198,255,0.65) 50%, rgba(0,198,255,0.45) 70%, transparent 95%);
 }
 
 .faq-card:hover .faq-card-divider {
-  background: linear-gradient(180deg, transparent 5%, rgba(0,198,255,0.50) 30%, rgba(0,198,255,0.80) 50%, rgba(0,198,255,0.50) 70%, transparent 95%);
+  background: linear-gradient(90deg, transparent 5%, rgba(0,198,255,0.40) 30%, rgba(0,198,255,0.60) 50%, rgba(0,198,255,0.40) 70%, transparent 95%);
 }
 
-/* ── RIGHT: Answer Side ── */
+/* ── Answer region — collapses/expands below the question ── */
 .faq-card-right {
-  padding: 36px 48px 36px 40px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-card-right.open {
+  max-height: 600px; /* large enough for the longest answer */
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-card-right-inner {
+  padding: 28px 48px 36px 44px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   gap: 12px;
 }
 
@@ -1982,31 +2080,47 @@ strong { color: #FFFFFF; font-weight: 700; }
 
 /* ── Mobile Responsive ── */
 @media (max-width: 900px) {
-  .faq-card-body {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+  .faq-card-left {
+    padding: 28px 84px 28px 32px;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
   }
-
-  .faq-card-divider {
-    width: 100%; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0,198,255,0.30), transparent);
+  .faq-card-question {
+    flex: 1 1 100%;
+    font-size: 15px;
   }
-
-  .faq-card-left  { padding: 32px 32px 20px; }
-  .faq-card-right { padding: 20px 32px 32px; }
-
+  .faq-card-q-label {
+    /* keep label on its own line above the question when wrapping */
+  }
+  .faq-card-right-inner {
+    padding: 24px 32px 28px;
+  }
   .faq-card-number {
     font-size: 64px;
     top: 20px;
     right: 20px;
     transform: none;
   }
+  .faq-toggle {
+    position: absolute;
+    top: 28px;
+    right: 24px;
+  }
 }
 
 @media (max-width: 640px) {
   .faq-wrap        { padding: 0 20px; }
-  .faq-card-left   { padding: 24px 24px 16px; }
-  .faq-card-right  { padding: 16px 24px 24px; }
+  .faq-card-left   { padding: 24px 68px 24px 24px; gap: 12px; }
+  .faq-card-right-inner { padding: 18px 24px 22px; }
+  .faq-card-question { font-size: 14.5px; }
+  .faq-toggle {
+    top: 22px;
+    right: 18px;
+    width: 32px;
+    height: 32px;
+  }
+  .faq-toggle-icon { font-size: 20px; }
   .faq-cta-inner   {
     flex-direction: column;
     text-align: center;

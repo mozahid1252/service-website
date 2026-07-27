@@ -2124,6 +2124,67 @@ const FAQ_ITEMS = [
 
 function FAQSection() {
   const sectionRef = useScrollReveal();
+  // Accordion state: index of the currently-open FAQ item, or -1 if all closed.
+  // Only one item can be open at a time (per requirement).
+  const [openIndex, setOpenIndex] = useState<number>(-1);
+
+  const toggle = (i: number) => {
+    setOpenIndex((prev) => (prev === i ? -1 : i));
+  };
+
+  // Render a single FAQ card as an accordion item.
+  // The question row (with +/- toggle) is ALWAYS visible.
+  // The answer collapses/expands below it.
+  const renderCard = (item: { num: string; question: string; answer: React.ReactNode }, displayIndex: number) => {
+    const isOpen = openIndex === displayIndex;
+    return (
+      <article
+        className={`faq-card${isOpen ? ' open' : ''}`}
+        data-index={item.num}
+        key={item.num}
+      >
+        <div className="faq-card-number">{item.num}</div>
+        <div className="faq-card-body">
+          {/* Question row — always visible, clickable to toggle */}
+          <button
+            type="button"
+            className="faq-card-left"
+            onClick={() => toggle(displayIndex)}
+            aria-expanded={isOpen}
+            aria-controls={`faq-answer-${item.num}`}
+          >
+            <div className="faq-card-q-label">
+              <span className="faq-q-dot"></span>
+              Question
+            </div>
+            <h3 className="faq-card-question" id={`faq-question-${item.num}`}>{item.question}</h3>
+            {/* +/- toggle icon (cross-faded) */}
+            <span className="faq-toggle" aria-hidden="true">
+              <span className="faq-toggle-icon faq-toggle-plus">+</span>
+              <span className="faq-toggle-icon faq-toggle-minus">−</span>
+            </span>
+          </button>
+          <div className="faq-card-divider" aria-hidden="true"></div>
+          {/* Answer region — collapses/expands below the question */}
+          <div
+            className={`faq-card-right${isOpen ? ' open' : ''}`}
+            id={`faq-answer-${item.num}`}
+            role="region"
+            aria-labelledby={`faq-question-${item.num}`}
+          >
+            <div className="faq-card-right-inner">
+              <div className="faq-card-a-label">
+                <span className="faq-a-dot"></span>
+                Answer
+              </div>
+              <p className="faq-card-answer">{item.answer}</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    );
+  };
+
   return (
     <section id="faq" className="faq-section" ref={sectionRef}>
       <div className="faq-wrap reveal">
@@ -2149,28 +2210,7 @@ function FAQSection() {
         </div>
 
         {/* Q1–Q5 */}
-        {FAQ_ITEMS.slice(0, 5).map((item) => (
-          <article className="faq-card" data-index={item.num} key={item.num}>
-            <div className="faq-card-number">{item.num}</div>
-            <div className="faq-card-body">
-              <div className="faq-card-left">
-                <div className="faq-card-q-label">
-                  <span className="faq-q-dot"></span>
-                  Question
-                </div>
-                <h3 className="faq-card-question">{item.question}</h3>
-              </div>
-              <div className="faq-card-divider"></div>
-              <div className="faq-card-right">
-                <div className="faq-card-a-label">
-                  <span className="faq-a-dot"></span>
-                  Answer
-                </div>
-                <p className="faq-card-answer">{item.answer}</p>
-              </div>
-            </div>
-          </article>
-        ))}
+        {FAQ_ITEMS.slice(0, 5).map((item, i) => renderCard(item, i))}
 
         {/* ── Page separator ── */}
         <div className="faq-separator">
@@ -2189,28 +2229,7 @@ function FAQSection() {
         </div>
 
         {/* Q6–Q9 */}
-        {FAQ_ITEMS.slice(5, 9).map((item) => (
-          <article className="faq-card" data-index={item.num} key={item.num}>
-            <div className="faq-card-number">{item.num}</div>
-            <div className="faq-card-body">
-              <div className="faq-card-left">
-                <div className="faq-card-q-label">
-                  <span className="faq-q-dot"></span>
-                  Question
-                </div>
-                <h3 className="faq-card-question">{item.question}</h3>
-              </div>
-              <div className="faq-card-divider"></div>
-              <div className="faq-card-right">
-                <div className="faq-card-a-label">
-                  <span className="faq-a-dot"></span>
-                  Answer
-                </div>
-                <p className="faq-card-answer">{item.answer}</p>
-              </div>
-            </div>
-          </article>
-        ))}
+        {FAQ_ITEMS.slice(5, 9).map((item, i) => renderCard(item, 5 + i))}
 
         {/* ── Bottom CTA ── */}
         <div className="faq-cta">
