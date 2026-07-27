@@ -2194,7 +2194,7 @@ function FAQSection() {
           <span className="faq-eyebrow">FAQ</span>
           <h2 className="faq-title">
             Straight Answers.
-            <span className="faq-title-accent"> No Jargon.</span>
+            <span className="faq-title-accent"> No Jargon</span>
           </h2>
           <p className="faq-subtitle">
             Everything you need to know before we work together.
@@ -2202,31 +2202,8 @@ function FAQSection() {
           <div className="faq-title-bar"></div>
         </div>
 
-        {/* ── Page 1 marker ── */}
-        <div className="faq-page-marker">
-          <div className="faq-marker-dot"></div>
-          <span className="faq-marker-text">Part One</span>
-          <div className="faq-marker-line"></div>
-        </div>
-
         {/* Q1–Q5 */}
         {FAQ_ITEMS.slice(0, 5).map((item, i) => renderCard(item, i))}
-
-        {/* ── Page separator ── */}
-        <div className="faq-separator">
-          <div className="faq-sep-left"></div>
-          <div className="faq-sep-center">
-            <span className="faq-sep-label">Part Two</span>
-          </div>
-          <div className="faq-sep-right"></div>
-        </div>
-
-        {/* ── Page 2 marker ── */}
-        <div className="faq-page-marker">
-          <div className="faq-marker-dot"></div>
-          <span className="faq-marker-text">Part Two</span>
-          <div className="faq-marker-line"></div>
-        </div>
 
         {/* Q6–Q9 */}
         {FAQ_ITEMS.slice(5, 9).map((item, i) => renderCard(item, 5 + i))}
