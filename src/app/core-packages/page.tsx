@@ -1,16 +1,17 @@
 import fs from "fs";
 import path from "path";
+import LandingContent from "./landing-content";
 import "./landing.css";
 
 export default function CorePackagesPage() {
-  const bodyPath = path.join(
-    process.cwd(),
-    "src",
-    "app",
-    "core-packages",
-    "landing-body.html"
+  const bodyHtml = fs.readFileSync(
+    path.join(process.cwd(), "src", "app", "core-packages", "landing-body.html"),
+    "utf-8"
   );
-  const bodyHtml = fs.readFileSync(bodyPath, "utf-8");
+  const scriptCode = fs.readFileSync(
+    path.join(process.cwd(), "src", "app", "core-packages", "landing-script.js"),
+    "utf-8"
+  );
 
-  return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
+  return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
