@@ -189,6 +189,7 @@ const ADD_ON_PACKAGES = [
     problem: '"My ROAS is declining and I don\'t know why."',
     promise: 'You will know which channels are genuinely profitable vs. creating an illusion, the true cost of acquiring a customer through each platform, and exactly which campaigns to scale, pause, or kill.',
     cssClass: 'marketing',
+    route: '/marketing-spend-audit',
   },
   {
     name: 'Customer Retention Audit',
@@ -196,6 +197,7 @@ const ADD_ON_PACKAGES = [
     problem: '"Customers buy once and disappear."',
     promise: 'You will know which customers are about to leave (and how to reach them before they do), which channels bring loyal customers, and have an upload-ready segmented list for immediate retention campaigns.',
     cssClass: 'retention',
+    route: '/customer-retention-audit',
   },
   {
     name: 'Product Portfolio Audit',
@@ -203,6 +205,7 @@ const ADD_ON_PACKAGES = [
     problem: '"50+ SKUs, I don\'t know what to focus on."',
     promise: 'You will know which products to invest in, optimize, or cut, the true profit margin on every SKU in your catalog, and exactly which products to bundle together to increase AOV.',
     cssClass: 'portfolio',
+    route: '/product-portfolio-audit',
   },
   {
     name: 'CRO Audit',
@@ -210,6 +213,7 @@ const ADD_ON_PACKAGES = [
     problem: '"Traffic is there but nobody\'s buying."',
     promise: 'You will know exactly where visitors are abandoning (and why), which fixes will have the highest impact, and have a prioritized action list to increase conversion by 20–40% using your existing traffic.',
     cssClass: 'cro',
+    route: '/cro-audit',
   },
   {
     name: 'Profitability Audit',
@@ -217,6 +221,7 @@ const ADD_ON_PACKAGES = [
     problem: '"Revenue grows but profit doesn\'t."',
     promise: 'You will know your true profit margin on every product/channel, exactly where revenue is leaking into cost, if your promotions are eroding profit, and when your cash will be tight in coming months.',
     cssClass: 'profitability',
+    route: '/profitability-audit',
   },
   {
     name: 'Operations Efficiency Audit',
@@ -224,6 +229,7 @@ const ADD_ON_PACKAGES = [
     problem: '"Returns climbing, inventory out of control."',
     promise: 'You will know which suppliers are causing financial problems, exactly how much inventory to order (and when based on 90-day demand), the true cost of your return rate, and how to free up cash locked in dead stock.',
     cssClass: 'operations',
+    route: '/operations-efficiency-audit',
   },
 ];
 
@@ -1609,17 +1615,22 @@ function ServicesSection() {
                   <div className="text-[#00E676] text-xs font-semibold mb-1">Our Promise:</div>
                   <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
                 </div>
-                <a href="#contact" className="addon-book-btn">
-                  Book the {pkg.name} →
-                </a>
+                <div className="flex items-center gap-2 mt-4">
+                  <a href="#contact" className="addon-book-btn flex-1">
+                    Book the {pkg.name} →
+                  </a>
+                  <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline whitespace-nowrap">
+                    <ExternalLink size={12} /> View Details
+                  </a>
+                </div>
                 </div>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-8">
-            <a href={`${basePath}/pdfs/addon-packages.pdf`} download="Specialized_Add-On_Packages.pdf" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
-              <Download size={14} /> Download Full Add-On Details PDF
+            <a href={`${basePath}/specialized-add-on-packages`} target="_blank" rel="noopener noreferrer" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
+              <ExternalLink size={14} /> View Details
             </a>
           </div>
         </div>
