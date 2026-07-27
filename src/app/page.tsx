@@ -1499,9 +1499,6 @@ function ServicesSection() {
           <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             Services
           </h2>
-          <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
-            Every engagement delivers a clear finding, a specific action plan, and a direct conversation, not a data dump.
-          </p>
         </div>
 
         {/* Part 1: Core Packages */}
