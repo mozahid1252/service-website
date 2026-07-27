@@ -40,13 +40,6 @@ const QUICK_PROOF_CARDS = [
   {
     store: 'UrbanNest Home Decor',
     niche: 'Home Decor & Lifestyle, Shopify',
-    illusion: '$23K/month revenue, growing steadily. Owner thought the business was healthy.',
-    reality: '$3,460/month net profit. 14.4% net margin. The #1 best-seller (Boho Macramé) was quietly losing $769 per quarter.',
-    findings: [
-      '71% cart abandonment caused by forced account creation.',
-      'Mobile converting 2.76x worse than desktop.',
-      'A 20% promo sale actually erased margins, dropping profit by 41%.',
-    ],
     result: '$7,800/month net profit within 60 days. Ad budget flipped from Facebook to Google 1.86x higher customer LTV.',
     quote: '"I literally could not sleep after watching your Loom video."',
     author: 'Sarah K., UrbanNest Founder',
@@ -58,12 +51,6 @@ const QUICK_PROOF_CARDS = [
   {
     store: 'PawPerfect Premium',
     niche: 'Pet Supplies, Shopify + Meta Ads',
-    illusion: '$54K/month revenue. 4.9★ reviews. Looked like a thriving brand from the outside.',
-    reality: '$12,400/month net profit and shrinking. Margins had compressed 8% YoY as ad costs per customer rose 73% in 3 years.',
-    findings: [
-      'Facebook ads targeting "senior pets" (LTV $134) instead of "new pet parents" (LTV $847).',
-      'Zero referral program despite 67% of Champions coming from word-of-mouth.',
-    ],
     result: '$29,840/month net profit within 45 days. Ad targeting flipped to new pet parents. Pet birthday email automation activated.',
     quote: '"The data wasn\'t just revenue. It was relationships waiting to happen."',
     author: 'James C., PawPerfect Founder',
@@ -75,12 +62,6 @@ const QUICK_PROOF_CARDS = [
   {
     store: 'LUMIÈRE Beauty Co.',
     niche: 'Skincare & Beauty, Shopify + Google Ads',
-    illusion: '$67K/month revenue. Stable. Profitable. No obvious problems.',
-    reality: 'Plateaued for 8 consecutive months. Champions buying 8.4x/year against a 12–14x benchmark, leaving $6,785/month in untouched revenue on the table.',
-    findings: [
-      'Black Friday discount cohorts had 4.1x lower LTV and 81% churn compared to educational content cohorts.',
-      'Meta Broad campaigns were silently destroying $8,963 in value every month.',
-    ],
     result: '$41,380/month net profit within 60–75 days. Budget reallocated to Google Brand and Content. Product bundles launched. Discount strategy rebuilt from the ground up.',
     quote: '"I had been working harder and getting worse customers. For two years."',
     author: 'Priya S., LUMIÈRE Founder',
@@ -1090,125 +1071,80 @@ function WhyDataSection() {
   );
 }
 
+/* ── QUICK PROOF SECTION — Compact premium redesign ── */
 function QuickProofSection() {
   const sectionRef = useScrollReveal();
   return (
-    <section id="quick-proof" className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
-      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="section-label reveal-up">Quick Proof</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight whitespace-nowrap reveal-up" style={{ transitionDelay: '0.2s' }}>
-            The Money Was Always There. Nobody Was Looking.
+    <section id="quick-proof" className="qp3-section" ref={sectionRef}>
+      {/* Ambient background */}
+      <div className="qp3-bg-glow qp3-bg-glow-1" aria-hidden="true" />
+      <div className="qp3-bg-glow qp3-bg-glow-2" aria-hidden="true" />
+
+      <div className="qp3-inner reveal">
+        {/* ── HEADER ── */}
+        <div className="qp3-header">
+          <span className="qp3-eyebrow reveal-up">Quick Proof</span>
+          <h2 className="qp3-title reveal-up" style={{ transitionDelay: '0.15s' }}>
+            The Money Was Always There. <span className="qp3-title-accent">Nobody Was Looking.</span>
           </h2>
-          <p className="proof-red-glow quick-proof-text max-w-2xl mx-auto" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="qpw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>
-            Every single finding below came from data these founders already had. They just couldn&apos;t see it.
-          </p>
         </div>
 
-        <div className="reveal-stagger quick-proof-grid">
+        {/* ── CASE CARDS (3-column grid, compact) ── */}
+        <div className="qp3-grid reveal-stagger">
           {QUICK_PROOF_CARDS.map((card, i) => (
-            <div
+            <article
               key={i}
-              className={`quick-proof-card quick-proof-card-${i + 1} bg-[#0D1520] border border-[rgba(0,198,255,0.12)] rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] group`}
+              className={`qp3-card qp3-card-${i + 1} reveal-up`}
+              style={{ transitionDelay: `${0.3 + i * 0.12}s` }}
             >
-              <div className="quick-proof-card-inner">
+              {/* Top accent bar */}
+              <div className="qp3-accent" aria-hidden="true" />
 
-                {/* LEFT: Store identity + result + stats */}
-                <div className="qp-left-col">
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="qp-store-name">{card.store}</h3>
-                    </div>
-                    <span className="qp-category-tag inline-block px-3 py-1 rounded-full text-xs font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF]">
-                      {card.niche}
-                    </span>
-                  </div>
-
-                  {/* Result highlight */}
-                  <div className="qp-result-number p-3 rounded-lg bg-[rgba(0,230,118,0.08)] border border-[rgba(0,230,118,0.15)]">
-                    <div className="flex items-center gap-2 text-[#00E676] text-sm font-semibold mb-1">
-                      <Check size={14} /> The Result
-                    </div>
-                    <p className="text-[#F0F4F8] text-sm leading-relaxed">{card.result}</p>
-                  </div>
-
-                  {/* Stats row — 4 equal cells, green highlight */}
-                  <div className="qp-stats-row">
-                    <div className="qp-stat-cell">
-                      <span className="qp-stat-label">Investment</span>
-                      <span className="qp-stat-value">{card.investment}</span>
-                    </div>
-                    <div className="qp-stat-cell">
-                      <span className="qp-stat-label">Timeline</span>
-                      <span className="qp-stat-value">{card.timeline}</span>
-                    </div>
-                    <div className="qp-stat-cell profit">
-                      <span className="qp-stat-label">Profit Added</span>
-                      <span className="qp-stat-value">{card.profitAdded}</span>
-                    </div>
-                    <div className="qp-stat-cell roi">
-                      <span className="qp-stat-label">ROI</span>
-                      <span className="qp-stat-value">{card.roi}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* DIVIDER */}
-                <div className="qp-col-divider"></div>
-
-                {/* RIGHT: 2x2 content grid */}
-                <div className="qp-right-col">
-                  <div className="qp-content-grid">
-
-                    {/* The Illusion */}
-                    <div className="qp-content-block">
-                      <div className="qp-section-label flex items-center gap-2 text-[#FF4444]">
-                        <AlertTriangle size={14} /> The Illusion
-                      </div>
-                      <p className="qp-section-text">{card.illusion}</p>
-                    </div>
-
-                    {/* The Reality */}
-                    <div className="qp-content-block">
-                      <div className="qp-section-label flex items-center gap-2 text-[#F5A623]">
-                        <AlertTriangle size={14} /> The Reality
-                      </div>
-                      <p className="qp-section-text">{card.reality}</p>
-                    </div>
-
-                    {/* What We Found */}
-                    <div className="qp-content-block">
-                      <div className="qp-section-label flex items-center gap-2 text-[#00C6FF]">
-                        <Target size={14} /> What We Found
-                      </div>
-                      <ul className="qp-found-list">
-                        {card.findings.map((f, fi) => (
-                          <li key={fi}>{f}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Quote */}
-                    <div className="qp-content-block">
-                      <div className="qp-section-label" style={{ opacity: 0 }}>·</div>
-                      <p className="qp-section-text" style={{ fontStyle: 'italic', color: 'rgba(255,255,255,0.38)' }}>
-                        {card.quote}
-                        <span className="qp-quote-author">{card.author}</span>
-                      </p>
-                    </div>
-
-                  </div>
-                </div>
-
+              {/* Header: store + niche */}
+              <div className="qp3-card-head">
+                <h3 className="qp3-store">{card.store}</h3>
+                <span className="qp3-niche">{card.niche}</span>
               </div>
-            </div>
+
+              {/* Result */}
+              <div className="qp3-result">
+                <span className="qp3-result-label">The Result</span>
+                <p className="qp3-result-text">{card.result}</p>
+              </div>
+
+              {/* Stats: 2x2 grid */}
+              <div className="qp3-stats">
+                <div className="qp3-stat">
+                  <span className="qp3-stat-v">{card.investment}</span>
+                  <span className="qp3-stat-l">Investment</span>
+                </div>
+                <div className="qp3-stat">
+                  <span className="qp3-stat-v">{card.timeline}</span>
+                  <span className="qp3-stat-l">Timeline</span>
+                </div>
+                <div className="qp3-stat qp3-stat-hl">
+                  <span className="qp3-stat-v">{card.profitAdded}</span>
+                  <span className="qp3-stat-l">Profit Added</span>
+                </div>
+                <div className="qp3-stat qp3-stat-roi">
+                  <span className="qp3-stat-v">{card.roi}</span>
+                  <span className="qp3-stat-l">ROI</span>
+                </div>
+              </div>
+
+              {/* Quote */}
+              <div className="qp3-quote">
+                <p className="qp3-quote-text">{card.quote.replace(/"/g, '')}</p>
+                <span className="qp3-quote-author">— {card.author}</span>
+              </div>
+            </article>
           ))}
         </div>
 
-        <div className="text-center mt-10">
-          <p className="text-[#8899AA] text-base mb-4">These aren&apos;t edge cases. This is what happens when you stop running your store on gut feeling and start running it on data.</p>
-          <a href="#case-studies" className="inline-flex items-center gap-2 text-[#00C6FF] font-semibold hover:gap-3 transition-all">
-            See The Full Case Studies <ArrowRight size={16} />
+        {/* CTA button */}
+        <div className="qp3-cta-wrap reveal-up" style={{ transitionDelay: '0.8s' }}>
+          <a href="#case-studies" className="qp3-cta">
+            See The Full Case Studies <ArrowRight size={15} />
           </a>
         </div>
       </div>
@@ -2702,7 +2638,7 @@ export default function PortfolioPage() {
     window.addEventListener('scroll', onScroll, { passive: true });
 
     /* Scroll reveal — activate reveal elements as they enter view */
-    const REVEAL_SELECTOR = '.reveal, .reveal-stagger, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade, .count-up, .quick-proof-text, .sg-sk-text';
+    const REVEAL_SELECTOR = '.reveal, .reveal-stagger, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-fade, .count-up, .sg-sk-text';
     let revealIO: IntersectionObserver | null = null;
     const checkReveals = () => {
       document.querySelectorAll<HTMLElement>(REVEAL_SELECTOR).forEach((el) => {
