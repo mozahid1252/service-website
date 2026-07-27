@@ -1615,11 +1615,11 @@ function ServicesSection() {
                   <div className="text-[#00E676] text-xs font-semibold mb-1">Our Promise:</div>
                   <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
                 </div>
-                <div className="flex items-center gap-2 mt-4">
-                  <a href="#contact" className="addon-book-btn flex-1">
+                <div className="flex items-stretch gap-2 mt-4">
+                  <a href="#contact" className="addon-book-btn flex-1 items-center">
                     Book the {pkg.name} →
                   </a>
-                  <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline whitespace-nowrap">
+                  <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline whitespace-nowrap self-stretch">
                     <ExternalLink size={12} /> View Details
                   </a>
                 </div>
