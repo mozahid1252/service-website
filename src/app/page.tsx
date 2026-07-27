@@ -1162,122 +1162,149 @@ function QuickProofSection() {
   );
 }
 
+/* ── ABOUT SECTION — Premium light editorial redesign ── */
 function AboutSection() {
   const sectionRef = useScrollReveal();
+  const achievements = [
+    { value: 2.75, prefix: '', suffix: 'M+', label: 'Data Events Processed' },
+    { value: 3, prefix: '', suffix: '', label: 'Years Experienced' },
+    { value: 100, prefix: '', suffix: '+', label: 'Projects Delivered' },
+    { value: 6, prefix: '', suffix: '+', label: 'Industries Served' },
+  ];
   return (
-    <section id="about" className="bg-[#020408] py-20 sm:py-28" ref={sectionRef}>
-      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12" style={{ alignItems: 'stretch' }}>
-          {/* Left - Photo */}
-          <div className="relative h-full min-h-[600px]">
-            <div className="relative h-full min-h-[600px] rounded-[20px] overflow-hidden border-2 border-[rgba(0,198,255,0.2)]" style={{ boxShadow: '0 0 40px rgba(0,198,255,0.15)' }}>
-              <Image
-                src={`${basePath}/images/photo1.png`}
-                alt="Mozahidul Islam - E-Commerce Growth Analyst"
-                fill
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-cover img-premium"
-                priority
-              />
+    <section id="about" className="about2-section" ref={sectionRef}>
+      <div className="about2-inner reveal">
+        {/* ── TOP ROW: two-column layout ── */}
+        <div className="about2-grid">
+          {/* LEFT — Content */}
+          <div className="about2-left">
+            {/* Eyebrow + name + role */}
+            <div className="about2-identity reveal-up">
+              <span className="about2-eyebrow">About</span>
+              <h2 className="about2-name">Mozahidul Islam</h2>
+              <p className="about2-role">E-Commerce Growth Analyst</p>
             </div>
-            {/* Floating Stats */}
-            <div className="absolute -right-4 top-8 glass rounded-xl px-4 py-3" style={{ animation: 'float 6s ease-in-out infinite' }}>
-              <div className="gradient-text text-lg font-bold">$53.5M+</div>
-              <div className="text-[#8899AA] text-xs">Revenue Tracked</div>
-            </div>
-            <div className="absolute -left-4 bottom-24 glass rounded-xl px-4 py-3" style={{ animation: 'float 6s ease-in-out infinite 2s' }}>
-              <div className="gradient-text-gold text-lg font-bold">3 Years</div>
-              <div className="text-[#8899AA] text-xs">Experience</div>
-            </div>
-            <div className="absolute -right-4 bottom-8 glass rounded-xl px-4 py-3" style={{ animation: 'float 6s ease-in-out infinite 4s' }}>
-              <div className="text-[#00E676] text-lg font-bold">Available <span className="inline-block w-2 h-2 rounded-full bg-[#00E676] animate-pulse" /></div>
-              <div className="text-[#8899AA] text-xs">For Projects</div>
-            </div>
-          </div>
 
-          {/* Right - Content */}
-          <div>
-            <span className="section-label about-stagger-1 reveal-up">The Analyst Behind the Data</span>
-            <h2 className="section-headline text-[clamp(28px,3.5vw,44px)] font-extrabold text-white mt-3 mb-2 leading-tight uppercase tracking-tight about-stagger-2 reveal-up">
-              I Don&apos;t Just Build Dashboards.
-            </h2>
-            <h3 className="section-headline text-[clamp(20px,2.5vw,32px)] font-bold gradient-text mb-6 uppercase tracking-tight about-stagger-3 reveal-up">
-              I Build the Engine That Powers Them.
-            </h3>
-
-            <div className="about-text-card mt-6 mb-6">
-              <p className="text-[#8899AA] text-sm leading-relaxed mb-4">
-                Hi, I&apos;m <strong className="text-white">Mozahidul Islam</strong>, E-Commerce Growth Analyst.
-              </p>
-              <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
-                For 3 years, I worked behind the scenes at a Bangladesh-based agency, leading the data strategy and analysis for e-commerce clients. The kind of deep-dive work you&apos;ll see in the case studies on this site.
-              </p>
-              <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
-                In 2026, I decided it was time to do this on my own. Not because the work changed, it&apos;s the same rigor, the same process, but because I wanted to work directly with founders, build real relationships, and skip the layers in between.
-              </p>
-              <p className="text-[#8899AA] text-sm leading-relaxed mb-4">
-                This site is the start of that next chapter.
-              </p>
-
-              <div className="mb-4">
-                <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-3 flex items-center gap-2">
-                  <span className="w-8 h-[2px] bg-[#00C6FF]" /> What I Do
-                </div>
-                <p className="text-[#8899AA] text-sm leading-relaxed mb-3">
-                  I connect the data founders already have, <strong>Shopify, GA4, Meta Ads, Klaviyo</strong>, into one reliable source of truth, then turn it into decisions you can actually act on.
-                </p>
-                <p className="text-[#8899AA] text-sm leading-relaxed">
-                  Not vanity metrics. Not a dashboard you check once and forget. Just a clear answer to the question every founder eventually asks: <strong>where is the money actually going?</strong>
-                </p>
+            {/* Hero stats */}
+            <div className="about2-hero-stats reveal-up" style={{ transitionDelay: '0.1s' }}>
+              <div className="about2-hero-stat">
+                <span className="about2-hero-stat-v">$53.5M+</span>
+                <span className="about2-hero-stat-l">Revenue Tracked</span>
+              </div>
+              <div className="about2-hero-divider" aria-hidden="true" />
+              <div className="about2-hero-stat">
+                <span className="about2-hero-stat-v">3 Years</span>
+                <span className="about2-hero-stat-l">Experience</span>
+              </div>
+              <div className="about2-hero-divider" aria-hidden="true" />
+              <div className="about2-hero-stat about2-hero-stat-available">
+                <span className="about2-available-dot" aria-hidden="true" />
+                <span className="about2-hero-stat-l">Available For Projects</span>
               </div>
             </div>
 
-            {/* By The Numbers */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-              {[
-                { value: 2.75, prefix: '', suffix: 'M+', label: 'Data Events Processed' },
-                { value: 3, prefix: '', suffix: '', label: 'Years Experienced' },
-                { value: 100, prefix: '', suffix: '+', label: 'Projects Delivered' },
-                { value: 6, prefix: '', suffix: '+', label: 'Industries Served' },
-              ].map((stat, i) => (
-                <div key={i} className="text-center p-4 glass rounded-xl">
-                  <div className="gradient-text text-2xl font-bold">
+            {/* Heading */}
+            <div className="about2-heading reveal-up" style={{ transitionDelay: '0.2s' }}>
+              <p className="about2-heading-label">The Analyst Behind the Data</p>
+              <h3 className="about2-headline">
+                I Don&apos;t Just Build Dashboards.
+                <br />
+                <span className="about2-headline-accent">I Build the Engine That Powers Them.</span>
+              </h3>
+            </div>
+
+            {/* Introduction */}
+            <div className="about2-intro reveal-up" style={{ transitionDelay: '0.3s' }}>
+              <p>
+                Hi, I&apos;m <strong>Mozahidul Islam</strong>, E-Commerce Growth Analyst.
+              </p>
+              <p>
+                For 3 years, I worked behind the scenes at a Bangladesh-based agency, leading the data strategy and analysis for e-commerce clients. The kind of deep-dive work you&apos;ll see in the case studies on this site.
+              </p>
+              <p>
+                In 2026, I decided it was time to do this on my own. Not because the work changed, it&apos;s the same rigor, the same process, but because I wanted to work directly with founders, build real relationships, and skip the layers in between.
+              </p>
+              <p>
+                This site is the start of that next chapter.
+              </p>
+            </div>
+
+            {/* What I Do */}
+            <div className="about2-whatido reveal-up" style={{ transitionDelay: '0.4s' }}>
+              <div className="about2-whatido-label">
+                <span className="about2-whatido-line" aria-hidden="true" />
+                What I Do
+              </div>
+              <p className="about2-whatido-text">
+                I connect the data founders already have, <strong>Shopify, GA4, Meta Ads, Klaviyo</strong>, into one reliable source of truth, then turn it into decisions you can actually act on.
+              </p>
+              <p className="about2-whatido-text">
+                Not vanity metrics. Not a dashboard you check once and forget. Just a clear answer to the question every founder eventually asks: <strong>where is the money actually going?</strong>
+              </p>
+            </div>
+
+            {/* Achievement cards */}
+            <div className="about2-achievements reveal-up" style={{ transitionDelay: '0.5s' }}>
+              {achievements.map((stat, i) => (
+                <div key={i} className="about2-achievement">
+                  <span className="about2-achievement-v">
                     <Counter target={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
-                  </div>
-                  <div className="text-[#8899AA] text-xs mt-1 uppercase">{stat.label}</div>
+                  </span>
+                  <span className="about2-achievement-l">{stat.label}</span>
                 </div>
               ))}
             </div>
 
-            {/* Credentials */}
-            <div className="glass rounded-xl p-5 mb-6">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div>
-                  <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-1">Education</div>
-                  <div className="text-white text-sm font-medium">University of Rajshahi</div>
-                </div>
-                <div className="overflow-visible">
-                  <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-1">Languages</div>
-                  <div className="text-white text-sm font-medium whitespace-nowrap">English | Bengali | Hindi | Urdu</div>
-                </div>
-                <div className="sm:pl-6">
-                  <div className="text-[#00C6FF] text-xs font-semibold tracking-wider uppercase mb-1 flex items-center gap-1.5">
-                    <MapPin size={14} className="shrink-0" /> Location
-                  </div>
-                  <div className="text-white text-sm font-medium">Dhaka, Bangladesh</div>
-                </div>
+            {/* Personal info */}
+            <div className="about2-info reveal-up" style={{ transitionDelay: '0.6s' }}>
+              <div className="about2-info-item">
+                <span className="about2-info-label">Education</span>
+                <span className="about2-info-value">University of Rajshahi</span>
+              </div>
+              <div className="about2-info-item">
+                <span className="about2-info-label">Languages</span>
+                <span className="about2-info-value">English • Bengali • Hindi • Urdu</span>
+              </div>
+              <div className="about2-info-item">
+                <span className="about2-info-label">Location</span>
+                <span className="about2-info-value">Dhaka, Bangladesh</span>
               </div>
             </div>
 
-            {/* CTA */}
-            <div className="flex flex-wrap gap-4">
-              <a href={`${basePath}/pdfs/resume.pdf`} download="Mozahidul_Islam_Resume.pdf" className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 inline-flex items-center gap-2 no-underline"
-                style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
+            {/* CTA buttons */}
+            <div className="about2-cta reveal-up" style={{ transitionDelay: '0.7s' }}>
+              <a href={`${basePath}/pdfs/resume.pdf`} download="Mozahidul_Islam_Resume.pdf" className="about2-btn about2-btn-primary">
                 <Download size={16} /> Download CV
               </a>
-              <a href="#case-studies" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2">
+              <a href="#case-studies" className="about2-btn about2-btn-secondary">
                 <BarChart3 size={16} /> See My Projects
               </a>
+            </div>
+          </div>
+
+          {/* RIGHT — Photo + floating stat cards */}
+          <div className="about2-right reveal-up" style={{ transitionDelay: '0.3s' }}>
+            <div className="about2-photo-wrap">
+              <div className="about2-photo-frame">
+                <Image
+                  src={`${basePath}/images/photo1.png`}
+                  alt="Mozahidul Islam — E-Commerce Growth Analyst"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              {/* Floating stat card 1 — Revenue */}
+              <div className="about2-float-card about2-float-card-1">
+                <span className="about2-float-v">$53.5M+</span>
+                <span className="about2-float-l">Revenue Tracked</span>
+              </div>
+              {/* Floating stat card 2 — Experience */}
+              <div className="about2-float-card about2-float-card-2">
+                <span className="about2-float-v">3 Years</span>
+                <span className="about2-float-l">Experience</span>
+              </div>
             </div>
           </div>
         </div>
