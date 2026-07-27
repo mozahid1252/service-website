@@ -234,9 +234,9 @@ const ADD_ON_PACKAGES = [
 ];
 
 const DATA_BUNDLES = [
-  { name: 'Basic Setup', bestFor: 'One-time analysis clients (2-3 platforms)', timeline: '2–3 Days', investment: '$150 – $300', cssClass: 'infra-wrapper-basic' },
-  { name: 'Full Pipeline Setup', bestFor: 'Ongoing/recurring clients (All APIs + Merge)', timeline: '5–7 Days', investment: '$500 – $900', cssClass: 'infra-wrapper-pipeline' },
-  { name: 'Full Pipeline + Automation', bestFor: 'Live dashboard & retainer clients (Auto-updating)', timeline: '7–10 Days', investment: '$700 – $1,200', cssClass: 'infra-wrapper-auto' },
+  { name: 'Basic Setup', bestFor: 'One-time analysis clients (2-3 platforms)', timeline: '2–3 Days', investment: '$150 – $300', cssClass: 'infra-wrapper-basic', route: '/basic-setup' },
+  { name: 'Full Pipeline Setup', bestFor: 'Ongoing/recurring clients (All APIs + Merge)', timeline: '5–7 Days', investment: '$500 – $900', cssClass: 'infra-wrapper-pipeline', route: '/full-pipeline-setup' },
+  { name: 'Full Pipeline + Automation', bestFor: 'Live dashboard & retainer clients (Auto-updating)', timeline: '7–10 Days', investment: '$700 – $1,200', cssClass: 'infra-wrapper-auto', route: '/full-pipeline-automation' },
 ];
 
 const BUNDLE_FEATURES = [
@@ -1711,6 +1711,9 @@ function ServicesSection() {
                   <a href="#contact" className="infra-book-btn">
                     Book the {bundle.name} →
                   </a>
+                  <a href={`${basePath}${bundle.route}`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline w-full">
+                    <ExternalLink size={12} /> View Details
+                  </a>
                   </div>
                 </div>
               );
@@ -1760,9 +1763,16 @@ function ServicesSection() {
             </div>
           </div>
 
+          {/* Custom Infrastructure — View Details button for the individual services box */}
+          <div className="text-center mb-8">
+            <a href={`${basePath}/custom-infrastructure`} target="_blank" rel="noopener noreferrer" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
+              <ExternalLink size={14} /> View Details
+            </a>
+          </div>
+
           <div className="text-center">
-            <a href={`${basePath}/pdfs/data-setup-infrastructure.pdf`} download="Data_Setup_Infrastructure_Services.pdf" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
-              <Download size={14} /> Download Data Setup &amp; Infrastructure Details PDF
+            <a href={`${basePath}/data-setup-infrastructure`} target="_blank" rel="noopener noreferrer" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
+              <ExternalLink size={14} /> View Data Setup &amp; Infrastructure Details
             </a>
           </div>
         </div>
