@@ -1531,10 +1531,10 @@ function ServicesSection() {
             ))}
           </div>
 
-          {/* Shared download — one PDF for all three Core E-Commerce Packages (Starter, Growth, Advanced) */}
+          {/* View Details — opens the Core E-Commerce Packages landing page */}
           <div className="text-center mt-2 mb-10">
-            <a href={`${basePath}/pdfs/core-packages.pdf`} download="Core_E-Commerce_Packages_Details.pdf" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
-              <Download size={14} /> Download Core E-Commerce Packages Details PDF
+            <a href={`${basePath}/core-packages.html`} target="_blank" rel="noopener noreferrer" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
+              <ExternalLink size={14} /> View Details
             </a>
           </div>
 
