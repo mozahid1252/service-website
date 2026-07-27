@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export const dynamic = 'force-static';
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
   const htmlPath = path.join(process.cwd(), 'src', 'app', 'core-packages', 'landing.html');
