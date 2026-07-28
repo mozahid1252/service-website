@@ -951,7 +951,7 @@ function HeroSection() {
                 <>
                   <div className="hero-rating-stars text-xl sm:text-2xl leading-none" title="4.9 out of 5 stars">
                     {[1, 2, 3, 4, 5].map((s) => (
-                      <span key={s} className="hero-star" style={{ animationDelay: `${0.8 + s * 0.15}s` }}>★</span>
+                      <span key={s} className="hero-star" style={{ animationDelay: `${0.8 + s * 0.15}s` }}><Star size={20} className="inline-block" fill="currentColor" /></span>
                     ))}
                   </div>
                   <div className="font-bold text-white text-sm mt-1.5">

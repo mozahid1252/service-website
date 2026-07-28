@@ -310,13 +310,13 @@ input:focus, textarea:focus, select:focus {
 .gradient-text {
   background: linear-gradient(135deg, #00C6FF, #0072FF);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: initial;
   background-clip: text;
 }
 .gradient-text-gold {
   background: linear-gradient(135deg, #F5A623, #F7D774);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: initial;
   background-clip: text;
 }
 
@@ -2709,10 +2709,7 @@ table.infra-table {
    ============================================ */
 
 .hero-rating-stars {
-  background: linear-gradient(135deg, #00C6FF, #0072FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #00C6FF;
   letter-spacing: 1px;
   /* glowing star effect */
   filter: drop-shadow(0 0 6px rgba(0, 198, 255, 0.65)) drop-shadow(0 0 14px rgba(0, 114, 255, 0.45));
@@ -2727,17 +2724,17 @@ table.infra-table {
   }
 }
 
-/* Individual star spans — need their own gradient since parent uses transparent fill */
+/* Individual star spans — SVG icons use fill=currentColor */
 .hero-star {
+  color: #00C6FF;
   display: inline-block;
-  background: linear-gradient(135deg, #00C6FF, #0072FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   opacity: 0;
   transform: scale(0) rotate(-45deg);
   animation: heroStarPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  vertical-align: middle;
 }
+
+.hero-star svg { display: block; }
 
 /* ============================================
    PREMIUM SCROLL REVEAL ANIMATIONS
@@ -2835,6 +2832,7 @@ table.infra-table {
 
 /* Each star pops in individually */
 .hero-star {
+  color: #00C6FF;
   display: inline-block;
   opacity: 0;
   transform: scale(0) rotate(-45deg);
@@ -2850,7 +2848,8 @@ table.infra-table {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-stat-card { opacity: 1 !important; transform: none !important; animation: none !important; }
-  .hero-star { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .hero-star {
+  color: #00C6FF; opacity: 1 !important; transform: none !important; animation: none !important; }
 }
 
 /* ============================================
@@ -3359,7 +3358,7 @@ table.infra-table {
   background: linear-gradient(135deg, #00C6FF 0%, #00E676 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: initial;
   font-size: 0.72em;
   margin-top: 6px;
   letter-spacing: -1.5px;
@@ -3615,7 +3614,7 @@ table.infra-table {
   background: linear-gradient(135deg, #00C6FF, #00E676);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: initial;
   letter-spacing: -1px;
   line-height: 1;
 }
@@ -3763,7 +3762,7 @@ table.infra-table {
   background: linear-gradient(135deg, #00E676 0%, #00C6FF 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: initial;
 }
 
 /* ── GRID ── */
