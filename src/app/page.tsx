@@ -1353,9 +1353,6 @@ function WhyMeSection() {
               <span className="whyme-title-accent">That Shape Every Engagement</span>
             </h2>
           </div>
-          <p className="whyme-intro reveal-up" style={{ transitionDelay: '0.3s' }}>
-            Not a framework. Not a template. Just four non-negotiable standards that define how I work — and why the work actually moves the needle.
-          </p>
         </div>
 
         {/* ── PRINCIPLES LIST ── */}

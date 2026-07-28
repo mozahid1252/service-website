@@ -3358,7 +3358,7 @@ table.infra-table {
   background: linear-gradient(135deg, #00C6FF 0%, #00E676 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: initial;
+  -webkit-text-fill-color: transparent;
   font-size: 0.72em;
   margin-top: 6px;
   letter-spacing: -1.5px;
@@ -3614,7 +3614,7 @@ table.infra-table {
   background: linear-gradient(135deg, #00C6FF, #00E676);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: initial;
+  -webkit-text-fill-color: transparent;
   letter-spacing: -1px;
   line-height: 1;
 }
