@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Basic Data Setup | MozIntelligence',
-  description: 'A fast, one-time data setup for Shopify stores. We connect, extract, and clean your data for a single, reliable analytics engagement.',
+  title: 'Basic Data Setup | Engineering Infrastructure | Moz Intelligence',
+  description: 'A fast, one-time data infrastructure setup for Shopify stores. We engineer the cloud environment and extract data for a single, reliable analytics engagement.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

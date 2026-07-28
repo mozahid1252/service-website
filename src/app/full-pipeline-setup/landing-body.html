@@ -2,114 +2,284 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#" class="logo">Moz<span>Intelligence</span></a>
-    <a href="#cta" class="nav-cta">Get Started</a>
+    <a href="#" class="logo">Moz <span>Intelligence</span></a>
+    <ul class="nav-links" style="display:flex; gap:32px; list-style:none;">
+      <li><a href="#included" style="color:var(--muted); font-size:14px;">Included</a></li>
+      <li><a href="#services" style="color:var(--muted); font-size:14px;">Services</a></li>
+      <li><a href="#faq" style="color:var(--muted); font-size:14px;">FAQ</a></li>
+      <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
+    </ul>
+    <a href="#pricing" class="nav-cta">Get Started</a>
   </div>
 </nav>
 
-<!-- Hero -->
 <header class="hero">
   <div class="container">
-    <div class="reveal">
-      <div class="eyebrow" style="margin: 0 auto;">Bundle 02 · Full Pipeline Setup</div>
-      <h1>Build a permanent <em>data infrastructure.</em></h1>
-      <p>For ongoing and recurring analytics. We engineer a structured data pipeline that merges all your platforms into one central BigQuery database—giving you reliable, automated reporting without manual exports.</p>
-      <div class="hero-cta">
-        <a href="#summary" class="btn btn-primary">Build the Pipeline</a>
-        <a href="#tech" class="btn btn-outline">View Architecture</a>
-      </div>
-    </div>
-
-    <div class="arch-flow reveal">
-      <div class="arch-node">
-        <div class="arch-icon"><i class="fa-brands fa-shopify"></i></div>
-        <h4>Shopify</h4><p>Sales & Orders</p>
-      </div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node">
-        <div class="arch-icon"><i class="fa-solid fa-database"></i></div>
-        <h4>BigQuery DB</h4><p>Single Source of Truth</p>
-      </div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node">
-        <div class="arch-icon"><i class="fa-solid fa-chart-pie"></i></div>
-        <h4>Looker Studio</h4><p>Live Dashboards</p>
-      </div>
+    <div class="eyebrow" style="margin: 0 auto;">Bundle 02 · Full Pipeline Setup</div>
+    <h1>Build a permanent <em>data infrastructure.</em></h1>
+    <p>For ongoing and recurring analytics. We engineer a structured data pipeline that merges all your platforms into one central BigQuery database—giving you reliable, automated reporting without manual exports.</p>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn btn-primary">Build the Pipeline</a>
+      <a href="#included" class="btn btn-outline" style="border-color:var(--border-dark);">What's Included</a>
     </div>
   </div>
 </header>
 
-<!-- Original Package Summary Card -->
-<section id="summary" style="background: var(--bg); padding: 60px 0 40px;">
-  <div class="container" style="display: flex; justify-content: center;">
-    <div class="reveal" style="max-width: 450px; width: 100%; background: var(--surface); border: 2px solid var(--accent); border-radius: var(--radius-xl); padding: 32px; box-shadow: 0 20px 40px -10px rgba(79,70,229,0.2); position: relative; overflow: hidden;">
-      <div style="margin-bottom: 16px;">
-        <h3 style="font-size: 22px; margin-bottom: 8px;">Full Pipeline Setup</h3>
-        <p style="font-size: 14px; color: var(--muted); min-height: 60px;">For ongoing and recurring clients. You need a permanent, structured data pipeline that can be refreshed regularly and used across multiple analyses over time.</p>
-      </div>
-      <div style="font-family: 'Manrope', sans-serif; font-size: 40px; font-weight: 800; color: var(--text); margin: 16px 0 8px;">$500 — $900</div>
-      <div style="font-size: 13px; color: var(--light); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border);">ONE-TIME FEE • 5–7 Business Days • Ongoing / Recurring</div>
-      <ul style="list-style: none; margin-bottom: 24px;">
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Cloud Infrastructure + API Connections</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Data Pipeline Build (per platform)</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Data Cleaning & Standardization</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Multi-Platform Merge Logic</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> BigQuery Load Script</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Dashboard Data-Source Connection</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-xmark" style="color: var(--light); width: 16px;"></i> Automated Scheduling</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-xmark" style="color: var(--light); width: 16px;"></i> Error Alerts & Credential Security</li>
-      </ul>
-      <p style="font-size: 12px; color: var(--light); margin-bottom: 16px;">Best for: Advanced Package clients.</p>
-      <a href="#cta" class="btn btn-primary" style="width: 100%; justify-content: center;">Choose Full Pipeline</a>
-    </div>
-  </div>
-</section>
-
-<!-- What It Includes / Split -->
-<section id="tech" style="background: #FFF;">
+<!-- Everything Included -->
+<section id="included" style="background: var(--surface);">
   <div class="container">
-    <div class="split reveal">
-      <div class="split-text">
-        <div class="eyebrow">What This Includes</div>
-        <h2>From scattered sources to a unified master table.</h2>
-        <p>We don't just pull data; we engineer a permanent merge logic. Your Shopify orders, GA4 sessions, and Ad spends are aligned into one clean, comparable dataset ready for advanced analysis.</p>
-        <ul class="feature-list">
-          <li><i class="fa-solid fa-check-circle"></i><div><b>All Platform API Connections</b><span>Shopify, GA4, Meta, Google Ads, Klaviyo.</span></div></li>
-          <li><i class="fa-solid fa-check-circle"></i><div><b>Multi-Platform Merge Logic</b><span>We combine data into one master table using unified identifiers.</span></div></li>
-          <li><i class="fa-solid fa-check-circle"></i><div><b>BigQuery Load Script</b><span>Automated scripts upload your cleaned data into your central database.</span></div></li>
-          <li><i class="fa-solid fa-check-circle"></i><div><b>Dashboard Connection</b><span>Direct link from BigQuery to Looker Studio for live reporting.</span></div></li>
+    <div class="header-center">
+      <div class="eyebrow">The Upgrade</div>
+      <h2>Everything Included in Basic Setup</h2>
+      <p>This package is an upgrade, not a replacement. It includes 100% of the Basic Setup, plus advanced engineering components.</p>
+    </div>
+    <div class="inclusion-grid">
+      <div class="inclusion-card">
+        <h3>Basic Setup Inclusions</h3>
+        <ul class="inclusion-list">
+          <li><i class="fa-solid fa-check-circle"></i> Cloud Infrastructure Setup</li>
+          <li><i class="fa-solid fa-check-circle"></i> Relevant Platform API Connections (2-3)</li>
+          <li><i class="fa-solid fa-check-circle"></i> Data Pipeline Build (Extraction)</li>
+          <li><i class="fa-solid fa-check-circle"></i> Basic Data Cleaning</li>
         </ul>
       </div>
-      <div class="code-block">
-        <div class="code-header">
-          <div class="code-dot red"></div><div class="code-dot yellow"></div><div class="code-dot green"></div>
-          <span class="code-title">merge_pipeline.sql</span>
-        </div>
-        <div class="code-body">
-          <span class="code-comment"># Multi-Platform Merge Logic</span><br>
-          <span class="code-var">SELECT</span> t1.order_id, t1.date, t2.sessions, t3.ad_spend<br>
-          <span class="code-var">FROM</span> `shopify.orders` <span class="code-var">AS</span> t1<br>
-          <span class="code-var">JOIN</span> `ga4.sessions` <span class="code-var">AS</span> t2 <span class="code-var">ON</span> t1.date = t2.date<br>
-          <span class="code-var">JOIN</span> `meta.ads` <span class="code-var">AS</span> t3 <span class="code-var">ON</span> t1.date = t3.date<br><br>
-          <span class="code-fn">LOAD INTO</span> `bigquery.master_table`;<br>
-          <span class="code-success">✓ Master table created. 0 conflicts.</span>
-        </div>
+      <div class="inclusion-card" style="background: var(--accent-light); border-color: var(--accent);">
+        <h3>Full Pipeline Additions</h3>
+        <ul class="inclusion-list">
+          <li><i class="fa-solid fa-plus-circle"></i> All Platform APIs (5+)</li>
+          <li><i class="fa-solid fa-plus-circle"></i> Multi-Platform Merge Logic</li>
+          <li><i class="fa-solid fa-plus-circle"></i> BigQuery Load Script</li>
+          <li><i class="fa-solid fa-plus-circle"></i> Dashboard Data-Source Connection</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section id="cta" style="padding-bottom: 120px; background: #FFF;">
+<!-- Engineering Workflow -->
+<section style="background: var(--bg);">
   <div class="container">
-    <div class="cta-box reveal">
-      <h2>Stop maintaining spreadsheets.</h2>
-      <p>Build a reliable database that scales with your business.</p>
-      <a href="mailto:mojahidulislam101010@gmail.com" class="btn btn-primary">Get Started Now</a>
+    <div class="header-center">
+      <div class="eyebrow">System Architecture</div>
+      <h2>Engineering Workflow</h2>
+      <p>How data moves from disparate platforms into a unified BigQuery database.</p>
+    </div>
+    <div class="arch-diagram">
+      <div class="arch-node"><i class="fa-solid fa-bag-shopping"></i><h5>Shopify</h5></div>
+      <div class="arch-node"><i class="fa-solid fa-bullhorn"></i><h5>Meta Ads</h5></div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node"><i class="fa-solid fa-code-merge"></i><h5>Merge Logic</h5></div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node"><i class="fa-solid fa-database"></i><h5>BigQuery DB</h5></div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node"><i class="fa-solid fa-chart-pie"></i><h5>Looker Studio</h5></div>
     </div>
   </div>
 </section>
 
-<footer>© 2025 MozIntelligence. All rights reserved.</footer>
+<!-- Service Breakdown -->
+<section id="services" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Technical Scope</div>
+      <h2>What We Build</h2>
+      <p>The core engineering components that transform raw data into a unified database.</p>
+    </div>
+
+    <div class="service-block">
+      <div class="service-header">
+        <h3>Multi-Platform Merge Logic</h3>
+      </div>
+      <div class="service-content">
+        <div class="service-text">
+          <p><strong>Purpose:</strong> Create the "Single Source of Truth."</p>
+          <p><strong>What we configure:</strong> SQL/Python logic to join data from Shopify, GA4, and Ad platforms based on unified identifiers (e.g., order ID, user ID).</p>
+          <p><strong>Why it matters:</strong> Without merge logic, data sits in silos. This allows you to see true ROI (Ad Spend vs. Shopify Revenue) in one table.</p>
+        </div>
+        <div class="service-visual">
+          <div class="code-snippet">
+            SELECT <br>
+            &nbsp;&nbsp;s.order_id, s.revenue, a.ad_spend<br>
+            FROM shopify.orders s<br>
+            JOIN meta.ads a <br>
+            &nbsp;&nbsp;ON s.date = a.date
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-header">
+        <h3>BigQuery Load Script</h3>
+      </div>
+      <div class="service-content">
+        <div class="service-text">
+          <p><strong>Purpose:</strong> Persist your data in the cloud warehouse.</p>
+          <p><strong>What we configure:</strong> Automated scripts that upload the cleaned, merged data into BigQuery tables.</p>
+          <p><strong>Why it matters:</strong> Moves data from temporary memory into a permanent, queryable database structure.</p>
+        </div>
+        <div class="service-visual">
+           <div class="arch-diagram" style="padding: 16px; background: var(--surface);">
+            <div class="arch-node"><i class="fa-solid fa-file-code"></i><h5>Clean Data</h5></div>
+            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="arch-node"><i class="fa-solid fa-upload"></i><h5>Load Script</h5></div>
+            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="arch-node" style="border-color: var(--accent);"><i class="fa-solid fa-database" style="color:var(--accent);"></i><h5 style="color:var(--accent);">BigQuery</h5></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-header">
+        <h3>Dashboard Data-Source Connection</h3>
+      </div>
+      <div class="service-content">
+        <div class="service-text">
+          <p><strong>Purpose:</strong> Make the data visible and interactive.</p>
+          <p><strong>What we configure:</strong> Direct link from BigQuery to Looker Studio.</p>
+          <p><strong>Why it matters:</strong> Replaces manual CSV uploads to dashboards. Your reporting tool queries the database directly.</p>
+        </div>
+        <div class="service-visual">
+          <div class="arch-diagram" style="padding: 16px; background: var(--surface);">
+            <div class="arch-node" style="border-color: var(--accent);"><i class="fa-solid fa-database" style="color:var(--accent);"></i><h5 style="color:var(--accent);">BigQuery</h5></div>
+            <div class="arch-arrow"><i class="fa-solid fa-link"></i></div>
+            <div class="arch-node"><i class="fa-solid fa-chart-pie"></i><h5>Looker Studio</h5></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Before vs After -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">The Transformation</div>
+      <h2>Without Proper Data Infrastructure vs With Our Infrastructure</h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card bad">
+        <h4>Without Setup</h4>
+        <ul class="ba-list">
+          <li><i class="fa-solid fa-times-circle"></i> Disconnected Platforms</li>
+          <li><i class="fa-solid fa-times-circle"></i> Duplicate Data Entries</li>
+          <li><i class="fa-solid fa-times-circle"></i> Manual CSV Exports</li>
+          <li><i class="fa-solid fa-times-circle"></i> Scattered Information</li>
+        </ul>
+      </div>
+      <div class="ba-card good">
+        <h4>With Full Pipeline</h4>
+        <ul class="ba-list">
+          <li><i class="fa-solid fa-check-circle"></i> Unified Master Table</li>
+          <li><i class="fa-solid fa-check-circle"></i> Single Source of Truth</li>
+          <li><i class="fa-solid fa-check-circle"></i> Centralized BigQuery DB</li>
+          <li><i class="fa-solid fa-check-circle"></i> Live Dashboard Connection</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Business Benefits & Tech Stack -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Business Impact</div>
+      <h2>What This Means For Your Business</h2>
+    </div>
+    <div class="info-grid" style="margin-bottom: 64px;">
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-cube"></i></div><h4>Scalable Analytics</h4><p>A database built to handle years of historical data.</p></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-handshake-angle"></i></div><h4>Reduced Manual Work</h4><p>No more merging spreadsheets for reports.</p></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-rocket"></i></div><h4>Future-Proof</h4><p>Infrastructure ready for AI and advanced modeling.</p></div>
+    </div>
+
+    <div class="header-center">
+      <div class="eyebrow">Infrastructure</div>
+      <h2>Technology Stack</h2>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card"><i class="fa-solid fa-bag-shopping"></i><span>Shopify</span></div>
+      <div class="tech-card"><i class="fa-solid fa-chart-line"></i><span>GA4</span></div>
+      <div class="tech-card"><i class="fa-solid fa-bullhorn"></i><span>Meta Ads</span></div>
+      <div class="tech-card"><i class="fa-solid fa-database"></i><span>BigQuery</span></div>
+      <div class="tech-card"><i class="fa-solid fa-chart-pie"></i><span>Looker Studio</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Who This Is For & Deliverables -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Target Fit</div>
+      <h2>Who This Package Is For</h2>
+    </div>
+    <div class="info-grid" style="margin-bottom: 64px;">
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-layer-group"></i></div><h4>Multi-Channel Brands</h4><p>Stores selling across multiple ad platforms and channels.</p></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-rotate"></i></div><h4>Recurring Clients</h4><p>Businesses needing ongoing monthly analytics.</p></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-building"></i></div><h4>Scaling Operations</h4><p>Teams that need a centralized data warehouse.</p></div>
+    </div>
+
+    <div class="header-center">
+      <div class="eyebrow">Handover</div>
+      <h2>What You'll Receive</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-database"></i></div><h4>BigQuery Database</h4><p>A fully structured cloud data warehouse.</p></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-code-merge"></i></div><h4>Merged Master Table</h4><p>One unified table containing all business metrics.</p></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-book"></i></div><h4>Data Documentation</h4><p>Schema definitions and pipeline architecture guides.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know.</p>
+    </div>
+    <div class="faq-container">
+      <div class="faq-item active">
+        <div class="faq-q">How is this different from the Basic Setup? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The Basic Setup pulls data once for a single audit. The Full Pipeline Setup builds a permanent BigQuery database with merge logic, connecting all platforms into a "Single Source of Truth" that can be refreshed regularly for ongoing analytics.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does this update automatically every day? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Not in this bundle. The Full Pipeline Setup creates the infrastructure to load data into BigQuery, but the data refresh is manual. For daily automated refreshes, you need the Full Pipeline + Automation bundle.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I own the BigQuery database? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. The GCP project and BigQuery database are created under your account. You own 100% of the infrastructure and data.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" style="background: var(--bg);">
+  <div class="container">
+    <div class="pricing-card">
+      <div class="eyebrow" style="margin: 0 auto;">Full Pipeline Setup</div>
+      <h3 style="font-size: 28px; margin-top: 16px;">Data Warehouse Build</h3>
+      <div class="price-amt">$500–$900</div>
+      <p class="price-sub">One-time fee · 5–7 Business Days</p>
+      <ul class="price-features">
+        <li><i class="fa-solid fa-check"></i> Everything in Basic Setup</li>
+        <li><i class="fa-solid fa-check"></i> All Platform API Connections</li>
+        <li><i class="fa-solid fa-check"></i> Multi-Platform Merge Logic</li>
+        <li><i class="fa-solid fa-check"></i> BigQuery Load Script</li>
+        <li><i class="fa-solid fa-check"></i> Dashboard Connection</li>
+      </ul>
+      <a href="mailto:hello@mozintelligence.com" class="btn btn-primary" style="width: 100%; justify-content: center;">Build the Pipeline</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 
 

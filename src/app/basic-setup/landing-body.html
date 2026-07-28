@@ -2,149 +2,273 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#" class="logo">Moz<span>Intelligence</span></a>
-    <a href="#cta" class="nav-cta">Get Started</a>
+    <a href="#" class="logo">Moz <span>Intelligence</span></a>
+    <ul class="nav-links" style="display:flex; gap:32px; list-style:none;">
+      <li><a href="#process" style="color:var(--muted); font-size:14px;">Process</a></li>
+      <li><a href="#services" style="color:var(--muted); font-size:14px;">Services</a></li>
+      <li><a href="#faq" style="color:var(--muted); font-size:14px;">FAQ</a></li>
+      <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
+    </ul>
+    <a href="#pricing" class="nav-cta">Get Started</a>
   </div>
 </nav>
 
-<!-- Hero -->
 <header class="hero">
   <div class="container">
-    <div class="hero-grid">
-      <div class="reveal">
-        <div class="eyebrow">Bundle 01 · Basic Setup</div>
-        <h1>The fast track to <em>clean, connected</em> data.</h1>
-        <p>Before any analysis can begin, your data needs to be extracted and cleaned. This one-time setup connects your core platforms and structures your data for a single, reliable analytics engagement. No manual exports, no spreadsheet mess.</p>
-        <div class="hero-cta">
-          <a href="#summary" class="btn btn-primary">Start Basic Setup</a>
-          <a href="#features" class="btn btn-outline">What's Included</a>
-        </div>
-        <div class="hero-meta">
-          <div><span>$150–$300</span><label>One-Time Fee</label></div>
-          <div><span>2–3 Days</span><label>Timeline</label></div>
-          <div><span>2–3 Platforms</span><label>Connected</label></div>
-        </div>
-      </div>
-      <div class="tech-diagram reveal">
-        <div class="diagram-row">
-          <div class="tech-node"><div class="tech-icon"><i class="fa-brands fa-shopify"></i></div><div class="tech-name">Shopify</div></div>
-          <div class="tech-node"><div class="tech-icon"><i class="fa-solid fa-chart-line"></i></div><div class="tech-name">GA4</div></div>
-          <div class="tech-node"><div class="tech-icon"><i class="fa-solid fa-bullhorn"></i></div><div class="tech-name">Meta Ads</div></div>
-        </div>
-        <div class="arrow-down"><i class="fa-solid fa-arrow-down"></i></div>
-        <div class="db-block">
-          <h5>Basic Cleaned Dataset</h5>
-          <p>Standardized columns, currencies, and timezones</p>
-        </div>
-      </div>
+    <div class="eyebrow" style="margin: 0 auto;">Bundle 01 · Basic Setup</div>
+    <h1>The fast track to <em>clean, connected</em> data.</h1>
+    <p>Before any analysis can begin, your data needs to be extracted and cleaned. This one-time infrastructure setup connects your core platforms and structures your data for a single, reliable analytics engagement. No manual exports, no spreadsheet mess.</p>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn btn-primary">Start Basic Setup</a>
+      <a href="#process" class="btn btn-outline" style="border-color:var(--border-dark);">How It Works</a>
     </div>
   </div>
 </header>
 
-<!-- Original Package Summary Card -->
-<section id="summary" style="background: #FFF; padding: 60px 0 40px;">
-  <div class="container" style="display: flex; justify-content: center;">
-    <div class="reveal" style="max-width: 450px; width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-lg); position: relative; overflow: hidden;">
-      <div style="margin-bottom: 16px;">
-        <h3 style="font-size: 22px; margin-bottom: 8px;">Basic Setup</h3>
-        <p style="font-size: 14px; color: var(--muted); min-height: 60px;">For one-time analysis clients. You need us to pull your data once, clean it, and use it for a single engagement. No automation required.</p>
-      </div>
-      <div style="font-family: 'Manrope', sans-serif; font-size: 40px; font-weight: 800; color: var(--text); margin: 16px 0 8px;">$150 — $300</div>
-      <div style="font-size: 13px; color: var(--light); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border);">ONE-TIME FEE • 2–3 Business Days • One-Time Analysis</div>
-      <ul style="list-style: none; margin-bottom: 24px;">
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Cloud Infrastructure Setup</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Relevant Platform API Connections (2–3 platforms)</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Data Pipeline Build</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Basic Cleaning</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-xmark" style="color: var(--light); width: 16px;"></i> Multi-Platform Merge Logic</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-xmark" style="color: var(--light); width: 16px;"></i> BigQuery Load Script</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-xmark" style="color: var(--light); width: 16px;"></i> Dashboard Connection</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-xmark" style="color: var(--light); width: 16px;"></i> Automated Scheduling</li>
-      </ul>
-      <p style="font-size: 12px; color: var(--light); margin-bottom: 16px;">Best for: Starter & Growth Package clients.</p>
-      <a href="#cta" class="btn btn-outline" style="width: 100%; justify-content: center;">Choose Basic</a>
+<!-- What Happens During This Setup -->
+<section id="process" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">The Engineering Process</div>
+      <h2>What Happens During This Setup</h2>
+      <p>A disciplined engineering sequence to stand up your cloud environment and connect your data sources.</p>
+    </div>
+    <div class="workflow-vertical">
+      <div class="workflow-step scroll-reveal"><h4>Discovery</h4><p>Mapping your tech stack and identifying necessary platforms.</p></div>
+      <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      <div class="workflow-step scroll-reveal"><h4>Platform Assessment</h4><p>Evaluating API limits and data structure for each source.</p></div>
+      <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      <div class="workflow-step scroll-reveal"><h4>Infrastructure Configuration</h4><p>Setting up the GCP project and BigQuery database.</p></div>
+      <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      <div class="workflow-step scroll-reveal"><h4>API Connections</h4><p>Authenticating and securing access to Shopify, GA4, and Ad platforms.</p></div>
+      <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      <div class="workflow-step scroll-reveal"><h4>Pipeline Development</h4><p>Writing extraction scripts to pull data securely.</p></div>
+      <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      <div class="workflow-step scroll-reveal"><h4>Testing & Validation</h4><p>Ensuring row counts match and data is uncorrupted.</p></div>
+      <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      <div class="workflow-step scroll-reveal"><h4>Client Handover</h4><p>Delivery of clean dataset and architecture documentation.</p></div>
     </div>
   </div>
 </section>
 
-<!-- Who It's For & Why -->
-<section id="features" style="background: var(--bg);">
+<!-- Engineering Workflow -->
+<section style="background: var(--bg);">
   <div class="container">
-    <div class="header-center reveal">
-      <div class="eyebrow">Who This Is For</div>
-      <h2>Perfect for early-stage stores needing a solid baseline.</h2>
-      <p>If you're doing a one-time analytics engagement and need your data pulled, cleaned, and structured quickly without building a permanent engineering pipeline, this is your starting point.</p>
+    <div class="header-center">
+      <div class="eyebrow">System Architecture</div>
+      <h2>Engineering Workflow</h2>
+      <p>How data moves from disparate platforms into a unified, analysis-ready state.</p>
     </div>
-    <div class="bento-grid reveal">
-      <div class="bento-item large">
-        <div class="bento-icon"><i class="fa-solid fa-database"></i></div>
-        <h3>Stop Drowning in Spreadsheets</h3>
-        <p>Manual exports from Shopify, GA4, and Ad platforms waste hours and lead to errors. We automate the extraction and basic cleaning so your data is ready for analysis immediately.</p>
+    <div class="arch-diagram scroll-reveal">
+      <div class="arch-node"><i class="fa-solid fa-bag-shopping"></i><h5>Shopify API</h5></div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node"><i class="fa-solid fa-cloud"></i><h5>Extraction Script</h5></div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node"><i class="fa-solid fa-broom"></i><h5>Cleaning Logic</h5></div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node"><i class="fa-solid fa-database"></i><h5>Clean Dataset</h5></div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Breakdown -->
+<section id="services" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Technical Scope</div>
+      <h2>What We Build</h2>
+      <p>Every component of the Basic Setup, engineered for reliability.</p>
+    </div>
+
+    <div class="service-block scroll-reveal">
+      <div class="service-header">
+        <h3>Cloud Infrastructure Setup</h3>
       </div>
-      <div class="bento-item">
-        <div class="bento-icon"><i class="fa-solid fa-cloud-arrow-down"></i></div>
-        <h3>Core Platform Extraction</h3>
-        <p>We connect 2-3 of your most critical platforms via secure API to pull raw data into one place.</p>
+      <div class="service-content">
+        <div class="service-text">
+          <p><strong>Purpose:</strong> Create the central home for all your business data.</p>
+          <p><strong>What we configure:</strong> Google Cloud Platform (GCP) project, billing, and BigQuery database.</p>
+          <p><strong>Why it matters:</strong> Provides a secure, scalable warehouse environment. We don't rely on local files; your data lives in enterprise-grade cloud infrastructure.</p>
+        </div>
+        <div class="service-visual">
+          <div class="code-snippet">
+            # GCP Infrastructure<br>
+            project_id = "moz-client-prod"<br>
+            dataset = "raw_shopify_data"<br>
+            location = "US"
+          </div>
+        </div>
       </div>
-      <div class="bento-item">
-        <div class="bento-icon"><i class="fa-solid fa-broom"></i></div>
-        <h3>Basic Data Cleaning</h3>
-        <p>We align column names, currencies, and date formats so everything speaks the same language.</p>
+    </div>
+
+    <div class="service-block scroll-reveal">
+      <div class="service-header">
+        <h3>API Connection</h3>
+      </div>
+      <div class="service-content">
+        <div class="service-text">
+          <p><strong>Purpose:</strong> Establish a secure link to your store's transactional data.</p>
+          <p><strong>What we configure:</strong> Secure private app, API keys, and permission scopes.</p>
+          <p><strong>Why it matters:</strong> Ensures we can pull orders, customers, and products without exposing your store to security risks.</p>
+        </div>
+        <div class="service-visual">
+          <div class="arch-diagram" style="padding: 16px; background: var(--surface);">
+            <div class="arch-node"><i class="fa-solid fa-lock"></i><h5>Auth Token</h5></div>
+            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="arch-node"><i class="fa-solid fa-code"></i><h5>API Call</h5></div>
+            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="arch-node"><i class="fa-solid fa-file-export"></i><h5>JSON Data</h5></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block scroll-reveal">
+      <div class="service-header">
+        <h3>Data Pipeline Build (Per Platform)</h3>
+      </div>
+      <div class="service-content">
+        <div class="service-text">
+          <p><strong>Purpose:</strong> Automate the extraction of your data.</p>
+          <p><strong>What we configure:</strong> Python extraction scripts that pull data on demand. Includes 2-3 platforms.</p>
+          <p><strong>Why it matters:</strong> Replaces manual CSV exports with reproducible, error-free code.</p>
+        </div>
+        <div class="service-visual">
+          <div class="code-snippet">
+            def extract_shopify():<br>
+            &nbsp;&nbsp;url = f"{base_url}/orders.json"<br>
+            &nbsp;&nbsp;response = requests.get(url)<br>
+            &nbsp;&nbsp;return response.json()
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block scroll-reveal">
+      <div class="service-header">
+        <h3>Data Cleaning & Standardization</h3>
+      </div>
+      <div class="service-content">
+        <div class="service-text">
+          <p><strong>Purpose:</strong> Make the data speak the same language.</p>
+          <p><strong>What we configure:</strong> Alignment of column names, currencies, date formats, and timezones.</p>
+          <p><strong>Why it matters:</strong> Raw data is messy. Cleaning ensures that when we analyze it, we aren't comparing apples to oranges.</p>
+        </div>
+        <div class="service-visual">
+          <div class="arch-diagram" style="padding: 16px; background: var(--surface);">
+            <div class="arch-node" style="border-color: var(--danger);"><h5 style="color:var(--danger);">"2024-03-01"</h5></div>
+            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="arch-node" style="border-color: var(--accent);"><i class="fa-solid fa-broom"></i></div>
+            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="arch-node" style="border-color: var(--success);"><h5 style="color:var(--success);">03/01/24</h5></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Before vs After -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">The Transformation</div>
+      <h2>Without Proper Data Infrastructure vs With Our Infrastructure</h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card bad scroll-reveal">
+        <h4>Without Setup</h4>
+        <ul class="ba-list">
+          <li><i class="fa-solid fa-times-circle"></i> Disconnected Platforms</li>
+          <li><i class="fa-solid fa-times-circle"></i> Manual CSV Exports</li>
+          <li><i class="fa-solid fa-times-circle"></i> Inconsistent Date Formats</li>
+          <li><i class="fa-solid fa-times-circle"></i> Scattered Information</li>
+        </ul>
+      </div>
+      <div class="ba-card good scroll-reveal">
+        <h4>With Basic Setup</h4>
+        <ul class="ba-list">
+          <li><i class="fa-solid fa-check-circle"></i> API Connected Sources</li>
+          <li><i class="fa-solid fa-check-circle"></i> Automated Extraction</li>
+          <li><i class="fa-solid fa-check-circle"></i> Standardized Data</li>
+          <li><i class="fa-solid fa-check-circle"></i> Clean Dataset Ready</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Implementation -->
-<section style="background: #FFF;">
+<!-- Business Benefits & Tech Stack -->
+<section style="background: var(--surface);">
   <div class="container">
-    <div class="header-center reveal">
-      <div class="eyebrow">How It Works</div>
-      <h2>A streamlined 3-day implementation.</h2>
-      <p>We handle the engineering. You focus on the business decisions.</p>
+    <div class="header-center">
+      <div class="eyebrow">Business Impact</div>
+      <h2>What This Means For Your Business</h2>
     </div>
-    <div class="steps-grid reveal">
-      <div class="step-card" data-num="STEP 01">
-        <i class="fa-solid fa-key" style="font-size: 20px; color: var(--accent);"></i>
-        <h4>Access & Discovery</h4>
-        <p>You grant read-only API access to your chosen platforms. We map your data requirements.</p>
-      </div>
-      <div class="step-card" data-num="STEP 02">
-        <i class="fa-solid fa-code" style="font-size: 20px; color: var(--accent);"></i>
-        <h4>Extraction & Cleaning</h4>
-        <p>We write the scripts to pull data and apply basic standardization rules for consistency.</p>
-      </div>
-      <div class="step-card" data-num="STEP 03">
-        <i class="fa-solid fa-clipboard-check" style="font-size: 20px; color: var(--accent);"></i>
-        <h4>Validation & QA</h4>
-        <p>We verify row counts, check for missing data, and ensure the dataset is analysis-ready.</p>
-      </div>
-      <div class="step-card" data-num="STEP 04">
-        <i class="fa-solid fa-handshake" style="font-size: 20px; color: var(--accent);"></i>
-        <h4>Handover</h4>
-        <p>We deliver the clean dataset, ready for your one-time Health Check or Growth Audit.</p>
-      </div>
+    <div class="info-grid" style="margin-bottom: 64px;">
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-shield-halved"></i></div><h4>Reliable Reporting</h4><p>Data you can trust for one-time, critical audits.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-bolt"></i></div><h4>Faster Decisions</h4><p>No waiting on manual exports to start analysis.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-cube"></i></div><h4>Clean Data</h4><p>Standardized formats ready for immediate use.</p></div>
+    </div>
+
+    <div class="header-center">
+      <div class="eyebrow">Infrastructure</div>
+      <h2>Technology Stack</h2>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card scroll-reveal"><i class="fa-solid fa-bag-shopping"></i><span>Shopify</span></div>
+      <div class="tech-card scroll-reveal"><i class="fa-solid fa-chart-line"></i><span>GA4</span></div>
+      <div class="tech-card scroll-reveal"><i class="fa-solid fa-database"></i><span>BigQuery</span></div>
+      <div class="tech-card scroll-reveal"><i class="fa-brands fa-google"></i><span>GCP</span></div>
+      <div class="tech-card scroll-reveal"><i class="fa-brands fa-python"></i><span>Python</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Who This Is For & Deliverables -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Target Fit</div>
+      <h2>Who This Package Is For</h2>
+    </div>
+    <div class="info-grid" style="margin-bottom: 64px;">
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-store"></i></div><h4>Early-Stage Stores</h4><p>Doing $5K-$50K/mo needing a baseline diagnostic.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-flask"></i></div><h4>One-Time Audits</h4><p>Clients purchasing the Starter Health Check.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-database"></i></div><h4>Data Beginners</h4><p>Stores with no existing cloud infrastructure.</p></div>
+    </div>
+
+    <div class="header-center">
+      <div class="eyebrow">Handover</div>
+      <h2>What You'll Receive</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-cloud"></i></div><h4>Configured Cloud Env</h4><p>Your own GCP project and BigQuery instance.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-link"></i></div><h4>Connected APIs</h4><p>Securely authenticated data sources.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-file-code"></i></div><h4>Extraction Scripts</h4><p>The code used to pull your data.</p></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section style="background: var(--bg);">
-  <div class="container" style="max-width: 800px;">
-    <div class="header-center reveal">
-      <div class="eyebrow">Frequently Asked Questions</div>
-      <h2>Common questions about Basic Setup.</h2>
+<section id="faq" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know.</p>
     </div>
-    <div class="reveal">
-      <div class="faq-item active">
+    <div class="faq-container">
+      <div class="faq-item active scroll-reveal">
         <div class="faq-q">Does this include automated daily updates? <i class="fa-solid fa-plus"></i></div>
         <div class="faq-a">No. The Basic Setup is designed for one-time analysis engagements. It pulls your data once, cleans it, and prepares it for immediate use. If you need daily automated updates, you should consider the Full Pipeline + Automation bundle.</div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item scroll-reveal">
         <div class="faq-q">Which platforms can you connect? <i class="fa-solid fa-plus"></i></div>
         <div class="faq-a">We can connect Shopify, GA4, Meta Ads, Google Ads, and Klaviyo. This basic bundle includes 2-3 platforms of your choice. If you need all platforms connected, please look at the Full Pipeline Setup.</div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item scroll-reveal">
         <div class="faq-q">Is my data secure? <i class="fa-solid fa-plus"></i></div>
         <div class="faq-a">Absolutely. We use read-only API access and follow strict security protocols. We do not store your credentials in plain text, and we never modify your live business data.</div>
       </div>
@@ -152,17 +276,26 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section id="cta" style="padding-bottom: 120px; background: var(--bg);">
+<!-- Pricing -->
+<section id="pricing" style="background: var(--bg);">
   <div class="container">
-    <div class="cta-box reveal">
-      <h2>Ready to clean your data?</h2>
-      <p>Get your analytics engagement off to a perfect start with a solid data foundation.</p>
-      <a href="mailto:mojahidulislam101010@gmail.com" class="btn btn-primary">Book Basic Setup</a>
+    <div class="pricing-card scroll-reveal">
+      <div class="eyebrow" style="margin: 0 auto;">Basic Setup</div>
+      <h3 style="font-size: 28px; margin-top: 16px;">Infrastructure Foundation</h3>
+      <div class="price-amt">$150–$300</div>
+      <p class="price-sub">One-time fee · 2–3 Business Days</p>
+      <ul class="price-features">
+        <li><i class="fa-solid fa-check"></i> Cloud Infrastructure Setup</li>
+        <li><i class="fa-solid fa-check"></i> 2-3 Platform API Connections</li>
+        <li><i class="fa-solid fa-check"></i> Data Pipeline Build</li>
+        <li><i class="fa-solid fa-check"></i> Basic Data Cleaning</li>
+      </ul>
+      <a href="mailto:hello@mozintelligence.com" class="btn btn-primary" style="width: 100%; justify-content: center;">Start Basic Setup</a>
     </div>
   </div>
 </section>
 
-<footer>© 2025 MozIntelligence. All rights reserved.</footer>
+<footer>© 2025 Moz Intelligence. All rights reserved.</footer>
+
 
 

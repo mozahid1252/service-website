@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Full Pipeline Setup | MozIntelligence',
+  title: 'Full Pipeline Setup | Data Engineering | Moz Intelligence',
   description: 'A permanent, structured data pipeline for ongoing analytics. We connect all platforms, clean, merge, and load data into BigQuery for reliable reporting.',
 };
 

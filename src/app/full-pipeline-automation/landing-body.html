@@ -2,151 +2,282 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#" class="logo">Moz<span>Intelligence</span></a>
-    <a href="#cta" class="nav-cta">Get Started</a>
+    <a href="#" class="logo">Moz <span>Intelligence</span></a>
+    <ul class="nav-links" style="display:flex; gap:32px; list-style:none;">
+      <li><a href="#included" style="color:var(--muted); font-size:14px;">Included</a></li>
+      <li><a href="#services" style="color:var(--muted); font-size:14px;">Services</a></li>
+      <li><a href="#faq" style="color:var(--muted); font-size:14px;">FAQ</a></li>
+      <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
+    </ul>
+    <a href="#pricing" class="nav-cta">Get Started</a>
   </div>
 </nav>
 
-<!-- Hero -->
 <header class="hero">
   <div class="container">
-    <div class="hero-grid">
-      <div class="reveal">
-        <div class="eyebrow">Bundle 03 · Full Pipeline + Automation</div>
-        <h1>Your data pipeline, <em>running on autopilot.</em></h1>
-        <p>For live dashboards and retainer clients. We engineer the full pipeline, then add automated scheduling, error alerts, and secure credential management. Your dashboards update every day—without you touching a button.</p>
-        <div class="hero-cta">
-          <a href="#summary" class="btn btn-primary">Automate My Data</a>
-          <a href="#features" class="btn btn-outline">What's Included</a>
-        </div>
-        <div class="hero-meta">
-          <div><span>$700–$1,200</span><label>One-Time Fee</label></div>
-          <div><span>7–10 Days</span><label>Timeline</label></div>
-          <div><span>24/7</span><label>Auto-Updates</label></div>
-        </div>
-      </div>
-      <div class="status-mock reveal">
-        <div class="status-header">
-          <span class="status-title">Pipeline Activity</span>
-          <span class="live-badge"><div class="live-dot"></div> LIVE</span>
-        </div>
-        <div class="log-item">
-          <span><i class="fa-solid fa-circle-check" style="color: var(--accent); margin-right: 8px;"></i> Shopify API Sync</span>
-          <span class="log-time">02:00 AM</span>
-        </div>
-        <div class="log-item">
-          <span><i class="fa-solid fa-circle-check" style="color: var(--accent); margin-right: 8px;"></i> GA4 Data Pull</span>
-          <span class="log-time">02:05 AM</span>
-        </div>
-        <div class="log-item">
-          <span><i class="fa-solid fa-circle-check" style="color: var(--accent); margin-right: 8px;"></i> BigQuery Load</span>
-          <span class="log-time">02:10 AM</span>
-        </div>
-        <div class="log-item">
-          <span><i class="fa-solid fa-bell" style="color: #F59E0B; margin-right: 8px;"></i> Alert: Meta Token Expired</span>
-          <span class="log-time">02:12 AM</span>
-        </div>
-      </div>
+    <div class="eyebrow" style="margin: 0 auto;">Bundle 03 · Full Pipeline + Automation</div>
+    <h1>Your data pipeline, <em>running on autopilot.</em></h1>
+    <p>For live dashboards and retainer clients. We engineer the full pipeline, then add automated scheduling, error alerts, and secure credential management. Your dashboards update every day—without you touching a button.</p>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn btn-primary">Automate My Data</a>
+      <a href="#included" class="btn btn-outline" style="border-color:var(--border-dark);">What's Included</a>
     </div>
   </div>
 </header>
 
-<!-- Original Package Summary Card -->
-<section id="summary" style="background: #FFF; padding: 60px 0 40px;">
-  <div class="container" style="display: flex; justify-content: center;">
-    <div class="reveal" style="max-width: 450px; width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-lg); position: relative; overflow: hidden;">
-      <span style="position: absolute; top: 20px; right: 20px; background: var(--accent); color: #FFF; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 100px;">TOP TIER</span>
-      <div style="margin-bottom: 16px;">
-        <h3 style="font-size: 22px; margin-bottom: 8px;">Full Pipeline + Automation</h3>
-        <p style="font-size: 14px; color: var(--muted); min-height: 60px;">For live dashboard and retainer clients. You need your data to update automatically — every day, without any manual work. Your dashboard is always current, your pipeline never stops.</p>
+<!-- Everything Included -->
+<section id="included" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">The Upgrade</div>
+      <h2>Everything Included in Full Pipeline Setup</h2>
+      <p>This package includes 100% of the Full Pipeline Setup, plus advanced automation, security, and monitoring engineering.</p>
+    </div>
+    <div class="inclusion-grid">
+      <div class="inclusion-card">
+        <h3>Full Pipeline Inclusions</h3>
+        <ul class="inclusion-list">
+          <li><i class="fa-solid fa-check-circle"></i> Cloud Infrastructure & APIs</li>
+          <li><i class="fa-solid fa-check-circle"></i> Data Pipeline Build</li>
+          <li><i class="fa-solid fa-check-circle"></i> Multi-Platform Merge Logic</li>
+          <li><i class="fa-solid fa-check-circle"></i> BigQuery Load Script</li>
+          <li><i class="fa-solid fa-check-circle"></i> Dashboard Data-Source Connection</li>
+        </ul>
       </div>
-      <div style="font-family: 'Manrope', sans-serif; font-size: 40px; font-weight: 800; color: var(--text); margin: 16px 0 8px;">$700 — $1,200</div>
-      <div style="font-size: 13px; color: var(--light); margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border);">ONE-TIME FEE • 7–10 Business Days • Retainer / Live Dashboard</div>
-      <ul style="list-style: none; margin-bottom: 24px;">
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Everything in Full Pipeline, plus:</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Automated Scheduling</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Error Alerts</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Credential Security</li>
-        <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px;"><i class="fa-solid fa-check" style="color: var(--accent); width: 16px;"></i> Pipeline runs every day — automatically</li>
+      <div class="inclusion-card" style="background: var(--accent-light); border-color: var(--accent);">
+        <h3>Automation Additions</h3>
+        <ul class="inclusion-list">
+          <li><i class="fa-solid fa-plus-circle"></i> Automated Scheduling (Cloud Scheduler)</li>
+          <li><i class="fa-solid fa-plus-circle"></i> Error Handling & Alert System</li>
+          <li><i class="fa-solid fa-plus-circle"></i> Credential Security (Secret Manager)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Engineering Workflow -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">System Architecture</div>
+      <h2>Engineering Workflow</h2>
+      <p>The automated lifecycle of your data—running 24/7 without human intervention.</p>
+    </div>
+    <div class="arch-diagram">
+      <div class="arch-node"><i class="fa-solid fa-clock"></i><h5>Cloud Scheduler</h5></div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node"><i class="fa-solid fa-code"></i><h5>Pipeline Runs</h5></div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node"><i class="fa-solid fa-database"></i><h5>BigQuery Updates</h5></div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node"><i class="fa-solid fa-bell"></i><h5>Alerts (If Fail)</h5></div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Breakdown -->
+<section id="services" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Technical Scope</div>
+      <h2>What We Build</h2>
+      <p>The automation components that transform a manual pipeline into a production-grade system.</p>
+    </div>
+
+    <div class="service-block">
+      <div class="service-header">
+        <h3>Automation & Scheduling</h3>
+      </div>
+      <div class="service-content">
+        <div class="service-text">
+          <p><strong>Purpose:</strong> Eliminate manual data extraction.</p>
+          <p><strong>What we configure:</strong> Google Cloud Scheduler or cron jobs to trigger pipeline scripts at defined intervals (e.g., 2:00 AM daily).</p>
+          <p><strong>Why it matters:</strong> Ensures your dashboards are always current. Your team never has to remember to run a script.</p>
+        </div>
+        <div class="service-visual">
+          <div class="code-snippet">
+            # Cloud Scheduler Config<br>
+            schedule: "0 2 * * *"<br>
+            timezone: "UTC"<br>
+            target: "data-pipeline-function"
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-header">
+        <h3>Error Handling & Alert System</h3>
+      </div>
+      <div class="service-content">
+        <div class="service-text">
+          <p><strong>Purpose:</strong> Prevent silent data failures.</p>
+          <p><strong>What we configure:</strong> Try/except logic in Python scripts that send Slack or Email alerts if an API fails or data is malformed.</p>
+          <p><strong>Why it matters:</strong> APIs change and tokens expire. Without alerts, your dashboard could silently stop updating for weeks.</p>
+        </div>
+        <div class="service-visual">
+          <div class="arch-diagram" style="padding: 16px; background: var(--surface);">
+            <div class="arch-node" style="border-color: var(--danger);"><i class="fa-solid fa-triangle-exclamation" style="color:var(--danger);"></i><h5 style="color:var(--danger);">API Fails</h5></div>
+            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="arch-node"><i class="fa-solid fa-bell"></i><h5>Alert Trigger</h5></div>
+            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="arch-node"><i class="fa-brands fa-slack"></i><h5>Team Slack</h5></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block">
+      <div class="service-header">
+        <h3>Credential Security Setup</h3>
+      </div>
+      <div class="service-content">
+        <div class="service-text">
+          <p><strong>Purpose:</strong> Protect your business from data breaches.</p>
+          <p><strong>What we configure:</strong> All API keys and tokens are stored in Google Secret Manager or secure environment variables—never hardcoded.</p>
+          <p><strong>Why it matters:</strong> Hardcoded keys in scripts are a massive security risk. Secret Manager ensures enterprise-grade security.</p>
+        </div>
+        <div class="service-visual">
+          <div class="code-snippet">
+            # Secure Auth<br>
+            from google.cloud import secretmanager<br>
+            client = secretmanager.SecretManagerServiceClient()<br>
+            response = client.access_secret_version("API_KEY")
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Before vs After -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">The Transformation</div>
+      <h2>Without Proper Data Infrastructure vs With Our Infrastructure</h2>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card bad">
+        <h4>Without Setup</h4>
+        <ul class="ba-list">
+          <li><i class="fa-solid fa-times-circle"></i> Manual Reports</li>
+          <li><i class="fa-solid fa-times-circle"></i> Stale Dashboards</li>
+          <li><i class="fa-solid fa-times-circle"></i> Hardcoded API Keys</li>
+          <li><i class="fa-solid fa-times-circle"></i> Silent Failures</li>
+        </ul>
+      </div>
+      <div class="ba-card good">
+        <h4>With Automation</h4>
+        <ul class="ba-list">
+          <li><i class="fa-solid fa-check-circle"></i> Automatic Daily Refresh</li>
+          <li><i class="fa-solid fa-check-circle"></i> Live, Real-Time Dashboards</li>
+          <li><i class="fa-solid fa-check-circle"></i> Secret Manager Security</li>
+          <li><i class="fa-solid fa-check-circle"></i> Instant Error Alerts</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Business Benefits & Tech Stack -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Business Impact</div>
+      <h2>What This Means For Your Business</h2>
+    </div>
+    <div class="info-grid" style="margin-bottom: 64px;">
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-eye"></i></div><h4>Live Visibility</h4><p>Check today's revenue and ad spend anytime.</p></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-shield"></i></div><h4>Enterprise Security</h4><p>No exposed credentials in your codebase.</p></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-infinity"></i></div><h4>Zero Maintenance</h4><p>The system runs itself, alerting you only if needed.</p></div>
+    </div>
+
+    <div class="header-center">
+      <div class="eyebrow">Infrastructure</div>
+      <h2>Technology Stack</h2>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card"><i class="fa-solid fa-database"></i><span>BigQuery</span></div>
+      <div class="tech-card"><i class="fa-solid fa-clock"></i><span>Cloud Scheduler</span></div>
+      <div class="tech-card"><i class="fa-solid fa-key"></i><span>Secret Manager</span></div>
+      <div class="tech-card"><i class="fa-solid fa-chart-pie"></i><span>Looker Studio</span></div>
+      <div class="tech-card"><i class="fa-brands fa-python"></i><span>Python</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Who This Is For & Deliverables -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Target Fit</div>
+      <h2>Who This Package Is For</h2>
+    </div>
+    <div class="info-grid" style="margin-bottom: 64px;">
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-tv"></i></div><h4>Live Dashboard Clients</h4><p>Businesses needing real-time data on screens.</p></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-handshake"></i></div><h4>Monthly Retainers</h4><p>Ongoing analytics partnerships requiring fresh data.</p></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-building-columns"></i></div><h4>Enterprise Teams</h4><p>Operations teams needing automated reporting.</p></div>
+    </div>
+
+    <div class="header-center">
+      <div class="eyebrow">Handover</div>
+      <h2>What You'll Receive</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-clock-rotate-left"></i></div><h4>Automated Scheduler</h4><p>Cloud jobs configured to run your pipeline daily.</p></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-bell"></i></div><h4>Alert System</h4><p>Slack/Email integration for pipeline failures.</p></div>
+      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-book"></i></div><h4>Deployment Guide</h4><p>Full documentation on the automated architecture.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know.</p>
+    </div>
+    <div class="faq-container">
+      <div class="faq-item active">
+        <div class="faq-q">What happens if an API token expires? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The Error Handling & Alert System will immediately detect the failure and send a notification to your team. We can then quickly rotate the token in Secret Manager without downtime.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How often does the data refresh? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The standard configuration is one daily refresh (e.g., at 2:00 AM). However, we can configure it for multiple times a day if required by your business needs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Are there ongoing costs for Google Cloud? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes, Google Cloud charges for BigQuery storage and compute time. However, for most e-commerce stores, this cost is less than $5/month. We will help you set up billing alerts.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" style="background: var(--bg);">
+  <div class="container">
+    <div class="pricing-card">
+      <div class="eyebrow" style="margin: 0 auto;">Full Pipeline + Automation</div>
+      <h3 style="font-size: 28px; margin-top: 16px;">Automated Data Engine</h3>
+      <div class="price-amt">$700–$1,200</div>
+      <p class="price-sub">One-time fee · 7–10 Business Days</p>
+      <ul class="price-features">
+        <li><i class="fa-solid fa-check"></i> Everything in Full Pipeline</li>
+        <li><i class="fa-solid fa-check"></i> Automated Scheduling</li>
+        <li><i class="fa-solid fa-check"></i> Error Alerts & Monitoring</li>
+        <li><i class="fa-solid fa-check"></i> Credential Security Setup</li>
       </ul>
-      <p style="font-size: 12px; color: var(--light); margin-bottom: 16px;">Best for: Monthly Retainer & Live Dashboard clients.</p>
-      <a href="#cta" class="btn btn-outline" style="width: 100%; justify-content: center;">Choose Automation</a>
+      <a href="mailto:hello@mozintelligence.com" class="btn btn-primary" style="width: 100%; justify-content: center;">Automate My Pipeline</a>
     </div>
   </div>
 </section>
 
-<!-- Why Automation -->
-<section id="features" style="background: var(--bg);">
-  <div class="container">
-    <div class="header-center reveal">
-      <div class="eyebrow">Why You Need Automation</div>
-      <h2>Stale data leads to bad decisions.</h2>
-      <p>If your team has to manually export CSVs to update reports, dashboards go outdated within hours. Automation ensures your business operates on real-time, reliable data every single day.</p>
-    </div>
-    <div class="bento-grid reveal">
-      <div class="bento-item large">
-        <div class="bento-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
-        <h3>Eliminate Manual Work</h3>
-        <p>We set up Cloud Scheduler or cron jobs so your entire data pipeline runs automatically on a defined schedule. No manual exports, no forgotten updates, no outdated metrics.</p>
-      </div>
-      <div class="bento-item">
-        <div class="bento-icon"><i class="fa-solid fa-bell"></i></div>
-        <h3>Error Alerts</h3>
-        <p>If an API fails or a token expires, our notification system alerts you immediately so your pipeline never silently breaks.</p>
-      </div>
-      <div class="bento-item">
-        <div class="bento-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3>Credential Security</h3>
-        <p>All API keys and tokens are stored securely using environment variables or Secret Manager—never exposed, never at risk.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Implementation -->
-<section style="background: #FFF;">
-  <div class="container">
-    <div class="header-center reveal">
-      <div class="eyebrow">How It Works</div>
-      <h2>A bulletproof implementation process.</h2>
-      <p>We build reliability into every layer of your data infrastructure.</p>
-    </div>
-    <div class="steps-grid reveal">
-      <div class="step-card" data-num="STEP 01">
-        <i class="fa-solid fa-sitemap" style="font-size: 20px; color: var(--accent);"></i>
-        <h4>Full Pipeline Build</h4>
-        <p>We complete the entire Full Pipeline setup: APIs, cleaning, merge logic, and BigQuery connection.</p>
-      </div>
-      <div class="step-card" data-num="STEP 02">
-        <i class="fa-solid fa-calendar-check" style="font-size: 20px; color: var(--accent);"></i>
-        <h4>Automated Scheduling</h4>
-        <p>We deploy Cloud Scheduler to run your scripts daily, ensuring data is always fresh without human intervention.</p>
-      </div>
-      <div class="step-card" data-num="STEP 03">
-        <i class="fa-solid fa-shield-halved" style="font-size: 20px; color: var(--accent);"></i>
-        <h4>Security & Alerts</h4>
-        <p>Tokens are secured in Secret Manager. Error handling scripts are deployed to notify you of any pipeline failures.</p>
-      </div>
-      <div class="step-card" data-num="STEP 04">
-        <i class="fa-solid fa-clipboard-check" style="font-size: 20px; color: var(--accent);"></i>
-        <h4>QA & Handover</h4>
-        <p>We monitor the automated runs for 48 hours, validate data accuracy, and hand over the live system.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="cta" style="padding-bottom: 120px; background: #FFF;">
-  <div class="container">
-    <div class="cta-box reveal">
-      <h2>Trust your data completely.</h2>
-      <p>Build a live, automated infrastructure that scales with your business.</p>
-      <a href="mailto:mojahidulislam101010@gmail.com" class="btn btn-primary">Get Started Now</a>
-    </div>
-  </div>
-</section>
-
-<footer>© 2025 MozIntelligence. All rights reserved.</footer>
+<footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 
 
