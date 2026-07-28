@@ -2282,7 +2282,7 @@ function ContactSection() {
           <h2 className="contact-main-heading">
             Let&apos;s Find Your Next <span className="money-accent">$10,000.</span>
           </h2>
-          <h2 className="contact-main-heading contact-sub-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw" style="color:#EF4444;transition-delay:0s">Stop</span> <span class="sgw" style="color:#EF4444;transition-delay:0.08s">Guessing.</span> <span class="sgw" style="color:#22C55E;transition-delay:0.16s">Start</span> <span class="sgw" style="color:#22C55E;transition-delay:0.24s">Knowing.</span>'; } }}>
+          <h2 className="contact-main-heading contact-sub-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw" style="color:#FFFFFF;transition-delay:0s">Stop</span> <span class="sgw" style="color:#FFFFFF;transition-delay:0.08s">Guessing.</span> <span class="sgw sgw-accent" style="transition-delay:0.16s">Start</span> <span class="sgw sgw-accent" style="transition-delay:0.24s">Knowing.</span>'; } }}>
             Stop Guessing. Start Knowing.
           </h2>
           <p className="contact-highlight-text max-w-3xl mx-auto leading-relaxed mt-6">

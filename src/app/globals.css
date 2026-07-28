@@ -2908,6 +2908,14 @@ table.infra-table {
   transform: translateY(0);
 }
 
+/* Accent gradient for 'Start Knowing.' — matches qp3-title-accent */
+.sgw-accent {
+  background: linear-gradient(135deg, #00E676 0%, #00C6FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* ============================================
    PART HEADINGS — Premium gold with high glow
    + word-by-word animation
