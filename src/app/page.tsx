@@ -174,7 +174,7 @@ const CORE_PACKAGES = [
       'Proactive Anomaly Alerts',
       'Dashboard Maintenance & 45-min Monthly Call',
     ],
-    bestFor: 'Stores doing $100K+/mo needing a permanent data partner.',
+    bestFor: 'Stores doing $20K+/mo needing a permanent data partner.',
     promise: 'With this retainer, today\'s insight will never become outdated next month. We will detect problems between analyses before they cost you money, ensure your implemented changes are actually working, and keep you prepared for seasonal shifts before they catch you off guard.',
     cta: 'Become a Retainer Client →',
     route: '/analytics-partner-retainer',
