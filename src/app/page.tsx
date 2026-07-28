@@ -1176,8 +1176,8 @@ function AboutSection() {
             {/* Hero stats */}
             <div className="about2-hero-stats reveal-up" style={{ transitionDelay: '0.1s' }}>
               <div className="about2-hero-stat">
-                <span className="about2-hero-stat-v">CEO OF</span>
-                <span className="about2-hero-stat-l">MOZINTELLIGENCE</span>
+                <span className="about2-hero-stat-v">CEO</span>
+                <span className="about2-hero-stat-l">MOZ INTELLIGENCE</span>
               </div>
               <div className="about2-hero-divider" aria-hidden="true" />
               <div className="about2-hero-stat">
@@ -1259,8 +1259,8 @@ function AboutSection() {
               </div>
               {/* Floating stat card 1 — Revenue */}
               <div className="about2-float-card about2-float-card-1">
-                <span className="about2-float-v">CEO OF</span>
-                <span className="about2-float-l">MOZINTELLIGENCE</span>
+                <span className="about2-float-v">CEO</span>
+                <span className="about2-float-l">MOZ INTELLIGENCE</span>
               </div>
               {/* Floating stat card 2 — Experience */}
               <div className="about2-float-card about2-float-card-2">

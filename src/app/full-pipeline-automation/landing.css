@@ -71,6 +71,7 @@ a { text-decoration: none; color: inherit; }
 .service-header h3 { font-size: 20px; }
 .service-content { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 .service-text p { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+.service-text p strong { color: var(--text); font-weight: 700; display: inline-block; margin-right: 4px; }
 .service-visual { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; justify-content: center; }
 .code-snippet { font-family: 'JetBrains Mono'; font-size: 12px; background: var(--text); color: #A7F3D0; padding: 16px; border-radius: 8px; line-height: 1.6; }
 /* FAQ */
