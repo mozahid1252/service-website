@@ -1497,11 +1497,8 @@ function ServicesSection() {
   return (
     <section id="services" className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <span className="section-label reveal-up">Choose Your Starting Point</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
-            Services
-          </h2>
         </div>
 
         {/* Part 1: Core Packages */}
@@ -2608,10 +2605,6 @@ function FAQSection() {
         {/* ── Header ── */}
         <div className="faq-header">
           <span className="faq-eyebrow">FAQ</span>
-          <h2 className="faq-title">
-            Straight Answers.
-            <span className="faq-title-accent"> No Jargon</span>
-          </h2>
           <p className="faq-subtitle">
             Everything you need to know before we work together.
           </p>
