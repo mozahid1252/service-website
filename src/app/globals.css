@@ -4509,3 +4509,176 @@ table.infra-table {
     padding: 16px 18px !important;
   }
 }
+
+/* ============================================
+   CASE STUDIES — Quick Proof style cards
+   Matches the qp3-card design language
+   ============================================ */
+
+.case-card-qp-style {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(13, 21, 32, 0.85) 0%, rgba(6, 11, 19, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, border-color 0.45s ease;
+}
+
+.case-card-qp-style:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 230, 118, 0.28);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 32px rgba(0, 230, 118, 0.08);
+}
+
+.case-qp-accent {
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #00E676, #00C6FF);
+  transition: height 0.4s ease;
+}
+
+.case-card-qp-style:hover .case-qp-accent {
+  height: 5px;
+}
+
+/* Per-card accent colors */
+.case-card-qp-1 .case-qp-accent { background: linear-gradient(90deg, #00E676, #00C6FF); }
+.case-card-qp-2 .case-qp-accent { background: linear-gradient(90deg, #00C6FF, #00E676); }
+.case-card-qp-3 .case-qp-accent { background: linear-gradient(90deg, #F5A623, #00C6FF); }
+.case-card-qp-4 .case-qp-accent { background: linear-gradient(90deg, #8B5CF6, #00C6FF); }
+.case-card-qp-5 .case-qp-accent { background: linear-gradient(90deg, #00C6FF, #F5A623); }
+.case-card-qp-6 .case-qp-accent { background: linear-gradient(90deg, #00E676, #F5A623); }
+
+.case-card-qp-2:hover { border-color: rgba(0, 198, 255, 0.28); box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 32px rgba(0, 198, 255, 0.08); }
+.case-card-qp-3:hover { border-color: rgba(245, 166, 35, 0.28); box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 32px rgba(245, 166, 35, 0.08); }
+.case-card-qp-4:hover { border-color: rgba(139, 92, 246, 0.28); box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 32px rgba(139, 92, 246, 0.08); }
+.case-card-qp-5:hover { border-color: rgba(0, 198, 255, 0.28); box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 32px rgba(0, 198, 255, 0.08); }
+.case-card-qp-6:hover { border-color: rgba(0, 230, 118, 0.28); box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 32px rgba(0, 230, 118, 0.08); }
+
+.case-qp-head {
+  padding: 18px 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.case-qp-store {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+.case-qp-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #00C6FF;
+  padding: 4px 10px;
+  border-radius: 100px;
+  border: 1px solid rgba(0, 198, 255, 0.22);
+  background: rgba(0, 198, 255, 0.06);
+  white-space: nowrap;
+}
+
+.case-qp-badge.turnaround { color: #00E676; border-color: rgba(0, 230, 118, 0.22); background: rgba(0, 230, 118, 0.06); }
+.case-qp-badge.scale { color: #F5A623; border-color: rgba(245, 166, 35, 0.22); background: rgba(245, 166, 35, 0.06); }
+.case-qp-badge.diagnostic { color: #8B5CF6; border-color: rgba(139, 92, 246, 0.22); background: rgba(139, 92, 246, 0.06); }
+
+.case-qp-niche {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 500;
+  color: #00C6FF;
+  background: rgba(0, 198, 255, 0.06);
+  margin: 8px 20px 0;
+}
+
+.case-qp-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #F0F4F8;
+  margin: 6px 20px 0;
+  line-height: 1.4;
+}
+
+.case-qp-tagline {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 4px 20px 0;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.case-qp-sections {
+  margin: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-qp-label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.case-qp-label-nightmare { color: #FF4444; }
+.case-qp-label-revelation { color: #F5A623; }
+.case-qp-label-turnaround { color: #00C6FF; }
+.case-qp-label-result { color: #00E676; }
+
+.case-qp-text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.case-qp-result {
+  margin-top: 4px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(0, 230, 118, 0.08), rgba(0, 230, 118, 0.02));
+  border: 1px solid rgba(0, 230, 118, 0.15);
+  border-left: 3px solid rgba(0, 230, 118, 0.5);
+}
+
+.case-qp-result-text {
+  font-size: 12px;
+  color: #F0F4F8;
+  font-weight: 600;
+  margin: 0;
+}
+
+.case-qp-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 20px 18px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #00C6FF;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+
+.case-qp-download:hover {
+  gap: 8px;
+}

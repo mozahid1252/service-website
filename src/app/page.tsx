@@ -1851,7 +1851,7 @@ function ServicesSection() {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <div className="text-[#8899AA] text-xs">Type</div>
-                  <div className="text-white text-sm font-medium">90-Min Live · Done-With-You</div>
+                  <div className="text-white text-sm font-medium">Done-With-You</div>
                 </div>
                 <div className="text-right">
                   <div className="text-[#8899AA] text-xs">Investment</div>
@@ -2238,50 +2238,51 @@ function CaseStudiesSection() {
 
         <div className="reveal-stagger case-studies-compact-grid">
           {CASE_STUDIES.map((cs, i) => (
-            <div key={i} className={`case-card-wrapper case-card-compact ${cs.cssClass}`}>
-              <div className="case-card-inner case-card-inner-compact">
-              <div className="flex items-start justify-between gap-2 mb-2">
-                <h3 className="text-white font-bold text-sm">{cs.store}</h3>
-                <span className={`case-type-badge case-type-badge-compact ${cs.caseType}`}>{cs.caseType}</span>
+            <article
+              key={i}
+              className={`case-card-qp-style case-card-qp-${i + 1} reveal-up`}
+              style={{ transitionDelay: `${0.3 + i * 0.12}s` }}
+            >
+              <div className="case-qp-accent" aria-hidden="true" />
+              <div className="case-qp-head">
+                <h3 className="case-qp-store">{cs.store}</h3>
+                <span className={`case-qp-badge ${cs.caseType}`}>{cs.caseType}</span>
               </div>
-              <div className="inline-block px-2 py-0.5 rounded-full text-[10px] font-medium bg-[rgba(0,198,255,0.1)] text-[#00C6FF] mb-2">
-                {cs.niche}
-              </div>
-              <p className="text-[#F0F4F8] font-semibold text-xs mb-1">{cs.title}</p>
-              <p className="case-tagline case-tagline-compact">{cs.tagline}</p>
+              <span className="case-qp-niche">{cs.niche}</span>
+              <p className="case-qp-title">{cs.title}</p>
+              <p className="case-qp-tagline">{cs.tagline}</p>
 
-              <div className="space-y-2 mb-3">
-                <div>
-                  <div className="flex items-center gap-1.5 text-[#FF4444] text-[10px] font-semibold mb-0.5">
+              <div className="case-qp-sections">
+                <div className="case-qp-block">
+                  <div className="case-qp-label case-qp-label-nightmare">
                     <AlertTriangle size={10} /> The Nightmare
                   </div>
-                  <p className="text-[#8899AA] text-xs leading-relaxed">{cs.nightmare}</p>
+                  <p className="case-qp-text">{cs.nightmare}</p>
                 </div>
-                <div>
-                  <div className="flex items-center gap-1.5 text-[#F5A623] text-[10px] font-semibold mb-0.5">
+                <div className="case-qp-block">
+                  <div className="case-qp-label case-qp-label-revelation">
                     <Lightbulb size={10} /> The Revelation
                   </div>
-                  <p className="text-[#8899AA] text-xs leading-relaxed">{cs.revelation}</p>
+                  <p className="case-qp-text">{cs.revelation}</p>
                 </div>
-                <div>
-                  <div className="flex items-center gap-1.5 text-[#00C6FF] text-[10px] font-semibold mb-0.5">
+                <div className="case-qp-block">
+                  <div className="case-qp-label case-qp-label-turnaround">
                     <Zap size={10} /> The Turnaround
                   </div>
-                  <p className="text-[#8899AA] text-xs leading-relaxed">{cs.turnaround}</p>
+                  <p className="case-qp-text">{cs.turnaround}</p>
                 </div>
-                <div className="p-2 rounded-lg bg-[rgba(0,230,118,0.08)] border border-[rgba(0,230,118,0.15)]">
-                  <div className="flex items-center gap-1.5 text-[#00E676] text-[10px] font-semibold mb-0.5">
+                <div className="case-qp-result">
+                  <div className="case-qp-label case-qp-label-result">
                     <Rocket size={10} /> The Result
                   </div>
-                  <p className="text-[#F0F4F8] text-xs font-semibold">{cs.result}</p>
+                  <p className="case-qp-result-text">{cs.result}</p>
                 </div>
               </div>
 
-              <a href={`${basePath}/pdfs/case-${cs.cssClass}.pdf`} download={`${cs.store}_Case_Study.pdf`} className="text-[#00C6FF] text-xs font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline">
+              <a href={`${basePath}/pdfs/case-${cs.cssClass}.pdf`} download={`${cs.store}_Case_Study.pdf`} className="case-qp-download">
                 <Download size={12} /> Download Full {cs.store} Case Study PDF
               </a>
-              </div>
-            </div>
+            </article>
           ))}
         </div>
 
