@@ -1522,12 +1522,12 @@ function ServicesSection() {
 
                 <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
                 <h4 className="text-white text-lg font-bold mb-1">{pkg.name}</h4>
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-8 mb-4">
                   <div>
                     <div className="text-[#8899AA] text-xs">Timeline</div>
                     <div className="text-white text-sm font-medium">{pkg.timeline}</div>
                   </div>
-                  <div className="text-right">
+                  <div>
                     <div className="text-[#8899AA] text-xs">Investment</div>
                     <div className="gradient-text-gold text-sm font-bold">{pkg.price}</div>
                   </div>
@@ -1578,12 +1578,12 @@ function ServicesSection() {
                   <div>
                     <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
                     <h4 className="text-white text-lg font-bold mb-1">{pkg.name}</h4>
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-8 mb-4">
                       <div>
                         <div className="text-[#8899AA] text-xs">Timeline</div>
                         <div className="text-white text-sm font-medium">{pkg.timeline}</div>
                       </div>
-                      <div className="text-right">
+                      <div>
                         <div className="text-[#8899AA] text-xs">Investment</div>
                         <div className="gradient-text-gold text-sm font-bold">{pkg.price}</div>
                       </div>
@@ -1629,12 +1629,12 @@ function ServicesSection() {
               <div key={i} className={`addon-card-wrapper ${pkg.cssClass}`}>
                 <div className="addon-card-inner">
                 <h4 className="text-white font-bold text-base mb-1">{pkg.name}</h4>
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-8 mb-3">
                   <div>
                     <div className="text-[#8899AA] text-xs">Timeline</div>
                     <div className="text-white text-sm font-medium">{pkg.price.split(' · ')[1] || '7–14 Days'}</div>
                   </div>
-                  <div className="text-right">
+                  <div>
                     <div className="text-[#8899AA] text-xs">Investment</div>
                     <div className="gradient-text-gold text-sm font-bold">{pkg.price.split(' · ')[0]}</div>
                   </div>
@@ -1689,7 +1689,7 @@ function ServicesSection() {
                       <div className="text-[#8899AA] text-xs">Timeline</div>
                       <div className="text-white text-sm font-medium">{bundle.timeline}</div>
                     </div>
-                    <div className="text-right">
+                    <div>
                       <div className="text-[#8899AA] text-xs">Investment</div>
                       <div className="gradient-text-gold text-sm font-bold">{bundle.investment}</div>
                     </div>
@@ -1798,12 +1798,12 @@ function ServicesSection() {
                 <span className="text-[#00C6FF] text-xs font-bold tracking-widest uppercase">Service 01</span>
               </div>
               <h4 className="text-white font-bold text-lg mb-1">Klaviyo Email Flows Setup</h4>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-8 mb-4">
                 <div>
                   <div className="text-[#8899AA] text-xs">Type</div>
                   <div className="text-white text-sm font-medium">Done-for-You</div>
                 </div>
-                <div className="text-right">
+                <div>
                   <div className="text-[#8899AA] text-xs">Investment</div>
                   <div className="gradient-text-gold text-sm font-bold">$300 – $600</div>
                 </div>
@@ -1848,12 +1848,12 @@ function ServicesSection() {
                 <span className="text-[#F5A623] text-xs font-bold tracking-widest uppercase">Service 02</span>
               </div>
               <h4 className="text-white font-bold text-lg mb-1">Shopify / Tech Implementation Session</h4>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-8 mb-4">
                 <div>
                   <div className="text-[#8899AA] text-xs">Type</div>
                   <div className="text-white text-sm font-medium">Done-With-You</div>
                 </div>
-                <div className="text-right">
+                <div>
                   <div className="text-[#8899AA] text-xs">Investment</div>
                   <div className="gradient-text-gold text-sm font-bold">$200</div>
                 </div>
@@ -1900,12 +1900,12 @@ function ServicesSection() {
                 <span className="text-[#00E676] text-xs font-bold tracking-widest uppercase">Service 03</span>
               </div>
               <h4 className="text-white font-bold text-lg mb-1">Custom Implementation Support</h4>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center gap-8 mb-4">
                 <div>
                   <div className="text-[#8899AA] text-xs">Type</div>
                   <div className="text-white text-sm font-medium">Based on Scope</div>
                 </div>
-                <div className="text-right">
+                <div>
                   <div className="text-[#8899AA] text-xs">Investment</div>
                   <div className="gradient-text-gold text-sm font-bold">Custom Pricing</div>
                 </div>
