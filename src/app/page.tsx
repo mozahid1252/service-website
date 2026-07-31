@@ -2572,50 +2572,32 @@ function FAQSection() {
   const renderCard = (item: { num: string; question: string; answer: React.ReactNode }, displayIndex: number) => {
     const isOpen = openIndex === displayIndex;
     return (
-      <article
-        className={`faq-card${isOpen ? ' open' : ''}`}
-        data-index={item.num}
+      <div
+        className={`faq-item${isOpen ? ' open' : ''}`}
         key={item.num}
       >
-        <div className="faq-card-number">{item.num}</div>
-        <div className="faq-card-body">
-          {/* Question row — always visible, clickable to toggle */}
-          <button
-            type="button"
-            className="faq-card-left"
-            onClick={() => toggle(displayIndex)}
-            aria-expanded={isOpen}
-            aria-controls={`faq-answer-${item.num}`}
-          >
-            <div className="faq-card-q-label">
-              <span className="faq-q-dot"></span>
-              Question
-            </div>
-            <h3 className="faq-card-question" id={`faq-question-${item.num}`}>{item.question}</h3>
-            {/* +/- toggle icon (cross-faded) */}
-            <span className="faq-toggle" aria-hidden="true">
-              <span className="faq-toggle-icon faq-toggle-plus">+</span>
-              <span className="faq-toggle-icon faq-toggle-minus">−</span>
-            </span>
-          </button>
-          <div className="faq-card-divider" aria-hidden="true"></div>
-          {/* Answer region — collapses/expands below the question */}
-          <div
-            className={`faq-card-right${isOpen ? ' open' : ''}`}
-            id={`faq-answer-${item.num}`}
-            role="region"
-            aria-labelledby={`faq-question-${item.num}`}
-          >
-            <div className="faq-card-right-inner">
-              <div className="faq-card-a-label">
-                <span className="faq-a-dot"></span>
-                Answer
-              </div>
-              <p className="faq-card-answer">{item.answer}</p>
-            </div>
-          </div>
+        <button
+          type="button"
+          className="faq-item-question"
+          onClick={() => toggle(displayIndex)}
+          aria-expanded={isOpen}
+          aria-controls={`faq-answer-${item.num}`}
+        >
+          <span className="faq-item-text">{item.question}</span>
+          <span className="faq-toggle" aria-hidden="true">
+            <span className="faq-toggle-icon faq-toggle-plus">+</span>
+            <span className="faq-toggle-icon faq-toggle-minus">−</span>
+          </span>
+        </button>
+        <div
+          className={`faq-item-answer${isOpen ? ' open' : ''}`}
+          id={`faq-answer-${item.num}`}
+          role="region"
+        >
+          <p className="faq-item-answer-text">{item.answer}</p>
         </div>
-      </article>
+        <div className="faq-item-divider" aria-hidden="true"></div>
+      </div>
     );
   };
 

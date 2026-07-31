@@ -4670,3 +4670,73 @@ table.infra-table {
 .case-qp-download:hover {
   gap: 8px;
 }
+
+/* ============================================
+   FAQ — Minimal documentation-style accordion
+   No cards, no borders, no shadows, no gaps.
+   Just questions with thin divider lines.
+   ============================================ */
+
+.faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.faq-item-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: none;
+}
+
+.faq-item-question:hover {
+  background: none;
+}
+
+.faq-item-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.5;
+  flex: 1;
+  padding-right: 16px;
+}
+
+.faq-item-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item-answer.open {
+  max-height: 500px;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item-answer-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+  margin: 0;
+  padding: 0 0 16px 0;
+}
+
+.faq-item-answer-text strong {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 700;
+}
+
+.faq-item-divider {
+  display: none;
+}
