@@ -385,7 +385,7 @@ strong { color: #FFFFFF; font-weight: 700; }
 .agency-reason-card {
   position: relative;
   border-radius: 16px;
-  padding: 28px 32px;
+  padding: 20px 24px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -2438,7 +2438,7 @@ table.infra-table {
    ============================================ */
 
 .individual-services-box {
-  padding: 28px 32px;
+  padding: 20px 24px;
   border-radius: 16px;
   background: rgba(8, 14, 24, 0.90);
   border: 1px solid rgba(0, 198, 255, 0.15);
@@ -3352,7 +3352,7 @@ table.infra-table {
 
 .whyme-title {
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: clamp(36px, 5vw, 64px);
+  font-size: clamp(28px, 4vw, 52px);
   font-weight: 800;
   color: #FFFFFF;
   line-height: 1.02;
@@ -3385,8 +3385,10 @@ table.infra-table {
 
 /* ── PRINCIPLES LIST ── */
 .whyme-principles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   display: flex;
-  flex-direction: column;
 }
 
 .whyme-principle {
@@ -3470,7 +3472,7 @@ table.infra-table {
 .whyme-card {
   position: relative;
   overflow: hidden;
-  padding: 28px 32px;
+  padding: 20px 24px;
   border-radius: 18px;
   background: linear-gradient(145deg, rgba(13, 21, 32, 0.72) 0%, rgba(6, 11, 19, 0.82) 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -3547,7 +3549,7 @@ table.infra-table {
   position: relative;
   z-index: 1;
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: clamp(20px, 2.2vw, 26px);
+  font-size: clamp(16px, 1.8vw, 22px);
   font-weight: 800;
   color: #FFFFFF;
   line-height: 1.25;
@@ -3559,7 +3561,7 @@ table.infra-table {
   position: relative;
   z-index: 1;
   font-family: 'Inter', sans-serif;
-  font-size: 14.5px;
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.62);
   line-height: 1.7;
   margin: 0;
@@ -3657,6 +3659,7 @@ table.infra-table {
 
 @media (max-width: 768px) {
   .whyme-section { padding: 80px 16px; }
+  .whyme-principles { grid-template-columns: 1fr; }
   .whyme-header { margin-bottom: 44px; }
   .whyme-title { font-size: clamp(28px, 8vw, 40px); letter-spacing: -1.5px; }
   .whyme-principle {

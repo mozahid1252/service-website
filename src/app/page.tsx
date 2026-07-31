@@ -1367,7 +1367,7 @@ function WhyMeSection() {
               <span className="whyme-eyebrow-dot" aria-hidden="true" />
               Why Me
             </span>
-            <h2 className="whyme-title reveal-up" style={{ transitionDelay: '0.15s' }}>
+            <h2 className="whyme-title reveal-up whitespace-nowrap" style={{ transitionDelay: '0.15s' }}>
               The 4 Principles<br />
               <span className="whyme-title-accent">That Shape Every Engagement</span>
             </h2>
