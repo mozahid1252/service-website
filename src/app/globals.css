@@ -2406,7 +2406,7 @@ table.infra-table {
 
 .contact-main-heading {
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: clamp(31px, 7vw, 87px);
+  font-size: clamp(26px, 6vw, 74px);
   font-weight: 800;
   line-height: 1.10;
   letter-spacing: -2px;
