@@ -1367,7 +1367,7 @@ function WhyMeSection() {
               <span className="whyme-eyebrow-dot" aria-hidden="true" />
               Why Me
             </span>
-            <h2 className="whyme-title reveal-up whitespace-nowrap" style={{ transitionDelay: '0.15s' }}>
+            <h2 className="whyme-title reveal-up text-center" style={{ transitionDelay: '0.15s' }}>
               The 4 Principles<br />
               <span className="whyme-title-accent">That Shape Every Engagement</span>
             </h2>
@@ -1382,13 +1382,6 @@ function WhyMeSection() {
               className={`whyme-principle whyme-p-${i + 1} reveal-up`}
               style={{ transitionDelay: `${0.4 + i * 0.12}s` }}
             >
-              {/* Number badge — above the card */}
-              <div className="whyme-num-rail">
-                <div className="whyme-num-badge">
-                  <span className="whyme-num-text">{p.num}</span>
-                </div>
-              </div>
-
               {/* Card body */}
               <div className="whyme-card">
                 <div className="whyme-card-glow" aria-hidden="true" />
