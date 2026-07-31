@@ -3387,35 +3387,25 @@ table.infra-table {
 .whyme-principles {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  display: flex;
+  gap: 24px;
 }
 
 .whyme-principle {
   position: relative;
-  display: grid;
-  grid-template-columns: 88px 1fr;
-  gap: 28px;
-  padding: 8px 0;
-}
-
-/* Connector — absolutely positioned so it doesn't break grid layout */
-.whyme-connector {
-  position: absolute;
-  left: 27px;
-  top: 72px;
-  bottom: -8px;
-  width: 1px;
-  background: linear-gradient(180deg, rgba(0, 198, 255, 0.2), transparent);
-  pointer-events: none;
-}
-
-/* Number rail */
-.whyme-num-rail {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+
+/* Connector removed — cards are now standalone in a 2x2 grid */
+.whyme-connector { display: none; }
+
+/* Number rail — now sits above the card */
+.whyme-num-rail {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  padding-top: 8px;
+  gap: 12px;
 }
 
 .whyme-num-badge {
@@ -3439,12 +3429,7 @@ table.infra-table {
   letter-spacing: -0.5px;
 }
 
-.whyme-num-line {
-  flex: 1;
-  width: 1px;
-  margin-top: 12px;
-  background: linear-gradient(180deg, rgba(0, 198, 255, 0.3), transparent);
-}
+.whyme-num-line { display: none; }
 
 /* Per-card accent colors */
 .whyme-p-2 .whyme-num-badge { border-color: rgba(0, 230, 118, 0.25); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 18px rgba(0, 230, 118, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.06); }
@@ -3472,7 +3457,7 @@ table.infra-table {
 .whyme-card {
   position: relative;
   overflow: hidden;
-  padding: 20px 24px;
+  padding: 28px 32px;
   border-radius: 18px;
   background: linear-gradient(145deg, rgba(13, 21, 32, 0.72) 0%, rgba(6, 11, 19, 0.82) 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -3549,7 +3534,7 @@ table.infra-table {
   position: relative;
   z-index: 1;
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: clamp(16px, 1.8vw, 22px);
+  font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 800;
   color: #FFFFFF;
   line-height: 1.25;
@@ -3561,7 +3546,7 @@ table.infra-table {
   position: relative;
   z-index: 1;
   font-family: 'Inter', sans-serif;
-  font-size: 13px;
+  font-size: 14.5px;
   color: rgba(255, 255, 255, 0.62);
   line-height: 1.7;
   margin: 0;

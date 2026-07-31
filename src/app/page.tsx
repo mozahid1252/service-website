@@ -1382,17 +1382,11 @@ function WhyMeSection() {
               className={`whyme-principle whyme-p-${i + 1} reveal-up`}
               style={{ transitionDelay: `${0.4 + i * 0.12}s` }}
             >
-              {/* Connector line (between cards) */}
-              {i < principles.length - 1 && (
-                <span className="whyme-connector" aria-hidden="true" />
-              )}
-
-              {/* Number rail */}
+              {/* Number badge — above the card */}
               <div className="whyme-num-rail">
                 <div className="whyme-num-badge">
                   <span className="whyme-num-text">{p.num}</span>
                 </div>
-                <div className="whyme-num-line" aria-hidden="true" />
               </div>
 
               {/* Card body */}
