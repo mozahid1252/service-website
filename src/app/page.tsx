@@ -1621,11 +1621,15 @@ function ServicesSection() {
               <div key={i} className={`addon-card-wrapper ${pkg.cssClass}`}>
                 <div className="addon-card-inner">
                 <h4 className="text-white font-bold text-base mb-1">{pkg.name}</h4>
-                <div className="mb-3">
-                  <div className="text-[#8899AA] text-xs">Timeline</div>
-                  <div className="text-white text-sm font-medium">{pkg.price.split(' · ')[1] || '7–14 Days'}</div>
-                  <div className="text-[#8899AA] text-xs mt-1">Investment</div>
-                  <div className="gradient-text-gold text-sm font-bold">{pkg.price.split(' · ')[0]}</div>
+                <div className="flex items-start justify-between mb-3">
+                  <div>
+                    <div className="text-[#8899AA] text-xs">Timeline</div>
+                    <div className="text-white text-sm font-medium">{pkg.price.split(' · ')[1] || '7–14 Days'}</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-[#8899AA] text-xs">Investment</div>
+                    <div className="gradient-text-gold text-sm font-bold">{pkg.price.split(' · ')[0]}</div>
+                  </div>
                 </div>
                 <div className="mb-3">
                   <div className="text-[#FF4444] text-xs font-semibold mb-1">Problem:</div>
@@ -2093,9 +2097,7 @@ function ServicesSection() {
               </div>
               <h4 className="text-white font-bold text-lg mb-1">Shopify / Tech Implementation Session</h4>
               <div className="mb-4">
-                  <div className="text-[#8899AA] text-xs">Type</div>
-                  <div className="text-white text-sm font-medium">Done-With-You</div>
-                  <div className="text-[#8899AA] text-xs mt-1">Investment</div>
+                  <div className="text-[#8899AA] text-xs">Investment</div>
                   <div className="gradient-text-gold text-sm font-bold">$200</div>
                 </div>
               <p className="text-[#8899AA] text-sm leading-relaxed mb-5">Already know what needs fixing but aren&apos;t sure how to implement it? Join a live implementation session where we&apos;ll guide you step by step while you or your team make the changes.</p>
@@ -2285,8 +2287,15 @@ function TechPortfolioSection() {
         </div>
 
         <div className="portfolio-cards-grid mb-8">
-          {GITHUB_PROJECTS.map((proj, i) => (
-            <div key={i} className={`portfolio-project-card portfolio-card-${['behavioral','financial','churn'][i]}`}>
+          {GITHUB_PROJECTS.map((proj, i) => {
+            const accents = [
+              { border: 'rgba(0,198,255,0.20)', left: '#00C6FF', bg: 'rgba(0,198,255,0.08)', hover: 'rgba(0,198,255,0.15)' },
+              { border: 'rgba(0,230,118,0.20)', left: '#00E676', bg: 'rgba(0,230,118,0.08)', hover: 'rgba(0,230,118,0.15)' },
+              { border: 'rgba(245,166,35,0.20)', left: '#F5A623', bg: 'rgba(245,166,35,0.08)', hover: 'rgba(245,166,35,0.15)' },
+            ];
+            const a = accents[i] || accents[0];
+            return (
+            <div key={i} className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: `linear-gradient(145deg, rgba(13,21,32,0.95) 0%, ${a.bg} 100%)`, border: `1px solid ${a.border}`, borderLeft: `4px solid ${a.left}`, boxShadow: '0 0 30px ' + a.bg + ', 0 8px 32px rgba(0,0,0,0.4)' }}>
               <h3 className="text-white font-bold text-lg mb-1">{proj.name}</h3>
               <p className="gradient-text text-sm font-semibold mb-3">{proj.subtitle}</p>
               <div className="flex flex-wrap gap-2 mb-4">
@@ -2298,15 +2307,16 @@ function TechPortfolioSection() {
                 <div className="card-label-engineering text-xs font-semibold mb-1">The Engineering:</div>
                 <p className="text-[#8899AA] text-sm leading-relaxed">{proj.engineering}</p>
               </div>
-              <div className="mb-5">
+              <div className="mb-5 p-4 rounded-lg" style={{ background: a.bg, border: `1px solid ${a.border}` }}>
                 <div className="card-label-impact text-xs font-semibold mb-1">The Impact:</div>
                 <p className="text-[#F0F4F8] text-sm leading-relaxed">{proj.impact}</p>
               </div>
-              <a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all">
+              <a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline">
                 View Code &amp; Methodology on GitHub <ExternalLink size={14} />
               </a>
             </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bottom CTA Bar */}
@@ -2446,11 +2456,18 @@ function TechStackSection() {
         <div className="infra-tech-grid mb-10">
           {TECH_STACK.map((cat, i) => {
             const IconComp = cat.icon;
+            const accents = [
+              { border: 'rgba(0,198,255,0.20)', left: '#00C6FF', bg: 'rgba(0,198,255,0.08)' },
+              { border: 'rgba(0,230,118,0.20)', left: '#00E676', bg: 'rgba(0,230,118,0.08)' },
+              { border: 'rgba(245,166,35,0.20)', left: '#F5A623', bg: 'rgba(245,166,35,0.08)' },
+              { border: 'rgba(139,92,246,0.20)', left: '#8B5CF6', bg: 'rgba(139,92,246,0.08)' },
+            ];
+            const a = accents[i] || accents[0];
             return (
-              <div key={i} className={`infra-tech-card infra-card-${['programming','cloud','visualization','platforms'][i]}`}>
+              <div key={i} className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: `linear-gradient(145deg, rgba(13,21,32,0.95) 0%, ${a.bg} 100%)`, border: `1px solid ${a.border}`, borderLeft: `4px solid ${a.left}`, boxShadow: '0 0 30px ' + a.bg + ', 0 8px 32px rgba(0,0,0,0.4)' }}>
                 <div className="flex items-center gap-3 mb-2">
-                  <IconComp size={22} className="infra-card-icon" />
-                  <h3 className="infra-card-title font-bold text-lg">{cat.category}</h3>
+                  <IconComp size={22} style={{ color: a.left }} />
+                  <h3 className="font-bold text-lg text-white">{cat.category}</h3>
                 </div>
                 <p className="text-[#8899AA] text-sm mb-5">{cat.description}</p>
                 <ul className="infra-tool-list">
