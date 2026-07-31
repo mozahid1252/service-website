@@ -16,7 +16,7 @@
 <header class="hero">
   <div class="container">
     <div class="eyebrow" style="margin: 0 auto;">Bundle 01 · Basic Setup</div>
-    <h1>The fast track to <em>clean, connected</em> data.</h1>
+    <h1>THE FAST TRACK TO CLEAN, <em>CONNECTED DATA.</em></h1>
     <p>Before any analysis can begin, your data needs to be extracted and cleaned. This one-time infrastructure setup connects your core platforms and structures your data for a single, reliable analytics engagement. No manual exports, no spreadsheet mess.</p>
     <div class="hero-cta">
       <a href="#pricing" class="btn btn-primary">Start Basic Setup</a>
@@ -31,22 +31,22 @@
     <div class="header-center">
       <div class="eyebrow">The Engineering Process</div>
       <h2>What Happens During This Setup</h2>
-      <p>A disciplined engineering sequence to stand up your cloud environment and connect your data sources.</p>
+      <p>A simple, structured process to connect your business data, organize it properly, and prepare it for reliable analysis.</p>
     </div>
     <div class="workflow-vertical">
-      <div class="workflow-step scroll-reveal"><h4>Discovery</h4><p>Mapping your tech stack and identifying necessary platforms.</p></div>
+      <div class="workflow-step scroll-reveal"><h4>1. Understand Your Data</h4><p>We review your current platforms and identify which data sources are needed.</p></div>
       <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="workflow-step scroll-reveal"><h4>Platform Assessment</h4><p>Evaluating API limits and data structure for each source.</p></div>
+      <div class="workflow-step scroll-reveal"><h4>2. Check Platform Access</h4><p>We confirm that the required data can be accessed safely from each platform.</p></div>
       <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="workflow-step scroll-reveal"><h4>Infrastructure Configuration</h4><p>Setting up the GCP project and BigQuery database.</p></div>
+      <div class="workflow-step scroll-reveal"><h4>3. Set Up Your Data Environment</h4><p>We create the required cloud database environment where your business data can be stored securely.</p></div>
       <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="workflow-step scroll-reveal"><h4>API Connections</h4><p>Authenticating and securing access to Shopify, GA4, and Ad platforms.</p></div>
+      <div class="workflow-step scroll-reveal"><h4>4. Connect Your Platforms</h4><p>We securely connect platforms such as Shopify, GA4, and advertising accounts to the data environment.</p></div>
       <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="workflow-step scroll-reveal"><h4>Pipeline Development</h4><p>Writing extraction scripts to pull data securely.</p></div>
+      <div class="workflow-step scroll-reveal"><h4>5. Prepare the Data Flow</h4><p>We set up the required data flow so information from your connected platforms can be collected and organized for analysis.</p></div>
       <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="workflow-step scroll-reveal"><h4>Testing & Validation</h4><p>Ensuring row counts match and data is uncorrupted.</p></div>
+      <div class="workflow-step scroll-reveal"><h4>6. Clean & Check the Data</h4><p>We remove errors, standardize the data, and verify that the numbers are accurate and complete.</p></div>
       <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="workflow-step scroll-reveal"><h4>Client Handover</h4><p>Delivery of clean dataset and architecture documentation.</p></div>
+      <div class="workflow-step scroll-reveal"><h4>7. Ready for Analysis</h4><p>You receive a clean, organized dataset that is ready for audits, dashboards, reporting, and future analysis.</p></div>
     </div>
   </div>
 </section>
@@ -60,11 +60,13 @@
       <p>How data moves from disparate platforms into a unified, analysis-ready state.</p>
     </div>
     <div class="arch-diagram scroll-reveal">
-      <div class="arch-node"><i class="fa-solid fa-bag-shopping"></i><h5>Shopify API</h5></div>
+      <div class="arch-node"><i class="fa-solid fa-plug"></i><h5>Platforms API</h5></div>
       <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="arch-node"><i class="fa-solid fa-cloud"></i><h5>Extraction Script</h5></div>
       <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="arch-node"><i class="fa-solid fa-broom"></i><h5>Cleaning Logic</h5></div>
+      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="arch-node"><i class="fa-solid fa-code-merge"></i><h5>Merge Logic</h5></div>
       <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
       <div class="arch-node"><i class="fa-solid fa-database"></i><h5>Clean Dataset</h5></div>
     </div>
@@ -77,24 +79,24 @@
     <div class="header-center">
       <div class="eyebrow">Technical Scope</div>
       <h2>What We Build</h2>
-      <p>Every component of the Basic Setup, engineered for reliability.</p>
+      <p>Every component of the Basic Setup is designed to create a reliable foundation for your business data and future analysis.</p>
     </div>
 
     <div class="service-block scroll-reveal">
       <div class="service-header">
-        <h3>Cloud Infrastructure Setup</h3>
+        <h3>1. Cloud Infrastructure Setup</h3>
       </div>
       <div class="service-content">
         <div class="service-text">
-          <p><strong>Purpose:</strong> Create the central home for all your business data.</p>
-          <p><strong>What we configure:</strong> Google Cloud Platform (GCP) project, billing, and BigQuery database.</p>
-          <p><strong>Why it matters:</strong> Provides a secure, scalable warehouse environment. We don't rely on local files; your data lives in enterprise-grade cloud infrastructure.</p>
+          <p><strong>Purpose:</strong> Create the central home for your business data.</p>
+          <p><strong>What We Configure:</strong> A Google Cloud Platform (GCP) project, billing configuration, and BigQuery database.</p>
+          <p><strong>Why It Matters:</strong> Provides a secure and scalable cloud data warehouse for your business data. Instead of relying on local files or scattered spreadsheets, your data is stored in a structured cloud environment.</p>
         </div>
         <div class="service-visual">
           <div class="code-snippet">
             # GCP Infrastructure<br>
             project_id = "moz-client-prod"<br>
-            dataset = "raw_shopify_data"<br>
+            dataset = "raw_data"<br>
             location = "US"
           </div>
         </div>
@@ -103,16 +105,16 @@
 
     <div class="service-block scroll-reveal">
       <div class="service-header">
-        <h3>API Connection</h3>
+        <h3>2. API Connection</h3>
       </div>
       <div class="service-content">
         <div class="service-text">
-          <p><strong>Purpose:</strong> Establish a secure link to your store's transactional data.</p>
-          <p><strong>What we configure:</strong> Secure private app, API keys, and permission scopes.</p>
-          <p><strong>Why it matters:</strong> Ensures we can pull orders, customers, and products without exposing your store to security risks.</p>
+          <p><strong>Purpose:</strong> Establish a secure connection to your business data.</p>
+          <p><strong>What We Configure:</strong> Secure API authentication, access credentials, and the required permission scopes for each connected platform.</p>
+          <p><strong>Why It Matters:</strong> Allows us to securely retrieve relevant orders, customers, products, analytics, or other required business data without unnecessarily exposing or modifying your platform.</p>
         </div>
         <div class="service-visual">
-          <div class="arch-diagram" style="padding: 16px; background: var(--surface);">
+           <div class="arch-diagram" style="padding: 16px; background: var(--surface); border: none; box-shadow: none;">
             <div class="arch-node"><i class="fa-solid fa-lock"></i><h5>Auth Token</h5></div>
             <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
             <div class="arch-node"><i class="fa-solid fa-code"></i><h5>API Call</h5></div>
@@ -125,17 +127,17 @@
 
     <div class="service-block scroll-reveal">
       <div class="service-header">
-        <h3>Data Pipeline Build (Per Platform)</h3>
+        <h3>3. Data Pipeline Build (Per Platform)</h3>
       </div>
       <div class="service-content">
         <div class="service-text">
-          <p><strong>Purpose:</strong> Automate the extraction of your data.</p>
-          <p><strong>What we configure:</strong> Python extraction scripts that pull data on demand. Includes 2-3 platforms.</p>
-          <p><strong>Why it matters:</strong> Replaces manual CSV exports with reproducible, error-free code.</p>
+          <p><strong>Purpose:</strong> Automate the extraction of your business data.</p>
+          <p><strong>What We Configure:</strong> Python-based extraction scripts that securely pull required data from your connected platforms on demand. Includes 2–3 platforms.</p>
+          <p><strong>Why It Matters:</strong> Replaces repetitive manual CSV exports with a reproducible data pipeline, improving consistency, reliability, and efficiency.</p>
         </div>
         <div class="service-visual">
           <div class="code-snippet">
-            def extract_shopify():<br>
+            def extract_data():<br>
             &nbsp;&nbsp;url = f"{base_url}/orders.json"<br>
             &nbsp;&nbsp;response = requests.get(url)<br>
             &nbsp;&nbsp;return response.json()
@@ -146,21 +148,44 @@
 
     <div class="service-block scroll-reveal">
       <div class="service-header">
-        <h3>Data Cleaning & Standardization</h3>
+        <h3>4. Data Cleaning & Standardization</h3>
       </div>
       <div class="service-content">
         <div class="service-text">
-          <p><strong>Purpose:</strong> Make the data speak the same language.</p>
-          <p><strong>What we configure:</strong> Alignment of column names, currencies, date formats, and timezones.</p>
-          <p><strong>Why it matters:</strong> Raw data is messy. Cleaning ensures that when we analyze it, we aren't comparing apples to oranges.</p>
+          <p><strong>Purpose:</strong> Make data from different sources consistent and analysis-ready.</p>
+          <p><strong>What We Configure:</strong> Standardization of column names, currencies, date formats, timezones, and other relevant data fields.</p>
+          <p><strong>Why It Matters:</strong> Raw data often contains inconsistencies. Cleaning and standardization ensures your data is accurate, consistent, and ready for reliable analysis.</p>
         </div>
         <div class="service-visual">
-          <div class="arch-diagram" style="padding: 16px; background: var(--surface);">
-            <div class="arch-node" style="border-color: var(--danger);"><h5 style="color:var(--danger);">"2024-03-01"</h5></div>
+          <div class="arch-diagram" style="padding: 16px; background: var(--surface); border: none; box-shadow: none;">
+            <div class="arch-node" style="border-color: var(--danger);"><h5 style="color:var(--danger);">Raw Format</h5></div>
             <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
             <div class="arch-node" style="border-color: var(--accent);"><i class="fa-solid fa-broom"></i></div>
             <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="arch-node" style="border-color: var(--success);"><h5 style="color:var(--success);">03/01/24</h5></div>
+            <div class="arch-node" style="border-color: var(--success);"><h5 style="color:var(--success);">Standardized</h5></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block scroll-reveal">
+      <div class="service-header">
+        <h3>5. Data Integration & Platform Preparation (2–3 Platforms)</h3>
+      </div>
+      <div class="service-content">
+        <div class="service-text">
+          <p><strong>Purpose:</strong> Prepare data from your connected platforms for analysis.</p>
+          <p><strong>What We Configure:</strong> We organize and prepare data from your connected platforms, including the required fields, formats, and data structures needed for analysis.</p>
+          <p><strong>Why It Matters:</strong> Your data is prepared in a consistent structure so the required analysis can be performed accurately.</p>
+          <p style="color: var(--muted); font-size: 13px; margin-top: 16px; font-style: italic;">Complex multi-platform data merging and unified data modeling are NOT included in the Basic Setup and are available with the Full Pipeline Setup.</p>
+        </div>
+        <div class="service-visual">
+          <div class="arch-diagram" style="padding: 16px; background: var(--surface); border: none; box-shadow: none;">
+            <div class="arch-node"><i class="fa-solid fa-shopify"></i><h5>Platform 1</h5></div>
+            <div class="arch-arrow"><i class="fa-solid fa-plus"></i></div>
+            <div class="arch-node"><i class="fa-solid fa-chart-line"></i><h5>Platform 2</h5></div>
+            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            <div class="arch-node" style="border-color: var(--success);"><i class="fa-solid fa-check"></i><h5>Prepared</h5></div>
           </div>
         </div>
       </div>
@@ -182,42 +207,35 @@
         <ul class="ba-list">
           <li><i class="fa-solid fa-times-circle"></i> Disconnected Platforms</li>
           <li><i class="fa-solid fa-times-circle"></i> Manual CSV Exports</li>
-          <li><i class="fa-solid fa-times-circle"></i> Inconsistent Date Formats</li>
+          <li><i class="fa-solid fa-times-circle"></i> Inconsistent Data Formats</li>
           <li><i class="fa-solid fa-times-circle"></i> Scattered Information</li>
+          <li><i class="fa-solid fa-times-circle"></i> No Data Integration</li>
         </ul>
       </div>
       <div class="ba-card good scroll-reveal">
-        <h4>With Basic Setup</h4>
+        <h4>With Our Infrastructure</h4>
         <ul class="ba-list">
           <li><i class="fa-solid fa-check-circle"></i> API Connected Sources</li>
           <li><i class="fa-solid fa-check-circle"></i> Automated Extraction</li>
           <li><i class="fa-solid fa-check-circle"></i> Standardized Data</li>
           <li><i class="fa-solid fa-check-circle"></i> Clean Dataset Ready</li>
+          <li><i class="fa-solid fa-check-circle"></i> Connected Data Sources</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Business Benefits & Tech Stack -->
+<!-- Technology Stack -->
 <section style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">Business Impact</div>
-      <h2>What This Means For Your Business</h2>
-    </div>
-    <div class="info-grid" style="margin-bottom: 64px;">
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-shield-halved"></i></div><h4>Reliable Reporting</h4><p>Data you can trust for one-time, critical audits.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-bolt"></i></div><h4>Faster Decisions</h4><p>No waiting on manual exports to start analysis.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-cube"></i></div><h4>Clean Data</h4><p>Standardized formats ready for immediate use.</p></div>
-    </div>
-
-    <div class="header-center">
       <div class="eyebrow">Infrastructure</div>
-      <h2>Technology Stack</h2>
+      <h2>E-commerce Platforms</h2>
+      <p>Technology Stack</p>
     </div>
     <div class="tech-grid">
-      <div class="tech-card scroll-reveal"><i class="fa-solid fa-bag-shopping"></i><span>Shopify</span></div>
+      <div class="tech-card scroll-reveal"><i class="fa-brands fa-shopify"></i><span>Shopify / E-commerce Platform</span></div>
       <div class="tech-card scroll-reveal"><i class="fa-solid fa-chart-line"></i><span>GA4</span></div>
       <div class="tech-card scroll-reveal"><i class="fa-solid fa-database"></i><span>BigQuery</span></div>
       <div class="tech-card scroll-reveal"><i class="fa-brands fa-google"></i><span>GCP</span></div>
@@ -226,33 +244,42 @@
   </div>
 </section>
 
-<!-- Who This Is For & Deliverables -->
+<!-- Target Fit -->
 <section style="background: var(--bg);">
   <div class="container">
     <div class="header-center">
       <div class="eyebrow">Target Fit</div>
       <h2>Who This Package Is For</h2>
     </div>
-    <div class="info-grid" style="margin-bottom: 64px;">
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-store"></i></div><h4>Early-Stage Stores</h4><p>Doing $5K-$50K/mo needing a baseline diagnostic.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-flask"></i></div><h4>One-Time Audits</h4><p>Clients purchasing the Starter Health Check.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-database"></i></div><h4>Data Beginners</h4><p>Stores with no existing cloud infrastructure.</p></div>
+    <div class="info-grid">
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-store"></i></div><h4>Starter & Growth Package Clients</h4><p>Businesses that need reliable data infrastructure before starting their analysis.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-rotate"></i></div><h4>One-Time & Recurring Clients</h4><p>Businesses that need a structured data setup for either a single analysis or ongoing reporting.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-layer-group"></i></div><h4>Multi-Platform Businesses</h4><p>Businesses working with multiple data sources that need their data securely connected and organized.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-seedling"></i></div><h4>Data Beginners</h4><p>Businesses without an existing cloud data environment or automated data pipeline.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-rocket"></i></div><h4>Growing E-commerce Businesses</h4><p>Businesses that want a reliable data foundation that can support future dashboards, reporting, and deeper analytics.</p></div>
     </div>
+  </div>
+</section>
 
+<!-- What You'll Receive -->
+<section style="background: var(--surface);">
+  <div class="container">
     <div class="header-center">
       <div class="eyebrow">Handover</div>
       <h2>What You'll Receive</h2>
     </div>
     <div class="info-grid">
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-cloud"></i></div><h4>Configured Cloud Env</h4><p>Your own GCP project and BigQuery instance.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-cloud"></i></div><h4>Configured Cloud Environment</h4><p>Your own GCP project and BigQuery data warehouse.</p></div>
       <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-link"></i></div><h4>Connected APIs</h4><p>Securely authenticated data sources.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-file-code"></i></div><h4>Extraction Scripts</h4><p>The code used to pull your data.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-file-code"></i></div><h4>Extraction Scripts</h4><p>The Python code used to pull your data.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-broom"></i></div><h4>Clean & Standardized Data</h4><p>Data cleaned, structured, and standardized for reliable analysis.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-check-double"></i></div><h4>Analysis-Ready Dataset</h4><p>A clean, organized dataset ready for audits, reporting, dashboards, and analysis.</p></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" style="background: var(--surface);">
+<section id="faq" style="background: var(--bg);">
   <div class="container">
     <div class="header-center">
       <div class="eyebrow">FAQ</div>
@@ -266,7 +293,7 @@
       </div>
       <div class="faq-item scroll-reveal">
         <div class="faq-q">Which platforms can you connect? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">We can connect Shopify, GA4, Meta Ads, Google Ads, and Klaviyo. This basic bundle includes 2-3 platforms of your choice. If you need all platforms connected, please look at the Full Pipeline Setup.</div>
+        <div class="faq-a">We can connect platforms such as Shopify, WooCommerce, BigCommerce, GA4, Meta Ads, Google Ads, Klaviyo, and other relevant business data sources. This Basic Setup includes 2–3 platforms of your choice. If you need multiple platforms fully merged into a unified data environment, please look at the Full Pipeline Setup.</div>
       </div>
       <div class="faq-item scroll-reveal">
         <div class="faq-q">Is my data secure? <i class="fa-solid fa-plus"></i></div>
@@ -277,7 +304,7 @@
 </section>
 
 <!-- Pricing -->
-<section id="pricing" style="background: var(--bg);">
+<section id="pricing" style="background: var(--surface);">
   <div class="container">
     <div class="pricing-card scroll-reveal">
       <div class="eyebrow" style="margin: 0 auto;">Basic Setup</div>
@@ -288,6 +315,7 @@
         <li><i class="fa-solid fa-check"></i> Cloud Infrastructure Setup</li>
         <li><i class="fa-solid fa-check"></i> 2-3 Platform API Connections</li>
         <li><i class="fa-solid fa-check"></i> Data Pipeline Build</li>
+        <li><i class="fa-solid fa-check"></i> Platform Data Merge (2–3 Platforms)</li>
         <li><i class="fa-solid fa-check"></i> Basic Data Cleaning</li>
       </ul>
       <a href="mailto:hello@mozintelligence.com" class="btn btn-primary" style="width: 100%; justify-content: center;">Start Basic Setup</a>

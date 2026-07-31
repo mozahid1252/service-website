@@ -6,6 +6,7 @@
     <ul class="nav-links" style="display:flex; gap:32px; list-style:none;">
       <li><a href="#included" style="color:var(--muted); font-size:14px;">Included</a></li>
       <li><a href="#services" style="color:var(--muted); font-size:14px;">Services</a></li>
+      <li><a href="#dashboard-upgrade" style="color:var(--muted); font-size:14px;">Dashboard</a></li>
       <li><a href="#faq" style="color:var(--muted); font-size:14px;">FAQ</a></li>
       <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
     </ul>
@@ -16,8 +17,8 @@
 <header class="hero">
   <div class="container">
     <div class="eyebrow" style="margin: 0 auto;">Bundle 03 · Full Pipeline + Automation</div>
-    <h1>Your data pipeline, <em>running on autopilot.</em></h1>
-    <p>For live dashboards and retainer clients. We engineer the full pipeline, then add automated scheduling, error alerts, and secure credential management. Your dashboards update every day—without you touching a button.</p>
+    <h1>YOUR DATA PIPELINE, <em>RUNNING ON AUTOPILOT.</em></h1>
+    <p>For live dashboards and retainer clients. We engineer the full pipeline, then add automated scheduling, error alerts, and secure credential management. Your dashboards update every day without you touching a button.</p>
     <div class="hero-cta">
       <a href="#pricing" class="btn btn-primary">Automate My Data</a>
       <a href="#included" class="btn btn-outline" style="border-color:var(--border-dark);">What's Included</a>
@@ -25,18 +26,18 @@
   </div>
 </header>
 
-<!-- Everything Included -->
 <section id="included" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
       <div class="eyebrow">The Upgrade</div>
       <h2>Everything Included in Full Pipeline Setup</h2>
-      <p>This package includes 100% of the Full Pipeline Setup, plus advanced automation, security, and monitoring engineering.</p>
+      <p>This package includes 100% of everything from the Full Pipeline Setup, plus advanced automation, security, and monitoring engineering.</p>
     </div>
     <div class="inclusion-grid">
       <div class="inclusion-card">
         <h3>Full Pipeline Inclusions</h3>
         <ul class="inclusion-list">
+          <li><i class="fa-solid fa-check-circle"></i> Includes 100% of everything from Full Pipeline Setup</li>
           <li><i class="fa-solid fa-check-circle"></i> Cloud Infrastructure & APIs</li>
           <li><i class="fa-solid fa-check-circle"></i> Data Pipeline Build</li>
           <li><i class="fa-solid fa-check-circle"></i> Multi-Platform Merge Logic</li>
@@ -50,34 +51,14 @@
           <li><i class="fa-solid fa-plus-circle"></i> Automated Scheduling (Cloud Scheduler)</li>
           <li><i class="fa-solid fa-plus-circle"></i> Error Handling & Alert System</li>
           <li><i class="fa-solid fa-plus-circle"></i> Credential Security (Secret Manager)</li>
-        </ul>
+          <li><i class="fa-solid fa-plus-circle"></i> Pipeline runs every day automatically</li>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Engineering Workflow -->
-<section style="background: var(--bg);">
-  <div class="container">
-    <div class="header-center">
-      <div class="eyebrow">System Architecture</div>
-      <h2>Engineering Workflow</h2>
-      <p>The automated lifecycle of your data—running 24/7 without human intervention.</p>
-    </div>
-    <div class="arch-diagram">
-      <div class="arch-node"><i class="fa-solid fa-clock"></i><h5>Cloud Scheduler</h5></div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node"><i class="fa-solid fa-code"></i><h5>Pipeline Runs</h5></div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node"><i class="fa-solid fa-database"></i><h5>BigQuery Updates</h5></div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node"><i class="fa-solid fa-bell"></i><h5>Alerts (If Fail)</h5></div>
-    </div>
-  </div>
-</section>
-
 <!-- Service Breakdown -->
-<section id="services" style="background: var(--surface);">
+<section id="services" style="background: var(--bg);">
   <div class="container">
     <div class="header-center">
       <div class="eyebrow">Technical Scope</div>
@@ -85,64 +66,67 @@
       <p>The automation components that transform a manual pipeline into a production-grade system.</p>
     </div>
 
-    <div class="service-block">
+    <div class="service-block scroll-reveal">
       <div class="service-header">
-        <h3>Automation & Scheduling</h3>
+        <h3>1. Automation & Scheduling</h3>
       </div>
       <div class="service-content">
         <div class="service-text">
-          <p><strong>Purpose:</strong> Eliminate manual data extraction.</p>
-          <p><strong>What we configure:</strong> Google Cloud Scheduler or cron jobs to trigger pipeline scripts at defined intervals (e.g., 2:00 AM daily).</p>
-          <p><strong>Why it matters:</strong> Ensures your dashboards are always current. Your team never has to remember to run a script.</p>
+          <p><strong>Purpose:</strong> Eliminate repetitive manual data extraction and keep your data updated automatically.</p>
+          <p><strong>What We Configure:</strong> Automated scheduling using tools such as Google Cloud Scheduler, cron jobs, or other supported scheduling systems to trigger your data pipeline at defined intervals, such as daily, hourly, or weekly.</p>
+          <p><strong>Why It Matters:</strong> Your data pipeline runs automatically without someone needing to manually export files or run scripts. This keeps your connected data and dashboards consistently updated and reduces repetitive operational work.</p>
+          <p><strong>Example:</strong> A scheduled pipeline can run every morning at 2:00 AM, retrieve the latest data, process it, and update your data warehouse before your team starts the day.</p>
         </div>
         <div class="service-visual">
           <div class="code-snippet">
             # Cloud Scheduler Config<br>
             schedule: "0 2 * * *"<br>
-            timezone: "UTC"<br>
+            timezone: "America/New_York"<br>
             target: "data-pipeline-function"
           </div>
         </div>
       </div>
     </div>
 
-    <div class="service-block">
+    <div class="service-block scroll-reveal">
       <div class="service-header">
-        <h3>Error Handling & Alert System</h3>
+        <h3>2. Error Handling & Alert System</h3>
       </div>
       <div class="service-content">
         <div class="service-text">
-          <p><strong>Purpose:</strong> Prevent silent data failures.</p>
-          <p><strong>What we configure:</strong> Try/except logic in Python scripts that send Slack or Email alerts if an API fails or data is malformed.</p>
-          <p><strong>Why it matters:</strong> APIs change and tokens expire. Without alerts, your dashboard could silently stop updating for weeks.</p>
+          <p><strong>Purpose:</strong> Detect data pipeline failures quickly and prevent silent errors from affecting your reports and dashboards.</p>
+          <p><strong>What We Configure:</strong> Error handling and validation logic within the data pipeline, with automated alerts through Email, Slack, or other supported notification channels when an API connection fails, authentication expires, data is missing, or unexpected data errors occur.</p>
+          <p><strong>Why It Matters:</strong> APIs can change, credentials can expire, and data can arrive incorrectly. Without proper monitoring, a dashboard may stop updating without anyone noticing. Automated alerts help your team identify and resolve issues before they affect business reporting.</p>
+          <p><strong>Example:</strong> If a platform API stops responding during the scheduled data refresh, the system detects the failure and immediately sends an alert so the issue can be investigated instead of leaving your dashboard outdated.</p>
         </div>
         <div class="service-visual">
-          <div class="arch-diagram" style="padding: 16px; background: var(--surface);">
-            <div class="arch-node" style="border-color: var(--danger);"><i class="fa-solid fa-triangle-exclamation" style="color:var(--danger);"></i><h5 style="color:var(--danger);">API Fails</h5></div>
-            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="arch-node"><i class="fa-solid fa-bell"></i><h5>Alert Trigger</h5></div>
-            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="arch-node"><i class="fa-brands fa-slack"></i><h5>Team Slack</h5></div>
+           <div style="background:var(--surface); padding:16px; border-radius:8px; border:1px solid var(--border); display:flex; align-items:center; gap:12px;">
+            <i class="fa-solid fa-triangle-exclamation" style="color:var(--danger); font-size:24px;"></i>
+            <div>
+              <h5 style="font-size:13px; color:var(--text); font-family:var(--mono);">API Failure Detected</h5>
+              <p style="font-size:11px; color:var(--muted);">Alert sent to Slack #data-alerts</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="service-block">
+    <div class="service-block scroll-reveal">
       <div class="service-header">
-        <h3>Credential Security Setup</h3>
+        <h3>3. Credential Security Setup</h3>
       </div>
       <div class="service-content">
         <div class="service-text">
-          <p><strong>Purpose:</strong> Protect your business from data breaches.</p>
-          <p><strong>What we configure:</strong> All API keys and tokens are stored in Google Secret Manager or secure environment variables—never hardcoded.</p>
-          <p><strong>Why it matters:</strong> Hardcoded keys in scripts are a massive security risk. Secret Manager ensures enterprise-grade security.</p>
+          <p><strong>Purpose:</strong> Protect your business data and API credentials from unauthorized access.</p>
+          <p><strong>What We Configure:</strong> API keys, access tokens, and other sensitive credentials are securely stored using Google Secret Manager, secure environment variables, or other appropriate credential management systems. Sensitive credentials are never hardcoded directly into scripts.</p>
+          <p><strong>Why It Matters:</strong> Credentials stored inside scripts can be exposed, copied, or accidentally shared. Secure credential management reduces this risk and helps keep your connected platforms and business data protected.</p>
+          <p><strong>Example:</strong> If an API key is required to connect your store or marketing platform, the pipeline retrieves the credential securely when needed instead of storing the key directly inside the code.</p>
         </div>
         <div class="service-visual">
           <div class="code-snippet">
             # Secure Auth<br>
             from google.cloud import secretmanager<br>
-            client = secretmanager.SecretManagerServiceClient()<br>
+            client = secretmanager.SecretManagerClient()<br>
             response = client.access_secret_version("API_KEY")
           </div>
         </div>
@@ -152,47 +136,240 @@
   </div>
 </section>
 
-<!-- Before vs After -->
-<section style="background: var(--bg);">
+<!-- Scale & Automate: Premium Dashboard Visualization -->
+<section id="dashboard-upgrade" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">The Transformation</div>
-      <h2>Without Proper Data Infrastructure vs With Our Infrastructure</h2>
+      <div class="eyebrow">Scale & Automate</div>
+      <h2>Automated E-commerce Data Pipeline Command Center</h2>
+      <p>Turn your automation audit into an ongoing monitoring system. Get a centralized dashboard that continuously tracks your most important conversion metrics and highlights emerging issues.</p>
     </div>
-    <div class="ba-grid">
-      <div class="ba-card bad">
-        <h4>Without Setup</h4>
-        <ul class="ba-list">
-          <li><i class="fa-solid fa-times-circle"></i> Manual Reports</li>
-          <li><i class="fa-solid fa-times-circle"></i> Stale Dashboards</li>
-          <li><i class="fa-solid fa-times-circle"></i> Hardcoded API Keys</li>
-          <li><i class="fa-solid fa-times-circle"></i> Silent Failures</li>
-        </ul>
+
+    <!-- Large Premium Light Dashboard Visualization -->
+    <div class="premium-dashboard scroll-reveal">
+      <div class="pd-header">
+        <div class="pd-title"><i class="fa-solid fa-satellite-dish" style="color: var(--accent);"></i> Automated Data Pipeline Command Center</div>
+        <div class="pd-live"><span class="pd-live-dot"></span> Pipeline Status: Healthy</div>
       </div>
-      <div class="ba-card good">
-        <h4>With Automation</h4>
-        <ul class="ba-list">
-          <li><i class="fa-solid fa-check-circle"></i> Automatic Daily Refresh</li>
-          <li><i class="fa-solid fa-check-circle"></i> Live, Real-Time Dashboards</li>
-          <li><i class="fa-solid fa-check-circle"></i> Secret Manager Security</li>
-          <li><i class="fa-solid fa-check-circle"></i> Instant Error Alerts</li>
-        </ul>
+
+      <!-- KPI Row 1 -->
+      <div class="pd-kpi-row">
+        <div class="pd-kpi-card">
+          <div class="pd-kpi-label">Revenue</div>
+          <div class="pd-kpi-value" data-target="127400" data-prefix="$">$127.4K</div>
+          <div class="pd-kpi-trend up"><i class="fa-solid fa-arrow-up"></i> +12.4%</div>
+        </div>
+        <div class="pd-kpi-card">
+          <div class="pd-kpi-label">Orders</div>
+          <div class="pd-kpi-value" data-target="3842">3,842</div>
+          <div class="pd-kpi-trend up"><i class="fa-solid fa-arrow-up"></i> +8.2%</div>
+        </div>
+        <div class="pd-kpi-card">
+          <div class="pd-kpi-label">Customers</div>
+          <div class="pd-kpi-value" data-target="2691">2,691</div>
+          <div class="pd-kpi-trend up"><i class="fa-solid fa-arrow-up"></i> +4.5%</div>
+        </div>
       </div>
+
+      <!-- KPI Row 2 -->
+      <div class="pd-kpi-row">
+        <div class="pd-kpi-card">
+          <div class="pd-kpi-label">Marketing Spend</div>
+          <div class="pd-kpi-value" data-target="18600" data-prefix="$">$18.6K</div>
+          <div class="pd-kpi-trend up"><i class="fa-solid fa-arrow-up"></i> +5.1%</div>
+        </div>
+        <div class="pd-kpi-card">
+          <div class="pd-kpi-label">ROAS</div>
+          <div class="pd-kpi-value">4.8x</div>
+          <div class="pd-kpi-trend up"><i class="fa-solid fa-arrow-up"></i> +0.4x</div>
+        </div>
+        <div class="pd-kpi-card">
+          <div class="pd-kpi-label">Data Freshness</div>
+          <div class="pd-kpi-value" style="font-size: 18px;">2 min ago</div>
+          <div class="pd-kpi-trend fresh"><i class="fa-solid fa-bolt"></i> Auto-refreshed</div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="pd-chart-row">
+        <div class="pd-chart-card">
+          <div class="pd-chart-title">Revenue & Orders Trend (30 Days)</div>
+          <div class="pd-bars">
+            <div class="pd-bar-row"><span class="pd-bar-label">Revenue</span><div class="pd-bar-track"><div class="pd-bar-fill" style="width: 85%; background: var(--accent);"></div></div><span class="pd-bar-val">127K</span></div>
+            <div class="pd-bar-row"><span class="pd-bar-label">Orders</span><div class="pd-bar-track"><div class="pd-bar-fill" style="width: 65%; background: #3B82F6;"></div></div><span class="pd-bar-val">3.8K</span></div>
+          </div>
+        </div>
+        <div class="pd-chart-card">
+          <div class="pd-chart-title">Channel Performance</div>
+          <div class="pd-bars">
+            <div class="pd-bar-row"><span class="pd-bar-label">Google</span><div class="pd-bar-track"><div class="pd-bar-fill" style="width: 75%; background: #3B82F6;"></div></div><span class="pd-bar-val">75K</span></div>
+            <div class="pd-bar-row"><span class="pd-bar-label">Meta</span><div class="pd-bar-track"><div class="pd-bar-fill" style="width: 45%; background: #8B5CF6;"></div></div><span class="pd-bar-val">45K</span></div>
+            <div class="pd-bar-row"><span class="pd-bar-label">Organic</span><div class="pd-bar-track"><div class="pd-bar-fill" style="width: 30%; background: #10B981;"></div></div><span class="pd-bar-val">30K</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tables Row -->
+      <div class="pd-chart-row">
+        <div class="pd-chart-card">
+          <div class="pd-chart-title">Product Performance</div>
+          <table class="pd-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Rev</th>
+                <th>Ord</th>
+                <th>Growth</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Vitamin C</td>
+                <td>$12.6K</td>
+                <td>210</td>
+                <td><span class="pd-status-pill pd-status-active">+15%</span></td>
+              </tr>
+              <tr>
+                <td>SPF 50</td>
+                <td>$8.4K</td>
+                <td>140</td>
+                <td><span class="pd-status-pill pd-status-active">+10%</span></td>
+              </tr>
+              <tr>
+                <td>Retinol</td>
+                <td>$4.5K</td>
+                <td>75</td>
+                <td><span class="pd-status-pill pd-status-watch">-5%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pd-chart-card">
+          <div class="pd-chart-title">Pipeline Health</div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="pd-health-item">
+              <span>Shopify API</span>
+              <div style="display: flex; align-items: center; gap: 6px;"><span class="pd-health-dot"></span> Connected</div>
+            </div>
+            <div class="pd-health-item">
+              <span>GA4</span>
+              <div style="display: flex; align-items: center; gap: 6px;"><span class="pd-health-dot"></span> Connected</div>
+            </div>
+            <div class="pd-health-item">
+              <span>Meta Ads</span>
+              <div style="display: flex; align-items: center; gap: 6px;"><span class="pd-health-dot"></span> Connected</div>
+            </div>
+            <div class="pd-health-item">
+              <span>Google Ads</span>
+              <div style="display: flex; align-items: center; gap: 6px;"><span class="pd-health-dot"></span> Connected</div>
+            </div>
+            <div class="pd-health-item">
+              <span>BigQuery</span>
+              <div style="display: flex; align-items: center; gap: 6px;"><span class="pd-health-dot"></span> Synced</div>
+            </div>
+            <div class="pd-health-item">
+              <span>Last Refresh</span>
+              <span style="font-weight: 600; color: var(--accent);">2 min ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monitoring Row -->
+      <div class="pd-monitor-row">
+        <div class="pd-monitor-card">
+          <div class="pd-chart-title">Automation Activity</div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="pd-health-item">
+              <span style="color: #2D3748;">Shopify data synced</span>
+              <span style="font-size: 10px; color: #718096;">2 min ago</span>
+            </div>
+            <div class="pd-health-item">
+              <span style="color: #2D3748;">GA4 data refreshed</span>
+              <span style="font-size: 10px; color: #718096;">3 min ago</span>
+            </div>
+            <div class="pd-health-item">
+              <span style="color: #2D3748;">Marketing data processed</span>
+              <span style="font-size: 10px; color: #718096;">4 min ago</span>
+            </div>
+            <div class="pd-health-item">
+              <span style="color: #2D3748;">BigQuery tables updated</span>
+              <span style="font-size: 10px; color: #718096;">4 min ago</span>
+            </div>
+            <div class="pd-health-item">
+              <span style="color: #2D3748;">Dashboard refresh completed</span>
+              <span style="font-size: 10px; color: #718096;">5 min ago</span>
+            </div>
+          </div>
+        </div>
+        <div class="pd-monitor-card">
+          <div class="pd-chart-title">Data Freshness Monitor</div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div class="pd-health-item">
+              <span>Shopify</span>
+              <span style="font-weight: 600; color: #059669;">Updated 2 min ago</span>
+            </div>
+            <div class="pd-health-item">
+              <span>GA4</span>
+              <span style="font-weight: 600; color: #059669;">Updated 3 min ago</span>
+            </div>
+            <div class="pd-health-item">
+              <span>Meta Ads</span>
+              <span style="font-weight: 600; color: #059669;">Updated 4 min ago</span>
+            </div>
+            <div class="pd-health-item">
+              <span>Google Ads</span>
+              <span style="font-weight: 600; color: #059669;">Updated 4 min ago</span>
+            </div>
+            <div class="pd-health-item">
+              <span>BigQuery</span>
+              <span style="font-weight: 600; color: #059669;">Updated 2 min ago</span>
+            </div>
+        </div>
+        </div>
+      </div>
+
+      <!-- System Monitoring -->
+      <div class="pd-chart-row" style="margin-bottom: 0;">
+        <div class="pd-monitor-card" style="grid-column: span 2;">
+          <div class="pd-chart-title">Error Monitoring</div>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+            <div style="text-align: center; padding: 12px; background: #F8FAFC; border-radius: 8px;">
+              <div style="font-size: 11px; color: #718096; margin-bottom: 4px;">System Health</div>
+              <div style="font-size: 20px; font-weight: 700; color: #059669;">99.9%</div>
+            </div>
+            <div style="text-align: center; padding: 12px; background: #F8FAFC; border-radius: 8px;">
+              <div style="font-size: 11px; color: #718096; margin-bottom: 4px;">Active Alerts</div>
+              <div style="font-size: 20px; font-weight: 700; color: #059669;">0</div>
+            </div>
+            <div style="text-align: center; padding: 12px; background: #F8FAFC; border-radius: 8px;">
+              <div style="font-size: 11px; color: #718096; margin-bottom: 4px;">Failed Jobs</div>
+              <div style="font-size: 20px; font-weight: 700; color: #059669;">0</div>
+            </div>
+            <div style="text-align: center; padding: 12px; background: #F8FAFC; border-radius: 8px;">
+              <div style="font-size: 11px; color: #718096; margin-bottom: 4px;">Last Successful Run</div>
+              <div style="font-size: 14px; font-weight: 700; color: #2D3748; margin-top: 4px;">Today, 02:00 AM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+
   </div>
 </section>
 
 <!-- Business Benefits & Tech Stack -->
-<section style="background: var(--surface);">
+<section style="background: var(--bg);">
   <div class="container">
     <div class="header-center">
       <div class="eyebrow">Business Impact</div>
       <h2>What This Means For Your Business</h2>
     </div>
     <div class="info-grid" style="margin-bottom: 64px;">
-      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-eye"></i></div><h4>Live Visibility</h4><p>Check today's revenue and ad spend anytime.</p></div>
-      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-shield"></i></div><h4>Enterprise Security</h4><p>No exposed credentials in your codebase.</p></div>
-      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-infinity"></i></div><h4>Zero Maintenance</h4><p>The system runs itself, alerting you only if needed.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-eye"></i></div><h4>Live Visibility</h4><p>Check today's revenue and ad spend anytime.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-shield"></i></div><h4>Enterprise Security</h4><p>No exposed credentials in your codebase.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-infinity"></i></div><h4>Zero Maintenance</h4><p>The system runs itself, alerting you only if needed.</p></div>
     </div>
 
     <div class="header-center">
@@ -200,26 +377,36 @@
       <h2>Technology Stack</h2>
     </div>
     <div class="tech-grid">
-      <div class="tech-card"><i class="fa-solid fa-database"></i><span>BigQuery</span></div>
-      <div class="tech-card"><i class="fa-solid fa-clock"></i><span>Cloud Scheduler</span></div>
-      <div class="tech-card"><i class="fa-solid fa-key"></i><span>Secret Manager</span></div>
-      <div class="tech-card"><i class="fa-solid fa-chart-pie"></i><span>Looker Studio</span></div>
-      <div class="tech-card"><i class="fa-brands fa-python"></i><span>Python</span></div>
+      <div class="tech-card scroll-reveal"><i class="fa-solid fa-database"></i><span>BigQuery</span></div>
+      <div class="tech-card scroll-reveal"><i class="fa-solid fa-clock"></i><span>Cloud Scheduler</span></div>
+      <div class="tech-card scroll-reveal"><i class="fa-solid fa-key"></i><span>Secret Manager</span></div>
+      <div class="tech-card scroll-reveal"><i class="fa-solid fa-chart-pie"></i><span>Looker Studio/Power BI</span></div>
+      <div class="tech-card scroll-reveal"><i class="fa-brands fa-python"></i><span>Python</span></div>
     </div>
   </div>
 </section>
 
 <!-- Who This Is For & Deliverables -->
-<section style="background: var(--bg);">
+<section style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
       <div class="eyebrow">Target Fit</div>
       <h2>Who This Package Is For</h2>
     </div>
     <div class="info-grid" style="margin-bottom: 64px;">
-      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-tv"></i></div><h4>Live Dashboard Clients</h4><p>Businesses needing real-time data on screens.</p></div>
-      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-handshake"></i></div><h4>Monthly Retainers</h4><p>Ongoing analytics partnerships requiring fresh data.</p></div>
-      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-building-columns"></i></div><h4>Enterprise Teams</h4><p>Operations teams needing automated reporting.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-tv"></i></div><h4>Live Dashboard Clients</h4><p>Businesses that need automatically refreshed data connected directly to their dashboards.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-handshake"></i></div><h4>Monthly Retainers</h4><p>Businesses requiring continuously updated data for ongoing analytics, reporting, and monitoring.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-building-columns"></i></div><h4>Growing E-commerce Teams</h4><p>Teams that want to reduce manual data work and keep key business metrics consistently up to date.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-robot"></i></div><h4>Automation-Focused Businesses</h4><p>Businesses ready to automate data extraction, reporting, monitoring, and error detection.</p></div>
+      <div class="info-card scroll-reveal" style="grid-column: span 2; display: flex; flex-direction: row; align-items: center; text-align: left;">
+        <div class="info-icon" style="margin-bottom: 0; margin-right: 20px; width: 50px; height: 50px; font-size: 22px;">
+          <i class="fa-solid fa-sync-alt"></i>
+        </div>
+        <div>
+          <h4>Businesses With Frequent Data Updates</h4>
+          <p>Businesses that regularly receive new orders, customers, marketing data, inventory updates, or other operational data and need those changes reflected automatically.</p>
+        </div>
+      </div>
     </div>
 
     <div class="header-center">
@@ -227,15 +414,26 @@
       <h2>What You'll Receive</h2>
     </div>
     <div class="info-grid">
-      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-clock-rotate-left"></i></div><h4>Automated Scheduler</h4><p>Cloud jobs configured to run your pipeline daily.</p></div>
-      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-bell"></i></div><h4>Alert System</h4><p>Slack/Email integration for pipeline failures.</p></div>
-      <div class="info-card"><div class="info-icon"><i class="fa-solid fa-book"></i></div><h4>Deployment Guide</h4><p>Full documentation on the automated architecture.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-clock-rotate-left"></i></div><h4>Automated Scheduler</h4><p>Cloud-based jobs configured to run your data pipeline automatically on a defined schedule.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-infinity"></i></div><h4>Automated Data Pipeline</h4><p>A deployed workflow that automatically extracts, processes, merges, and loads your business data.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-link"></i></div><h4>Dashboard Data Connection</h4><p>Connected data sources ready for Power BI, Looker Studio, or other compatible reporting platforms.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-bell"></i></div><h4>Error & Alert System</h4><p>Slack, Email, or other supported notifications for pipeline failures, API issues, and data errors.</p></div>
+      <div class="info-card scroll-reveal"><div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-key"></i></div><h4>Secure Credential Management</h4><p>API keys and access credentials securely stored using appropriate secret management methods.</p></div></div>
+      <div class="info-card scroll-reveal" style="grid-column: span 2; display: flex; flex-direction: row; align-items: center; text-align: left;">
+        <div class="info-icon" style="margin-bottom: 0; margin-right: 20px; width: 50px; height: 50px; font-size: 22px;">
+          <i class="fa-solid fa-book"></i>
+        </div>
+        <div>
+          <h4>Deployment Guide</h4>
+          <p>Complete documentation covering the automated architecture, data flow, scheduling, credentials, and basic maintenance.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section id="faq" style="background: var(--surface);">
+<section id="faq" style="background: var(--bg);">
   <div class="container">
     <div class="header-center">
       <div class="eyebrow">FAQ</div>
@@ -243,15 +441,15 @@
       <p>Everything you need to know.</p>
     </div>
     <div class="faq-container">
-      <div class="faq-item active">
+      <div class="faq-item active scroll-reveal">
         <div class="faq-q">What happens if an API token expires? <i class="fa-solid fa-plus"></i></div>
         <div class="faq-a">The Error Handling & Alert System will immediately detect the failure and send a notification to your team. We can then quickly rotate the token in Secret Manager without downtime.</div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item scroll-reveal">
         <div class="faq-q">How often does the data refresh? <i class="fa-solid fa-plus"></i></div>
         <div class="faq-a">The standard configuration is one daily refresh (e.g., at 2:00 AM). However, we can configure it for multiple times a day if required by your business needs.</div>
       </div>
-      <div class="faq-item">
+      <div class="faq-item scroll-reveal">
         <div class="faq-q">Are there ongoing costs for Google Cloud? <i class="fa-solid fa-plus"></i></div>
         <div class="faq-a">Yes, Google Cloud charges for BigQuery storage and compute time. However, for most e-commerce stores, this cost is less than $5/month. We will help you set up billing alerts.</div>
       </div>
@@ -260,9 +458,9 @@
 </section>
 
 <!-- Pricing -->
-<section id="pricing" style="background: var(--bg);">
+<section id="pricing" style="background: var(--surface);">
   <div class="container">
-    <div class="pricing-card">
+    <div class="pricing-card scroll-reveal">
       <div class="eyebrow" style="margin: 0 auto;">Full Pipeline + Automation</div>
       <h3 style="font-size: 28px; margin-top: 16px;">Automated Data Engine</h3>
       <div class="price-amt">$700–$1,200</div>

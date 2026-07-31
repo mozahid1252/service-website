@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: 'Full Pipeline + Automation | Live Data Infrastructure | Moz Intelligence',
-  description: 'Live, automated data pipelines for e-commerce. We build scheduled updates, error alerts, and secure credential management so your dashboards never go stale.',
+  description: 'Your data pipeline, running on autopilot. Live, automated data pipelines for e-commerce. We build scheduled updates, error alerts, and secure credential management so your dashboards never go stale.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
