@@ -1522,10 +1522,16 @@ function ServicesSection() {
 
                 <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
                 <h4 className="text-white text-lg font-bold mb-1">{pkg.name}</h4>
-                <div className="flex items-baseline gap-2 mb-1">
-                  <span className="gradient-text-gold text-xl font-bold">{pkg.price}</span>
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <div className="text-[#8899AA] text-xs">Timeline</div>
+                    <div className="text-white text-sm font-medium">{pkg.timeline}</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-[#8899AA] text-xs">Investment</div>
+                    <div className="gradient-text-gold text-sm font-bold">{pkg.price}</div>
+                  </div>
                 </div>
-                <div className="text-[#8899AA] text-xs mb-4">{pkg.timeline}</div>
                 <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>
 
                 <ul className="space-y-2 mb-5">
@@ -1572,10 +1578,16 @@ function ServicesSection() {
                   <div>
                     <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
                     <h4 className="text-white text-lg font-bold mb-1">{pkg.name}</h4>
-                    <div className="flex items-baseline gap-2 mb-1">
-                      <span className="gradient-text-gold text-xl font-bold">{pkg.price}</span>
+                    <div className="flex items-center justify-between mb-4">
+                      <div>
+                        <div className="text-[#8899AA] text-xs">Timeline</div>
+                        <div className="text-white text-sm font-medium">{pkg.timeline}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-[#8899AA] text-xs">Investment</div>
+                        <div className="gradient-text-gold text-sm font-bold">{pkg.price}</div>
+                      </div>
                     </div>
-                    <div className="text-[#8899AA] text-xs mb-4">{pkg.timeline}</div>
                     <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>
                     <ul className="space-y-2 mb-5">
                       {pkg.features.map((f, fi) => (
@@ -1617,7 +1629,16 @@ function ServicesSection() {
               <div key={i} className={`addon-card-wrapper ${pkg.cssClass}`}>
                 <div className="addon-card-inner">
                 <h4 className="text-white font-bold text-base mb-1">{pkg.name}</h4>
-                <div className="gradient-text-gold text-sm font-semibold mb-3">{pkg.price}</div>
+                <div className="flex items-center justify-between mb-3">
+                  <div>
+                    <div className="text-[#8899AA] text-xs">Timeline</div>
+                    <div className="text-white text-sm font-medium">{pkg.price.split(' · ')[1] || '7–14 Days'}</div>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-[#8899AA] text-xs">Investment</div>
+                    <div className="gradient-text-gold text-sm font-bold">{pkg.price.split(' · ')[0]}</div>
+                  </div>
+                </div>
                 <div className="mb-3">
                   <div className="text-[#FF4444] text-xs font-semibold mb-1">Problem:</div>
                   <p className="text-[#8899AA] text-sm">{pkg.problem}</p>
@@ -2104,6 +2125,40 @@ function ServicesSection() {
                 </ul>
               </div>
               <a href="#contact" className="service-book-btn package-book-btn">Discuss Your Data Analysis →</a>
+            </div>
+
+            {/* Service 06: Custom Conversion & Experiment Analysis */}
+            <div className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(0,230,118,0.08) 100%)', border: '1px solid rgba(0,230,118,0.20)', borderLeft: '4px solid #00E676', boxShadow: '0 0 30px rgba(0,230,118,0.08), 0 8px 32px rgba(0,0,0,0.4)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'rgba(0,230,118,0.1)', border: '1px solid rgba(0,230,118,0.3)' }}>
+                  <Zap size={18} className="text-[#00E676]" />
+                </div>
+                <span className="text-[#00E676] text-xs font-bold tracking-widest uppercase">Service 06</span>
+              </div>
+              <h4 className="text-white font-bold text-lg mb-1">Custom Conversion &amp; Experiment Analysis</h4>
+              <div className="text-[#8899AA] text-xs mb-4">Custom Pricing · Based on Scope</div>
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-5">Want to know whether a change to your store actually improved performance? We analyze before-and-after results, customer behavior, and performance data to measure the impact of changes, campaigns, or experiments.</p>
+              <div className="mb-5">
+                <div className="text-[#00E676] text-xs font-semibold mb-2">Real-Life Examples</div>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> <span><strong className="text-white">A/B Test Analysis</strong><br />Compare two versions of a product page to identify which one generates more Add-to-Carts or purchases.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> <span><strong className="text-white">Landing Page Test</strong><br />Measure whether a new landing page improves conversion compared with the previous version.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> <span><strong className="text-white">Pricing Change Analysis</strong><br />Determine whether changing a product&apos;s price affected sales, AOV, or revenue.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> <span><strong className="text-white">Promotion Analysis</strong><br />Measure whether a discount campaign actually generated incremental sales or simply reduced margins.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> <span><strong className="text-white">Checkout Improvement Analysis</strong><br />Compare checkout performance before and after a UX change.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> <span><strong className="text-white">Campaign Impact Analysis</strong><br />Determine whether a marketing campaign created meaningful improvement in revenue or customer acquisition.</span></li>
+                </ul>
+              </div>
+              <div className="mb-5 p-4 rounded-lg" style={{ background: 'rgba(0,230,118,0.05)', border: '1px solid rgba(0,230,118,0.1)' }}>
+                <div className="text-[#00E676] text-xs font-semibold mb-2">You Receive</div>
+                <ul className="space-y-1.5">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Before-and-after performance analysis</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Experiment/test results</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Conversion impact analysis</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Key findings</li>
+                </ul>
+              </div>
+              <a href="#contact" className="service-book-btn package-book-btn">Discuss Your Experiment Analysis →</a>
             </div>
           </div>
 
