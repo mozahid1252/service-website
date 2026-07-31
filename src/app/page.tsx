@@ -129,6 +129,7 @@ const CORE_PACKAGES = [
       'Full 8-segment RFM Customer Segmentation',
       'Channel LTV:CAC & Marketing Audit',
       'Cross-sell & Bundle Opportunity Analysis',
+      'Churn Risk Identification Analysis',
       'Interactive Dashboard + Klaviyo-ready CSV',
       '60-min Strategy Call + 30-day Roadmap',
     ],
@@ -147,9 +148,10 @@ const CORE_PACKAGES = [
     description: 'Your complete analytics engine, built once, runs forever. 15 total analyses including cohorts, forecasts, and live dashboards.',
     features: [
       'Everything in Growth, plus 6 advanced analyses',
+      'Full Pipeline Setup package included free',
       'Complete Cohort Analysis & 90-Day Sales Forecast',
       'Profit Margin Deep Dive (True per-product profit)',
-      'Live Custom KPI Dashboard (Auto-refreshing)',
+      'Live Custom KPI Dashboard',
       'Discount & Return Pattern Analysis',
       '90-min Strategy Session + 60-day Email Support',
     ],
@@ -244,12 +246,12 @@ const BUNDLE_FEATURES = [
   { feature: 'Platform API Connections', basic: '2–3', full: 'All', auto: 'All' },
   { feature: 'Data Pipeline Build', basic: true, full: true, auto: true },
   { feature: 'Data Cleaning', basic: true, full: true, auto: true },
-  { feature: 'Multi-Platform Merge', basic: false, full: true, auto: true },
+  { feature: 'Multi-Platform Merge', basic: '2–3', full: true, auto: true },
   { feature: 'BigQuery Load Script', basic: false, full: true, auto: true },
+  { feature: 'Credential Security', basic: false, full: true, auto: true },
   { feature: 'Dashboard Connection', basic: false, full: true, auto: true },
   { feature: 'Automated Scheduling', basic: false, full: false, auto: true },
   { feature: 'Error Alerts', basic: false, full: false, auto: true },
-  { feature: 'Credential Security', basic: false, full: false, auto: true },
 ];
 
 /* Tier key per bundle (indexes match DATA_BUNDLES order) */
@@ -1022,7 +1024,7 @@ function WhyDataSection() {
             Data Doesn&apos;t Lie.<br />Gut Feelings Do.
           </h2>
           <p className="why-data-sub reveal-up" style={{ transitionDelay: '0.3s' }}>
-            Every store has hidden profit. Most founders never find it — because they&apos;re looking at the wrong numbers.
+            Every store has hidden profit. Most founders never find it, because they&apos;re looking at the wrong numbers.
           </p>
 
           <div className="why-data-points reveal-stagger">
@@ -1058,8 +1060,8 @@ function WhyDataSection() {
                 <span className="mini-l">Proved Cases</span>
               </div>
               <div>
-                <span className="mini-v">10x</span>
-                <span className="mini-l">Avg ROI</span>
+                <span className="mini-v">100+</span>
+                <span className="mini-l">Projects Delivered</span>
               </div>
             </div>
           </div>
