@@ -64,11 +64,13 @@ a { text-decoration: none; color: inherit; }
 .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .data-table th { text-align: left; padding: 8px; background: var(--surface); border-bottom: 2px solid var(--border); color: var(--muted); }
 .data-table td { padding: 8px; border-bottom: 1px solid var(--border); }
+.kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.kpi-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px; text-align: center; }
+.kpi-card .kpi-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+.kpi-card .kpi-val { font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); }
 .faq-container { max-width: 800px; margin: 0 auto; }
-.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; box-shadow: var(--shadow); transition: box-shadow 0.3s ease; }
-.faq-item:hover { box-shadow: var(--shadow-lg); }
-.faq-q { padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 16px; color: var(--text); transition: background 0.2s; }
-.faq-q:hover { background: var(--surface-2); }
+.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; box-shadow: var(--shadow); }
+.faq-q { padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 16px; color: var(--text); }
 .faq-q i { color: var(--accent); transition: transform 0.3s ease; font-size: 14px; }
 .faq-item.active .faq-q i { transform: rotate(45deg); }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 24px; color: var(--muted); font-size: 15px; line-height: 1.6; }
@@ -81,3 +83,5 @@ a { text-decoration: none; color: inherit; }
 .price-features i { color: var(--success); margin-top: 4px; }
 footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14px; }
 @media (max-width: 900px) { .inclusion-grid, .outcomes-grid, .analysis-grid, .price-features { grid-template-columns: 1fr; } .nav-links { display: none; } }
+.scroll-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.scroll-reveal.visible { opacity: 1; transform: translateY(0); }
