@@ -32,7 +32,7 @@ const TRUST_STATS: { target?: number; prefix?: string; suffix?: string; value?: 
   { target: 127, prefix: '+', suffix: '%', label: 'Avg Revenue Growth' },
   { target: 5, prefix: '', suffix: '+', label: 'Proved Case Study' },
   { target: 100, prefix: '', suffix: '%', label: 'Data Privacy', isPrivacy: true },
-  { value: 'On time', label: 'Deadline Driven', isDeadline: true },
+  { target: 100, prefix: '', suffix: '+', label: 'Projects Delivered' },
   { target: 4.9, prefix: '', suffix: '', isRating: true, ratingLabel: '100+ projects' },
 ];
 
@@ -176,7 +176,7 @@ const CORE_PACKAGES = [
       'Proactive Anomaly Alerts',
       'Dashboard Maintenance & 45-min Monthly Call',
     ],
-    bestFor: 'Stores doing $20K+/mo needing a permanent data partner.',
+    bestFor: 'Stores doing $15K+/mo needing a permanent data partner.',
     promise: 'With this retainer, today\'s insight will never become outdated next month. We will detect problems between analyses before they cost you money, ensure your implemented changes are actually working, and keep you prepared for seasonal shifts before they catch you off guard.',
     cta: 'Become a Retainer Client →',
     route: '/analytics-partner-retainer',
