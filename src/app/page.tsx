@@ -1432,7 +1432,7 @@ function WhyWorkWithMeSection() {
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label reveal-up">The Unfair Advantage</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight whitespace-nowrap reveal-up" style={{ transitionDelay: '0.2s' }}>
+          <h2 className="section-headline text-[clamp(23px,3.5vw,40px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight whitespace-nowrap reveal-up" style={{ transitionDelay: '0.2s' }}>
             Don&apos;t Hire an Agency. <span className="gradient-text">Hire a Profit Detective.</span>
           </h2>
         </div>
@@ -2207,7 +2207,7 @@ function CaseStudiesSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label reveal-up">The Receipts</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
+          <h2 className="section-headline text-[clamp(23px,3.5vw,40px)] text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             Featured Case Studies
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -2282,7 +2282,7 @@ function TechPortfolioSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label reveal-up">The Engineering Behind The Insights</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
+          <h2 className="section-headline text-[clamp(23px,3.5vw,40px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             Technical Portfolio
           </h2>
         </div>
@@ -2345,7 +2345,7 @@ function TestimonialsSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label reveal-up">Founders, Transformed</span>
-          <h2 className="section-headline text-[clamp(27px,4vw,47px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
+          <h2 className="section-headline text-[clamp(23px,3.5vw,40px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             Testimonials
           </h2>
           <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
@@ -2448,7 +2448,7 @@ function TechStackSection() {
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label reveal-up">The Infrastructure Behind The Insights</span>
-          <h2 className="section-headline text-[clamp(23px,3.5vw,39px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
+          <h2 className="section-headline text-[clamp(20px,3vw,33px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
             Enterprise Engineering. Without the $150K Salary.
           </h2>
           <p className="text-[#8899AA] text-sm max-w-3xl mx-auto leading-relaxed mt-2">
