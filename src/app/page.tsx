@@ -397,6 +397,23 @@ const CASE_STUDIES = [
   },
 ];
 
+const TECH_ICONS: Record<string, React.ReactNode> = {
+  'SQL': <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#4285F4" strokeWidth="2"><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5" /><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3" /></svg>,
+  'Python': <svg width="12" height="12" viewBox="0 0 24 24" fill="#3776AB"><path d="M11.9 0c-3.9 0-3.7 1.7-3.7 1.7v2h3.8v.6H5.8S3 4.2 3 8.1s2.4 4.8 2.4 4.8h1.4V9.4s-.1-2.4 2.3-2.4h3.8s2.2 0 2.2-2.1V2.1S15.6 0 11.9 0zM9.8 1.2c.4 0 .7.3.7.7s-.3.7-.7.7-.7-.3-.7-.7.3-.7.7-.7z" /><path d="M12.1 24c3.9 0 3.7-1.7 3.7-1.7v-2h-3.8v-.6h6.2s2.8-.1 2.8-4-2.4-4.8-2.4-4.8h-1.4v3.5s.1 2.4-2.3 2.4h-3.8s-2.2 0-2.2 2.1v4.6S8.4 24 12.1 24zm2.1-1.2c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.7.3.7.7-.3.7-.7.7z" fill="#FFD43B" /></svg>,
+  'Power BI': <svg width="12" height="12" viewBox="0 0 24 24" fill="#F2C811"><path d="M3 18h4v3H3z" /><rect x="9" y="11" width="4" height="10" rx="0.5" /><rect x="15" y="5" width="4" height="16" rx="0.5" opacity="0.85" /></svg>,
+  'PostgreSQL': <svg width="12" height="12" viewBox="0 0 24 24" fill="#336791"><path d="M23 9c-.2-1.5-1.2-2.5-2.7-2.8-.5-.1-1.1-.1-1.7-.1-.3-1.2-1-2.2-2-2.9C15.1 2.1 13.2 1.5 11 1.5c-2.9 0-5.3 1.2-6.7 3.3-.8 1.2-1.1 2.6-.9 4C2 9.7 1 11 .8 12.5c-.2 1.8.4 3.4 1.7 4.5 1 .9 2.4 1.4 3.8 1.4.3 0 .6 0 .9-.1.4.6 1 1 1.7 1.2.4.1.8.2 1.2.2.5 0 1-.1 1.5-.3.4.5 1 .8 1.6.9 1.3.2 2.6-.3 3.3-1.3.6-.8.8-1.8.6-2.8.8-.3 1.4-.9 1.7-1.7.4-1.1.2-2.3-.5-3.2.5-.4.9-.9 1.1-1.5.3-1 .2-2-.1-2.8.5.1 1 .2 1.5.1 1.5-.2 2.7-1.2 3.1-2.6.1-.4.1-.7.1-1z" /></svg>,
+  'DAX': <svg width="12" height="12" viewBox="0 0 24 24" fill="#F2C811"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#F2C811" strokeWidth="2" /><text x="12" y="16" textAnchor="middle" fontSize="7" fontWeight="900" fill="#F2C811">DAX</text></svg>,
+  'Excel': <svg width="12" height="12" viewBox="0 0 24 24" fill="#217346"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#217346" strokeWidth="2" /><text x="12" y="16" textAnchor="middle" fontSize="8" fontWeight="900" fill="#217346">XLS</text></svg>,
+  'BigQuery': <svg width="12" height="12" viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="#4285F4" strokeWidth="1.5" fill="none" /></svg>,
+  'GCP': <svg width="12" height="12" viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z" fill="none" stroke="#4285F4" strokeWidth="2" /><text x="12" y="15" textAnchor="middle" fontSize="6" fontWeight="900" fill="#4285F4">GCP</text></svg>,
+  'GA4': <svg width="12" height="12" viewBox="0 0 24 24" fill="#E37400"><path d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10z" /><rect x="7" y="13" width="2.5" height="4" rx="1" fill="white" /><rect x="11" y="10" width="2.5" height="7" rx="1" fill="white" /><rect x="15" y="7" width="2.5" height="10" rx="1" fill="white" opacity="0.8" /></svg>,
+  'Shopify': <svg width="12" height="12" viewBox="0 0 24 24" fill="#96BF48"><path d="M15.337 3.28c-.013-.1-.1-.15-.18-.16-.08-.01-1.74-.13-1.74-.13s-1.16-1.14-1.28-1.26c-.12-.12-.36-.08-.45-.06l-.98.3C10.367.72 9.757.5 9.057.5c-1.97 0-2.92 1.47-3.23 2.96-.84.19-1.68.44-2.29.64L2.027 19.5l11.5 2 6-1.5L15.337 3.28z" /></svg>,
+  'Meta Ads': <svg width="12" height="12" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>,
+  'Google Ads': <svg width="12" height="12" viewBox="0 0 24 24" fill="#4285F4"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" /><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" /><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" /><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" /></svg>,
+  'Looker Studio': <svg width="12" height="12" viewBox="0 0 24 24" fill="#4285F4"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#4285F4" strokeWidth="2" /><path d="M7 14l3-3 3 2 4-5" stroke="#4285F4" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>,
+  'APIs': <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C6FF" strokeWidth="2"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
+};
+
 const GITHUB_PROJECTS = [
   {
     name: 'Behavioral Funnel & Conversion',
@@ -2098,7 +2115,7 @@ function ServicesSection() {
               <h4 className="text-white font-bold text-lg mb-1">Shopify / Tech Implementation Session</h4>
               <div className="mb-4">
                   <div className="text-[#8899AA] text-xs">Investment</div>
-                  <div className="gradient-text-gold text-sm font-bold">$200</div>
+                  <div className="gradient-text-gold text-sm font-bold">$200–$300</div>
                 </div>
               <p className="text-[#8899AA] text-sm leading-relaxed mb-5">Already know what needs fixing but aren&apos;t sure how to implement it? Join a live implementation session where we&apos;ll guide you step by step while you or your team make the changes.</p>
 
@@ -2296,11 +2313,13 @@ function TechPortfolioSection() {
             const a = accents[i] || accents[0];
             return (
             <div key={i} className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: `linear-gradient(145deg, rgba(13,21,32,0.95) 0%, ${a.bg} 100%)`, border: `1px solid ${a.border}`, borderLeft: `4px solid ${a.left}`, boxShadow: '0 0 30px ' + a.bg + ', 0 8px 32px rgba(0,0,0,0.4)' }}>
-              <h3 className="text-white font-bold text-lg mb-1">{proj.name}</h3>
+              <h3 className="font-bold text-lg mb-1" style={{ color: a.left }}>{proj.name}</h3>
               <p className="gradient-text text-sm font-semibold mb-3">{proj.subtitle}</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {proj.stack.map((s, si) => (
-                  <span key={si} className="tech-tag px-2.5 py-1 rounded-md text-xs font-medium">{s}</span>
+                  <span key={si} className="tech-tag px-2.5 py-1 rounded-md text-xs font-medium inline-flex items-center gap-1.5">
+                    {TECH_ICONS[s] || null}{s}
+                  </span>
                 ))}
               </div>
               <div className="mb-4">
@@ -2731,7 +2750,7 @@ function ContactSection() {
 
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="contact-main-heading">
+          <h2 className="contact-main-heading whitespace-nowrap">
             Let&apos;s Find Your Next <span className="money-accent">$10,000.</span>
           </h2>
           <h2 className="contact-main-heading contact-sub-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw" style="color:#FFFFFF;transition-delay:0s">Stop</span> <span class="sgw" style="color:#FFFFFF;transition-delay:0.08s">Guessing.</span> <span class="sgw sgw-accent" style="transition-delay:0.16s">Start</span> <span class="sgw sgw-accent" style="transition-delay:0.24s">Knowing.</span>'; } }}>
