@@ -1760,6 +1760,162 @@ function ServicesSection() {
             </a>
           </div>
         </div>
+
+        {/* ── Part 4: Implementation Add-Ons ── */}
+        <div className="mb-20">
+          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 4: Implementation Add-Ons</h3>
+          <p className="text-[#00C6FF] text-base font-semibold mb-1">Turn Insights Into Action</p>
+          <p className="text-[#8899AA] text-sm mb-8">You now know what&apos;s holding your business back. These implementation services help turn recommendations into real improvements.</p>
+
+          <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Service 01: Klaviyo Email Flows Setup */}
+            <div className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(0,198,255,0.08) 100%)', border: '1px solid rgba(0,198,255,0.20)', borderLeft: '4px solid #00C6FF', boxShadow: '0 0 30px rgba(0,198,255,0.08), 0 8px 32px rgba(0,0,0,0.4)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'rgba(0,198,255,0.1)', border: '1px solid rgba(0,198,255,0.3)' }}>
+                  <Mail size={18} className="text-[#00C6FF]" />
+                </div>
+                <span className="text-[#00C6FF] text-xs font-bold tracking-widest uppercase">Service 01</span>
+              </div>
+              <h4 className="text-white font-bold text-lg mb-1">Klaviyo Email Flows Setup</h4>
+              <div className="flex items-baseline gap-2 mb-1">
+                <span className="gradient-text-gold text-xl font-bold">$300 – $600</span>
+              </div>
+              <div className="text-[#8899AA] text-xs mb-4">Done-for-You</div>
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-5">We build and configure the essential Klaviyo email automations that help recover lost customers, increase repeat purchases, and generate more sales without requiring ongoing manual work.</p>
+
+              <div className="mb-5">
+                <div className="text-[#00C6FF] text-xs font-semibold mb-2">What We Can Set Up</div>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Win-Back Flow</strong> — Reconnect with customers who haven&apos;t purchased recently.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Cross-Sell Flow</strong> — Recommend complementary products after each purchase to increase Average Order Value (AOV).</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">VIP Customer Flow</strong> — Reward your highest-value customers with exclusive experiences and retention campaigns.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Post-Purchase Flow</strong> — Keep customers engaged after checkout with follow-up emails, education, reviews, and repeat-purchase reminders.</span></li>
+                </ul>
+              </div>
+
+              <div className="mb-5">
+                <div className="text-[#00C6FF] text-xs font-semibold mb-1">Best For</div>
+                <p className="text-[#8899AA] text-sm">Stores already using Klaviyo or planning to improve customer retention through email automation.</p>
+              </div>
+
+              <div className="mb-5 p-4 rounded-lg" style={{ background: 'rgba(0,198,255,0.05)', border: '1px solid rgba(0,198,255,0.1)' }}>
+                <div className="text-[#00C6FF] text-xs font-semibold mb-2">You Receive</div>
+                <ul className="space-y-1.5">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Fully configured Klaviyo flows</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Email automation logic</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Trigger & condition setup</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Recommended email sequence structure</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Flow testing before handover</li>
+                </ul>
+              </div>
+
+              <a href="#contact" className="service-book-btn package-book-btn">Book the Klaviyo Setup →</a>
+            </div>
+
+            {/* Service 02: Shopify / Tech Implementation Session */}
+            <div className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(245,166,35,0.08) 100%)', border: '1px solid rgba(245,166,35,0.20)', borderLeft: '4px solid #F5A623', boxShadow: '0 0 30px rgba(245,166,35,0.08), 0 8px 32px rgba(0,0,0,0.4)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'rgba(245,166,35,0.1)', border: '1px solid rgba(245,166,35,0.3)' }}>
+                  <Code2 size={18} className="text-[#F5A623]" />
+                </div>
+                <span className="text-[#F5A623] text-xs font-bold tracking-widest uppercase">Service 02</span>
+              </div>
+              <h4 className="text-white font-bold text-lg mb-1">Shopify / Tech Implementation Session</h4>
+              <div className="flex items-baseline gap-2 mb-1">
+                <span className="gradient-text-gold text-xl font-bold">$200</span>
+              </div>
+              <div className="text-[#8899AA] text-xs mb-4">90-Minute Live Session · Done-With-You</div>
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-5">Already know what needs fixing but aren&apos;t sure how to implement it? Join a live implementation session where we&apos;ll guide you step by step while you or your team make the changes.</p>
+
+              <div className="mb-5">
+                <div className="text-[#F5A623] text-xs font-semibold mb-2">We Can Help You Implement</div>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> Shopify store improvements</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> Product page optimization</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> CRO recommendations</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> Tracking & Analytics setup</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> Apps & third-party integrations</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> Technical recommendations from any MozIntelligence audit</li>
+                </ul>
+              </div>
+
+              <div className="mb-5">
+                <div className="text-[#F5A623] text-xs font-semibold mb-1">Best For</div>
+                <p className="text-[#8899AA] text-sm">Businesses that want expert guidance while making changes themselves.</p>
+              </div>
+
+              <div className="mb-5 p-4 rounded-lg" style={{ background: 'rgba(245,166,35,0.05)', border: '1px solid rgba(245,166,35,0.1)' }}>
+                <div className="text-[#F5A623] text-xs font-semibold mb-2">You Receive</div>
+                <ul className="space-y-1.5">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> 90-minute live implementation session</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Screen-sharing support</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Step-by-step guidance</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Questions answered live</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Implementation checklist</li>
+                </ul>
+              </div>
+
+              <a href="#contact" className="service-book-btn package-book-btn">Book the Implementation Session →</a>
+            </div>
+
+            {/* Service 03: Custom Implementation Support */}
+            <div className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(0,230,118,0.08) 100%)', border: '1px solid rgba(0,230,118,0.20)', borderLeft: '4px solid #00E676', boxShadow: '0 0 30px rgba(0,230,118,0.08), 0 8px 32px rgba(0,0,0,0.4)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'rgba(0,230,118,0.1)', border: '1px solid rgba(0,230,118,0.3)' }}>
+                  <Rocket size={18} className="text-[#00E676]" />
+                </div>
+                <span className="text-[#00E676] text-xs font-bold tracking-widest uppercase">Service 03</span>
+              </div>
+              <h4 className="text-white font-bold text-lg mb-1">Custom Implementation Support</h4>
+              <div className="flex items-baseline gap-2 mb-1">
+                <span className="gradient-text-gold text-xl font-bold">Custom Pricing</span>
+              </div>
+              <div className="text-[#8899AA] text-xs mb-4">Based on Scope</div>
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-5">Have a specific recommendation from your audit that you want implemented? We can turn your findings into actual changes across your store, marketing, analytics, or operations.</p>
+
+              <div className="mb-5">
+                <div className="text-[#00E676] text-xs font-semibold mb-2">What We Can Implement</div>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Marketing Spend Audit</strong> — Implement campaign tracking, attribution setup, or budget monitoring.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Customer Retention Audit</strong> — Implement retention flows, customer segments, or re-engagement campaigns.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Product Portfolio Audit</strong> — Implement product bundling, cross-sell setup, or product merchandising changes.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">CRO Audit</strong> — Implement recommended changes to your product pages, cart, checkout, or conversion flow.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Profitability Audit</strong> — Implement margin tracking, product-level profitability monitoring, or profit alerts.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Operations Efficiency Audit</strong> — Implement workflow automation, operational tracking, or cost monitoring.</span></li>
+                </ul>
+              </div>
+
+              <div className="mb-5 p-4 rounded-lg" style={{ background: 'rgba(0,230,118,0.05)', border: '1px solid rgba(0,230,118,0.1)' }}>
+                <div className="text-[#00E676] text-xs font-semibold mb-2">You Get</div>
+                <p className="text-[#F0F4F8] text-sm">The recommended solution implemented based on your audit findings and business requirements.</p>
+              </div>
+
+              <a href="#contact" className="service-book-btn package-book-btn">Discuss Your Implementation →</a>
+            </div>
+          </div>
+
+          {/* Done-for-You vs Done-With-You comparison */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+            <div className="rounded-2xl p-6 sm:p-8 text-center" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(0,198,255,0.06) 100%)', border: '1px solid rgba(0,198,255,0.15)', boxShadow: '0 0 30px rgba(0,198,255,0.05), 0 8px 32px rgba(0,0,0,0.4)' }}>
+              <div className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ background: 'rgba(0,198,255,0.1)', border: '1px solid rgba(0,198,255,0.3)' }}>
+                <Check size={20} className="text-[#00C6FF]" />
+              </div>
+              <h4 className="text-white font-bold text-lg mb-3">Done-for-You</h4>
+              <p className="text-[#8899AA] text-sm leading-relaxed">We complete the implementation for you.</p>
+              <p className="text-[#8899AA] text-sm leading-relaxed">Minimal involvement required.</p>
+              <p className="text-[#00C6FF] text-sm font-semibold mt-2">Best for busy teams.</p>
+            </div>
+            <div className="rounded-2xl p-6 sm:p-8 text-center" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(245,166,35,0.06) 100%)', border: '1px solid rgba(245,166,35,0.15)', boxShadow: '0 0 30px rgba(245,166,35,0.05), 0 8px 32px rgba(0,0,0,0.4)' }}>
+              <div className="w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center" style={{ background: 'rgba(245,166,35,0.1)', border: '1px solid rgba(245,166,35,0.3)' }}>
+                <Users size={20} className="text-[#F5A623]" />
+              </div>
+              <h4 className="text-white font-bold text-lg mb-3">Done-With-You</h4>
+              <p className="text-[#8899AA] text-sm leading-relaxed">We guide you while you implement the changes yourself.</p>
+              <p className="text-[#8899AA] text-sm leading-relaxed">Collaborative live working session.</p>
+              <p className="text-[#F5A623] text-sm font-semibold mt-2">Best for teams that want to learn while implementing.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
