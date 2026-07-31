@@ -101,7 +101,7 @@ const CORE_PACKAGES = [
     name: 'E-Commerce Health Check',
     tier: 'STARTER',
     price: '$150 – $300',
-    timeline: 'One-time · 5–7 day delivery',
+    timeline: '5–7 day',
     description: 'A 90-day forensic audit across sales, funnel, customers, and true product profitability.',
     features: [
       '4 focused analyses (Sales, Funnel, Customers, Profit)',
@@ -122,7 +122,7 @@ const CORE_PACKAGES = [
     name: 'Revenue Growth Accelerator',
     tier: 'GROWTH',
     price: '$600 – $1,200',
-    timeline: 'One-time · 10–14 day delivery',
+    timeline: '10–14 day',
     description: 'Full RFM, channel LTV:CAC, cohort truth, bundle strategy, and an interactive intelligence dashboard.',
     features: [
       'Everything in Starter, plus 5 deeper analyses',
@@ -144,7 +144,7 @@ const CORE_PACKAGES = [
     name: 'Data-Driven Growth System',
     tier: 'ADVANCED',
     price: '$2,000 – $4,000',
-    timeline: 'One-time · 20–30 day delivery',
+    timeline: '20–30 day',
     description: 'Your complete analytics engine, built once, runs forever. 15 total analyses including cohorts, forecasts, and live dashboards.',
     features: [
       'Everything in Growth, plus 6 advanced analyses',
@@ -1784,7 +1784,7 @@ function ServicesSection() {
 
         {/* ── Part 4: Implementation Add-Ons ── */}
         <div className="mb-20">
-          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 4: Implementation Add-Ons</h3>
+          <h3 className="text-white text-base font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 4: Implementation Add-Ons</h3>
           <p className="text-[#00C6FF] text-base font-semibold mb-1">Turn Insights Into Action</p>
           <p className="text-[#8899AA] text-sm mb-8">You now know what&apos;s holding your business back. These implementation services help turn recommendations into real improvements.</p>
 
@@ -1798,10 +1798,16 @@ function ServicesSection() {
                 <span className="text-[#00C6FF] text-xs font-bold tracking-widest uppercase">Service 01</span>
               </div>
               <h4 className="text-white font-bold text-lg mb-1">Klaviyo Email Flows Setup</h4>
-              <div className="flex items-baseline gap-2 mb-1">
-                <span className="gradient-text-gold text-xl font-bold">$300 – $600</span>
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <div className="text-[#8899AA] text-xs">Type</div>
+                  <div className="text-white text-sm font-medium">Done-for-You</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-[#8899AA] text-xs">Investment</div>
+                  <div className="gradient-text-gold text-sm font-bold">$300 – $600</div>
+                </div>
               </div>
-              <div className="text-[#8899AA] text-xs mb-4">Done-for-You</div>
               <p className="text-[#8899AA] text-sm leading-relaxed mb-5">We build and configure the essential Klaviyo email automations that help recover lost customers, increase repeat purchases, and generate more sales without requiring ongoing manual work.</p>
 
               <div className="mb-5">
@@ -1842,10 +1848,16 @@ function ServicesSection() {
                 <span className="text-[#F5A623] text-xs font-bold tracking-widest uppercase">Service 02</span>
               </div>
               <h4 className="text-white font-bold text-lg mb-1">Shopify / Tech Implementation Session</h4>
-              <div className="flex items-baseline gap-2 mb-1">
-                <span className="gradient-text-gold text-xl font-bold">$200</span>
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <div className="text-[#8899AA] text-xs">Type</div>
+                  <div className="text-white text-sm font-medium">90-Min Live · Done-With-You</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-[#8899AA] text-xs">Investment</div>
+                  <div className="gradient-text-gold text-sm font-bold">$200</div>
+                </div>
               </div>
-              <div className="text-[#8899AA] text-xs mb-4">90-Minute Live Session · Done-With-You</div>
               <p className="text-[#8899AA] text-sm leading-relaxed mb-5">Already know what needs fixing but aren&apos;t sure how to implement it? Join a live implementation session where we&apos;ll guide you step by step while you or your team make the changes.</p>
 
               <div className="mb-5">
@@ -1888,10 +1900,16 @@ function ServicesSection() {
                 <span className="text-[#00E676] text-xs font-bold tracking-widest uppercase">Service 03</span>
               </div>
               <h4 className="text-white font-bold text-lg mb-1">Custom Implementation Support</h4>
-              <div className="flex items-baseline gap-2 mb-1">
-                <span className="gradient-text-gold text-xl font-bold">Custom Pricing</span>
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <div className="text-[#8899AA] text-xs">Type</div>
+                  <div className="text-white text-sm font-medium">Based on Scope</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-[#8899AA] text-xs">Investment</div>
+                  <div className="gradient-text-gold text-sm font-bold">Custom Pricing</div>
+                </div>
               </div>
-              <div className="text-[#8899AA] text-xs mb-4">Based on Scope</div>
               <p className="text-[#8899AA] text-sm leading-relaxed mb-5">Have a specific recommendation from your audit that you want implemented? We can turn your findings into actual changes across your store, marketing, analytics, or operations.</p>
 
               <div className="mb-5">
