@@ -1786,10 +1786,10 @@ function ServicesSection() {
               <div className="mb-5">
                 <div className="text-[#00C6FF] text-xs font-semibold mb-2">What We Can Set Up</div>
                 <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Win-Back Flow</strong> — Reconnect with customers who haven&apos;t purchased recently.</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Cross-Sell Flow</strong> — Recommend complementary products after each purchase to increase Average Order Value (AOV).</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">VIP Customer Flow</strong> — Reward your highest-value customers with exclusive experiences and retention campaigns.</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Post-Purchase Flow</strong> — Keep customers engaged after checkout with follow-up emails, education, reviews, and repeat-purchase reminders.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Win-Back Flow</strong>: Reconnect with customers who haven&apos;t purchased recently.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Cross-Sell Flow</strong>: Recommend complementary products after each purchase to increase Average Order Value (AOV).</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">VIP Customer Flow</strong>: Reward your highest-value customers with exclusive experiences and retention campaigns.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Post-Purchase Flow</strong>: Keep customers engaged after checkout with follow-up emails, education, reviews, and repeat-purchase reminders.</span></li>
                 </ul>
               </div>
 
@@ -1876,12 +1876,12 @@ function ServicesSection() {
               <div className="mb-5">
                 <div className="text-[#00E676] text-xs font-semibold mb-2">What We Can Implement</div>
                 <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Marketing Spend Audit</strong> — Implement campaign tracking, attribution setup, or budget monitoring.</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Customer Retention Audit</strong> — Implement retention flows, customer segments, or re-engagement campaigns.</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Product Portfolio Audit</strong> — Implement product bundling, cross-sell setup, or product merchandising changes.</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">CRO Audit</strong> — Implement recommended changes to your product pages, cart, checkout, or conversion flow.</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Profitability Audit</strong> — Implement margin tracking, product-level profitability monitoring, or profit alerts.</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Operations Efficiency Audit</strong> — Implement workflow automation, operational tracking, or cost monitoring.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Marketing Spend Audit</strong>: Implement campaign tracking, attribution setup, or budget monitoring.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Customer Retention Audit</strong>: Implement retention flows, customer segments, or re-engagement campaigns.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Product Portfolio Audit</strong>: Implement product bundling, cross-sell setup, or product merchandising changes.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">CRO Audit</strong>: Implement recommended changes to your product pages, cart, checkout, or conversion flow.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Profitability Audit</strong>: Implement margin tracking, product-level profitability monitoring, or profit alerts.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Operations Efficiency Audit</strong>: Implement workflow automation, operational tracking, or cost monitoring.</span></li>
                 </ul>
               </div>
 
@@ -1914,6 +1914,233 @@ function ServicesSection() {
               <p className="text-[#8899AA] text-sm leading-relaxed">Collaborative live working session.</p>
               <p className="text-[#F5A623] text-sm font-semibold mt-2">Best for teams that want to learn while implementing.</p>
             </div>
+          </div>
+        </div>
+
+        {/* ── Part 5: Custom Analytics & Insights ── */}
+        <div className="mb-20">
+          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 5: Custom Analytics &amp; Insights</h3>
+          <p className="text-[#00C6FF] text-base font-semibold mb-1">Built Around Your Business Questions</p>
+          <p className="text-[#8899AA] text-sm mb-8">Not every business problem fits into a standard package. If you need a specific analysis, dashboard, KPI system, or custom report that isn&apos;t covered by our existing services, we can build it around your exact business question, data, and goals.</p>
+
+          <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Service 01: Custom Business Analysis */}
+            <div className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(0,198,255,0.08) 100%)', border: '1px solid rgba(0,198,255,0.20)', borderLeft: '4px solid #00C6FF', boxShadow: '0 0 30px rgba(0,198,255,0.08), 0 8px 32px rgba(0,0,0,0.4)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'rgba(0,198,255,0.1)', border: '1px solid rgba(0,198,255,0.3)' }}>
+                  <Lightbulb size={18} className="text-[#00C6FF]" />
+                </div>
+                <span className="text-[#00C6FF] text-xs font-bold tracking-widest uppercase">Service 01</span>
+              </div>
+              <h4 className="text-white font-bold text-lg mb-1">Custom Business Analysis</h4>
+              <div className="text-[#8899AA] text-xs mb-4">Custom Pricing · Based on Scope</div>
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-5">Have a specific business question you need answered? We analyze the relevant data to identify what is happening, why it is happening, and what you should do next.</p>
+              <div className="mb-5">
+                <div className="text-[#00C6FF] text-xs font-semibold mb-2">Examples</div>
+                <ul className="space-y-1.5">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Why are sales declining despite steady traffic?</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Which customer segments generate the most profit?</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Which products are driving or hurting growth?</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Where are we losing revenue?</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> What is causing a sudden change in conversion or retention?</li>
+                </ul>
+              </div>
+              <div className="mb-5 p-4 rounded-lg" style={{ background: 'rgba(0,198,255,0.05)', border: '1px solid rgba(0,198,255,0.1)' }}>
+                <div className="text-[#00C6FF] text-xs font-semibold mb-2">You Receive</div>
+                <ul className="space-y-1.5">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Custom analysis based on your question</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Key findings and insights</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Supporting data and visualizations</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Clear strategic recommendations</li>
+                </ul>
+              </div>
+              <a href="#contact" className="service-book-btn package-book-btn">Discuss Your Analysis →</a>
+            </div>
+
+            {/* Service 02: Custom E-Commerce Analysis */}
+            <div className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(0,230,118,0.08) 100%)', border: '1px solid rgba(0,230,118,0.20)', borderLeft: '4px solid #00E676', boxShadow: '0 0 30px rgba(0,230,118,0.08), 0 8px 32px rgba(0,0,0,0.4)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'rgba(0,230,118,0.1)', border: '1px solid rgba(0,230,118,0.3)' }}>
+                  <BarChart3 size={18} className="text-[#00E676]" />
+                </div>
+                <span className="text-[#00E676] text-xs font-bold tracking-widest uppercase">Service 02</span>
+              </div>
+              <h4 className="text-white font-bold text-lg mb-1">Custom E-Commerce Analysis</h4>
+              <div className="text-[#8899AA] text-xs mb-4">Custom Pricing · Based on Scope</div>
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-5">Need a deeper analysis of a specific area of your Shopify business? We investigate the exact part of your store or customer journey you want to understand.</p>
+              <div className="mb-5">
+                <div className="text-[#00E676] text-xs font-semibold mb-2">Examples</div>
+                <ul className="space-y-1.5">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Customer Lifetime Value analysis</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Repeat purchase analysis</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Product performance analysis</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Customer cohort analysis</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> AOV analysis</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Conversion funnel analysis</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Customer segmentation analysis</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Revenue leakage analysis</li>
+                </ul>
+              </div>
+              <div className="mb-5 p-4 rounded-lg" style={{ background: 'rgba(0,230,118,0.05)', border: '1px solid rgba(0,230,118,0.1)' }}>
+                <div className="text-[#00E676] text-xs font-semibold mb-2">You Receive</div>
+                <ul className="space-y-1.5">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Custom analysis</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Performance breakdown</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Key opportunities and problems</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00E676] mt-0.5">•</span> Actionable recommendations</li>
+                </ul>
+              </div>
+              <a href="#contact" className="service-book-btn package-book-btn">Discuss Your Analysis →</a>
+            </div>
+
+            {/* Service 03: Custom Dashboard */}
+            <div className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(245,166,35,0.08) 100%)', border: '1px solid rgba(245,166,35,0.20)', borderLeft: '4px solid #F5A623', boxShadow: '0 0 30px rgba(245,166,35,0.08), 0 8px 32px rgba(0,0,0,0.4)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'rgba(245,166,35,0.1)', border: '1px solid rgba(245,166,35,0.3)' }}>
+                  <LineChart size={18} className="text-[#F5A623]" />
+                </div>
+                <span className="text-[#F5A623] text-xs font-bold tracking-widest uppercase">Service 03</span>
+              </div>
+              <h4 className="text-white font-bold text-lg mb-1">Custom Dashboard</h4>
+              <div className="text-[#8899AA] text-xs mb-4">Custom Pricing · Based on Scope</div>
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-5">Need a dashboard that shows exactly what matters to your business? We build custom dashboards around your KPIs, data sources, and reporting requirements.</p>
+              <div className="mb-5">
+                <div className="text-[#F5A623] text-xs font-semibold mb-2">Possible Dashboards</div>
+                <ul className="space-y-1.5">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Executive Performance Dashboard</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> E-Commerce KPI Dashboard</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Marketing Performance Dashboard</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Customer & Retention Dashboard</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Product Performance Dashboard</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Profitability Dashboard</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Sales & Revenue Dashboard</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Custom Management Dashboard</li>
+                </ul>
+              </div>
+              <div className="mb-5">
+                <div className="text-[#F5A623] text-xs font-semibold mb-2">Data Sources Can Include</div>
+                <p className="text-[#8899AA] text-sm">Shopify · GA4 · Google Ads · Meta Ads · Klaviyo · BigQuery · Other Business Data</p>
+              </div>
+              <div className="mb-5 p-4 rounded-lg" style={{ background: 'rgba(245,166,35,0.05)', border: '1px solid rgba(245,166,35,0.1)' }}>
+                <div className="text-[#F5A623] text-xs font-semibold mb-2">You Receive</div>
+                <ul className="space-y-1.5">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Custom dashboard</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> KPI tracking</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Interactive charts and filters</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Connected data sources</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#F5A623] mt-0.5">•</span> Clear, decision-ready reporting</li>
+                </ul>
+              </div>
+              <a href="#contact" className="service-book-btn package-book-btn">Discuss Your Dashboard →</a>
+            </div>
+
+            {/* Service 04: Custom KPI & Reporting System */}
+            <div className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(139,92,246,0.08) 100%)', border: '1px solid rgba(139,92,246,0.20)', borderLeft: '4px solid #8B5CF6', boxShadow: '0 0 30px rgba(139,92,246,0.08), 0 8px 32px rgba(0,0,0,0.4)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.3)' }}>
+                  <Target size={18} className="text-[#8B5CF6]" />
+                </div>
+                <span className="text-[#8B5CF6] text-xs font-bold tracking-widest uppercase">Service 04</span>
+              </div>
+              <h4 className="text-white font-bold text-lg mb-1">Custom KPI &amp; Reporting System</h4>
+              <div className="text-[#8899AA] text-xs mb-4">Custom Pricing · Based on Scope</div>
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-5">Need a better way to monitor your business every week or month? We create a custom KPI and reporting system around the metrics your team actually needs to track.</p>
+              <div className="mb-5">
+                <div className="text-[#8B5CF6] text-xs font-semibold mb-2">Examples</div>
+                <ul className="space-y-1.5">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#8B5CF6] mt-0.5">•</span> Weekly e-commerce performance report</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#8B5CF6] mt-0.5">•</span> Monthly executive report</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#8B5CF6] mt-0.5">•</span> Marketing KPI tracking</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#8B5CF6] mt-0.5">•</span> Customer retention reporting</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#8B5CF6] mt-0.5">•</span> Product performance reporting</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#8B5CF6] mt-0.5">•</span> Profitability monitoring</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#8B5CF6] mt-0.5">•</span> Custom KPI scorecard</li>
+                </ul>
+              </div>
+              <div className="mb-5 p-4 rounded-lg" style={{ background: 'rgba(139,92,246,0.05)', border: '1px solid rgba(139,92,246,0.1)' }}>
+                <div className="text-[#8B5CF6] text-xs font-semibold mb-2">You Receive</div>
+                <ul className="space-y-1.5">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#8B5CF6] mt-0.5">•</span> Custom KPI framework</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#8B5CF6] mt-0.5">•</span> Automated or repeatable reporting structure</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#8B5CF6] mt-0.5">•</span> Performance tracking</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#8B5CF6] mt-0.5">•</span> Clear reporting format</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#8B5CF6] mt-0.5">•</span> Decision-ready insights</li>
+                </ul>
+              </div>
+              <a href="#contact" className="service-book-btn package-book-btn">Discuss Your KPI System →</a>
+            </div>
+
+            {/* Service 05: Custom Data Analysis */}
+            <div className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(0,198,255,0.08) 100%)', border: '1px solid rgba(0,198,255,0.20)', borderLeft: '4px solid #00C6FF', boxShadow: '0 0 30px rgba(0,198,255,0.08), 0 8px 32px rgba(0,0,0,0.4)' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'rgba(0,198,255,0.1)', border: '1px solid rgba(0,198,255,0.3)' }}>
+                  <Database size={18} className="text-[#00C6FF]" />
+                </div>
+                <span className="text-[#00C6FF] text-xs font-bold tracking-widest uppercase">Service 05</span>
+              </div>
+              <h4 className="text-white font-bold text-lg mb-1">Custom Data Analysis</h4>
+              <div className="text-[#8899AA] text-xs mb-4">Custom Pricing · Based on Scope</div>
+              <p className="text-[#8899AA] text-sm leading-relaxed mb-5">Have data across multiple platforms but need one clear answer? We can combine and analyze data from your existing tools to uncover relationships, patterns, and opportunities that are difficult to see from individual platforms.</p>
+              <div className="mb-5">
+                <div className="text-[#00C6FF] text-xs font-semibold mb-2">Possible Data Sources</div>
+                <p className="text-[#8899AA] text-sm">Shopify · GA4 · Klaviyo · Meta Ads · Google Ads · BigQuery · Excel · Other Business Data</p>
+              </div>
+              <div className="mb-5">
+                <div className="text-[#00C6FF] text-xs font-semibold mb-2">Examples</div>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> <span><strong className="text-white">Shopify + GA4</strong><br />Identify where traffic converts or drops off.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> <span><strong className="text-white">Shopify + Klaviyo</strong><br />Understand whether email customers generate higher repeat revenue.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> <span><strong className="text-white">Shopify + Ads</strong><br />Compare advertising spend against actual sales and customer value.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> <span><strong className="text-white">Multiple Sources</strong><br />Build a unified view of your e-commerce performance.</span></li>
+                </ul>
+              </div>
+              <div className="mb-5 p-4 rounded-lg" style={{ background: 'rgba(0,198,255,0.05)', border: '1px solid rgba(0,198,255,0.1)' }}>
+                <div className="text-[#00C6FF] text-xs font-semibold mb-2">You Receive</div>
+                <ul className="space-y-1.5">
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Combined data analysis</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Cross-platform insights</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Key findings</li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><span className="text-[#00C6FF] mt-0.5">•</span> Strategic recommendations</li>
+                </ul>
+              </div>
+              <a href="#contact" className="service-book-btn package-book-btn">Discuss Your Data Analysis →</a>
+            </div>
+          </div>
+
+          {/* How Custom Analytics Works */}
+          <div className="mt-12">
+            <h4 className="text-white font-bold text-lg mb-6 text-center uppercase tracking-tight">How Custom Analytics Works</h4>
+            <div className="reveal-stagger grid grid-cols-1 md:grid-cols-4 gap-4">
+              {[
+                { num: '01', title: 'Tell Us What You Need', text: 'Share the business question, reporting requirement, or problem you want to solve.' },
+                { num: '02', title: 'We Define the Scope', text: 'We identify the data, KPIs, analysis, and deliverables required.' },
+                { num: '03', title: 'We Analyze & Build', text: 'We perform the analysis or build the dashboard/reporting system.' },
+                { num: '04', title: 'You Get Clear Answers', text: 'You receive actionable insights designed to help you make better business decisions.' },
+              ].map((step, i) => (
+                <div key={i} className="rounded-2xl p-6 text-center relative" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(0,198,255,0.05) 100%)', border: '1px solid rgba(0,198,255,0.15)', boxShadow: '0 4px 24px rgba(0,0,0,0.4)' }}>
+                  <div className="w-12 h-12 rounded-xl mx-auto mb-3 flex items-center justify-center" style={{ background: 'rgba(0,198,255,0.1)', border: '1px solid rgba(0,198,255,0.3)' }}>
+                    <span className="text-[#00C6FF] font-bold text-lg">{step.num}</span>
+                  </div>
+                  <h5 className="text-white font-bold text-sm mb-2">{step.title}</h5>
+                  <p className="text-[#8899AA] text-xs leading-relaxed">{step.text}</p>
+                  {i < 3 && (
+                    <div className="hidden md:block absolute top-1/2 -right-3 z-10">
+                      <ArrowRight size={16} className="text-[#00C6FF]" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Final CTA */}
+          <div className="mt-10 text-center rounded-2xl p-8 sm:p-12" style={{ background: 'linear-gradient(135deg, rgba(0,198,255,0.08) 0%, rgba(0,114,255,0.05) 100%)', border: '1px solid rgba(0,198,255,0.2)', boxShadow: '0 0 40px rgba(0,198,255,0.1)' }}>
+            <h4 className="text-white font-bold text-xl sm:text-2xl mb-3 uppercase tracking-tight">Don&apos;t See the Analysis You Need?</h4>
+            <p className="text-[#00C6FF] text-base font-semibold mb-2">That&apos;s exactly what Custom Analytics &amp; Insights is for.</p>
+            <p className="text-[#8899AA] text-sm max-w-2xl mx-auto mb-5">If you have a business question, we can build the analysis around it.</p>
+            <a href="#contact" className="btn-press inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)] no-underline" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
+              Get Custom Analytics <ArrowRight size={18} />
+            </a>
           </div>
         </div>
       </div>
