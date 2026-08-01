@@ -33,7 +33,7 @@ const TRUST_STATS: { target?: number; prefix?: string; suffix?: string; value?: 
   { target: 5, prefix: '', suffix: '+', label: 'Proved Case Study' },
   { target: 100, prefix: '', suffix: '%', label: 'Data Privacy', isPrivacy: true },
   { target: 100, prefix: '', suffix: '+', label: 'Projects Delivered' },
-  { target: 4.9, prefix: '', suffix: '', isRating: true, ratingLabel: '100+ projects' },
+  { target: 4.9, prefix: '', suffix: '', isRating: true, ratingLabel: '' },
 ];
 
 const QUICK_PROOF_CARDS = [
@@ -503,7 +503,7 @@ const PROCESS_STEPS = [
   },
   {
     num: 4,
-    title: 'The Delivery & Strategy Call (Day 15)',
+    title: 'The Delivery & Strategy Call',
     text: 'You don\'t receive a data dump. You receive a plain-language Executive PDF, a visual dashboard, and a prioritized action plan. We hop on a strategy call (30 to 90 minutes, depending on your package) where I explain every finding and tell you exactly what to fix first.',
   },
   {
@@ -984,7 +984,7 @@ function HeroSection() {
                   <div className="font-bold text-white text-sm mt-1.5">
                     <Counter target={stat.target || 0} prefix={stat.prefix || ''} suffix={stat.suffix || '/5'} />
                   </div>
-                  <div className="text-[#8899AA] text-xs mt-0.5 uppercase">{stat.ratingLabel}</div>
+                  {stat.ratingLabel && <div className="text-[#8899AA] text-xs mt-0.5 uppercase">{stat.ratingLabel}</div>}
                 </>
               ) : stat.isPrivacy ? (
                 <>
