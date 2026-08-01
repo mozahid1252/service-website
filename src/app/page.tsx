@@ -233,6 +233,14 @@ const ADD_ON_PACKAGES = [
     cssClass: 'operations',
     route: '/operations-efficiency-audit',
   },
+  {
+    name: 'Meta Ads Performance Audit',
+    price: '$500 – $900 · 7–10 Days',
+    problem: '"My Meta Ads are spending, but I don\'t know what\'s actually driving profitable growth."',
+    promise: 'You will know which campaigns, audiences, creatives, and placements are driving profitable results, where your ad spend is leaking, and exactly what to scale, optimize, or cut.',
+    cssClass: 'meta-ads',
+    route: '/meta-ads-performance-audit',
+  },
 ];
 
 const DATA_BUNDLES = [
