@@ -2543,19 +2543,20 @@ table.infra-table {
 }
 
 /* ---------- 3 Categories Grid ---------- */
+/* Three independent columns — no vertical divider lines between them.
+   Gap-based spacing only, so columns read as separate clean tables. */
 .isb-categories-grid {
   display: grid;
-  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 0;
   align-items: start;
   padding: 0 22px;
 }
 
+/* Vertical column separators removed completely. The .isb-cat-separator
+   divs still exist in the markup but render nothing. */
 .isb-cat-separator {
-  width: 1px;
-  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.10) 20%, rgba(255, 255, 255, 0.10) 80%, transparent);
-  margin: 4px 16px;
-  align-self: stretch;
+  display: none;
 }
 
 .isb-category {
