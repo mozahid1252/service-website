@@ -2462,16 +2462,16 @@ table.infra-table {
   padding: 2px;
   isolation: isolate;
 }
-/* Rotating tri-color conic border — same technique as .infra-card-wrapper,
-   but the gradient cycles through all three category colors so the box
-   visually ties the three package cards together. */
+/* Static tri-color gradient border — ties the box to the three package
+   cards above. The gradient is fixed (no rotation/movement) so the card
+   remains completely static. */
 .individual-services-box::before {
   content: '';
   position: absolute;
   inset: -2px;
   border-radius: 22px;
   background: conic-gradient(
-    from var(--angle, 0deg),
+    from 0deg,
     transparent 12%,
     var(--isb-cyan-glow) 22%,
     var(--isb-cyan) 28%,
@@ -2486,13 +2486,11 @@ table.infra-table {
     var(--isb-gold-glow) 96%,
     transparent 100%
   );
-  animation: rotate-border 6s linear infinite;
   opacity: 0.38;
   z-index: 0;
   pointer-events: none;
 }
-/* Pulsing ambient glow — soft halo behind the card, same pulse-glow
-   keyframe as the package cards. */
+/* Static ambient glow — soft halo behind the card (no pulsing/movement). */
 .individual-services-box::after {
   content: '';
   position: absolute;
@@ -2507,7 +2505,6 @@ table.infra-table {
   );
   opacity: 0.10;
   filter: blur(16px);
-  animation: pulse-glow 4s ease-in-out infinite;
   z-index: -1;
   pointer-events: none;
 }
@@ -2534,15 +2531,6 @@ table.infra-table {
   position: relative;
 }
 .individual-services-box::before { z-index: 0; }
-
-/* Subtle entrance animation when the section scrolls into view. */
-@keyframes isb-rise {
-  from { opacity: 0; transform: translateY(18px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.individual-services-box {
-  animation: isb-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
 
 /* ---------- Header ---------- */
 .isb-header {
@@ -2587,8 +2575,7 @@ table.infra-table {
   position: absolute;
   inset: -2px;
   border-radius: 13px;
-  background: conic-gradient(from var(--angle, 0deg), transparent 60%, var(--isb-cyan) 80%, var(--isb-cyan-glow) 90%, transparent 100%);
-  animation: rotate-border 5s linear infinite;
+  background: conic-gradient(from 0deg, transparent 60%, var(--isb-cyan) 80%, var(--isb-cyan-glow) 90%, transparent 100%);
   opacity: 0.5;
   z-index: -1;
   filter: blur(2px);
