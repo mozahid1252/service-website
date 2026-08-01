@@ -1432,7 +1432,7 @@ function WhyWorkWithMeSection() {
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label reveal-up">The Unfair Advantage</span>
-          <h2 className="section-headline text-[clamp(23px,3.5vw,40px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight whitespace-nowrap reveal-up" style={{ transitionDelay: '0.2s' }}>
+          <h2 className="section-headline text-[clamp(20px,3vw,34px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight whitespace-nowrap reveal-up" style={{ transitionDelay: '0.2s' }}>
             Don&apos;t Hire an Agency. <span className="gradient-text">Hire a Profit Detective.</span>
           </h2>
         </div>
@@ -2097,6 +2097,7 @@ function ServicesSection() {
                 <span className="text-[#F5A623] text-xs font-bold tracking-widest uppercase">Service 02</span>
               </div>
               <h4 className="text-white font-bold text-lg mb-1">Shopify / Tech Implementation Session</h4>
+              <div className="text-[#F5A623] text-xs font-medium mb-2">Done-With-You</div>
               <div className="mb-4">
                   <div className="text-[#8899AA] text-xs">Investment</div>
                   <div className="gradient-text-gold text-sm font-bold">$200–$300</div>
