@@ -2443,94 +2443,30 @@ table.infra-table {
    ============================================ */
 
 /* ============================================================
-   15 INDIVIDUAL SERVICES — premium card
-   Visual language mirrors the Part 3 Data Setup package cards above:
-   rotating tri-color conic border (::before), pulsing ambient glow
-   (::after), elevated dark gradient surface, per-category accents
-   (cyan / purple / gold). Content, structure & functionality are
-   unchanged — only the visual treatment has been upgraded.
+   15 INDIVIDUAL SERVICES — clean static card
+   Uniform dark background, thin neutral border, no spotlight/glow.
+   Subtle table-like horizontal dividers between service rows.
+   Content, structure & functionality unchanged.
    ============================================================ */
 .individual-services-box {
   --isb-cyan: #00C6FF;
   --isb-purple: #8B5CF6;
   --isb-gold: #F5A623;
-  --isb-cyan-glow: rgba(0, 198, 255, 0.55);
-  --isb-purple-glow: rgba(139, 92, 246, 0.55);
-  --isb-gold-glow: rgba(245, 166, 35, 0.55);
   position: relative;
   border-radius: 20px;
   padding: 2px;
-  isolation: isolate;
-}
-/* Static tri-color gradient border — ties the box to the three package
-   cards above. The gradient is fixed (no rotation/movement) so the card
-   remains completely static. */
-.individual-services-box::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 22px;
-  background: conic-gradient(
-    from 0deg,
-    transparent 12%,
-    var(--isb-cyan-glow) 22%,
-    var(--isb-cyan) 28%,
-    var(--isb-cyan-glow) 34%,
-    transparent 44%,
-    var(--isb-purple-glow) 54%,
-    var(--isb-purple) 60%,
-    var(--isb-purple-glow) 66%,
-    transparent 76%,
-    var(--isb-gold-glow) 84%,
-    var(--isb-gold) 90%,
-    var(--isb-gold-glow) 96%,
-    transparent 100%
-  );
-  opacity: 0.38;
-  z-index: 0;
-  pointer-events: none;
-}
-/* Static ambient glow — soft halo behind the card (no pulsing/movement). */
-.individual-services-box::after {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 22px;
-  background: conic-gradient(
-    from 0deg,
-    var(--isb-cyan-glow),
-    var(--isb-purple-glow),
-    var(--isb-gold-glow),
-    var(--isb-cyan-glow)
-  );
-  opacity: 0.10;
-  filter: blur(16px);
-  z-index: -1;
-  pointer-events: none;
-}
-/* Inner elevated surface — dark gradient with a faint tri-color tint,
-   sitting above the rotating border (z-index:1). */
-.individual-services-box > * {
-  position: relative;
-  z-index: 1;
-}
-.individual-services-box {
   background:
     linear-gradient(145deg, rgba(8, 13, 20, 1) 0%, rgba(8, 14, 24, 0.96) 60%, rgba(10, 16, 28, 0.94) 100%);
-  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
-    0 0 40px rgba(0, 198, 255, 0.06),
-    0 0 60px rgba(139, 92, 246, 0.04),
     0 8px 32px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
-/* Soft internal top sheen so the surface feels layered, not flat. */
-.individual-services-box > .isb-header,
-.individual-services-box > .isb-categories-grid,
-.individual-services-box > .isb-divider {
-  position: relative;
+/* No ::before / ::after spotlight layers — card is fully static. */
+.individual-services-box::before,
+.individual-services-box::after {
+  content: none;
 }
-.individual-services-box::before { z-index: 0; }
 
 /* ---------- Header ---------- */
 .isb-header {
@@ -2547,41 +2483,25 @@ table.infra-table {
   gap: 14px;
 }
 
-/* "15" badge — premium treatment with rotating tri-color ring + cyan core,
-   echoing the numbered package cards above. */
+/* "15" badge — clean cyan core, no conic ring. */
 .isb-count-badge {
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background:
-    linear-gradient(145deg, rgba(0, 198, 255, 0.18), rgba(0, 198, 255, 0.06));
-  border: 1px solid rgba(0, 198, 255, 0.40);
+  background: rgba(0, 198, 255, 0.10);
+  border: 1px solid rgba(0, 198, 255, 0.35);
   color: #00C6FF;
   font-family: 'Bricolage Grotesque', sans-serif;
   font-size: 20px;
   font-weight: 800;
-  box-shadow:
-    0 0 18px rgba(0, 198, 255, 0.30),
-    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
   flex-shrink: 0;
-  transition: box-shadow 0.4s ease, transform 0.3s ease;
 }
 .isb-count-badge::after {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 13px;
-  background: conic-gradient(from 0deg, transparent 60%, var(--isb-cyan) 80%, var(--isb-cyan-glow) 90%, transparent 100%);
-  opacity: 0.5;
-  z-index: -1;
-  filter: blur(2px);
-}
-.individual-services-box:hover .isb-count-badge {
-  box-shadow: 0 0 26px rgba(0, 198, 255, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  content: none;
 }
 
 .isb-title {
@@ -2600,32 +2520,26 @@ table.infra-table {
   margin: 0;
 }
 
-/* "À la carte" pill — polished border + soft glow. */
+/* "À la carte" pill — clean border, no glow. */
 .isb-tag {
   display: inline-block;
   padding: 5px 14px;
   border-radius: 20px;
-  background: linear-gradient(145deg, rgba(0, 198, 255, 0.10), rgba(139, 92, 246, 0.08));
-  border: 1px solid rgba(0, 198, 255, 0.30);
+  background: rgba(0, 198, 255, 0.06);
+  border: 1px solid rgba(0, 198, 255, 0.25);
   color: rgba(0, 198, 255, 0.85);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 1px;
   font-style: italic;
-  box-shadow: 0 0 14px rgba(0, 198, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  transition: box-shadow 0.4s ease, border-color 0.4s ease;
-}
-.individual-services-box:hover .isb-tag {
-  border-color: rgba(0, 198, 255, 0.45);
-  box-shadow: 0 0 20px rgba(0, 198, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
-/* ---------- Divider ---------- */
+/* ---------- Divider (header <-> categories) ---------- */
 .isb-divider {
   width: calc(100% - 44px);
   margin: 0 22px 20px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 198, 255, 0.28) 20%, rgba(139, 92, 246, 0.22) 50%, rgba(245, 166, 35, 0.22) 80%, transparent);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 /* ---------- 3 Categories Grid ---------- */
@@ -2706,42 +2620,38 @@ table.infra-table {
 .isb-category:nth-child(3) .isb-cat-title { color: #8B5CF6; }
 .isb-category:nth-child(5) .isb-cat-title { color: #F5A623; }
 
-/* ---------- Service items ---------- */
+/* ---------- Service items (table-like with subtle row dividers) ---------- */
 .isb-service-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0;
 }
 
 .isb-service-item {
   display: flex;
   align-items: center;
   gap: 9px;
-  padding: 7px 9px;
-  border-radius: 8px;
-  transition: background 0.25s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  padding: 9px 9px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+  transition: background 0.2s ease;
   cursor: default;
-  border: 1px solid transparent;
+}
+.isb-service-item:last-child {
+  border-bottom: none;
 }
 
-/* Per-category soft hover glow + background tint. */
+/* Per-category subtle hover background tint (no glow, no movement). */
 .isb-category:nth-child(1) .isb-service-item:hover {
-  background: rgba(0, 198, 255, 0.07);
-  box-shadow: 0 0 16px rgba(0, 198, 255, 0.10), inset 0 0 0 1px rgba(0, 198, 255, 0.12);
-  transform: translateX(2px);
+  background: rgba(0, 198, 255, 0.05);
 }
 .isb-category:nth-child(3) .isb-service-item:hover {
-  background: rgba(139, 92, 246, 0.07);
-  box-shadow: 0 0 16px rgba(139, 92, 246, 0.10), inset 0 0 0 1px rgba(139, 92, 246, 0.12);
-  transform: translateX(2px);
+  background: rgba(139, 92, 246, 0.05);
 }
 .isb-category:nth-child(5) .isb-service-item:hover {
-  background: rgba(245, 166, 35, 0.07);
-  box-shadow: 0 0 16px rgba(245, 166, 35, 0.10), inset 0 0 0 1px rgba(245, 166, 35, 0.12);
-  transform: translateX(2px);
+  background: rgba(245, 166, 35, 0.05);
 }
 
 .isb-service-logo {
@@ -2752,13 +2662,11 @@ table.infra-table {
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
   padding: 3px;
-  transition: filter 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 .isb-service-item:hover .isb-service-logo {
-  filter: brightness(1.25);
+  filter: brightness(1.2);
 }
 
 .isb-service-item span:last-child {
@@ -2767,11 +2675,11 @@ table.infra-table {
   color: rgba(255, 255, 255, 0.72);
   line-height: 1.4;
   font-weight: 500;
-  transition: color 0.25s ease;
+  transition: color 0.2s ease;
 }
 
 .isb-service-item:hover span:last-child {
-  color: rgba(255, 255, 255, 0.96);
+  color: rgba(255, 255, 255, 0.92);
 }
 
 /* ---------- Responsive ---------- */
