@@ -924,3 +924,24 @@
   .text-accent{color:var(--accent)}
   .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:var(--radius-md)}
   .mt-0{margin-top:0}
+
+/* ============================================================
+   INTEGRATION FIXES — Next.js App Router (scoped to this route)
+   These rules are appended to make the author's standalone-HTML
+   design render correctly inside the App Router layout. They do
+   NOT change any colors, fonts, spacing, or visual proportions.
+   ============================================================ */
+/* 1. The author's `body{overflow-x:hidden}` guard targets <body>,
+   but in the App Router the horizontal scroll container is
+   documentElement (<html>). Mirror the guard so wide tables
+   don't create a page-level scrollbar on mobile. */
+html{overflow-x:hidden}
+/* 2. CSS grid items default to min-width:auto, which prevents the
+   analysis-grid columns from shrinking below the intrinsic
+   min-width of the .data-table (560px). Setting min-width:0 lets
+   the author's .table-wrap{overflow-x:auto} scroll wide tables
+   internally instead of expanding the page. */
+.analysis-text,.analysis-visual{min-width:0}
+@media (max-width:1024px){
+  .analysis-grid,.analysis-grid.reverse{grid-template-columns:minmax(0,1fr)}
+}
