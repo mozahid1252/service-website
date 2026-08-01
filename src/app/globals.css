@@ -627,6 +627,10 @@ strong { color: #FFFFFF; font-weight: 700; }
 .addon-card-wrapper.operations::after { background: rgba(244,114,182,0.20); }
 .addon-card-wrapper.operations .addon-card-inner { background: linear-gradient(145deg, rgba(8,13,20,1), rgba(244,114,182,0.06)); border: 1px solid rgba(244,114,182,0.18); }
 
+.addon-card-wrapper.meta-ads { --glow-color: rgba(0,198,255,0.50); --bright-color: #00C6FF; }
+.addon-card-wrapper.meta-ads::after { background: rgba(0,198,255,0.20); }
+.addon-card-wrapper.meta-ads .addon-card-inner { background: linear-gradient(145deg, rgba(8,13,20,1), rgba(0,198,255,0.06)); border: 1px solid rgba(0,198,255,0.18); }
+
 /* Addon book buttons */
 .addon-book-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 13px 20px; margin-top: auto; padding-top: 24px; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.3s ease; border: 2px solid; }
 .marketing .addon-book-btn { color:#00C6FF; border-color:rgba(0,198,255,0.40); background:rgba(0,198,255,0.08); }
@@ -635,6 +639,7 @@ strong { color: #FFFFFF; font-weight: 700; }
 .cro .addon-book-btn { color:#00E676; border-color:rgba(0,230,118,0.40); background:rgba(0,230,118,0.08); }
 .profitability .addon-book-btn { color:#FF8C00; border-color:rgba(255,140,0,0.40); background:rgba(255,140,0,0.08); }
 .operations .addon-book-btn { color:#F472B6; border-color:rgba(244,114,182,0.40); background:rgba(244,114,182,0.08); }
+.meta-ads .addon-book-btn { color:#00C6FF; border-color:rgba(0,198,255,0.40); background:rgba(0,198,255,0.08); }
 .addon-book-btn:hover { filter: brightness(1.2); transform: scale(1.02); box-shadow: 0 0 30px currentColor; }
 
 /* ═══════════════════════════════════════════
