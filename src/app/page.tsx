@@ -731,6 +731,41 @@ const TOOL_LOGOS: Record<string, React.ReactNode> = {
       <circle cx="19" cy="12" r="1.5" fill="#00C6FF" stroke="none" />
     </svg>
   ),
+  'machine-learning': (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#00C6FF" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" fill="rgba(0,198,255,0.15)" />
+      <circle cx="5" cy="5" r="2" />
+      <circle cx="19" cy="5" r="2" />
+      <circle cx="5" cy="19" r="2" />
+      <circle cx="19" cy="19" r="2" />
+      <line x1="6.5" y1="6.5" x2="10" y2="10" />
+      <line x1="17.5" y1="6.5" x2="14" y2="10" />
+      <line x1="6.5" y1="17.5" x2="10" y2="14" />
+      <line x1="17.5" y1="17.5" x2="14" y2="14" />
+    </svg>
+  ),
+  'data-engineering': (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#00C6FF" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <ellipse cx="12" cy="5" rx="8" ry="2.5" fill="rgba(0,198,255,0.12)" />
+      <path d="M4 5v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5V5" />
+      <path d="M4 11v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-6" />
+      <circle cx="12" cy="5" r="1" fill="#00C6FF" stroke="none" />
+    </svg>
+  ),
+  'data-automation': (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#00C6FF" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 12a9 9 0 11-3-6.7" />
+      <polyline points="21 4 21 10 15 10" />
+      <circle cx="12" cy="12" r="2" fill="rgba(0,198,255,0.2)" />
+    </svg>
+  ),
+  qlik: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" fill="#009848" />
+      <path d="M8 8v8M8 8h4a2.5 2.5 0 010 5H8M14 13l3 3M16 8l1.5 1.5" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <circle cx="17" cy="16.5" r="1.2" fill="#FFFFFF" />
+    </svg>
+  ),
 };
 
 const TECH_STACK = [
@@ -739,9 +774,12 @@ const TECH_STACK = [
     icon: Code2,
     description: 'The languages used to process millions of rows and run statistical models.',
     items: [
-      { logo: 'python', name: 'Python', desc: 'For deep EDA, A/B testing (t-tests, ANOVA), and churn modeling.' },
-      { logo: 'sql', name: 'SQL', desc: 'For extracting, joining, and transforming raw data across multiple platforms.' },
-      { logo: 'stats', name: 'Statistical Modeling', desc: 'Moving beyond "gut feelings" to mathematically proven truths.' },
+      { logo: 'python', name: 'Python', desc: '' },
+      { logo: 'sql', name: 'SQL', desc: '' },
+      { logo: 'stats', name: 'Statistical Modeling', desc: '' },
+      { logo: 'machine-learning', name: 'Machine Learning', desc: '' },
+      { logo: 'data-engineering', name: 'Data Engineering', desc: '' },
+      { logo: 'data-automation', name: 'Data Automation', desc: '' },
     ],
   },
   {
@@ -749,9 +787,9 @@ const TECH_STACK = [
     icon: Cloud,
     description: 'The backend infrastructure where your unified source of truth lives.',
     items: [
-      { logo: 'gcp', name: 'Google Cloud Platform (GCP)', desc: 'Secure, scalable cloud infrastructure.' },
-      { logo: 'bigquery', name: 'BigQuery', desc: 'Enterprise data warehousing for lightning-fast queries.' },
-      { logo: 'postgres', name: 'PostgreSQL', desc: 'Relational database management for structured star-schema models.' },
+      { logo: 'gcp', name: 'Google Cloud Platform (GCP)', desc: '' },
+      { logo: 'bigquery', name: 'BigQuery', desc: '' },
+      { logo: 'postgres', name: 'PostgreSQL', desc: '' },
       { logo: 'aws', name: 'AWS', desc: '' },
       { logo: 'azure', name: 'Azure', desc: '' },
       { logo: 'snowflake', name: 'Snowflake', desc: '' },
@@ -762,10 +800,11 @@ const TECH_STACK = [
     icon: LineChart,
     description: 'Where the complex math becomes a simple, actionable dashboard for you.',
     items: [
-      { logo: 'looker', name: 'Looker Studio', desc: 'Live, auto-refreshing, custom KPI dashboards.' },
-      { logo: 'powerbi', name: 'Power BI', desc: 'Advanced business intelligence with 20+ DAX measures.' },
-      { logo: 'excel', name: 'Excel', desc: 'Simplified KPI summary sheets for immediate team action.' },
+      { logo: 'looker', name: 'Looker Studio', desc: '' },
+      { logo: 'powerbi', name: 'Power BI', desc: '' },
+      { logo: 'excel', name: 'Excel', desc: '' },
       { logo: 'tableau', name: 'Tableau', desc: '' },
+      { logo: 'qlik', name: 'Qlik Sense', desc: '' },
       { logo: 'others', name: 'Others', desc: '' },
     ],
   },
@@ -1743,12 +1782,12 @@ const WWD_ICONS: Record<string, React.ReactNode> = {
 };
 
 function WwdStatusSymbol({ s }: { s: WwdStatus }) {
+  // ✕ Red    = Not Available
+  // ⚠ Amber  = Limited / Partial / Warning (including "Basic" limited capabilities)
+  // ✓ Blue   = Available / Advanced / Premium (any positive state)
   if (s === 'none') return { sym: '✕', cls: 'st-none' };
-  if (s === 'limited') return { sym: '⚠', cls: 'st-limited' };
-  if (s === 'basic') return { sym: '✓', cls: 'st-basic' };
-  if (s === 'avail') return { sym: '✓', cls: 'st-avail' };
-  if (s === 'adv') return { sym: '✓', cls: 'st-adv' };
-  return { sym: '✓', cls: 'st-premium' };
+  if (s === 'limited' || s === 'basic') return { sym: '⚠', cls: 'st-limited' };
+  return { sym: '✓', cls: 'st-avail' };
 }
 
 function WwdCapIcon({ name, color }: { name: string; color: string }) {
@@ -3173,8 +3212,8 @@ function TechStackSection() {
               { border: 'rgba(139,92,246,0.20)', left: '#8B5CF6', bg: 'rgba(139,92,246,0.08)' },
             ];
             const a = accents[i] || accents[0];
-            // Only Programming & Analytics keeps its category description and item descriptions.
-            const showDesc = i === 0;
+            // All categories use the compact 2-column grid (icons + names only).
+            const showDesc = false;
             return (
               <div key={i} className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: `linear-gradient(145deg, rgba(13,21,32,0.95) 0%, ${a.bg} 100%)`, border: `1px solid ${a.border}`, borderLeft: `4px solid ${a.left}`, boxShadow: '0 0 30px ' + a.bg + ', 0 8px 32px rgba(0,0,0,0.4)' }}>
                 <div className="flex items-center gap-3 mb-2">

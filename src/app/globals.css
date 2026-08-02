@@ -4067,9 +4067,6 @@ table.infra-table {
     radial-gradient(ellipse 60% 50% at 90% 30%, rgba(37, 99, 235, 0.03), transparent 60%),
     radial-gradient(ellipse 50% 40% at 50% 100%, rgba(124, 58, 237, 0.03), transparent 60%),
     linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
-  border-radius: 24px;
-  margin: 0 auto;
-  max-width: 1440px;
 }
 .about2-section::before {
   content: '';
@@ -4085,11 +4082,26 @@ table.infra-table {
   mask-image: radial-gradient(ellipse 80% 80% at 50% 30%, black 20%, transparent 75%);
 }
 
+/* Inner content container — subtle premium purple glowing border */
 .about2-inner {
   position: relative;
   z-index: 1;
   max-width: 1240px;
   margin: 0 auto;
+  padding: 64px 48px;
+  border-radius: 24px;
+  border: 1px solid rgba(124, 58, 237, 0.12);
+  box-shadow:
+    0 0 0 1px rgba(124, 58, 237, 0.04),
+    0 0 40px rgba(124, 58, 237, 0.06),
+    0 8px 40px rgba(0, 0, 0, 0.04);
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+@media (max-width: 768px) {
+  .about2-inner { padding: 40px 24px; }
+  .about2-section { padding: 80px 16px; }
 }
 
 /* ── TWO-COLUMN GRID ── */
@@ -4983,20 +4995,13 @@ table.infra-table {
   color: transparent;
 }
 
-/* Status icons */
-.wwd-section .st-none { color: var(--wwd-red); font-weight: 600; }
-.wwd-section .st-limited { color: var(--wwd-amber); font-weight: 600; }
-.wwd-section .st-basic, .wwd-section .st-avail { color: var(--wwd-blue); font-weight: 600; }
-.wwd-section .st-adv {
-  color: var(--wwd-green);
-  font-weight: 700;
-  text-shadow: 0 0 6px rgba(5, 150, 105, 0.6), 0 0 12px rgba(5, 150, 105, 0.3);
-}
-.wwd-section .st-premium {
-  color: var(--wwd-gold);
-  font-weight: 700;
-  text-shadow: 0 0 6px rgba(184, 134, 11, 0.7), 0 0 14px rgba(184, 134, 11, 0.4);
-}
+/* Status icons — consistent throughout the table
+   ✕ Red (#DC2626)    = Not Available
+   ⚠ Amber (#D97706)  = Limited / Partial / Warning
+   ✓ Blue (#2563EB)   = Available / Advanced / Premium (any positive state) */
+.wwd-section .st-none { color: var(--wwd-red); font-weight: 700; }
+.wwd-section .st-limited { color: var(--wwd-amber); font-weight: 700; }
+.wwd-section .st-avail { color: #2563EB; font-weight: 700; }
 
 /* Moz column highlight */
 .wwd-section .moz-col {
