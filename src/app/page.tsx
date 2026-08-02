@@ -1781,7 +1781,7 @@ const WWD_ICONS: Record<string, React.ReactNode> = {
   hand: <><path d="M18 11V6a2 2 0 00-2-2 2 2 0 00-2 2M14 10V4a2 2 0 00-2-2 2 2 0 00-2 2v2M10 10.5V6a2 2 0 00-2-2 2 2 0 00-2 2v8"/><path d="M18 8a2 2 0 114 0v6a8 8 0 01-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 012.83-2.82L7 15"/></>,
 };
 
-function WwdStatusSymbol({ s }: { s: WwdStatus }) {
+function WwdStatusSymbol(s: WwdStatus) {
   // ✕ Red    = Not Available
   // ⚠ Amber  = Limited / Partial / Warning (including "Basic" limited capabilities)
   // ✓ Blue   = Available / Advanced / Premium (any positive state)
