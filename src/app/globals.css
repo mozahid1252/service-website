@@ -4062,10 +4062,27 @@ table.infra-table {
   position: relative;
   padding: 120px 24px;
   overflow: hidden;
-  background: #FAFBFC;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 0%, rgba(184, 134, 11, 0.04), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 90% 30%, rgba(37, 99, 235, 0.03), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 50% 100%, rgba(124, 58, 237, 0.03), transparent 60%),
+    linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
   border-radius: 24px;
   margin: 0 auto;
   max-width: 1440px;
+}
+.about2-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
+  background-size: 90px 90px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 30%, black 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 30%, black 20%, transparent 75%);
 }
 
 .about2-inner {
@@ -4830,6 +4847,23 @@ table.infra-table {
 
 /* Tighter gap for tool lists that have no descriptions (Cloud / Viz / Platforms) */
 .infra-tool-list-no-desc { gap: 12px; }
+
+/* Compact 2-column grid for categories without descriptions
+   (Cloud, Visualization, Platform Integrations). Keeps cards short
+   and balanced with the Programming card. */
+.infra-tool-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+}
+.infra-tool-list-grid .infra-tool-item {
+  align-items: center;
+}
+@media (max-width: 480px) {
+  .infra-tool-list-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ============================================
    WHY WE'RE DIFFERENT — Light-theme standalone section

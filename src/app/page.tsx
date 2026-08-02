@@ -931,12 +931,12 @@ function Navbar() {
             </div>
           </a>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-5">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium tracking-wide transition-colors duration-200 ${
+                className={`text-[13px] font-medium tracking-wide transition-colors duration-200 whitespace-nowrap ${
                   activeSection === link.href
                     ? 'nav-link-active'
                     : 'text-[#8899AA] hover:text-[#00C6FF]'
@@ -3182,7 +3182,7 @@ function TechStackSection() {
                   <h3 className="font-bold text-lg text-white">{cat.category}</h3>
                 </div>
                 {showDesc && <p className="text-[#8899AA] text-sm mb-5">{cat.description}</p>}
-                <ul className={`infra-tool-list${showDesc ? '' : ' infra-tool-list-no-desc'}`}>
+                <ul className={`infra-tool-list${showDesc ? '' : ' infra-tool-list-grid'}`}>
                   {cat.items.map((item, ii) => (
                     <li key={ii} className="infra-tool-item">
                       <div className={`tool-logo-wrap${item.logo === 'meta-google' ? ' tool-logo-double' : ''}`}>
