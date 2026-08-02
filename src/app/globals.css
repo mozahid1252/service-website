@@ -5229,3 +5229,47 @@ table.infra-table {
   }
 }
 
+
+/* ============================================================
+   Why Me title — centered + green→cyan gradient
+   (matches "Nobody Was Looking." highlight in Quick Proof)
+   ============================================================ */
+.whyme-header-centered {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.whyme-header-left-centered {
+  align-items: center;
+  text-align: center;
+}
+.whyme-title-gradient {
+  background: linear-gradient(135deg, #00E676 0%, #00C6FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .whyme-title-gradient { white-space: normal; }
+}
+
+/* ============================================================
+   Quick Proof title — single line + full gradient
+   Entire title uses the same green→cyan gradient as
+   "Nobody Was Looking." (qp3-title-accent)
+   ============================================================ */
+.qp3-title-single {
+  background: linear-gradient(135deg, #00E676 0%, #00C6FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  white-space: nowrap;
+  font-size: clamp(24px, 3.2vw, 40px);
+  letter-spacing: -1px;
+}
+@media (max-width: 640px) {
+  .qp3-title-single { white-space: normal; font-size: clamp(22px, 6vw, 32px); }
+}

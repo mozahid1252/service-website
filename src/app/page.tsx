@@ -731,6 +731,14 @@ const TOOL_LOGOS: Record<string, React.ReactNode> = {
       <circle cx="19" cy="12" r="1.5" fill="#00C6FF" stroke="none" />
     </svg>
   ),
+  tiktok: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43V8.69a8.16 8.16 0 004.77 1.52V6.76a4.85 4.85 0 01-1.84-.07z" fill="#000000" />
+      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43V8.69a8.16 8.16 0 004.77 1.52V6.76a4.85 4.85 0 01-1.84-.07z" fill="#25F4EE" opacity="0.6" transform="translate(-1,0)" />
+      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43V8.69a8.16 8.16 0 004.77 1.52V6.76a4.85 4.85 0 01-1.84-.07z" fill="#FE2C55" opacity="0.6" transform="translate(1,0)" />
+      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43V8.69a8.16 8.16 0 004.77 1.52V6.76a4.85 4.85 0 01-1.84-.07z" fill="#000000" />
+    </svg>
+  ),
   'machine-learning': (
     <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#00C6FF" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="3" fill="rgba(0,198,255,0.15)" />
@@ -816,6 +824,7 @@ const TECH_STACK = [
       { logo: 'shopify', name: 'Shopify', desc: 'Orders, Customers, Products' },
       { logo: 'ga4', name: 'GA4', desc: 'Funnel, Sessions, Conversions' },
       { logo: 'meta-google', name: 'Meta Ads & Google Ads', desc: 'True ROAS, Spend, CAC' },
+      { logo: 'tiktok', name: 'TikTok Ads', desc: '' },
       { logo: 'klaviyo', name: 'Klaviyo', desc: 'Email performance, Segmentation, Churn triggers' },
       { logo: 'woocommerce', name: 'WooCommerce', desc: '' },
       { logo: 'bigcommerce', name: 'BigCommerce', desc: '' },
@@ -1257,8 +1266,8 @@ function QuickProofSection() {
         {/* ── HEADER ── */}
         <div className="qp3-header">
           <span className="qp3-eyebrow reveal-up">Quick Proof</span>
-          <h2 className="qp3-title reveal-up" style={{ transitionDelay: '0.15s' }}>
-            The Money Was Always There. <span className="qp3-title-accent">Nobody Was Looking.</span>
+          <h2 className="qp3-title qp3-title-single reveal-up" style={{ transitionDelay: '0.15s' }}>
+            The Money Was Always There. Nobody Was Looking.
           </h2>
         </div>
 
@@ -1517,13 +1526,13 @@ function WhyMeSection() {
 
       <div className="whyme-inner reveal">
         {/* ── HEADER ── */}
-        <div className="whyme-header">
-          <div className="whyme-header-left">
+        <div className="whyme-header whyme-header-centered">
+          <div className="whyme-header-left whyme-header-left-centered">
             <span className="whyme-eyebrow reveal-up">
               <span className="whyme-eyebrow-dot" aria-hidden="true" />
               Why Me
             </span>
-            <h2 className="whyme-title whyme-title-single reveal-up text-center" style={{ transitionDelay: '0.15s' }}>
+            <h2 className="whyme-title whyme-title-single whyme-title-gradient reveal-up text-center" style={{ transitionDelay: '0.15s' }}>
               The 4 Principles That Shape Every Engagement
             </h2>
           </div>
