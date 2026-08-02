@@ -20,6 +20,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
   { label: 'About', href: '#about' },
+  { label: "Why We're Different", href: '#why-were-different' },
   { label: 'Services', href: '#services' },
   { label: 'Case Studies', href: '#case-studies' },
   { label: 'Technical Portfolio', href: '#technical-portfolio' },
@@ -632,6 +633,104 @@ const TOOL_LOGOS: Record<string, React.ReactNode> = {
       <text x="12" y="16" textAnchor="middle" fontSize="9" fontWeight="900" fill="#00FF66" fontFamily="Arial, sans-serif" letterSpacing="-0.5">KL</text>
     </svg>
   ),
+  aws: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5.5 11.7c0 .3 0 .5.05.7.05.2.15.45.3.75.05.1.05.15 0 .2l-.6.5c-.05.05-.15.05-.2 0-.3-.45-.5-.85-.6-1.25-.2-.55-.3-1.15-.3-1.8 0-.65.1-1.25.3-1.8.2-.6.5-1.05.85-1.5.4-.5.85-.85 1.4-1.15.6-.3 1.25-.45 2-.45.5 0 .95.05 1.4.2.4.15.8.4 1.15.7.05.05.05.1.05.15v.05l-.05.1-.55.65c-.05.05-.1.05-.2 0-.45-.3-.9-.45-1.45-.45-.55 0-1 .25-1.4.65-.4.4-.6.95-.6 1.7zm6.55-.6c0 .25-.05.45-.15.65-.1.2-.25.35-.45.5-.2.15-.4.25-.65.3-.25.05-.5.1-.75.1-.5 0-1-.1-1.5-.25-.5-.15-.95-.4-1.35-.7-.05-.05-.05-.1-.05-.15l.05-.05.55-.7c.05-.05.1-.05.2 0 .35.25.7.45 1.05.55.35.1.7.15 1 .15.4 0 .65-.05.85-.15.2-.1.25-.25.25-.45 0-.1-.05-.2-.15-.3-.1-.1-.3-.15-.55-.25l-.85-.2c-.5-.1-.85-.3-1.1-.5-.25-.2-.35-.55-.35-1 0-.5.2-.9.6-1.2.4-.3.95-.45 1.65-.45.45 0 .9.1 1.35.25.45.15.85.4 1.15.7.05.05.05.1.05.15l-.05.05-.5.7c-.05.05-.1.05-.2 0-.3-.2-.6-.35-.9-.45-.3-.1-.55-.15-.8-.15-.35 0-.6.05-.75.15-.15.1-.2.25-.2.4 0 .1.05.2.15.3.1.1.3.15.6.25l.85.2c.55.1.9.3 1.15.55.25.25.35.6.35 1zM19.45 9.2c0-.05-.05-.1-.1-.1h-.85c-.05 0-.1.05-.15.1l-.65 2.05-.7-2.05c0-.05-.05-.1-.15-.1h-.7c-.05 0-.1.05-.15.1l-.7 2.05-.65-2.05c0-.05-.05-.1-.15-.1h-.85c-.05 0-.1.05-.1.1v.1l1.2 3.55c0 .05.05.1.15.1h.75c.05 0 .1-.05.15-.1l.65-1.95.65 1.95c0 .05.05.1.15.1h.75c.05 0 .1-.05.15-.1l1.2-3.55z" fill="#FF9900" />
+      <path d="M19.95 12.4c.65.6 1.45.85 2.4.85.5 0 .95-.1 1.3-.25.35-.15.6-.35.7-.6.1-.25.15-.5.15-.75 0-.5-.15-.85-.45-1.1-.3-.25-.75-.45-1.35-.55l-.55-.15c-.25-.05-.45-.15-.55-.2-.1-.05-.15-.15-.15-.25 0-.15.05-.25.2-.35.15-.1.35-.15.6-.15.45 0 .9.15 1.3.4.05.05.1.05.15 0l.5-.65c.05-.05.05-.1 0-.15-.45-.35-1.05-.55-1.8-.55-.45 0-.85.1-1.2.25-.35.15-.55.35-.7.6-.15.25-.2.5-.2.75 0 .5.15.85.45 1.1.3.25.7.4 1.3.55l.55.15c.3.05.5.15.6.2.1.05.15.15.15.25 0 .15-.05.25-.2.35-.15.1-.4.15-.7.15-.25 0-.5-.05-.75-.15-.25-.1-.45-.25-.65-.4-.05-.05-.1-.05-.15 0l-.55.7c-.05.05-.05.1 0 .15z" fill="#FF9900" />
+    </svg>
+  ),
+  azure: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="azureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#0078D4" />
+          <stop offset="100%" stopColor="#00BCF2" />
+        </linearGradient>
+      </defs>
+      <path d="M11.4 4.5L5 17.6h6.95l.55-1.45L8.6 12.7l3.5-7.5z" fill="url(#azureGrad)" opacity="0.4" />
+      <path d="M11.4 4.5L4.95 17.6h4.55l4.55-9.5z" fill="url(#azureGrad)" />
+      <path d="M12.65 17.6l5.85-2.15-3.5-3.55z" fill="url(#azureGrad)" opacity="0.7" />
+      <path d="M13.05 17.6L19 12.3l-1.7-1.95-3.45 4.95z" fill="url(#azureGrad)" />
+      <path d="M11.9 4.5l1.15 13.1h6L19.05 4.5z" fill="url(#azureGrad)" opacity="0.85" />
+    </svg>
+  ),
+  snowflake: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#29B5E8" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="12" y1="2" x2="12" y2="22" />
+      <line x1="3.5" y1="7" x2="20.5" y2="17" />
+      <line x1="20.5" y1="7" x2="3.5" y2="17" />
+      <polyline points="9.5 4 12 6 14.5 4" />
+      <polyline points="9.5 20 12 18 14.5 20" />
+      <polyline points="5 9.5 7.5 9.5 6.5 7.5" />
+      <polyline points="17.5 14.5 19 16.5 17 16.5" />
+      <polyline points="19 9.5 17 9.5 18 7.5" />
+      <polyline points="5 14.5 7 14.5 6 16.5" />
+    </svg>
+  ),
+  tableau: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <line x1="12" y1="2" x2="12" y2="9.5" stroke="#E8762D" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="6" y1="11" x2="6" y2="15.5" stroke="#5B5FCB" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="18" y1="11" x2="18" y2="15.5" stroke="#5B5FCB" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="9" y1="17" x2="9" y2="22" stroke="#1E8CE3" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="15" y1="17" x2="15" y2="22" stroke="#1E8CE3" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="3" y1="12" x2="21" y2="12" stroke="#5B5FCB" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="9" y1="16" x2="15" y2="16" stroke="#5B5FCB" strokeWidth="1.6" strokeLinecap="round" />
+      <circle cx="12" cy="9.5" r="1.6" fill="#E8762D" />
+      <circle cx="6" cy="15.5" r="1.4" fill="#5B5FCB" />
+      <circle cx="18" cy="15.5" r="1.4" fill="#5B5FCB" />
+      <circle cx="9" cy="22" r="1.2" fill="#1E8CE3" />
+      <circle cx="15" cy="22" r="1.2" fill="#1E8CE3" />
+    </svg>
+  ),
+  woocommerce: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.5 4.5h17A1.5 1.5 0 0 1 22 6v8a1.5 1.5 0 0 1-1.5 1.5h-11L6 19v-3.5H3.5A1.5 1.5 0 0 1 2 14V6a1.5 1.5 0 0 1 1.5-1.5z" fill="#7F54B3" />
+      <path d="M6.5 8.2c-.4 0-.7.2-.9.5-.2.4-.3.9-.3 1.5 0 .6.1 1.1.3 1.5.2.4.5.6.9.6.4 0 .7-.2.9-.6.2-.4.3-.9.3-1.5 0-.6-.1-1.1-.3-1.5-.2-.3-.5-.5-.9-.5zm-2.6 2c0-.7.1-1.3.4-1.9.3-.5.7-.9 1.2-1.2.5-.3 1.1-.4 1.7-.4.5 0 1 .1 1.4.3.4.2.8.5 1 .9.3.4.4.8.4 1.3 0 .4-.1.7-.2 1-.2.3-.4.5-.6.7-.2.2-.5.4-.9.6-.3.2-.6.3-.8.4-.2.1-.3.1-.4.2-.1.1-.2.2-.2.3l-.5 1.4c-.1.2-.2.4-.4.5-.2.1-.4.2-.6.2-.2 0-.4-.1-.5-.2-.1-.2-.2-.4-.2-.6 0-.3.1-.7.2-1.1l.6-1.8c-.3-.5-.4-1.1-.4-1.8z" fill="#FFFFFF" />
+      <path d="M12.7 8.4c-.3-.2-.6-.2-1-.2-.4 0-.7.1-1 .2-.3.2-.5.4-.7.7-.2.3-.3.7-.3 1.1 0 .4.1.8.3 1.1.2.3.4.5.7.7.3.2.6.2 1 .2.4 0 .7-.1 1-.2.3-.2.5-.4.7-.7.2-.3.3-.7.3-1.1 0-.4-.1-.8-.3-1.1-.2-.3-.4-.5-.7-.7zm-2.9-.6c.3-.4.7-.7 1.1-.9.4-.2.9-.3 1.4-.3.5 0 1 .1 1.4.3.4.2.8.5 1.1.9.3.4.5.8.5 1.3 0 .3 0 .6-.1.9-.1.3-.2.5-.4.7-.2.2-.3.4-.5.5-.2.1-.4.3-.6.4-.2.1-.4.2-.5.3.4.3.7.7.9 1.1.2.4.3.9.3 1.4 0 .5-.1.9-.3 1.3-.2.4-.5.7-.8.9-.4.2-.8.4-1.2.5-.5.1-.9.2-1.4.2-.5 0-1-.1-1.4-.2-.5-.1-.9-.3-1.2-.5-.4-.2-.6-.6-.8-.9-.2-.4-.3-.8-.3-1.3 0-.5.1-1 .3-1.4.2-.4.5-.8.9-1.1.2-.2.5-.4.8-.5l.7-.7c-.3-.1-.5-.3-.7-.5-.2-.2-.3-.4-.4-.7-.1-.3-.1-.6-.1-.9 0-.5.2-1 .5-1.3z" fill="#FFFFFF" />
+      <path d="M16.5 8.4c-.3-.2-.6-.2-1-.2-.4 0-.7.1-1 .2-.3.2-.5.4-.7.7-.2.3-.3.7-.3 1.1 0 .4.1.8.3 1.1.2.3.4.5.7.7.3.2.6.2 1 .2.4 0 .7-.1 1-.2.3-.2.5-.4.7-.7.2-.3.3-.7.3-1.1 0-.4-.1-.8-.3-1.1-.2-.3-.4-.5-.7-.7z" fill="#FFFFFF" />
+    </svg>
+  ),
+  bigcommerce: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18.5 2.5h-13L2 6v15.5h13L22 12V6l-3.5-3.5z" fill="#121118" />
+      <path d="M18.5 2.5h-13L2 6h13l3.5-3.5z" fill="#2A2A35" />
+      <path d="M22 6h-7v6h7V6z" fill="#44454F" />
+      <path d="M15 12l-5.5 5.5L7 15l3-3H7l-3 3 6.5 6.5L17 18l5-5h-4l-4 4-2-2 4-3h-1z" fill="#FFFFFF" />
+    </svg>
+  ),
+  stripe: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="20" height="20" rx="4" fill="#635BFF" />
+      <path d="M11.6 9.2c0-.5.4-.7 1-.7.9 0 2 .3 3 .8V6.4c-1-.4-2.1-.6-3-.6-2.4 0-4 1.3-4 3.4 0 3.3 4.6 2.8 4.6 4.2 0 .6-.5.8-1.2.8-1 0-2.3-.4-3.3-1v3c1.1.5 2.2.7 3.3.7 2.5 0 4.2-1.2 4.2-3.4 0-3.6-4.6-3-4.6-4.3z" fill="#FFFFFF" />
+    </svg>
+  ),
+  erp: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#00C6FF" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="3" width="7" height="7" rx="1" />
+      <rect x="14" y="3" width="7" height="7" rx="1" />
+      <rect x="3" y="14" width="7" height="7" rx="1" />
+      <rect x="14" y="14" width="7" height="7" rx="1" />
+      <line x1="10" y1="6.5" x2="14" y2="6.5" />
+      <line x1="10" y1="17.5" x2="14" y2="17.5" />
+      <line x1="6.5" y1="10" x2="6.5" y2="14" />
+      <line x1="17.5" y1="10" x2="17.5" y2="14" />
+    </svg>
+  ),
+  etc: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="5" cy="12" r="1.8" fill="#00C6FF" />
+      <circle cx="12" cy="12" r="1.8" fill="#00C6FF" />
+      <circle cx="19" cy="12" r="1.8" fill="#00C6FF" />
+    </svg>
+  ),
+  others: (
+    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#00C6FF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="5" cy="12" r="1.5" fill="#00C6FF" stroke="none" />
+      <circle cx="12" cy="12" r="1.5" fill="#00C6FF" stroke="none" />
+      <circle cx="19" cy="12" r="1.5" fill="#00C6FF" stroke="none" />
+    </svg>
+  ),
 };
 
 const TECH_STACK = [
@@ -640,7 +739,7 @@ const TECH_STACK = [
     icon: Code2,
     description: 'The languages used to process millions of rows and run statistical models.',
     items: [
-      { logo: 'python', name: 'Python (Pandas, Seaborn)', desc: 'For deep EDA, A/B testing (t-tests, ANOVA), and churn modeling.' },
+      { logo: 'python', name: 'Python', desc: 'For deep EDA, A/B testing (t-tests, ANOVA), and churn modeling.' },
       { logo: 'sql', name: 'SQL', desc: 'For extracting, joining, and transforming raw data across multiple platforms.' },
       { logo: 'stats', name: 'Statistical Modeling', desc: 'Moving beyond "gut feelings" to mathematically proven truths.' },
     ],
@@ -653,6 +752,9 @@ const TECH_STACK = [
       { logo: 'gcp', name: 'Google Cloud Platform (GCP)', desc: 'Secure, scalable cloud infrastructure.' },
       { logo: 'bigquery', name: 'BigQuery', desc: 'Enterprise data warehousing for lightning-fast queries.' },
       { logo: 'postgres', name: 'PostgreSQL', desc: 'Relational database management for structured star-schema models.' },
+      { logo: 'aws', name: 'AWS', desc: '' },
+      { logo: 'azure', name: 'Azure', desc: '' },
+      { logo: 'snowflake', name: 'Snowflake', desc: '' },
     ],
   },
   {
@@ -663,6 +765,8 @@ const TECH_STACK = [
       { logo: 'looker', name: 'Looker Studio', desc: 'Live, auto-refreshing, custom KPI dashboards.' },
       { logo: 'powerbi', name: 'Power BI', desc: 'Advanced business intelligence with 20+ DAX measures.' },
       { logo: 'excel', name: 'Excel', desc: 'Simplified KPI summary sheets for immediate team action.' },
+      { logo: 'tableau', name: 'Tableau', desc: '' },
+      { logo: 'others', name: 'Others', desc: '' },
     ],
   },
   {
@@ -674,6 +778,11 @@ const TECH_STACK = [
       { logo: 'ga4', name: 'GA4', desc: 'Funnel, Sessions, Conversions' },
       { logo: 'meta-google', name: 'Meta Ads & Google Ads', desc: 'True ROAS, Spend, CAC' },
       { logo: 'klaviyo', name: 'Klaviyo', desc: 'Email performance, Segmentation, Churn triggers' },
+      { logo: 'woocommerce', name: 'WooCommerce', desc: '' },
+      { logo: 'bigcommerce', name: 'BigCommerce', desc: '' },
+      { logo: 'stripe', name: 'Stripe / Payment Platforms', desc: '' },
+      { logo: 'erp', name: 'ERP / CRM Systems', desc: '' },
+      { logo: 'etc', name: 'Etc.', desc: '' },
     ],
   },
 ];
@@ -1375,9 +1484,8 @@ function WhyMeSection() {
               <span className="whyme-eyebrow-dot" aria-hidden="true" />
               Why Me
             </span>
-            <h2 className="whyme-title reveal-up text-center" style={{ transitionDelay: '0.15s' }}>
-              The 4 Principles<br />
-              <span className="whyme-title-accent">That Shape Every Engagement</span>
+            <h2 className="whyme-title whyme-title-single reveal-up text-center" style={{ transitionDelay: '0.15s' }}>
+              The 4 Principles That Shape Every Engagement
             </h2>
           </div>
         </div>
@@ -1409,22 +1517,49 @@ function WhyMeSection() {
           ))}
         </div>
 
-        {/* ── FOOTER STRIP ── */}
-        <div className="whyme-footer reveal-up" style={{ transitionDelay: '1s' }}>
-          <div className="whyme-footer-stat">
-            <span className="whyme-footer-stat-v">100%</span>
-            <span className="whyme-footer-stat-l">Custom Analysis</span>
+        {/* ── FOUNDER TESTIMONIAL (moved from Why Work With Me) ── */}
+        <div className="whyme-testimonial reveal-up" style={{ transitionDelay: '0.9s' }}>
+          <div className="glass rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto">
+            <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-4">What A Founder Says</div>
+            <p className="text-[#F0F4F8] text-base leading-relaxed italic mb-4">
+              &quot;I fired my $2,500/month agency because their &apos;amazing dashboards&apos; still left me broke. The Health Check found the exact holes in my business in 7 days. I wish I had done this two years earlier.&quot;
+            </p>
+            <p className="text-[#8899AA] text-sm mb-4">Marcus T., NOIRE Collective</p>
+
+            <div className="overflow-hidden rounded-lg border border-[rgba(0,198,255,0.15)]">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-[rgba(0,198,255,0.05)]">
+                    <th className="px-4 py-2 text-left text-[#FF4444] font-semibold">Before</th>
+                    <th className="px-4 py-2 text-left text-[#00E676] font-semibold">After</th>
+                    <th className="px-4 py-2 text-left text-[#F5A623] font-semibold">Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="px-4 py-3 text-[#FF4444]">-$1,690/mo net profit</td>
+                    <td className="px-4 py-3 text-[#00E676] font-semibold">+$33,040/mo net profit</td>
+                    <td className="px-4 py-3 text-[#F5A623]">73 days</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-[#8899AA] text-xs mt-3 leading-relaxed">
+              How: Discount addiction detoxed (17.6% → 4.8%). Facebook &amp; TikTok ads cut by 70% and reallocated to organic/Google. Unified size charts to stop a 24.7% unit return rate. Mobile checkout rebuilt. Win-back email sent to 6,063 dormant customers.
+            </p>
           </div>
-          <div className="whyme-footer-divider" aria-hidden="true" />
-          <div className="whyme-footer-stat">
-            <span className="whyme-footer-stat-v">0</span>
-            <span className="whyme-footer-stat-l">Generic Templates</span>
-          </div>
-          <div className="whyme-footer-divider" aria-hidden="true" />
-          <div className="whyme-footer-stat">
-            <span className="whyme-footer-stat-v">Every</span>
-            <span className="whyme-footer-stat-l">Finding Actionable</span>
-          </div>
+        </div>
+
+        {/* ── CTA ── */}
+        <div className="whyme-cta reveal-up text-center" style={{ transitionDelay: '1.05s' }}>
+          <a
+            href="#contact"
+            className="btn-press inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
+          >
+            <Calendar size={18} />
+            Lets Find Revenue You Already Have
+          </a>
         </div>
       </div>
     </section>
@@ -1496,6 +1631,569 @@ function WhyWorkWithMeSection() {
           </p>
         </div>
       </div>
+    </section>
+  );
+}
+
+/* ──────────────────────────────────────────
+   WHY WE'RE DIFFERENT — Light-theme standalone section
+   (Converted from owner-supplied standalone HTML.)
+   ────────────────────────────────────────── */
+
+type WwdStatus = 'none' | 'limited' | 'basic' | 'avail' | 'adv' | 'premium';
+interface WwdCap { s: WwdStatus; t: string }
+interface WwdItem { name: string; icon: string; a: WwdCap; b: WwdCap; c: WwdCap }
+interface WwdGroup { cat: string; items: WwdItem[] }
+
+const WWD_CAPABILITIES: WwdGroup[] = [
+  { cat: 'Business Intelligence', items: [
+    { name: 'KPI & Custom Dashboards', icon: 'gauge', a: { s: 'limited', t: 'Limited (Live View + Overview)' }, b: { s: 'avail', t: 'Available (Limited Depth)' }, c: { s: 'premium', t: 'Custom KPI Dashboards & Executive Views' } },
+    { name: 'Sales & Revenue Analysis', icon: 'chart', a: { s: 'basic', t: 'Basic' }, b: { s: 'adv', t: 'Advanced' }, c: { s: 'premium', t: 'Deep Business & Profitability Analysis' } },
+    { name: 'Conversion Funnel Analysis', icon: 'funnel', a: { s: 'basic', t: 'Basic' }, b: { s: 'avail', t: 'Available (Limited Depth)' }, c: { s: 'premium', t: 'Root-Cause Analysis & Drop-off Fixes' } },
+    { name: 'Customer Segmentation', icon: 'segments', a: { s: 'basic', t: 'Basic (Native RFM Scoring)' }, b: { s: 'avail', t: 'Available (Limited Depth)' }, c: { s: 'premium', t: 'Full RFM + Advanced Business Strategy' } },
+    { name: 'Customer Cohort Analysis', icon: 'cohort', a: { s: 'limited', t: 'Limited' }, b: { s: 'avail', t: 'Available (Limited Depth)' }, c: { s: 'premium', t: 'Multi-Dimensional Cohort & LTV Analysis' } },
+    { name: 'Customer Lifetime Value (LTV)', icon: 'ltv', a: { s: 'limited', t: 'Limited' }, b: { s: 'avail', t: 'Available (Limited Depth)' }, c: { s: 'premium', t: 'Granular Cohort & Channel-Level LTV' } },
+    { name: 'Churn Risk Identification', icon: 'churn', a: { s: 'none', t: 'Not Available' }, b: { s: 'limited', t: 'Some Apps' }, c: { s: 'premium', t: 'Predictive AI Churn Risk Analysis' } },
+    { name: 'Product Performance Analysis', icon: 'trend', a: { s: 'basic', t: 'Basic' }, b: { s: 'avail', t: 'Available (Limited Depth)' }, c: { s: 'premium', t: 'Growth & Inventory Opportunity Analysis' } },
+    { name: 'Product Profitability Analysis', icon: 'coins', a: { s: 'limited', t: 'Limited (Gross Profit Only)' }, b: { s: 'limited', t: 'Some Apps' }, c: { s: 'premium', t: 'True Product-Level Net Profitability' } },
+    { name: 'True Net Profit (After Ads/Fees)', icon: 'netprofit', a: { s: 'none', t: 'Not Available' }, b: { s: 'limited', t: 'Some Apps' }, c: { s: 'premium', t: 'Real-Time True Profitability Analysis' } },
+    { name: 'Marketing Performance Analysis', icon: 'megaphone', a: { s: 'basic', t: 'Basic' }, b: { s: 'avail', t: 'Available (Limited Depth)' }, c: { s: 'premium', t: 'Cross-Channel ROI & Strategy Recommendations' } },
+    { name: 'Cross-Sell & Upsell Analysis', icon: 'crosssell', a: { s: 'limited', t: 'Limited (Product & Order Data)' }, b: { s: 'avail', t: 'Available (Limited Depth)' }, c: { s: 'premium', t: 'Big Opportunity Identification & Strategy' } },
+    { name: 'Operations Efficiency Analysis', icon: 'gear', a: { s: 'none', t: 'Not Available' }, b: { s: 'limited', t: 'Specialized Tools Only' }, c: { s: 'premium', t: 'Operational Efficiency & Cost Optimization' } },
+    { name: 'Custom Business Analysis', icon: 'puzzle', a: { s: 'none', t: 'Not Available' }, b: { s: 'limited', t: 'Limited' }, c: { s: 'premium', t: 'Bespoke Analysis for Your Business Questions' } },
+    { name: 'Custom KPI Framework', icon: 'sliders', a: { s: 'basic', t: 'Basic' }, b: { s: 'avail', t: 'Available (Limited Depth)' }, c: { s: 'premium', t: 'Business-Specific KPI Ecosystem' } },
+    { name: 'Multi-Store Analytics', icon: 'layers', a: { s: 'limited', t: 'Limited (Plan Dependent)' }, b: { s: 'avail', t: 'Available (Limited Depth)' }, c: { s: 'premium', t: 'Unified Multi-Store Global Analysis' } },
+    { name: 'Cross-Platform Business Analysis', icon: 'network', a: { s: 'none', t: 'Not Available' }, b: { s: 'limited', t: 'Requires Multiple Apps' }, c: { s: 'premium', t: 'Unified Cross-Platform Business Intelligence' } },
+  ]},
+  { cat: 'Data Infrastructure', items: [
+    { name: 'Cloud Data Infrastructure', icon: 'cloud', a: { s: 'none', t: 'Not Available' }, b: { s: 'limited', t: 'Separate Platform Required' }, c: { s: 'premium', t: 'Enterprise-Grade Infrastructure Included' } },
+    { name: 'Data Pipeline Engineering', icon: 'pipeline', a: { s: 'none', t: 'Not Available' }, b: { s: 'limited', t: 'Separate Platform Required' }, c: { s: 'premium', t: 'Fully Managed & Automated Data Pipelines' } },
+    { name: 'Multi-Platform Data Integration', icon: 'integrate', a: { s: 'none', t: 'Not Available' }, b: { s: 'limited', t: 'Separate Platform Required' }, c: { s: 'premium', t: 'Seamless Ads, ERP, & CRM Integration' } },
+    { name: 'Data Cleaning & Standardization', icon: 'sparkle', a: { s: 'none', t: 'Not Available' }, b: { s: 'limited', t: 'Varies' }, c: { s: 'premium', t: 'Continuous Data Auditing & Cleaning' } },
+    { name: 'Automated Data Refresh', icon: 'refresh', a: { s: 'limited', t: 'Platform Dependent' }, b: { s: 'avail', t: 'Available (Limited Depth)' }, c: { s: 'premium', t: 'Real-Time Automated Data Refresh' } },
+  ]},
+  { cat: 'Strategic Advisory', items: [
+    { name: 'Strategic Recommendations', icon: 'compass', a: { s: 'basic', t: 'Basic (Platform Insights)' }, b: { s: 'limited', t: 'Limited' }, c: { s: 'premium', t: 'Strategic Advisory & Actionable Roadmaps' } },
+  ]},
+  { cat: 'Implementation', items: [
+    { name: 'Implementation Support', icon: 'hand', a: { s: 'none', t: 'Not Available' }, b: { s: 'limited', t: 'Usually Separate' }, c: { s: 'premium', t: 'Full Done-for-You Implementation' } },
+  ]},
+];
+
+const WWD_COLOR_MAP: Record<string, string> = {
+  'KPI & Custom Dashboards': '#2563EB',
+  'Sales & Revenue Analysis': '#059669',
+  'Conversion Funnel Analysis': '#4F46E5',
+  'Customer Segmentation': '#7C3AED',
+  'Customer Cohort Analysis': '#7C3AED',
+  'Customer Lifetime Value (LTV)': '#10B981',
+  'Churn Risk Identification': '#DC2626',
+  'Product Performance Analysis': '#059669',
+  'Product Profitability Analysis': '#10B981',
+  'True Net Profit (After Ads/Fees)': '#10B981',
+  'Marketing Performance Analysis': '#EA580C',
+  'Cross-Sell & Upsell Analysis': '#059669',
+  'Operations Efficiency Analysis': '#0D9488',
+  'Custom Business Analysis': '#0891B2',
+  'Custom KPI Framework': '#4F46E5',
+  'Multi-Store Analytics': '#2563EB',
+  'Cross-Platform Business Analysis': '#0891B2',
+  'Cloud Data Infrastructure': '#0891B2',
+  'Data Pipeline Engineering': '#0D9488',
+  'Multi-Platform Data Integration': '#0D9488',
+  'Data Cleaning & Standardization': '#0D9488',
+  'Automated Data Refresh': '#0D9488',
+  'Strategic Recommendations': '#B8860B',
+  'Implementation Support': '#B8860B',
+};
+
+const WWD_AUTO_ITEMS = [
+  'Data Pipeline Engineering',
+  'Automated Data Refresh',
+  'Multi-Platform Data Integration',
+  'Data Cleaning & Standardization',
+  'Operations Efficiency Analysis',
+];
+
+const WWD_ICONS: Record<string, React.ReactNode> = {
+  gauge: <><circle cx="12" cy="12" r="9"/><path d="M12 12l4-3"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></>,
+  chart: <><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></>,
+  funnel: <path d="M3 4h18l-7 8v6l-4 2v-8z"/>,
+  segments: <><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/></>,
+  cohort: <><circle cx="6" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="18" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="6" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="18" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="6" cy="18" r="1.5" fill="currentColor" stroke="none"/><circle cx="12" cy="18" r="1.5" fill="currentColor" stroke="none"/><circle cx="18" cy="18" r="1.5" fill="currentColor" stroke="none"/></>,
+  ltv: <><path d="M6 12a4 4 0 014-4"/><path d="M18 12a4 4 0 01-4 4"/><path d="M8 8l-2 2 2 2M16 16l2-2-2-2"/></>,
+  churn: <><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></>,
+  trend: <><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></>,
+  coins: <><circle cx="8" cy="8" r="5"/><circle cx="16" cy="16" r="5"/></>,
+  netprofit: <><circle cx="12" cy="12" r="9"/><path d="M14.5 9.5c-.5-1-1.5-1.5-2.5-1.5-1.5 0-2.5 1-2.5 2s1 1.5 2.5 2 2.5 1 2.5 2-1 2-2.5 2c-1 0-2-.5-2.5-1.5"/><path d="M12 6v2M12 16v2"/></>,
+  megaphone: <><path d="M3 11l14-7v16L3 13v-2z"/><path d="M3 11H2v2h1M19 9v6"/></>,
+  crosssell: <><path d="M9 3H5a2 2 0 00-2 2v4M15 3h4a2 2 0 012 2v4M9 21H5a2 2 0 01-2-2v-4M15 21h4a2 2 0 002-2v-4"/><path d="M9 12h6M12 9v6"/></>,
+  gear: <><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></>,
+  puzzle: <path d="M19 11h2a1 1 0 001-1V7a1 1 0 00-1-1h-3a2 2 0 01-2-2V3a2 2 0 00-4 0v1a2 2 0 01-2 2H4a1 1 0 00-1 1v3a1 1 0 001 1h1a2 2 0 010 4H4a1 1 0 00-1 1v3a1 1 0 001 1h3a2 2 0 012 2v1a2 2 0 004 0v-1a2 2 0 012-2h3a1 1 0 001-1v-3a1 1 0 00-1-1h-1a2 2 0 010-4z"/>,
+  sliders: <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/>,
+  layers: <><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></>,
+  network: <><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v4M12 11l-5 6M12 11l5 6"/></>,
+  cloud: <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/>,
+  pipeline: <path d="M3 12h4l3 7 4-14 3 7h4"/>,
+  integrate: <><rect x="2" y="9" width="6" height="6" rx="1"/><rect x="16" y="9" width="6" height="6" rx="1"/><path d="M8 12h8"/></>,
+  sparkle: <path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/>,
+  refresh: <><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></>,
+  compass: <><circle cx="12" cy="12" r="10"/><path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></>,
+  hand: <><path d="M18 11V6a2 2 0 00-2-2 2 2 0 00-2 2M14 10V4a2 2 0 00-2-2 2 2 0 00-2 2v2M10 10.5V6a2 2 0 00-2-2 2 2 0 00-2 2v8"/><path d="M18 8a2 2 0 114 0v6a8 8 0 01-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 012.83-2.82L7 15"/></>,
+};
+
+function WwdStatusSymbol({ s }: { s: WwdStatus }) {
+  if (s === 'none') return { sym: '✕', cls: 'st-none' };
+  if (s === 'limited') return { sym: '⚠', cls: 'st-limited' };
+  if (s === 'basic') return { sym: '✓', cls: 'st-basic' };
+  if (s === 'avail') return { sym: '✓', cls: 'st-avail' };
+  if (s === 'adv') return { sym: '✓', cls: 'st-adv' };
+  return { sym: '✓', cls: 'st-premium' };
+}
+
+function WwdCapIcon({ name, color }: { name: string; color: string }) {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="cap-icon"
+      style={{ color }}
+    >
+      {WWD_ICONS[name] || WWD_ICONS.gauge}
+    </svg>
+  );
+}
+
+function WhyWeAreDifferentSection() {
+  const sectionRef = useScrollReveal();
+  return (
+    <section id="why-were-different" className="wwd-section" ref={sectionRef}>
+      {/* Background */}
+      <div className="wwd-mesh-bg" aria-hidden="true" />
+      <div className="wwd-grid-overlay" aria-hidden="true" />
+
+      {/* HERO */}
+      <header className="relative flex items-center pt-16 pb-8 px-6 overflow-hidden">
+        <div className="hero-orb" style={{ width: 300, height: 300, background: 'var(--wwd-gold)', top: '10%', left: '-10%' }} aria-hidden="true" />
+        <div className="hero-orb" style={{ width: 250, height: 250, background: 'var(--wwd-purple)', bottom: '10%', right: '-5%', animationDelay: '-4s' }} aria-hidden="true" />
+
+        <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div className="lg:col-span-7">
+            <div className="reveal flex items-center gap-3 mb-4">
+              <span className="pulse-dot inline-block w-2 h-2 rounded-full" style={{ background: 'var(--wwd-purple)', color: 'var(--wwd-purple)' }} aria-hidden="true" />
+              <span className="text-xs tracking-[0.2em] uppercase font-bold flex items-center" style={{ color: 'var(--wwd-purple)' }}>
+                <svg className="auto-icon-header" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                Why We&apos;re Different
+              </span>
+              <span className="h-px w-12" style={{ background: 'linear-gradient(90deg, var(--wwd-purple), transparent)' }} aria-hidden="true" />
+            </div>
+
+            <h1 className="reveal reveal-delay-1 wwd-font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] font-medium mb-4 flex flex-col gap-1">
+              <span style={{ color: 'var(--wwd-indigo)' }}>MozIntelligence</span>
+              <span className="italic font-normal" style={{ color: 'var(--wwd-text-primary)' }}>The Strategic Edge In</span>
+              <span className="font-bold" style={{ color: 'var(--wwd-blue)' }}>E-Commerce Analytics</span>
+            </h1>
+
+            <p className="reveal reveal-delay-2 text-base leading-relaxed max-w-2xl mb-6" style={{ color: 'var(--wwd-text-secondary)' }}>
+              Your existing platforms collect data, and various apps provide specialized metrics. However, MozIntelligence transcends traditional reporting by integrating <span style={{ color: 'var(--wwd-text-primary)' }} className="font-semibold">deep business analysis</span>, <span style={{ color: 'var(--wwd-text-primary)' }} className="font-semibold">robust data infrastructure</span>, and <span style={{ color: 'var(--wwd-text-primary)' }} className="font-semibold">strategic implementation support</span> into a single, unified solution.
+            </p>
+
+            <div className="reveal reveal-delay-3 grid grid-cols-3 gap-6 mt-6 max-w-xl items-end">
+              <div>
+                <div className="wwd-metric-num text-3xl whitespace-nowrap" style={{ color: 'var(--wwd-blue)' }}>24+</div>
+                <div className="text-[10px] uppercase tracking-wider mt-1 font-bold" style={{ color: 'var(--wwd-text-muted)' }}>Capabilities</div>
+              </div>
+              <div>
+                <div className="wwd-metric-num text-xl whitespace-nowrap" style={{ color: 'var(--wwd-teal)' }}>Multiple → 1</div>
+                <div className="text-[10px] uppercase tracking-wider mt-3 font-bold" style={{ color: 'var(--wwd-text-muted)' }}>Tools Unified</div>
+              </div>
+              <div>
+                <div className="wwd-metric-num text-3xl whitespace-nowrap" style={{ color: 'var(--wwd-purple)' }}>∞</div>
+                <div className="text-[10px] uppercase tracking-wider mt-1 font-bold" style={{ color: 'var(--wwd-text-muted)' }}>Custom Analysis</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Animated data viz */}
+          <div className="lg:col-span-5 reveal reveal-delay-2 hidden lg:block">
+            <div className="relative">
+              <div className="wwd-glass-strong rounded-2xl p-5 float-anim">
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <div className="text-[10px] uppercase tracking-widest font-bold flex items-center" style={{ color: 'var(--wwd-text-muted)' }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: 6 }} aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                      Live Intelligence
+                    </div>
+                    <div className="wwd-font-display text-lg mt-1" style={{ color: 'var(--wwd-text-primary)' }}>Strategic Dashboard</div>
+                  </div>
+                  <div className="flex gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--wwd-red)' }} />
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--wwd-amber)' }} />
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--wwd-green)' }} />
+                  </div>
+                </div>
+
+                <svg viewBox="0 0 320 300" className="w-full h-auto" role="img" aria-label="Strategic intelligence dashboard visualisation">
+                  <defs>
+                    <linearGradient id="wwdGoldGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#C89544"/><stop offset="100%" stopColor="#8A6508"/>
+                    </linearGradient>
+                    <linearGradient id="wwdAreaGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#B8860B" stopOpacity="0.15"/>
+                      <stop offset="100%" stopColor="#B8860B" stopOpacity="0"/>
+                    </linearGradient>
+                  </defs>
+
+                  <text x="20" y="20" fontFamily="Manrope" fontSize="9" fontWeight="700" fill="#9CA3AF" letterSpacing="1">TRUE NET PROFIT</text>
+                  <text x="300" y="20" textAnchor="end" fontFamily="Fraunces" fontSize="14" fontWeight="600" fill="#059669">+ 47.2%</text>
+
+                  <g stroke="rgba(0,0,0,0.05)" strokeWidth="1" strokeDasharray="3 3">
+                    <line x1="20" y1="60" x2="300" y2="60"/>
+                    <line x1="20" y1="110" x2="300" y2="110"/>
+                    <line x1="20" y1="160" x2="300" y2="160"/>
+                  </g>
+
+                  <path d="M 30 140 Q 80 110, 120 90 T 200 70 T 290 40 L 290 180 L 30 180 Z" fill="url(#wwdAreaGrad)" />
+                  <path d="M 30 140 Q 80 110, 120 90 T 200 70 T 290 40" stroke="#B8860B" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+
+                  <circle r="4" fill="#B8860B">
+                    <animateMotion dur="4s" repeatCount="indefinite" path="M 30 140 Q 80 110, 120 90 T 200 70 T 290 40" />
+                  </circle>
+
+                  <circle cx="30" cy="140" r="4" fill="#FFFFFF" stroke="#B8860B" strokeWidth="2" className="node-pulse"/>
+                  <circle cx="120" cy="90" r="4" fill="#FFFFFF" stroke="#B8860B" strokeWidth="2" className="node-pulse" style={{ animationDelay: '0.5s' }}/>
+                  <circle cx="200" cy="70" r="4" fill="#FFFFFF" stroke="#B8860B" strokeWidth="2" className="node-pulse" style={{ animationDelay: '1s' }}/>
+                  <circle cx="290" cy="40" r="5" fill="#059669" stroke="#059669" strokeWidth="2" className="node-pulse" style={{ animationDelay: '1.5s' }}/>
+
+                  <g transform="translate(0, 230)">
+                    <circle cx="50" cy="20" r="12" fill="#FFFFFF" stroke="#2563EB" strokeWidth="2"/>
+                    <text x="50" y="20" textAnchor="middle" dominantBaseline="central" fontSize="9" fill="#2563EB" fontWeight="700" fontFamily="Manrope">1</text>
+                    <text x="50" y="50" textAnchor="middle" fontSize="10" fill="#4B5563" fontFamily="Manrope" fontWeight="600">Collect</text>
+
+                    <path d="M 64 20 L 146 20" stroke="#9CA3AF" strokeWidth="1.5" fill="none" className="flow-line"/>
+
+                    <circle cx="160" cy="20" r="14" fill="#FFFFFF" stroke="#7C3AED" strokeWidth="2.5"/>
+                    <text x="160" y="20" textAnchor="middle" dominantBaseline="central" fontSize="10" fill="#7C3AED" fontWeight="700" fontFamily="Manrope">2</text>
+                    <text x="160" y="50" textAnchor="middle" fontSize="10" fill="#7C3AED" fontFamily="Manrope" fontWeight="700">Analyze</text>
+
+                    <path d="M 176 20 L 256 20" stroke="#9CA3AF" strokeWidth="1.5" fill="none" className="flow-line"/>
+
+                    <circle cx="270" cy="20" r="12" fill="#FFFFFF" stroke="#059669" strokeWidth="2"/>
+                    <text x="270" y="20" textAnchor="middle" dominantBaseline="central" fontSize="9" fill="#059669" fontWeight="700" fontFamily="Manrope">3</text>
+                    <text x="270" y="50" textAnchor="middle" fontSize="10" fill="#4B5563" fontFamily="Manrope" fontWeight="600">Act</text>
+                  </g>
+                </svg>
+              </div>
+
+              <div className="absolute -top-3 -right-3 wwd-glass rounded-xl p-2.5 float-anim" style={{ animationDelay: '-2s' }}>
+                <div className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-md flex items-center justify-center" style={{ background: 'rgba(5,150,105,0.1)' }}>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </div>
+                  <div>
+                    <div className="text-[8px] uppercase tracking-wider font-bold" style={{ color: 'var(--wwd-text-muted)' }}>True Profit</div>
+                    <div className="text-xs font-bold wwd-gold-text">Real-Time</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* CAPABILITIES TABLE */}
+      <section className="relative py-16 px-6 wwd-bg-section">
+        <div className="max-w-7xl mx-auto">
+          <div className="reveal text-center mb-8">
+            <div className="inline-flex items-center gap-3 mb-3">
+              <span className="h-px w-10" style={{ background: 'linear-gradient(90deg, transparent, var(--wwd-gold))' }} aria-hidden="true" />
+              <span className="text-xs tracking-[0.2em] uppercase font-bold flex items-center" style={{ color: 'var(--wwd-gold)' }}>
+                <svg className="auto-icon-header" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/></svg>
+                Capability Matrix
+              </span>
+              <span className="h-px w-10" style={{ background: 'linear-gradient(90deg, var(--wwd-gold), transparent)' }} aria-hidden="true" />
+            </div>
+            <h2 className="wwd-font-display text-3xl md:text-4xl font-medium mb-2" style={{ color: 'var(--wwd-text-primary)' }}>
+              A <span className="wwd-gold-text italic">Side-by-Side</span> Comparison
+            </h2>
+            <p className="max-w-2xl mx-auto text-sm" style={{ color: 'var(--wwd-text-secondary)' }}>
+              Every capability, evaluated across three tiers — from basic built-in reporting to the unified strategic intelligence layer.
+            </p>
+          </div>
+
+          <div className="reveal table-container table-wrap">
+            <table className="comparison-table">
+              <thead>
+                <tr>
+                  <th style={{ width: '32%' }}>
+                    <div className="h-full flex flex-col justify-end">
+                      <div className="text-lg font-bold normal-case tracking-normal" style={{ color: 'var(--wwd-text-primary)' }}>Capability</div>
+                    </div>
+                  </th>
+                  <th style={{ width: '22%' }}>
+                    <div className="h-full flex flex-col justify-end">
+                      <div className="text-lg font-bold mb-1 normal-case tracking-normal" style={{ color: 'var(--wwd-blue)' }}>Built-In Analytics</div>
+                      <div className="text-[10px] flex items-center gap-1.5 font-medium uppercase tracking-wider" style={{ color: 'var(--wwd-text-muted)' }}>
+                        For Example: Shopify · WooCommerce
+                      </div>
+                    </div>
+                  </th>
+                  <th style={{ width: '22%' }}>
+                    <div className="h-full flex flex-col justify-end">
+                      <div className="text-lg font-bold mb-1 normal-case tracking-normal" style={{ color: 'var(--wwd-amber)' }}>Other Analytics Apps</div>
+                      <div className="text-[10px] flex items-center gap-1.5 font-medium uppercase tracking-wider" style={{ color: 'var(--wwd-text-muted)' }}>
+                        Specialized Analytics Tools
+                      </div>
+                    </div>
+                  </th>
+                  <th className="moz-col-header" style={{ width: '24%' }}>
+                    <div className="h-full flex flex-col justify-end items-start gap-2">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-lg font-bold normal-case tracking-normal" style={{ color: 'var(--wwd-gold)' }}>MozIntelligence</span>
+                        <span className="text-xs font-medium normal-case" style={{ color: 'var(--wwd-gold-light)' }}>(✓ Advanced)</span>
+                      </div>
+                      <span className="premium-badge">The Strategic Choice</span>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {WWD_CAPABILITIES.map((group) => (
+                  <React.Fragment key={group.cat}>
+                    <tr className="cat-divider"><td colSpan={4}>{group.cat}</td></tr>
+                    {group.items.map((item) => {
+                      const a = WwdStatusSymbol(item.a.s);
+                      const b = WwdStatusSymbol(item.b.s);
+                      const c = WwdStatusSymbol(item.c.s);
+                      const isStrong = item.c.s === 'premium';
+                      const iconColor = WWD_COLOR_MAP[item.name] || '#9CA3AF';
+                      const iconBg = `${iconColor}1A`;
+                      const iconBorder = `${iconColor}33`;
+                      const isAuto = WWD_AUTO_ITEMS.includes(item.name);
+                      const autoStyle = isAuto ? { boxShadow: `0 0 0 2px ${iconColor}33` } : undefined;
+                      return (
+                        <tr key={item.name}>
+                          <td>
+                            <div className="flex items-center gap-3">
+                              <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: iconBg, border: `1px solid ${iconBorder}`, ...autoStyle }}>
+                                <WwdCapIcon name={item.icon} color={iconColor} />
+                              </div>
+                              <span className="cap-name text-sm" style={{ color: 'var(--wwd-text-primary)' }}>{item.name}</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div className="flex items-start gap-2.5">
+                              <span className={`${a.cls} text-sm mt-0.5 shrink-0`}>{a.sym}</span>
+                              <span className="text-xs font-medium" style={{ color: 'var(--wwd-text-secondary)' }}>{item.a.t}</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div className="flex items-start gap-2.5">
+                              <span className={`${b.cls} text-sm mt-0.5 shrink-0`}>{b.sym}</span>
+                              <span className="text-xs font-medium" style={{ color: 'var(--wwd-text-secondary)' }}>{item.b.t}</span>
+                            </div>
+                          </td>
+                          <td className="moz-col">
+                            <div className="flex items-start gap-2.5">
+                              <span className={`${c.cls} text-sm mt-0.5 shrink-0 font-bold`}>{c.sym}</span>
+                              <span className={`text-xs ${isStrong ? 'font-semibold' : 'font-medium'}`} style={{ color: isStrong ? 'var(--wwd-text-primary)' : 'var(--wwd-text-secondary)' }}>{item.c.t}</span>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY MOZINTELLIGENCE */}
+      <section className="relative py-16 px-6 overflow-hidden wwd-bg-white">
+        <div className="hero-orb" style={{ width: 400, height: 400, background: 'var(--wwd-purple)', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', opacity: 0.05 }} aria-hidden="true" />
+
+        <div className="max-w-5xl mx-auto relative z-10">
+          <div className="reveal text-center mb-8">
+            <div className="inline-flex items-center gap-3 mb-3">
+              <span className="h-px w-10" style={{ background: 'linear-gradient(90deg, transparent, var(--wwd-purple))' }} aria-hidden="true" />
+              <span className="text-xs tracking-[0.2em] uppercase font-bold flex items-center" style={{ color: 'var(--wwd-purple)' }}>
+                <svg className="auto-icon-header" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+                The Strategic Answer
+              </span>
+              <span className="h-px w-10" style={{ background: 'linear-gradient(90deg, var(--wwd-purple), transparent)' }} aria-hidden="true" />
+            </div>
+            <h2 className="wwd-font-display text-3xl md:text-4xl font-medium" style={{ color: 'var(--wwd-text-primary)' }}>
+              Why <span className="italic" style={{ color: 'var(--wwd-purple)' }}>MozIntelligence?</span>
+            </h2>
+          </div>
+
+          <div className="reveal reveal-delay-1 wwd-glass-strong rounded-2xl p-8 relative overflow-hidden" style={{ borderTop: '4px solid var(--wwd-purple)' }}>
+            <p className="wwd-font-display text-lg md:text-xl leading-relaxed font-normal" style={{ color: 'var(--wwd-text-primary)' }}>
+              You don&apos;t need to replace your existing tools. Your platforms already collect the data. MozIntelligence helps you <span className="font-bold" style={{ color: 'var(--wwd-purple)' }}>connect it</span>, uncover what is actually happening, identify the <span className="font-bold" style={{ color: 'var(--wwd-purple)' }}>highest-impact opportunities</span>, and turn those findings into <span className="font-bold" style={{ color: 'var(--wwd-purple)' }}>clear, profitable business actions</span>.
+            </p>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 pt-6 border-t" style={{ borderColor: 'var(--wwd-border-standard)' }}>
+              <div className="group">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3 transition-transform group-hover:scale-110" style={{ background: 'rgba(124,58,237,0.1)', border: '1px solid rgba(124,58,237,0.2)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" strokeLinecap="round" strokeLinejoin="round"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+                <div className="wwd-font-display text-base font-semibold mb-1" style={{ color: 'var(--wwd-text-primary)' }}>Connect</div>
+                <div className="text-xs" style={{ color: 'var(--wwd-text-secondary)' }}>Unify every data source.</div>
+              </div>
+              <div className="group">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3 transition-transform group-hover:scale-110" style={{ background: 'rgba(124,58,237,0.1)', border: '1px solid rgba(124,58,237,0.2)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35" strokeLinecap="round"/></svg>
+                </div>
+                <div className="wwd-font-display text-base font-semibold mb-1" style={{ color: 'var(--wwd-text-primary)' }}>Uncover</div>
+                <div className="text-xs" style={{ color: 'var(--wwd-text-secondary)' }}>Reveal what&apos;s real.</div>
+              </div>
+              <div className="group">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3 transition-transform group-hover:scale-110" style={{ background: 'rgba(124,58,237,0.1)', border: '1px solid rgba(124,58,237,0.2)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+                <div className="wwd-font-display text-base font-semibold mb-1" style={{ color: 'var(--wwd-text-primary)' }}>Identify</div>
+                <div className="text-xs" style={{ color: 'var(--wwd-text-secondary)' }}>Find highest-impact moves.</div>
+              </div>
+              <div className="group">
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3 transition-transform group-hover:scale-110" style={{ background: 'rgba(124,58,237,0.1)', border: '1px solid rgba(124,58,237,0.2)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" strokeLinecap="round"/><path d="M22 4L12 14.01l-3-3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+                <div className="wwd-font-display text-base font-semibold mb-1" style={{ color: 'var(--wwd-text-primary)' }}>Act</div>
+                <div className="text-xs" style={{ color: 'var(--wwd-text-secondary)' }}>Turn insight into profit.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DIFFERENCE AT A GLANCE */}
+      <section className="relative py-16 px-6 wwd-bg-section">
+        <div className="max-w-7xl mx-auto">
+          <div className="reveal text-center mb-8">
+            <div className="inline-flex items-center gap-3 mb-3">
+              <span className="h-px w-10" style={{ background: 'linear-gradient(90deg, transparent, var(--wwd-gold))' }} aria-hidden="true" />
+              <span className="text-xs tracking-[0.2em] uppercase font-bold flex items-center" style={{ color: 'var(--wwd-gold)' }}>
+                <svg className="auto-icon-header" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"/><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"/><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"/><line x1="9.17" y1="14.83" x2="4.93" y2="19.07"/></svg>
+                The Difference at a Glance
+              </span>
+              <span className="h-px w-10" style={{ background: 'linear-gradient(90deg, var(--wwd-gold), transparent)' }} aria-hidden="true" />
+            </div>
+            <h2 className="wwd-font-display text-3xl md:text-4xl font-medium mb-2" style={{ color: 'var(--wwd-text-primary)' }}>
+              Three Tiers. <span className="wwd-gold-text italic">One Clear Winner.</span>
+            </h2>
+            <p className="max-w-2xl mx-auto text-sm" style={{ color: 'var(--wwd-text-secondary)' }}>
+              The evolution from basic reporting to specialized metrics to true strategic intelligence.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6 items-stretch">
+            {/* Tier 1 */}
+            <div className="reveal tier-card t1 wwd-glass rounded-2xl p-6 relative flex flex-col h-full">
+              <div className="flex justify-between items-center mb-5">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(37,99,235,0.1)', border: '1px solid rgba(37,99,235,0.2)' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+                </div>
+                <div className="text-[10px] uppercase tracking-widest font-bold h-5 flex items-center" style={{ color: 'var(--wwd-text-muted)' }}>Tier 1</div>
+              </div>
+              <h3 className="wwd-font-display text-xl mb-1" style={{ color: 'var(--wwd-text-primary)' }}>Built-In Analytics</h3>
+              <div className="wwd-font-display text-lg mb-5 italic font-medium" style={{ color: 'var(--wwd-blue)' }}>Basic Reporting</div>
+              <div className="text-[10px] uppercase tracking-widest mb-2 font-bold" style={{ color: 'var(--wwd-text-muted)' }}>What it does</div>
+              <div className="text-xl wwd-font-display font-normal mb-6" style={{ color: 'var(--wwd-text-secondary)' }}>Collect &amp; Report</div>
+              <div className="space-y-3 pt-4 border-t mt-auto" style={{ borderColor: 'var(--wwd-border-standard)' }}>
+                <div className="flex items-center gap-2 text-xs"><span className="st-basic">✓</span><span style={{ color: 'var(--wwd-text-secondary)' }}>Platform-native metrics</span></div>
+                <div className="flex items-center gap-2 text-xs"><span className="st-limited">⚠</span><span style={{ color: 'var(--wwd-text-secondary)' }}>Limited live view</span></div>
+                <div className="flex items-center gap-2 text-xs"><span className="st-none">✕</span><span style={{ color: 'var(--wwd-text-secondary)' }}>No strategic layer</span></div>
+              </div>
+            </div>
+
+            {/* Tier 2 */}
+            <div className="reveal reveal-delay-1 tier-card t2 wwd-glass rounded-2xl p-6 relative flex flex-col h-full">
+              <div className="flex justify-between items-center mb-5">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(217,119,6,0.1)', border: '1px solid rgba(217,119,6,0.2)' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="2" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+                </div>
+                <div className="text-[10px] uppercase tracking-widest font-bold h-5 flex items-center" style={{ color: 'var(--wwd-text-muted)' }}>Tier 2</div>
+              </div>
+              <h3 className="wwd-font-display text-xl mb-1" style={{ color: 'var(--wwd-text-primary)' }}>Other Analytics Apps</h3>
+              <div className="wwd-font-display text-lg mb-5 italic font-medium flex items-center gap-2" style={{ color: 'var(--wwd-amber)' }}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                Limited Specialized Metrics
+              </div>
+              <div className="text-[10px] uppercase tracking-widest mb-2 font-bold" style={{ color: 'var(--wwd-text-muted)' }}>What it does</div>
+              <div className="text-xl wwd-font-display font-normal mb-6" style={{ color: 'var(--wwd-text-secondary)' }}>Measure &amp; Monitor</div>
+              <div className="space-y-3 pt-4 border-t mt-auto" style={{ borderColor: 'var(--wwd-border-standard)' }}>
+                <div className="flex items-center gap-2 text-xs">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D97706" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                  <span style={{ color: 'var(--wwd-text-secondary)' }}>Tool-Specific Metrics</span>
+                </div>
+                <div className="flex items-center gap-2 text-xs"><span className="st-limited">⚠</span><span style={{ color: 'var(--wwd-text-secondary)' }}>Multiple apps required</span></div>
+                <div className="flex items-center gap-2 text-xs"><span className="st-none">✕</span><span style={{ color: 'var(--wwd-text-secondary)' }}>No unified infrastructure</span></div>
+              </div>
+            </div>
+
+            {/* Tier 3 */}
+            <div className="reveal reveal-delay-2 tier-card t3 rounded-2xl p-6 relative flex flex-col h-full" style={{ border: '1.5px solid var(--wwd-gold)', background: 'linear-gradient(135deg, rgba(184,134,11,0.03), rgba(255,255,255,0.95))', boxShadow: '0 10px 15px -3px rgba(184, 134, 11, 0.1)' }}>
+              <div className="flex justify-between items-center mb-5">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, var(--wwd-gold-light), var(--wwd-gold))' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <span className="premium-badge">Tier 3 · Best</span>
+              </div>
+              <h3 className="wwd-font-display text-xl mb-1 wwd-gold-text">MozIntelligence</h3>
+              <div className="wwd-font-display text-lg mb-5 italic font-medium wwd-gold-text">Advanced BI + Strategy</div>
+              <div className="text-[10px] uppercase tracking-widest mb-2 font-bold" style={{ color: 'var(--wwd-gold)' }}>What it does</div>
+              <div className="text-xl wwd-font-display font-normal mb-6 wwd-gold-text">Analyze, Diagnose &amp; Act</div>
+              <div className="space-y-3 pt-4 border-t mt-auto" style={{ borderColor: 'rgba(184, 134, 11, 0.2)' }}>
+                <div className="flex items-center gap-2 text-xs"><span className="st-premium">✓</span><span style={{ color: 'var(--wwd-text-primary)' }}>Unified cross-platform intelligence</span></div>
+                <div className="flex items-center gap-2 text-xs"><span className="st-premium">✓</span><span style={{ color: 'var(--wwd-text-primary)' }}>Enterprise-grade infrastructure</span></div>
+                <div className="flex items-center gap-2 text-xs"><span className="st-premium">✓</span><span style={{ color: 'var(--wwd-text-primary)' }}>Strategic advisory &amp; roadmaps</span></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Implementation Support Highlight */}
+          <div className="reveal reveal-delay-3 mt-8 wwd-glass-strong rounded-2xl p-8 relative overflow-hidden" style={{ borderLeft: '4px solid var(--wwd-gold)' }}>
+            <div className="grid md:grid-cols-12 gap-6 items-center">
+              <div className="md:col-span-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, var(--wwd-gold-light), var(--wwd-gold))' }}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2.5" aria-hidden="true"><path d="M20 7L9 18l-5-5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </div>
+                  <div className="text-xs uppercase tracking-widest font-bold" style={{ color: 'var(--wwd-gold)' }}>Implementation Support</div>
+                </div>
+                <h3 className="wwd-font-display text-2xl font-medium" style={{ color: 'var(--wwd-text-primary)' }}>
+                  <span className="wwd-gold-text italic">Done-for-You</span><br/>Implementation
+                </h3>
+              </div>
+              <div className="md:col-span-8 grid sm:grid-cols-3 gap-4">
+                <div className="p-4 rounded-xl border" style={{ background: '#FFFFFF', borderColor: 'rgba(220,38,38,0.2)' }}>
+                  <div className="st-none text-xl mb-2">✕</div>
+                  <div className="text-sm font-semibold mb-1" style={{ color: 'var(--wwd-text-primary)' }}>Built-In Analytics</div>
+                  <div className="text-xs" style={{ color: 'var(--wwd-text-muted)' }}>Not Available</div>
+                </div>
+                <div className="p-4 rounded-xl border" style={{ background: '#FFFFFF', borderColor: 'rgba(217,119,6,0.2)' }}>
+                  <div className="st-limited text-xl mb-2">⚠</div>
+                  <div className="text-sm font-semibold mb-1" style={{ color: 'var(--wwd-text-primary)' }}>Other Analytics Apps</div>
+                  <div className="text-xs" style={{ color: 'var(--wwd-text-muted)' }}>Usually Separate</div>
+                </div>
+                <div className="p-4 rounded-xl border" style={{ background: 'rgba(184,134,11,0.03)', borderColor: 'var(--wwd-gold)' }}>
+                  <div className="st-premium text-xl mb-2">✓</div>
+                  <div className="text-sm font-semibold mb-1 wwd-gold-text">MozIntelligence</div>
+                  <div className="text-xs" style={{ color: 'var(--wwd-gold)' }}>Full Done-for-You Implementation</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }
@@ -2475,14 +3173,16 @@ function TechStackSection() {
               { border: 'rgba(139,92,246,0.20)', left: '#8B5CF6', bg: 'rgba(139,92,246,0.08)' },
             ];
             const a = accents[i] || accents[0];
+            // Only Programming & Analytics keeps its category description and item descriptions.
+            const showDesc = i === 0;
             return (
               <div key={i} className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: `linear-gradient(145deg, rgba(13,21,32,0.95) 0%, ${a.bg} 100%)`, border: `1px solid ${a.border}`, borderLeft: `4px solid ${a.left}`, boxShadow: '0 0 30px ' + a.bg + ', 0 8px 32px rgba(0,0,0,0.4)' }}>
                 <div className="flex items-center gap-3 mb-2">
                   <IconComp size={22} style={{ color: a.left }} />
                   <h3 className="font-bold text-lg text-white">{cat.category}</h3>
                 </div>
-                <p className="text-[#8899AA] text-sm mb-5">{cat.description}</p>
-                <ul className="infra-tool-list">
+                {showDesc && <p className="text-[#8899AA] text-sm mb-5">{cat.description}</p>}
+                <ul className={`infra-tool-list${showDesc ? '' : ' infra-tool-list-no-desc'}`}>
                   {cat.items.map((item, ii) => (
                     <li key={ii} className="infra-tool-item">
                       <div className={`tool-logo-wrap${item.logo === 'meta-google' ? ' tool-logo-double' : ''}`}>
@@ -2490,7 +3190,7 @@ function TechStackSection() {
                       </div>
                       <div className="tool-text">
                         <span className="tool-name">{item.name}</span>
-                        <span className="tool-desc">{item.desc}</span>
+                        {showDesc && <span className="tool-desc">{item.desc}</span>}
                       </div>
                     </li>
                   ))}
@@ -2724,7 +3424,7 @@ function ContactSection() {
           <h2 className="contact-main-heading whitespace-nowrap">
             Let&apos;s Find Your Next <span className="money-accent">$10,000.</span>
           </h2>
-          <h2 className="contact-main-heading contact-sub-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw" style="color:#FFFFFF;transition-delay:0s">Stop</span> <span class="sgw" style="color:#FFFFFF;transition-delay:0.08s">Guessing.</span> <span class="sgw sgw-accent" style="transition-delay:0.16s">Start</span> <span class="sgw sgw-accent" style="transition-delay:0.24s">Knowing.</span>'; } }}>
+          <h2 className="contact-main-heading contact-sub-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw sgw-accent" style="transition-delay:0s">Stop</span> <span class="sgw sgw-accent" style="transition-delay:0.08s">Guessing.</span> <span class="sgw sgw-accent" style="transition-delay:0.16s">Start</span> <span class="sgw sgw-accent" style="transition-delay:0.24s">Knowing.</span>'; } }}>
             Stop Guessing. Start Knowing.
           </h2>
           <p className="contact-highlight-text max-w-3xl mx-auto leading-relaxed mt-6">
@@ -3111,7 +3811,7 @@ export default function PortfolioPage() {
       <QuickProofSection />
       <AboutSection />
       <WhyMeSection />
-      <WhyWorkWithMeSection />
+      <WhyWeAreDifferentSection />
       <ServicesSection />
       <CaseStudiesSection />
       {/* CaseStudies2Section removed — all 6 cards now in #case-studies */}

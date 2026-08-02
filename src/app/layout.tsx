@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Syne, Anton, Bricolage_Grotesque } from "next/font/google";
+import { Inter, Syne, Anton, Bricolage_Grotesque, Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -27,6 +27,20 @@ const bricolage = Bricolage_Grotesque({
   weight: ["700", "800"],
 });
 
+/* "Why We're Different" section display + body fonts */
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
 export const metadata: Metadata = {
   title: "Mozahidul Islam, E-Commerce Growth Analyst",
   description: "I find exactly where your money is leaking across your products, your ads, and your customers and show you how to stop it. No confusing reports. No generic advice.",
@@ -50,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${syne.variable} ${anton.variable} ${bricolage.variable} antialiased`}
+        className={`${inter.variable} ${syne.variable} ${anton.variable} ${bricolage.variable} ${fraunces.variable} ${manrope.variable} antialiased`}
         style={{ fontFamily: "var(--font-inter), sans-serif" }}
       >
         {children}
