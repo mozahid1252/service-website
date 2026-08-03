@@ -457,7 +457,7 @@ const TESTIMONIALS = [
   {
     quote: '"I was 72 hours from closing my business. The Health Check showed me something that destroyed and rebuilt me at the same time: I wasn\'t failing because of bad products. I was failing because I had no idea what was actually happening in my own business."',
     author: 'Marcus T., NOIRE Collective',
-    profit: '-$1.7K/mo ➔ +$33K/mo in 73 days',
+    profit: '-$1.7K/mo ➔ +$33K/mo in 60–70 days',
   },
   {
     quote: '"In running, we have a concept called junk miles. Miles that feel productive because you\'re moving. But they don\'t make you faster. My $8,400/month in ads were junk miles. The best investment I\'ve ever made cost less than my running shoes."',
@@ -1570,7 +1570,7 @@ function WhyMeSection() {
           <div className="glass rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto">
             <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-4">What A Founder Says</div>
             <p className="text-[#F0F4F8] text-base leading-relaxed italic mb-4">
-              &quot;I fired my $2,500/month agency because their &apos;amazing dashboards&apos; still left me broke. The Health Check found the exact holes in my business in 7 days. I wish I had done this two years earlier.&quot;
+              &quot;I fired my $2,500/month agency because their &apos;amazing dashboards&apos; still left me broke. The Health Check and the Growth Packages found the exact holes in my business in 13 days. I wish I had done this two years earlier.&quot;
             </p>
             <p className="text-[#8899AA] text-sm mb-4">Marcus T., NOIRE Collective</p>
 
@@ -1586,8 +1586,8 @@ function WhyMeSection() {
                 <tbody>
                   <tr>
                     <td className="px-4 py-3 text-[#FF4444]">-$1,690/mo net profit</td>
-                    <td className="px-4 py-3 text-[#00E676] font-semibold">+$33,040/mo net profit</td>
-                    <td className="px-4 py-3 text-[#F5A623]">73 days</td>
+                    <td className="px-4 py-3 text-[#00E676] font-semibold">+$15,000/mo net profit</td>
+                    <td className="px-4 py-3 text-[#F5A623]">60–70 days</td>
                   </tr>
                 </tbody>
               </table>
@@ -1652,7 +1652,7 @@ function WhyWorkWithMeSection() {
         <div className="glass rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto">
           <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-4">What A Founder Says</div>
           <p className="text-[#F0F4F8] text-base leading-relaxed italic mb-4">
-            &quot;I fired my $2,500/month agency because their &apos;amazing dashboards&apos; still left me broke. The Health Check found the exact holes in my business in 7 days. I wish I had done this two years earlier.&quot;
+            &quot;I fired my $2,500/month agency because their &apos;amazing dashboards&apos; still left me broke. The Health Check and the Growth Packages found the exact holes in my business in 13 days. I wish I had done this two years earlier.&quot;
           </p>
           <p className="text-[#8899AA] text-sm mb-4">Marcus T., NOIRE Collective</p>
 
@@ -1668,8 +1668,8 @@ function WhyWorkWithMeSection() {
               <tbody>
                 <tr>
                   <td className="px-4 py-3 text-[#FF4444]">-$1,690/mo net profit</td>
-                  <td className="px-4 py-3 text-[#00E676] font-semibold">+$33,040/mo net profit</td>
-                  <td className="px-4 py-3 text-[#F5A623]">73 days</td>
+                  <td className="px-4 py-3 text-[#00E676] font-semibold">+$15,000/mo net profit</td>
+                  <td className="px-4 py-3 text-[#F5A623]">60–70 days</td>
                 </tr>
               </tbody>
             </table>
