@@ -3306,31 +3306,45 @@ const FAQ_ITEMS = [
   },
   {
     num: '04',
+    question: 'Does my store really need all 15 analyses in the Data-Driven Growth System?',
+    answer: <>
+      <p>Not always. We can build all 15 for you, or fully customize them based on your needs.</p>
+      <p>If you want the complete picture, we are happy to run all 15 deep analyses. However, every store gets our 8 Core Analytics Foundations (Revenue, Margins, RFM Segments, LTV, Funnels, and Live Dashboards), and for the rest, we can pick only the modules that make the most sense for your business:</p>
+      <div style={{ paddingLeft: '16px', borderLeft: '3px solid rgba(0,198,255,0.3)', margin: '12px 0' }}>
+        <p><strong>If you have many products:</strong><br/>We activate Inventory Forecasting &amp; Return Pattern Analysis.</p>
+        <p><strong>If you have a few core products:</strong><br/>We focus heavily on Market Basket Cross-Sells &amp; LTV Cohorts.</p>
+        <p><strong>If you run heavy discounts:</strong><br/>We prioritize Margin Erosion &amp; Promo Strategy Analysis.</p>
+      </div>
+      <p>During onboarding, you can choose to get all 15 analyses or customize the remaining modules so you get zero fluff and 100% actionable data.</p>
+    </>,
+  },
+  {
+    num: '05',
     question: 'I have a specific, urgent problem (like high return rates or declining ad performance). Do I have to buy a full $1,500 package?',
     answer: <>No. You don't need to commit to a full package if you only need help solving one specific problem.<br /><br />You can choose one of my Specialized Add-On Audits, such as a CRO Audit, Profitability Audit, Marketing Audit, or another focused audit designed around a specific business issue. These are deep-dive, standalone engagements delivered in 7–14 days.<br /><br />If your problem doesn't fit into a predefined audit, you can also use Part 4: Custom Analytics & Insights. I can build a custom analysis specifically around the business question you need answered, using the data and context relevant to your situation.<br /><br />You pay for the problem you need solved, not for analysis you don't need.</>,
   },
   {
-    num: '05',
+    num: '06',
     question: 'My revenue is growing, but I don\'t feel like I\'m making more money. Can you help?',
     answer: <>This is the most common scenario I see. <strong>Revenue is vanity; profit is sanity.</strong> I will run a <strong>Profit Reality Check</strong> on your top products, calculate your true margins (after COGS, ad spend, returns, and shipping), and show you exactly which <strong>"best-sellers" are quietly draining your bank account</strong>.</>,
   },
   {
-    num: '06',
+    num: '07',
     question: 'How much of my time is required during the engagement?',
     answer: <><strong>Very little.</strong> I built this process specifically for busy founders. I handle the data extraction, engineering, and analysis. You simply provide initial platform access, and then join me for the <strong>final strategy call</strong> to review the findings and action plan. You don't need to babysit the project.</>,
   },
   {
-    num: '07',
+    num: '08',
     question: 'I don\'t have a marketing team. Will I actually be able to implement your recommendations?',
     answer: <>Absolutely. I make every recommendation simple enough for a founder or small team to understand and implement without needing a technical background or a dedicated marketing team.<br /><br />You won't get complicated instructions or a 50-page technical report. Every finding comes with a clear, prioritized action plan written in plain business language, such as "Pause this ad," "Fix this checkout step," or "Target these high-value customers."<br /><br />And if you still don't have the time, resources, or confidence to implement something yourself, that's where my Implementation Add-Ons come in. You can choose Done-With-You support for guided implementation or Done-for-You support where I handle the implementation for you.<br /><br />So you can either implement it yourself with clear guidance, or have me help you put it into action.</>,
   },
   {
-    num: '08',
+    num: '09',
     question: 'I\'m nervous about giving access to my Shopify and ad accounts. Is my data secure?',
     answer: <><strong>100% secure.</strong> I use strict, permission-based API connections. For live dashboard and retainer clients, I store all API keys and tokens securely using <strong>environment variables or Secret Manager</strong> — never exposed, never at risk. Your data is used solely for your analysis and is <strong>never shared</strong>.</>,
   },
   {
-    num: '09',
+    num: '10',
     question: 'How fast can we start? I\'m bleeding money.',
     answer: <>The <strong>E-Commerce Health Check</strong> is delivered in exactly <strong>5–7 days</strong>. If your business is losing <strong>$1,690 a month</strong>, you don't have 3 months to wait for a consultant to figure it out. You need to know exactly what to fix <strong>this week</strong>.</>,
   },
@@ -3394,11 +3408,11 @@ function FAQSection() {
           <div className="faq-title-bar"></div>
         </div>
 
-        {/* Q1–Q5 */}
-        {FAQ_ITEMS.slice(0, 5).map((item, i) => renderCard(item, i))}
+        {/* Q1–Q6 */}
+        {FAQ_ITEMS.slice(0, 6).map((item, i) => renderCard(item, i))}
 
-        {/* Q6–Q9 */}
-        {FAQ_ITEMS.slice(5, 9).map((item, i) => renderCard(item, 5 + i))}
+        {/* Q7–Q11 */}
+        {FAQ_ITEMS.slice(6, 11).map((item, i) => renderCard(item, 6 + i))}
 
         {/* ── Bottom CTA ── */}
         <div className="faq-cta">
