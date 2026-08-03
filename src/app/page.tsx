@@ -3267,6 +3267,29 @@ function TechStackSection() {
    ────────────────────────────────────────── */
 const FAQ_ITEMS = [
   {
+    num: '00',
+    question: "I've already bought the Health Check or Growth Package. Do I have to pay full price again to upgrade?",
+    answer: <>
+      <p>No, absolutely not. You only pay for what's new.</p>
+      <p>If you start with a smaller package and want to upgrade later, every dollar you already spent is deducted from the new package price. We simply subtract your previous payment and focus on delivering the new analyses and automated tools you need.</p>
+      <p style={{ marginTop: '16px', marginBottom: '8px' }}><strong>How the Upgrade Credit Works (2 Examples):</strong></p>
+      <div style={{ paddingLeft: '16px', borderLeft: '3px solid rgba(0,198,255,0.3)', marginBottom: '16px' }}>
+        <p style={{ marginBottom: '8px' }}><strong>Example 1: Upgrading from Health Check ($200) to Growth Package ($900)</strong></p>
+        <p>You bought the E-Commerce Health Check for $200 to find immediate profit leaks.</p>
+        <p>You now want the Revenue Growth Accelerator ($900) for deep RFM customer segmentation, channel LTV, and churn analysis.</p>
+        <p><strong>Your Investment: $900 − $200 = $700</strong></p>
+        <p>Your $200 is fully credited, and you get all 5 deeper growth analyses for just the difference.</p>
+      </div>
+      <div style={{ paddingLeft: '16px', borderLeft: '3px solid rgba(0,198,255,0.3)' }}>
+        <p style={{ marginBottom: '8px' }}><strong>Example 2: Upgrading from Growth Package ($900) to Full System ($2,800)</strong></p>
+        <p>You bought the Revenue Growth Accelerator for $900 to segment your customers and optimize your marketing budget.</p>
+        <p>You now want the Data-Driven Growth System ($2,800) to automate your data with BigQuery, live daily dashboards, and 90-day inventory forecasting.</p>
+        <p><strong>Your Investment: $2,800 − $900 = $1,900</strong></p>
+        <p>Your entire $900 is credited, and we build your automated enterprise infrastructure for the remaining balance.</p>
+      </div>
+    </>,
+  },
+  {
     num: '01',
     question: 'My marketing agency already provides dashboards. Why do I need you?',
     answer: <>That's not a problem. Your agency focuses on running and optimizing your marketing. I focus on understanding the business behind the numbers.<br /><br />I go beyond ROAS and campaign metrics by connecting your marketing data with product costs, returns, shipping, customer value, and true profitability. This helps reveal what your dashboards may not show: where you're actually making money, where you're losing it, and what you should do next.<br /><br />Your agency optimizes the campaigns. I uncover the business opportunities behind them.</>,
