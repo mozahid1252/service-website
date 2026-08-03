@@ -5002,6 +5002,11 @@ table.infra-table {
 .wwd-section .st-none { color: var(--wwd-red); font-weight: 700; }
 .wwd-section .st-limited { color: var(--wwd-amber); font-weight: 700; }
 .wwd-section .st-avail { color: #2563EB; font-weight: 700; }
+.wwd-section .st-gold {
+  color: #B8860B;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(184, 134, 11, 0.5), 0 0 12px rgba(184, 134, 11, 0.25);
+}
 
 /* Moz column highlight */
 .wwd-section .moz-col {
