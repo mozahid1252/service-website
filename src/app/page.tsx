@@ -1474,8 +1474,8 @@ function AboutSection() {
               <a href={`${basePath}/pdfs/resume.pdf`} download="Mozahidul_Islam_Resume.pdf" className="about2-btn about2-btn-primary">
                 <Download size={16} /> Download CV
               </a>
-              <a href="#case-studies" className="about2-btn about2-btn-secondary">
-                <BarChart3 size={16} /> See My Projects
+              <a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="about2-btn about2-btn-secondary">
+                <BarChart3 size={16} /> Explore My Projects
               </a>
             </div>
           </div>
@@ -3475,12 +3475,12 @@ function ContactSection() {
           <h2 className="contact-main-heading whitespace-nowrap">
             Let&apos;s Find Your Next <span className="money-accent">$10,000.</span>
           </h2>
-          <h2 className="contact-main-heading contact-sub-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw sgw-accent" style="transition-delay:0s">Stop</span> <span class="sgw sgw-accent" style="transition-delay:0.08s">Guessing.</span> <span class="sgw sgw-accent" style="transition-delay:0.16s">Start</span> <span class="sgw sgw-accent" style="transition-delay:0.24s">Knowing.</span>'; } }}>
-            Stop Guessing. Start Knowing.
-          </h2>
           <p className="contact-highlight-text max-w-3xl mx-auto leading-relaxed mt-6">
             Every e-commerce business already has opportunities hidden inside its data. The difference is knowing where to look. MozIntelligence helps uncover what&apos;s holding back your growth, explains it in plain business language, and provides a clear roadmap to increase revenue, improve profitability, and make smarter decisions.
           </p>
+          <h2 className="contact-main-heading contact-sub-heading sg-sk-text mt-8" style={{ fontSize: 'clamp(16px, 2.5vw, 26px)', lineHeight: '1.3' }} ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw sgw-accent" style="transition-delay:0s">Stop</span> <span class="sgw sgw-accent" style="transition-delay:0.08s">Guessing.</span><br/><span class="sgw sgw-accent" style="transition-delay:0.16s">Start</span> <span class="sgw sgw-accent" style="transition-delay:0.24s">Knowing.</span>'; } }}>
+            Stop Guessing.<br/>Start Knowing.
+          </h2>
         </div>
 
         {/* Primary CTA */}
@@ -3676,12 +3676,11 @@ function ContactSection() {
               </div>
             </div>
 
-            <a href="#" className="btn-press glass rounded-2xl p-6 flex items-center justify-center gap-3 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,198,255,0.3)] group"
+            <a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="btn-press glass rounded-2xl p-6 flex items-center justify-center gap-3 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,198,255,0.3)] group"
               style={{ background: 'linear-gradient(135deg, rgba(0,198,255,0.1), rgba(0,114,255,0.1))' }}>
               <Clock size={20} className="text-[#00C6FF]" />
               <div>
-                <div className="text-white font-bold text-base">Book Discovery Call</div>
-                <div className="text-[#8899AA] text-xs">Free 20-minute consultation</div>
+                <div className="text-white font-bold text-base">Explore My Projects &amp; Dashboards</div>
               </div>
               <ArrowRight size={18} className="text-[#00C6FF] ml-auto group-hover:translate-x-2 transition-transform" />
             </a>
