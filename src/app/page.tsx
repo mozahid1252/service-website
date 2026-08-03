@@ -3269,25 +3269,7 @@ const FAQ_ITEMS = [
   {
     num: '00',
     question: "I've already bought the Health Check or Growth Package. Do I have to pay full price again to upgrade?",
-    answer: <>
-      <p>No, absolutely not. You only pay for what's new.</p>
-      <p>If you start with a smaller package and want to upgrade later, every dollar you already spent is deducted from the new package price. We simply subtract your previous payment and focus on delivering the new analyses and automated tools you need.</p>
-      <p style={{ marginTop: '16px', marginBottom: '8px' }}><strong>How the Upgrade Credit Works (2 Examples):</strong></p>
-      <div style={{ paddingLeft: '16px', borderLeft: '3px solid rgba(0,198,255,0.3)', marginBottom: '16px' }}>
-        <p style={{ marginBottom: '8px' }}><strong>Example 1: Upgrading from Health Check ($200) to Growth Package ($900)</strong></p>
-        <p>You bought the E-Commerce Health Check for $200 to find immediate profit leaks.</p>
-        <p>You now want the Revenue Growth Accelerator ($900) for deep RFM customer segmentation, channel LTV, and churn analysis.</p>
-        <p><strong>Your Investment: $900 − $200 = $700</strong></p>
-        <p>Your $200 is fully credited, and you get all 5 deeper growth analyses for just the difference.</p>
-      </div>
-      <div style={{ paddingLeft: '16px', borderLeft: '3px solid rgba(0,198,255,0.3)' }}>
-        <p style={{ marginBottom: '8px' }}><strong>Example 2: Upgrading from Growth Package ($900) to Full System ($2,800)</strong></p>
-        <p>You bought the Revenue Growth Accelerator for $900 to segment your customers and optimize your marketing budget.</p>
-        <p>You now want the Data-Driven Growth System ($2,800) to automate your data with BigQuery, live daily dashboards, and 90-day inventory forecasting.</p>
-        <p><strong>Your Investment: $2,800 − $900 = $1,900</strong></p>
-        <p>Your entire $900 is credited, and we build your automated enterprise infrastructure for the remaining balance.</p>
-      </div>
-    </>,
+    answer: <>No, absolutely not. <strong>You only pay for what's new.</strong><br /><br />If you start with a smaller package and want to upgrade later, <strong>every dollar you already spent is deducted from the new package price.</strong> We simply subtract your previous payment and focus on delivering the new analyses and automated tools you need.<br /><br /><strong>How the Upgrade Credit Works (2 Examples):</strong><br /><br /><strong>Example 1: Upgrading from Health Check ($200) to Growth Package ($900)</strong><br />You bought the E-Commerce Health Check for $200 to find immediate profit leaks. You now want the Revenue Growth Accelerator ($900) for deep RFM customer segmentation, channel LTV, and churn analysis.<br /><strong>Your Investment: $900 − $200 = $700</strong><br />Your $200 is fully credited, and you get all 5 deeper growth analyses for just the difference.<br /><br /><strong>Example 2: Upgrading from Growth Package ($900) to Full System ($2,800)</strong><br />You bought the Revenue Growth Accelerator for $900 to segment your customers and optimize your marketing budget. You now want the Data-Driven Growth System ($2,800) to automate your data with BigQuery, live daily dashboards, and 90-day inventory forecasting.<br /><strong>Your Investment: $2,800 − $900 = $1,900</strong><br />Your entire $900 is credited, and we build your automated enterprise infrastructure for the remaining balance.</>,
   },
   {
     num: '01',
@@ -3307,16 +3289,7 @@ const FAQ_ITEMS = [
   {
     num: '04',
     question: 'Does my store really need all 15 analyses in the Data-Driven Growth System?',
-    answer: <>
-      <p>Not always. We can build all 15 for you, or fully customize them based on your needs.</p>
-      <p>If you want the complete picture, we are happy to run all 15 deep analyses. However, every store gets our 8 Core Analytics Foundations (Revenue, Margins, RFM Segments, LTV, Funnels, and Live Dashboards), and for the rest, we can pick only the modules that make the most sense for your business:</p>
-      <div style={{ paddingLeft: '16px', borderLeft: '3px solid rgba(0,198,255,0.3)', margin: '12px 0' }}>
-        <p><strong>If you have many products:</strong><br/>We activate Inventory Forecasting &amp; Return Pattern Analysis.</p>
-        <p><strong>If you have a few core products:</strong><br/>We focus heavily on Market Basket Cross-Sells &amp; LTV Cohorts.</p>
-        <p><strong>If you run heavy discounts:</strong><br/>We prioritize Margin Erosion &amp; Promo Strategy Analysis.</p>
-      </div>
-      <p>During onboarding, you can choose to get all 15 analyses or customize the remaining modules so you get zero fluff and 100% actionable data.</p>
-    </>,
+    answer: <>Not always. <strong>We can build all 15 for you, or fully customize them based on your needs.</strong><br /><br />If you want the complete picture, we are happy to run all 15 deep analyses. However, every store gets our <strong>8 Core Analytics Foundations</strong> (Revenue, Margins, RFM Segments, LTV, Funnels, and Live Dashboards), and for the rest, we can pick only the modules that make the most sense for your business:<br /><br /><strong>If you have many products:</strong> We activate Inventory Forecasting &amp; Return Pattern Analysis.<br /><strong>If you have a few core products:</strong> We focus heavily on Market Basket Cross-Sells &amp; LTV Cohorts.<br /><strong>If you run heavy discounts:</strong> We prioritize Margin Erosion &amp; Promo Strategy Analysis.<br /><br />During onboarding, you can choose to get all 15 analyses or customize the remaining modules so you get <strong>zero fluff and 100% actionable data.</strong></>,
   },
   {
     num: '05',
