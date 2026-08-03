@@ -3757,7 +3757,7 @@ function Footer() {
 
           {/* Column 4: Services — Individual Packages (Part 1 & Part 3) */}
           <div>
-            <h4 className="text-white font-bold text-sm mb-4">&nbsp;</h4>
+            <h4 className="text-white font-bold text-sm mb-4">Details</h4>
             <ul className="space-y-2.5">
               {[
                 { label: 'E-Commerce Health Check', href: '/health-check' },
@@ -3776,7 +3776,7 @@ function Footer() {
 
           {/* Column 5: Services — Individual Packages (Part 2 Audits) */}
           <div>
-            <h4 className="text-white font-bold text-sm mb-4">&nbsp;</h4>
+            <h4 className="text-white font-bold text-sm mb-4">Details</h4>
             <ul className="space-y-2.5">
               {[
                 { label: 'Marketing Audit', href: '/marketing-spend-audit' },
