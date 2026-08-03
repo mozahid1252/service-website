@@ -3475,12 +3475,12 @@ function ContactSection() {
           <h2 className="contact-main-heading whitespace-nowrap">
             Let&apos;s Find Your Next <span className="money-accent">$10,000.</span>
           </h2>
+          <h2 className="contact-main-heading contact-sub-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw sgw-accent" style="transition-delay:0s">Stop</span> <span class="sgw sgw-accent" style="transition-delay:0.08s">Guessing.</span> <span class="sgw sgw-accent" style="transition-delay:0.16s">Start</span> <span class="sgw sgw-accent" style="transition-delay:0.24s">Knowing.</span>'; } }}>
+            Stop Guessing. Start Knowing.
+          </h2>
           <p className="contact-highlight-text max-w-3xl mx-auto leading-relaxed mt-6">
             Every e-commerce business already has opportunities hidden inside its data. The difference is knowing where to look. MozIntelligence helps uncover what&apos;s holding back your growth, explains it in plain business language, and provides a clear roadmap to increase revenue, improve profitability, and make smarter decisions.
           </p>
-          <h2 className="contact-main-heading contact-sub-heading sg-sk-text mt-8" style={{ fontSize: 'clamp(16px, 2.5vw, 26px)', lineHeight: '1.3' }} ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw sgw-accent" style="transition-delay:0s">Stop</span> <span class="sgw sgw-accent" style="transition-delay:0.08s">Guessing.</span><br/><span class="sgw sgw-accent" style="transition-delay:0.16s">Start</span> <span class="sgw sgw-accent" style="transition-delay:0.24s">Knowing.</span>'; } }}>
-            Stop Guessing.<br/>Start Knowing.
-          </h2>
         </div>
 
         {/* Primary CTA */}
@@ -3697,7 +3697,6 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top section with brand statement */}
         <div className="text-center mb-16">
-          <h3 className="section-headline text-[clamp(13px,1.75vw,22px)] mb-6 uppercase tracking-tight reveal-up sg-sk-text" style={{ transitionDelay: '0.2s' }} ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw" style="color:#EF4444;transition-delay:0s">Stop</span> <span class="sgw" style="color:#EF4444;transition-delay:0.08s">Guessing.</span> <span class="sgw" style="color:#22C55E;transition-delay:0.16s">Start</span> <span class="sgw" style="color:#22C55E;transition-delay:0.24s">Knowing.</span>'; } }}>Stop Guessing. Start Knowing.</h3>
           <p className="font-bold text-[clamp(28px,4vw,46px)] leading-[1.18] tracking-tight max-w-3xl mx-auto mb-2" style={{ background: 'linear-gradient(135deg, #FFFFFF 0%, #E5E7EB 50%, #38BDF8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
             Your data already has the answers. Let me find them for you.
           </p>
@@ -3718,6 +3717,7 @@ function Footer() {
             <p className="text-[#8899AA] text-sm leading-relaxed">
               We transform raw data into clear, profitable decisions. We don&apos;t just deliver numbers, we deliver answers, direction, and results.
             </p>
+            <h4 className="text-white font-bold text-sm mt-4 uppercase tracking-tight">Stop Guessing. Start Knowing.</h4>
           </div>
 
           {/* Column 2: Quick Links */}
