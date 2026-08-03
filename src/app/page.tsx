@@ -1391,7 +1391,7 @@ function AboutSection() {
                 Hi, I&apos;m <strong>Mozahidul Islam</strong>, E-Commerce Growth Analyst.
               </p>
               <p>
-                For 3 years, I worked behind the scenes at a Bangladesh-based agency, leading the data strategy and analysis for e-commerce clients. The kind of deep-dive work you&apos;ll see in the case studies on this site.
+                For 3 years, I worked behind the scenes at a data consulting firm, leading the data strategy and analysis for e-commerce clients. The kind of deep-dive work you&apos;ll see in the case studies on this site.
               </p>
               <p>
                 In 2026, I decided it was time to do this on my own. Not because the work changed, it&apos;s the same rigor, the same process, but because I wanted to work directly with founders, build real relationships, and skip the layers in between.
@@ -3269,7 +3269,7 @@ const FAQ_ITEMS = [
   {
     num: '01',
     question: 'My marketing agency already provides dashboards. Why do I need you?',
-    answer: <>Agencies are paid to spend your money, and their dashboards are designed to justify their retainers. They will show you a <strong>"4.2x ROAS"</strong> while your bank account empties. I don't care about vanity metrics; I care about <strong>net profit</strong>. I act as your independent data detective, exposing the <strong>True Profit ROAS</strong> of your campaigns so you know exactly where you're actually making money.</>,
+    answer: <>That's not a problem. Your agency focuses on running and optimizing your marketing. I focus on understanding the business behind the numbers.<br /><br />I go beyond ROAS and campaign metrics by connecting your marketing data with product costs, returns, shipping, customer value, and true profitability. This helps reveal what your dashboards may not show: where you're actually making money, where you're losing it, and what you should do next.<br /><br />Your agency optimizes the campaigns. I uncover the business opportunities behind them.</>,
   },
   {
     num: '02',
@@ -3284,7 +3284,7 @@ const FAQ_ITEMS = [
   {
     num: '04',
     question: 'I have a specific, urgent problem (like high return rates or declining ad performance). Do I have to buy a full $1,500 package?',
-    answer: <>No. If you have one critical pain point, you can choose one of my <strong>6 Specialized Add-On Audits</strong> (like the CRO Audit, Profitability Audit, or Marketing Spend Audit). These are deep-dive, standalone engagements delivered in <strong>7–14 days</strong>, starting at <strong>$250</strong>.</>,
+    answer: <>No. You don't need to commit to a full package if you only need help solving one specific problem.<br /><br />You can choose one of my Specialized Add-On Audits, such as a CRO Audit, Profitability Audit, Marketing Audit, or another focused audit designed around a specific business issue. These are deep-dive, standalone engagements delivered in 7–14 days.<br /><br />If your problem doesn't fit into a predefined audit, you can also use Part 4: Custom Analytics & Insights. I can build a custom analysis specifically around the business question you need answered, using the data and context relevant to your situation.<br /><br />You pay for the problem you need solved, not for analysis you don't need.</>,
   },
   {
     num: '05',
@@ -3299,7 +3299,7 @@ const FAQ_ITEMS = [
   {
     num: '07',
     question: 'I don\'t have a marketing team. Will I actually be able to implement your recommendations?',
-    answer: <>Yes. I don't hand you a 50-page technical document and disappear. Every finding comes with a <strong>prioritized, plain-language action plan</strong> (e.g., "Pause this ad," "Enable guest checkout," "Email these 312 at-risk customers today"). Many of my clients are solo founders or small teams who implement the <strong>"quick wins" within hours of our call</strong>.</>,
+    answer: <>Absolutely. I make every recommendation simple enough for a founder or small team to understand and implement without needing a technical background or a dedicated marketing team.<br /><br />You won't get complicated instructions or a 50-page technical report. Every finding comes with a clear, prioritized action plan written in plain business language, such as "Pause this ad," "Fix this checkout step," or "Target these high-value customers."<br /><br />And if you still don't have the time, resources, or confidence to implement something yourself, that's where my Implementation Add-Ons come in. You can choose Done-With-You support for guided implementation or Done-for-You support where I handle the implementation for you.<br /><br />So you can either implement it yourself with clear guidance, or have me help you put it into action.</>,
   },
   {
     num: '08',
@@ -3697,13 +3697,11 @@ function Footer() {
     <footer className="bg-[#020408] border-t border-[rgba(0,198,255,0.08)] pt-16 pb-20 sm:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top section with brand statement */}
-        <div className="text-center mb-12">
-          <h3 className="section-headline text-[clamp(19px,2.5vw,31px)] mb-3 uppercase tracking-tight reveal-up sg-sk-text" style={{ transitionDelay: '0.2s' }} ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw" style="color:#EF4444;transition-delay:0s">Stop</span> <span class="sgw" style="color:#EF4444;transition-delay:0.08s">Guessing.</span> <span class="sgw" style="color:#22C55E;transition-delay:0.16s">Start</span> <span class="sgw" style="color:#22C55E;transition-delay:0.24s">Knowing.</span>'; } }}>Stop Guessing. Start Knowing.</h3>
-          <p className="text-[#8899AA] text-base max-w-xl mx-auto mb-6">Your data already has the answers. Let me find them for you.</p>
-          <a href="#contact" className="btn-press inline-flex items-center gap-2 px-8 py-3 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
-            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
-            Book Your Free Discovery Call <ArrowRight size={16} />
-          </a>
+        <div className="text-center mb-16">
+          <h3 className="section-headline text-[clamp(19px,2.5vw,31px)] mb-6 uppercase tracking-tight reveal-up sg-sk-text" style={{ transitionDelay: '0.2s' }} ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw" style="color:#EF4444;transition-delay:0s">Stop</span> <span class="sgw" style="color:#EF4444;transition-delay:0.08s">Guessing.</span> <span class="sgw" style="color:#22C55E;transition-delay:0.16s">Start</span> <span class="sgw" style="color:#22C55E;transition-delay:0.24s">Knowing.</span>'; } }}>Stop Guessing. Start Knowing.</h3>
+          <p className="font-bold text-[clamp(28px,4vw,46px)] leading-[1.18] tracking-tight max-w-3xl mx-auto mb-2" style={{ background: 'linear-gradient(135deg, #FFFFFF 0%, #E5E7EB 50%, #38BDF8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent', color: 'transparent' }}>
+            Your data already has the answers. Let me find them for you.
+          </p>
         </div>
 
         <div className="section-divider mb-12" />
