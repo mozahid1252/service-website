@@ -2259,7 +2259,7 @@ function ServicesSection() {
         </div>
 
         {/* Part 1: Core Packages */}
-        <div className="mb-20">
+        <div id="part-1" className="mb-20">
           <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 1: Core E-Commerce Packages</h3>
           <p className="text-[#8899AA] text-sm mb-8">Three tiers, one retainer. Designed to meet your store wherever it is today.</p>
 
@@ -2369,7 +2369,7 @@ function ServicesSection() {
         </div>
 
         {/* Part 2: Add-On Packages */}
-        <div className="mb-20">
+        <div id="part-2" className="mb-20">
           <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 2: Specialized Add-On Packages</h3>
           <p className="text-[#00C6FF] text-base font-semibold mb-1">Have One Specific Problem?</p>
           <p className="text-[#8899AA] text-sm mb-8">Six focused audits, each one built around a single critical business question. Delivered in 7–14 days.</p>
@@ -2418,7 +2418,7 @@ function ServicesSection() {
         </div>
 
         {/* Part 3: Data Infrastructure */}
-        <div>
+        <div id="part-3">
           <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 3: Data Setup &amp; Infrastructure</h3>
           <p className="gradient-text text-base font-semibold mb-1">The Technical Foundation.</p>
           <p className="text-[#8899AA] text-sm mb-8">
@@ -2533,7 +2533,7 @@ function ServicesSection() {
         </div>
 
         {/* ── Part 4: Custom Analytics & Insights ── */}
-        <div className="mb-20">
+        <div id="part-4" className="mb-20">
           <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 4: Custom Analytics &amp; Insights</h3>
           <p className="text-[#00C6FF] text-base font-semibold mb-1">Built Around Your Business Questions</p>
           <p className="text-[#8899AA] text-sm mb-8">Not every business problem fits into a standard package. If you need a specific analysis, dashboard, KPI system, or custom report that isn&apos;t covered by our existing services, we can build it around your exact business question, data, and goals.</p>
@@ -2793,7 +2793,7 @@ function ServicesSection() {
           </div>
         </div>
         {/* ── Part 5: Implementation Add-Ons ── */}
-        <div className="mb-20">
+        <div id="part-5" className="mb-20">
           <h3 className="text-white text-base font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 5: Implementation Add-Ons</h3>
           <p className="text-[#00C6FF] text-base font-semibold mb-1">Turn Insights Into Action</p>
           <p className="text-[#8899AA] text-sm mb-8">You now know what&apos;s holding your business back. These implementation services help turn recommendations into real improvements.</p>
@@ -3727,7 +3727,7 @@ function Footer() {
           <div>
             <h4 className="text-white font-bold text-sm mb-4">Quick Links</h4>
             <ul className="space-y-2.5">
-              {[{label:'Home',href:'#hero'},{label:'About',href:'#about'},{label:'Case Studies',href:'#case-studies'},{label:'Process',href:'#process'},{label:'Contact',href:'#contact'}].map((link) => (
+              {[{label:'Home',href:'#hero'},{label:'About',href:'#about'},{label:'Case Studies',href:'#case-studies'},{label:'Process',href:'#process'},{label:'Contact',href:'#contact'},{label:'Infrastructure',href:'#technical-portfolio'},{label:"Why We're Different",href:'#why-were-different'}].map((link) => (
                 <li key={link.label}>
                   <a href={link.href} className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5 group">
                     <span className="w-0 group-hover:w-2 h-[1px] bg-[#00C6FF] transition-all duration-200" /> {link.label}
@@ -3741,9 +3741,35 @@ function Footer() {
           <div>
             <h4 className="text-white font-bold text-sm mb-4">Services</h4>
             <ul className="space-y-2.5">
-              {['E-Commerce Health Check', 'Revenue Growth Accelerator', 'Data-Driven Growth System', 'Analytics Partner Retainer', 'Specialized Add-On Audits', 'Data Setup & Infrastructure'].map((s) => (
-                <li key={s}>
-                  <a href="#services" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors">{s}</a>
+              {/* Main categories */}
+              {[
+                { label: 'Core E-Commerce Packages', href: '#part-1' },
+                { label: 'Specialized Add-On Packages', href: '#part-2' },
+                { label: 'Data Setup & Infrastructure', href: '#part-3' },
+                { label: 'Custom Analytics & Insights', href: '#part-4' },
+                { label: 'Implementation Add-Ons', href: '#part-5' },
+              ].map((s) => (
+                <li key={s.label}>
+                  <a href={s.href} className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors font-medium">{s.label}</a>
+                </li>
+              ))}
+              {/* Divider */}
+              <li className="pt-2 pb-1"><span className="block h-px bg-[rgba(0,198,255,0.10)]" /></li>
+              {/* Individual packages */}
+              {[
+                { label: 'Starter Package', href: '/health-check' },
+                { label: 'Growth Package', href: '/revenue-growth-accelerator' },
+                { label: 'Data-Driven Growth System', href: '/data-driven-growth-system' },
+                { label: 'Analytics Partner Retainer', href: '/analytics-partner-retainer' },
+                { label: 'E-Commerce Health Check', href: '/health-check' },
+                { label: 'Customer Retention Audit', href: '/customer-retention-audit' },
+                { label: 'Meta Ads Performance Audit', href: '/meta-ads-performance-audit' },
+                { label: 'Basic Setup', href: '/basic-setup' },
+                { label: 'Full Pipeline Setup', href: '/full-pipeline-setup' },
+                { label: 'Full Pipeline + Automation', href: '/full-pipeline-automation' },
+              ].map((s) => (
+                <li key={s.label}>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors">{s.label}</a>
                 </li>
               ))}
             </ul>
@@ -3753,8 +3779,6 @@ function Footer() {
           <div>
             <h4 className="text-white font-bold text-sm mb-4">Resources & Connect</h4>
             <ul className="space-y-2.5">
-              <li><button className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><FileText size={12}/> Full Services PDF</button></li>
-              <li><button className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Database size={12}/> Data Setup PDF</button></li>
               <li><a href="https://linkedin.com/in/mozahidul-islam-analyst" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Linkedin size={12}/> LinkedIn</a></li>
               <li><a href="https://wa.me/8801940131074" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Phone size={12}/> WhatsApp</a></li>
               <li><a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Github size={12}/> GitHub</a></li>
