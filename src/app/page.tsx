@@ -1361,7 +1361,7 @@ function AboutSection() {
             <div className="about2-hero-stats reveal-up" style={{ transitionDelay: '0.1s' }}>
               <div className="about2-hero-stat">
                 <span className="about2-hero-stat-v">CEO</span>
-                <span className="about2-hero-stat-l">MOZ INTELLIGENCE</span>
+                <span className="about2-hero-stat-l">MOZINTELLIGENCE</span>
               </div>
               <div className="about2-hero-divider" aria-hidden="true" />
               <div className="about2-hero-stat">
@@ -1444,7 +1444,7 @@ function AboutSection() {
               {/* Floating stat card 1 — Revenue */}
               <div className="about2-float-card about2-float-card-1">
                 <span className="about2-float-v">CEO</span>
-                <span className="about2-float-l">MOZ INTELLIGENCE</span>
+                <span className="about2-float-l">MOZINTELLIGENCE</span>
               </div>
               {/* Floating stat card 2 — Experience */}
               <div className="about2-float-card about2-float-card-2">
@@ -2291,7 +2291,7 @@ function ServicesSection() {
                 <ul className="space-y-2 mb-5">
                   {pkg.features.map((f, fi) => (
                     <li key={fi} className="flex items-start gap-2 text-sm text-[#F0F4F8]">
-                      <Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> {f}
+                      <span className="feature-icon feature-yes shrink-0 mt-0.5">{FeatureCheckIcon}</span> {f}
                     </li>
                   ))}
                 </ul>
@@ -3708,9 +3708,9 @@ function Footer() {
 
         <div className="section-divider mb-12" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
           {/* Column 1: Brand */}
-          <div>
+          <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <Image src={`${basePath}/images/logo.png`} alt="Logo" width={44} height={44} className="rounded-lg img-premium" />
               <div>
@@ -3737,11 +3737,10 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Services */}
+          {/* Column 3: Services — Main Categories */}
           <div>
             <h4 className="text-white font-bold text-sm mb-4">Services</h4>
             <ul className="space-y-2.5">
-              {/* Main categories */}
               {[
                 { label: 'Core E-Commerce Packages', href: '#part-1' },
                 { label: 'Specialized Add-On Packages', href: '#part-2' },
@@ -3753,17 +3752,17 @@ function Footer() {
                   <a href={s.href} className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors font-medium">{s.label}</a>
                 </li>
               ))}
-              {/* Divider */}
-              <li className="pt-2 pb-1"><span className="block h-px bg-[rgba(0,198,255,0.10)]" /></li>
-              {/* Individual packages */}
+            </ul>
+          </div>
+
+          {/* Column 4: Services — Individual Packages (Part 1 & Part 3) */}
+          <div>
+            <h4 className="text-white font-bold text-sm mb-4">&nbsp;</h4>
+            <ul className="space-y-2.5">
               {[
-                { label: 'Starter Package', href: '/health-check' },
-                { label: 'Growth Package', href: '/revenue-growth-accelerator' },
-                { label: 'Data-Driven Growth System', href: '/data-driven-growth-system' },
-                { label: 'Analytics Partner Retainer', href: '/analytics-partner-retainer' },
                 { label: 'E-Commerce Health Check', href: '/health-check' },
-                { label: 'Customer Retention Audit', href: '/customer-retention-audit' },
-                { label: 'Meta Ads Performance Audit', href: '/meta-ads-performance-audit' },
+                { label: 'Revenue Growth Accelerator', href: '/revenue-growth-accelerator' },
+                { label: 'Data-Driven Growth System', href: '/data-driven-growth-system' },
                 { label: 'Basic Setup', href: '/basic-setup' },
                 { label: 'Full Pipeline Setup', href: '/full-pipeline-setup' },
                 { label: 'Full Pipeline + Automation', href: '/full-pipeline-automation' },
@@ -3775,7 +3774,27 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Resources & Connect */}
+          {/* Column 5: Services — Individual Packages (Part 2 Audits) */}
+          <div>
+            <h4 className="text-white font-bold text-sm mb-4">&nbsp;</h4>
+            <ul className="space-y-2.5">
+              {[
+                { label: 'Marketing Audit', href: '/marketing-spend-audit' },
+                { label: 'Customer Retention Audit', href: '/customer-retention-audit' },
+                { label: 'Product Portfolio Audit', href: '/product-portfolio-audit' },
+                { label: 'CRO / Website Audit', href: '/cro-audit' },
+                { label: 'Profitability Audit', href: '/profitability-audit' },
+                { label: 'Operations Efficiency Audit', href: '/operations-efficiency-audit' },
+                { label: 'Meta Ads Performance Audit', href: '/meta-ads-performance-audit' },
+              ].map((s) => (
+                <li key={s.label}>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors">{s.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 6: Resources & Connect */}
           <div>
             <h4 className="text-white font-bold text-sm mb-4">Resources & Connect</h4>
             <ul className="space-y-2.5">
