@@ -607,7 +607,7 @@
   .action-badge.validate{background:var(--info-soft);color:var(--info)}
 
   /* ============ DELIVERABLES ============ */
-  .deliverables-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .deliverables-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
   .deliverable-card{
     background:var(--bg-card);border:1px solid var(--border-1);
     border-radius:var(--radius-lg);padding:28px;

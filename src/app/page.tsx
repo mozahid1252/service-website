@@ -1354,7 +1354,7 @@ function AboutSection() {
             <div className="about2-identity reveal-up">
               <span className="about2-eyebrow">About</span>
               <h2 className="about2-name">Mozahidul Islam</h2>
-              <p className="about2-role">E-Commerce Growth Analyst</p>
+              <p className="about2-role">E-Commerce Growth Scientist</p>
             </div>
 
             {/* Hero stats */}
@@ -1388,7 +1388,7 @@ function AboutSection() {
             {/* Introduction */}
             <div className="about2-intro reveal-up" style={{ transitionDelay: '0.3s' }}>
               <p>
-                Hi, I&apos;m <strong>Mozahidul Islam</strong>, E-Commerce Growth Analyst.
+                Hi, I&apos;m <strong>Mozahidul Islam</strong>, E-Commerce Growth Scientist.
               </p>
               <p>
                 For 3 years, I worked behind the scenes at a data consulting firm, leading the data strategy and analysis for e-commerce clients. The kind of deep-dive work you&apos;ll see in the case studies on this site.
@@ -1847,7 +1847,7 @@ function WhyWeAreDifferentSection() {
 
             <h1 className="reveal reveal-delay-1 wwd-font-display text-4xl md:text-5xl lg:text-6xl leading-[1.1] font-medium mb-4 flex flex-col gap-1">
               <span style={{ color: 'var(--wwd-indigo)' }}>MozIntelligence</span>
-              <span className="italic font-normal" style={{ color: 'var(--wwd-text-primary)' }}>The Strategic Edge In</span>
+              <span style={{ color: 'var(--wwd-indigo)' }}>The Strategic Edge In</span>
               <span className="font-bold" style={{ color: 'var(--wwd-blue)' }}>E-Commerce Analytics</span>
             </h1>
 
@@ -1971,7 +1971,7 @@ function WhyWeAreDifferentSection() {
               <span className="h-px w-10" style={{ background: 'linear-gradient(90deg, var(--wwd-gold), transparent)' }} aria-hidden="true" />
             </div>
             <h2 className="wwd-font-display text-3xl md:text-4xl font-medium mb-2" style={{ color: 'var(--wwd-text-primary)' }}>
-              A <span className="wwd-gold-text italic">Side-by-Side</span> Comparison
+              A Clear Comparison of What You&apos;re Really Getting
             </h2>
             <p className="max-w-2xl mx-auto text-sm" style={{ color: 'var(--wwd-text-secondary)' }}>
               Every capability, evaluated across three tiers — from basic built-in reporting to the unified strategic intelligence layer.
@@ -3202,7 +3202,7 @@ function ProcessSection() {
 function TechStackSection() {
   const sectionRef = useScrollReveal();
   return (
-    <section className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
+    <section id="tech-stack" className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <span className="section-label reveal-up">The Infrastructure Behind The Insights</span>
@@ -3479,7 +3479,7 @@ function ContactSection() {
             Stop Guessing. Start Knowing.
           </h2>
           <p className="contact-highlight-text max-w-3xl mx-auto leading-relaxed mt-6">
-            Every struggling store already has the data. What it doesn&apos;t have is someone willing to read it honestly, explain it clearly, and act on it decisively.
+            Every e-commerce business already has opportunities hidden inside its data. The difference is knowing where to look. MozIntelligence helps uncover what&apos;s holding back your growth, explains it in plain business language, and provides a clear roadmap to increase revenue, improve profitability, and make smarter decisions.
           </p>
         </div>
 
@@ -3725,7 +3725,7 @@ function Footer() {
           <div>
             <h4 className="text-white font-bold text-sm mb-4">Quick Links</h4>
             <ul className="space-y-2.5">
-              {[{label:'Home',href:'#hero'},{label:'About',href:'#about'},{label:'Case Studies',href:'#case-studies'},{label:'Process',href:'#process'},{label:'Contact',href:'#contact'},{label:'Infrastructure',href:'#technical-portfolio'},{label:"Why We're Different",href:'#why-were-different'}].map((link) => (
+              {[{label:'Home',href:'#hero'},{label:'About',href:'#about'},{label:'Case Studies',href:'#case-studies'},{label:'Process',href:'#process'},{label:'Contact',href:'#contact'},{label:'Infrastructure',href:'#tech-stack'},{label:"Why We're Different",href:'#why-were-different'}].map((link) => (
                 <li key={link.label}>
                   <a href={link.href} className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5 group">
                     <span className="w-0 group-hover:w-2 h-[1px] bg-[#00C6FF] transition-all duration-200" /> {link.label}
@@ -3747,7 +3747,7 @@ function Footer() {
                 { label: 'Implementation Add-Ons', href: '#part-5' },
               ].map((s) => (
                 <li key={s.label}>
-                  <a href={s.href} className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors font-medium">{s.label}</a>
+                  <a href={s.href} className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors font-medium inline-flex items-center gap-1.5 group"><span className="w-0 group-hover:w-2 h-[1px] bg-[#00C6FF] transition-all duration-200" /> {s.label}</a>
                 </li>
               ))}
             </ul>
@@ -3766,7 +3766,7 @@ function Footer() {
                 { label: 'Full Pipeline + Automation', href: '/full-pipeline-automation' },
               ].map((s) => (
                 <li key={s.label}>
-                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors">{s.label}</a>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5 group"><span className="w-0 group-hover:w-2 h-[1px] bg-[#00C6FF] transition-all duration-200" /> {s.label}</a>
                 </li>
               ))}
             </ul>
@@ -3786,7 +3786,7 @@ function Footer() {
                 { label: 'Meta Ads Performance Audit', href: '/meta-ads-performance-audit' },
               ].map((s) => (
                 <li key={s.label}>
-                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors">{s.label}</a>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5 group"><span className="w-0 group-hover:w-2 h-[1px] bg-[#00C6FF] transition-all duration-200" /> {s.label}</a>
                 </li>
               ))}
             </ul>
@@ -3794,12 +3794,12 @@ function Footer() {
 
           {/* Column 6: Resources & Connect */}
           <div>
-            <h4 className="text-white font-bold text-sm mb-4">Resources & Connect</h4>
+            <h4 className="text-white font-bold text-sm mb-4">Connect</h4>
             <ul className="space-y-2.5">
-              <li><a href="https://linkedin.com/in/mozahidul-islam-analyst" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Linkedin size={12}/> LinkedIn</a></li>
-              <li><a href="https://wa.me/8801940131074" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Phone size={12}/> WhatsApp</a></li>
-              <li><a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Github size={12}/> GitHub</a></li>
-              <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5"><Mail size={12}/> Email</a></li>
+              <li><a href="https://linkedin.com/in/mozahidul-islam-analyst" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5 group"><span className="w-0 group-hover:w-2 h-[1px] bg-[#00C6FF] transition-all duration-200" /><Linkedin size={12}/> LinkedIn</a></li>
+              <li><a href="https://wa.me/8801940131074" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5 group"><span className="w-0 group-hover:w-2 h-[1px] bg-[#00C6FF] transition-all duration-200" /><Phone size={12}/> WhatsApp</a></li>
+              <li><a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5 group"><span className="w-0 group-hover:w-2 h-[1px] bg-[#00C6FF] transition-all duration-200" /><Github size={12}/> GitHub</a></li>
+              <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com" target="_blank" rel="noopener noreferrer" className="text-[#8899AA] text-sm hover:text-[#00C6FF] transition-colors inline-flex items-center gap-1.5 group"><span className="w-0 group-hover:w-2 h-[1px] bg-[#00C6FF] transition-all duration-200" /><Mail size={12}/> Email</a></li>
             </ul>
           </div>
         </div>
