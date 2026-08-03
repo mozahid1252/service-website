@@ -3472,10 +3472,10 @@ function ContactSection() {
 
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <h2 className="contact-main-heading whitespace-nowrap">
+          <h2 className="contact-main-heading whitespace-nowrap" style={{ fontSize: 'clamp(19px, 4.3vw, 55px)' }}>
             Let&apos;s Find Your Next <span className="money-accent">$10,000.</span>
           </h2>
-          <h2 className="contact-main-heading contact-sub-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw sgw-accent" style="transition-delay:0s">Stop</span> <span class="sgw sgw-accent" style="transition-delay:0.08s">Guessing.</span> <span class="sgw sgw-accent" style="transition-delay:0.16s">Start</span> <span class="sgw sgw-accent" style="transition-delay:0.24s">Knowing.</span>'; } }}>
+          <h2 className="contact-main-heading contact-sub-heading sg-sk-text" style={{ fontSize: 'clamp(19px, 4.3vw, 55px)' }} ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; el.innerHTML = '<span class="sgw sgw-accent" style="transition-delay:0s">Stop</span> <span class="sgw sgw-accent" style="transition-delay:0.08s">Guessing.</span> <span class="sgw sgw-accent" style="transition-delay:0.16s">Start</span> <span class="sgw sgw-accent" style="transition-delay:0.24s">Knowing.</span>'; } }}>
             Stop Guessing. Start Knowing.
           </h2>
           <p className="contact-highlight-text max-w-3xl mx-auto leading-relaxed mt-6">
@@ -3717,7 +3717,7 @@ function Footer() {
             <p className="text-[#8899AA] text-sm leading-relaxed">
               We transform raw data into clear, profitable decisions. We don&apos;t just deliver numbers, we deliver answers, direction, and results.
             </p>
-            <h4 className="text-white font-bold text-sm mt-4 uppercase tracking-tight">Stop Guessing. Start Knowing.</h4>
+            <h4 className="font-bold text-sm mt-4 uppercase tracking-tight"><span style={{ color: '#EF4444' }}>Stop Guessing.</span> <span style={{ color: '#22C55E' }}>Start Knowing.</span></h4>
           </div>
 
           {/* Column 2: Quick Links */}
