@@ -20,7 +20,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
   { label: 'About', href: '#about' },
-  { label: "Why We're Different", href: '#why-were-different' },
+  { label: "Why Moz's Different", href: '#why-were-different' },
   { label: 'Services', href: '#services' },
   { label: 'Case Studies', href: '#case-studies' },
   { label: 'Technical Portfolio', href: '#technical-portfolio' },
@@ -974,8 +974,8 @@ function Navbar() {
           <a href="#hero" className="flex items-center gap-3 group">
             <Image src={`${basePath}/images/logo.png`} alt="Logo" width={44} height={44} className="rounded-lg transition-transform duration-300 group-hover:scale-105 img-premium" />
             <div className="hidden sm:block">
-              <div className="text-sm font-bold text-white leading-tight">Mozahidul Islam</div>
-              <div className="text-[11px] text-[#8899AA] leading-tight">E-Commerce Growth Analyst</div>
+              <div className="text-sm font-bold text-white leading-tight">MozIntelligence</div>
+              <div className="text-[11px] text-[#8899AA] leading-tight">E-Commerce Growth Focused</div>
             </div>
           </a>
 
@@ -1107,7 +1107,7 @@ function HeroSection() {
 
         {/* Sub-Headline */}
         <span className="section-label max-w-[620px] mx-auto block mb-10 leading-relaxed hero-sub-headline">
-          I find exactly where your money is leaking across your products, your ads, and your customers and show you how to stop it. No confusing reports. No generic advice. Just a clear picture of what is hurting your profit and a specific plan to fix it.
+          MozIntelligence finds exactly where your money is leaking across your products, your ads, and your customers and shows you how to stop it. No confusing reports. No generic advice. Just a clear picture of what is hurting your profit and a specific plan to fix it.
         </span>
 
         {/* CTA Buttons */}
@@ -1377,7 +1377,7 @@ function AboutSection() {
 
             {/* Heading */}
             <div className="about2-heading reveal-up" style={{ transitionDelay: '0.2s' }}>
-              <p className="about2-heading-label">The Analyst Behind the Data</p>
+              <p className="about2-heading-label">The Intelligence Behind the Data</p>
               <h3 className="about2-headline">
                 I Don&apos;t Just Build Dashboards.
                 <br />
@@ -1491,28 +1491,28 @@ function WhyMeSection() {
     {
       num: '01',
       icon: FileText,
-      title: 'I speak business, not jargon.',
+      title: 'We speak business, not jargon.',
       text: 'Every report is written so that a business owner, not a data scientist, can read it, understand it, and act on it immediately. If you need a glossary to read my work, I have failed.',
       keyword: 'Clarity',
     },
     {
       num: '02',
       icon: Target,
-      title: 'I deliver decisions, not data dumps.',
+      title: 'We deliver decisions, not data dumps.',
       text: 'You will never receive a spreadsheet full of numbers with no context. Every single finding comes with a specific, prioritized recommendation and a clear reason why it matters to your bottom line.',
       keyword: 'Decisions',
     },
     {
       num: '03',
       icon: Lightbulb,
-      title: 'I focus on your actual problem.',
+      title: 'We focus on your actual problem.',
       text: 'Every engagement is designed around the specific challenge your business is facing right now, not a generic template copy-pasted from the last client. Your data is unique. Your analysis should be too.',
       keyword: 'Relevance',
     },
     {
       num: '04',
       icon: Rocket,
-      title: 'I build for action, not admiration.',
+      title: 'We build for action, not admiration.',
       text: 'Dashboards and reports that sit unopened are worthless. Everything I build is designed to be used, by you and your team, every day, to make faster and better decisions with complete confidence.',
       keyword: 'Action',
     },
@@ -1530,7 +1530,7 @@ function WhyMeSection() {
           <div className="whyme-header-left whyme-header-left-centered">
             <span className="whyme-eyebrow reveal-up">
               <span className="whyme-eyebrow-dot" aria-hidden="true" />
-              Why Me
+              Why MozIntelligence
             </span>
             <h2 className="whyme-title whyme-title-single whyme-title-gradient reveal-up text-center" style={{ transitionDelay: '0.15s' }}>
               The 4 Principles That Shape Every Engagement
@@ -1840,7 +1840,7 @@ function WhyWeAreDifferentSection() {
               <span className="pulse-dot inline-block w-2 h-2 rounded-full" style={{ background: 'var(--wwd-purple)', color: 'var(--wwd-purple)' }} aria-hidden="true" />
               <span className="text-xs tracking-[0.2em] uppercase font-bold flex items-center" style={{ color: 'var(--wwd-purple)' }}>
                 <svg className="auto-icon-header" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-                Why We&apos;re Different
+                Why MozIntelligence is Different
               </span>
               <span className="h-px w-12" style={{ background: 'linear-gradient(90deg, var(--wwd-purple), transparent)' }} aria-hidden="true" />
             </div>
@@ -3714,8 +3714,8 @@ function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <Image src={`${basePath}/images/logo.png`} alt="Logo" width={44} height={44} className="rounded-lg img-premium" />
               <div>
-                <div className="text-white font-bold text-sm">Mozahidul Islam</div>
-                <div className="text-[#00C6FF] text-[11px] font-medium">E-Commerce Growth Analyst</div>
+                <div className="text-white font-bold text-sm">MozIntelligence</div>
+                <div className="text-[#00C6FF] text-[11px] font-medium">E-Commerce Growth Focused</div>
               </div>
             </div>
             <p className="text-[#8899AA] text-sm leading-relaxed">
