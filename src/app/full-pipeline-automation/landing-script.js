@@ -45,3 +45,27 @@ document.querySelectorAll('.faq-item').forEach(item => {
       updateNumber();
     });
   }
+// Mobile hamburger navigation
+(function() {
+  var hamburger = document.querySelector('.nav-hamburger');
+  var mobileMenu = document.querySelector('.nav-mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+    var links = mobileMenu.querySelectorAll('a');
+    links.forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+      }
+    });
+  }
+})();

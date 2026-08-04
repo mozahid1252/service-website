@@ -10,9 +10,21 @@
       <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
       <li><a href="/" style="color:var(--muted); font-size:14px;">Back to MozIntelligence</a></li>
     </ul>
+
+<!-- Mobile Hamburger Menu -->
+<button class="nav-hamburger" aria-label="Toggle menu" onclick="var m=document.getElementById('mobile-menu-'+this.closest('nav').className.replace(/[^a-zA-Z]/g,''));if(!m){m=this.parentElement.nextElementSibling;}if(m){m.classList.toggle('open');this.classList.toggle('open');}"><span></span><span></span><span></span></button>
     <a href="#pricing" class="nav-cta">Get Started</a>
   </div>
 </nav>
+<div class="nav-mobile-menu" id="mobile-menu-analyticspartnerretainer">
+    <a href="#scope">Scope</a>
+    <a href="#rhythm">Rhythm</a>
+    <a href="#faq">FAQ</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/">Back to MozIntelligence</a>
+    <a href="#pricing" class="nav-mobile-cta">Get Started</a>
+  </div>
+
 
 <header class="hero">
   <div class="container">
@@ -210,5 +222,7 @@
 </section>
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
+
+
 
 
