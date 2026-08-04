@@ -1574,20 +1574,20 @@ function WhyMeSection() {
             </p>
             <p className="text-[#8899AA] text-sm mb-4">Marcus T., NOIRE Collective</p>
 
-            <div className="overflow-hidden rounded-lg border border-[rgba(0,198,255,0.15)]">
-              <table className="w-full text-sm">
+            <div className="overflow-x-auto rounded-lg border border-[rgba(0,198,255,0.15)]">
+              <table className="w-full text-sm min-w-[360px]">
                 <thead>
                   <tr className="bg-[rgba(0,198,255,0.05)]">
                     <th className="px-4 py-2 text-left text-[#FF4444] font-semibold">Before</th>
                     <th className="px-4 py-2 text-left text-[#00E676] font-semibold">After</th>
-                    <th className="px-4 py-2 text-left text-[#F5A623] font-semibold">Time</th>
+                    <th className="px-4 py-2 text-left text-[#F5A623] font-semibold whitespace-nowrap">Time</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td className="px-4 py-3 text-[#FF4444]">-$1,690/mo net profit</td>
                     <td className="px-4 py-3 text-[#00E676] font-semibold">+$15,000/mo net profit</td>
-                    <td className="px-4 py-3 text-[#F5A623]">60–70 days</td>
+                    <td className="px-4 py-3 text-[#F5A623] whitespace-nowrap">60–70 days</td>
                   </tr>
                 </tbody>
               </table>
@@ -1602,10 +1602,10 @@ function WhyMeSection() {
         <div className="whyme-cta reveal-up text-center" style={{ transitionDelay: '1.05s' }}>
           <a
             href="#contact"
-            className="btn-press inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+            className="whyme-cta-btn btn-press inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
             style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
           >
-            <Calendar size={18} />
+            <Calendar size={18} className="flex-shrink-0" />
             Lets Find Revenue You Already Have
           </a>
         </div>
@@ -1656,20 +1656,20 @@ function WhyWorkWithMeSection() {
           </p>
           <p className="text-[#8899AA] text-sm mb-4">Marcus T., NOIRE Collective</p>
 
-          <div className="overflow-hidden rounded-lg border border-[rgba(0,198,255,0.15)]">
-            <table className="w-full text-sm">
+          <div className="overflow-x-auto rounded-lg border border-[rgba(0,198,255,0.15)]">
+            <table className="w-full text-sm min-w-[360px]">
               <thead>
                 <tr className="bg-[rgba(0,198,255,0.05)]">
                   <th className="px-4 py-2 text-left text-[#FF4444] font-semibold">Before</th>
                   <th className="px-4 py-2 text-left text-[#00E676] font-semibold">After</th>
-                  <th className="px-4 py-2 text-left text-[#F5A623] font-semibold">Time</th>
+                  <th className="px-4 py-2 text-left text-[#F5A623] font-semibold whitespace-nowrap">Time</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td className="px-4 py-3 text-[#FF4444]">-$1,690/mo net profit</td>
                   <td className="px-4 py-3 text-[#00E676] font-semibold">+$15,000/mo net profit</td>
-                  <td className="px-4 py-3 text-[#F5A623]">60–70 days</td>
+                  <td className="px-4 py-3 text-[#F5A623] whitespace-nowrap">60–70 days</td>
                 </tr>
               </tbody>
             </table>
@@ -1855,17 +1855,17 @@ function WhyWeAreDifferentSection() {
               Your existing platforms collect data, and various apps provide specialized metrics. However, MozIntelligence transcends traditional reporting by integrating <span style={{ color: 'var(--wwd-text-primary)' }} className="font-semibold">deep business analysis</span>, <span style={{ color: 'var(--wwd-text-primary)' }} className="font-semibold">robust data infrastructure</span>, and <span style={{ color: 'var(--wwd-text-primary)' }} className="font-semibold">strategic implementation support</span> into a single, unified solution.
             </p>
 
-            <div className="reveal reveal-delay-3 grid grid-cols-3 gap-6 mt-6 max-w-xl items-end">
-              <div>
-                <div className="wwd-metric-num text-3xl whitespace-nowrap" style={{ color: 'var(--wwd-blue)' }}>24+</div>
+            <div className="reveal reveal-delay-3 grid grid-cols-3 gap-4 sm:gap-6 mt-6 max-w-xl items-end wwd-metric-row">
+              <div className="wwd-metric-item">
+                <div className="wwd-metric-num text-3xl" style={{ color: 'var(--wwd-blue)' }}>24+</div>
                 <div className="text-[10px] uppercase tracking-wider mt-1 font-bold" style={{ color: 'var(--wwd-text-muted)' }}>Capabilities</div>
               </div>
-              <div>
-                <div className="wwd-metric-num text-xl whitespace-nowrap" style={{ color: 'var(--wwd-teal)' }}>Multiple → 1</div>
+              <div className="wwd-metric-item">
+                <div className="wwd-metric-num text-base sm:text-xl" style={{ color: 'var(--wwd-teal)' }}>Multiple → 1</div>
                 <div className="text-[10px] uppercase tracking-wider mt-3 font-bold" style={{ color: 'var(--wwd-text-muted)' }}>Tools Unified</div>
               </div>
-              <div>
-                <div className="wwd-metric-num text-3xl whitespace-nowrap" style={{ color: 'var(--wwd-purple)' }}>∞</div>
+              <div className="wwd-metric-item">
+                <div className="wwd-metric-num text-3xl" style={{ color: 'var(--wwd-purple)' }}>∞</div>
                 <div className="text-[10px] uppercase tracking-wider mt-1 font-bold" style={{ color: 'var(--wwd-text-muted)' }}>Custom Analysis</div>
               </div>
             </div>

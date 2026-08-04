@@ -2092,7 +2092,18 @@ strong { color: #FFFFFF; font-weight: 700; }
     text-align: center;
     padding: 36px 28px;
   }
-  .faq-cta-btn     { width: 100%; justify-content: center; }
+  .faq-cta-right   { width: 100%; }
+  .faq-cta-btn     {
+    width: 100%;
+    justify-content: center;
+    /* allow long CTA text to wrap naturally inside the card on mobile */
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+    line-height: 1.4;
+    padding: 14px 18px;
+  }
+  .faq-cta-btn svg { flex-shrink: 0; }
 }
 
 /* ============================================
@@ -4855,6 +4866,14 @@ table.infra-table {
   .whyme-title-single { font-size: clamp(22px, 6vw, 32px); letter-spacing: -1px; }
   .whyme-testimonial { margin-top: 48px; }
   .whyme-cta { margin-top: 32px; }
+  /* CTA button: allow long text to wrap naturally inside the viewport */
+  .whyme-cta-btn {
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.4;
+    padding: 14px 20px;
+    text-align: center;
+  }
 }
 
 /* Tighter gap for tool lists that have no descriptions (Cloud / Viz / Platforms) */
@@ -4935,6 +4954,21 @@ table.infra-table {
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
+}
+
+/* ── Why MozIntelligence metric row — proper 3-column isolation ──
+   Each metric is an independent min-width:0 column so the wider
+   "Multiple → 1" value can never overflow into the ∞ column. */
+.wwd-metric-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.wwd-metric-item {
+  min-width: 0;
+  overflow: hidden;
+}
+.wwd-metric-item .wwd-metric-num {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 /* Background layers */
