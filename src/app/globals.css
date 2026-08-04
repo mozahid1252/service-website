@@ -5075,6 +5075,12 @@ table.infra-table {
   box-shadow: 0 0 8px rgba(184, 134, 11, 0.2);
 }
 
+/* Mobile-only: hide the ✓ in the MozIntelligence header label "(✓ Advanced)"
+   so it renders as "(Advanced)" and doesn't wrap awkwardly. Desktop unchanged. */
+@media (max-width: 768px) {
+  .wwd-section .moz-check-hide { display: none; }
+}
+
 /* Floating animation */
 @keyframes wwd-float {
   0%, 100% { transform: translateY(0); }

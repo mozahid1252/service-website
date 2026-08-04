@@ -2007,7 +2007,7 @@ function WhyWeAreDifferentSection() {
                     <div className="h-full flex flex-col justify-end items-start gap-2">
                       <div className="flex items-baseline gap-2">
                         <span className="text-lg font-bold normal-case tracking-normal" style={{ color: 'var(--wwd-gold)' }}>MozIntelligence</span>
-                        <span className="text-xs font-medium normal-case" style={{ color: 'var(--wwd-gold-light)' }}>(✓ Advanced)</span>
+                        <span className="text-xs font-medium normal-case" style={{ color: 'var(--wwd-gold-light)' }}>(<span className="moz-check-hide">✓ </span>Advanced)</span>
                       </div>
                       <span className="premium-badge">The Strategic Choice</span>
                     </div>
