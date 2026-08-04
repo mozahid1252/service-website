@@ -69,3 +69,35 @@ document.querySelectorAll('.faq-item').forEach(item => {
     });
   }
 })();
+
+
+// Mobile: convert all grid layouts to stacked flex column to prevent horizontal overflow
+(function() {
+  function fixMobileGrids() {
+    var isMobile = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+    document.querySelectorAll('[class*="grid"], [class*="row"], [style*="grid-template"]').forEach(function(el) {
+      if (isMobile) {
+        if (!el.getAttribute('data-grid-fixed')) {
+          if (getComputedStyle(el).display === 'grid') {
+            el.setAttribute('data-grid-fixed', '1');
+            el.style.setProperty('display', 'flex', 'important');
+            el.style.setProperty('flex-direction', 'column', 'important');
+          }
+        }
+      } else {
+        if (el.getAttribute('data-grid-fixed')) {
+          el.style.removeProperty('display');
+          el.style.removeProperty('flex-direction');
+          el.removeAttribute('data-grid-fixed');
+        }
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixMobileGrids);
+  } else {
+    fixMobileGrids();
+  }
+  var rt;
+  window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
+})();

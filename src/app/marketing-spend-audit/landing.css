@@ -10,6 +10,7 @@ section { padding: 80px 0; border-bottom: 1px solid var(--border); }
 a { text-decoration: none; color: inherit; }
 .nav { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 100; width: calc(100% - 32px); max-width: 1100px; background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.6); box-shadow: var(--shadow); border-radius: 100px; padding: 12px 24px; }
 .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-links { display:flex; align-items:center; }
 .logo { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 16px; display: flex; align-items: center; gap: 8px; }
 .logo span { color: var(--accent); }
 .nav-cta { background: var(--text); color: #FFF; padding: 8px 18px; border-radius: 100px; font-size: 13px; font-weight: 600; transition: all 0.2s ease; }
@@ -197,4 +198,12 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .nav-hamburger { display: block; }
   .nav-cta { display: none; }
   .nav { border-radius: 16px; }
+}
+
+/* ===== GRID COLUMN MODIFIERS (replaces inline styles) ===== */
+/* Desktop-only: column counts for specific grids. On mobile (<=900px),
+   the existing @media rule sets .outcomes-grid to 1fr with no competition. */
+@media (min-width: 901px) {
+  .outcomes-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .outcomes-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 }

@@ -1,9 +1,11 @@
+<!-- MOBILE-OVERRIDE-SAFETY -->
+<style>@media(max-width:900px){.info-grid,.inclusion-grid,.tech-grid,.service-content,.pd-kpi-row,.pd-chart-row,.pd-monitor-row,.pd-monitor-card{display:flex !important;flex-direction:column !important}.service-text,.service-visual{min-width:0 !important}.code-snippet{overflow-x:auto !important;max-width:100% !important;-webkit-overflow-scrolling:touch}[style*="grid-template-columns"]{display:flex !important;flex-direction:column !important}}</style>
 
 
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="logo">Moz <span>Intelligence</span></a>
-    <ul class="nav-links" style="display:flex; gap:32px; list-style:none;">
+    <ul class="nav-links" style="gap:32px; list-style:none;">
       <li><a href="#included" style="color:var(--muted); font-size:14px;">Included</a></li>
       <li><a href="#services" style="color:var(--muted); font-size:14px;">Services</a></li>
       <li><a href="#dashboard-upgrade" style="color:var(--muted); font-size:14px;">Dashboard</a></li>
@@ -13,7 +15,7 @@
     </ul>
 
 <!-- Mobile Hamburger Menu -->
-<button class="nav-hamburger" aria-label="Toggle menu" onclick="var m=document.getElementById('mobile-menu-'+this.closest('nav').className.replace(/[^a-zA-Z]/g,''));if(!m){m=this.parentElement.nextElementSibling;}if(m){m.classList.toggle('open');this.classList.toggle('open');}"><span></span><span></span><span></span></button>
+<button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <a href="#pricing" class="nav-cta">Get Started</a>
   </div>
 </nav>

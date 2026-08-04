@@ -1,9 +1,11 @@
+<!-- MOBILE-OVERRIDE-SAFETY -->
+<style>@media(max-width:900px){.outcomes-grid,.outcomes-grid.cols-3,.outcomes-grid.cols-4{display:flex !important;flex-direction:column !important;gap:16px !important}}</style>
 
 
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="logo">Moz <span>Intelligence</span></a>
-    <ul class="nav-links" style="display:flex; gap:32px; list-style:none;">
+    <ul class="nav-links" style="gap:32px; list-style:none;">
       <li><a href="#scope" style="color:var(--muted); font-size:14px;">Scope</a></li>
       <li><a href="#outcomes" style="color:var(--muted); font-size:14px;">Outcomes</a></li>
       <li><a href="#analysis" style="color:var(--muted); font-size:14px;">Analysis</a></li>
@@ -15,7 +17,7 @@
     </ul>
 
 <!-- Mobile Hamburger Menu -->
-<button class="nav-hamburger" aria-label="Toggle menu" onclick="var m=document.getElementById('mobile-menu-'+this.closest('nav').className.replace(/[^a-zA-Z]/g,''));if(!m){m=this.parentElement.nextElementSibling;}if(m){m.classList.toggle('open');this.classList.toggle('open');}"><span></span><span></span><span></span></button>
+<button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     <a href="#pricing" class="nav-cta">Get Started</a>
   </div>
 </nav>
@@ -270,7 +272,7 @@
       <div class="eyebrow">Handover</div>
       <h2>What You'll Receive</h2>
     </div>
-    <div class="outcomes-grid" style="grid-template-columns: repeat(4, 1fr);">
+    <div class="outcomes-grid cols-4">
       <div class="deliverable-card scroll-reveal">
         <div class="deliverable-icon"><i class="fa-regular fa-file-lines"></i></div>
         <h4>01</h4>
