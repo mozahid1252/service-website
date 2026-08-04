@@ -96,6 +96,7 @@ a { text-decoration: none; color: inherit; }
 .faq-item.active .faq-a { max-height: 200px; padding-bottom: 24px; }
 .pricing-card { max-width: 500px; margin: 0 auto; background: var(--surface); border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 40px; text-align: center; box-shadow: 0 20px 40px -10px rgba(180,83,9,0.2); }
 .price-amt { font-size: 40px; font-weight: 800; margin: 16px 0 8px; }
+.price-amt .price-part { display: inline; }
 .price-sub { color: var(--muted); margin-bottom: 32px; }
 .price-features { text-align: left; list-style: none; margin-bottom: 32px; }
 .price-features li { display: flex; gap: 10px; font-size: 14px; color: var(--muted); margin-bottom: 12px; align-items: flex-start; }
@@ -176,6 +177,8 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .nav-hamburger { display: block; }
   .nav-cta { display: none; }
   .nav { border-radius: 16px; }
+  /* Mobile price: stack $2,000- / $4,000 on two lines, centered, no overflow */
+  .price-amt .price-part { display: block; line-height: 1.1; }
 }
 
 /* ===== GRID COLUMN MODIFIERS (replaces inline styles) ===== */

@@ -6,20 +6,30 @@ window.addEventListener('scroll', () => {
   else nav.classList.remove('scrolled');
 });
 
-// Mobile menu
-const menuToggle = document.getElementById('menuToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-menuToggle.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-  const icon = menuToggle.querySelector('i');
-  icon.className = mobileMenu.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-});
-mobileMenu.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    menuToggle.querySelector('i').className = 'fa-solid fa-bars';
-  });
-});
+// Mobile hamburger navigation (matches Meta Ads reference)
+(function() {
+  var hamburger = document.querySelector('.nav-hamburger');
+  var mobileMenu = document.querySelector('.nav-mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+    var links = mobileMenu.querySelectorAll('a');
+    links.forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+      }
+    });
+  }
+})();
 
 // Reveal on scroll
 const revealEls = document.querySelectorAll('.reveal');
@@ -46,3 +56,34 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+
+// Mobile: convert all grid layouts to stacked flex column to prevent horizontal overflow
+(function() {
+  function fixMobileGrids() {
+    var isMobile = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+    document.querySelectorAll('[class*="grid"], [class*="row"], [style*="grid-template"]').forEach(function(el) {
+      if (isMobile) {
+        if (!el.getAttribute('data-grid-fixed')) {
+          if (getComputedStyle(el).display === 'grid') {
+            el.setAttribute('data-grid-fixed', '1');
+            el.style.setProperty('display', 'flex', 'important');
+            el.style.setProperty('flex-direction', 'column', 'important');
+          }
+        }
+      } else {
+        if (el.getAttribute('data-grid-fixed')) {
+          el.style.removeProperty('display');
+          el.style.removeProperty('flex-direction');
+          el.removeAttribute('data-grid-fixed');
+        }
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixMobileGrids);
+  } else {
+    fixMobileGrids();
+  }
+  var rt;
+  window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
+})();
