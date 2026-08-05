@@ -296,10 +296,44 @@ email_label: Email Me
 
   return (
     <>
-      {/* Chat Toggle Button — Bottom-Right */}
+      {/* Greeting Badge — appears above chatbot button */}
+      {!isOpen && (
+        <div
+          className={`chatbot-greeting fixed right-5 z-[200] transition-all duration-300 ${
+            isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
+          }`}
+          style={{
+            bottom: '134px', // 58px (button bottom) + 70px (button height) + 6px gap
+            maxWidth: '220px',
+          }}
+        >
+          <div
+            className="relative px-3 py-2 rounded-xl text-xs font-medium text-white text-center"
+            style={{
+              background: 'rgba(8,14,24,0.95)',
+              border: '1px solid rgba(0,198,255,0.25)',
+              boxShadow: '0 4px 15px rgba(0,0,0,0.3), 0 0 15px rgba(0,198,255,0.08)',
+              backdropFilter: 'blur(10px)',
+            }}
+          >
+            💬 Find where your profit is leaking!
+            {/* Pointer triangle pointing down to the chatbot button */}
+            <div
+              className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-0 h-0"
+              style={{
+                borderLeft: '6px solid transparent',
+                borderRight: '6px solid transparent',
+                borderTop: '6px solid rgba(0,198,255,0.25)',
+              }}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* Chat Toggle Button — Bottom-Right, raised ~38px, size increased 25% */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`chatbot-toggle fixed bottom-5 right-5 z-[200] flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:scale-110 ${
+        className={`chatbot-toggle fixed bottom-[58px] right-5 z-[200] flex items-center justify-center w-[70px] h-[70px] rounded-full shadow-lg transition-all duration-300 hover:scale-110 ${
           isOpen ? 'opacity-0 pointer-events-none scale-50' : 'opacity-100'
         }`}
         aria-label="Open chat"
@@ -308,7 +342,7 @@ email_label: Email Me
           boxShadow: '0 0 25px rgba(0,198,255,0.4), 0 4px 15px rgba(0,0,0,0.3)',
         }}
       >
-        <MessageCircle size={24} className="text-[#020408]" />
+        <MessageCircle size={28} className="text-[#020408]" />
         {hasUnread && (
           <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-[#020408]" />
         )}
@@ -322,9 +356,9 @@ email_label: Email Me
         />
       </button>
 
-      {/* Chat Panel — Bottom-Right */}
+      {/* Chat Panel — Bottom-Right, raised to align with button */}
       <div
-        className={`chatbot-panel fixed bottom-5 right-5 z-[201] w-[calc(100vw-2rem)] sm:w-96 max-w-md transition-all duration-300 ${
+        className={`chatbot-panel fixed bottom-[136px] right-5 z-[201] w-[calc(100vw-2rem)] sm:w-96 max-w-md transition-all duration-300 ${
           isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'
         }`}
         style={{

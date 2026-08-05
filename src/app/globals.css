@@ -283,10 +283,10 @@ main {
   max-width: 600px;
 }
 
-/* Back to top button */
+/* Back to top (Scroll-UP) button — positioned at TOP-LEFT, under the navbar */
 .back-to-top {
   position: fixed;
-  bottom: 80px;
+  top: 88px;
   left: 24px;
   z-index: 100;
   width: 48px;
@@ -302,7 +302,7 @@ main {
   cursor: pointer;
   transition: all 0.3s ease;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(-20px);
   pointer-events: none;
 }
 .back-to-top.visible {
@@ -315,12 +315,10 @@ main {
   transform: translateY(-4px) scale(1.05);
 }
 
-/* Back to Footer — matching floating button, positioned at BOTTOM-LEFT
-   (stacked above Back-to-Top). Same size, shape, gradient, glow, shadow,
-   transition, and visibility logic as .back-to-top. */
+/* Back to Footer (Scroll-DOWN) button — positioned at BOTTOM-LEFT */
 .back-to-footer {
   position: fixed;
-  bottom: 140px;
+  bottom: 80px;
   left: 24px;
   z-index: 100;
   width: 48px;
@@ -5416,10 +5414,13 @@ table.infra-table {
 /* Ensure chatbot doesn't overlap mobile sticky bar */
 @media (max-width: 1023px) {
   .chatbot-toggle {
-    bottom: 80px !important;
+    bottom: 118px !important; /* raised 38px above the sticky bar */
   }
   .chatbot-panel {
-    bottom: 80px !important;
+    bottom: 196px !important; /* 118 + 70 (button) + 8 gap */
+  }
+  .chatbot-greeting {
+    bottom: 194px !important; /* 118 + 70 + 6 gap */
   }
 }
 
@@ -5428,12 +5429,17 @@ table.infra-table {
   .chatbot-panel {
     width: calc(100vw - 2rem) !important;
     right: 1rem !important;
-    bottom: 80px !important;
-    height: min(500px, calc(100vh - 120px)) !important;
+    bottom: 196px !important;
+    height: min(500px, calc(100vh - 220px)) !important;
   }
   .chatbot-toggle {
     right: 1rem !important;
-    bottom: 80px !important;
+    bottom: 118px !important;
+  }
+  .chatbot-greeting {
+    right: 1rem !important;
+    bottom: 194px !important;
+    max-width: 200px !important;
   }
 }
 
