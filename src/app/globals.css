@@ -315,13 +315,14 @@ main {
   transform: translateY(-4px) scale(1.05);
 }
 
-/* Back to Footer — matching floating button, stacked below Back-to-Top.
+/* Back to Footer — matching floating button, positioned at TOP-RIGHT.
    Same size, shape, gradient, glow, shadow, transition, and visibility
-   logic as .back-to-top. Only the bottom offset differs so the two
-   buttons sit vertically stacked on the right edge with a gap. */
+   logic as .back-to-top. Uses a top-based position so it sits at the
+   top-right edge (below the fixed navbar), completely separated from
+   the bottom-right Back-to-Top button. */
 .back-to-footer {
   position: fixed;
-  bottom: 24px;
+  top: 88px;
   right: 24px;
   z-index: 100;
   width: 48px;
@@ -337,7 +338,7 @@ main {
   cursor: pointer;
   transition: all 0.3s ease;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(-20px);
   pointer-events: none;
 }
 .back-to-footer.visible {
