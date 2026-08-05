@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { MessageCircle, X, Send, Sparkles, Calendar, Mail } from 'lucide-react';
+import { MessageCircle, X, Send, Sparkles, Calendar, Mail, Trash2 } from 'lucide-react';
 
 interface ChatMessage {
   role: 'user' | 'assistant';
@@ -13,6 +13,9 @@ interface ChatMessage {
 const BOOKING_URL = 'https://calendar.app.google/TGnzfC65zBF3hVeD9';
 // Email: same Gmail compose URL used by the Contact section's "Email Me" button
 const EMAIL_URL = 'https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com&su=Discovery+Call+Inquiry&body=Hi+Mozahidul%2C+I+visited+your+portfolio+and+want+to+discuss+my+e-commerce+data+needs.';
+
+// localStorage key for persisting chat history (unique to avoid conflicts)
+const CHAT_STORAGE_KEY = 'mozintelligence_chat_history';
 
 const QUICK_PROMPTS = [
   "What services do you offer?",
@@ -161,6 +164,8 @@ export function ChatbotWidget() {
   const [hasUnread, setHasUnread] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  // Ref to prevent saving before history is loaded from localStorage (avoids overwriting)
+  const hasInitialized = useRef(false);
   const sessionIdRef = useRef<string>(
     typeof window !== 'undefined'
       ? `session-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
@@ -175,6 +180,54 @@ export function ChatbotWidget() {
   useEffect(() => {
     scrollToBottom();
   }, [messages, scrollToBottom]);
+
+  // Load chat history from localStorage on mount (SSR-safe)
+  useEffect(() => {
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        const saved = window.localStorage.getItem(CHAT_STORAGE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            // Validate each message has required fields
+            const valid = parsed.filter(
+              (m: any) => m && typeof m.role === 'string' && typeof m.content === 'string'
+            );
+            if (valid.length > 0) {
+              setMessages(valid as ChatMessage[]);
+            }
+          }
+        }
+      }
+    } catch (e) {
+      // If localStorage is blocked or JSON is corrupted, remove invalid data and continue
+      try { window.localStorage?.removeItem(CHAT_STORAGE_KEY); } catch {}
+    }
+    // Mark as initialized so subsequent message changes will be saved
+    hasInitialized.current = true;
+  }, []);
+
+  // Save chat history to localStorage whenever messages change (after initialization)
+  useEffect(() => {
+    if (!hasInitialized.current) return;
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        // Only save if there's more than just the welcome message (actual conversation)
+        window.localStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(messages));
+      }
+    } catch (e) {
+      // Silently fail if localStorage is full or blocked
+    }
+  }, [messages]);
+
+  // Clear chat history
+  const clearChat = useCallback(() => {
+    try {
+      window.localStorage?.removeItem(CHAT_STORAGE_KEY);
+    } catch {}
+    // Reset to welcome message with fresh timestamp
+    setMessages([{ ...WELCOME_MESSAGE, timestamp: Date.now() }]);
+  }, []);
 
   // Focus input when chat opens
   useEffect(() => {
@@ -398,13 +451,25 @@ email_label: Email Me
                 </div>
               </div>
             </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-[#8899AA] hover:text-white transition-colors p-1"
-              aria-label="Close chat"
-            >
-              <X size={20} />
-            </button>
+            <div className="flex items-center gap-1">
+              {/* Clear Chat button */}
+              <button
+                onClick={clearChat}
+                className="text-[#8899AA] hover:text-[#00C6FF] transition-colors p-1.5 rounded-md hover:bg-[rgba(0,198,255,0.06)]"
+                aria-label="Clear chat history"
+                title="Clear chat"
+              >
+                <Trash2 size={15} />
+              </button>
+              {/* Close button */}
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-[#8899AA] hover:text-white transition-colors p-1.5 rounded-md hover:bg-[rgba(255,255,255,0.06)]"
+                aria-label="Close chat"
+              >
+                <X size={20} />
+              </button>
+            </div>
           </div>
 
           {/* Messages */}
