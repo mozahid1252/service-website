@@ -29,6 +29,15 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ];
 
+/* Single source of truth for the Services submenu (desktop dropdown + mobile). */
+const SERVICES_SUBMENU = [
+  { label: 'Core E-Commerce Packages', href: '#part-1' },
+  { label: 'Specialized Add-On Packages', href: '#part-2' },
+  { label: 'Data Setup & Infrastructure', href: '#part-3' },
+  { label: 'Custom Analytics & Insights', href: '#part-4' },
+  { label: 'Implementation Add-Ons', href: '#part-5' },
+];
+
 const TRUST_STATS: { target?: number; prefix?: string; suffix?: string; value?: string; label: string; isRating?: boolean; isPrivacy?: boolean; isDeadline?: boolean; ratingLabel?: string }[] = [
   { target: 127, prefix: '+', suffix: '%', label: 'Avg Revenue Growth' },
   { target: 5, prefix: '', suffix: '+', label: 'Proved Case Study' },
@@ -931,7 +940,10 @@ function BestForText({ text }: { text: string }) {
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const servicesHoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [servicesOpen, setServicesOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -960,6 +972,17 @@ function Navbar() {
     };
   }, []);
 
+  // Desktop hover handlers with small delay so the dropdown stays open
+  // while the cursor moves from "Services" into the dropdown panel.
+  const openServices = () => {
+    if (servicesHoverTimeout.current) clearTimeout(servicesHoverTimeout.current);
+    setServicesOpen(true);
+  };
+  const closeServices = () => {
+    if (servicesHoverTimeout.current) clearTimeout(servicesHoverTimeout.current);
+    servicesHoverTimeout.current = setTimeout(() => setServicesOpen(false), 150);
+  };
+
   return (
     <>
       <nav
@@ -980,20 +1003,66 @@ function Navbar() {
           </a>
 
           <div className="hidden lg:flex items-center gap-5">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`text-[13px] font-medium tracking-wide transition-colors duration-200 whitespace-nowrap ${
-                  activeSection === link.href
-                    ? 'nav-link-active'
-                    : 'text-[#8899AA] hover:text-[#00C6FF]'
-                }`
-                }
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              if (link.label === 'Services') {
+                return (
+                  <div
+                    key={link.href}
+                    className="relative nav-services-wrap"
+                    onMouseEnter={openServices}
+                    onMouseLeave={closeServices}
+                  >
+                    <a
+                      href={link.href}
+                      className={`text-[13px] font-medium tracking-wide transition-colors duration-200 whitespace-nowrap inline-flex items-center gap-1 ${
+                        activeSection === link.href || servicesOpen
+                          ? 'nav-link-active'
+                          : 'text-[#8899AA] hover:text-[#00C6FF]'
+                      }`}
+                    >
+                      {link.label}
+                      <svg
+                        className={`transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`}
+                        width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"
+                      >
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </a>
+                    {/* Desktop dropdown */}
+                    <div
+                      className={`nav-services-dropdown absolute left-1/2 top-full pt-2 -translate-x-1/2 transition-all duration-200 ${servicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1'}`}
+                    >
+                      <div className="nav-services-panel min-w-[260px] rounded-lg border border-[rgba(0,198,255,0.16)] bg-[rgba(8,14,24,0.98)] backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] py-2">
+                        {SERVICES_SUBMENU.map((s) => (
+                          <a
+                            key={s.href}
+                            href={s.href}
+                            className="block px-4 py-2.5 text-[13px] font-medium text-[#8899AA] hover:text-[#00C6FF] hover:bg-[rgba(0,198,255,0.06)] transition-colors duration-150 whitespace-nowrap"
+                          >
+                            {s.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`text-[13px] font-medium tracking-wide transition-colors duration-200 whitespace-nowrap ${
+                    activeSection === link.href
+                      ? 'nav-link-active'
+                      : 'text-[#8899AA] hover:text-[#00C6FF]'
+                  }`
+                  }
+                >
+                  {link.label}
+                </a>
+              );
+            })}
             <a
               href="#contact"
               className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
@@ -1015,25 +1084,67 @@ function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-[rgba(2,4,8,0.97)] backdrop-blur-xl flex flex-col items-center justify-center gap-8 transition-all duration-400 ${
+        className={`fixed inset-0 z-40 bg-[rgba(2,4,8,0.97)] backdrop-blur-xl flex flex-col items-center justify-center gap-6 transition-all duration-400 overflow-y-auto py-20 ${
           mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        {NAV_LINKS.map((link, i) => (
-          <a
-            key={link.href}
-            href={link.href}
-            onClick={() => setMobileOpen(false)}
-            className={`text-2xl font-medium transition-all duration-300 ${
-              mobileOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-            } ${
-              activeSection === link.href ? 'text-[#00C6FF]' : 'text-white hover:text-[#00C6FF]'
-            }`}
-            style={{ transitionDelay: mobileOpen ? `${i * 60}ms` : '0ms' }}
-          >
-            {link.label}
-          </a>
-        ))}
+        {NAV_LINKS.map((link, i) => {
+          if (link.label === 'Services') {
+            return (
+              <div key={link.href} className="flex flex-col items-center gap-3" style={{ transitionDelay: mobileOpen ? `${i * 60}ms` : '0ms' }}>
+                <a
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`text-2xl font-medium transition-all duration-300 inline-flex items-center gap-2 ${
+                    mobileOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                  } ${activeSection === link.href ? 'text-[#00C6FF]' : 'text-white hover:text-[#00C6FF]'}`}
+                >
+                  {link.label}
+                  <button
+                    type="button"
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setMobileServicesOpen(!mobileServicesOpen); }}
+                    className="ml-1 text-[#00C6FF] transition-transform duration-200"
+                    style={{ transform: mobileServicesOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                    aria-label="Toggle Services submenu"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
+                  </button>
+                </a>
+                {/* Mobile Services submenu (nested) */}
+                <div
+                  className="flex flex-col items-center gap-3 overflow-hidden transition-all duration-300"
+                  style={{ maxHeight: mobileServicesOpen ? '320px' : '0px', opacity: mobileServicesOpen ? 1 : 0 }}
+                >
+                  {SERVICES_SUBMENU.map((s) => (
+                    <a
+                      key={s.href}
+                      href={s.href}
+                      onClick={() => { setMobileOpen(false); setMobileServicesOpen(false); }}
+                      className="text-base font-medium text-[#8899AA] hover:text-[#00C6FF] transition-colors"
+                    >
+                      {s.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            );
+          }
+          return (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              className={`text-2xl font-medium transition-all duration-300 ${
+                mobileOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+              } ${
+                activeSection === link.href ? 'text-[#00C6FF]' : 'text-white hover:text-[#00C6FF]'
+              }`}
+              style={{ transitionDelay: mobileOpen ? `${i * 60}ms` : '0ms' }}
+            >
+              {link.label}
+            </a>
+          );
+        })}
         <a
           href="#contact"
           onClick={() => setMobileOpen(false)}

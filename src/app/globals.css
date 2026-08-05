@@ -223,6 +223,34 @@ main {
   border-radius: 1px;
 }
 
+/* ── Services dropdown (desktop hover) — matches existing navbar design ── */
+.nav-services-wrap { position: relative; }
+.nav-services-dropdown {
+  pointer-events: none;
+}
+.nav-services-dropdown.visible {
+  pointer-events: auto;
+}
+.nav-services-panel {
+  border-top: 2px solid rgba(0,198,255,0.35);
+  box-shadow: 0 0 30px rgba(0,198,255,0.08), 0 20px 50px rgba(0,0,0,0.5);
+}
+.nav-services-panel a {
+  position: relative;
+}
+.nav-services-panel a::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #00C6FF, #0072FF);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.nav-services-panel a:hover::before {
+  opacity: 1;
+}
+
 /* Grid background pattern */
 .grid-bg {
   background-image:
