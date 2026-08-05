@@ -1,21 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
-import ZAI from "z-ai-web-dev-sdk";
 import { SYSTEM_PROMPT } from "./system-prompt";
 import { retrieveKnowledge } from "./retrieve";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
+export const dynamic = "force-dynamic";
 
 interface ChatMessage {
   role: "user" | "assistant";
   content: string;
 }
 
-// Initialize ZAI SDK lazily (singleton)
-let zaiInstance: Awaited<ReturnType<typeof ZAI.create>> | null = null;
+// Initialize ZAI SDK lazily (dynamic import to avoid build-time issues)
+let zaiInstance: any | null = null;
 
 async function getZAI() {
   if (!zaiInstance) {
+    const ZAI = (await import("z-ai-web-dev-sdk")).default;
     zaiInstance = await ZAI.create();
   }
   return zaiInstance;
