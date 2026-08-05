@@ -1068,7 +1068,7 @@ function Navbar() {
               className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
               style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
             >
-              Book a Discovery Call
+              Book a Free Discovery Call
             </a>
           </div>
 
@@ -1151,7 +1151,7 @@ function Navbar() {
           className="btn-press mt-4 px-8 py-3 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105"
           style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}
         >
-          Book a Discovery Call
+          Book a Free Discovery Call
         </a>
       </div>
     </>
@@ -3615,7 +3615,7 @@ function ContactSection() {
             <a href="https://calendar.app.google/TGnzfC65zBF3hVeD9" target="_blank" rel="noopener noreferrer" className="btn-press inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
               style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
               <Calendar size={18} />
-              Book My Discovery Call
+              Book My Free Discovery Call
             </a>
             <button
               type="button"
