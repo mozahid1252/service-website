@@ -68,7 +68,11 @@ export function ChatbotWidget() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/chat', {
+      // Call the chat proxy service through the Z.ai sandbox gateway.
+      // The proxy runs inside the sandbox where z-ai-web-dev-sdk can access the LLM API.
+      const CHAT_PROXY_URL = 'https://preview-chat-896fc7f7-9316-4e75-a15e-cb944bad21fe.space-z.ai/api/chat?XTransformPort=3003';
+
+      const response = await fetch(CHAT_PROXY_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
