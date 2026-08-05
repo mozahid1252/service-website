@@ -3814,7 +3814,7 @@ function ContactSection() {
 
 function Footer() {
   return (
-    <footer className="bg-[#020408] border-t border-[rgba(0,198,255,0.08)] pt-16 pb-20 sm:pb-16">
+    <footer id="footer" className="bg-[#020408] border-t border-[rgba(0,198,255,0.08)] pt-16 pb-20 sm:pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top section with brand statement */}
         <div className="text-center mb-16">
@@ -4012,6 +4012,16 @@ export default function PortfolioPage() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
+  const scrollToFooter = useCallback(() => {
+    const footer = document.getElementById('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      // Fallback: scroll to the very bottom of the page
+      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+    }
+  }, []);
+
   return (
     <main className="min-h-screen flex flex-col">
       {/* Scroll Progress */}
@@ -4043,6 +4053,15 @@ export default function PortfolioPage() {
         aria-label="Back to top"
       >
         <ChevronDown size={20} style={{ transform: 'rotate(180deg)' }} />
+      </button>
+
+      {/* Back to Footer — matching floating button below Back-to-Top */}
+      <button
+        onClick={scrollToFooter}
+        className={`back-to-footer ${showBackToTop ? 'visible' : ''}`}
+        aria-label="Back to footer"
+      >
+        <ChevronDown size={20} />
       </button>
     </main>
   );

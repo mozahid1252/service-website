@@ -315,6 +315,41 @@ main {
   transform: translateY(-4px) scale(1.05);
 }
 
+/* Back to Footer — matching floating button, stacked below Back-to-Top.
+   Same size, shape, gradient, glow, shadow, transition, and visibility
+   logic as .back-to-top. Only the bottom offset differs so the two
+   buttons sit vertically stacked on the right edge with a gap. */
+.back-to-footer {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #00C6FF, #0072FF);
+  color: #020408;
+  box-shadow: 0 0 20px rgba(0,198,255,0.30);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+.back-to-footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-to-footer:hover {
+  box-shadow: 0 0 40px rgba(0,198,255,0.50);
+  transform: translateY(-4px) scale(1.05);
+}
+
 /* Button press effect */
 .btn-press {
   transition: all 0.15s ease;
