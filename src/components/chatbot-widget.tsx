@@ -296,10 +296,10 @@ email_label: Email Me
 
   return (
     <>
-      {/* Chat Toggle Button */}
+      {/* Chat Toggle Button — Bottom-Right */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`chatbot-toggle fixed bottom-6 left-6 z-[200] flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:scale-110 ${
+        className={`chatbot-toggle fixed bottom-5 right-5 z-[200] flex items-center justify-center w-14 h-14 rounded-full shadow-lg transition-all duration-300 hover:scale-110 ${
           isOpen ? 'opacity-0 pointer-events-none scale-50' : 'opacity-100'
         }`}
         aria-label="Open chat"
@@ -322,9 +322,9 @@ email_label: Email Me
         />
       </button>
 
-      {/* Chat Panel */}
+      {/* Chat Panel — Bottom-Right */}
       <div
-        className={`chatbot-panel fixed bottom-6 left-6 z-[201] w-[calc(100vw-3rem)] sm:w-96 max-w-md transition-all duration-300 ${
+        className={`chatbot-panel fixed bottom-5 right-5 z-[201] w-[calc(100vw-2rem)] sm:w-96 max-w-md transition-all duration-300 ${
           isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'
         }`}
         style={{
