@@ -11,7 +11,8 @@ interface ChatMessage {
 
 // CTA destinations (from the existing Contact section)
 const BOOKING_URL = 'https://calendar.app.google/TGnzfC65zBF3hVeD9';
-const EMAIL_URL = 'mailto:mojahidulislam101010@gmail.com';
+// Email: same Gmail compose URL used by the Contact section's "Email Me" button
+const EMAIL_URL = 'https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com&su=Discovery+Call+Inquiry&body=Hi+Mozahidul%2C+I+visited+your+portfolio+and+want+to+discuss+my+e-commerce+data+needs.';
 
 const QUICK_PROMPTS = [
   "What services do you offer?",
@@ -134,10 +135,12 @@ function MessageBubble({ msg, isLast }: { msg: ChatMessage; isLast: boolean }) {
             </a>
             <a
               href={EMAIL_URL}
-              className="flex items-center justify-center gap-2 w-full px-3 py-2 rounded-lg text-xs font-semibold text-[#00C6FF] transition-all hover:bg-[rgba(0,198,255,0.08)]"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full px-3 py-2 rounded-lg text-xs font-semibold text-white transition-all hover:scale-[1.02] hover:shadow-lg"
               style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(0,198,255,0.2)',
+                background: 'linear-gradient(135deg, #EA4335, #C5221F)',
+                boxShadow: '0 2px 8px rgba(234,67,53,0.3)',
               }}
             >
               <Mail size={13} />
@@ -157,7 +160,7 @@ export function ChatbotWidget() {
   const [isLoading, setIsLoading] = useState(false);
   const [hasUnread, setHasUnread] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
   const sessionIdRef = useRef<string>(
     typeof window !== 'undefined'
       ? `session-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`
@@ -254,12 +257,41 @@ email_label: Email Me
     sendMessage(prompt);
   }, [sendMessage]);
 
-  // Handle Enter key
-  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
+  // Auto-grow textarea: starts at ~3 lines, grows with content, max ~6 lines then scrolls
+  const autoGrow = useCallback(() => {
+    const el = inputRef.current;
+    if (!el) return;
+    // Reset height to recalculate
+    el.style.height = 'auto';
+    // Set to scrollHeight (content height), clamped between min and max
+    const minHeight = 66;  // ~3 lines
+    const maxHeight = 140; // ~6 lines, then internal scroll
+    el.style.height = Math.min(Math.max(el.scrollHeight, minHeight), maxHeight) + 'px';
+    // Enable internal scroll if at max
+    el.style.overflowY = el.scrollHeight > maxHeight ? 'auto' : 'hidden';
+  }, []);
+
+  // Handle input change + auto-grow
+  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInput(e.target.value);
+    // Defer auto-grow to next tick so the DOM updates first
+    requestAnimationFrame(autoGrow);
+  }, [autoGrow]);
+
+  // Handle Enter key: Enter=send, Shift+Enter=newline (default textarea behavior)
+  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       sendMessage(input);
+      // Reset textarea height after sending
+      requestAnimationFrame(() => {
+        if (inputRef.current) {
+          inputRef.current.style.height = '66px';
+          inputRef.current.style.overflowY = 'hidden';
+        }
+      });
     }
+    // Shift+Enter: do nothing special — textarea inserts newline by default
   }, [sendMessage, input]);
 
   return (
@@ -395,21 +427,28 @@ email_label: Email Me
             className="px-3 py-3 border-t border-[rgba(0,198,255,0.12)]"
             style={{ background: 'rgba(2,4,8,0.5)' }}
           >
-            <div className="flex items-center gap-2">
-              <input
+            <div className="flex items-end gap-2">
+              <textarea
                 ref={inputRef}
-                type="text"
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={handleInputChange}
                 onKeyDown={handleKeyDown}
                 placeholder="Ask about services, pricing, packages..."
                 disabled={isLoading}
-                className="flex-1 bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.1)] rounded-full px-4 py-2.5 text-sm text-white placeholder:text-[#667788] focus:outline-none focus:border-[rgba(0,198,255,0.4)] focus:bg-[rgba(255,255,255,0.08)] transition-all disabled:opacity-50"
+                rows={3}
+                className="chatbot-textarea flex-1 bg-[rgba(255,255,255,0.06)] border border-[rgba(255,255,255,0.1)] rounded-2xl px-4 py-2.5 text-sm text-white placeholder:text-[#667788] focus:outline-none focus:border-[rgba(0,198,255,0.4)] focus:bg-[rgba(255,255,255,0.08)] transition-all disabled:opacity-50 resize-none"
+                style={{
+                  height: '66px',
+                  minHeight: '66px',
+                  maxHeight: '140px',
+                  overflowY: 'hidden',
+                  lineHeight: '1.4',
+                }}
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
-                className="flex items-center justify-center w-10 h-10 rounded-full transition-all hover:scale-110 disabled:opacity-30 disabled:hover:scale-100 flex-shrink-0"
+                className="flex items-center justify-center w-10 h-10 rounded-full transition-all hover:scale-110 disabled:opacity-30 disabled:hover:scale-100 flex-shrink-0 mb-0.5"
                 style={{
                   background: 'linear-gradient(135deg, #00C6FF, #0072FF)',
                   boxShadow: '0 2px 10px rgba(0,198,255,0.2)',

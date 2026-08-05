@@ -5438,3 +5438,18 @@ table.infra-table {
     bottom: 80px !important;
   }
 }
+
+/* Chatbot textarea scrollbar */
+.chatbot-textarea::-webkit-scrollbar {
+  width: 4px;
+}
+.chatbot-textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+.chatbot-textarea::-webkit-scrollbar-thumb {
+  background: rgba(0,198,255,0.2);
+  border-radius: 2px;
+}
+.chatbot-textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,198,255,0.4);
+}
