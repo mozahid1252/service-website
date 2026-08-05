@@ -5382,3 +5382,59 @@ table.infra-table {
 @media (max-width: 640px) {
   .qp3-title-single { white-space: normal; font-size: clamp(22px, 6vw, 32px); }
 }
+
+/* ============================================
+   CHATBOT WIDGET STYLES
+   ============================================ */
+
+/* Custom scrollbar for chat messages */
+.chatbot-messages::-webkit-scrollbar {
+  width: 6px;
+}
+.chatbot-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+.chatbot-messages::-webkit-scrollbar-thumb {
+  background: rgba(0,198,255,0.2);
+  border-radius: 3px;
+}
+.chatbot-messages::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,198,255,0.4);
+}
+
+/* Chatbot toggle pulse animation (subtle) */
+.chatbot-toggle {
+  animation: chatbot-pulse 3s ease-in-out infinite;
+}
+@keyframes chatbot-pulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(0,198,255,0.4), 0 4px 15px rgba(0,0,0,0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0,198,255,0.6), 0 4px 15px rgba(0,0,0,0.3);
+  }
+}
+
+/* Ensure chatbot doesn't overlap mobile sticky bar */
+@media (max-width: 1023px) {
+  .chatbot-toggle {
+    bottom: 80px !important;
+  }
+  .chatbot-panel {
+    bottom: 80px !important;
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+  .chatbot-panel {
+    width: calc(100vw - 2rem) !important;
+    left: 1rem !important;
+    bottom: 80px !important;
+    height: min(500px, calc(100vh - 120px)) !important;
+  }
+  .chatbot-toggle {
+    left: 1rem !important;
+    bottom: 80px !important;
+  }
+}

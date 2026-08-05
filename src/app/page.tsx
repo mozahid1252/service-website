@@ -9,6 +9,7 @@ import {
   Code2, Cloud, LineChart, Plug, FileText, Clock,
   AlertTriangle, Target, Lightbulb, Rocket, MapPin, Calendar, Lock
 } from 'lucide-react';
+import { ChatbotWidget } from '@/components/chatbot-widget';
 
 /* GitHub Pages basePath helper */
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -4063,6 +4064,9 @@ export default function PortfolioPage() {
       >
         <ChevronDown size={20} />
       </button>
+
+      {/* MozIntelligence AI Chatbot */}
+      <ChatbotWidget />
     </main>
   );
 }
