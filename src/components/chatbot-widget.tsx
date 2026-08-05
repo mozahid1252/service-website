@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { MessageCircle, X, Send, Sparkles } from 'lucide-react';
+import { MessageCircle, X, Send, Sparkles, Calendar, Mail } from 'lucide-react';
 
 interface ChatMessage {
   role: 'user' | 'assistant';
@@ -9,18 +9,146 @@ interface ChatMessage {
   timestamp: number;
 }
 
+// CTA destinations (from the existing Contact section)
+const BOOKING_URL = 'https://calendar.app.google/TGnzfC65zBF3hVeD9';
+const EMAIL_URL = 'mailto:mojahidulislam101010@gmail.com';
+
 const QUICK_PROMPTS = [
   "What services do you offer?",
-  "Which package is right for my store?",
+  "How much does the Health Check cost?",
   "Do you work with Shopify?",
-  "How much does it cost?",
+  "Which package is right for me?",
 ];
 
 const WELCOME_MESSAGE: ChatMessage = {
   role: 'assistant',
-  content: "Hi! I'm the MozIntelligence AI Concierge. I can help you understand our e-commerce analytics services, find the right package for your store, and answer questions about pricing, deliverables, and integrations. What brings you here today?",
+  content: `Hi! I'm the MozIntelligence AI Concierge. I can help you understand our e-commerce analytics services, find the right package for your store, and answer questions about pricing, deliverables, and integrations.
+
+What brings you here today?
+
+[CTA]
+intro: If you'd like to explore what's possible with your store's data, I'm happy to help you find the right starting point.
+book_label: Book a Free 20-Min Strategy Call
+email_label: Email Me
+[/CTA]`,
   timestamp: Date.now(),
 };
+
+// Strip raw Markdown syntax from text, leaving clean plain text
+function stripMarkdown(text: string): string {
+  return text
+    // Remove bold/italic markers
+    .replace(/\*\*\*(.+?)\*\*\*/g, '$1')
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1')
+    .replace(/__(.+?)__/g, '$1')
+    .replace(/_(.+?)_/g, '$1')
+    // Remove headers
+    .replace(/^#{1,6}\s+/gm, '')
+    // Remove horizontal rules
+    .replace(/^---+$/gm, '')
+    // Remove inline code
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/```[\s\S]*?```/g, '')
+    // Remove markdown links, keep text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    // Remove blockquotes
+    .replace(/^>\s+/gm, '')
+    .trim();
+}
+
+// Parse CTA block from assistant response
+interface CTABlock {
+  intro: string;
+  bookLabel: string;
+  emailLabel: string;
+}
+
+function parseCTA(content: string): { text: string; cta: CTABlock | null } {
+  const ctaMatch = content.match(/\[CTA\]([\s\S]*?)\[\/CTA\]/);
+  if (!ctaMatch) {
+    return { text: stripMarkdown(content), cta: null };
+  }
+
+  const ctaContent = ctaMatch[1];
+  const text = stripMarkdown(content.replace(/\[CTA\][\s\S]*?\[\/CTA\]/, '').trim());
+
+  const introMatch = ctaContent.match(/intro:\s*(.+)/);
+  const bookMatch = ctaContent.match(/book_label:\s*(.+)/);
+  const emailMatch = ctaContent.match(/email_label:\s*(.+)/);
+
+  return {
+    text,
+    cta: {
+      intro: introMatch ? introMatch[1].trim() : '',
+      bookLabel: bookMatch ? bookMatch[1].trim() : 'Book a Free 20-Min Strategy Call',
+      emailLabel: emailMatch ? emailMatch[1].trim() : 'Email Me',
+    },
+  };
+}
+
+// Render a single message
+function MessageBubble({ msg, isLast }: { msg: ChatMessage; isLast: boolean }) {
+  const { text, cta } = msg.role === 'assistant' ? parseCTA(msg.content) : { text: msg.content, cta: null };
+
+  return (
+    <div className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+      <div
+        className={`max-w-[88%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
+          msg.role === 'user'
+            ? 'text-[#020408] rounded-br-sm'
+            : 'text-[#E5E7EB] rounded-bl-sm'
+        }`}
+        style={
+          msg.role === 'user'
+            ? {
+                background: 'linear-gradient(135deg, #00C6FF, #0072FF)',
+                boxShadow: '0 2px 10px rgba(0,198,255,0.2)',
+              }
+            : {
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.08)',
+              }
+        }
+      >
+        <div className="whitespace-pre-wrap break-words">{text}</div>
+
+        {/* CTA Buttons */}
+        {cta && (
+          <div className="mt-3 pt-3 border-t border-[rgba(255,255,255,0.1)] space-y-2">
+            {cta.intro && (
+              <div className="text-xs text-[#8899AA] leading-relaxed mb-2">{cta.intro}</div>
+            )}
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full px-3 py-2 rounded-lg text-xs font-semibold text-[#020408] transition-all hover:scale-[1.02] hover:shadow-lg"
+              style={{
+                background: 'linear-gradient(135deg, #00C6FF, #0072FF)',
+                boxShadow: '0 2px 8px rgba(0,198,255,0.2)',
+              }}
+            >
+              <Calendar size={13} />
+              {cta.bookLabel}
+            </a>
+            <a
+              href={EMAIL_URL}
+              className="flex items-center justify-center gap-2 w-full px-3 py-2 rounded-lg text-xs font-semibold text-[#00C6FF] transition-all hover:bg-[rgba(0,198,255,0.08)]"
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(0,198,255,0.2)',
+              }}
+            >
+              <Mail size={13} />
+              {cta.emailLabel}
+            </a>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export function ChatbotWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -68,8 +196,7 @@ export function ChatbotWidget() {
     setIsLoading(true);
 
     try {
-      // Call the chat proxy service through the Z.ai sandbox gateway.
-      // The proxy runs inside the sandbox where z-ai-web-dev-sdk can access the LLM API.
+      // Call the chat proxy service through the Z.ai sandbox gateway
       const CHAT_PROXY_URL = 'https://preview-chat-896fc7f7-9316-4e75-a15e-cb944bad21fe.space-z.ai/api/chat?XTransformPort=3003';
 
       const response = await fetch(CHAT_PROXY_URL, {
@@ -101,7 +228,13 @@ export function ChatbotWidget() {
       console.error('Chat error:', error);
       const errorMessage: ChatMessage = {
         role: 'assistant',
-        content: "I'm having trouble connecting right now. Please try again in a moment, or you can reach MozIntelligence directly at mojahidulislam101010@gmail.com.",
+        content: `I'm having trouble connecting right now. Please try again in a moment, or reach out directly:
+
+[CTA]
+intro: You can also book a call or send an email directly.
+book_label: Book a Free 20-Min Strategy Call
+email_label: Email Me
+[/CTA]`,
         timestamp: Date.now(),
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -211,31 +344,7 @@ export function ChatbotWidget() {
           {/* Messages */}
           <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3 chatbot-messages">
             {messages.map((msg, i) => (
-              <div
-                key={i}
-                className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                <div
-                  className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed ${
-                    msg.role === 'user'
-                      ? 'text-[#020408] rounded-br-sm'
-                      : 'text-[#E5E7EB] rounded-bl-sm'
-                  }`}
-                  style={
-                    msg.role === 'user'
-                      ? {
-                          background: 'linear-gradient(135deg, #00C6FF, #0072FF)',
-                          boxShadow: '0 2px 10px rgba(0,198,255,0.2)',
-                        }
-                      : {
-                          background: 'rgba(255,255,255,0.06)',
-                          border: '1px solid rgba(255,255,255,0.08)',
-                        }
-                  }
-                >
-                  <div className="whitespace-pre-wrap break-words">{msg.content}</div>
-                </div>
-              </div>
+              <MessageBubble key={i} msg={msg} isLast={i === messages.length - 1} />
             ))}
 
             {/* Typing indicator */}
