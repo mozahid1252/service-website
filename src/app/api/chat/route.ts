@@ -4,7 +4,6 @@ import { retrieveKnowledge } from "./retrieve";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
-export const dynamic = "force-dynamic";
 
 interface ChatMessage {
   role: "user" | "assistant";
