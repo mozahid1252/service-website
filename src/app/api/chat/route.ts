@@ -10,13 +10,33 @@ interface ChatMessage {
   content: string;
 }
 
-// Initialize ZAI SDK lazily (dynamic import to avoid build-time issues)
+// Initialize ZAI SDK lazily (dynamic import + config from env vars)
+// This avoids the need for a .z-ai-config file on Vercel.
 let zaiInstance: any | null = null;
 
 async function getZAI() {
   if (!zaiInstance) {
-    const ZAI = (await import("z-ai-web-dev-sdk")).default;
-    zaiInstance = await ZAI.create();
+    const ZAIModule: any = await import("z-ai-web-dev-sdk");
+    const ZAI = ZAIModule.default;
+
+    // Try to load config from environment variables first (Vercel),
+    // then fall back to ZAI.create() which reads .z-ai-config (local dev).
+    const envBaseUrl = process.env.Z_AI_BASE_URL;
+    const envApiKey = process.env.Z_AI_API_KEY;
+
+    if (envBaseUrl && envApiKey) {
+      // Use environment variables (production/Vercel)
+      zaiInstance = new ZAI({
+        baseUrl: envBaseUrl,
+        apiKey: envApiKey,
+        chatId: process.env.Z_AI_CHAT_ID || "",
+        userId: process.env.Z_AI_USER_ID || "",
+        token: process.env.Z_AI_TOKEN || "",
+      });
+    } else {
+      // Fall back to config file (local development)
+      zaiInstance = await ZAI.create();
+    }
   }
   return zaiInstance;
 }
