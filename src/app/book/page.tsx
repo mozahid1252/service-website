@@ -14,15 +14,36 @@ const SERVICE_PACKAGES = [
 
 const REVENUE_RANGES = ['Below $1k / Mo', '$1k – $10k / Mo', '$10k – $20k / Mo', '$20k – $40k / Mo', '$40k – $60k / Mo', '$60k – $100k / Mo', '$100k+ / Mo'];
 
+const COUNTRIES = [
+  'Afghanistan','Albania','Algeria','Andorra','Angola','Argentina','Armenia','Australia','Austria','Azerbaijan',
+  'Bahamas','Bahrain','Bangladesh','Barbados','Belarus','Belgium','Belize','Benin','Bhutan','Bolivia',
+  'Bosnia and Herzegovina','Botswana','Brazil','Brunei','Bulgaria','Burkina Faso','Burundi','Cambodia','Cameroon','Canada',
+  'Cape Verde','Central African Republic','Chad','Chile','China','Colombia','Comoros','Congo','Costa Rica','Croatia',
+  'Cuba','Cyprus','Czech Republic','Denmark','Djibouti','Dominica','Dominican Republic','Ecuador','Egypt','El Salvador',
+  'Equatorial Guinea','Eritrea','Estonia','Eswatini','Ethiopia','Fiji','Finland','France','Gabon','Gambia',
+  'Georgia','Germany','Ghana','Greece','Grenada','Guatemala','Guinea','Guinea-Bissau','Guyana','Haiti',
+  'Honduras','Hungary','Iceland','India','Indonesia','Iran','Iraq','Ireland','Israel','Italy',
+  'Jamaica','Japan','Jordan','Kazakhstan','Kenya','Kiribati','Kuwait','Kyrgyzstan','Laos','Latvia',
+  'Lebanon','Lesotho','Liberia','Libya','Liechtenstein','Lithuania','Luxembourg','Madagascar','Malawi','Malaysia',
+  'Maldives','Mali','Malta','Marshall Islands','Mauritania','Mauritius','Mexico','Micronesia','Moldova','Monaco',
+  'Mongolia','Montenegro','Morocco','Mozambique','Myanmar','Namibia','Nauru','Nepal','Netherlands','New Zealand',
+  'Nicaragua','Niger','Nigeria','North Korea','North Macedonia','Norway','Oman','Pakistan','Palau','Panama',
+  'Papua New Guinea','Paraguay','Peru','Philippines','Poland','Portugal','Qatar','Romania','Russia','Rwanda',
+  'Saint Kitts and Nevis','Saint Lucia','Samoa','San Marino','Saudi Arabia','Senegal','Serbia','Seychelles','Sierra Leone','Singapore',
+  'Slovakia','Slovenia','Solomon Islands','Somalia','South Africa','South Korea','South Sudan','Spain','Sri Lanka','Sudan',
+  'Suriname','Sweden','Switzerland','Syria','Taiwan','Tajikistan','Tanzania','Thailand','Timor-Leste','Togo',
+  'Tonga','Trinidad and Tobago','Tunisia','Turkey','Turkmenistan','Tuvalu','Uganda','Ukraine','United Arab Emirates','United Kingdom',
+  'United States','Uruguay','Uzbekistan','Vanuatu','Vatican City','Venezuela','Vietnam','Yemen','Zambia','Zimbabwe',
+];
+
 const PACKAGE_MAP: Record<string, string> = {
   'marketing-spend-audit': 'Marketing Spend Audit',
 };
 
-interface FormData { full_name: string; email: string; phone: string; website_url: string; service_package: string; monthly_revenue: string; preferred_time: string; additional_notes: string; }
+interface FormData { full_name: string; email: string; phone: string; website_url: string; service_package: string; monthly_revenue: string; country: string; city: string; preferred_time: string; additional_notes: string; }
 interface FormErrors { [key: string]: string }
-const INITIAL_FORM: FormData = { full_name: '', email: '', phone: '', website_url: '', service_package: '', monthly_revenue: '', preferred_time: '', additional_notes: '' };
+const INITIAL_FORM: FormData = { full_name: '', email: '', phone: '', website_url: '', service_package: '', monthly_revenue: '', country: '', city: '', preferred_time: '', additional_notes: '' };
 
-// Shared input class — slightly larger text
 const inputClass = "w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-[16px] text-[#0F172A] placeholder:text-[15px] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0072FF] focus:bg-white transition-all";
 const labelClass = "block text-[14px] font-semibold text-[#475569] mb-1.5";
 
@@ -47,6 +68,7 @@ function BookingPageContent() {
     else if (!/^https?:\/\/.+\..+/.test(formData.website_url.trim())) e.website_url = 'Please enter a valid URL.';
     if (!formData.service_package) e.service_package = 'Please select a service package.';
     if (!formData.monthly_revenue) e.monthly_revenue = 'Please select your estimated monthly revenue.';
+    if (!formData.country) e.country = 'Please select your country.';
     setErrors(e); return Object.keys(e).length === 0;
   };
 
@@ -84,14 +106,13 @@ function BookingPageContent() {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex flex-col">
-      {/* Header — Logo + MozIntelligence (taller navbar, premium text) */}
+      {/* Header */}
       <div className="bg-white border-b border-[#E2E8F0]" style={{ height: '72px' }}>
         <div className="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
           <a href="/" className="flex items-center gap-3">
             <Image src="/images/logo.png" alt="MozIntelligence Logo" width={38} height={38} className="rounded-lg" />
             <span className="text-xl font-bold text-[#0F172A] tracking-tight">MozIntelligence</span>
           </a>
-          {/* Back to Home — premium secondary button */}
           <a href="/" className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-[#475569] bg-white transition-all hover:bg-[#F8FAFC] hover:shadow-sm" style={{ border: '1px solid #E2E8F0' }}>
             <ChevronLeft size={16} />
             Back to Home
@@ -101,15 +122,15 @@ function BookingPageContent() {
 
       {/* Centered booking form */}
       <div className="flex-1 flex items-center justify-center px-6 py-8 sm:py-12">
-        <div className="w-full max-w-2xl">
+        <div className="w-full max-w-3xl">
           {/* Title */}
           <div className="text-center mb-8">
             <h1 className="text-3xl sm:text-[34px] font-bold text-[#0F172A] mb-2 tracking-tight">Book Your Free Strategy Call</h1>
             <p className="text-[15px] text-[#64748B]">Fill in your details and we'll get back to you within 24 hours.</p>
           </div>
 
-          {/* Form Card — slightly wider */}
-          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg" style={{ border: '1px solid #E2E8F0' }}>
+          {/* Form Card — slightly wider for new fields */}
+          <div className="bg-white rounded-2xl p-6 sm:p-10 shadow-lg" style={{ border: '1px solid #E2E8F0' }}>
             {submitStatus === 'error' && (
               <div className="mb-4 p-3 rounded-lg flex items-center gap-2 text-sm bg-[#FEF2F2]" style={{ border: '1px solid #FECACA' }}>
                 <AlertCircle size={16} className="text-[#EF4444] flex-shrink-0" />
@@ -117,33 +138,33 @@ function BookingPageContent() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-              {/* Row 1 */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Row 1: Full Name | Email */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className={labelClass}>Full Name <span className="text-[#EF4444]">*</span></label>
-                  <input type="text" value={formData.full_name} onChange={e => handleChange('full_name', e.target.value)} placeholder="e.g., John Smith"
+                  <input type="text" value={formData.full_name} onChange={e => handleChange('full_name', e.target.value)} placeholder="John Smith"
                     className={inputClass} style={{ borderColor: errors.full_name ? '#EF4444' : '#E2E8F0' }} />
                   {errors.full_name && <p className="text-[#EF4444] text-xs mt-1">{errors.full_name}</p>}
                 </div>
                 <div>
                   <label className={labelClass}>Email Address <span className="text-[#EF4444]">*</span></label>
-                  <input type="email" value={formData.email} onChange={e => handleChange('email', e.target.value)} placeholder="e.g., john@company.com"
+                  <input type="email" value={formData.email} onChange={e => handleChange('email', e.target.value)} placeholder="john@company.com"
                     className={inputClass} style={{ borderColor: errors.email ? '#EF4444' : '#E2E8F0' }} />
                   {errors.email && <p className="text-[#EF4444] text-xs mt-1">{errors.email}</p>}
                 </div>
               </div>
 
-              {/* Row 2 */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {/* Row 2: Phone | Website URL */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className={labelClass}>Phone / WhatsApp</label>
-                  <input type="tel" value={formData.phone} onChange={e => handleChange('phone', e.target.value)} placeholder="e.g., +1 234 567 890"
+                  <input type="tel" value={formData.phone} onChange={e => handleChange('phone', e.target.value)} placeholder="+1 234 567 890"
                     className={inputClass} style={{ borderColor: '#E2E8F0' }} />
                 </div>
                 <div>
                   <label className={labelClass}>Website / Store URL <span className="text-[#EF4444]">*</span></label>
-                  <input type="url" value={formData.website_url} onChange={e => handleChange('website_url', e.target.value)} placeholder="e.g., https://yourstore.com"
+                  <input type="url" value={formData.website_url} onChange={e => handleChange('website_url', e.target.value)} placeholder="https://yourstore.com"
                     className={inputClass} style={{ borderColor: errors.website_url ? '#EF4444' : '#E2E8F0' }} />
                   {errors.website_url && <p className="text-[#EF4444] text-xs mt-1">{errors.website_url}</p>}
                 </div>
@@ -165,8 +186,8 @@ function BookingPageContent() {
                 {errors.service_package && <p className="text-[#EF4444] text-xs mt-1">{errors.service_package}</p>}
               </div>
 
-              {/* Row 3 */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {/* Row 3: Revenue | Preferred Time */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className={labelClass}>Estimated Monthly Revenue <span className="text-[#EF4444]">*</span></label>
                   <select value={formData.monthly_revenue} onChange={e => handleChange('monthly_revenue', e.target.value)}
@@ -179,7 +200,26 @@ function BookingPageContent() {
                 </div>
                 <div>
                   <label className={labelClass}>Preferred Time for Call</label>
-                  <input type="text" value={formData.preferred_time} onChange={e => handleChange('preferred_time', e.target.value)} placeholder="e.g., Weekdays afternoon"
+                  <input type="text" value={formData.preferred_time} onChange={e => handleChange('preferred_time', e.target.value)} placeholder="Weekdays afternoon"
+                    className={inputClass} style={{ borderColor: '#E2E8F0' }} />
+                </div>
+              </div>
+
+              {/* Row 4: Country | City (NEW) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className={labelClass}>Country <span className="text-[#EF4444]">*</span></label>
+                  <select value={formData.country} onChange={e => handleChange('country', e.target.value)}
+                    className={`${inputClass} cursor-pointer`}
+                    style={{ borderColor: errors.country ? '#EF4444' : '#E2E8F0' }}>
+                    <option value="">Select Country</option>
+                    {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
+                  </select>
+                  {errors.country && <p className="text-[#EF4444] text-xs mt-1">{errors.country}</p>}
+                </div>
+                <div>
+                  <label className={labelClass}>City / State</label>
+                  <input type="text" value={formData.city} onChange={e => handleChange('city', e.target.value)} placeholder="City / State"
                     className={inputClass} style={{ borderColor: '#E2E8F0' }} />
                 </div>
               </div>

@@ -17,10 +17,10 @@ function getSupabase() {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { full_name, email, phone, website_url, service_package, monthly_revenue, preferred_time, additional_notes, source_package } = body;
+    const { full_name, email, phone, website_url, service_package, monthly_revenue, country, city, preferred_time, additional_notes, source_package } = body;
 
     // Log received payload for debugging
-    console.log("[Booking] Received payload:", { full_name, email, phone, website_url, service_package, monthly_revenue, preferred_time, has_notes: !!additional_notes, source_package });
+    console.log("[Booking] Received payload:", { full_name, email, phone, website_url, service_package, monthly_revenue, country, city, preferred_time, has_notes: !!additional_notes, source_package });
 
     // Validate required fields
     const missing: string[] = [];
@@ -28,6 +28,8 @@ export async function POST(request: NextRequest) {
     if (!email?.trim()) missing.push("email");
     if (!website_url?.trim()) missing.push("website_url");
     if (!service_package) missing.push("service_package");
+    if (!monthly_revenue) missing.push("monthly_revenue");
+    if (!country) missing.push("country");
     if (missing.length > 0) {
       console.error("[Booking] Validation failed - missing:", missing);
       return NextResponse.json({ success: false, error: `Missing required fields: ${missing.join(", ")}` }, { status: 400 });
@@ -54,6 +56,8 @@ export async function POST(request: NextRequest) {
       website_url: website_url.trim(),
       service_package,
       monthly_revenue: monthly_revenue || null,
+      country: country || null,
+      city: city?.trim() || null,
       preferred_time: preferred_time?.trim() || null,
       additional_notes: additional_notes?.trim() || null,
       source_package: source_package || null,
