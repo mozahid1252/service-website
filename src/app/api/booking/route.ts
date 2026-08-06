@@ -45,9 +45,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, error: "Booking service unavailable" }, { status: 500 });
     }
 
-    // Insert WITHOUT .select() — this avoids RLS SELECT issues
-    // The insert itself will succeed if there's an INSERT policy for anon
-    const { error } = await supabase.from("package_bookings").insert({
+    // Insert with .select() to properly detect RLS errors
+    // Without .select(), Supabase returns 201 even when RLS blocks the insert
+    const { data, error } = await supabase.from("package_bookings").insert({
       full_name: full_name.trim(),
       email: email.trim(),
       phone: phone?.trim() || null,
@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
       preferred_time: preferred_time?.trim() || null,
       additional_notes: additional_notes?.trim() || null,
       source_package: source_package || null,
-    });
+    }).select();
 
     if (error) {
       console.error("[Booking] Supabase insert failed:", {
@@ -66,14 +66,13 @@ export async function POST(request: NextRequest) {
         details: error.details,
         hint: error.hint,
       });
-      // Return the actual error for debugging
       return NextResponse.json(
         { success: false, error: "Failed to save booking", supabase_error: error.message, supabase_code: error.code },
         { status: 500 }
       );
     }
 
-    console.log("[Booking] Success:", { email: email.trim(), package: service_package });
+    console.log("[Booking] Success:", { id: data?.[0]?.id, email: email.trim(), package: service_package });
     return NextResponse.json(
       { success: true, message: "Booking created successfully." },
       { status: 201 }
