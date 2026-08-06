@@ -45,7 +45,7 @@ interface FormErrors { [key: string]: string }
 const INITIAL_FORM: FormData = { full_name: '', email: '', phone: '', website_url: '', service_package: '', monthly_revenue: '', country: '', city: '', preferred_time: '', additional_notes: '' };
 
 const inputClass = "w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-[16px] text-[#0F172A] placeholder:text-[15px] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0072FF] focus:bg-white transition-all";
-const labelClass = "block text-[14px] font-semibold text-[#475569] mb-1.5";
+const labelClass = "block text-[15px] font-semibold text-[#475569] mb-1.5";
 
 function BookingPageContent() {
   const searchParams = useSearchParams();
@@ -125,7 +125,7 @@ function BookingPageContent() {
         <div className="w-full max-w-3xl">
           {/* Title */}
           <div className="text-center mb-8">
-            <h1 className="text-3xl sm:text-[34px] font-bold text-[#0F172A] mb-2 tracking-tight">Book Your Free Strategy Call</h1>
+            <h1 className="text-3xl sm:text-[31px] font-bold text-[#0F172A] mb-2 tracking-tight">Book Your Free Strategy Call</h1>
             <p className="text-[15px] text-[#64748B]">Fill in your details and we'll get back to you within 24 hours.</p>
           </div>
 
