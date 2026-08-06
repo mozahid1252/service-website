@@ -2418,7 +2418,7 @@ function ServicesSection() {
                   <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
                 </div>
 
-                <a href="#contact" className="service-book-btn package-book-btn">{pkg.cta}</a>
+                <a href={`/book?package=${pkg.route.replace('/', '')}`} className="service-book-btn package-book-btn">{pkg.cta}</a>
                 <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-2 cursor-pointer no-underline w-full">
                   <ExternalLink size={12} /> View Details
                 </a>
@@ -2468,7 +2468,7 @@ function ServicesSection() {
                       <div className="text-[#00C6FF] text-xs font-semibold mb-2">Our Promise To You:</div>
                       <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
                     </div>
-                    <a href="#contact" className="service-book-btn">{pkg.cta}</a>
+                    <a href={`/book?package=${pkg.route.replace('/', '')}`} className="service-book-btn">{pkg.cta}</a>
                     <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-2 cursor-pointer no-underline w-full">
                       <ExternalLink size={12} /> View Details
                     </a>
@@ -2510,7 +2510,7 @@ function ServicesSection() {
                   <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
                 </div>
                 <div className="flex items-stretch gap-2 mt-4">
-                  <a href="#contact" className="addon-book-btn flex-1 items-center">
+                  <a href={`/book?package=${pkg.route.replace('/', '')}`} className="addon-book-btn flex-1 items-center">
                     Book the {pkg.name} →
                   </a>
                   <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline whitespace-nowrap self-stretch">
@@ -2575,7 +2575,7 @@ function ServicesSection() {
                       );
                     })}
                   </div>
-                  <a href="#contact" className="infra-book-btn">
+                  <a href={`/book?package=${bundle.route.replace('/', '')}`} className="infra-book-btn">
                     Book the {bundle.name} →
                   </a>
                   <a href={`${basePath}${bundle.route}`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline w-full">

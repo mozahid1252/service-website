@@ -37,7 +37,20 @@ const COUNTRIES = [
 ];
 
 const PACKAGE_MAP: Record<string, string> = {
+  'e-commerce-health-check': 'E-Commerce Health Check',
+  'revenue-growth-accelerator': 'Revenue Growth Accelerator',
+  'data-driven-growth-system': 'Data-Driven Growth System',
+  'analytics-partner-retainer': 'Analytics Partner Retainer',
   'marketing-spend-audit': 'Marketing Spend Audit',
+  'customer-retention-audit': 'Customer Retention Audit',
+  'product-portfolio-audit': 'Product Portfolio Audit',
+  'cro-audit': 'CRO Audit',
+  'profitability-audit': 'Profitability Audit',
+  'operations-efficiency-audit': 'Operations Efficiency Audit',
+  'meta-ads-performance-audit': 'Meta Ads Performance Audit',
+  'basic-setup': 'Basic Setup',
+  'full-pipeline-setup': 'Full Pipeline Setup',
+  'full-pipeline-automation': 'Full Pipeline + Automation',
 };
 
 interface FormData { full_name: string; email: string; phone: string; website_url: string; service_package: string; monthly_revenue: string; country: string; city: string; preferred_time: string; additional_notes: string; }
