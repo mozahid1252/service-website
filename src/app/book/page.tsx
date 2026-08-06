@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import { Loader2, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
+import { Loader2, CheckCircle2, AlertCircle, ArrowRight, ChevronLeft } from 'lucide-react';
 
 const SERVICE_PACKAGES = [
   { label: '─ Part 1: Core E-Commerce Packages ─', options: ['E-Commerce Health Check', 'Revenue Growth Accelerator', 'Data-Driven Growth System', 'Analytics Partner Retainer'] },
@@ -22,6 +22,10 @@ interface FormData { full_name: string; email: string; phone: string; website_ur
 interface FormErrors { [key: string]: string }
 const INITIAL_FORM: FormData = { full_name: '', email: '', phone: '', website_url: '', service_package: '', monthly_revenue: '', preferred_time: '', additional_notes: '' };
 
+// Shared input class — slightly larger text
+const inputClass = "w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-[16px] text-[#0F172A] placeholder:text-[15px] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0072FF] focus:bg-white transition-all";
+const labelClass = "block text-[14px] font-semibold text-[#475569] mb-1.5";
+
 function BookingPageContent() {
   const searchParams = useSearchParams();
   const packageSlug = searchParams.get('package') || '';
@@ -36,12 +40,13 @@ function BookingPageContent() {
 
   const validate = (): boolean => {
     const e: FormErrors = {};
-    if (!formData.full_name.trim()) e.full_name = 'Full name is required';
-    if (!formData.email.trim()) e.email = 'Email is required';
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) e.email = 'Please enter a valid email';
-    if (!formData.website_url.trim()) e.website_url = 'Website URL is required';
-    else if (!/^https?:\/\/.+\..+/.test(formData.website_url.trim())) e.website_url = 'Please enter a valid URL';
-    if (!formData.service_package) e.service_package = 'Please select a service package';
+    if (!formData.full_name.trim()) e.full_name = 'Full Name is required.';
+    if (!formData.email.trim()) e.email = 'Email Address is required.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) e.email = 'Please enter a valid email address.';
+    if (!formData.website_url.trim()) e.website_url = 'Please enter your website URL.';
+    else if (!/^https?:\/\/.+\..+/.test(formData.website_url.trim())) e.website_url = 'Please enter a valid URL.';
+    if (!formData.service_package) e.service_package = 'Please select a service package.';
+    if (!formData.monthly_revenue) e.monthly_revenue = 'Please select your estimated monthly revenue.';
     setErrors(e); return Object.keys(e).length === 0;
   };
 
@@ -79,27 +84,31 @@ function BookingPageContent() {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex flex-col">
-      {/* Header — Logo + MozIntelligence */}
-      <div className="bg-white border-b border-[#E2E8F0]">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      {/* Header — Logo + MozIntelligence (taller navbar, premium text) */}
+      <div className="bg-white border-b border-[#E2E8F0]" style={{ height: '72px' }}>
+        <div className="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
           <a href="/" className="flex items-center gap-3">
-            <Image src="/images/logo.png" alt="MozIntelligence Logo" width={36} height={36} className="rounded-lg" />
-            <span className="text-lg font-bold text-[#0F172A]">MozIntelligence</span>
+            <Image src="/images/logo.png" alt="MozIntelligence Logo" width={38} height={38} className="rounded-lg" />
+            <span className="text-xl font-bold text-[#0F172A] tracking-tight">MozIntelligence</span>
           </a>
-          <a href="/" className="text-sm text-[#64748B] hover:text-[#0072FF] transition-colors">← Back to Home</a>
+          {/* Back to Home — premium secondary button */}
+          <a href="/" className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-[#475569] bg-white transition-all hover:bg-[#F8FAFC] hover:shadow-sm" style={{ border: '1px solid #E2E8F0' }}>
+            <ChevronLeft size={16} />
+            Back to Home
+          </a>
         </div>
       </div>
 
       {/* Centered booking form */}
       <div className="flex-1 flex items-center justify-center px-6 py-8 sm:py-12">
-        <div className="w-full max-w-xl">
+        <div className="w-full max-w-2xl">
           {/* Title */}
           <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#0F172A] mb-2">Book Your Free Strategy Call</h1>
-            <p className="text-sm text-[#64748B]">Fill in your details and we'll get back to you within 24 hours.</p>
+            <h1 className="text-3xl sm:text-[34px] font-bold text-[#0F172A] mb-2 tracking-tight">Book Your Free Strategy Call</h1>
+            <p className="text-[15px] text-[#64748B]">Fill in your details and we'll get back to you within 24 hours.</p>
           </div>
 
-          {/* Form Card */}
+          {/* Form Card — slightly wider */}
           <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg" style={{ border: '1px solid #E2E8F0' }}>
             {submitStatus === 'error' && (
               <div className="mb-4 p-3 rounded-lg flex items-center gap-2 text-sm bg-[#FEF2F2]" style={{ border: '1px solid #FECACA' }}>
@@ -112,17 +121,15 @@ function BookingPageContent() {
               {/* Row 1 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-semibold text-[#475569] mb-1.5">Full Name <span className="text-[#EF4444]">*</span></label>
+                  <label className={labelClass}>Full Name <span className="text-[#EF4444]">*</span></label>
                   <input type="text" value={formData.full_name} onChange={e => handleChange('full_name', e.target.value)} placeholder="e.g., John Smith"
-                    className="w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-sm text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0072FF] focus:bg-white transition-all"
-                    style={{ borderColor: errors.full_name ? '#EF4444' : '#E2E8F0' }} />
+                    className={inputClass} style={{ borderColor: errors.full_name ? '#EF4444' : '#E2E8F0' }} />
                   {errors.full_name && <p className="text-[#EF4444] text-xs mt-1">{errors.full_name}</p>}
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-[#475569] mb-1.5">Email Address <span className="text-[#EF4444]">*</span></label>
+                  <label className={labelClass}>Email Address <span className="text-[#EF4444]">*</span></label>
                   <input type="email" value={formData.email} onChange={e => handleChange('email', e.target.value)} placeholder="e.g., john@company.com"
-                    className="w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-sm text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0072FF] focus:bg-white transition-all"
-                    style={{ borderColor: errors.email ? '#EF4444' : '#E2E8F0' }} />
+                    className={inputClass} style={{ borderColor: errors.email ? '#EF4444' : '#E2E8F0' }} />
                   {errors.email && <p className="text-[#EF4444] text-xs mt-1">{errors.email}</p>}
                 </div>
               </div>
@@ -130,25 +137,23 @@ function BookingPageContent() {
               {/* Row 2 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-semibold text-[#475569] mb-1.5">Phone / WhatsApp</label>
+                  <label className={labelClass}>Phone / WhatsApp</label>
                   <input type="tel" value={formData.phone} onChange={e => handleChange('phone', e.target.value)} placeholder="e.g., +1 234 567 890"
-                    className="w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-sm text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0072FF] focus:bg-white transition-all"
-                    style={{ border: '1px solid #E2E8F0' }} />
+                    className={inputClass} style={{ borderColor: '#E2E8F0' }} />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-[#475569] mb-1.5">Website / Store URL <span className="text-[#EF4444]">*</span></label>
+                  <label className={labelClass}>Website / Store URL <span className="text-[#EF4444]">*</span></label>
                   <input type="url" value={formData.website_url} onChange={e => handleChange('website_url', e.target.value)} placeholder="e.g., https://yourstore.com"
-                    className="w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-sm text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0072FF] focus:bg-white transition-all"
-                    style={{ borderColor: errors.website_url ? '#EF4444' : '#E2E8F0' }} />
+                    className={inputClass} style={{ borderColor: errors.website_url ? '#EF4444' : '#E2E8F0' }} />
                   {errors.website_url && <p className="text-[#EF4444] text-xs mt-1">{errors.website_url}</p>}
                 </div>
               </div>
 
               {/* Service Package */}
               <div>
-                <label className="block text-xs font-semibold text-[#475569] mb-1.5">Service Package <span className="text-[#EF4444]">*</span></label>
+                <label className={labelClass}>Service Package <span className="text-[#EF4444]">*</span></label>
                 <select value={formData.service_package} onChange={e => handleChange('service_package', e.target.value)}
-                  className="w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:outline-none focus:border-[#0072FF] transition-all"
+                  className={`${inputClass} cursor-pointer`}
                   style={{ borderColor: errors.service_package ? '#EF4444' : '#E2E8F0' }}>
                   <option value="">Select a service package...</option>
                   {SERVICE_PACKAGES.map((g, i) => (
@@ -163,33 +168,33 @@ function BookingPageContent() {
               {/* Row 3 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-xs font-semibold text-[#475569] mb-1.5">Estimated Monthly Revenue</label>
+                  <label className={labelClass}>Estimated Monthly Revenue <span className="text-[#EF4444]">*</span></label>
                   <select value={formData.monthly_revenue} onChange={e => handleChange('monthly_revenue', e.target.value)}
-                    className="w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-sm text-[#0F172A] focus:outline-none focus:border-[#0072FF] transition-all"
-                    style={{ border: '1px solid #E2E8F0' }}>
+                    className={`${inputClass} cursor-pointer`}
+                    style={{ borderColor: errors.monthly_revenue ? '#EF4444' : '#E2E8F0' }}>
                     <option value="">Select range...</option>
                     {REVENUE_RANGES.map(r => <option key={r} value={r}>{r}</option>)}
                   </select>
+                  {errors.monthly_revenue && <p className="text-[#EF4444] text-xs mt-1">{errors.monthly_revenue}</p>}
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-[#475569] mb-1.5">Preferred Time for Call</label>
+                  <label className={labelClass}>Preferred Time for Call</label>
                   <input type="text" value={formData.preferred_time} onChange={e => handleChange('preferred_time', e.target.value)} placeholder="e.g., Weekdays afternoon"
-                    className="w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-sm text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0072FF] focus:bg-white transition-all"
-                    style={{ border: '1px solid #E2E8F0' }} />
+                    className={inputClass} style={{ borderColor: '#E2E8F0' }} />
                 </div>
               </div>
 
               {/* Additional Notes */}
               <div>
-                <label className="block text-xs font-semibold text-[#475569] mb-1.5">Additional Notes / Anything else</label>
+                <label className={labelClass}>Additional Notes / Anything else</label>
                 <textarea value={formData.additional_notes} onChange={e => handleChange('additional_notes', e.target.value)} placeholder="Tell us about your specific needs or questions..." rows={3}
-                  className="w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-sm text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0072FF] focus:bg-white transition-all resize-none"
-                  style={{ border: '1px solid #E2E8F0' }} />
+                  className="w-full bg-[#F8FAFC] border rounded-xl px-4 py-3 text-[16px] text-[#0F172A] placeholder:text-[15px] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#0072FF] focus:bg-white transition-all resize-none"
+                  style={{ borderColor: '#E2E8F0' }} />
               </div>
 
               {/* Submit */}
               <button type="submit" disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-sm font-bold text-white transition-all hover:scale-[1.02] disabled:opacity-60 disabled:hover:scale-100"
+                className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-[16px] font-bold text-white transition-all hover:scale-[1.02] disabled:opacity-60 disabled:hover:scale-100"
                 style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 4px 15px rgba(0,114,255,0.3)' }}>
                 {isSubmitting ? (<><Loader2 size={18} className="animate-spin" /> Submitting...</>) : (<>Submit Booking Request <ArrowRight size={16} /></>)}
               </button>
