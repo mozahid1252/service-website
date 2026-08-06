@@ -347,6 +347,14 @@ main {
   transform: translateY(-4px) scale(1.05);
 }
 
+/* Hide both floating scroll buttons on mobile only */
+@media (max-width: 768px) {
+  .back-to-top,
+  .back-to-footer {
+    display: none !important;
+  }
+}
+
 /* Button press effect */
 .btn-press {
   transition: all 0.15s ease;
