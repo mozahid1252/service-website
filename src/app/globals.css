@@ -5457,36 +5457,3 @@ table.infra-table {
 .chatbot-textarea::-webkit-scrollbar-thumb:hover {
   background: rgba(0,198,255,0.4);
 }
-
-/* ============================================
-   BOOKING PAGE — PREMIUM ANIMATIONS
-   ============================================ */
-
-@keyframes booking-fade-in {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-fade-in {
-  animation: booking-fade-in 0.6s ease-out forwards;
-}
-
-@keyframes booking-slide-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-slide-up {
-  animation: booking-slide-up 0.7s ease-out forwards;
-}
-
-@keyframes booking-float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-}
-.animate-float {
-  animation: booking-float 6s ease-in-out infinite;
-}
-
-/* Booking page input focus glow */
-.book-input:focus {
-  box-shadow: 0 0 0 4px rgba(14, 165, 255, 0.1);
-}
