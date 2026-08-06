@@ -107,8 +107,8 @@ function BookingPageContent() {
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(#0F172A 1px, transparent 1px), linear-gradient(90deg, #0F172A 1px, transparent 1px)', backgroundSize: '48px 48px' }} />
       </div>
 
-      {/* ── Floating analytics cards (decorative, hidden on mobile) ── */}
-      <div className="hidden xl:block fixed inset-0 pointer-events-none z-0">
+      {/* ── Floating analytics cards (decorative, hidden on mobile/tablet) ── */}
+      <div className="hidden 2xl:block fixed inset-0 pointer-events-none z-0">
         {FLOAT_CARDS.map((card, i) => {
           const Icon = card.icon;
           const sideStyle = card.side === 'left' ? { left: '3%' } : { right: '3%' };
