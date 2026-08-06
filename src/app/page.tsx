@@ -1225,7 +1225,9 @@ function HeroSection() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
           <a
-            href="#contact"
+            href="https://calendar.app.google/TGnzfC65zBF3hVeD9"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-press px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
             style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
           >
