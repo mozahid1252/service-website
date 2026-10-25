@@ -70,12 +70,12 @@ export function TechnicalPortfolioSection() {
     <section
       id="technical-portfolio"
       aria-labelledby="portfolio-heading"
-      className="bg-[#6f3ede]/[0.08] py-16 sm:py-24 scroll-mt-20"
+      className="bg-surface-soft py-16 sm:py-24 scroll-mt-20"
     >
       <div className="container-site">
         {/* Section heading — dual-color pattern */}
         <div className={cn("flex flex-col items-center gap-3 text-center")}>
-          <span className="inline-flex items-center rounded-full bg-surface-soft px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-brand">
+          <span className="inline-flex items-center rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-brand">
             {technicalPortfolio.lead}
           </span>
           <h2
