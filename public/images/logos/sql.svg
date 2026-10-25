@@ -1,0 +1,7 @@
+<svg role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <title>SQL</title>
+  <ellipse cx="12" cy="5" rx="8" ry="2.5" />
+  <path d="M4 5v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5V5" fill="none" stroke="currentColor" stroke-width="1.6" />
+  <path d="M4 11v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-6" fill="none" stroke="currentColor" stroke-width="1.6" />
+  <ellipse cx="12" cy="5" rx="8" ry="2.5" fill="none" stroke="currentColor" stroke-width="1.6" />
+</svg>

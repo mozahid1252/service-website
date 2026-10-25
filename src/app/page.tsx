@@ -13,6 +13,7 @@ import { ChatbotWidget } from '@/components/chatbot-widget';
 import { WhyDifferentSection } from '@/components/WhyDifferentSection';
 import { FaqSection } from '@/components/FaqSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
+import { TechnicalPortfolioSection } from '@/components/TechnicalPortfolioSection';
 
 /* GitHub Pages basePath helper */
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -360,30 +361,6 @@ const TECH_ICONS: Record<string, React.ReactNode> = {
   'Looker Studio': <svg width="12" height="12" viewBox="0 0 24 24" fill="#4285F4"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#4285F4" strokeWidth="2" /><path d="M7 14l3-3 3 2 4-5" stroke="#4285F4" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>,
   'APIs': <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C6FF" strokeWidth="2"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>,
 };
-
-const GITHUB_PROJECTS = [
-  {
-    name: 'Behavioral Funnel & Conversion',
-    subtitle: 'Processing 2.75M Raw E-Commerce Events',
-    stack: ['SQL', 'Python', 'Power BI'],
-    engineering: 'Engineered an end-to-end pipeline processing 2.75 million raw e-commerce events. Implemented a 30-minute inactivity session rule using LAG() window functions to accurately define user behavior.',
-    impact: 'Surfaced a 76.8% cart abandonment profile. Ran 5 A/B tests (t-tests, Chi-Square, ANOVA) in Python to uncover "Hidden Gem" products, identifying $50,000 in untapped revenue with zero additional ad spend.',
-  },
-  {
-    name: 'Financial Data Warehouse',
-    subtitle: 'Star-Schema Warehouse Tracking $53.5M Revenue',
-    stack: ['PostgreSQL', 'Power BI', 'DAX'],
-    engineering: 'Architected a centralized PostgreSQL data warehouse consolidating 52 weeks of transactional data (10,000+ records) into a normalized star schema. Built 20+ DAX measures using SUMX iterators and CALCULATE filters.',
-    impact: 'Powered a 2-page executive dashboard with 39 visuals for proactive risk management. Reconciled 100% of data between PostgreSQL and Power BI, saving the team 15+ hours per week in manual reporting.',
-  },
-  {
-    name: 'Churn & Retention Analytics',
-    subtitle: '11-Tier RFM Segmentation of 96K Customers',
-    stack: ['Python', 'SQL', 'Power BI', 'Excel'],
-    engineering: 'Performed comprehensive EDA on 100K+ orders using Python (Pandas, Seaborn) and SQL. Built an 11-tier RFM segmentation model and computed Customer Lifetime Value (CLV) using cohort retention matrices.',
-    impact: 'Exposed a critical 85% Month-1 churn rate and a 97% one-time buyer rate. Pareto analysis revealed 20% of categories drove 80% of revenue, identifying a $120,000 revenue opportunity via At-Risk customer re-engagement.',
-  },
-];
 
 const TESTIMONIALS = [
   {
@@ -2438,66 +2415,6 @@ function ServicesSection() {
 /* CaseStudies2Section removed — all 6 case studies now render in the
    single #case-studies section in a 3-column compact grid. */
 
-function TechPortfolioSection() {
-  const sectionRef = useScrollReveal();
-  return (
-    <section id="technical-portfolio" className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
-      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="section-label reveal-up">The Engineering Behind The Insights</span>
-          <h2 className="section-headline text-[clamp(23px,3.5vw,40px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
-            Technical Portfolio
-          </h2>
-        </div>
-
-        <div className="portfolio-cards-grid mb-8">
-          {GITHUB_PROJECTS.map((proj, i) => {
-            const accents = [
-              { border: 'rgba(0,198,255,0.20)', left: '#00C6FF', bg: 'rgba(0,198,255,0.08)', hover: 'rgba(0,198,255,0.15)' },
-              { border: 'rgba(0,230,118,0.20)', left: '#00E676', bg: 'rgba(0,230,118,0.08)', hover: 'rgba(0,230,118,0.15)' },
-              { border: 'rgba(245,166,35,0.20)', left: '#F5A623', bg: 'rgba(245,166,35,0.08)', hover: 'rgba(245,166,35,0.15)' },
-            ];
-            const a = accents[i] || accents[0];
-            return (
-            <div key={i} className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: `linear-gradient(145deg, rgba(13,21,32,0.95) 0%, ${a.bg} 100%)`, border: `1px solid ${a.border}`, borderLeft: `4px solid ${a.left}`, boxShadow: '0 0 30px ' + a.bg + ', 0 8px 32px rgba(0,0,0,0.4)' }}>
-              <h3 className="font-bold text-lg mb-1" style={{ color: a.left }}>{proj.name}</h3>
-              <p className="gradient-text text-sm font-semibold mb-3">{proj.subtitle}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {proj.stack.map((s, si) => (
-                  <span key={si} className="tech-tag px-2.5 py-1 rounded-md text-xs font-medium inline-flex items-center gap-1.5">
-                    {TECH_ICONS[s] || null}{s}
-                  </span>
-                ))}
-              </div>
-              <div className="mb-4">
-                <div className="card-label-engineering text-xs font-semibold mb-1">The Engineering:</div>
-                <p className="text-[#8899AA] text-sm leading-relaxed">{proj.engineering}</p>
-              </div>
-              <div className="mb-5 p-4 rounded-lg" style={{ background: a.bg, border: `1px solid ${a.border}` }}>
-                <div className="card-label-impact text-xs font-semibold mb-1">The Impact:</div>
-                <p className="text-[#F0F4F8] text-sm leading-relaxed">{proj.impact}</p>
-              </div>
-              <a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="text-[#00C6FF] text-sm font-medium inline-flex items-center gap-1 hover:gap-2 transition-all no-underline">
-                View Code &amp; Methodology on GitHub <ExternalLink size={14} />
-              </a>
-            </div>
-            );
-          })}
-        </div>
-
-        {/* Bottom CTA Bar */}
-        <div className="glass rounded-2xl p-6 text-center">
-          <p className="text-white text-base mb-3">Want to see the full codebase, SQL queries, and architecture?</p>
-          <a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105"
-            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
-            🔗 Explore My Full GitHub Portfolio <ArrowRight size={16} />
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function TestimonialsSection() {
   const sectionRef = useScrollReveal();
   const featured = TESTIMONIALS.find((t) => t.featured);
@@ -3307,7 +3224,7 @@ export default function PortfolioPage() {
       <ServicesSection />
       <CaseStudiesSection />
       {/* CaseStudies2Section removed — all 6 cards now in #case-studies */}
-      <TechPortfolioSection />
+      <TechnicalPortfolioSection />
       <TestimonialsSection />
       <ProcessSection />
       <TechStackSection />

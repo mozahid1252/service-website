@@ -5557,3 +5557,36 @@ table.infra-table {
 .counter-tick {
   animation: counter-tick 0.35s ease-out;
 }
+
+/* ============================================================
+   Technical Portfolio — primary CTA button (footer CTA box)
+   Gradient brand-purple → btn-purple, hover lifts + glows.
+   ============================================================ */
+.btn-primary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 5px;
+  background: linear-gradient(135deg, var(--color-brand), var(--color-btn-purple));
+  color: #ffffff;
+  padding: 0.625rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+.btn-primary-cta:hover {
+  background: linear-gradient(135deg, var(--color-btn-purple-hover), var(--color-btn-purple));
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(111, 62, 222, 0.28);
+}
+.btn-primary-cta:active {
+  transform: scale(0.97);
+}
+.btn-primary-cta:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
