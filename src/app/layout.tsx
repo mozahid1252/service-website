@@ -96,7 +96,7 @@ export default function RootLayout({
     founder: {
       "@type": "Person",
       name: "Mozahidul Islam",
-      jobTitle: "E-Commerce Growth Analyst",
+      jobTitle: "E-Commerce Growth Intelligence Consultant",
     },
     sameAs: [
       "https://www.linkedin.com/in/mozahidul-islam",
