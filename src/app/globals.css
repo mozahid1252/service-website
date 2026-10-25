@@ -5590,3 +5590,54 @@ table.infra-table {
   outline: 2px solid var(--color-brand);
   outline-offset: 2px;
 }
+
+/* ============================================================
+   CONTACT + FOOTER SECTION — missing tokens + utility classes
+   ============================================================ */
+
+/* footer-purple token (same brand purple — used by SiteFooter bg-footer-purple) */
+:root {
+  --footer-purple: #6f3ede;
+}
+.dark {
+  --footer-purple: #6f3ede;
+}
+
+/* Tailwind color mapping so bg-footer-purple / text-footer-purple work */
+@theme {
+  --color-footer-purple: #6f3ede;
+}
+
+/* Outline CTA button (white border, transparent bg, used on purple/dark sections) */
+.btn-outline-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: transparent;
+  padding: 0.75rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-outline-cta:hover {
+  background: #ffffff;
+  color: var(--color-brand);
+}
+.btn-outline-cta:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+}
+
+/* Bobbing animation for social icons */
+@keyframes bob {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+.animate-bob {
+  animation: bob 1.8s ease-in-out infinite;
+}

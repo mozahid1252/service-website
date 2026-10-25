@@ -40,3 +40,20 @@ model ContactSubmission {
   message   String
   createdAt DateTime @default(now())
 }
+model ContactMessage {
+  id        String   @id @default(cuid())
+  type      String   @default("contact") // contact | quick | booking
+  name      String
+  email     String
+  phone     String?
+  website   String?
+  service   String?
+  budget    String?
+  revenue   String?
+  country   String?
+  city      String?
+  timing    String?
+  notes     String?
+  message   String?
+  createdAt DateTime @default(now())
+}
