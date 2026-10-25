@@ -5485,6 +5485,10 @@ table.infra-table {
   --color-surface-soft: #f2f0fe;
   --color-heading: #1f1f1f;
   --color-body-text: #4d4d4d;
+  --color-btn-purple: #9d3af9;
+  --color-btn-purple-hover: #8124d8;
+  --color-surface-card: #edf4ff;
+  --color-coral: #ff7d7d;
 }
 
 /* Tailwind utility mappings */
@@ -5495,6 +5499,10 @@ table.infra-table {
   --color-surface-soft: #f2f0fe;
   --color-heading: #1f1f1f;
   --color-body-text: #4d4d4d;
+  --color-btn-purple: #9d3af9;
+  --color-btn-purple-hover: #8124d8;
+  --color-surface-card: #edf4ff;
+  --color-coral: #ff7d7d;
 }
 
 /* Site container — 1240px, responsive padding */
@@ -5518,3 +5526,8 @@ table.infra-table {
     padding-right: 2rem;
   }
 }
+
+/* Slim scrollbar for the capability matrix (Why Different section) */
+.scrollbar-slim::-webkit-scrollbar { width: 6px; height: 6px; }
+.scrollbar-slim::-webkit-scrollbar-thumb { background: #c9bcf1; border-radius: 999px; }
+.scrollbar-slim::-webkit-scrollbar-track { background: transparent; }
