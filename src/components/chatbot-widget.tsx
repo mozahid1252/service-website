@@ -27,6 +27,11 @@ const BOOKING_URL = "https://calendar.app.google/TGnzfC65zBF3hVeD9";
 const EMAIL_URL =
   "https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com&su=Discovery+Call+Inquiry&body=Hi+Mozahidul%2C+I+visited+your+portfolio+and+want+to+discuss+my+e-commerce+data+needs.";
 
+// Fallback CTA appended to error messages so users can ALWAYS reach you
+// even if the backend is temporarily unavailable.
+const ERROR_CTA_BLOCK =
+  "[CTA]\nintro: I couldn't reach the live AI just now — but I can still help you directly. Book a free 20-minute strategy call and we'll go through your questions together.\nbook_label: Book a Free 20-Min Strategy Call\nemail_label: Email Me\n[/CTA]";
+
 interface CTABlock {
   intro: string;
   bookLabel: string;
@@ -102,14 +107,18 @@ export function ChatWidget() {
       if (!res.ok) throw new Error("Request failed");
       // Reads `reply` (new shape) with fallback to `response` (existing backend shape)
       const body = (await res.json()) as { reply?: string; response?: string };
+      const replyText =
+        body.reply ||
+        body.response ||
+        "";
+      // If backend gave an answer, use it. Otherwise show error + always-CTA.
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content:
-            body.reply ||
-            body.response ||
-            "Sorry — I couldn't process that right now. Please book a free discovery call and we'll help you directly.",
+          content: replyText
+            ? replyText
+            : `Sorry — I couldn't reach the live AI just now. Please try again, or book a free 20-minute discovery call and we'll answer you directly.\n\n${ERROR_CTA_BLOCK}`,
         },
       ]);
     } catch {
@@ -117,8 +126,7 @@ export function ChatWidget() {
         ...prev,
         {
           role: "assistant",
-          content:
-            "Sorry — something went wrong on my side. Please try again, or book a free 20-minute discovery call and we'll answer you directly.",
+          content: `Sorry — something went wrong on my side. Please try again, or book a free 20-minute discovery call and we'll answer you directly.\n\n${ERROR_CTA_BLOCK}`,
         },
       ]);
     } finally {
