@@ -229,7 +229,7 @@ function SectionHeading({
 
 export function WhyDifferentSection() {
   return (
-    <section id="why-were-different" aria-labelledby="why-different-heading" className="py-16 sm:py-24">
+    <section id="why-were-different" aria-labelledby="why-different-heading" className="bg-white py-16 sm:py-24">
       <div className="container-site">
         {/* ── Intro: copy left, live dashboard right ── */}
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
