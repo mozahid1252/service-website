@@ -145,7 +145,7 @@ export function ChatWidget() {
         }}
         aria-label={open ? "Close the MozIntelligence AI chat" : "Chat with the MozIntelligence AI Concierge"}
         aria-expanded={open}
-        className="fixed bottom-5 right-5 z-[60] inline-flex h-14 items-center gap-2 rounded-full bg-btn-purple px-5 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(157,58,249,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-btn-purple-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-purple/60 focus-visible:ring-offset-2"
+        className="fixed bottom-[68px] right-5 sm:bottom-5 z-[60] inline-flex h-14 items-center gap-2 rounded-full bg-btn-purple px-5 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(157,58,249,0.45)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-btn-purple-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-btn-purple/60 focus-visible:ring-offset-2"
       >
         {open ? <X className="h-5 w-5" aria-hidden="true" /> : <MessageCircle className="h-5 w-5" aria-hidden="true" />}
         <span className="hidden sm:inline">{open ? "Close" : "Chat with us"}</span>
@@ -153,7 +153,7 @@ export function ChatWidget() {
 
       {/* Teaser bubble */}
       {!open && showIntro ? (
-        <div className="fixed bottom-24 right-5 z-[60] max-w-[240px] rounded-[5px] border border-border bg-white p-4 shadow-[0_14px_36px_rgba(31,31,31,0.16)]">
+        <div className="fixed bottom-[144px] right-5 sm:bottom-24 z-[60] max-w-[180px] sm:max-w-[240px] rounded-[5px] border border-border bg-white p-2.5 sm:p-4 shadow-[0_14px_36px_rgba(31,31,31,0.16)]">
           <button
             type="button"
             onClick={() => setShowIntro(false)}
@@ -162,8 +162,8 @@ export function ChatWidget() {
           >
             <X className="h-3.5 w-3.5" aria-hidden="true" />
           </button>
-          <p className="flex items-center gap-2 text-sm font-semibold text-brand">
-            <MessageCircle className="h-4 w-4" aria-hidden="true" /> Find where your profit is leaking!
+          <p className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-sm font-semibold text-brand">
+            <MessageCircle className="h-3 w-3 sm:h-4 sm:w-4" aria-hidden="true" /> Find where your profit is leaking!
           </p>
         </div>
       ) : null}
@@ -171,7 +171,7 @@ export function ChatWidget() {
       {/* Chat panel */}
       <div
         className={cn(
-          "fixed bottom-24 right-5 z-[60] flex w-[calc(100vw-2.5rem)] max-w-sm origin-bottom-right flex-col overflow-hidden rounded-[5px] border border-border bg-white shadow-[0_18px_48px_rgba(31,31,31,0.22)] transition-all duration-200",
+          "fixed bottom-[144px] right-5 sm:bottom-24 z-[60] flex w-[calc(100vw-2.5rem)] max-w-sm origin-bottom-right flex-col overflow-hidden rounded-[5px] border border-border bg-white shadow-[0_18px_48px_rgba(31,31,31,0.22)] transition-all duration-200",
           open ? "pointer-events-auto scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0"
         )}
         role="dialog"
