@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Bot, MessageCircle, Send, X } from "lucide-react";
+import { Bot, Calendar, Mail, MessageCircle, Send, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ChatMessage {
@@ -22,14 +22,44 @@ const GREETING: ChatMessage = {
     "Hi! I'm the MozIntelligence AI Concierge. I can help you understand our e-commerce analytics services, find the right package for your store, and answer questions about pricing, deliverables, and integrations.\n\nWhat brings you here today?",
 };
 
+// CTA destinations — same links the previous widget used (Contact section).
+const BOOKING_URL = "https://calendar.app.google/TGnzfC65zBF3hVeD9";
+const EMAIL_URL =
+  "https://mail.google.com/mail/?view=cm&fs=1&to=mojahidulislam101010@gmail.com&su=Discovery+Call+Inquiry&body=Hi+Mozahidul%2C+I+visited+your+portfolio+and+want+to+discuss+my+e-commerce+data+needs.";
+
+interface CTABlock {
+  intro: string;
+  bookLabel: string;
+  emailLabel: string;
+}
+
 /**
- * The existing backend's system prompt appends a `[CTA]...[/CTA]` block to
- * every assistant response (intro + book_label + email_label). The previous
- * widget parsed this into Book/Email buttons; this simpler widget doesn't, so
- * we strip the block so the raw markup never shows to the user.
+ * The backend's system prompt appends a `[CTA]...[/CTA]` block to every
+ * assistant response (intro + book_label + email_label). We parse it into
+ * Book/Email buttons that render at the end of each assistant message —
+ * matching the behaviour of the previous widget.
  */
-function stripCTA(content: string): string {
-  return content.replace(/\[CTA\][\s\S]*?\[\/CTA\]/g, "").trim();
+function parseCTA(content: string): { text: string; cta: CTABlock | null } {
+  const ctaMatch = content.match(/\[CTA\]([\s\S]*?)\[\/CTA\]/);
+  if (!ctaMatch) {
+    return { text: content.trim(), cta: null };
+  }
+
+  const ctaContent = ctaMatch[1];
+  const text = content.replace(/\[CTA\][\s\S]*?\[\/CTA\]/, "").trim();
+
+  const introMatch = ctaContent.match(/intro:\s*(.+)/);
+  const bookMatch = ctaContent.match(/book_label:\s*(.+)/);
+  const emailMatch = ctaContent.match(/email_label:\s*(.+)/);
+
+  return {
+    text,
+    cta: {
+      intro: introMatch ? introMatch[1].trim() : "",
+      bookLabel: bookMatch ? bookMatch[1].trim() : "Book a Free 20-Min Strategy Call",
+      emailLabel: emailMatch ? emailMatch[1].trim() : "Email Me",
+    },
+  };
 }
 
 /**
@@ -140,8 +170,8 @@ export function ChatWidget() {
         aria-label="MozIntelligence AI Concierge"
         aria-hidden={!open}
       >
-        {/* Header */}
-        <div className="flex items-center gap-3 bg-footer-purple px-5 py-4 text-white">
+        {/* Header — dark purple so white text reads clearly (no token dependency) */}
+        <div className="flex items-center gap-3 bg-[#2e1065] px-5 py-4 text-white">
           <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15">
             <Bot className="h-5 w-5" aria-hidden="true" />
           </span>
@@ -154,19 +184,48 @@ export function ChatWidget() {
         {/* Messages */}
         <div ref={scrollRef} className="max-h-80 flex-1 overflow-y-auto px-4 py-4 scrollbar-slim">
           <div className="flex flex-col gap-3">
-            {messages.map((m, i) => (
-              <div
-                key={i}
-                className={cn(
-                  "max-w-[85%] whitespace-pre-line rounded-[5px] px-3.5 py-2.5 text-sm leading-relaxed",
-                  m.role === "assistant"
-                    ? "self-start bg-surface-soft text-heading"
-                    : "self-end bg-btn-purple text-white"
-                )}
-              >
-                {m.role === "assistant" ? stripCTA(m.content) : m.content}
-              </div>
-            ))}
+            {messages.map((m, i) => {
+              const { text, cta } =
+                m.role === "assistant" ? parseCTA(m.content) : { text: m.content, cta: null };
+              return (
+                <div
+                  key={i}
+                  className={cn(
+                    "max-w-[85%] whitespace-pre-line rounded-[5px] px-3.5 py-2.5 text-sm leading-relaxed",
+                    m.role === "assistant"
+                      ? "self-start bg-surface-soft text-heading"
+                      : "self-end bg-btn-purple text-white"
+                  )}
+                >
+                  {text}
+                  {cta ? (
+                    <div className="mt-3 space-y-2 border-t border-border/60 pt-3">
+                      {cta.intro ? (
+                        <p className="mb-2 text-xs leading-relaxed text-body-text">{cta.intro}</p>
+                      ) : null}
+                      <a
+                        href={BOOKING_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex w-full items-center justify-center gap-1.5 rounded-[5px] bg-btn-purple px-3 py-2 text-xs font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-btn-purple-hover"
+                      >
+                        <Calendar className="h-3.5 w-3.5" aria-hidden="true" />
+                        {cta.bookLabel}
+                      </a>
+                      <a
+                        href={EMAIL_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex w-full items-center justify-center gap-1.5 rounded-[5px] border border-brand/40 px-3 py-2 text-xs font-semibold text-brand transition-colors hover:bg-surface-soft"
+                      >
+                        <Mail className="h-3.5 w-3.5" aria-hidden="true" />
+                        {cta.emailLabel}
+                      </a>
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })}
             {loading ? (
               <div className="self-start rounded-[5px] bg-surface-soft px-3.5 py-2.5 text-sm text-body-text" aria-live="polite">
                 Typing…
