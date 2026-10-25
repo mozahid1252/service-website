@@ -491,7 +491,7 @@ export function SiteFooter() {
         {/* Brand column */}
         <div className="flex flex-col gap-5">
           <Link href="/" className="flex items-center gap-2.5" aria-label="MozIntelligence — Home">
-            <img src="/images/logo.png" alt="MozIntelligence logo" width={160} height={44} className="h-auto w-40" />
+            <img src="/images/logo.png" alt="MozIntelligence logo" width={40} height={40} className="h-10 w-10 rounded-lg" />
             <span className="text-xl font-semibold leading-none text-white">
               Moz<span className="text-[#d9c9ff]">Intelligence</span>
             </span>

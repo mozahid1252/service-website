@@ -124,7 +124,7 @@ function BookingPageContent() {
       <div className="bg-white border-b border-[#E2E8F0]" style={{ height: '72px' }}>
         <div className="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
           <a href="/" className="flex items-center gap-3">
-            <Image src="/images/logo.png" alt="MozIntelligence Logo" width={130} height={36} className="h-auto w-[130px]" priority />
+            <Image src="/images/logo.png" alt="MozIntelligence Logo" width={38} height={38} className="rounded-lg" priority />
             <span className="text-xl font-bold text-[#0F172A] tracking-tight">MozIntelligence</span>
           </a>
           <a href="/" className="hidden sm:flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-[#475569] bg-white transition-all hover:bg-[#F8FAFC] hover:shadow-sm" style={{ border: '1px solid #E2E8F0' }}>

@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     siteName: "MozIntelligence",
     images: [
       {
-        url: "/images/logo.png",
+        url: "/images/logo-og.png",
         width: 1200,
         height: 655,
         alt: "MozIntelligence Logo",
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "MozIntelligence | E-commerce Growth Intelligence",
     description: "MozIntelligence helps e-commerce brands uncover profit leaks, analyze marketing performance, understand customer behavior, and make data-driven growth decisions.",
-    images: ["/images/logo.png"],
+    images: ["/images/logo-og.png"],
   },
 };
 
@@ -91,7 +91,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "MozIntelligence",
     url: "https://mozintelligence.vercel.app",
-    logo: "https://mozintelligence.vercel.app/images/logo.png",
+    logo: "https://mozintelligence.vercel.app/images/logo-og.png",
     description: "MozIntelligence helps e-commerce brands uncover profit leaks, analyze marketing performance, understand customer behavior, and make data-driven growth decisions.",
     founder: {
       "@type": "Person",
