@@ -42,17 +42,42 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Mozahidul Islam, E-Commerce Growth Analyst",
-  description: "I find exactly where your money is leaking across your products, your ads, and your customers and show you how to stop it. No confusing reports. No generic advice.",
-  keywords: ["E-Commerce Analytics", "Growth Analyst", "Shopify Analytics", "Data Analysis", "Profit Optimization"],
+  metadataBase: new URL("https://mozintelligence.vercel.app"),
+  title: "MozIntelligence | E-commerce Growth Analytics",
+  description: "MozIntelligence helps e-commerce brands uncover profit leaks, analyze marketing performance, understand customer behavior, and make data-driven growth decisions.",
+  keywords: ["MozIntelligence", "E-Commerce Analytics", "Growth Analyst", "Shopify Analytics", "Data Analysis", "Profit Optimization"],
   authors: [{ name: "Mozahidul Islam" }],
+  creator: "Mozahidul Islam",
+  publisher: "MozIntelligence",
+  verification: {
+    google: "googlebf2530808b361a30",
+  },
   icons: {
     icon: "/images/logo.png",
   },
+  alternates: {
+    canonical: "https://mozintelligence.vercel.app/",
+  },
   openGraph: {
-    title: "Mozahidul Islam, E-Commerce Growth Analyst",
-    description: "I find exactly where your money is leaking and show you how to stop it.",
+    title: "MozIntelligence | E-commerce Growth Analytics",
+    description: "MozIntelligence helps e-commerce brands uncover profit leaks, analyze marketing performance, understand customer behavior, and make data-driven growth decisions.",
     type: "website",
+    url: "https://mozintelligence.vercel.app/",
+    siteName: "MozIntelligence",
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 1254,
+        height: 1254,
+        alt: "MozIntelligence Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "MozIntelligence | E-commerce Growth Analytics",
+    description: "MozIntelligence helps e-commerce brands uncover profit leaks, analyze marketing performance, understand customer behavior, and make data-driven growth decisions.",
+    images: ["/images/logo.png"],
   },
 };
 
@@ -61,12 +86,34 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "MozIntelligence",
+    url: "https://mozintelligence.vercel.app",
+    logo: "https://mozintelligence.vercel.app/images/logo.png",
+    description: "MozIntelligence helps e-commerce brands uncover profit leaks, analyze marketing performance, understand customer behavior, and make data-driven growth decisions.",
+    founder: {
+      "@type": "Person",
+      name: "Mozahidul Islam",
+      jobTitle: "E-Commerce Growth Analyst",
+    },
+    sameAs: [
+      "https://www.linkedin.com/in/mozahidul-islam",
+      "https://github.com/mojahid1252",
+    ],
+  };
+
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${syne.variable} ${anton.variable} ${bricolage.variable} ${fraunces.variable} ${manrope.variable} antialiased`}
         style={{ fontFamily: "var(--font-inter), sans-serif" }}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
         <GoogleAnalytics gaId="G-NETNBH6KZ4" />
         <Toaster />
