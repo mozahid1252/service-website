@@ -41,7 +41,7 @@ const SERVICES_SUBMENU = [
 
 const TRUST_STATS: { target?: number; prefix?: string; suffix?: string; value?: string; label: string; isRating?: boolean; isPrivacy?: boolean; isDeadline?: boolean; ratingLabel?: string }[] = [
   { target: 127, prefix: '+', suffix: '%', label: 'Avg Revenue Growth' },
-  { target: 5, prefix: '', suffix: '+', label: 'Proved Case Study' },
+  { target: 4, prefix: '', suffix: '+', label: 'Proved Case Study' },
   { target: 100, prefix: '', suffix: '%', label: 'Data Privacy', isPrivacy: true },
   { target: 100, prefix: '', suffix: '+', label: 'Projects Delivered' },
   { target: 4.9, prefix: '', suffix: '', isRating: true, ratingLabel: '' },
@@ -342,30 +342,6 @@ const ISB_CATEGORIES = [
 ];
 
 const CASE_STUDIES = [
-  {
-    store: 'ZARA Organics',
-    title: 'The $89K/Month Store That Was Actually Bankrupt',
-    niche: 'Organic Wellness & Supplements',
-    nightmare: '$89K/mo revenue, celebrating a record year. Actual net profit for the entire year was only $84. Margin collapsed from 24% to 10.9%.',
-    revelation: '46% of her customer base was permanently "Lost." Free organic content channels generated 4.2x more LTV than $18K/mo paid ads.',
-    turnaround: 'Shifted from an ad-spend business to a content/community business. Built a live Looker Studio dashboard.',
-    result: 'Profit went from $7/mo to $48,400/mo.',
-    cssClass: 'zara',
-    tagline: 'A $7/month profit hidden inside $89K in revenue.',
-    caseType: 'turnaround',
-  },
-  {
-    store: 'PACE Performance',
-    title: 'All Speed, No Strategy: The Marathon Runner\'s Store',
-    niche: 'Fitness & Running Gear',
-    nightmare: '$41K/mo revenue, running his business like a marathon. Thought he was making $9K/mo profit; he was actually making $425/mo.',
-    revelation: 'His free TikTok race videos brought in customers worth $524 LTV, while his $8,400/mo paid ads brought customers worth $9 LTV.',
-    turnaround: 'Cut ad spend by 70%, killed low-margin/high-return fitness products, leaned into authentic race-day content.',
-    result: 'Profit jumped from $425/mo to $31,400/mo in 30 days.',
-    cssClass: 'pace',
-    tagline: 'His $8,400/mo ads brought customers worth $9 LTV.',
-    caseType: 'scale',
-  },
   {
     store: 'LUNA Jewelry Co.',
     title: 'The Store Gifting Away Its Own Profit',
