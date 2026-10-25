@@ -14,6 +14,7 @@ import { WhyDifferentSection } from '@/components/WhyDifferentSection';
 import { FaqSection } from '@/components/FaqSection';
 import CaseStudiesSection from '@/components/CaseStudiesSection';
 import { TechnicalPortfolioSection } from '@/components/TechnicalPortfolioSection';
+import { PrinciplesSection } from '@/components/PrinciplesSection';
 
 /* GitHub Pages basePath helper */
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -1498,135 +1499,6 @@ function AboutSection() {
               </a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function WhyMeSection() {
-  const sectionRef = useScrollReveal();
-  const principles = [
-    {
-      num: '01',
-      icon: FileText,
-      title: 'We speak business, not jargon.',
-      text: 'Every report is written so that a business owner, not a data scientist, can read it, understand it, and act on it immediately. If you need a glossary to read my work, I have failed.',
-      keyword: 'Clarity',
-    },
-    {
-      num: '02',
-      icon: Target,
-      title: 'We deliver decisions, not data dumps.',
-      text: 'You will never receive a spreadsheet full of numbers with no context. Every single finding comes with a specific, prioritized recommendation and a clear reason why it matters to your bottom line.',
-      keyword: 'Decisions',
-    },
-    {
-      num: '03',
-      icon: Lightbulb,
-      title: 'We focus on your actual problem.',
-      text: 'Every engagement is designed around the specific challenge your business is facing right now, not a generic template copy-pasted from the last client. Your data is unique. Your analysis should be too.',
-      keyword: 'Relevance',
-    },
-    {
-      num: '04',
-      icon: Rocket,
-      title: 'We build for action, not admiration.',
-      text: 'Dashboards and reports that sit unopened are worthless. Everything I build is designed to be used, by you and your team, every day, to make faster and better decisions with complete confidence.',
-      keyword: 'Action',
-    },
-  ];
-  return (
-    <section id="why-me" className="whyme-section" ref={sectionRef}>
-      {/* Ambient background layers */}
-      <div className="whyme-bg-grid" aria-hidden="true" />
-      <div className="whyme-bg-glow whyme-bg-glow-1" aria-hidden="true" />
-      <div className="whyme-bg-glow whyme-bg-glow-2" aria-hidden="true" />
-
-      <div className="whyme-inner reveal">
-        {/* ── HEADER ── */}
-        <div className="whyme-header whyme-header-centered">
-          <div className="whyme-header-left whyme-header-left-centered">
-            <span className="whyme-eyebrow reveal-up">
-              <span className="whyme-eyebrow-dot" aria-hidden="true" />
-              Why MozIntelligence
-            </span>
-            <h2 className="whyme-title whyme-title-single whyme-title-gradient reveal-up text-center" style={{ transitionDelay: '0.15s' }}>
-              The 4 Principles That Shape Every Engagement
-            </h2>
-          </div>
-        </div>
-
-        {/* ── PRINCIPLES LIST ── */}
-        <div className="whyme-principles">
-          {principles.map((p, i) => (
-            <article
-              key={p.num}
-              className={`whyme-principle whyme-p-${i + 1} reveal-up`}
-              style={{ transitionDelay: `${0.4 + i * 0.12}s` }}
-            >
-              {/* Card body */}
-              <div className="whyme-card">
-                <div className="whyme-card-glow" aria-hidden="true" />
-                <div className="whyme-card-top">
-                  <div className="whyme-icon-wrap" aria-hidden="true">
-                    <p.icon size={20} strokeWidth={2} />
-                  </div>
-                  <span className="whyme-keyword">{p.keyword}</span>
-                </div>
-                <h3 className="whyme-card-title">{p.title}</h3>
-                <p className="whyme-card-text">{p.text}</p>
-                <div className="whyme-card-arrow" aria-hidden="true">
-                  <ArrowRight size={16} />
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        {/* ── FOUNDER TESTIMONIAL (moved from Why Work With Me) ── */}
-        <div className="whyme-testimonial reveal-up" style={{ transitionDelay: '0.9s' }}>
-          <div className="glass rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto">
-            <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-4">What A Founder Says</div>
-            <p className="text-[#F0F4F8] text-base leading-relaxed italic mb-4">
-              &quot;I fired my $2,500/month agency because their &apos;amazing dashboards&apos; still left me broke. The Health Check and the Growth Packages found the exact holes in my business in 13 days. I wish I had done this two years earlier.&quot;
-            </p>
-            <p className="text-[#8899AA] text-sm mb-4">Marcus T., NOIRE Collective</p>
-
-            <div className="overflow-x-auto rounded-lg border border-[rgba(0,198,255,0.15)]">
-              <table className="w-full text-sm min-w-[360px]">
-                <thead>
-                  <tr className="bg-[rgba(0,198,255,0.05)]">
-                    <th className="px-4 py-2 text-left text-[#FF4444] font-semibold">Before</th>
-                    <th className="px-4 py-2 text-left text-[#00E676] font-semibold">After</th>
-                    <th className="px-4 py-2 text-left text-[#F5A623] font-semibold whitespace-nowrap">Time</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="px-4 py-3 text-[#FF4444]">-$1,690/mo net profit</td>
-                    <td className="px-4 py-3 text-[#00E676] font-semibold">+$15,000/mo net profit</td>
-                    <td className="px-4 py-3 text-[#F5A623] whitespace-nowrap">60–70 days</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p className="text-[#8899AA] text-xs mt-3 leading-relaxed">
-              How: Discount addiction detoxed (17.6% → 4.8%). Facebook &amp; TikTok ads cut by 70% and reallocated to organic/Google. Unified size charts to stop a 24.7% unit return rate. Mobile checkout rebuilt. Win-back email sent to 6,063 dormant customers.
-            </p>
-          </div>
-        </div>
-
-        {/* ── CTA ── */}
-        <div className="whyme-cta reveal-up text-center" style={{ transitionDelay: '1.05s' }}>
-          <a
-            href="#contact"
-            className="whyme-cta-btn btn-press inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
-            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
-          >
-            <Calendar size={18} className="flex-shrink-0" />
-            Lets Find Revenue You Already Have
-          </a>
         </div>
       </div>
     </section>
@@ -3219,7 +3091,7 @@ export default function PortfolioPage() {
       <WhyDataSection />
       <QuickProofSection />
       <AboutSection />
-      <WhyMeSection />
+      <PrinciplesSection />
       <WhyDifferentSection />
       <ServicesSection />
       <CaseStudiesSection />
