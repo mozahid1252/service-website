@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { ChatbotWidget } from '@/components/chatbot-widget';
 import { WhyDifferentSection } from '@/components/WhyDifferentSection';
+import { FaqSection } from '@/components/FaqSection';
 
 /* GitHub Pages basePath helper */
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -2915,157 +2916,6 @@ function TechStackSection() {
   );
 }
 
-/* ──────────────────────────────────────────
-   FAQ DATA — text must stay EXACTLY as provided
-   ────────────────────────────────────────── */
-const FAQ_ITEMS = [
-  {
-    num: '00',
-    question: "I've already bought the Health Check or Growth Package. Do I have to pay full price again to upgrade?",
-    answer: <>No, absolutely not. <strong>You only pay for what's new.</strong><br /><br />If you start with a smaller package and want to upgrade later, <strong>every dollar you already spent is deducted from the new package price.</strong> We simply subtract your previous payment and focus on delivering the new analyses and automated tools you need.<br /><br /><strong>How the Upgrade Credit Works (2 Examples):</strong><br /><br /><strong>Example 1: Upgrading from Health Check ($200) to Growth Package ($900)</strong><br />You bought the E-Commerce Health Check for $200 to find immediate profit leaks. You now want the Revenue Growth Accelerator ($900) for deep RFM customer segmentation, channel LTV, and churn analysis.<br /><strong>Your Investment: $900 − $200 = $700</strong><br />Your $200 is fully credited, and you get all 5 deeper growth analyses for just the difference.<br /><br /><strong>Example 2: Upgrading from Growth Package ($900) to Full System ($2,800)</strong><br />You bought the Revenue Growth Accelerator for $900 to segment your customers and optimize your marketing budget. You now want the Data-Driven Growth System ($2,800) to automate your data with BigQuery, live daily dashboards, and 90-day inventory forecasting.<br /><strong>Your Investment: $2,800 − $900 = $1,900</strong><br />Your entire $900 is credited, and we build your automated enterprise infrastructure for the remaining balance.</>,
-  },
-  {
-    num: '01',
-    question: 'My marketing agency already provides dashboards. Why do I need you?',
-    answer: <>That's not a problem. Your agency focuses on running and optimizing your marketing. <strong>I focus on understanding the business behind the numbers.</strong><br /><br />I go beyond ROAS and campaign metrics by connecting your marketing data with product costs, returns, shipping, customer value, and true profitability. This helps reveal what your dashboards may not show: <strong>where you're actually making money, where you're losing it, and what you should do next.</strong><br /><br />Your agency optimizes the campaigns. <strong>I uncover the business opportunities behind them.</strong></>,
-  },
-  {
-    num: '02',
-    question: 'Do I need to have my data perfectly organized before we work together?',
-    answer: <>Absolutely not. Most founders have messy data spread across Shopify, GA4, and ad platforms that don't talk to each other. That's exactly what my <strong>Data Setup & Infrastructure</strong> service fixes. I handle <strong>100% of the backend engineering</strong> (SQL, Python, BigQuery) to clean, merge, and structure your data. <strong>You never have to touch a single line of code.</strong></>,
-  },
-  {
-    num: '03',
-    question: 'Why is there a separate fee for the Data Setup? Can\'t you just look at my Shopify dashboard?',
-    answer: <>Shopify's default dashboard only shows about <strong>10% of the picture</strong>. To find the hidden profit leaks, I have to pull raw data from all your platforms, align currencies and timezones, and merge them into <strong>one central database</strong>. This is a <strong>one-time investment</strong> that pays for itself with every decision you make going forward. You only pay for the platforms you actually use.</>,
-  },
-  {
-    num: '04',
-    question: 'Does my store really need all 15 analyses in the Data-Driven Growth System?',
-    answer: <>Not always. <strong>We can build all 15 for you, or fully customize them based on your needs.</strong><br /><br />If you want the complete picture, we are happy to run all 15 deep analyses. However, every store gets our <strong>8 Core Analytics Foundations</strong> (Revenue, Margins, RFM Segments, LTV, Funnels, and Live Dashboards), and for the rest, we can pick only the modules that make the most sense for your business:<br /><br /><strong>If you have many products:</strong> We activate Inventory Forecasting &amp; Return Pattern Analysis.<br /><strong>If you have a few core products:</strong> We focus heavily on Market Basket Cross-Sells &amp; LTV Cohorts.<br /><strong>If you run heavy discounts:</strong> We prioritize Margin Erosion &amp; Promo Strategy Analysis.<br /><br />During onboarding, you can choose to get all 15 analyses or customize the remaining modules so you get <strong>zero fluff and 100% actionable data.</strong></>,
-  },
-  {
-    num: '05',
-    question: 'I have a specific, urgent problem (like high return rates or declining ad performance). Do I have to buy a full $1,500 package?',
-    answer: <>No. <strong>You don't need to commit to a full package</strong> if you only need help solving one specific problem.<br /><br />You can choose one of my <strong>Specialized Add-On Audits</strong>, such as a CRO Audit, Profitability Audit, Marketing Audit, or another focused audit designed around a specific business issue. These are deep-dive, standalone engagements delivered in <strong>7–14 days</strong>.<br /><br />If your problem doesn't fit into a predefined audit, you can also use <strong>Part 4: Custom Analytics &amp; Insights</strong>. I can build a custom analysis specifically around the business question you need answered, using the data and context relevant to your situation.<br /><br /><strong>You pay for the problem you need solved, not for analysis you don't need.</strong></>,
-  },
-  {
-    num: '06',
-    question: 'My revenue is growing, but I don\'t feel like I\'m making more money. Can you help?',
-    answer: <>This is the most common scenario I see. <strong>Revenue is vanity; profit is sanity.</strong> I will run a <strong>Profit Reality Check</strong> on your top products, calculate your true margins (after COGS, ad spend, returns, and shipping), and show you exactly which <strong>"best-sellers" are quietly draining your bank account</strong>.</>,
-  },
-  {
-    num: '07',
-    question: 'How much of my time is required during the engagement?',
-    answer: <><strong>Very little.</strong> I built this process specifically for busy founders. I handle the data extraction, engineering, and analysis. You simply provide initial platform access, and then join me for the <strong>final strategy call</strong> to review the findings and action plan. You don't need to babysit the project.</>,
-  },
-  {
-    num: '08',
-    question: 'I don\'t have a marketing team. Will I actually be able to implement your recommendations?',
-    answer: <>Absolutely. <strong>I make every recommendation simple enough for a founder or small team to understand and implement</strong> without needing a technical background or a dedicated marketing team.<br /><br />You won't get complicated instructions or a 50-page technical report. Every finding comes with a <strong>clear, prioritized action plan</strong> written in plain business language, such as "Pause this ad," "Fix this checkout step," or "Target these high-value customers."<br /><br />And if you still don't have the time, resources, or confidence to implement something yourself, that's where my <strong>Implementation Add-Ons</strong> come in. You can choose <strong>Done-With-You</strong> support for guided implementation or <strong>Done-for-You</strong> support where I handle the implementation for you.<br /><br />So you can either implement it yourself with clear guidance, or <strong>have me help you put it into action.</strong></>,
-  },
-  {
-    num: '09',
-    question: 'I\'m nervous about giving access to my Shopify and ad accounts. Is my data secure?',
-    answer: <><strong>100% secure.</strong> I use strict, permission-based API connections. For live dashboard and retainer clients, I store all API keys and tokens securely using <strong>environment variables or Secret Manager</strong> — never exposed, never at risk. Your data is used solely for your analysis and is <strong>never shared</strong>.</>,
-  },
-  {
-    num: '10',
-    question: 'How fast can we start? I\'m bleeding money.',
-    answer: <>The <strong>E-Commerce Health Check</strong> is delivered in exactly <strong>5–7 days</strong>. If your business is losing <strong>$1,690 a month</strong>, you don't have 3 months to wait for a consultant to figure it out. You need to know exactly what to fix <strong>this week</strong>.</>,
-  },
-];
-
-function FAQSection() {
-  const sectionRef = useScrollReveal();
-  // Accordion state: index of the currently-open FAQ item, or -1 if all closed.
-  // Only one item can be open at a time (per requirement).
-  const [openIndex, setOpenIndex] = useState<number>(-1);
-
-  const toggle = (i: number) => {
-    setOpenIndex((prev) => (prev === i ? -1 : i));
-  };
-
-  // Render a single FAQ card as an accordion item.
-  // The question row (with +/- toggle) is ALWAYS visible.
-  // The answer collapses/expands below it.
-  const renderCard = (item: { num: string; question: string; answer: React.ReactNode }, displayIndex: number) => {
-    const isOpen = openIndex === displayIndex;
-    return (
-      <div
-        className={`faq-item${isOpen ? ' open' : ''}`}
-        key={item.num}
-      >
-        <button
-          type="button"
-          className="faq-item-question"
-          onClick={() => toggle(displayIndex)}
-          aria-expanded={isOpen}
-          aria-controls={`faq-answer-${item.num}`}
-        >
-          <span className="faq-item-text">{item.question}</span>
-          <span className="faq-toggle" aria-hidden="true">
-            <span className="faq-toggle-icon faq-toggle-plus">+</span>
-            <span className="faq-toggle-icon faq-toggle-minus">−</span>
-          </span>
-        </button>
-        <div
-          className={`faq-item-answer${isOpen ? ' open' : ''}`}
-          id={`faq-answer-${item.num}`}
-          role="region"
-        >
-          <p className="faq-item-answer-text">{item.answer}</p>
-        </div>
-        <div className="faq-item-divider" aria-hidden="true"></div>
-      </div>
-    );
-  };
-
-  return (
-    <section id="faq" className="faq-section" ref={sectionRef}>
-      <div className="faq-wrap reveal">
-
-        {/* ── Header ── */}
-        <div className="faq-header">
-          <span className="faq-eyebrow">FAQ</span>
-          <p className="faq-subtitle">
-            Everything you need to know before we work together.
-          </p>
-          <div className="faq-title-bar"></div>
-        </div>
-
-        {/* Q1–Q6 */}
-        {FAQ_ITEMS.slice(0, 6).map((item, i) => renderCard(item, i))}
-
-        {/* Q7–Q11 */}
-        {FAQ_ITEMS.slice(6, 11).map((item, i) => renderCard(item, 6 + i))}
-
-        {/* ── Bottom CTA ── */}
-        <div className="faq-cta">
-          <div className="faq-cta-inner">
-            <div className="faq-cta-left">
-              <p className="faq-cta-eyebrow">Still have questions?</p>
-              <h3 className="faq-cta-heading">
-                Let&apos;s find your next <span className="faq-cta-money">$10,000</span>.
-              </h3>
-            </div>
-            <div className="faq-cta-right">
-              <a href="#contact" className="faq-cta-btn">
-                Book a Complimentary 20-Minute Discovery Call
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  );
-}
-
 /* Maps service dropdown values to human-readable labels for the email payload */
 const SERVICE_LABELS: Record<string, string> = {
   'starter': 'E-Commerce Health Check',
@@ -3583,7 +3433,7 @@ export default function PortfolioPage() {
       <TestimonialsSection />
       <ProcessSection />
       <TechStackSection />
-      <FAQSection />
+      <FaqSection />
       <ContactSection />
       <Footer />
       <MobileStickyBar />
