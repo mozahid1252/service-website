@@ -10,6 +10,7 @@ import {
   AlertTriangle, Target, Lightbulb, Rocket, MapPin, Calendar, Lock, Quote
 } from 'lucide-react';
 import { CtaBanner, SiteFooter } from '@/components/site/contact-footer';
+import { QuickProofSection } from '@/components/site/quick-proof';
 import { ChatbotWidget } from '@/components/chatbot-widget';
 import { WhyDifferentSection } from '@/components/WhyDifferentSection';
 import { FaqSection } from '@/components/FaqSection';
@@ -1274,88 +1275,6 @@ function WhyDataSection() {
   );
 }
 
-/* ── QUICK PROOF SECTION — Compact premium redesign ── */
-function QuickProofSection() {
-  const sectionRef = useScrollReveal();
-  return (
-    <section id="quick-proof" className="qp3-section" ref={sectionRef}>
-      {/* Ambient background */}
-      <div className="qp3-bg-glow qp3-bg-glow-1" aria-hidden="true" />
-      <div className="qp3-bg-glow qp3-bg-glow-2" aria-hidden="true" />
-
-      <div className="qp3-inner reveal">
-        {/* ── HEADER ── */}
-        <div className="qp3-header">
-          <span className="qp3-eyebrow reveal-up">Quick Proof</span>
-          <h2 className="qp3-title qp3-title-single reveal-up" style={{ transitionDelay: '0.15s' }}>
-            The Money Was Always There. Nobody Was Looking.
-          </h2>
-        </div>
-
-        {/* ── CASE CARDS (3-column grid, compact) ── */}
-        <div className="qp3-grid reveal-stagger">
-          {QUICK_PROOF_CARDS.map((card, i) => (
-            <article
-              key={i}
-              className={`qp3-card qp3-card-${i + 1} reveal-up`}
-              style={{ transitionDelay: `${0.3 + i * 0.12}s` }}
-            >
-              {/* Top accent bar */}
-              <div className="qp3-accent" aria-hidden="true" />
-
-              {/* Header: store + niche */}
-              <div className="qp3-card-head">
-                <h3 className="qp3-store">{card.store}</h3>
-                <span className="qp3-niche">{card.niche}</span>
-              </div>
-
-              {/* Result */}
-              <div className="qp3-result">
-                <span className="qp3-result-label">The Result</span>
-                <p className="qp3-result-text">{card.result}</p>
-              </div>
-
-              {/* Stats: 2x2 grid */}
-              <div className="qp3-stats">
-                <div className="qp3-stat">
-                  <span className="qp3-stat-v">{card.investment}</span>
-                  <span className="qp3-stat-l">Investment</span>
-                </div>
-                <div className="qp3-stat">
-                  <span className="qp3-stat-v">{card.timeline}</span>
-                  <span className="qp3-stat-l">Timeline</span>
-                </div>
-                <div className="qp3-stat qp3-stat-hl">
-                  <span className="qp3-stat-v">{card.profitAdded}</span>
-                  <span className="qp3-stat-l">Profit Added</span>
-                </div>
-                <div className="qp3-stat qp3-stat-roi">
-                  <span className="qp3-stat-v">{card.roi}</span>
-                  <span className="qp3-stat-l">ROI</span>
-                </div>
-              </div>
-
-              {/* Quote */}
-              <div className="qp3-quote">
-                <p className="qp3-quote-text">{card.quote.replace(/"/g, '')}</p>
-                <span className="qp3-quote-author">— {card.author}</span>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        {/* CTA button */}
-        <div className="qp3-cta-wrap reveal-up" style={{ transitionDelay: '0.8s' }}>
-          <a href="#case-studies" className="qp3-cta">
-            See The Full Case Studies <ArrowRight size={15} />
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ── ABOUT SECTION — Premium light editorial redesign ── */
 function AboutSection() {
   const sectionRef = useScrollReveal();
   const achievements = [
