@@ -1548,7 +1548,7 @@ function AboutSection() {
               <div className="about2-photo-frame">
                 <Image
                   src={`${basePath}/images/photo1.png`}
-                  alt="Mozahidul Islam — E-Commerce Growth Analyst"
+                  alt="MozIntelligence — E-Commerce Growth Intelligence"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover"

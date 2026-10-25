@@ -43,9 +43,9 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mozintelligence.vercel.app"),
-  title: "MozIntelligence | E-commerce Growth Analytics",
+  title: "MozIntelligence | E-commerce Growth Intelligence",
   description: "MozIntelligence helps e-commerce brands uncover profit leaks, analyze marketing performance, understand customer behavior, and make data-driven growth decisions.",
-  keywords: ["MozIntelligence", "E-Commerce Analytics", "Growth Analyst", "Shopify Analytics", "Data Analysis", "Profit Optimization"],
+  keywords: ["MozIntelligence", "E-Commerce Analytics", "Growth Intelligence", "Shopify Analytics", "Data Analysis", "Profit Optimization"],
   authors: [{ name: "Mozahidul Islam" }],
   creator: "Mozahidul Islam",
   publisher: "MozIntelligence",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     canonical: "https://mozintelligence.vercel.app/",
   },
   openGraph: {
-    title: "MozIntelligence | E-commerce Growth Analytics",
+    title: "MozIntelligence | E-commerce Growth Intelligence",
     description: "MozIntelligence helps e-commerce brands uncover profit leaks, analyze marketing performance, understand customer behavior, and make data-driven growth decisions.",
     type: "website",
     url: "https://mozintelligence.vercel.app/",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "MozIntelligence | E-commerce Growth Analytics",
+    title: "MozIntelligence | E-commerce Growth Intelligence",
     description: "MozIntelligence helps e-commerce brands uncover profit leaks, analyze marketing performance, understand customer behavior, and make data-driven growth decisions.",
     images: ["/images/logo.png"],
   },
