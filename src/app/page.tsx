@@ -12,6 +12,7 @@ import {
 import { ChatbotWidget } from '@/components/chatbot-widget';
 import { WhyDifferentSection } from '@/components/WhyDifferentSection';
 import { FaqSection } from '@/components/FaqSection';
+import CaseStudiesSection from '@/components/CaseStudiesSection';
 
 /* GitHub Pages basePath helper */
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -340,57 +341,6 @@ const ISB_CATEGORIES = [
       { name: 'Credential Security', logo: (<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5A623" strokeWidth="2" strokeLinecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>) },
       { name: 'Dashboard Data-Source Connection', logo: (<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F5A623" strokeWidth="2" strokeLinecap="round"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" /></svg>) },
     ],
-  },
-];
-
-const CASE_STUDIES = [
-  {
-    store: 'LUNA Jewelry Co.',
-    title: 'The Store Gifting Away Its Own Profit',
-    niche: 'Handcrafted Jewelry',
-    nightmare: 'Making $30K/mo but working 11 hrs/day, 6 days a week, for just $11.59/hour.',
-    revelation: 'She was giving away $115,956/year in "free" services (gift wrap, engraving, shipping). Her bestseller earned her $8.20/hour.',
-    turnaround: 'Added a $12 engraving fee, $4.99 premium gift wrap, raised free shipping threshold, and flipped ad budget from Meta to Pinterest. Took 4 hours to implement.',
-    result: 'Hourly rate jumped to $66.81/hr. Monthly profit went from $3.3K to $18,900/mo.',
-    cssClass: 'luna',
-    tagline: 'Working 11 hrs/day. Earning $11.59/hour.',
-    caseType: 'turnaround',
-  },
-  {
-    store: 'UrbanNest Home Decor',
-    title: 'How a $23K/Month Store Discovered They Were Bleeding $4,200 Every Month',
-    niche: 'Home Decor & Lifestyle',
-    nightmare: '$23K/mo revenue, growing steadily, but only $3K net profit. A 20% promo sale spiked revenue but actually wiped out margins, dropping profit by 41%.',
-    revelation: 'The #1 best-seller (Boho Macramé) was secretly losing $769/quarter. Forced account creation was causing a 71% cart abandonment rate.',
-    turnaround: 'Paused losing ads, enabled guest checkout, flipped ad budget from Facebook to Google (which had 1.86x higher LTV), and sent win-back emails to at-risk customers.',
-    result: 'Profit jumped from $3.4K/mo to $7,800/mo in 60 days.',
-    cssClass: 'urbannest',
-    tagline: 'Best-seller was silently losing $769/quarter.',
-    caseType: 'diagnostic',
-  },
-  {
-    store: 'PawPerfect Premium',
-    title: 'How Data Saved $312,000 in Annual Revenue',
-    niche: 'Pet Supplies & Wellness',
-    nightmare: '$54K/mo revenue, 4.9★ reviews. Margins were shrinking because ad costs per customer rose 73% in 3 years.',
-    revelation: 'Ads targeted "senior pet owners" (LTV $134) who churned when pets died. Customers acquired with puppies generated 6.3x more LTV ($847). Zero referral program despite 67% of Champions coming from word-of-mouth.',
-    turnaround: 'Flipped ad targeting from senior to puppy parents. Created pet birthday and milestone email automation.',
-    result: 'Profit jumped from $12.4K/mo to $29,840/mo in 45 days.',
-    cssClass: 'paw',
-    tagline: 'Targeting wrong customers. $312K/year consequence.',
-    caseType: 'scale',
-  },
-  {
-    store: 'LUMIÈRE Beauty Co.',
-    title: 'How a $67K/Month Brand Discovered a Hidden $89K/Month Business',
-    niche: 'Skincare & Beauty',
-    nightmare: 'Plateaued at $67K/mo for 8 consecutive months. Profitable but stuck, leaving money on the table.',
-    revelation: 'Black Friday discount cohorts had 4.1x LOWER LTV and 81% churn compared to educational content cohorts. Meta Broad ads were destroying $8,963 in value.',
-    turnaround: 'Stopped chasing holiday discount revenue. Replicated best cohorts, created product bundles, and reallocated ad spend to Google Brand and Content.',
-    result: 'Profit jumped from $18.4K/mo to $41,380/mo in 45 days.',
-    cssClass: 'lumiere',
-    tagline: 'Plateaued 8 months. Black Friday was the villain.',
-    caseType: 'scale',
   },
 ];
 
@@ -2480,78 +2430,6 @@ function ServicesSection() {
           </div>
         </div>
 
-      </div>
-    </section>
-  );
-}
-
-function CaseStudiesSection() {
-  const sectionRef = useScrollReveal();
-  return (
-    <section id="case-studies" className="bg-[#020408] py-20 sm:py-28" ref={sectionRef}>
-      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="section-label reveal-up">The Receipts</span>
-          <h2 className="section-headline text-[clamp(23px,3.5vw,40px)] text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
-            Featured Case Studies
-          </h2>
-          <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
-            High revenue doesn&apos;t mean high profit. Here is what happened when founders stopped looking at vanity metrics and let me read their real data.
-          </p>
-        </div>
-
-        <div className="reveal-stagger case-studies-compact-grid">
-          {CASE_STUDIES.map((cs, i) => (
-            <article
-              key={i}
-              className={`case-card-qp-style case-card-qp-${i + 1} reveal-up`}
-              style={{ transitionDelay: `${0.3 + i * 0.12}s` }}
-            >
-              <div className="case-qp-accent" aria-hidden="true" />
-              <div className="case-qp-head">
-                <h3 className="case-qp-store">{cs.store}</h3>
-                <span className={`case-qp-badge ${cs.caseType}`}>{cs.caseType}</span>
-              </div>
-              <span className="case-qp-niche">{cs.niche}</span>
-              <p className="case-qp-title">{cs.title}</p>
-              <p className="case-qp-tagline">{cs.tagline}</p>
-
-              <div className="case-qp-sections">
-                <div className="case-qp-block">
-                  <div className="case-qp-label case-qp-label-nightmare">
-                    <AlertTriangle size={10} /> The Nightmare
-                  </div>
-                  <p className="case-qp-text">{cs.nightmare}</p>
-                </div>
-                <div className="case-qp-block">
-                  <div className="case-qp-label case-qp-label-revelation">
-                    <Lightbulb size={10} /> The Revelation
-                  </div>
-                  <p className="case-qp-text">{cs.revelation}</p>
-                </div>
-                <div className="case-qp-block">
-                  <div className="case-qp-label case-qp-label-turnaround">
-                    <Zap size={10} /> The Turnaround
-                  </div>
-                  <p className="case-qp-text">{cs.turnaround}</p>
-                </div>
-                <div className="case-qp-result">
-                  <div className="case-qp-label case-qp-label-result">
-                    <Rocket size={10} /> The Result
-                  </div>
-                  <p className="case-qp-result-text">{cs.result}</p>
-                </div>
-              </div>
-
-              <a href={`${basePath}/pdfs/case-${cs.cssClass}.pdf`} download={`${cs.store}_Case_Study.pdf`} className="case-qp-download">
-                <Download size={12} /> Download Full {cs.store} Case Study PDF
-              </a>
-            </article>
-          ))}
-        </div>
-
-        {/* Section Divider */}
-        <div className="section-divider mt-16" />
       </div>
     </section>
   );

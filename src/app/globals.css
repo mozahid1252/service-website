@@ -5531,3 +5531,29 @@ table.infra-table {
 .scrollbar-slim::-webkit-scrollbar { width: 6px; height: 6px; }
 .scrollbar-slim::-webkit-scrollbar-thumb { background: #c9bcf1; border-radius: 999px; }
 .scrollbar-slim::-webkit-scrollbar-track { background: transparent; }
+
+/* ============================================================
+   Case Studies section — scrollbar-hide + counter-tick animation
+   (component lives in src/components/CaseStudiesSection.tsx)
+   ============================================================ */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes counter-tick {
+  0% {
+    opacity: 0;
+    transform: translateY(60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.counter-tick {
+  animation: counter-tick 0.35s ease-out;
+}
