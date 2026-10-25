@@ -903,7 +903,7 @@ function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
           <a href="#hero" className="flex items-center gap-3 group">
-            <Image src={`${basePath}/images/logo.png`} alt="Logo" width={44} height={44} className="rounded-lg transition-transform duration-300 group-hover:scale-105 img-premium" />
+            <Image src={`${basePath}/images/logo.png`} alt="MozIntelligence — E-Commerce Growth Intelligence" width={140} height={38} className="h-auto w-[140px] transition-transform duration-300 group-hover:scale-105" priority />
             <div className="hidden sm:block">
               <div className="text-sm font-bold text-white leading-tight">MozIntelligence</div>
               <div className="text-[11px] text-[#8899AA] leading-tight">E-Commerce Growth Focused</div>

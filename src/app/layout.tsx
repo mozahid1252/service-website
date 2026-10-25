@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     google: "googlebf2530808b361a30",
   },
   icons: {
-    icon: "/images/logo.png",
+    icon: "/images/logo-icon.png",
   },
   alternates: {
     canonical: "https://mozintelligence.vercel.app/",
@@ -67,8 +67,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/logo.png",
-        width: 1254,
-        height: 1254,
+        width: 1200,
+        height: 655,
         alt: "MozIntelligence Logo",
       },
     ],
