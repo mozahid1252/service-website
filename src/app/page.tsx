@@ -7,7 +7,7 @@ import {
   Check, Star, ArrowRight, Download, ExternalLink,
   BarChart3, TrendingUp, Users, Shield, Zap, Database,
   Code2, Cloud, LineChart, Plug, FileText, Clock,
-  AlertTriangle, Target, Lightbulb, Rocket, MapPin, Calendar, Lock
+  AlertTriangle, Target, Lightbulb, Rocket, MapPin, Calendar, Lock, Quote
 } from 'lucide-react';
 import { ChatbotWidget } from '@/components/chatbot-widget';
 
@@ -3245,46 +3245,173 @@ function TestimonialsSection() {
   );
 }
 
+/* ------------------------------------------------------------
+   PROCESS SECTION — Complete Standalone Version
+   Design : DataDrip design system (purple #6F3EDE)
+   Content: MozIntelligence — The Engagement Flow
+   ------------------------------------------------------------ */
+const processSectionData = {
+  kicker: "The Engagement Flow",
+  title: "How We Work Together",
+  description:
+    "From the first discovery call to ongoing monitoring — five steps, zero code on your side.",
+  steps: [
+    {
+      number: "1",
+      title: "Discovery & Strategy",
+      description:
+        "You book a call, we assess your business needs, and you select the analytics package that fits your store (Starter, Growth, Advanced, or Retainer). No guessing, we map exactly which platforms hold your data.",
+      image: `${basePath}/images/process-2.jpg`,
+    },
+    {
+      number: "2",
+      title: "The Engineering Foundation",
+      description:
+        "This is the behind-the-scenes engineering most analysts skip. We build your cloud infrastructure and connect your APIs. EXTRACT: We securely pull raw data from Shopify, GA4, Meta Ads, Google Ads, and Klaviyo. CLEAN: We align currencies, date formats, and timezones so everything speaks the same language. MERGE: We combine all platforms into one clean master table, your single source of truth. CONNECT: We pipe the unified data directly into the dashboard. You don't touch a single line of code.",
+      image: `${basePath}/images/process-4b.jpg`,
+    },
+    {
+      number: "3",
+      title: "The Deep Analysis",
+      description:
+        "With clean, reliable data flowing into our systems, the detective work begins. We run the RFM segmentation models, cohort analyses, funnel audits, true profit margin deep-dives, and churn predictions ETC. We don't just look at what happened, we uncover why it happened.",
+      image: `${basePath}/images/process-4.jpg`,
+    },
+    {
+      number: "4",
+      title: "The Delivery & Strategy Call",
+      description:
+        "You don't receive a data dump. You receive a plain-language Executive PDF, a visual dashboard, and a prioritized action plan. We hop on a strategy call (30 to 90 minutes, depending on your package) where I explain every finding and tell you exactly what to fix first.",
+      image: `${basePath}/images/process-5.jpg`,
+    },
+    {
+      number: "5",
+      title: "Execution & Monitoring (Ongoing)",
+      description:
+        "You implement the fixes, like pausing losing ads, flipping budgets, or sending win-back emails. If you are a Retainer client, I monitor your live dashboard 24/7, sending proactive anomaly alerts and updating your forecasts so today's insights never go stale.",
+      image: `${basePath}/images/process-6b.jpg`,
+    },
+  ],
+  quote: {
+    text: "The Health Check showed me something that destroyed and rebuilt me at the same time: I wasn't failing because of bad products. I was failing because I had no idea what was actually happening in my own business.",
+    author: "Marcus T., NOIRE Collective",
+  },
+};
+
 function ProcessSection() {
   const sectionRef = useScrollReveal();
   return (
-    <section id="process" className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
-      <div className="absolute inset-0 bg-[rgba(2,4,8,0.94)]" />
-
-      <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="section-label reveal-up" style={{ fontSize: '16px', letterSpacing: '3px' }}>The Engagement Flow</span>
-        </div>
-
-        {/* Steps */}
-        <div className="max-w-3xl mx-auto space-y-6 mb-12">
-          {PROCESS_STEPS.map((step, i) => (
-            <div key={i} className="flex gap-6 group">
-              {/* Number Circle + Vertical Line */}
-              <div className="flex flex-col items-center">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold shrink-0 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(0,198,255,0.4)] group-hover:scale-110"
-                  style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}>
-                  <span className="text-[#020408]">{step.num}</span>
-                </div>
-                {i < PROCESS_STEPS.length - 1 && (
-                  <div className="w-[2px] h-full bg-[rgba(0,198,255,0.2)] my-2 transition-all duration-500 group-hover:bg-[rgba(0,198,255,0.5)]" />
-                )}
-              </div>
-              <div className="pb-4">
-                <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[#00C6FF] transition-colors">{step.title}</h3>
-                <p className="text-[#8899AA] text-sm leading-relaxed">{step.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Quote Bar */}
-        <div className="glass rounded-2xl p-6 sm:p-8 max-w-3xl mx-auto text-center">
-          <p className="text-[#F0F4F8] text-base leading-relaxed italic mb-2">
-            &quot;The Health Check showed me something that destroyed and rebuilt me at the same time: I wasn&apos;t failing because of bad products. I was failing because I had no idea what was actually happening in my own business.&quot;
+    <section
+      id="process"
+      aria-labelledby="process-heading"
+      className="bg-white py-16 sm:py-20"
+      ref={sectionRef}
+    >
+      <div className="container-site">
+        {/* Section heading */}
+        <div className="flex flex-col items-center gap-3 text-center">
+          <span
+            className="inline-flex items-center rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em]"
+            style={{ background: '#f2f0fe', color: '#6f3ede' }}
+          >
+            {processSectionData.kicker}
+          </span>
+          <h2
+            id="process-heading"
+            className="max-w-3xl text-3xl font-semibold leading-tight sm:text-4xl"
+            style={{ color: '#1f1f1f' }}
+          >
+            {processSectionData.title}
+          </h2>
+          <p
+            className="mx-auto max-w-2xl text-base leading-relaxed"
+            style={{ color: '#4d4d4d' }}
+          >
+            {processSectionData.description}
           </p>
-          <p className="text-[#8899AA] text-sm">Marcus T., NOIRE Collective</p>
         </div>
+
+        {/* 5 steps: alternating image/text rows + purple number badge */}
+        <div className="mt-14 flex flex-col gap-14 sm:mt-20 sm:gap-20">
+          {processSectionData.steps.map((step, i) => {
+            const flip = i % 2 === 1;
+            return (
+              <div
+                key={step.number}
+                className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14"
+              >
+                {/* Image side */}
+                <div className={flip ? 'relative lg:order-2' : 'relative'}>
+                  <div
+                    className="relative overflow-hidden rounded-[5px]"
+                    style={{ boxShadow: '0 18px 44px rgba(111,62,222,0.14)' }}
+                  >
+                    <Image
+                      src={step.image}
+                      alt=""
+                      width={640}
+                      height={420}
+                      className="h-auto w-full object-cover transition-transform duration-500 hover:scale-[1.04]"
+                    />
+                  </div>
+                  {/* Purple floating number badge */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute -top-6 left-6 inline-flex h-14 w-14 items-center justify-center rounded-full text-xl font-semibold text-white"
+                    style={{
+                      background: '#6f3ede',
+                      boxShadow: '0 10px 24px rgba(111,62,222,0.4)',
+                    }}
+                  >
+                    {step.number}
+                  </span>
+                </div>
+
+                {/* Text side */}
+                <div className={flip ? 'lg:order-1' : undefined}>
+                  <span
+                    className="text-sm font-semibold uppercase tracking-[0.18em]"
+                    style={{ color: '#6f3ede' }}
+                  >
+                    Step {step.number}
+                  </span>
+                  <h3
+                    className="mt-2 text-2xl font-semibold sm:text-[28px]"
+                    style={{ color: '#1f1f1f' }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p
+                    className="mt-4 text-base leading-relaxed"
+                    style={{ color: '#4d4d4d' }}
+                  >
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Founder quote block */}
+        <figure
+          className="mx-auto mt-14 max-w-3xl rounded-[5px] p-8 text-center sm:mt-20 sm:p-10"
+          style={{ background: '#f2f0fe' }}
+        >
+          <Quote className="mx-auto h-8 w-8" style={{ color: '#6f3ede' }} aria-hidden="true" />
+          <blockquote
+            className="mt-4 text-lg font-medium leading-relaxed"
+            style={{ color: '#1f1f1f' }}
+          >
+            &ldquo;{processSectionData.quote.text}&rdquo;
+          </blockquote>
+          <figcaption
+            className="mt-4 text-sm font-semibold"
+            style={{ color: '#6f3ede' }}
+          >
+            &mdash; {processSectionData.quote.author}
+          </figcaption>
+        </figure>
       </div>
     </section>
   );
