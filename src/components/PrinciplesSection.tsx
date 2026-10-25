@@ -77,7 +77,7 @@ const principles = {
     timeline: "60–70 days",
     how: "Discount addiction detoxed (17.6% → 4.8%). Facebook & TikTok ads cut by 70% and reallocated to organic/Google. Unified size charts to stop a 24.7% unit return rate. Mobile checkout rebuilt. Win-back email sent to 6,063 dormant customers.",
   },
-  cta: { label: "Lets Find Revenue You Already Have", href: "#book-a-call" },
+  cta: { label: "Lets Find Revenue You Already Have", href: "/book" },
 };
 
 /* ──────────────────────────────────────────────────────
