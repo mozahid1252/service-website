@@ -5641,3 +5641,9 @@ table.infra-table {
 .animate-bob {
   animation: bob 1.8s ease-in-out infinite;
 }
+
+/* Scroll offset for anchor targets inside sections (e.g. #about-founder span).
+   Extends the section[id] rule above for non-section scroll targets. */
+span[id], a[id] {
+  scroll-margin-top: 80px;
+}

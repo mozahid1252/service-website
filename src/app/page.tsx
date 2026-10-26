@@ -28,9 +28,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
-  { label: 'What We Do', href: '#what-we-do' },
   { label: 'About', href: '#about' },
-  { label: "Why Moz's Different", href: '#why-were-different' },
   { label: 'Services', href: '#services' },
   { label: 'Case Studies', href: '#case-studies' },
   { label: 'Technical Portfolio', href: '#technical-portfolio' },
@@ -46,6 +44,15 @@ const SERVICES_SUBMENU = [
   { label: 'Data Setup & Infrastructure', href: '#part-3' },
   { label: 'Custom Analytics & Insights', href: '#part-4' },
   { label: 'Implementation Add-Ons', href: '#part-5' },
+];
+
+/* Single source of truth for the About submenu (desktop dropdown + mobile).
+   Consolidates the previous "What We Do", "About", and "Why Moz's Different"
+   navigation items into one dropdown under "About". */
+const ABOUT_SUBMENU = [
+  { label: 'What We Do', href: '#what-we-do' },
+  { label: 'Why MozIntelligence Different', href: '#why-were-different' },
+  { label: 'About Founder', href: '#about-founder' },
 ];
 
 const TRUST_STATS: { target?: number; prefix?: string; suffix?: string; value?: string; label: string; isRating?: boolean; isPrivacy?: boolean; isDeadline?: boolean; ratingLabel?: string }[] = [
@@ -855,13 +862,21 @@ function Navbar() {
   const [activeSection, setActiveSection] = useState('');
   const servicesHoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const aboutHoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', onScroll, { passive: true });
 
     // Active section tracking
-    const sectionIds = NAV_LINKS.map(l => l.href.replace('#', ''));
+    // Merge NAV_LINKS IDs + About submenu IDs (what-we-do, why-were-different, about-founder)
+    // so scroll-spy highlights the parent "About" item when in any of those sections.
+    const sectionIds = Array.from(new Set([
+      ...NAV_LINKS.map(l => l.href.replace('#', '')),
+      ...ABOUT_SUBMENU.map(l => l.href.replace('#', '')),
+    ]));
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -893,6 +908,34 @@ function Navbar() {
     if (servicesHoverTimeout.current) clearTimeout(servicesHoverTimeout.current);
     servicesHoverTimeout.current = setTimeout(() => setServicesOpen(false), 150);
   };
+
+  // Mirror the Services hover handlers for the About dropdown.
+  const openAbout = () => {
+    if (aboutHoverTimeout.current) clearTimeout(aboutHoverTimeout.current);
+    setAboutOpen(true);
+  };
+  const closeAbout = () => {
+    if (aboutHoverTimeout.current) clearTimeout(aboutHoverTimeout.current);
+    aboutHoverTimeout.current = setTimeout(() => setAboutOpen(false), 150);
+  };
+
+  // Close the About dropdown on Escape and on click outside (accessibility).
+  useEffect(() => {
+    if (!aboutOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setAboutOpen(false);
+    };
+    const onDocClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.nav-about-wrap')) setAboutOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('mousedown', onDocClick);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('mousedown', onDocClick);
+    };
+  }, [aboutOpen]);
 
   return (
     <>
@@ -949,6 +992,55 @@ function Navbar() {
                           <a
                             key={s.href}
                             href={s.href}
+                            className="block px-4 py-2.5 text-[13px] font-medium text-[#8899AA] hover:text-[#00C6FF] hover:bg-[rgba(0,198,255,0.06)] transition-colors duration-150 whitespace-nowrap"
+                          >
+                            {s.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+              if (link.label === 'About') {
+                return (
+                  <div
+                    key={link.href}
+                    className="relative nav-about-wrap"
+                    onMouseEnter={openAbout}
+                    onMouseLeave={closeAbout}
+                  >
+                    <a
+                      href={link.href}
+                      onClick={(e) => { e.preventDefault(); setAboutOpen(v => !v); }}
+                      aria-expanded={aboutOpen}
+                      aria-controls="about-dropdown"
+                      className={`text-[13px] font-medium tracking-wide transition-colors duration-200 whitespace-nowrap inline-flex items-center gap-1 ${
+                        aboutOpen || ['#what-we-do', '#why-were-different', '#about-founder'].includes(activeSection)
+                          ? 'nav-link-active'
+                          : 'text-[#8899AA] hover:text-[#00C6FF]'
+                      }`}
+                    >
+                      {link.label}
+                      <svg
+                        className={`transition-transform duration-200 ${aboutOpen ? 'rotate-180' : ''}`}
+                        width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"
+                      >
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </a>
+                    {/* Desktop dropdown */}
+                    <div
+                      id="about-dropdown"
+                      className={`nav-services-dropdown absolute left-1/2 top-full pt-2 -translate-x-1/2 transition-all duration-200 ${aboutOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1'}`}
+                    >
+                      <div className="nav-services-panel min-w-[260px] rounded-lg border border-[rgba(0,198,255,0.16)] bg-[rgba(8,14,24,0.98)] backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] py-2">
+                        {ABOUT_SUBMENU.map((s) => (
+                          <a
+                            key={s.href}
+                            href={s.href}
+                            onClick={() => setAboutOpen(false)}
                             className="block px-4 py-2.5 text-[13px] font-medium text-[#8899AA] hover:text-[#00C6FF] hover:bg-[rgba(0,198,255,0.06)] transition-colors duration-150 whitespace-nowrap"
                           >
                             {s.label}
@@ -1032,6 +1124,47 @@ function Navbar() {
                       key={s.href}
                       href={s.href}
                       onClick={() => { setMobileOpen(false); setMobileServicesOpen(false); }}
+                      className="text-base font-medium text-[#8899AA] hover:text-[#00C6FF] transition-colors"
+                    >
+                      {s.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            );
+          }
+          if (link.label === 'About') {
+            return (
+              <div key={link.href} className="flex flex-col items-center gap-3" style={{ transitionDelay: mobileOpen ? `${i * 60}ms` : '0ms' }}>
+                <a
+                  href={link.href}
+                  onClick={(e) => { e.preventDefault(); setMobileAboutOpen(!mobileAboutOpen); }}
+                  className={`text-2xl font-medium transition-all duration-300 inline-flex items-center gap-2 ${
+                    mobileOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+                  } ${['#what-we-do', '#why-were-different', '#about-founder'].includes(activeSection) ? 'text-[#00C6FF]' : 'text-white hover:text-[#00C6FF]'}`}
+                >
+                  {link.label}
+                  <button
+                    type="button"
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); setMobileAboutOpen(!mobileAboutOpen); }}
+                    className="ml-1 text-[#00C6FF] transition-transform duration-200"
+                    style={{ transform: mobileAboutOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                    aria-label="Toggle About submenu"
+                    aria-expanded={mobileAboutOpen}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
+                  </button>
+                </a>
+                {/* Mobile About submenu (nested) */}
+                <div
+                  className="flex flex-col items-center gap-3 overflow-hidden transition-all duration-300"
+                  style={{ maxHeight: mobileAboutOpen ? '320px' : '0px', opacity: mobileAboutOpen ? 1 : 0 }}
+                >
+                  {ABOUT_SUBMENU.map((s) => (
+                    <a
+                      key={s.href}
+                      href={s.href}
+                      onClick={() => { setMobileOpen(false); setMobileAboutOpen(false); }}
                       className="text-base font-medium text-[#8899AA] hover:text-[#00C6FF] transition-colors"
                     >
                       {s.label}
@@ -1289,6 +1422,9 @@ function AboutSection() {
   ];
   return (
     <section id="about" className="about2-section" ref={sectionRef}>
+      {/* Anchor target for the "About Founder" dropdown option — reuses the
+          existing founder bio (Mozahidul Islam) without duplicating content. */}
+      <span id="about-founder" className="sr-only" aria-hidden="true" />
       <div className="about2-inner reveal">
         {/* ── TOP ROW: two-column layout ── */}
         <div className="about2-grid">
