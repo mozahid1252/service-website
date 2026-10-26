@@ -17,8 +17,8 @@ interface ChatMessage {
 const GEMINI_API_KEY =
   process.env.GEMINI_API_KEY ||
   Buffer.from("QVEuQWI4Uk42Sk4tSUNRRWNOdlVQY1FhdUswWmlwUmFnbWxxaUlneV94ZEJxcmFoU3JFa2c=", "base64").toString("utf-8");
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-flash-latest";
-const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1/models/${GEMINI_MODEL}:generateContent`;
 
 export async function POST(request: NextRequest) {
   try {
