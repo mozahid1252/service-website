@@ -33,7 +33,7 @@ export function TestimonialsSection() {
   return (
     <section
       aria-labelledby="testimonials-heading"
-      className="overflow-hidden border-y border-border bg-surface-soft/60 py-16 sm:py-24"
+      className="overflow-hidden border-y border-border bg-white py-16 sm:py-24"
     >
       <style href="testimonials-marquee" precedence="medium">
         {MARQUEE_CSS}
