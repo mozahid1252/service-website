@@ -18,7 +18,7 @@ const OPENROUTER_API_KEY =
 
 /* Model: free Gemini Flash via OpenRouter (generous free tier limits).
    Override with OPENROUTER_MODEL env var if needed. */
-const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || "google/gemma-4-26b-a4b-it:free";
+const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || "deepseek/deepseek-v4.1-flash";
 const OPENROUTER_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
 
 export async function POST(request: NextRequest) {
