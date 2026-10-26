@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { CtaBanner, SiteFooter } from '@/components/site/contact-footer';
 import { QuickProofSection } from '@/components/site/quick-proof';
+import { WhatWeDoSection } from '@/components/site/what-we-do';
 import { ChatbotWidget } from '@/components/chatbot-widget';
 import { WhyDifferentSection } from '@/components/WhyDifferentSection';
 import { FaqSection } from '@/components/FaqSection';
@@ -27,6 +28,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
+  { label: 'What We Do', href: '#what-we-do' },
   { label: 'About', href: '#about' },
   { label: "Why Moz's Different", href: '#why-were-different' },
   { label: 'Services', href: '#services' },
@@ -2619,6 +2621,7 @@ export default function PortfolioPage() {
       <HeroSection />
       <WhyDataSection />
       <QuickProofSection />
+      <WhatWeDoSection />
       <AboutSection />
       <PrinciplesSection />
       <WhyDifferentSection />
