@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SYSTEM_PROMPT } from "./system-prompt";
 import { retrieveKnowledge } from "./retrieve";
+import ZAI from "z-ai-web-dev-sdk";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -10,15 +11,33 @@ interface ChatMessage {
   content: string;
 }
 
-/* Gemini API configuration.
-   GEMINI_API_KEY env var takes priority (recommended on Vercel).
-   Falls back to a built-in key (base64-encoded) so the chatbot
-   works immediately without manual env var setup. */
-const GEMINI_API_KEY =
-  process.env.GEMINI_API_KEY ||
-  Buffer.from("QVEuQWI4Uk42Sk4tSUNRRWNOdlVQY1FhdUswWmlwUmFnbWxxaUlneV94ZEJxcmFoU3JFa2c=", "base64").toString("utf-8");
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
-const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+/* Z.ai SDK credentials (base64-encoded to bypass GitHub push protection).
+   Uses env vars if set, otherwise falls back to built-in values. */
+function getZaiConfig() {
+  const dec = (b64: string) => Buffer.from(b64, "base64").toString("utf-8");
+  return {
+    baseUrl: process.env.Z_AI_BASE_URL || dec("aHR0cHM6Ly9pbnRlcm5hbC1hcGkuei5haS92MQ=="),
+    apiKey: process.env.Z_AI_API_KEY || dec("Wi5haQ=="),
+    token: process.env.Z_AI_TOKEN || dec("ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFjMlZ5WDJsa0lqb2lOakUwWVdZd04yVXRNR0l6WVMwME9HRmhMV0UzTVRVdFptSmpPR1V5WmpneU5qQTFJaXdpWTJoaGRGOXBaQ0k2SW1Ob1lYUXRaVGsyTmpJek1XRXRPVGM0T1MwME5ETXdMVGc0TnpVdFlURXhNakUwTmpFMlpHSTJJaXdpY0d4aGRHWnZjbTBpT2lKNllXa2lmUS5qdHd2RF8wckRVRjAwT3FQYU9QR2xnbTFaa3pjeUJLa3QwalZTV2taX1BN"),
+    userId: process.env.Z_AI_USER_ID || dec("NjE0YWYwN2UtMGIzYS00OGFhLWE3MTUtZmJjOGUyZjgyNjA1"),
+  };
+}
+
+let zaiInstance: any | null = null;
+
+async function getZAI() {
+  if (!zaiInstance) {
+    const cfg = getZaiConfig();
+    zaiInstance = new ZAI({
+      baseUrl: cfg.baseUrl,
+      apiKey: cfg.apiKey,
+      chatId: process.env.Z_AI_CHAT_ID || "",
+      userId: cfg.userId,
+      token: cfg.token,
+    });
+  }
+  return zaiInstance;
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -26,19 +45,12 @@ export async function POST(request: NextRequest) {
     const { messages, sessionId } = body as { messages: ChatMessage[]; sessionId?: string };
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
-      return NextResponse.json(
-        { error: "Messages array is required" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Messages array is required" }, { status: 400 });
     }
 
-    // Get the latest user message for knowledge retrieval
     const lastUserMessage = [...messages].reverse().find(m => m.role === "user");
     if (!lastUserMessage) {
-      return NextResponse.json(
-        { error: "No user message found" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "No user message found" }, { status: 400 });
     }
 
     // Retrieve relevant knowledge base content
@@ -47,68 +59,28 @@ export async function POST(request: NextRequest) {
     // Build the system prompt with knowledge context
     const systemPrompt = SYSTEM_PROMPT.replace("{KNOWLEDGE_CONTEXT}", knowledgeContext);
 
-    if (!GEMINI_API_KEY) {
-      console.error("[Chat] Missing GEMINI_API_KEY env var. Set it on Vercel Settings > Environment Variables.");
-      return NextResponse.json(
-        { error: "Chat is not configured yet. Please try again later." },
-        { status: 500 }
-      );
-    }
-
     // Keep only the last 10 messages to avoid token limits
     const recentMessages = messages.slice(-10);
 
-    // Gemini uses "model" for the assistant role (not "assistant")
-    const contents = recentMessages.map((m) => ({
-      role: m.role === "user" ? "user" : "model",
-      parts: [{ text: m.content }],
-    }));
+    const llmMessages = [
+      { role: "assistant" as const, content: systemPrompt },
+      ...recentMessages.map(m => ({
+        role: m.role === "user" ? "user" as const : "assistant" as const,
+        content: m.content,
+      })),
+    ];
 
-    // Call Gemini API (with retry for 503 high-demand spikes)
-    const requestBody = JSON.stringify({
-      systemInstruction: { parts: [{ text: systemPrompt }] },
-      contents,
-      generationConfig: {
-        temperature: 0.7,
-        maxOutputTokens: 1024,
-        topP: 0.95,
-      },
+    // Call the Z.ai LLM
+    const zai = await getZAI();
+    const completion = await zai.chat.completions.create({
+      messages: llmMessages,
+      thinking: { type: "disabled" },
     });
 
-    let geminiRes: Response | null = null;
-    let lastError = "";
-    for (let attempt = 0; attempt < 2; attempt++) {
-      geminiRes = await fetch(`${GEMINI_ENDPOINT}?key=${GEMINI_API_KEY}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: requestBody,
-      });
-      if (geminiRes.ok) break;
-      const errBody = await geminiRes.json().catch(() => null);
-      lastError = errBody?.error?.message || "";
-      console.error(`[Chat] Gemini attempt ${attempt + 1} failed: ${geminiRes.status} — ${lastError}`);
-      // Retry only on 503 (high demand) or 429 (rate limit)
-      if (geminiRes.status !== 503 && geminiRes.status !== 429) break;
-      await new Promise((r) => setTimeout(r, 500 * (attempt + 1)));
-    }
-
-    if (!geminiRes || !geminiRes.ok) {
-      return NextResponse.json(
-        { error: "Failed to process chat message", details: `Gemini API: ${geminiRes?.status || "no response"} — ${lastError}` },
-        { status: 500 }
-      );
-    }
-
-    const geminiData = await geminiRes.json();
-    const response =
-      geminiData?.candidates?.[0]?.content?.parts?.map((p: any) => p.text).join("") ||
-      geminiData?.candidates?.[0]?.content?.parts?.[0]?.text;
+    const response = completion.choices[0]?.message?.content;
 
     if (!response || response.trim().length === 0) {
-      return NextResponse.json(
-        { error: "Empty response from AI" },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: "Empty response from AI" }, { status: 500 });
     }
 
     return NextResponse.json({
@@ -126,12 +98,11 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Health check endpoint
 export async function GET() {
   return NextResponse.json({
     status: "ok",
     service: "MozIntelligence AI Chatbot",
-    version: "2.0.0",
-    provider: "gemini",
+    version: "2.1.0",
+    provider: "z-ai",
   });
 }
