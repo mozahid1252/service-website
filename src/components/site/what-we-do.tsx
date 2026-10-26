@@ -164,7 +164,7 @@ export function WhatWeDoSection() {
     <section
       id="what-we-do"
       aria-labelledby="what-we-do-heading"
-      className="scroll-mt-20 border-y border-border bg-surface-soft/40 py-16 sm:py-24"
+      className="scroll-mt-20 border-y border-border bg-white py-16 sm:py-24"
     >
       <div className="container-site">
         {/* Section header */}
