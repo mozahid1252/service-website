@@ -1823,7 +1823,7 @@ function ServicesSection() {
         <div id="part-2" className="mb-20">
           <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 2: Specialized Add-On Packages</h3>
           <p className="text-[#00C6FF] text-base font-semibold mb-1">Have One Specific Problem?</p>
-          <p className="text-[#8899AA] text-sm mb-8">Six focused audits, each one built around a single critical business question. Delivered in 7–14 days.</p>
+          <p className="text-[#8899AA] text-sm mb-8">Seven focused audits, each one built around a single critical business question. Delivered in 7–14 days.</p>
 
           <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {ADD_ON_PACKAGES.map((pkg, i) => (
