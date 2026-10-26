@@ -21,7 +21,7 @@ const SERVICE_PACKAGES = [
     'Marketing Spend Audit',
     'Customer Retention Audit',
     'Product Portfolio Audit',
-    'CRO Audit',
+    'CRO/Website Audit',
     'Profitability Audit',
     'Operations Efficiency Audit',
     'Meta Ads Performance Audit',

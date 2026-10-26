@@ -52,7 +52,7 @@ const faqs = [
     question:
       "I have a specific, urgent problem (like high return rates or declining ad performance). Do I have to buy a full $1,500 package?",
     answer:
-      "No. You don't need to commit to a full package if you only need help solving one specific problem. You can choose one of my Specialized Add-On Audits, such as a CRO Audit, Profitability Audit, Marketing Audit, or another focused audit designed around a specific business issue. These are deep-dive, standalone engagements delivered in 7–14 days. If your problem doesn't fit into a predefined audit, you can also use Part 4: Custom Analytics & Insights. I can build a custom analysis specifically around the business question you need answered, using the data and context relevant to your situation. You pay for the problem you need solved, not for analysis you don't need.",
+      "No. You don't need to commit to a full package if you only need help solving one specific problem. You can choose one of my Specialized Add-On Audits, such as a CRO/Website Audit, Profitability Audit, Marketing Audit, or another focused audit designed around a specific business issue. These are deep-dive, standalone engagements delivered in 7–14 days. If your problem doesn't fit into a predefined audit, you can also use Part 4: Custom Analytics & Insights. I can build a custom analysis specifically around the business question you need answered, using the data and context relevant to your situation. You pay for the problem you need solved, not for analysis you don't need.",
   },
   {
     question: "My revenue is growing, but I don't feel like I'm making more money. Can you help?",

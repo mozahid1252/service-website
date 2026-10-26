@@ -241,7 +241,7 @@ const ADD_ON_PACKAGES = [
     route: '/product-portfolio-audit',
   },
   {
-    name: 'CRO Audit',
+    name: 'CRO/Website Audit',
     price: '$250 – $500 · 7–10 Days',
     problem: '"Traffic is there but nobody\'s buying."',
     promise: 'You will know exactly where visitors are abandoning (and why), which fixes will have the highest impact, and have a prioritized action list to increase conversion by 20–40% using your existing traffic.',
@@ -2336,7 +2336,7 @@ function ServicesSection() {
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Marketing Spend Audit</strong>: Implement campaign tracking, attribution setup, or budget monitoring.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Customer Retention Audit</strong>: Implement retention flows, customer segments, or re-engagement campaigns.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Product Portfolio Audit</strong>: Implement product bundling, cross-sell setup, or product merchandising changes.</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">CRO Audit</strong>: Implement recommended changes to your product pages, cart, checkout, or conversion flow.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">CRO/Website Audit</strong>: Implement recommended changes to your product pages, cart, checkout, or conversion flow.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Profitability Audit</strong>: Implement margin tracking, product-level profitability monitoring, or profit alerts.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Operations Efficiency Audit</strong>: Implement workflow automation, operational tracking, or cost monitoring.</span></li>
                 </ul>

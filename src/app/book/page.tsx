@@ -7,7 +7,7 @@ import { Loader2, CheckCircle2, AlertCircle, ArrowRight, ChevronLeft } from 'luc
 
 const SERVICE_PACKAGES = [
   { label: '─ Part 1: Core E-Commerce Packages ─', options: ['E-Commerce Health Check', 'Revenue Growth Accelerator', 'Data-Driven Growth System', 'Analytics Partner Retainer'] },
-  { label: '─ Part 2: Specialized Add-On Packages ─', options: ['Marketing Spend Audit', 'Customer Retention Audit', 'Product Portfolio Audit', 'CRO Audit', 'Profitability Audit', 'Operations Efficiency Audit', 'Meta Ads Performance Audit'] },
+  { label: '─ Part 2: Specialized Add-On Packages ─', options: ['Marketing Spend Audit', 'Customer Retention Audit', 'Product Portfolio Audit', 'CRO/Website Audit', 'Profitability Audit', 'Operations Efficiency Audit', 'Meta Ads Performance Audit'] },
   { label: '─ Part 3: Data Setup & Infrastructure ─', options: ['Basic Setup', 'Full Pipeline Setup', 'Full Pipeline + Automation'] },
   { label: '─ Other ─', options: ['Custom Analytics Setup', 'Not sure yet (Need advice)'] },
 ];
@@ -45,7 +45,7 @@ const PACKAGE_MAP: Record<string, string> = {
   'marketing-spend-audit': 'Marketing Spend Audit',
   'customer-retention-audit': 'Customer Retention Audit',
   'product-portfolio-audit': 'Product Portfolio Audit',
-  'cro-audit': 'CRO Audit',
+  'cro-audit': 'CRO/Website Audit',
   'profitability-audit': 'Profitability Audit',
   'operations-efficiency-audit': 'Operations Efficiency Audit',
   'meta-ads-performance-audit': 'Meta Ads Performance Audit',
