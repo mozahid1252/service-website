@@ -49,9 +49,11 @@ const SERVICES_SUBMENU = [
 /* Single source of truth for the About submenu (desktop dropdown + mobile).
    Consolidates the previous "What We Do", "About", and "Why Moz's Different"
    navigation items into one dropdown under "About".
-   Items with href: undefined are rendered as placeholders (no link yet). */
+   Items with href starting with '/' are cross-page links (rendered as plain
+   <a> to force full page reload — avoids client-side nav back-button bug).
+   Items with href: undefined are placeholders (no link yet). */
 const ABOUT_SUBMENU = [
-  { label: 'About MozIntelligence', href: undefined },
+  { label: 'About MozIntelligence', href: '/about-mozintelligence' },
   { label: 'What We Do', href: '#what-we-do' },
   { label: 'Why MozIntelligence Different', href: '#why-were-different' },
   { label: 'About Founder', href: '#about-founder' },
@@ -875,10 +877,10 @@ function Navbar() {
     // Active section tracking
     // Merge NAV_LINKS IDs + About submenu IDs (what-we-do, why-were-different, about-founder)
     // so scroll-spy highlights the parent "About" item when in any of those sections.
-    // Filter out items without href (placeholders like "About MozIntelligence").
+    // Filter out items without href and cross-page links (starting with '/').
     const sectionIds = Array.from(new Set([
       ...NAV_LINKS.map(l => l.href.replace('#', '')),
-      ...ABOUT_SUBMENU.filter(l => l.href).map(l => l.href!.replace('#', '')),
+      ...ABOUT_SUBMENU.filter(l => l.href && l.href.startsWith('#')).map(l => l.href.replace('#', '')),
     ]));
     const observer = new IntersectionObserver(
       (entries) => {
