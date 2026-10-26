@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Loader2, CheckCircle2, AlertCircle, ArrowRight, ChevronLeft } from 'lucide-react';
 
 const SERVICE_PACKAGES = [
-  { label: '─ Part 1: Core E-Commerce Packages ─', options: ['E-Commerce Health Check', 'Revenue Growth Accelerator', 'Data-Driven Growth System', 'Analytics Partner Retainer'] },
+  { label: '─ Part 1: Core E-Commerce Packages ─', options: ['E-Commerce Health Check', 'E-Commerce Growth & Profit Intelligence', 'Data-Driven Growth System', 'Analytics Partner Retainer'] },
   { label: '─ Part 2: Specialized Add-On Packages ─', options: ['Marketing Spend Audit', 'Customer Retention Audit', 'Product Portfolio Audit', 'CRO/Website Audit', 'Profitability Audit', 'Operations Efficiency Audit', 'Meta Ads Performance Audit'] },
   { label: '─ Part 3: Data Setup & Infrastructure ─', options: ['Basic Setup', 'Full Pipeline Setup', 'Full Pipeline + Automation'] },
   { label: '─ Other ─', options: ['Custom Analytics Setup', 'Not sure yet (Need advice)'] },
@@ -39,7 +39,7 @@ const COUNTRIES = [
 const PACKAGE_MAP: Record<string, string> = {
   'e-commerce-health-check': 'E-Commerce Health Check',
   'health-check': 'E-Commerce Health Check',
-  'revenue-growth-accelerator': 'Revenue Growth Accelerator',
+  'revenue-growth-accelerator': 'E-Commerce Growth & Profit Intelligence',
   'data-driven-growth-system': 'Data-Driven Growth System',
   'analytics-partner-retainer': 'Analytics Partner Retainer',
   'marketing-spend-audit': 'Marketing Spend Audit',

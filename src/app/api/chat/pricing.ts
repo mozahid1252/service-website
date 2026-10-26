@@ -20,7 +20,7 @@ export const AUTHORITATIVE_PRICING: PackageInfo[] = [
     description: "Starter diagnostic package that identifies immediate revenue and profitability leaks. Includes 4 focused analyses, executive summary PDF, visual dashboard, action priority list, and 30-minute walkthrough.",
   },
   {
-    name: "Revenue Growth Accelerator",
+    name: "E-Commerce Growth & Profit Intelligence",
     category: "Part 1 — Core E-Commerce Packages",
     price: "$600 – $1,200",
     timeline: "10–14 Days",

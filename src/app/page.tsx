@@ -149,8 +149,8 @@ const CORE_PACKAGES = [
     featured: false,
   },
   {
-    tag: 'SCALE WHAT WORKS.',
-    name: 'Revenue Growth Accelerator',
+    tag: 'Cut Wasted Spend. Keep More Customers. Grow Profitably.',
+    name: 'E-Commerce Growth & Profit Intelligence',
     tier: 'GROWTH',
     price: '$600 – $1,200',
     timeline: '10–14 day',
