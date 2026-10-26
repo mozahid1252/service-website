@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { AboutSection } from "@/components/site/about-section";
+import { SiteFooter } from "@/components/site/contact-footer";
 
 export const metadata = {
   title: "About MozIntelligence — E-Commerce Growth Analytics Consultancy",
@@ -46,15 +47,8 @@ export default function AboutMozIntelligencePage() {
         <AboutSection />
       </main>
 
-      {/* Minimal footer */}
-      <footer className="mt-auto border-t border-border bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-sm text-body-text">
-            © 2025 Mozahidul Islam · E-Commerce Analytics. All rights reserved.
-          </p>
-          <p className="text-sm font-medium text-body-text">Built with data. Designed for profit.</p>
-        </div>
-      </footer>
+      {/* Full purple footer — same as the homepage */}
+      <SiteFooter />
     </div>
   );
 }
