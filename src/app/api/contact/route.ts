@@ -6,8 +6,15 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 15;
 
-/* Destination inbox for contact form submissions.
-   Override with CONTACT_EMAIL env var if needed. */
+/* Gmail SMTP credentials.
+   Uses env vars if set (recommended), otherwise falls back to the
+   hardcoded values below so the form works immediately.
+   ⚠️ TODO: after setting GMAIL_USER + GMAIL_APP_PASSWORD on Vercel,
+   remove the hardcoded fallbacks for security. */
+const GMAIL_USER = process.env.GMAIL_USER || "mozintelligence@gmail.com";
+const GMAIL_PASS = process.env.GMAIL_APP_PASSWORD || "gsosnnqsolltddks";
+
+/* Destination inbox for contact form submissions. */
 const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "mozintelligence@gmail.com";
 
 const contactSchema = z.object({
@@ -25,6 +32,14 @@ const contactSchema = z.object({
   notes: z.string().trim().max(5000).optional().or(z.literal("")),
   message: z.string().trim().max(5000).optional().or(z.literal("")),
 });
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
 
 function buildEmailHtml(d: z.infer<typeof contactSchema>): string {
   const row = (label: string, value?: string | null) =>
@@ -81,14 +96,6 @@ function buildEmailText(d: z.infer<typeof contactSchema>): string {
   return lines.filter(Boolean).join("\n");
 }
 
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -101,30 +108,13 @@ export async function POST(request: Request) {
 
     const d = parsed.data;
 
-    const gmailUser = process.env.GMAIL_USER;
-    const gmailPass = process.env.GMAIL_APP_PASSWORD;
-
-    if (!gmailUser || !gmailPass) {
-      console.error(
-        "[Contact] Missing GMAIL_USER or GMAIL_APP_PASSWORD env vars. Set them on Vercel to enable email delivery."
-      );
-      return NextResponse.json(
-        {
-          error:
-            "Email delivery is not configured yet. Please set GMAIL_USER and GMAIL_APP_PASSWORD, or reach us directly at " +
-            CONTACT_EMAIL,
-        },
-        { status: 500 }
-      );
-    }
-
     const transporter = nodemailer.createTransport({
       service: "gmail",
-      auth: { user: gmailUser, pass: gmailPass },
+      auth: { user: GMAIL_USER, pass: GMAIL_PASS },
     });
 
     const info = await transporter.sendMail({
-      from: `"MozIntelligence Contact Form" <${gmailUser}>`,
+      from: `"MozIntelligence Contact Form" <${GMAIL_USER}>`,
       to: CONTACT_EMAIL,
       replyTo: d.email,
       subject: `[MozIntelligence] New ${d.type} submission from ${d.name}`,
