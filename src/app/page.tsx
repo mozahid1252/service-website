@@ -13,6 +13,7 @@ import { CtaBanner, SiteFooter } from '@/components/site/contact-footer';
 import { QuickProofSection } from '@/components/site/quick-proof';
 import { WhatWeDoSection } from '@/components/site/what-we-do';
 import { TechStackSection } from '@/components/site/tech-stack';
+import { TestimonialsSection } from '@/components/site/testimonials';
 import { ChatbotWidget } from '@/components/chatbot-widget';
 import { WhyDifferentSection } from '@/components/WhyDifferentSection';
 import { FaqSection } from '@/components/FaqSection';
@@ -2413,121 +2414,6 @@ function ServicesSection() {
 
 /* CaseStudies2Section removed — all 6 case studies now render in the
    single #case-studies section in a 3-column compact grid. */
-
-function TestimonialsSection() {
-  const sectionRef = useScrollReveal();
-  const featured = TESTIMONIALS.find((t) => t.featured);
-  const grid = TESTIMONIALS.filter((t) => !t.featured);
-
-  return (
-    <section className="bg-[#020408] py-20 sm:py-28" ref={sectionRef}>
-      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="section-label reveal-up">Founders, Transformed</span>
-          <h2 className="section-headline text-[clamp(23px,3.5vw,40px)] font-extrabold text-white mt-3 mb-4 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
-            Testimonials
-          </h2>
-          <p className="text-[#8899AA] text-base max-w-2xl mx-auto">
-            Don&apos;t take my word for it. Listen to the founders who were running fast in the wrong direction, until the data showed them the truth.
-          </p>
-        </div>
-
-        {/* Featured Testimonial */}
-        {featured && (
-          <div className="featured-quote-box max-w-4xl mx-auto mb-12 text-center">
-            <span className="quote-mark">&ldquo;</span>
-            <p className="text-[#F0F4F8] text-lg sm:text-xl leading-relaxed italic mb-6">{featured.quote}</p>
-            <p className="text-[#8899AA] text-sm mb-2">{featured.author}</p>
-            <div className="flex justify-center">
-              <div className="profit-badge">
-                <span className="profit-before">$84/year</span>
-                <span className="profit-arrow">➔</span>
-                <span className="profit-after">$48,400/month</span>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Grid */}
-        <div className="reveal-stagger grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {grid.map((t, i) => {
-            const parts = t.profit.split(' ➔ ');
-            return (
-              <div key={i} className={`testimonial-card testimonial-card-${i + 1}`}>
-                <div className="flex gap-0.5 mb-3">
-                  {[...Array(5)].map((_, si) => (
-                    <Star key={si} size={14} className="text-[#F5A623] fill-[#F5A623]" />
-                  ))}
-                </div>
-                <p className="text-[#8899AA] text-sm leading-relaxed italic mb-4">{t.quote}</p>
-                <p className="text-[#F0F4F8] text-sm font-medium mb-2">{t.author}</p>
-                <div className="profit-badge">
-                  <span className="profit-before">{parts[0]}</span>
-                  <span className="profit-arrow">➔</span>
-                  <span className="profit-after">{parts[1]}</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------
-   PROCESS SECTION — Complete Standalone Version
-   Design : DataDrip design system (purple #6F3EDE)
-   Content: MozIntelligence — The Engagement Flow
-   ------------------------------------------------------------ */
-const processSectionData = {
-  kicker: "The Engagement Flow",
-  title: "How We Work Together",
-  description:
-    "From the first discovery call to ongoing monitoring — five steps, zero code on your side.",
-  steps: [
-    {
-      number: "1",
-      title: "Discovery & Strategy",
-      description:
-        "You book a call, we assess your business needs, and you select the analytics package that fits your store (Starter, Growth, Advanced, or Retainer). No guessing, we map exactly which platforms hold your data.",
-      image: `${basePath}/images/process-2.jpg`,
-    },
-    {
-      number: "2",
-      title: "The Engineering Foundation",
-      description:
-        "This is the behind-the-scenes engineering most analysts skip. We build your cloud infrastructure and connect your APIs. EXTRACT: We securely pull raw data from Shopify, GA4, Meta Ads, Google Ads, and Klaviyo. CLEAN: We align currencies, date formats, and timezones so everything speaks the same language. MERGE: We combine all platforms into one clean master table, your single source of truth. CONNECT: We pipe the unified data directly into the dashboard. You don't touch a single line of code.",
-      image: `${basePath}/images/process-4b.jpg`,
-    },
-    {
-      number: "3",
-      title: "The Deep Analysis",
-      description:
-        "With clean, reliable data flowing into our systems, the detective work begins. We run the RFM segmentation models, cohort analyses, funnel audits, true profit margin deep-dives, and churn predictions ETC. We don't just look at what happened, we uncover why it happened.",
-      image: `${basePath}/images/process-4.jpg`,
-    },
-    {
-      number: "4",
-      title: "The Delivery & Strategy Call",
-      description:
-        "You don't receive a data dump. You receive a plain-language Executive PDF, a visual dashboard, and a prioritized action plan. We hop on a strategy call (30 to 90 minutes, depending on your package) where I explain every finding and tell you exactly what to fix first.",
-      image: `${basePath}/images/process-5.jpg`,
-    },
-    {
-      number: "5",
-      title: "Execution & Monitoring (Ongoing)",
-      description:
-        "You implement the fixes, like pausing losing ads, flipping budgets, or sending win-back emails. If you are a Retainer client, I monitor your live dashboard 24/7, sending proactive anomaly alerts and updating your forecasts so today's insights never go stale.",
-      image: `${basePath}/images/process-6b.jpg`,
-    },
-  ],
-  quote: {
-    text: "The Health Check showed me something that destroyed and rebuilt me at the same time: I wasn't failing because of bad products. I was failing because I had no idea what was actually happening in my own business.",
-    author: "Marcus T., NOIRE Collective",
-  },
-};
-
 function ProcessSection() {
   const sectionRef = useScrollReveal();
   return (

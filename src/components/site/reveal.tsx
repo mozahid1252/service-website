@@ -1,11 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
-
-/* Local class-join helper (no external cn import needed) */
-function cn(...inputs: (string | false | null | undefined)[]) {
-  return inputs.filter(Boolean).join(" ");
-}
+import { cn } from "@/lib/utils";
 
 /**
  * FadeIn — shared section entrance wrapper.
