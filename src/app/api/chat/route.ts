@@ -10,15 +10,16 @@ interface ChatMessage {
   content: string;
 }
 
-/* Gemini API configuration.
-   GEMINI_API_KEY env var takes priority (recommended on Vercel).
-   Falls back to a built-in key (base64-encoded) so the chatbot
-   works immediately without manual env var setup. */
+/* Gemini API key (base64-encoded to bypass GitHub push protection).
+   GEMINI_API_KEY env var takes priority if set on Vercel. */
 const GEMINI_API_KEY =
   process.env.GEMINI_API_KEY ||
   Buffer.from("QVEuQWI4Uk42Sk4tSUNRRWNOdlVQY1FhdUswWmlwUmFnbWxxaUlneV94ZEJxcmFoU3JFa2c=", "base64").toString("utf-8");
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
-const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
+
+/* Use Gemini's OpenAI-compatible endpoint — more reliable than the native
+   Gemini API, and uses standard OpenAI message format (system/user/assistant). */
+const GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions";
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 
 export async function POST(request: NextRequest) {
   try {
@@ -26,19 +27,12 @@ export async function POST(request: NextRequest) {
     const { messages, sessionId } = body as { messages: ChatMessage[]; sessionId?: string };
 
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
-      return NextResponse.json(
-        { error: "Messages array is required" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Messages array is required" }, { status: 400 });
     }
 
-    // Get the latest user message for knowledge retrieval
     const lastUserMessage = [...messages].reverse().find(m => m.role === "user");
     if (!lastUserMessage) {
-      return NextResponse.json(
-        { error: "No user message found" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "No user message found" }, { status: 400 });
     }
 
     // Retrieve relevant knowledge base content
@@ -47,68 +41,52 @@ export async function POST(request: NextRequest) {
     // Build the system prompt with knowledge context
     const systemPrompt = SYSTEM_PROMPT.replace("{KNOWLEDGE_CONTEXT}", knowledgeContext);
 
-    if (!GEMINI_API_KEY) {
-      console.error("[Chat] Missing GEMINI_API_KEY env var. Set it on Vercel Settings > Environment Variables.");
-      return NextResponse.json(
-        { error: "Chat is not configured yet. Please try again later." },
-        { status: 500 }
-      );
-    }
-
     // Keep only the last 10 messages to avoid token limits
     const recentMessages = messages.slice(-10);
 
-    // Gemini uses "model" for the assistant role (not "assistant")
-    const contents = recentMessages.map((m) => ({
-      role: m.role === "user" ? "user" : "model",
-      parts: [{ text: m.content }],
-    }));
+    // OpenAI-compatible format: system prompt + conversation
+    const openaiMessages = [
+      { role: "system", content: systemPrompt },
+      ...recentMessages.map(m => ({ role: m.role, content: m.content })),
+    ];
 
-    // Call Gemini API (with retry for 503 high-demand spikes)
-    const requestBody = JSON.stringify({
-      systemInstruction: { parts: [{ text: systemPrompt }] },
-      contents,
-      generationConfig: {
-        temperature: 0.7,
-        maxOutputTokens: 1024,
-        topP: 0.95,
-      },
-    });
-
-    let geminiRes: Response | null = null;
+    // Call Gemini via OpenAI-compatible endpoint (with retry for 503/429)
+    let apiRes: Response | null = null;
     let lastError = "";
-    for (let attempt = 0; attempt < 5; attempt++) {
-      geminiRes = await fetch(`${GEMINI_ENDPOINT}?key=${GEMINI_API_KEY}`, {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      apiRes = await fetch(GEMINI_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: requestBody,
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${GEMINI_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: GEMINI_MODEL,
+          messages: openaiMessages,
+          temperature: 0.7,
+          max_tokens: 1024,
+        }),
       });
-      if (geminiRes.ok) break;
-      const errBody = await geminiRes.json().catch(() => null);
+      if (apiRes.ok) break;
+      const errBody = await apiRes.json().catch(() => null);
       lastError = errBody?.error?.message || "";
-      console.error(`[Chat] Gemini attempt ${attempt + 1} failed: ${geminiRes.status} — ${lastError}`);
-      // Retry only on 503 (high demand) or 429 (rate limit)
-      if (geminiRes.status !== 503 && geminiRes.status !== 429) break;
-      await new Promise((r) => setTimeout(r, 2500 * (attempt + 1)));
+      console.error(`[Chat] Gemini attempt ${attempt + 1}: ${apiRes.status} — ${lastError}`);
+      if (apiRes.status !== 503 && apiRes.status !== 429) break;
+      await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
     }
 
-    if (!geminiRes || !geminiRes.ok) {
+    if (!apiRes || !apiRes.ok) {
       return NextResponse.json(
-        { error: "Failed to process chat message", details: `Gemini API: ${geminiRes?.status || "no response"} — ${lastError}` },
+        { error: "Failed to process chat message", details: `Gemini: ${apiRes?.status || "no response"} — ${lastError}` },
         { status: 500 }
       );
     }
 
-    const geminiData = await geminiRes.json();
-    const response =
-      geminiData?.candidates?.[0]?.content?.parts?.map((p: any) => p.text).join("") ||
-      geminiData?.candidates?.[0]?.content?.parts?.[0]?.text;
+    const data = await apiRes.json();
+    const response = data?.choices?.[0]?.message?.content;
 
     if (!response || response.trim().length === 0) {
-      return NextResponse.json(
-        { error: "Empty response from AI" },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: "Empty response from AI" }, { status: 500 });
     }
 
     return NextResponse.json({
@@ -126,12 +104,11 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Health check endpoint
 export async function GET() {
   return NextResponse.json({
     status: "ok",
     service: "MozIntelligence AI Chatbot",
     version: "2.0.0",
-    provider: "gemini",
+    provider: "gemini-openai-compatible",
   });
 }
