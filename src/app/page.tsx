@@ -154,7 +154,7 @@ const CORE_PACKAGES = [
     tier: 'GROWTH',
     price: '$600 – $1,200',
     timeline: '10–14 day',
-    description: 'Full RFM, channel LTV:CAC, cohort truth, bundle strategy, and an interactive intelligence dashboard.',
+    description: '',
     features: [
       'Everything in Starter, plus 5 deeper analyses',
       'Full 8-segment RFM Customer Segmentation',
@@ -1729,7 +1729,7 @@ function ServicesSection() {
                   <div className="text-[#8899AA] text-xs mt-1">Investment</div>
                   <div className="gradient-text-gold text-sm font-bold">{pkg.price}</div>
                 </div>
-                <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>
+                {pkg.description && <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>}
 
                 <ul className="space-y-2 mb-5">
                   {pkg.features.map((f, fi) => (
@@ -1781,7 +1781,7 @@ function ServicesSection() {
                   <div className="text-[#8899AA] text-xs mt-1">Investment</div>
                   <div className="gradient-text-gold text-sm font-bold">{pkg.price}</div>
                 </div>
-                    <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>
+                    {pkg.description && <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>}
                     <ul className="space-y-2 mb-5">
                       {pkg.features.map((f, fi) => (
                         <li key={fi} className="flex items-start gap-2 text-sm text-[#F0F4F8]">
