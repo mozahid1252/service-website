@@ -158,7 +158,8 @@ const CORE_PACKAGES = [
     features: [
       'Everything in Starter, plus 5 deeper analyses',
       'Full 8-segment RFM Customer Segmentation',
-      'Channel LTV:CAC & Marketing Audit',
+      'Marketing Audit',
+      'Customer & Channel LTV:CAC',
       'Cross-sell & Bundle Opportunity Analysis',
       'Churn Risk Identification Analysis',
       'Interactive Dashboard + Klaviyo-ready CSV',
