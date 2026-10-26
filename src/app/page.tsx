@@ -143,7 +143,7 @@ const CORE_PACKAGES = [
       '1 Round of Revision',
     ],
     bestFor: 'Stores doing $5K+/mo',
-    promise: 'After this package, you will know exactly where your store is losing potential revenue, which products are actually making you money, and the top 3 things to fix this week to see measurable results.',
+    promise: 'After this package, you will know **where your profit is leaking**, where your store is losing sales, which products are making you money and which are costing you profit, and where customers are dropping off before buying. You’ll get a clear picture of what needs fixing first, with the **top 3 actions to focus on this week** to improve your store’s performance and make better business decisions.\n\n**Find the profit leaks. Fix what matters. Make every sale count.**',
     cta: 'Book the Health Check →',
     route: '/health-check',
     featured: false,
