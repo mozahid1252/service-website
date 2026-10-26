@@ -17,7 +17,7 @@ interface ChatMessage {
 const GEMINI_API_KEY =
   process.env.GEMINI_API_KEY ||
   Buffer.from("QVEuQWI4Uk42Sk4tSUNRRWNOdlVQY1FhdUswWmlwUmFnbWxxaUlneV94ZEJxcmFoU3JFa2c=", "base64").toString("utf-8");
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.0-flash";
 const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 export async function POST(request: NextRequest) {
@@ -80,10 +80,11 @@ export async function POST(request: NextRequest) {
     });
 
     if (!geminiRes.ok) {
-      const errText = await geminiRes.text();
-      console.error("[Chat] Gemini API error:", geminiRes.status, errText);
+      const errBody = await geminiRes.json().catch(() => null);
+      const errText = await geminiRes.text().catch(() => "");
+      console.error("[Chat] Gemini API error:", geminiRes.status, errBody || errText);
       return NextResponse.json(
-        { error: "Failed to process chat message", details: `Gemini API: ${geminiRes.status}` },
+        { error: "Failed to process chat message", details: `Gemini API: ${geminiRes.status} — ${errBody?.error?.message || errText}` },
         { status: 500 }
       );
     }
