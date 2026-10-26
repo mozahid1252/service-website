@@ -166,7 +166,7 @@ const CORE_PACKAGES = [
       '60-min Strategy Call + 30-day Roadmap',
     ],
     bestFor: 'Stores doing $10K+/mo',
-    promise: 'After this package, you will know exactly which customers to focus on (and what to say to each group), which marketing channels are wasting your money, and how to implement product bundles that immediately increase your average order value.',
+    promise: 'After this package, you will know which customers bring the most value, which marketing channels are worth your money, where your thousands of dollars are being wasted, which products you can sell together to increase your average order value, and which customers may stop buying. You’ll get a clear picture of **who to target and where to invest**, along with a simple action plan to keep more customers coming back, spend smarter, and grow your business.\n\n**Less guessing, less wasted spend, and smarter growth.**',
     cta: 'Book the Growth Package →',
     route: '/revenue-growth-accelerator',
     featured: true,
@@ -858,9 +858,29 @@ function BestForText({ text }: { text: string }) {
   );
 }
 
-/* ──────────────────────────────────────────
-   SECTION COMPONENTS
-   ────────────────────────────────────────── */
+/* Renders promise text with **bold** segments and \n\n paragraph breaks. */
+function PromiseText({ text }: { text: string }) {
+  const paragraphs = text.split("\n\n");
+  return (
+    <>
+      {paragraphs.map((para, pi) => {
+        const parts = para.split(/(\*\*[^*]+\*\*)/g);
+        return (
+          <span key={pi}>
+            {pi > 0 && <br /><br />}
+            {parts.map((part, i) =>
+              part.startsWith("**") && part.endsWith("**") ? (
+                <strong key={i} className="font-semibold text-white">{part.slice(2, -2)}</strong>
+              ) : (
+                <React.Fragment key={i}>{part}</React.Fragment>
+              )
+            )}
+          </span>
+        );
+      })}
+    </>
+  );
+}
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -1726,7 +1746,7 @@ function ServicesSection() {
 
                 <div className="p-4 rounded-lg bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.1)] mb-5">
                   <div className="text-[#00C6FF] text-xs font-semibold mb-2">Our Promise To You:</div>
-                  <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
+                  <p className="text-[#F0F4F8] text-sm leading-relaxed"><PromiseText text={pkg.promise} /></p>
                 </div>
 
                 <a href={`/book?package=${pkg.route.replace('/', '')}`} className="service-book-btn package-book-btn">{pkg.cta}</a>
@@ -1777,7 +1797,7 @@ function ServicesSection() {
                     </div>
                     <div className="p-4 rounded-lg bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.1)] mb-5">
                       <div className="text-[#00C6FF] text-xs font-semibold mb-2">Our Promise To You:</div>
-                      <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
+                      <p className="text-[#F0F4F8] text-sm leading-relaxed"><PromiseText text={pkg.promise} /></p>
                     </div>
                     <a href={`/book?package=${pkg.route.replace('/', '')}`} className="service-book-btn">{pkg.cta}</a>
                     <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-2 cursor-pointer no-underline w-full">
@@ -1818,7 +1838,7 @@ function ServicesSection() {
                 </div>
                 <div>
                   <div className="text-[#00E676] text-xs font-semibold mb-1">Our Promise:</div>
-                  <p className="text-[#F0F4F8] text-sm leading-relaxed">{pkg.promise}</p>
+                  <p className="text-[#F0F4F8] text-sm leading-relaxed"><PromiseText text={pkg.promise} /></p>
                 </div>
                 <div className="flex items-stretch gap-2 mt-4">
                   <a href={`/book?package=${pkg.route.replace('/', '')}`} className="addon-book-btn flex-1 items-center">
