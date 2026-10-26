@@ -867,7 +867,12 @@ function PromiseText({ text }: { text: string }) {
         const parts = para.split(/(\*\*[^*]+\*\*)/g);
         return (
           <span key={pi}>
-            {pi > 0 && <br /><br />}
+            {pi > 0 && (
+              <>
+                <br />
+                <br />
+              </>
+            )}
             {parts.map((part, i) =>
               part.startsWith("**") && part.endsWith("**") ? (
                 <strong key={i} className="font-semibold text-white">{part.slice(2, -2)}</strong>
