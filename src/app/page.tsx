@@ -61,8 +61,6 @@ const ABOUT_SUBMENU = [
 
 const TRUST_STATS: { target?: number; prefix?: string; suffix?: string; value?: string; label: string; isRating?: boolean; isPrivacy?: boolean; isDeadline?: boolean; ratingLabel?: string }[] = [
   { target: 127, prefix: '+', suffix: '%', label: 'Avg Revenue Growth' },
-  { target: 4, prefix: '', suffix: '+', label: 'Proved Case Study' },
-  { target: 100, prefix: '', suffix: '%', label: 'Data Privacy', isPrivacy: true },
   { target: 100, prefix: '', suffix: '+', label: 'Projects Delivered' },
   { target: 4.9, prefix: '', suffix: '', isRating: true, ratingLabel: '' },
 ];
@@ -1318,7 +1316,7 @@ function HeroSection() {
         </div>
 
         {/* Trust Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
           {TRUST_STATS.map((stat, i) => (
             <div key={i} className={`hero-stat-card glass rounded-xl p-4 text-center transition-all duration-300 hover:border-[rgba(0,198,255,0.3)] hover:shadow-[0_0_20px_rgba(0,198,255,0.1)]`} style={{ animationDelay: `${0.3 + i * 0.15}s` }}>
               {stat.isRating ? (
