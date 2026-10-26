@@ -279,14 +279,14 @@ export function TechStackSection() {
           </span>
           <h2
             id="techstack-heading"
-            className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl"
+            className="mt-4 text-3xl font-semibold uppercase leading-tight text-white sm:text-4xl"
           >
             Enterprise Engineering.{" "}
             <span className="bg-gradient-to-r from-brand-light via-[#a06bff] to-btn-purple bg-clip-text text-transparent">
               Without the $150K Salary.
             </span>
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white/55 sm:text-lg">
+          <p className="mx-auto mt-5 max-w-3xl text-base uppercase leading-relaxed text-white/55 sm:text-lg">
             {intro.split("enterprise-grade data infrastructure")[0]}
             <span className="font-semibold text-white">
               enterprise-grade data infrastructure
@@ -344,20 +344,6 @@ export function TechStackSection() {
           })}
         </div>
 
-        {/* Closing proof paragraph — bold segments in brand light */}
-        <FadeIn delay={60}>
-          <p className="mx-auto mt-14 max-w-3xl border-t border-white/[0.08] pt-10 text-center text-sm leading-relaxed text-white/55 sm:text-base">
-            {closing.map((part, i) =>
-              part.bold ? (
-                <strong key={i} className="font-semibold text-brand-light">
-                  {part.text}
-                </strong>
-              ) : (
-                <Fragment key={i}>{part.text}</Fragment>
-              )
-            )}
-          </p>
-        </FadeIn>
       </div>
     </section>
   );
