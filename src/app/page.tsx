@@ -48,8 +48,10 @@ const SERVICES_SUBMENU = [
 
 /* Single source of truth for the About submenu (desktop dropdown + mobile).
    Consolidates the previous "What We Do", "About", and "Why Moz's Different"
-   navigation items into one dropdown under "About". */
+   navigation items into one dropdown under "About".
+   Items with href: undefined are rendered as placeholders (no link yet). */
 const ABOUT_SUBMENU = [
+  { label: 'About MozIntelligence', href: undefined },
   { label: 'What We Do', href: '#what-we-do' },
   { label: 'Why MozIntelligence Different', href: '#why-were-different' },
   { label: 'About Founder', href: '#about-founder' },
@@ -873,9 +875,10 @@ function Navbar() {
     // Active section tracking
     // Merge NAV_LINKS IDs + About submenu IDs (what-we-do, why-were-different, about-founder)
     // so scroll-spy highlights the parent "About" item when in any of those sections.
+    // Filter out items without href (placeholders like "About MozIntelligence").
     const sectionIds = Array.from(new Set([
       ...NAV_LINKS.map(l => l.href.replace('#', '')),
-      ...ABOUT_SUBMENU.map(l => l.href.replace('#', '')),
+      ...ABOUT_SUBMENU.filter(l => l.href).map(l => l.href!.replace('#', '')),
     ]));
     const observer = new IntersectionObserver(
       (entries) => {
@@ -1039,14 +1042,25 @@ function Navbar() {
                     >
                       <div className="nav-services-panel min-w-[260px] rounded-lg border border-[rgba(0,198,255,0.16)] bg-[rgba(8,14,24,0.98)] backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] py-2">
                         {ABOUT_SUBMENU.map((s) => (
-                          <a
-                            key={s.href}
-                            href={s.href}
-                            onClick={() => setAboutOpen(false)}
-                            className="block px-4 py-2.5 text-[13px] font-medium text-[#8899AA] hover:text-[#00C6FF] hover:bg-[rgba(0,198,255,0.06)] transition-colors duration-150 whitespace-nowrap"
-                          >
-                            {s.label}
-                          </a>
+                          s.href ? (
+                            <a
+                              key={s.label}
+                              href={s.href}
+                              onClick={() => setAboutOpen(false)}
+                              className="block px-4 py-2.5 text-[13px] font-medium text-[#8899AA] hover:text-[#00C6FF] hover:bg-[rgba(0,198,255,0.06)] transition-colors duration-150 whitespace-nowrap"
+                            >
+                              {s.label}
+                            </a>
+                          ) : (
+                            <span
+                              key={s.label}
+                              className="block px-4 py-2.5 text-[13px] font-medium text-[#8899AA]/50 whitespace-nowrap cursor-default"
+                              aria-disabled="true"
+                              title="Coming soon"
+                            >
+                              {s.label}
+                            </span>
+                          )
                         ))}
                       </div>
                     </div>
@@ -1162,17 +1176,28 @@ function Navbar() {
                 {/* Mobile About submenu (nested) */}
                 <div
                   className="flex flex-col items-center gap-3 overflow-hidden transition-all duration-300"
-                  style={{ maxHeight: mobileAboutOpen ? '320px' : '0px', opacity: mobileAboutOpen ? 1 : 0 }}
+                  style={{ maxHeight: mobileAboutOpen ? '400px' : '0px', opacity: mobileAboutOpen ? 1 : 0 }}
                 >
                   {ABOUT_SUBMENU.map((s) => (
-                    <a
-                      key={s.href}
-                      href={s.href}
-                      onClick={() => { setMobileOpen(false); setMobileAboutOpen(false); }}
-                      className="text-base font-medium text-[#8899AA] hover:text-[#00C6FF] transition-colors"
-                    >
-                      {s.label}
-                    </a>
+                    s.href ? (
+                      <a
+                        key={s.label}
+                        href={s.href}
+                        onClick={() => { setMobileOpen(false); setMobileAboutOpen(false); }}
+                        className="text-base font-medium text-[#8899AA] hover:text-[#00C6FF] transition-colors"
+                      >
+                        {s.label}
+                      </a>
+                    ) : (
+                      <span
+                        key={s.label}
+                        className="text-base font-medium text-[#8899AA]/50 cursor-default"
+                        aria-disabled="true"
+                        title="Coming soon"
+                      >
+                        {s.label}
+                      </span>
+                    )
                   ))}
                 </div>
               </div>
