@@ -976,10 +976,11 @@ function Navbar() {
             })}
             <a
               href="#contact"
-              className="btn-press px-6 py-2.5 rounded-full text-sm font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_6px_20px_rgba(0,123,255,0.45)]"
-              style={{ background: 'linear-gradient(90deg, #00BFFF 0%, #007BFF 100%)', boxShadow: '0px 4px 15px rgba(0,123,255,0.3)' }}
+              className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)] flex flex-col items-center justify-center leading-tight text-center"
+              style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
             >
-              Book a Free Discovery Call
+              <span>Book a Free</span>
+              <span>Discovery Call</span>
             </a>
           </div>
 
@@ -1059,10 +1060,11 @@ function Navbar() {
         <a
           href="#contact"
           onClick={() => setMobileOpen(false)}
-          className="btn-press mt-4 px-8 py-3 rounded-full text-base font-bold text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_6px_20px_rgba(0,123,255,0.45)]"
-          style={{ background: 'linear-gradient(90deg, #00BFFF 0%, #007BFF 100%)', boxShadow: '0px 4px 15px rgba(0,123,255,0.3)' }}
+          className="btn-press mt-4 px-8 py-3 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center leading-tight text-center"
+          style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}
         >
-          Book a Free Discovery Call
+          <span>Book a Free</span>
+          <span>Discovery Call</span>
         </a>
       </div>
     </>
