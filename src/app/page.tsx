@@ -1084,9 +1084,11 @@ function Navbar() {
             })}
           </div>
 
-          {/* CTA button — kept on the right via the parent's justify-between. */}
+          {/* CTA button — direct calendar booking link (opens new tab). */}
           <a
-            href="#contact"
+            href="https://calendar.app.google/TGnzfC65zBF3hVeD9"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)] hidden lg:flex flex-col items-center justify-center leading-tight text-center z-10"
             style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
           >
@@ -1220,7 +1222,9 @@ function Navbar() {
           );
         })}
         <a
-          href="#contact"
+          href="https://calendar.app.google/TGnzfC65zBF3hVeD9"
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={() => setMobileOpen(false)}
           className="btn-press mt-4 px-8 py-3 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center leading-tight text-center"
           style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}
