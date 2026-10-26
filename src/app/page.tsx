@@ -28,12 +28,12 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
-  { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Case Studies', href: '#case-studies' },
   { label: 'Technical Portfolio', href: '#technical-portfolio' },
   { label: 'Process', href: '#process' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -947,8 +947,8 @@ function Navbar() {
         }`}
         style={{ borderBottom: scrolled ? '1px solid rgba(0,198,255,0.08)' : 'none' }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
-          <a href="#hero" className="flex items-center gap-3 group">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative flex items-center justify-between h-[72px]">
+          <a href="#hero" className="flex items-center gap-3 group z-10">
             <Image src={`${basePath}/images/logo.png`} alt="MozIntelligence — E-Commerce Growth Intelligence" width={44} height={44} className="rounded-lg transition-transform duration-300 group-hover:scale-105 img-premium" priority />
             <div className="hidden sm:block">
               <div className="text-sm font-bold text-white leading-tight">MozIntelligence</div>
@@ -956,7 +956,9 @@ function Navbar() {
             </div>
           </a>
 
-          <div className="hidden lg:flex items-center gap-5">
+          {/* Centered nav links — absolutely positioned so they sit in the
+              horizontal middle of the header, independent of logo/CTA width. */}
+          <div className="hidden lg:flex items-center gap-5 absolute left-1/2 -translate-x-1/2">
             {NAV_LINKS.map((link) => {
               if (link.label === 'Services') {
                 return (
@@ -1066,15 +1068,17 @@ function Navbar() {
                 </a>
               );
             })}
-            <a
-              href="#contact"
-              className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)] flex flex-col items-center justify-center leading-tight text-center"
-              style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
-            >
-              <span>Book a Free</span>
-              <span>Discovery Call</span>
-            </a>
           </div>
+
+          {/* CTA button — kept on the right via the parent's justify-between. */}
+          <a
+            href="#contact"
+            className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)] hidden lg:flex flex-col items-center justify-center leading-tight text-center z-10"
+            style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
+          >
+            <span>Book a Free</span>
+            <span>Discovery Call</span>
+          </a>
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
