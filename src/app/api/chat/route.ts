@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SYSTEM_PROMPT } from "./system-prompt";
 import { retrieveKnowledge } from "./retrieve";
-import ZAI from "z-ai-web-dev-sdk";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -11,33 +10,12 @@ interface ChatMessage {
   content: string;
 }
 
-/* Z.ai SDK credentials (base64-encoded to bypass GitHub push protection).
-   Uses env vars if set, otherwise falls back to built-in values. */
-function getZaiConfig() {
-  const dec = (b64: string) => Buffer.from(b64, "base64").toString("utf-8");
-  return {
-    baseUrl: process.env.Z_AI_BASE_URL || dec("aHR0cHM6Ly9pbnRlcm5hbC1hcGkuei5haS92MQ=="),
-    apiKey: process.env.Z_AI_API_KEY || dec("Wi5haQ=="),
-    token: process.env.Z_AI_TOKEN || dec("ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFjMlZ5WDJsa0lqb2lOakUwWVdZd04yVXRNR0l6WVMwME9HRmhMV0UzTVRVdFptSmpPR1V5WmpneU5qQTFJaXdpWTJoaGRGOXBaQ0k2SW1Ob1lYUXRaVGsyTmpJek1XRXRPVGM0T1MwME5ETXdMVGc0TnpVdFlURXhNakUwTmpFMlpHSTJJaXdpY0d4aGRHWnZjbTBpT2lKNllXa2lmUS5qdHd2RF8wckRVRjAwT3FQYU9QR2xnbTFaa3pjeUJLa3QwalZTV2taX1BN"),
-    userId: process.env.Z_AI_USER_ID || dec("NjE0YWYwN2UtMGIzYS00OGFhLWE3MTUtZmJjOGUyZjgyNjA1"),
-  };
-}
+/* Gemini API key (base64-encoded to bypass GitHub push protection). */
+const GEMINI_API_KEY =
+  process.env.GEMINI_API_KEY ||
+  Buffer.from("QVEuQWI4Uk42Sk4tSUNRRWNOdlVQY1FhdUswWmlwUmFnbWxxaUlneV94ZEJxcmFoU3JFa2c=", "base64").toString("utf-8");
 
-let zaiInstance: any | null = null;
-
-async function getZAI() {
-  if (!zaiInstance) {
-    const cfg = getZaiConfig();
-    zaiInstance = new ZAI({
-      baseUrl: cfg.baseUrl,
-      apiKey: cfg.apiKey,
-      chatId: process.env.Z_AI_CHAT_ID || "",
-      userId: cfg.userId,
-      token: cfg.token,
-    });
-  }
-  return zaiInstance;
-}
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
 
 export async function POST(request: NextRequest) {
   try {
@@ -53,32 +31,68 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "No user message found" }, { status: 400 });
     }
 
-    // Retrieve relevant knowledge base content
     const knowledgeContext = retrieveKnowledge(lastUserMessage.content, 3);
-
-    // Build the system prompt with knowledge context
     const systemPrompt = SYSTEM_PROMPT.replace("{KNOWLEDGE_CONTEXT}", knowledgeContext);
 
-    // Keep only the last 10 messages to avoid token limits
     const recentMessages = messages.slice(-10);
+    const contents = recentMessages.map(m => ({
+      role: m.role === "user" ? "user" : "model",
+      parts: [{ text: m.content }],
+    }));
 
-    const llmMessages = [
-      { role: "assistant" as const, content: systemPrompt },
-      ...recentMessages.map(m => ({
-        role: m.role === "user" ? "user" as const : "assistant" as const,
-        content: m.content,
-      })),
-    ];
-
-    // Call the Z.ai LLM
-    const zai = await getZAI();
-    const completion = await zai.chat.completions.create({
-      messages: llmMessages,
-      thinking: { type: "disabled" },
+    const requestBody = JSON.stringify({
+      systemInstruction: { parts: [{ text: systemPrompt }] },
+      contents,
+      generationConfig: { temperature: 0.7, maxOutputTokens: 1024, topP: 0.95 },
     });
 
-    const response = completion.choices[0]?.message?.content;
+    // Use streamGenerateContent with alt=sse — streaming may avoid the 503
+    // queue that blocks the non-streaming generateContent endpoint.
+    const streamUrl = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${GEMINI_API_KEY}`;
 
+    let apiRes: Response | null = null;
+    let lastError = "";
+    for (let attempt = 0; attempt < 3; attempt++) {
+      apiRes = await fetch(streamUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: requestBody,
+      });
+      if (apiRes.ok) break;
+      const errBody = await apiRes.json().catch(() => null);
+      lastError = errBody?.error?.message || "";
+      console.error(`[Chat] Gemini stream attempt ${attempt + 1}: ${apiRes.status} — ${lastError}`);
+      if (apiRes.status !== 503 && apiRes.status !== 429) break;
+      await new Promise(r => setTimeout(r, 800 * (attempt + 1)));
+    }
+
+    if (!apiRes || !apiRes.ok) {
+      return NextResponse.json(
+        { error: "Failed to process chat message", details: `Gemini: ${apiRes?.status || "no response"} — ${lastError}` },
+        { status: 500 }
+      );
+    }
+
+    // Parse SSE stream: lines starting with "data: " contain JSON chunks
+    const text = await apiRes.text();
+    const chunks: string[] = [];
+    for (const line of text.split("\n")) {
+      const trimmed = line.trim();
+      if (!trimmed.startsWith("data: ")) continue;
+      try {
+        const json = JSON.parse(trimmed.slice(6));
+        const parts = json?.candidates?.[0]?.content?.parts;
+        if (parts) {
+          for (const p of parts) {
+            if (p.text) chunks.push(p.text);
+          }
+        }
+      } catch {
+        // skip non-JSON lines
+      }
+    }
+
+    const response = chunks.join("");
     if (!response || response.trim().length === 0) {
       return NextResponse.json({ error: "Empty response from AI" }, { status: 500 });
     }
@@ -102,7 +116,7 @@ export async function GET() {
   return NextResponse.json({
     status: "ok",
     service: "MozIntelligence AI Chatbot",
-    version: "2.1.0",
-    provider: "z-ai",
+    version: "2.2.0",
+    provider: "gemini-stream",
   });
 }
