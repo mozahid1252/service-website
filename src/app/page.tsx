@@ -2414,6 +2414,54 @@ function ServicesSection() {
 
 /* CaseStudies2Section removed — all 6 case studies now render in the
    single #case-studies section in a 3-column compact grid. */
+const processSectionData = {
+  kicker: "The Engagement Flow",
+  title: "How We Work Together",
+  description:
+    "From the first discovery call to ongoing monitoring — five steps, zero code on your side.",
+  steps: [
+    {
+      number: "1",
+      title: "Discovery & Strategy",
+      description:
+        "You book a call, we assess your business needs, and you select the analytics package that fits your store (Starter, Growth, Advanced, or Retainer). No guessing, we map exactly which platforms hold your data.",
+      image: `${basePath}/images/process-2.jpg`,
+    },
+    {
+      number: "2",
+      title: "The Engineering Foundation",
+      description:
+        "This is the behind-the-scenes engineering most analysts skip. We build your cloud infrastructure and connect your APIs. EXTRACT: We securely pull raw data from Shopify, GA4, Meta Ads, Google Ads, and Klaviyo. CLEAN: We align currencies, date formats, and timezones so everything speaks the same language. MERGE: We combine all platforms into one clean master table, your single source of truth. CONNECT: We pipe the unified data directly into the dashboard. You don't touch a single line of code.",
+      image: `${basePath}/images/process-4b.jpg`,
+    },
+    {
+      number: "3",
+      title: "The Deep Analysis",
+      description:
+        "With clean, reliable data flowing into our systems, the detective work begins. We run the RFM segmentation models, cohort analyses, funnel audits, true profit margin deep-dives, and churn predictions ETC. We don't just look at what happened, we uncover why it happened.",
+      image: `${basePath}/images/process-4.jpg`,
+    },
+    {
+      number: "4",
+      title: "The Delivery & Strategy Call",
+      description:
+        "You don't receive a data dump. You receive a plain-language Executive PDF, a visual dashboard, and a prioritized action plan. We hop on a strategy call (30 to 90 minutes, depending on your package) where I explain every finding and tell you exactly what to fix first.",
+      image: `${basePath}/images/process-5.jpg`,
+    },
+    {
+      number: "5",
+      title: "Execution & Monitoring (Ongoing)",
+      description:
+        "You implement the fixes, like pausing losing ads, flipping budgets, or sending win-back emails. If you are a Retainer client, I monitor your live dashboard 24/7, sending proactive anomaly alerts and updating your forecasts so today's insights never go stale.",
+      image: `${basePath}/images/process-6b.jpg`,
+    },
+  ],
+  quote: {
+    text: "The Health Check showed me something that destroyed and rebuilt me at the same time: I wasn't failing because of bad products. I was failing because I had no idea what was actually happening in my own business.",
+    author: "Marcus T., NOIRE Collective",
+  },
+};
+
 function ProcessSection() {
   const sectionRef = useScrollReveal();
   return (
