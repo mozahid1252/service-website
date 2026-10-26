@@ -149,11 +149,12 @@ const CORE_PACKAGES = [
     featured: false,
   },
   {
-    tag: 'Cut Wasted Spend. Keep More Customers. Grow Profitably.',
+    tag: 'SCALE WHAT WORKS.',
     name: 'E-Commerce Growth & Profit Intelligence',
     tier: 'GROWTH',
     price: '$600 – $1,200',
     timeline: '10–14 day',
+    tagline: 'Cut Wasted Spend. Keep More Customers. Grow Profitably.',
     description: '',
     features: [
       'Everything in Starter, plus 5 deeper analyses',
@@ -1733,6 +1734,7 @@ function ServicesSection() {
                   <div className="text-white text-sm font-medium">{pkg.timeline}</div>
                   <div className="text-[#8899AA] text-xs mt-1">Investment</div>
                   <div className="gradient-text-gold text-sm font-bold">{pkg.price}</div>
+                  {pkg.tagline && <div className="text-[#00C6FF] text-xs font-medium mt-2 leading-snug">{pkg.tagline}</div>}
                 </div>
                 {pkg.description && <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>}
 
@@ -1785,6 +1787,7 @@ function ServicesSection() {
                   <div className="text-white text-sm font-medium">{pkg.timeline}</div>
                   <div className="text-[#8899AA] text-xs mt-1">Investment</div>
                   <div className="gradient-text-gold text-sm font-bold">{pkg.price}</div>
+                    {pkg.tagline && <div className="text-[#00C6FF] text-xs font-medium mt-2 leading-snug">{pkg.tagline}</div>}
                 </div>
                     {pkg.description && <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>}
                     <ul className="space-y-2 mb-5">
@@ -1836,6 +1839,7 @@ function ServicesSection() {
                     <div className="text-[#8899AA] text-xs">Investment</div>
                     <div className="gradient-text-gold text-sm font-bold">{pkg.price.split(' · ')[0]}</div>
                   </div>
+                    {pkg.tagline && <div className="text-[#00C6FF] text-xs font-medium mt-2 leading-snug">{pkg.tagline}</div>}
                 </div>
                 <div className="mb-3">
                   <div className="text-[#FF4444] text-xs font-semibold mb-1">Problem:</div>
