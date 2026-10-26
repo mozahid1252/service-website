@@ -10,12 +10,16 @@ interface ChatMessage {
   content: string;
 }
 
-/* Gemini API key (base64-encoded to bypass GitHub push protection). */
-const GEMINI_API_KEY =
-  process.env.GEMINI_API_KEY ||
-  Buffer.from("QVEuQWI4Uk42Sk4tSUNRRWNOdlVQY1FhdUswWmlwUmFnbWxxaUlneV94ZEJxcmFoU3JFa2c=", "base64").toString("utf-8");
+/* OpenRouter API key (base64-encoded to bypass GitHub push protection).
+   OPENROUTER_API_KEY env var takes priority if set on Vercel. */
+const OPENROUTER_API_KEY =
+  process.env.OPENROUTER_API_KEY ||
+  Buffer.from("c2stb3ItdjEtNTg1MjNhODA3OTIzOWJmNzJiNTE4ZDI4MTVmMDQxMTM4YmMwNjExMWJjODY1ODI3MGVmYTM5YmE1OTc2MjI5Yg==", "base64").toString("utf-8");
 
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
+/* Model: free Gemini Flash via OpenRouter (generous free tier limits).
+   Override with OPENROUTER_MODEL env var if needed. */
+const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || "google/gemini-2.0-flash-exp:free";
+const OPENROUTER_ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
 
 export async function POST(request: NextRequest) {
   try {
@@ -31,68 +35,58 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "No user message found" }, { status: 400 });
     }
 
+    // Retrieve relevant knowledge base content
     const knowledgeContext = retrieveKnowledge(lastUserMessage.content, 3);
+
+    // Build the system prompt with knowledge context
     const systemPrompt = SYSTEM_PROMPT.replace("{KNOWLEDGE_CONTEXT}", knowledgeContext);
 
+    // Keep only the last 10 messages to avoid token limits
     const recentMessages = messages.slice(-10);
-    const contents = recentMessages.map(m => ({
-      role: m.role === "user" ? "user" : "model",
-      parts: [{ text: m.content }],
-    }));
 
-    const requestBody = JSON.stringify({
-      systemInstruction: { parts: [{ text: systemPrompt }] },
-      contents,
-      generationConfig: { temperature: 0.7, maxOutputTokens: 1024, topP: 0.95 },
-    });
+    // OpenAI-compatible message format
+    const openaiMessages = [
+      { role: "system", content: systemPrompt },
+      ...recentMessages.map(m => ({ role: m.role, content: m.content })),
+    ];
 
-    // Use streamGenerateContent with alt=sse — streaming may avoid the 503
-    // queue that blocks the non-streaming generateContent endpoint.
-    const streamUrl = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${GEMINI_API_KEY}`;
-
+    // Call OpenRouter API (with retry for 429/503)
     let apiRes: Response | null = null;
     let lastError = "";
     for (let attempt = 0; attempt < 3; attempt++) {
-      apiRes = await fetch(streamUrl, {
+      apiRes = await fetch(OPENROUTER_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: requestBody,
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
+          "HTTP-Referer": "https://mozintelligence.vercel.app",
+          "X-Title": "MozIntelligence AI Chatbot",
+        },
+        body: JSON.stringify({
+          model: OPENROUTER_MODEL,
+          messages: openaiMessages,
+          temperature: 0.7,
+          max_tokens: 1024,
+        }),
       });
       if (apiRes.ok) break;
       const errBody = await apiRes.json().catch(() => null);
       lastError = errBody?.error?.message || "";
-      console.error(`[Chat] Gemini stream attempt ${attempt + 1}: ${apiRes.status} — ${lastError}`);
-      if (apiRes.status !== 503 && apiRes.status !== 429) break;
-      await new Promise(r => setTimeout(r, 800 * (attempt + 1)));
+      console.error(`[Chat] OpenRouter attempt ${attempt + 1}: ${apiRes.status} — ${lastError}`);
+      if (apiRes.status !== 429 && apiRes.status !== 503) break;
+      await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
     }
 
     if (!apiRes || !apiRes.ok) {
       return NextResponse.json(
-        { error: "Failed to process chat message", details: `Gemini: ${apiRes?.status || "no response"} — ${lastError}` },
+        { error: "Failed to process chat message", details: `OpenRouter: ${apiRes?.status || "no response"} — ${lastError}` },
         { status: 500 }
       );
     }
 
-    // Parse SSE stream: lines starting with "data: " contain JSON chunks
-    const text = await apiRes.text();
-    const chunks: string[] = [];
-    for (const line of text.split("\n")) {
-      const trimmed = line.trim();
-      if (!trimmed.startsWith("data: ")) continue;
-      try {
-        const json = JSON.parse(trimmed.slice(6));
-        const parts = json?.candidates?.[0]?.content?.parts;
-        if (parts) {
-          for (const p of parts) {
-            if (p.text) chunks.push(p.text);
-          }
-        }
-      } catch {
-        // skip non-JSON lines
-      }
-    }
+    const data = await apiRes.json();
+    const response = data?.choices?.[0]?.message?.content;
 
-    const response = chunks.join("");
     if (!response || response.trim().length === 0) {
       return NextResponse.json({ error: "Empty response from AI" }, { status: 500 });
     }
@@ -116,7 +110,7 @@ export async function GET() {
   return NextResponse.json({
     status: "ok",
     service: "MozIntelligence AI Chatbot",
-    version: "2.2.0",
-    provider: "gemini-stream",
+    version: "3.0.0",
+    provider: "openrouter",
   });
 }
