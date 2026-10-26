@@ -12,6 +12,7 @@ import {
 import { CtaBanner, SiteFooter } from '@/components/site/contact-footer';
 import { QuickProofSection } from '@/components/site/quick-proof';
 import { WhatWeDoSection } from '@/components/site/what-we-do';
+import { TechStackSection } from '@/components/site/tech-stack';
 import { ChatbotWidget } from '@/components/chatbot-widget';
 import { WhyDifferentSection } from '@/components/WhyDifferentSection';
 import { FaqSection } from '@/components/FaqSection';
@@ -2612,88 +2613,6 @@ function ProcessSection() {
     </section>
   );
 }
-
-function TechStackSection() {
-  const sectionRef = useScrollReveal();
-  return (
-    <section id="tech-stack" className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
-      <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <span className="section-label reveal-up">The Infrastructure Behind The Insights</span>
-          <h2 className="section-headline text-[clamp(20px,3vw,33px)] font-extrabold text-white mt-3 mb-2 uppercase tracking-tight reveal-up" style={{ transitionDelay: '0.2s' }}>
-            Enterprise Engineering. Without the $150K Salary.
-          </h2>
-          <p className="text-[#8899AA] text-sm max-w-3xl mx-auto leading-relaxed mt-2">
-            I bring the exact same tech stack used by Fortune 500 companies, and build it custom for your store. You get enterprise-grade data infrastructure without the $150,000/year in-house data engineer salary.
-          </p>
-        </div>
-
-        <div className="infra-tech-grid mb-10">
-          {TECH_STACK.map((cat, i) => {
-            const IconComp = cat.icon;
-            const accents = [
-              { border: 'rgba(0,198,255,0.20)', left: '#00C6FF', bg: 'rgba(0,198,255,0.08)' },
-              { border: 'rgba(0,230,118,0.20)', left: '#00E676', bg: 'rgba(0,230,118,0.08)' },
-              { border: 'rgba(245,166,35,0.20)', left: '#F5A623', bg: 'rgba(245,166,35,0.08)' },
-              { border: 'rgba(139,92,246,0.20)', left: '#8B5CF6', bg: 'rgba(139,92,246,0.08)' },
-            ];
-            const a = accents[i] || accents[0];
-            // All categories use the compact 2-column grid (icons + names only).
-            const showDesc = false;
-            return (
-              <div key={i} className="rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: `linear-gradient(145deg, rgba(13,21,32,0.95) 0%, ${a.bg} 100%)`, border: `1px solid ${a.border}`, borderLeft: `4px solid ${a.left}`, boxShadow: '0 0 30px ' + a.bg + ', 0 8px 32px rgba(0,0,0,0.4)' }}>
-                <div className="flex items-center gap-3 mb-2">
-                  <IconComp size={22} style={{ color: a.left }} />
-                  <h3 className="font-bold text-lg text-white">{cat.category}</h3>
-                </div>
-                {showDesc && <p className="text-[#8899AA] text-sm mb-5">{cat.description}</p>}
-                <ul className={`infra-tool-list${showDesc ? '' : ' infra-tool-list-grid'}`}>
-                  {cat.items.map((item, ii) => (
-                    <li key={ii} className="infra-tool-item">
-                      <div className={`tool-logo-wrap${item.logo === 'meta-google' ? ' tool-logo-double' : ''}`}>
-                        {TOOL_LOGOS[item.logo]}
-                      </div>
-                      <div className="tool-text">
-                        <span className="tool-name">{item.name}</span>
-                        {showDesc && <span className="tool-desc">{item.desc}</span>}
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Trust Bar */}
-        <div className="glass rounded-2xl p-6 text-center">
-          <p className="text-[#8899AA] text-sm leading-relaxed">
-            This is the exact stack I used to process <strong className="text-white">2.75M raw e-commerce events</strong>, build a <strong className="text-white">$53.5M financial data warehouse</strong>, and run <strong className="text-white">11-tier RFM segmentation models</strong>. No generic templates. Just pure, custom-built data engineering.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* Maps service dropdown values to human-readable labels for the email payload */
-const SERVICE_LABELS: Record<string, string> = {
-  'starter': 'E-Commerce Health Check',
-  'growth': 'Revenue Growth Accelerator',
-  'advanced': 'Data-Driven Growth System',
-  'retainer': 'Ongoing Analytics Retainer',
-  'marketing-spend': 'Marketing Spend Audit',
-  'customer-retention': 'Customer Retention Audit',
-  'product-portfolio': 'Product Portfolio Audit',
-  'cro-audit': 'CRO & Checkout Audit',
-  'profitability': 'Profitability & COGS Audit',
-  'operations': 'Operations & Automation Audit',
-  'basic-setup': 'Basic Data Setup',
-  'full-pipeline': 'Full Data Pipeline',
-  'full-automation': 'Full Pipeline + Automation',
-  'not-sure': 'Not sure — help me figure it out',
-  'custom': 'Custom / Something else',
-};
 
 function MobileStickyBar() {
   return (

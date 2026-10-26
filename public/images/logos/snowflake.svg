@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <g stroke="#29B5E8" stroke-width="4" stroke-linecap="round" fill="none">
+    <line x1="50" y1="10" x2="50" y2="90"/>
+    <line x1="15" y1="30" x2="85" y2="70"/>
+    <line x1="85" y1="30" x2="15" y2="70"/>
+    <path d="M50 22 L44 16 M50 22 L56 16 M50 78 L44 84 M50 78 L56 84"/>
+    <path d="M27 35 L19 32 M27 35 L24 27 M73 65 L81 68 M73 65 L76 73"/>
+    <path d="M73 35 L76 27 M73 35 L81 32 M27 65 L24 73 M27 65 L19 68"/>
+  </g>
+  <polygon points="50,38 60,44 60,56 50,62 40,56 40,44" fill="#29B5E8"/>
+</svg>
