@@ -17,7 +17,7 @@ interface ChatMessage {
 const GEMINI_API_KEY =
   process.env.GEMINI_API_KEY ||
   Buffer.from("QVEuQWI4Uk42Sk4tSUNRRWNOdlVQY1FhdUswWmlwUmFnbWxxaUlneV94ZEJxcmFoU3JFa2c=", "base64").toString("utf-8");
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-1.5-flash";
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
 const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 export async function POST(request: NextRequest) {
@@ -64,27 +64,37 @@ export async function POST(request: NextRequest) {
       parts: [{ text: m.content }],
     }));
 
-    // Call Gemini API
-    const geminiRes = await fetch(`${GEMINI_ENDPOINT}?key=${GEMINI_API_KEY}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: systemPrompt }] },
-        contents,
-        generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 1024,
-          topP: 0.95,
-        },
-      }),
+    // Call Gemini API (with retry for 503 high-demand spikes)
+    const requestBody = JSON.stringify({
+      systemInstruction: { parts: [{ text: systemPrompt }] },
+      contents,
+      generationConfig: {
+        temperature: 0.7,
+        maxOutputTokens: 1024,
+        topP: 0.95,
+      },
     });
 
-    if (!geminiRes.ok) {
+    let geminiRes: Response | null = null;
+    let lastError = "";
+    for (let attempt = 0; attempt < 3; attempt++) {
+      geminiRes = await fetch(`${GEMINI_ENDPOINT}?key=${GEMINI_API_KEY}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: requestBody,
+      });
+      if (geminiRes.ok) break;
       const errBody = await geminiRes.json().catch(() => null);
-      const errText = await geminiRes.text().catch(() => "");
-      console.error("[Chat] Gemini API error:", geminiRes.status, errBody || errText);
+      lastError = errBody?.error?.message || "";
+      console.error(`[Chat] Gemini attempt ${attempt + 1} failed: ${geminiRes.status} — ${lastError}`);
+      // Retry only on 503 (high demand) or 429 (rate limit)
+      if (geminiRes.status !== 503 && geminiRes.status !== 429) break;
+      await new Promise((r) => setTimeout(r, 1500 * (attempt + 1)));
+    }
+
+    if (!geminiRes || !geminiRes.ok) {
       return NextResponse.json(
-        { error: "Failed to process chat message", details: `Gemini API: ${geminiRes.status} — ${errBody?.error?.message || errText}` },
+        { error: "Failed to process chat message", details: `Gemini API: ${geminiRes?.status || "no response"} — ${lastError}` },
         { status: 500 }
       );
     }
