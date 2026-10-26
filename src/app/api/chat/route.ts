@@ -10,36 +10,12 @@ interface ChatMessage {
   content: string;
 }
 
-// Initialize ZAI SDK lazily (dynamic import + config from env vars)
-// This avoids the need for a .z-ai-config file on Vercel.
-let zaiInstance: any | null = null;
-
-async function getZAI() {
-  if (!zaiInstance) {
-    const ZAIModule: any = await import("z-ai-web-dev-sdk");
-    const ZAI = ZAIModule.default;
-
-    // Try to load config from environment variables first (Vercel),
-    // then fall back to ZAI.create() which reads .z-ai-config (local dev).
-    const envBaseUrl = process.env.Z_AI_BASE_URL;
-    const envApiKey = process.env.Z_AI_API_KEY;
-
-    if (envBaseUrl && envApiKey) {
-      // Use environment variables (production/Vercel)
-      zaiInstance = new ZAI({
-        baseUrl: envBaseUrl,
-        apiKey: envApiKey,
-        chatId: process.env.Z_AI_CHAT_ID || "",
-        userId: process.env.Z_AI_USER_ID || "",
-        token: process.env.Z_AI_TOKEN || "",
-      });
-    } else {
-      // Fall back to config file (local development)
-      zaiInstance = await ZAI.create();
-    }
-  }
-  return zaiInstance;
-}
+/* Gemini API configuration.
+   Set GEMINI_API_KEY on Vercel (Settings > Environment Variables).
+   Optionally override the model with GEMINI_MODEL. */
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+const GEMINI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 export async function POST(request: NextRequest) {
   try {
@@ -68,26 +44,51 @@ export async function POST(request: NextRequest) {
     // Build the system prompt with knowledge context
     const systemPrompt = SYSTEM_PROMPT.replace("{KNOWLEDGE_CONTEXT}", knowledgeContext);
 
-    // Build messages for the LLM
+    if (!GEMINI_API_KEY) {
+      console.error("[Chat] Missing GEMINI_API_KEY env var. Set it on Vercel Settings > Environment Variables.");
+      return NextResponse.json(
+        { error: "Chat is not configured yet. Please try again later." },
+        { status: 500 }
+      );
+    }
+
     // Keep only the last 10 messages to avoid token limits
     const recentMessages = messages.slice(-10);
 
-    const llmMessages = [
-      { role: "assistant" as const, content: systemPrompt },
-      ...recentMessages.map(m => ({
-        role: m.role === "user" ? "user" as const : "assistant" as const,
-        content: m.content,
-      })),
-    ];
+    // Gemini uses "model" for the assistant role (not "assistant")
+    const contents = recentMessages.map((m) => ({
+      role: m.role === "user" ? "user" : "model",
+      parts: [{ text: m.content }],
+    }));
 
-    // Call the LLM
-    const zai = await getZAI();
-    const completion = await zai.chat.completions.create({
-      messages: llmMessages,
-      thinking: { type: "disabled" },
+    // Call Gemini API
+    const geminiRes = await fetch(`${GEMINI_ENDPOINT}?key=${GEMINI_API_KEY}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: systemPrompt }] },
+        contents,
+        generationConfig: {
+          temperature: 0.7,
+          maxOutputTokens: 1024,
+          topP: 0.95,
+        },
+      }),
     });
 
-    const response = completion.choices[0]?.message?.content;
+    if (!geminiRes.ok) {
+      const errText = await geminiRes.text();
+      console.error("[Chat] Gemini API error:", geminiRes.status, errText);
+      return NextResponse.json(
+        { error: "Failed to process chat message", details: `Gemini API: ${geminiRes.status}` },
+        { status: 500 }
+      );
+    }
+
+    const geminiData = await geminiRes.json();
+    const response =
+      geminiData?.candidates?.[0]?.content?.parts?.map((p: any) => p.text).join("") ||
+      geminiData?.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (!response || response.trim().length === 0) {
       return NextResponse.json(
@@ -116,6 +117,7 @@ export async function GET() {
   return NextResponse.json({
     status: "ok",
     service: "MozIntelligence AI Chatbot",
-    version: "1.0.0",
+    version: "2.0.0",
+    provider: "gemini",
   });
 }
