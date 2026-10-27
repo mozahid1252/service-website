@@ -157,12 +157,12 @@ export function QuickProofSection() {
               key={s.label}
               style={{ transitionDelay: settled ? "0ms" : `${120 + i * 70}ms` }}
               className={cn(
-                "px-4 text-center transition-all",
+                "flex flex-col items-center justify-center px-4 text-center transition-all",
                 settled ? "duration-300" : "duration-700",
                 inView ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
               )}
             >
-              <dd className={cn("text-2xl font-semibold tabular-nums sm:text-3xl", toneClass(s.label))}>
+              <dd className={cn("text-xl font-semibold tabular-nums sm:text-2xl", toneClass(s.label))}>
                 {s.value}
               </dd>
               <dt className="mt-1.5 text-[11px] font-medium uppercase tracking-[0.12em] text-body-text">
