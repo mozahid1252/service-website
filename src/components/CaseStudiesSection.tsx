@@ -54,6 +54,7 @@ interface FeaturedCaseStudy {
   result: string;
   pdf: string;
   image: string;
+  disableDownload?: boolean;
 }
 
 const studies: FeaturedCaseStudy[] = [
@@ -142,6 +143,7 @@ const studies: FeaturedCaseStudy[] = [
     result: "Profit went from $7/mo to $48,400/mo.",
     pdf: "/pdfs/case-zara.pdf",
     image: "/images/case-zara.jpg",
+    disableDownload: true,
   },
   {
     slug: "pace-performance",
@@ -159,6 +161,7 @@ const studies: FeaturedCaseStudy[] = [
     result: "Profit jumped from $425/mo to $31,400/mo in 30 days.",
     pdf: "/pdfs/case-pace.pdf",
     image: "/images/case-pace.jpg",
+    disableDownload: true,
   },
 ];
 
@@ -452,15 +455,24 @@ export default function CaseStudiesSection() {
                   </div>
 
                   <div className="mt-auto pt-5">
-                    <a
-                      href={study.pdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-[5px] border-2 border-brand px-5 py-2.5 text-sm font-semibold text-brand transition-all duration-300 hover:bg-brand hover:text-white active:scale-95"
-                    >
-                      <Download className="h-4 w-4" aria-hidden="true" />
-                      Download Full {study.store} Case Study PDF
-                    </a>
+                    {study.disableDownload ? (
+                      <span
+                        aria-disabled="true"
+                        className="inline-flex items-center gap-2 rounded-[5px] border-2 border-brand px-5 py-2.5 text-sm font-semibold text-brand opacity-60 cursor-not-allowed"
+                      >
+                        <Download className="h-4 w-4" aria-hidden="true" />
+                        Download Full {study.store} Case Study PDF
+                      </span>
+                    ) : (
+                      <a
+                        href={study.pdf}
+                        download
+                        className="inline-flex items-center gap-2 rounded-[5px] border-2 border-brand px-5 py-2.5 text-sm font-semibold text-brand transition-all duration-300 hover:bg-brand hover:text-white active:scale-95"
+                      >
+                        <Download className="h-4 w-4" aria-hidden="true" />
+                        Download Full {study.store} Case Study PDF
+                      </a>
+                    )}
                   </div>
                 </div>
               </article>
