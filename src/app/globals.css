@@ -5659,8 +5659,8 @@ span[id], a[id] {
   from { transform: translateX(-50%); }
   to { transform: translateX(0); }
 }
-.dash-track-right { animation: dash-marquee-right 35s linear infinite; will-change: transform; }
-.dash-track-left  { animation: dash-marquee-left  35s linear infinite; will-change: transform; }
+.dash-track-right { animation: dash-marquee-right 20s linear infinite; will-change: transform; }
+.dash-track-left  { animation: dash-marquee-left  20s linear infinite; will-change: transform; }
 .dash-row:hover .dash-track-right,
 .dash-row:hover .dash-track-left { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) {

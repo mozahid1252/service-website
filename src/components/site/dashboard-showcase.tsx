@@ -320,7 +320,7 @@ export function DashboardShowcaseSection() {
       {/* Two marquee rows — SWAPPED: audits on top (left scroll), packages on bottom (left scroll) */}
       <div className="relative space-y-6 pb-16 pt-14 sm:space-y-8 sm:pb-24 sm:pt-20">
         <FadeIn>
-          <DashRow items={auditItems} startIndex={0} direction="left" />
+          <DashRow items={auditItems} startIndex={0} direction="right" />
         </FadeIn>
         <FadeIn delay={120}>
           <DashRow items={packageItems} startIndex={auditItems.length} direction="left" />
