@@ -57,12 +57,12 @@ const asiaGccPlatforms: Platform[] = [
   { name: "Quickbutik", icon: "/platform-icons/quickbutik.png" },
 ];
 
-const ICON_SIZES = "(min-width: 768px) 56px, 48px";
+const ICON_SIZES = "(min-width: 768px) 80px, 64px";
 
 function PlatformChip({ platform }: { platform: Platform }) {
   return (
     <div className="group flex h-[124px] w-[172px] shrink-0 flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-white px-4 shadow-[0_10px_30px_-16px_rgba(31,31,31,0.16)] transition-all duration-300 hover:-translate-y-1 hover:border-brand/50 hover:shadow-[0_20px_44px_-18px_rgba(111,62,222,0.4)]">
-      <div className="relative h-14 w-14">
+      <div className="relative h-20 w-20">
         <Image
           src={platform.icon}
           alt={`${platform.name} platform icon`}
