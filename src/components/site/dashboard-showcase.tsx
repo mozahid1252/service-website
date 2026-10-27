@@ -317,13 +317,13 @@ export function DashboardShowcaseSection() {
         <div className="absolute inset-0 opacity-[0.13] [background-image:radial-gradient(rgba(255,255,255,0.5)_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
       </div>
 
-      {/* Two marquee rows — top (packages) scrolls right, bottom (audits) scrolls left */}
+      {/* Two marquee rows — SWAPPED: audits on top (left scroll), packages on bottom (left scroll) */}
       <div className="relative space-y-6 pb-16 pt-14 sm:space-y-8 sm:pb-24 sm:pt-20">
         <FadeIn>
-          <DashRow items={packageItems} startIndex={0} direction="right" />
+          <DashRow items={auditItems} startIndex={0} direction="left" />
         </FadeIn>
         <FadeIn delay={120}>
-          <DashRow items={auditItems} startIndex={packageItems.length} direction="left" />
+          <DashRow items={packageItems} startIndex={auditItems.length} direction="left" />
         </FadeIn>
       </div>
     </section>
