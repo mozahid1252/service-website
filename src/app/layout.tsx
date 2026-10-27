@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Syne, Anton, Bricolage_Grotesque, Fraunces, Manrope } from "next/font/google";
+import { Inter, Syne, Anton, Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { GoogleAnalytics } from '@next/third-parties/google';
@@ -21,11 +21,6 @@ const anton = Anton({
   weight: "400",
 });
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
-  subsets: ["latin"],
-  weight: ["700", "800"],
-});
 
 /* "Why We're Different" section display + body fonts */
 const fraunces = Fraunces({
@@ -107,7 +102,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${syne.variable} ${anton.variable} ${bricolage.variable} ${fraunces.variable} ${manrope.variable} antialiased`}
+        className={`${inter.variable} ${syne.variable} ${anton.variable} ${fraunces.variable} ${manrope.variable} antialiased`}
         style={{ fontFamily: "var(--font-inter), sans-serif" }}
       >
         <script
