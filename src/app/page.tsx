@@ -32,6 +32,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const NAV_LINKS = [
   { label: 'Home', href: '#hero' },
+  { label: 'What We Do', href: '#what-we-do' },
   { label: 'Services', href: '#services' },
   { label: 'Case Studies', href: '#case-studies' },
   { label: 'Technical Portfolio', href: '#technical-portfolio' },
@@ -59,7 +60,6 @@ const SERVICES_SUBMENU = [
    Items with href: undefined are placeholders (no link yet). */
 const ABOUT_SUBMENU = [
   { label: 'About MozIntelligence', href: '/about-mozintelligence' },
-  { label: 'What We Do', href: '#what-we-do' },
   { label: 'Why MozIntelligence Different', href: '#why-were-different' },
   { label: 'About Founder', href: '/about-founder' },
 ];
