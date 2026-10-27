@@ -1,10 +1,14 @@
-"use client";
-
 import Image from "next/image";
+
 import { FadeIn } from "./reveal";
+
+/* ================================================================
+   E-commerce Platforms We Support
+   ================================================================ */
 
 type Platform = { name: string; icon: string };
 
+/* Row 1 — Global & widely used platforms (first half) */
 const globalRowOne: Platform[] = [
   { name: "Shopify", icon: "/platform-icons/shopify.png" },
   { name: "Shopify Plus", icon: "/platform-icons/shopify-plus.png" },
@@ -18,6 +22,7 @@ const globalRowOne: Platform[] = [
   { name: "Ecwid", icon: "/platform-icons/ecwid.png" },
 ];
 
+/* Row 2 — Global & widely used platforms (second half) */
 const globalRowTwo: Platform[] = [
   { name: "Square Online", icon: "/platform-icons/square-online.png" },
   { name: "Shift4Shop", icon: "/platform-icons/shift4shop.png" },
@@ -31,6 +36,7 @@ const globalRowTwo: Platform[] = [
   { name: "Shopline", icon: "/platform-icons/shopline.png" },
 ];
 
+/* Row 3 — Europe-focused platforms */
 const europePlatforms: Platform[] = [
   { name: "Shopware", icon: "/platform-icons/shopware.png" },
   { name: "JTL-Shop", icon: "/platform-icons/jtl-shop.png" },
@@ -44,6 +50,7 @@ const europePlatforms: Platform[] = [
   { name: "Mystore", icon: "/platform-icons/mystore.png" },
 ];
 
+/* Row 4 — Asia & GCC-focused platforms */
 const asiaGccPlatforms: Platform[] = [
   { name: "EasyStore", icon: "/platform-icons/easystore.png" },
   { name: "SiteGiant", icon: "/platform-icons/sitegiant.png" },
@@ -57,12 +64,12 @@ const asiaGccPlatforms: Platform[] = [
   { name: "Quickbutik", icon: "/platform-icons/quickbutik.png" },
 ];
 
-const ICON_SIZES = "(min-width: 768px) 80px, 64px";
+const ICON_SIZES = "(min-width: 768px) 56px, 48px";
 
 function PlatformChip({ platform }: { platform: Platform }) {
   return (
     <div className="group flex h-[124px] w-[172px] shrink-0 flex-col items-center justify-center gap-3 rounded-2xl border border-border bg-white px-4 shadow-[0_10px_30px_-16px_rgba(31,31,31,0.16)] transition-all duration-300 hover:-translate-y-1 hover:border-brand/50 hover:shadow-[0_20px_44px_-18px_rgba(111,62,222,0.4)]">
-      <div className="relative h-20 w-20">
+      <div className="relative h-14 w-14">
         <Image
           src={platform.icon}
           alt={`${platform.name} platform icon`}
@@ -93,6 +100,7 @@ function PlatformRow({
       aria-label={`${label} logos, auto-scrolling`}
       className="plat-row relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_64px,black_calc(100%-64px),transparent)]"
     >
+      {/* Two identical tile sets -> translateX(-50%) loops seamlessly */}
       <div
         className={`flex w-max ${direction === "right" ? "plat-track-right" : "plat-track-left"}`}
       >
@@ -126,6 +134,7 @@ export function PlatformsShowcaseSection() {
       aria-labelledby="platforms-heading"
       className="relative scroll-mt-20 overflow-hidden bg-white py-16 sm:py-24"
     >
+      {/* Premium background: soft brand glows + faint dot grid + top hairline */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
         <div className="absolute left-1/2 top-[-180px] h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-brand/[0.07] blur-[110px]" />

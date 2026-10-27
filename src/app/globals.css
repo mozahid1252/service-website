@@ -5668,12 +5668,31 @@ span[id], a[id] {
 }
 
 /* ============================================================
-   PLATFORMS SHOWCASE — marquee animation
+
+/* ============================================================
+   PLATFORMS SHOWCASE — marquee animation (user-specified)
    ============================================================ */
-.plat-track-right { animation: dash-marquee-right 30s linear infinite; will-change: transform; }
-.plat-track-left  { animation: dash-marquee-left  30s linear infinite; will-change: transform; }
+@keyframes dash-marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes dash-marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.plat-track-right {
+  animation: dash-marquee-right 35s linear infinite;
+}
+.plat-track-left {
+  animation: dash-marquee-left 35s linear infinite;
+}
+/* Pause the row the visitor inspects */
 .plat-row:hover .plat-track-right,
-.plat-row:hover .plat-track-left { animation-play-state: paused; }
+.plat-row:hover .plat-track-left {
+  animation-play-state: paused;
+}
 @media (prefers-reduced-motion: reduce) {
-  .plat-track-right, .plat-track-left { animation: none; }
+  .plat-row { overflow-x: auto; }
+  .plat-track-right,
+  .plat-track-left { animation: none; }
 }

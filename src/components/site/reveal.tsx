@@ -3,12 +3,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-/**
- * FadeIn — shared section entrance wrapper.
- * Fades + rises the wrapped block once it enters the viewport
- * (IntersectionObserver, threshold 0.08), matching the site-wide
- * reveal language. Wrap each top-level block with it.
- */
 export function FadeIn({
   children,
   className,
