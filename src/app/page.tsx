@@ -800,8 +800,6 @@ function useScrollReveal() {
   return ref;
 }
 
-function WhyWorkWithMeSection() {
-
 function Counter({ target, prefix = '', suffix = '' }: { target: number; prefix?: string; suffix?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
@@ -848,8 +846,6 @@ function Counter({ target, prefix = '', suffix = '' }: { target: number; prefix?
   return <span ref={ref}>{prefix}{display}{suffix}</span>;
 }
 
-function WhyWorkWithMeSection() {
-
 /* Renders the "Best For" text with a styled "rev" shortform tag
    inserted right after the revenue figure (the "/mo" part). */
 function BestForText({ text }: { text: string }) {
@@ -863,8 +859,6 @@ function BestForText({ text }: { text: string }) {
     </>
   );
 }
-
-function WhyWorkWithMeSection() {
 
 /* Renders promise text with **bold** segments and \n\n paragraph breaks. */
 function PromiseText({ text }: { text: string }) {
@@ -894,8 +888,6 @@ function PromiseText({ text }: { text: string }) {
     </>
   );
 }
-
-function WhyWorkWithMeSection() {
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -1277,8 +1269,6 @@ function Navbar() {
   );
 }
 
-function WhyWorkWithMeSection() {
-
 function HeroSection() {
   const [typedText, setTypedText] = useState('');
   const fullText = 'Your Store Is Making Revenue. Something Else Is Keeping The Profit.';
@@ -1411,8 +1401,6 @@ function HeroSection() {
   );
 }
 
-function WhyWorkWithMeSection() {
-
 /* ── PAGE 2: WHY DATA (building pictures background + premium content) ── */
 function WhyDataSection() {
   const sectionRef = useScrollReveal();
@@ -1488,8 +1476,6 @@ function WhyDataSection() {
     </section>
   );
 }
-
-function WhyWorkWithMeSection() {
 function WhyWorkWithMeSection() {
   const sectionRef = useScrollReveal();
   return (
@@ -1558,8 +1544,6 @@ function WhyWorkWithMeSection() {
     </section>
   );
 }
-
-function WhyWorkWithMeSection() {
 
 function ServicesSection() {
   const sectionRef = useScrollReveal();
@@ -2274,8 +2258,6 @@ function ServicesSection() {
   );
 }
 
-function WhyWorkWithMeSection() {
-
 /* CaseStudies2Section removed — all 6 case studies now render in the
    single #case-studies section in a 3-column compact grid. */
 const processSectionData = {
@@ -2445,8 +2427,6 @@ function ProcessSection() {
   );
 }
 
-function WhyWorkWithMeSection() {
-
 function MobileStickyBar() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-[9999] lg:hidden"
@@ -2457,8 +2437,6 @@ function MobileStickyBar() {
     </div>
   );
 }
-
-function WhyWorkWithMeSection() {
 
 /* ──────────────────────────────────────────
    MAIN PAGE
@@ -2584,5 +2562,3 @@ export default function PortfolioPage() {
     </main>
   );
 }
-
-function WhyWorkWithMeSection() {
