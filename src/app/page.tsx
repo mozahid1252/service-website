@@ -800,6 +800,8 @@ function useScrollReveal() {
   return ref;
 }
 
+function WhyWorkWithMeSection() {
+
 function Counter({ target, prefix = '', suffix = '' }: { target: number; prefix?: string; suffix?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
@@ -846,6 +848,8 @@ function Counter({ target, prefix = '', suffix = '' }: { target: number; prefix?
   return <span ref={ref}>{prefix}{display}{suffix}</span>;
 }
 
+function WhyWorkWithMeSection() {
+
 /* Renders the "Best For" text with a styled "rev" shortform tag
    inserted right after the revenue figure (the "/mo" part). */
 function BestForText({ text }: { text: string }) {
@@ -859,6 +863,8 @@ function BestForText({ text }: { text: string }) {
     </>
   );
 }
+
+function WhyWorkWithMeSection() {
 
 /* Renders promise text with **bold** segments and \n\n paragraph breaks. */
 function PromiseText({ text }: { text: string }) {
@@ -888,6 +894,8 @@ function PromiseText({ text }: { text: string }) {
     </>
   );
 }
+
+function WhyWorkWithMeSection() {
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -1269,6 +1277,8 @@ function Navbar() {
   );
 }
 
+function WhyWorkWithMeSection() {
+
 function HeroSection() {
   const [typedText, setTypedText] = useState('');
   const fullText = 'Your Store Is Making Revenue. Something Else Is Keeping The Profit.';
@@ -1401,6 +1411,8 @@ function HeroSection() {
   );
 }
 
+function WhyWorkWithMeSection() {
+
 /* ── PAGE 2: WHY DATA (building pictures background + premium content) ── */
 function WhyDataSection() {
   const sectionRef = useScrollReveal();
@@ -1477,159 +1489,7 @@ function WhyDataSection() {
   );
 }
 
-function AboutSection() {
-  const sectionRef = useScrollReveal();
-  const achievements = [
-    { value: 2.75, prefix: '', suffix: 'M+', label: 'Data Events Processed' },
-    { value: 3, prefix: '', suffix: '', label: 'Years Experienced' },
-    { value: 100, prefix: '', suffix: '+', label: 'Projects Delivered' },
-    { value: 6, prefix: '', suffix: '+', label: 'Industries Served' },
-  ];
-  return (
-    <section id="about" className="about2-section" ref={sectionRef}>
-      {/* Anchor target for the "About Founder" dropdown option — reuses the
-          existing founder bio (Mozahidul Islam) without duplicating content. */}
-      <span id="about-founder" className="sr-only" aria-hidden="true" />
-      <div className="about2-inner reveal">
-        {/* ── TOP ROW: two-column layout ── */}
-        <div className="about2-grid">
-          {/* LEFT — Content */}
-          <div className="about2-left">
-            {/* Eyebrow + name + role */}
-            <div className="about2-identity reveal-up">
-              <span className="about2-eyebrow">About</span>
-              <h2 className="about2-name">Mozahidul Islam</h2>
-              <p className="about2-role">E-Commerce Growth Scientist</p>
-            </div>
-
-            {/* Hero stats */}
-            <div className="about2-hero-stats reveal-up" style={{ transitionDelay: '0.1s' }}>
-              <div className="about2-hero-stat">
-                <span className="about2-hero-stat-v">CEO</span>
-                <span className="about2-hero-stat-l">MOZINTELLIGENCE</span>
-              </div>
-              <div className="about2-hero-divider" aria-hidden="true" />
-              <div className="about2-hero-stat">
-                <span className="about2-hero-stat-v">3 Years</span>
-                <span className="about2-hero-stat-l">Experience</span>
-              </div>
-              <div className="about2-hero-divider" aria-hidden="true" />
-              <div className="about2-hero-stat about2-hero-stat-available">
-                <span className="about2-available-dot" aria-hidden="true" />
-                <span className="about2-hero-stat-l">Available For Projects</span>
-              </div>
-            </div>
-
-            {/* Heading */}
-            <div className="about2-heading reveal-up" style={{ transitionDelay: '0.2s' }}>
-              <p className="about2-heading-label">The Intelligence Behind the Data</p>
-              <h3 className="about2-headline">
-                I Don&apos;t Just Build Dashboards.
-                <br />
-                <span className="about2-headline-accent">I Build the Engine That Powers Them.</span>
-              </h3>
-            </div>
-
-            {/* Introduction */}
-            <div className="about2-intro reveal-up" style={{ transitionDelay: '0.3s' }}>
-              <p>
-                Hi, I&apos;m <strong>Mozahidul Islam</strong>, E-Commerce Growth Scientist.
-              </p>
-              <p>
-                For 3 years, I worked behind the scenes at a data consulting firm, leading the data strategy and analysis for e-commerce clients. The kind of deep-dive work you&apos;ll see in the case studies on this site.
-              </p>
-              <p>
-                In 2026, I decided it was time to do this on my own. Not because the work changed, it&apos;s the same rigor, the same process, but because I wanted to work directly with founders, build real relationships, and skip the layers in between.
-              </p>
-              <p>
-                This site is the start of that next chapter.
-              </p>
-            </div>
-
-            {/* What I Do */}
-            <div className="about2-whatido reveal-up" style={{ transitionDelay: '0.4s' }}>
-              <div className="about2-whatido-label">
-                <span className="about2-whatido-line" aria-hidden="true" />
-                What I Do
-              </div>
-              <p className="about2-whatido-text">
-                I connect the data founders already have, <strong>Shopify, GA4, Meta Ads, Klaviyo</strong>, into one reliable source of truth, then turn it into decisions you can actually act on.
-              </p>
-              <p className="about2-whatido-text">
-                Not vanity metrics. Not a dashboard you check once and forget. Just a clear answer to the question every founder eventually asks: <strong>where is the money actually going?</strong>
-              </p>
-            </div>
-
-            {/* Achievement cards */}
-            <div className="about2-achievements reveal-up" style={{ transitionDelay: '0.5s' }}>
-              {achievements.map((stat, i) => (
-                <div key={i} className="about2-achievement">
-                  <span className="about2-achievement-v">
-                    <Counter target={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
-                  </span>
-                  <span className="about2-achievement-l">{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* RIGHT — Photo + floating stat cards + personal info + CTA */}
-          <div className="about2-right reveal-up" style={{ transitionDelay: '0.3s' }}>
-            <div className="about2-photo-wrap">
-              <div className="about2-photo-frame">
-                <Image
-                  src={`${basePath}/images/photo1.png`}
-                  alt="MozIntelligence — E-Commerce Growth Intelligence"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 45vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-              {/* Floating stat card 1 — Revenue */}
-              <div className="about2-float-card about2-float-card-1">
-                <span className="about2-float-v">CEO</span>
-                <span className="about2-float-l">MOZINTELLIGENCE</span>
-              </div>
-              {/* Floating stat card 2 — Experience */}
-              <div className="about2-float-card about2-float-card-2">
-                <span className="about2-float-v">3 Years</span>
-                <span className="about2-float-l">Experience</span>
-              </div>
-            </div>
-
-            {/* Personal info — moved below profile picture */}
-            <div className="about2-info reveal-up" style={{ transitionDelay: '0.6s', marginTop: '32px' }}>
-              <div className="about2-info-item">
-                <span className="about2-info-label">Education</span>
-                <span className="about2-info-value">University of Rajshahi</span>
-              </div>
-              <div className="about2-info-item">
-                <span className="about2-info-label">Languages</span>
-                <span className="about2-info-value">English • Bengali • Hindi • Urdu</span>
-              </div>
-              <div className="about2-info-item">
-                <span className="about2-info-label">Location</span>
-                <span className="about2-info-value">Dhaka, Bangladesh</span>
-              </div>
-            </div>
-
-            {/* CTA buttons — moved below personal info */}
-            <div className="about2-cta reveal-up" style={{ transitionDelay: '0.7s', marginTop: '20px' }}>
-              <a href={`${basePath}/pdfs/resume.pdf`} download="Mozahidul_Islam_Resume.pdf" className="about2-btn about2-btn-primary">
-                <Download size={16} /> Download CV
-              </a>
-              <a href="https://github.com/mojahid1252" target="_blank" rel="noopener noreferrer" className="about2-btn about2-btn-secondary">
-                <BarChart3 size={16} /> Explore My Projects
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
+function WhyWorkWithMeSection() {
 function WhyWorkWithMeSection() {
   const sectionRef = useScrollReveal();
   return (
@@ -1698,6 +1558,8 @@ function WhyWorkWithMeSection() {
     </section>
   );
 }
+
+function WhyWorkWithMeSection() {
 
 function ServicesSection() {
   const sectionRef = useScrollReveal();
@@ -2412,6 +2274,8 @@ function ServicesSection() {
   );
 }
 
+function WhyWorkWithMeSection() {
+
 /* CaseStudies2Section removed — all 6 case studies now render in the
    single #case-studies section in a 3-column compact grid. */
 const processSectionData = {
@@ -2581,6 +2445,8 @@ function ProcessSection() {
   );
 }
 
+function WhyWorkWithMeSection() {
+
 function MobileStickyBar() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-[9999] lg:hidden"
@@ -2591,6 +2457,8 @@ function MobileStickyBar() {
     </div>
   );
 }
+
+function WhyWorkWithMeSection() {
 
 /* ──────────────────────────────────────────
    MAIN PAGE
@@ -2679,7 +2547,6 @@ export default function PortfolioPage() {
       <WhyDataSection />
       <QuickProofSection />
       <WhatWeDoSection />
-      <AboutSection />
       <PrinciplesSection />
       <WhyDifferentSection />
       <ServicesSection />
@@ -2717,3 +2584,5 @@ export default function PortfolioPage() {
     </main>
   );
 }
+
+function WhyWorkWithMeSection() {
