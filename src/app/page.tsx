@@ -15,6 +15,7 @@ import { WhatWeDoSection } from '@/components/site/what-we-do';
 import { TechStackSection } from '@/components/site/tech-stack';
 import { TestimonialsSection } from '@/components/site/testimonials';
 import { DashboardShowcaseSection } from '@/components/site/dashboard-showcase';
+import { PlatformsShowcaseSection } from '@/components/site/platforms-showcase';
 import { ChatbotWidget } from '@/components/chatbot-widget';
 import { WhyDifferentSection } from '@/components/WhyDifferentSection';
 import { FaqSection } from '@/components/FaqSection';
@@ -2524,6 +2525,7 @@ export default function PortfolioPage() {
       <Navbar />
       <HeroSection />
       <WhyDataSection />
+      <PlatformsShowcaseSection />
       <QuickProofSection />
       <DashboardShowcaseSection />
       <WhatWeDoSection />

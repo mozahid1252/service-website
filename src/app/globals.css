@@ -5666,3 +5666,14 @@ span[id], a[id] {
 @media (prefers-reduced-motion: reduce) {
   .dash-track-right, .dash-track-left { animation: none; }
 }
+
+/* ============================================================
+   PLATFORMS SHOWCASE — marquee animation
+   ============================================================ */
+.plat-track-right { animation: dash-marquee-right 30s linear infinite; will-change: transform; }
+.plat-track-left  { animation: dash-marquee-left  30s linear infinite; will-change: transform; }
+.plat-row:hover .plat-track-right,
+.plat-row:hover .plat-track-left { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .plat-track-right, .plat-track-left { animation: none; }
+}
