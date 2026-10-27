@@ -59,7 +59,7 @@ const ABOUT_SUBMENU = [
   { label: 'About MozIntelligence', href: '/about-mozintelligence' },
   { label: 'What We Do', href: '#what-we-do' },
   { label: 'Why MozIntelligence Different', href: '#why-were-different' },
-  { label: 'About Founder', href: '#about-founder' },
+  { label: 'About Founder', href: '/about-founder' },
 ];
 
 const TRUST_STATS: { target?: number; prefix?: string; suffix?: string; value?: string; label: string; isRating?: boolean; isPrivacy?: boolean; isDeadline?: boolean; ratingLabel?: string }[] = [
@@ -1053,7 +1053,7 @@ function Navbar() {
                       aria-expanded={aboutOpen}
                       aria-controls="about-dropdown"
                       className={`text-[13px] font-medium tracking-wide transition-colors duration-200 whitespace-nowrap inline-flex items-center gap-1 ${
-                        aboutOpen || ['#what-we-do', '#why-were-different', '#about-founder'].includes(activeSection)
+                        aboutOpen || ['#what-we-do', '#why-were-different', '/about-founder'].includes(activeSection)
                           ? 'nav-link-active'
                           : 'text-[#8899AA] hover:text-[#00C6FF]'
                       }`}
@@ -1193,7 +1193,7 @@ function Navbar() {
                   onClick={(e) => { e.preventDefault(); setMobileAboutOpen(!mobileAboutOpen); }}
                   className={`text-2xl font-medium transition-all duration-300 inline-flex items-center gap-2 ${
                     mobileOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-                  } ${['#what-we-do', '#why-were-different', '#about-founder'].includes(activeSection) ? 'text-[#00C6FF]' : 'text-white hover:text-[#00C6FF]'}`}
+                  } ${['#what-we-do', '#why-were-different', '/about-founder'].includes(activeSection) ? 'text-[#00C6FF]' : 'text-white hover:text-[#00C6FF]'}`}
                 >
                   {link.label}
                   <button
