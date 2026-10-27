@@ -58,40 +58,6 @@ interface FeaturedCaseStudy {
 
 const studies: FeaturedCaseStudy[] = [
   {
-    slug: "zara-organics",
-    store: "ZARA Organics",
-    tag: "turnaround",
-    industry: "Organic Wellness & Supplements",
-    headline: "The $89K/Month Store That Was Actually Bankrupt",
-    subtitle: "A $7/month profit hidden inside $89K in revenue.",
-    nightmare:
-      "$89K/mo revenue, celebrating a record year. Actual net profit for the entire year was only $84. Margin collapsed from 24% to 10.9%.",
-    revelation:
-      '46% of her customer base was permanently "Lost." Free organic content channels generated 4.2x more LTV than $18K/mo paid ads.',
-    turnaround:
-      "Shifted from an ad-spend business to a content/community business. Built a live Looker Studio dashboard.",
-    result: "Profit went from $7/mo to $48,400/mo.",
-    pdf: "/pdfs/case-zara.pdf",
-    image: "/images/case-zara.jpg",
-  },
-  {
-    slug: "pace-performance",
-    store: "PACE Performance",
-    tag: "scale",
-    industry: "Fitness & Running Gear",
-    headline: "All Speed, No Strategy: The Marathon Runner's Store",
-    subtitle: "His $8,400/mo ads brought customers worth $9 LTV.",
-    nightmare:
-      "$41K/mo revenue, running his business like a marathon. Thought he was making $9K/mo profit; he was actually making $425/mo.",
-    revelation:
-      "His free TikTok race videos brought in customers worth $524 LTV, while his $8,400/mo paid ads brought customers worth $9 LTV.",
-    turnaround:
-      "Cut ad spend by 70%, killed low-margin/high-return fitness products, leaned into authentic race-day content.",
-    result: "Profit jumped from $425/mo to $31,400/mo in 30 days.",
-    pdf: "/pdfs/case-pace.pdf",
-    image: "/images/case-pace.jpg",
-  },
-  {
     slug: "luna-jewelry",
     store: "LUNA Jewelry Co.",
     tag: "turnaround",
@@ -159,6 +125,40 @@ const studies: FeaturedCaseStudy[] = [
     result: "Profit jumped from $18.4K/mo to $41,380/mo in 45 days.",
     pdf: "/pdfs/case-lumiere.pdf",
     image: "/images/case-lumiere.jpg",
+  },
+  {
+    slug: "zara-organics",
+    store: "ZARA Organics",
+    tag: "turnaround",
+    industry: "Organic Wellness & Supplements",
+    headline: "The $89K/Month Store That Was Actually Bankrupt",
+    subtitle: "A $7/month profit hidden inside $89K in revenue.",
+    nightmare:
+      "$89K/mo revenue, celebrating a record year. Actual net profit for the entire year was only $84. Margin collapsed from 24% to 10.9%.",
+    revelation:
+      '46% of her customer base was permanently "Lost." Free organic content channels generated 4.2x more LTV than $18K/mo paid ads.',
+    turnaround:
+      "Shifted from an ad-spend business to a content/community business. Built a live Looker Studio dashboard.",
+    result: "Profit went from $7/mo to $48,400/mo.",
+    pdf: "/pdfs/case-zara.pdf",
+    image: "/images/case-zara.jpg",
+  },
+  {
+    slug: "pace-performance",
+    store: "PACE Performance",
+    tag: "scale",
+    industry: "Fitness & Running Gear",
+    headline: "All Speed, No Strategy: The Marathon Runner's Store",
+    subtitle: "His $8,400/mo ads brought customers worth $9 LTV.",
+    nightmare:
+      "$41K/mo revenue, running his business like a marathon. Thought he was making $9K/mo profit; he was actually making $425/mo.",
+    revelation:
+      "His free TikTok race videos brought in customers worth $524 LTV, while his $8,400/mo paid ads brought customers worth $9 LTV.",
+    turnaround:
+      "Cut ad spend by 70%, killed low-margin/high-return fitness products, leaned into authentic race-day content.",
+    result: "Profit jumped from $425/mo to $31,400/mo in 30 days.",
+    pdf: "/pdfs/case-pace.pdf",
+    image: "/images/case-pace.jpg",
   },
 ];
 
