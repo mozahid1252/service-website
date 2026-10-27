@@ -195,7 +195,7 @@ function DashCard({ item, index }: { item: ShowcaseItem; index: number }) {
             alt={item.asset.alt}
             fill
             sizes={CARD_SIZES}
-            className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+            className="object-contain object-top transition-transform duration-500 group-hover:scale-[1.02]"
           />
           {item.badge ? (
             <div className="absolute left-3 top-3 z-10 rounded-full bg-white px-3 py-1.5 text-[11px] font-bold text-brand shadow-[0_8px_24px_rgba(0,0,0,0.28)] ring-1 ring-black/5">
