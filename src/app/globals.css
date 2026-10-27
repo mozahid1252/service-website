@@ -5647,3 +5647,22 @@ table.infra-table {
 span[id], a[id] {
   scroll-margin-top: 80px;
 }
+
+/* ============================================================
+   DASHBOARD SHOWCASE — marquee animation
+   ============================================================ */
+@keyframes dash-marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes dash-marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.dash-track-right { animation: dash-marquee-right 35s linear infinite; will-change: transform; }
+.dash-track-left  { animation: dash-marquee-left  35s linear infinite; will-change: transform; }
+.dash-row:hover .dash-track-right,
+.dash-row:hover .dash-track-left { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .dash-track-right, .dash-track-left { animation: none; }
+}
