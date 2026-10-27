@@ -154,8 +154,7 @@ export function PlatformsShowcaseSection() {
               id="platforms-heading"
               className="mt-4 text-2xl font-semibold leading-tight text-heading sm:text-3xl"
             >
-              <span className="block">E-commerce Platforms</span>
-              <span className="block text-brand">We Support</span>
+              <span className="block text-heading">E-commerce Platforms We Support</span>
             </h2>
           </div>
         </FadeIn>
