@@ -68,7 +68,7 @@ export const metadata: Metadata = {
       {
         url: "/images/logo-og.png",
         width: 1200,
-        height: 655,
+        height: 630,
         alt: "MozIntelligence Logo",
       },
     ],
