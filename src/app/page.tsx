@@ -989,7 +989,7 @@ function Navbar() {
             <Image src={`${basePath}/images/logo.png`} alt="MozIntelligence — E-Commerce Growth Intelligence" width={44} height={44} className="rounded-lg transition-transform duration-300 group-hover:scale-105 img-premium" priority />
             <div className="hidden sm:block">
               <div className="text-sm font-bold text-white leading-tight">MozIntelligence</div>
-              <div className="text-[11px] text-[#8899AA] leading-tight">E-Commerce Growth Focused</div>
+              <div className="text-[11px] text-[#8899AA] leading-tight">E-Commerce Growth<br/>Focused</div>
             </div>
           </a>
 
