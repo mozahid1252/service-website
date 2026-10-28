@@ -121,7 +121,7 @@ export default function AboutFounderPage() {
                 </div>
               </div>
 
-              {/* RIGHT — Photo */}
+              {/* RIGHT — Photo + Info card directly below */}
               <div className="about2-right">
                 <div className="about2-photo-wrap">
                   <div className="about2-photo-frame">
@@ -145,6 +145,46 @@ export default function AboutFounderPage() {
                     <span className="about2-float-l">Experience</span>
                   </div>
                 </div>
+
+                {/* Info card — directly below photo (matching screenshot) */}
+                <div className="mt-5 rounded-2xl border border-[#e5e0f5] bg-white p-5 shadow-[0_8px_30px_-10px_rgba(31,31,31,0.08)]">
+                  <div className="flex flex-col gap-3.5">
+                    {/* Education */}
+                    <div className="flex items-center justify-between border-b border-[#f0edf7] pb-3">
+                      <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#8899AA]">Education</span>
+                      <span className="text-xs font-semibold text-[#1f1f1f]">University of Rajshahi</span>
+                    </div>
+                    {/* Languages */}
+                    <div className="flex items-center justify-between border-b border-[#f0edf7] pb-3">
+                      <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#8899AA]">Languages</span>
+                      <span className="text-xs font-semibold text-[#1f1f1f]">English &bull; Bengali &bull; Hindi &bull; Urdu</span>
+                    </div>
+                    {/* Location */}
+                    <div className="flex items-center justify-between">
+                      <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#8899AA]">Location</span>
+                      <span className="text-xs font-semibold text-[#1f1f1f]">Dhaka, Bangladesh</span>
+                    </div>
+                  </div>
+
+                  {/* Action buttons */}
+                  <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">
+                    <a
+                      href="/pdfs/resume.pdf"
+                      download
+                      className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#1a1a2e] px-4 py-2.5 text-xs font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2a2a4e]"
+                    >
+                      <Download className="h-3.5 w-3.5" aria-hidden="true" />
+                      Download CV
+                    </a>
+                    <a
+                      href="/#case-studies"
+                      className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#e5e0f5] bg-white px-4 py-2.5 text-xs font-semibold text-[#1f1f1f] transition-all hover:-translate-y-0.5 hover:border-[#6f3ede]/40"
+                    >
+                      <BarChart3 className="h-3.5 w-3.5" aria-hidden="true" />
+                      Explore My Projects
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -156,46 +196,6 @@ export default function AboutFounderPage() {
                   <div className="about2-achievement-l">{a.label}</div>
                 </div>
               ))}
-            </div>
-
-            {/* Info card — Education, Languages, Location (matching screenshot style) */}
-            <div style={{ marginTop: "2rem" }} className="mx-auto max-w-2xl rounded-2xl border border-[#e5e0f5] bg-white p-6 shadow-[0_10px_40px_-12px_rgba(31,31,31,0.1)] sm:p-8">
-              <div className="flex flex-col gap-5">
-                {/* Education */}
-                <div className="flex items-center justify-between border-b border-[#f0edf7] pb-4">
-                  <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#8899AA]">Education</span>
-                  <span className="text-sm font-semibold text-[#1f1f1f]">University of Rajshahi</span>
-                </div>
-                {/* Languages */}
-                <div className="flex items-center justify-between border-b border-[#f0edf7] pb-4">
-                  <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#8899AA]">Languages</span>
-                  <span className="text-sm font-semibold text-[#1f1f1f]">English &bull; Bengali &bull; Hindi &bull; Urdu</span>
-                </div>
-                {/* Location */}
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#8899AA]">Location</span>
-                  <span className="text-sm font-semibold text-[#1f1f1f]">Dhaka, Bangladesh</span>
-                </div>
-              </div>
-
-              {/* Action buttons */}
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="/pdfs/resume.pdf"
-                  download
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1a1a2e] px-6 py-3.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2a2a4e]"
-                >
-                  <Download className="h-4 w-4" aria-hidden="true" />
-                  Download CV
-                </a>
-                <a
-                  href="/#case-studies"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#e5e0f5] bg-white px-6 py-3.5 text-sm font-semibold text-[#1f1f1f] transition-all hover:-translate-y-0.5 hover:border-[#6f3ede]/40"
-                >
-                  <BarChart3 className="h-4 w-4" aria-hidden="true" />
-                  Explore My Projects
-                </a>
-              </div>
             </div>
           </div>
         </section>
