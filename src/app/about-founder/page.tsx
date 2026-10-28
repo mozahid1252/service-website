@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Download, BarChart3 } from "lucide-react";
+import { SiteFooter } from "@/components/site/contact-footer";
 
 export const metadata = {
   title: "About Founder — Mozahidul Islam | MozIntelligence",
@@ -18,7 +19,7 @@ export default function AboutFounderPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      {/* Header — matches other landing pages */}
+      {/* Header */}
       <header className="sticky top-0 z-50 bg-[rgba(8,14,24,0.92)] backdrop-blur-xl border-b border-[rgba(0,198,255,0.08)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
           <a href="/" className="flex items-center gap-3 group">
@@ -32,7 +33,7 @@ export default function AboutFounderPage() {
             />
             <div className="hidden sm:block">
               <div className="text-sm font-bold text-white leading-tight">MozIntelligence</div>
-              <div className="text-[11px] text-[#8899AA] leading-tight">E-Commerce Growth Focused</div>
+              <div className="text-[11px] text-[#8899AA] leading-tight">E-Commerce Growth<br/>Focused</div>
             </div>
           </a>
           <Link
@@ -133,12 +134,12 @@ export default function AboutFounderPage() {
                       priority
                     />
                   </div>
-                  {/* Floating stat card 1 — Revenue */}
+                  {/* Floating stat card 1 */}
                   <div className="about2-float-card about2-float-card-1">
                     <span className="about2-float-v">CEO</span>
                     <span className="about2-float-l">MOZINTELLIGENCE</span>
                   </div>
-                  {/* Floating stat card 2 — Experience */}
+                  {/* Floating stat card 2 */}
                   <div className="about2-float-card about2-float-card-2">
                     <span className="about2-float-v">3 Years</span>
                     <span className="about2-float-l">Experience</span>
@@ -147,8 +148,8 @@ export default function AboutFounderPage() {
               </div>
             </div>
 
-            {/* Achievements strip */}
-            <div className="about2-achievements">
+            {/* Achievements strip — moved down with extra margin */}
+            <div className="about2-achievements" style={{ marginTop: "3rem" }}>
               {achievements.map((a, i) => (
                 <div key={i} className="about2-achievement">
                   <div className="about2-achievement-v">{a.value}</div>
@@ -157,37 +158,51 @@ export default function AboutFounderPage() {
               ))}
             </div>
 
-            {/* Skills / Education / Languages / Location */}
-            <div className="about2-details">
-              <div className="about2-detail">
-                <h4>Education</h4>
-                <p>B.Sc. in Computer Science & Engineering</p>
+            {/* Info card — Education, Languages, Location (matching screenshot style) */}
+            <div style={{ marginTop: "2rem" }} className="mx-auto max-w-2xl rounded-2xl border border-[#e5e0f5] bg-white p-6 shadow-[0_10px_40px_-12px_rgba(31,31,31,0.1)] sm:p-8">
+              <div className="flex flex-col gap-5">
+                {/* Education */}
+                <div className="flex items-center justify-between border-b border-[#f0edf7] pb-4">
+                  <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#8899AA]">Education</span>
+                  <span className="text-sm font-semibold text-[#1f1f1f]">University of Rajshahi</span>
+                </div>
+                {/* Languages */}
+                <div className="flex items-center justify-between border-b border-[#f0edf7] pb-4">
+                  <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#8899AA]">Languages</span>
+                  <span className="text-sm font-semibold text-[#1f1f1f]">English &bull; Bengali &bull; Hindi &bull; Urdu</span>
+                </div>
+                {/* Location */}
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#8899AA]">Location</span>
+                  <span className="text-sm font-semibold text-[#1f1f1f]">Dhaka, Bangladesh</span>
+                </div>
               </div>
-              <div className="about2-detail">
-                <h4>Languages</h4>
-                <p>English, Bengali</p>
-              </div>
-              <div className="about2-detail">
-                <h4>Location</h4>
-                <p>Dhaka, Bangladesh — Working Worldwide</p>
-              </div>
-              <div className="about2-detail">
-                <h4>Availability</h4>
-                <p>Available for new projects</p>
+
+              {/* Action buttons */}
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="/pdfs/resume.pdf"
+                  download
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#1a1a2e] px-6 py-3.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-[#2a2a4e]"
+                >
+                  <Download className="h-4 w-4" aria-hidden="true" />
+                  Download CV
+                </a>
+                <a
+                  href="/#case-studies"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#e5e0f5] bg-white px-6 py-3.5 text-sm font-semibold text-[#1f1f1f] transition-all hover:-translate-y-0.5 hover:border-[#6f3ede]/40"
+                >
+                  <BarChart3 className="h-4 w-4" aria-hidden="true" />
+                  Explore My Projects
+                </a>
               </div>
             </div>
           </div>
         </section>
       </main>
 
-      {/* Full footer — same as homepage */}
-      <SiteFooterLazy />
+      {/* Full footer */}
+      <SiteFooter />
     </div>
   );
-}
-
-/* Lazy import SiteFooter to avoid circular deps */
-import { SiteFooter } from "@/components/site/contact-footer";
-function SiteFooterLazy() {
-  return <SiteFooter />;
 }
