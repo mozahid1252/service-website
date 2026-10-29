@@ -1707,7 +1707,7 @@ function ServicesSection() {
             ))}
           </div>
           </div>
-        </div>
+          </div>
 
         {/* Part 3: Data Infrastructure */}
         <div id="part-3">
