@@ -1775,9 +1775,6 @@ function ServicesSection() {
                 </div>
               );
             })}
-            <a href={`${basePath}/data-setup-infrastructure`} target="_blank" rel="noopener noreferrer" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
-              <ExternalLink size={14} /> View Data Setup &amp; Infrastructure Full Details
-            </a>
           </div>
 
           {/* 15 Individual Services — Redesigned box */}
