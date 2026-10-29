@@ -1616,6 +1616,7 @@ function ServicesSection() {
             ))}
           </div>
 
+        </div>
 
           {/* Retainer full width */}
           {(() => {
@@ -1706,8 +1707,7 @@ function ServicesSection() {
               </div>
             ))}
           </div>
-          </div>
-          </div>
+        </div>
 
         {/* Part 3: Data Infrastructure */}
         <div id="part-3">
