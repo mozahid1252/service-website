@@ -981,7 +981,7 @@ function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-[rgba(2,4,8,0.92)] backdrop-blur-xl shadow-lg'
+            ? 'bg-[rgba(0,0,0,0.92)] backdrop-blur-xl shadow-lg'
             : 'bg-transparent'
         }`}
         style={{ borderBottom: scrolled ? '1px solid rgba(0,198,255,0.08)' : 'none' }}
@@ -1125,7 +1125,7 @@ function Navbar() {
             href="https://calendar.app.google/TGnzfC65zBF3hVeD9"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)] hidden lg:flex flex-col items-center justify-center leading-tight text-center z-10"
+            className="btn-press px-6 py-2.5 rounded-md text-sm font-semibold text-[#000000] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)] hidden lg:flex flex-col items-center justify-center leading-tight text-center z-10"
             style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
           >
             <span>Book a Free</span>
@@ -1144,7 +1144,7 @@ function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 bg-[rgba(2,4,8,0.97)] backdrop-blur-xl flex flex-col items-center justify-center gap-6 transition-all duration-400 overflow-y-auto py-20 ${
+        className={`fixed inset-0 z-40 bg-[rgba(0,0,0,0.97)] backdrop-blur-xl flex flex-col items-center justify-center gap-6 transition-all duration-400 overflow-y-auto py-20 ${
           mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
@@ -1262,7 +1262,7 @@ function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => setMobileOpen(false)}
-          className="btn-press mt-4 px-8 py-3 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center leading-tight text-center"
+          className="btn-press mt-4 px-8 py-3 rounded-md text-base font-semibold text-[#000000] transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center leading-tight text-center"
           style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)' }}
         >
           <span>Book a Free</span>
@@ -1296,7 +1296,7 @@ function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Dark Overlay */}
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(2,4,8,0.96) 0%, rgba(8,13,20,0.92) 100%)' }} />
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(0,0,0,0.96) 0%, rgba(8,13,20,0.92) 100%)' }} />
       {/* Grid Pattern */}
       <div className="absolute inset-0 grid-bg" />
 
@@ -1342,7 +1342,7 @@ function HeroSection() {
             href="https://calendar.app.google/TGnzfC65zBF3hVeD9"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-press px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
+            className="btn-press px-8 py-3.5 rounded-md text-base font-semibold text-[#000000] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)]"
             style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}
           >
             Find My Profit Leaks, Free 20-Min Call
@@ -1484,7 +1484,7 @@ function WhyWorkWithMeSection() {
   const sectionRef = useScrollReveal();
   return (
     <section className="relative py-20 sm:py-28 overflow-hidden" ref={sectionRef}>
-      <div className="absolute inset-0 bg-[rgba(2,4,8,0.92)]" />
+      <div className="absolute inset-0 bg-[rgba(0,0,0,0.92)]" />
 
       <div className="reveal relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
@@ -1552,7 +1552,7 @@ function WhyWorkWithMeSection() {
 function ServicesSection() {
   const sectionRef = useScrollReveal();
   return (
-    <section id="services" className="bg-[#080D14] py-20 sm:py-28" ref={sectionRef}>
+    <section id="services" className="bg-[#000000] py-20 sm:py-28" ref={sectionRef}>
       <div className="reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <span className="section-label reveal-up">Choose Your Starting Point</span>
@@ -2101,7 +2101,7 @@ function ServicesSection() {
             <h4 className="text-white font-bold text-xl sm:text-2xl mb-3 uppercase tracking-tight">Don&apos;t See the Analysis You Need?</h4>
             <p className="text-[#00C6FF] text-base font-semibold mb-2">That&apos;s exactly what Custom Analytics &amp; Insights is for.</p>
             <p className="text-[#8899AA] text-sm max-w-2xl mx-auto mb-5">If you have a business question, we can build the analysis around it.</p>
-            <a href="#contact" className="btn-press inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-base font-semibold text-[#020408] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)] no-underline" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
+            <a href="#contact" className="btn-press inline-flex items-center gap-2 px-8 py-3.5 rounded-md text-base font-semibold text-[#000000] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)] no-underline" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
               Get Custom Analytics <ArrowRight size={18} />
             </a>
           </div>
@@ -2445,7 +2445,7 @@ function MobileStickyBar() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-[9999] lg:hidden"
       style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 -4px 20px rgba(0,198,255,0.30)' }}>
-      <a href="#contact" className="btn-press flex items-center justify-center h-14 text-[#020408] font-bold text-sm gap-2">
+      <a href="#contact" className="btn-press flex items-center justify-center h-14 text-[#000000] font-bold text-sm gap-2">
         <Phone size={16} /> Book a Free Discovery Call
       </a>
     </div>

@@ -45,20 +45,20 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #020408;
+  --background: #000000;
   --foreground: #F0F4F8;
   --card: #0D1520;
   --card-foreground: #F0F4F8;
   --popover: #0D1520;
   --popover-foreground: #F0F4F8;
   --primary: #00C6FF;
-  --primary-foreground: #020408;
-  --secondary: #080D14;
+  --primary-foreground: #000000;
+  --secondary: #000000;
   --secondary-foreground: #F0F4F8;
   --muted: #111E2E;
   --muted-foreground: #8899AA;
   --accent: #F5A623;
-  --accent-foreground: #020408;
+  --accent-foreground: #000000;
   --destructive: #FF4444;
   --border: rgba(0,198,255,0.12);
   --input: rgba(0,198,255,0.12);
@@ -68,10 +68,10 @@
   --chart-3: #00E676;
   --chart-4: #F5A623;
   --chart-5: #FF4444;
-  --sidebar: #080D14;
+  --sidebar: #000000;
   --sidebar-foreground: #F0F4F8;
   --sidebar-primary: #00C6FF;
-  --sidebar-primary-foreground: #020408;
+  --sidebar-primary-foreground: #000000;
   --sidebar-accent: #111E2E;
   --sidebar-accent-foreground: #F0F4F8;
   --sidebar-border: rgba(0,198,255,0.08);
@@ -79,20 +79,20 @@
 }
 
 .dark {
-  --background: #020408;
+  --background: #000000;
   --foreground: #F0F4F8;
   --card: #0D1520;
   --card-foreground: #F0F4F8;
   --popover: #0D1520;
   --popover-foreground: #F0F4F8;
   --primary: #00C6FF;
-  --primary-foreground: #020408;
-  --secondary: #080D14;
+  --primary-foreground: #000000;
+  --secondary: #000000;
   --secondary-foreground: #F0F4F8;
   --muted: #111E2E;
   --muted-foreground: #8899AA;
   --accent: #F5A623;
-  --accent-foreground: #020408;
+  --accent-foreground: #000000;
   --destructive: #FF4444;
   --border: rgba(0,198,255,0.12);
   --input: rgba(0,198,255,0.12);
@@ -102,10 +102,10 @@
   --chart-3: #00E676;
   --chart-4: #F5A623;
   --chart-5: #FF4444;
-  --sidebar: #080D14;
+  --sidebar: #000000;
   --sidebar-foreground: #F0F4F8;
   --sidebar-primary: #00C6FF;
-  --sidebar-primary-foreground: #020408;
+  --sidebar-primary-foreground: #000000;
   --sidebar-accent: #111E2E;
   --sidebar-accent-foreground: #F0F4F8;
   --sidebar-border: rgba(0,198,255,0.08);
@@ -126,7 +126,7 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #020408;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
   background: rgba(0,198,255,0.2);
@@ -296,7 +296,7 @@ main {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #00C6FF, #0072FF);
-  color: #020408;
+  color: #000000;
   box-shadow: 0 0 20px rgba(0,198,255,0.30);
   border: none;
   cursor: pointer;
@@ -328,7 +328,7 @@ main {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #00C6FF, #0072FF);
-  color: #020408;
+  color: #000000;
   box-shadow: 0 0 20px rgba(0,198,255,0.30);
   border: none;
   cursor: pointer;
@@ -371,7 +371,7 @@ input:focus, textarea:focus, select:focus {
 /* Subtle gradient divider between sections */
 .gradient-divider {
   height: 120px;
-  background: linear-gradient(180deg, var(--from-color, #020408) 0%, var(--to-color, #080D14) 100%);
+  background: linear-gradient(180deg, var(--from-color, #000000) 0%, var(--to-color, #000000) 100%);
 }
 
 /* Gradient text utility */
@@ -3259,7 +3259,7 @@ table.infra-table {
   border-radius: 10px;
   font-size: 14px;
   font-weight: 700;
-  color: #020408;
+  color: #000000;
   background: #00C6FF;
   border: 1px solid #00C6FF;
   text-decoration: none;
@@ -4105,7 +4105,7 @@ table.infra-table {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 700;
-  color: #020408;
+  color: #000000;
   background: linear-gradient(135deg, #00E676, #00C6FF);
   border: none;
   text-decoration: none;
