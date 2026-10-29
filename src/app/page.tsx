@@ -296,6 +296,8 @@ const BUNDLE_FEATURES = [
   { feature: 'BigQuery Load Script', basic: true, full: true, auto: true },
   { feature: 'Credential Security', basic: true, full: true, auto: true },
   { feature: 'Dashboard Connection', basic: false, full: true, auto: true },
+  { feature: 'Basic KPI Dashboard', basic: false, full: true, auto: false },
+  { feature: 'Live Automated Custom KPI Dashboard', basic: false, full: false, auto: true },
   { feature: 'Automated Scheduling', basic: false, full: false, auto: true },
   { feature: 'Error Alerts', basic: false, full: false, auto: true },
 ];
