@@ -1753,7 +1753,6 @@ function ServicesSection() {
                       const val = feat[tierKey];
                       const has = val === true || typeof val === 'string';
                       const note = typeof val === 'string' ? val : null;
-                      if (val === false) return null;
                       return (
                         <div key={fi} className={`infra-feature-row ${has ? 'has' : 'not'}`}>
                           <span className={`feature-icon ${has ? 'feature-yes' : 'feature-no'}`}>
