@@ -281,9 +281,9 @@ const ADD_ON_PACKAGES = [
 ];
 
 const DATA_BUNDLES = [
-  { name: 'Data Preparation & Integration', bestFor: 'One-time analysis clients (2-3 platforms)', timeline: '2–3 Days', investment: '$150 – $300', cssClass: 'infra-wrapper-basic', route: '/basic-setup' },
-  { name: 'Data Pipeline & Dashboard Setup', bestFor: 'Ongoing/recurring clients (All APIs + Merge)', timeline: '5–7 Days', investment: '$500 – $900', cssClass: 'infra-wrapper-pipeline', route: '/full-pipeline-setup' },
-  { name: 'Automated Dashboard & Analytics System', bestFor: 'Live dashboard & retainer clients (Auto-updating)', timeline: '7–10 Days', investment: '$700 – $1,200', cssClass: 'infra-wrapper-auto', route: '/full-pipeline-automation' },
+  { name: 'Data Preparation & Integration', bestFor: 'For One-Time Analysis Projects\nData cleaning, preparation & integration across up to 5 platforms', timeline: '2–3 Days', investment: '$150 – $300', cssClass: 'infra-wrapper-basic', route: '/basic-setup' },
+  { name: 'Data Pipeline & Dashboard Setup', bestFor: 'Multi-platform data integration, automated data pipelines & dashboard setup', timeline: '5–7 Days', investment: '$500 – $900', cssClass: 'infra-wrapper-pipeline', route: '/full-pipeline-setup' },
+  { name: 'Automated Dashboard & Analytics System', bestFor: 'For Continuous Business Intelligence\nAuto-updating dashboards, scheduled data refreshes & performance monitoring', timeline: '7–10 Days', investment: '$700 – $1,200', cssClass: 'infra-wrapper-auto', route: '/full-pipeline-automation' },
 ];
 
 const BUNDLE_FEATURES = [
@@ -1736,7 +1736,15 @@ function ServicesSection() {
                 <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
                   <div className="infra-card-inner">
                   <h4 className="text-white font-bold text-lg mb-2">{bundle.name}</h4>
-                  <p className="text-[#8899AA] text-sm mb-3">{bundle.bestFor}</p>
+                  <div className="text-[#8899AA] text-sm mb-3">
+                    {bundle.bestFor.split("\\n").map((line, li) => (
+                      <span key={li}>
+                        {li === 0 && <span className="font-bold text-white">{line}</span>}
+                        {li > 0 && <>{line}</>}
+                        {li < bundle.bestFor.split("\\n").length - 1 && <br/>}
+                      </span>
+                    ))}
+                  </div>
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-[#8899AA] text-xs">Timeline</div>
