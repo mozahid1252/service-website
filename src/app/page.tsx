@@ -1739,7 +1739,7 @@ function ServicesSection() {
                   <div className="text-[#8899AA] text-sm mb-3">
                     {bundle.bestFor.split("\\n").map((line, li) => (
                       <span key={li}>
-                        {li === 0 && <span className="font-bold text-white">{line}</span>}
+                        {li === 0 && <span>{line}</span>}
                         {li > 0 && <>{line}</>}
                         {li < bundle.bestFor.split("\\n").length - 1 && <br/>}
                       </span>
