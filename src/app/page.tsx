@@ -184,7 +184,7 @@ const CORE_PACKAGES = [
     description: 'Your complete analytics engine, built once, runs forever. 15 total analyses including cohorts, forecasts, and live dashboards.',
     features: [
       'Everything in Growth, plus 6 advanced analyses',
-      'Full Pipeline + Automation package free',
+      'Full Pipeline + Automation Setup Package Included Free',
       'Complete Cohort Analysis & 90-Day Sales Forecast',
       'Profit Margin Deep Dive (True per-product profit)',
       'Live Automated Custom KPI Dashboard',
