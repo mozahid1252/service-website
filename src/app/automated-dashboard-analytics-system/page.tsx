@@ -5,11 +5,11 @@ import "./landing.css";
 
 export default function Page() {
   const bodyHtml = fs.readFileSync(
-    path.join(process.cwd(), "src", "app", "full-pipeline-automation", "landing-body.html"),
+    path.join(process.cwd(), "src", "app", "automated-dashboard-analytics-system", "landing-body.html"),
     "utf-8"
   );
   const scriptCode = fs.readFileSync(
-    path.join(process.cwd(), "src", "app", "full-pipeline-automation", "landing-script.js"),
+    path.join(process.cwd(), "src", "app", "automated-dashboard-analytics-system", "landing-script.js"),
     "utf-8"
   );
 

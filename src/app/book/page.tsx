@@ -49,9 +49,9 @@ const PACKAGE_MAP: Record<string, string> = {
   'profitability-audit': 'Profitability Audit',
   'operations-efficiency-audit': 'Operations Efficiency Audit',
   'meta-ads-performance-audit': 'Meta Ads Performance Audit',
-  'basic-setup': 'Data Preparation & Integration',
-  'full-pipeline-setup': 'Data Pipeline & Dashboard Setup',
-  'full-pipeline-automation': 'Automated Dashboard & Analytics System',
+  'data-preparation-integration': 'Data Preparation & Integration',
+  'data-pipeline-dashboard-setup': 'Data Pipeline & Dashboard Setup',
+  'automated-dashboard-analytics-system': 'Automated Dashboard & Analytics System',
 };
 
 interface FormData { full_name: string; email: string; phone: string; website_url: string; service_package: string; monthly_revenue: string; country: string; city: string; preferred_time: string; additional_notes: string; }

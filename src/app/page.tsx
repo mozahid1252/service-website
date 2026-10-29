@@ -281,9 +281,9 @@ const ADD_ON_PACKAGES = [
 ];
 
 const DATA_BUNDLES = [
-  { name: 'Data Preparation & Integration', bestFor: 'For One-Time Analysis Projects\nData cleaning, preparation & integration across up to 5 platforms', timeline: '2–3 Days', investment: '$150 – $300', cssClass: 'infra-wrapper-basic', route: '/basic-setup' },
-  { name: 'Data Pipeline & Dashboard Setup', bestFor: 'Multi-platform data integration, automated data pipelines & dashboard setup', timeline: '5–7 Days', investment: '$500 – $900', cssClass: 'infra-wrapper-pipeline', route: '/full-pipeline-setup' },
-  { name: 'Automated Dashboard & Analytics System', bestFor: 'For Continuous Business Intelligence\nAuto-updating dashboards, scheduled data refreshes & performance monitoring', timeline: '7–10 Days', investment: '$700 – $1,200', cssClass: 'infra-wrapper-auto', route: '/full-pipeline-automation' },
+  { name: 'Data Preparation & Integration', bestFor: 'For One-Time Analysis Projects\nData cleaning, preparation & integration across up to 5 platforms', timeline: '2–3 Days', investment: '$150 – $300', cssClass: 'infra-wrapper-basic', route: '/data-preparation-integration' },
+  { name: 'Data Pipeline & Dashboard Setup', bestFor: 'Multi-platform data integration, automated data pipelines & dashboard setup', timeline: '5–7 Days', investment: '$500 – $900', cssClass: 'infra-wrapper-pipeline', route: '/data-pipeline-dashboard-setup' },
+  { name: 'Automated Dashboard & Analytics System', bestFor: 'For Continuous Business Intelligence\nAuto-updating dashboards, scheduled data refreshes & performance monitoring', timeline: '7–10 Days', investment: '$700 – $1,200', cssClass: 'infra-wrapper-auto', route: '/automated-dashboard-analytics-system' },
 ];
 
 const BUNDLE_FEATURES = [

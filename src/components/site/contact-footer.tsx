@@ -115,9 +115,9 @@ const footerData = {
     { label: "E-Commerce Health Check", href: "/health-check" },
     { label: "Revenue Growth Accelerator", href: "/revenue-growth-accelerator" },
     { label: "Data-Driven Growth System", href: "/data-driven-growth-system" },
-    { label: "Basic Setup", href: "/basic-setup" },
-    { label: "Full Pipeline Setup", href: "/full-pipeline-setup" },
-    { label: "Full Pipeline + Automation", href: "/full-pipeline-automation" },
+    { label: "Data Preparation & Integration", href: "/data-preparation-integration" },
+    { label: "Data Pipeline & Dashboard Setup", href: "/data-pipeline-dashboard-setup" },
+    { label: "Automated Dashboard & Analytics System", href: "/automated-dashboard-analytics-system" },
   ],
   detailsAudits: [
     { label: "Marketing Audit", href: "/marketing-spend-audit" },
