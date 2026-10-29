@@ -1751,6 +1751,7 @@ function ServicesSection() {
                   <div className="infra-feature-list">
                     {BUNDLE_FEATURES.map((feat, fi) => {
                       const val = feat[tierKey];
+                      if (feat.feature === 'Basic KPI Dashboard' && tierKey === 'auto') return null;
                       const has = val === true || typeof val === 'string';
                       const note = typeof val === 'string' ? val : null;
                       return (
