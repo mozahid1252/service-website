@@ -46,7 +46,7 @@ const NAV_LINKS = [
 /* Single source of truth for the Services submenu (desktop dropdown + mobile). */
 const SERVICES_SUBMENU = [
   { label: 'Core E-Commerce Packages', href: '#part-1' },
-  { label: 'Specialized Add-On Packages', href: '#part-2' },
+  { label: 'Specialized Packages', href: '#part-2' },
   { label: 'Data Setup & Infrastructure', href: '#part-3' },
   { label: 'Custom Analytics & Insights', href: '#part-4' },
   { label: 'Implementation Add-Ons', href: '#part-5' },
@@ -1672,7 +1672,7 @@ function ServicesSection() {
 
         {/* Part 2: Add-On Packages */}
         <div id="part-2" className="mb-20">
-          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 2: Specialized Add-On Packages</h3>
+          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 2: Specialized Packages</h3>
           <p className="text-[#00C6FF] text-base font-semibold mb-1">Have One Specific Problem?</p>
           <p className="text-[#8899AA] text-sm mb-8">Seven focused audits, each one built around a single critical business question. Delivered in 7–14 days.</p>
 
@@ -1715,7 +1715,7 @@ function ServicesSection() {
 
           <div className="text-center mt-8">
             <a href={`${basePath}/specialized-add-on-packages`} target="_blank" rel="noopener noreferrer" className="btn-press px-6 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center gap-2 cursor-pointer no-underline">
-              <ExternalLink size={14} /> Specialized Add-On Packages Full Details
+              <ExternalLink size={14} /> Specialized Packages Full Details
             </a>
           </div>
         </div>
