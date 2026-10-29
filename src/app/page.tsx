@@ -288,11 +288,11 @@ const DATA_BUNDLES = [
 
 const BUNDLE_FEATURES = [
   { feature: 'Cloud Infrastructure', basic: true, full: true, auto: true },
-  { feature: 'Platform API Connections', basic: '2–3', full: 'All', auto: 'All' },
+  { feature: 'Platform API Connections', basic: 'Up to 5', full: 'All', auto: 'All' },
   { feature: 'Data Pipeline Build', basic: true, full: true, auto: true },
   { feature: 'Data Cleaning', basic: true, full: true, auto: true },
   { feature: 'Data Modeling & Transformation', basic: true, full: true, auto: true },
-  { feature: 'Multi-Platform Merge', basic: '2–3', full: true, auto: true },
+  { feature: 'Multi-Platform Merge', basic: 'Up to 5', full: true, auto: true },
   { feature: 'BigQuery Load Script', basic: true, full: true, auto: true },
   { feature: 'Credential Security', basic: true, full: true, auto: true },
   { feature: 'Dashboard Connection', basic: false, full: true, auto: true },
