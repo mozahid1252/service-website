@@ -1616,8 +1616,6 @@ function ServicesSection() {
             ))}
           </div>
 
-        </div>
-
           {/* Retainer full width */}
           {(() => {
             const pkg = CORE_PACKAGES[3];
@@ -1707,6 +1705,7 @@ function ServicesSection() {
               </div>
             ))}
           </div>
+
         </div>
 
         {/* Part 3: Data Infrastructure */}
