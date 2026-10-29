@@ -1752,6 +1752,7 @@ function ServicesSection() {
                     {BUNDLE_FEATURES.map((feat, fi) => {
                       const val = feat[tierKey];
                       if (feat.feature === 'Basic KPI Dashboard' && tierKey === 'auto') return null;
+                      if (feat.feature === 'Live Automated Custom KPI Dashboard' && (tierKey === 'basic' || tierKey === 'full')) return null;
                       const has = val === true || typeof val === 'string';
                       const note = typeof val === 'string' ? val : null;
                       return (
