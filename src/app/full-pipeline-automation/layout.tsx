@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Full Pipeline + Automation | Live Data Infrastructure | Moz Intelligence',
+  title: 'Automated Dashboard & Analytics System | Live Data Infrastructure | Moz Intelligence',
   description: 'Your data pipeline, running on autopilot. Live, automated data pipelines for e-commerce. We build scheduled updates, error alerts, and secure credential management so your dashboards never go stale.',
 };
 

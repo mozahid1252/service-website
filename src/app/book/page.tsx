@@ -8,7 +8,7 @@ import { Loader2, CheckCircle2, AlertCircle, ArrowRight, ChevronLeft } from 'luc
 const SERVICE_PACKAGES = [
   { label: '─ Part 1: Core E-Commerce Packages ─', options: ['E-Commerce Health Check', 'E-Commerce Growth & Profit Intelligence', 'Data-Driven Growth System', 'Analytics Partner Retainer'] },
   { label: '─ Part 2: Specialized Add-On Packages ─', options: ['Marketing Spend Audit', 'Customer Retention Audit', 'Product Portfolio Audit', 'CRO/Website Audit', 'Profitability Audit', 'Operations Efficiency Audit', 'Meta Ads Performance Audit'] },
-  { label: '─ Part 3: Data Setup & Infrastructure ─', options: ['Basic Setup', 'Full Pipeline Setup', 'Full Pipeline + Automation'] },
+  { label: '─ Part 3: Data Setup & Infrastructure ─', options: ['Data Preparation & Integration', 'Data Pipeline & Dashboard Setup', 'Automated Dashboard & Analytics System'] },
   { label: '─ Other ─', options: ['Custom Analytics Setup', 'Not sure yet (Need advice)'] },
 ];
 
@@ -49,9 +49,9 @@ const PACKAGE_MAP: Record<string, string> = {
   'profitability-audit': 'Profitability Audit',
   'operations-efficiency-audit': 'Operations Efficiency Audit',
   'meta-ads-performance-audit': 'Meta Ads Performance Audit',
-  'basic-setup': 'Basic Setup',
-  'full-pipeline-setup': 'Full Pipeline Setup',
-  'full-pipeline-automation': 'Full Pipeline + Automation',
+  'basic-setup': 'Data Preparation & Integration',
+  'full-pipeline-setup': 'Data Pipeline & Dashboard Setup',
+  'full-pipeline-automation': 'Automated Dashboard & Analytics System',
 };
 
 interface FormData { full_name: string; email: string; phone: string; website_url: string; service_package: string; monthly_revenue: string; country: string; city: string; preferred_time: string; additional_notes: string; }

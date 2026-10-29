@@ -92,21 +92,21 @@ export const AUTHORITATIVE_PRICING: PackageInfo[] = [
   },
   // PART 3 — DATA SETUP & INFRASTRUCTURE
   {
-    name: "Basic Setup",
+    name: "Data Preparation & Integration",
     category: "Part 3 — Data Setup & Infrastructure",
     price: "$150 – $300",
     timeline: "2–3 Days",
     description: "One-time data setup connecting 2–3 platforms (Shopify, GA4, Meta Ads, Google Ads, etc.) for analysis. No automation — for one-time analysis use.",
   },
   {
-    name: "Full Pipeline Setup",
+    name: "Data Pipeline & Dashboard Setup",
     category: "Part 3 — Data Setup & Infrastructure",
     price: "$500 – $900",
     timeline: "5–7 Days",
     description: "Full data pipeline setup with BigQuery integration, SQL/Python transformation, and data warehouse architecture.",
   },
   {
-    name: "Full Pipeline + Automation",
+    name: "Automated Dashboard & Analytics System",
     category: "Part 3 — Data Setup & Infrastructure",
     price: "$700 – $1,200",
     timeline: "7–10 Days",
