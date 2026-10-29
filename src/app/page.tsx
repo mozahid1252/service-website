@@ -187,7 +187,7 @@ const CORE_PACKAGES = [
       'Full Pipeline + Automation Setup Package Included Free',
       'Complete Cohort Analysis & 90-Day Sales Forecast',
       'Profit Margin Deep Dive (True per-product profit)',
-      'Live Automated Custom KPI Dashboard',
+      'Automated Custom KPI Dashboard',
       'Discount & Promotion Strategy Analysis',
       'Return & Refund Pattern Analysis',
       '90-min Strategy Session + 60-day Email Support',
@@ -297,7 +297,7 @@ const BUNDLE_FEATURES = [
   { feature: 'Credential Security', basic: true, full: true, auto: true },
   { feature: 'Dashboard Connection', basic: false, full: true, auto: true },
   { feature: 'Basic KPI Dashboard', basic: false, full: true, auto: false },
-  { feature: 'Live Automated Custom KPI Dashboard', basic: false, full: false, auto: true },
+  { feature: 'Automated Custom KPI Dashboard', basic: false, full: false, auto: true },
   { feature: 'Automated Scheduling', basic: false, full: false, auto: true },
   { feature: 'Error Alerts', basic: false, full: false, auto: true },
 ];
@@ -1752,7 +1752,7 @@ function ServicesSection() {
                     {BUNDLE_FEATURES.map((feat, fi) => {
                       const val = feat[tierKey];
                       if (feat.feature === 'Basic KPI Dashboard' && tierKey === 'auto') return null;
-                      if (feat.feature === 'Live Automated Custom KPI Dashboard' && (tierKey === 'basic' || tierKey === 'full')) return null;
+                      if (feat.feature === 'Automated Custom KPI Dashboard' && (tierKey === 'basic' || tierKey === 'full')) return null;
                       const has = val === true || typeof val === 'string';
                       const note = typeof val === 'string' ? val : null;
                       return (
