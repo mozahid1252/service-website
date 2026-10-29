@@ -36,12 +36,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/core-packages`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
       url: `${baseUrl}/marketing-spend-audit`,
       lastModified,
       changeFrequency: "monthly",
@@ -97,18 +91,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/full-pipeline-automation`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/specialized-add-on-packages`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/data-setup-infrastructure`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.7,

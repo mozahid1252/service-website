@@ -29,7 +29,6 @@ const KEYWORD_MAP: Record<string, string[]> = {
   "basic-setup": ["basic setup", "data setup", "infrastructure", "google analytics", "ga4", "tracking", "pixel"],
   "full-pipeline-setup": ["full pipeline", "pipeline setup", "bigquery", "data warehouse", "etl", "sql", "python"],
   "full-pipeline-automation": ["automation", "automated", "full pipeline automation", "cloud functions", "cloud run", "real-time"],
-  "core-packages": ["core packages", "overview", "all packages", "compare", "comparison", "tier", "which package"],
   "homepage": ["about", "why moz", "case study", "case studies", "faq", "process", "tech stack", "technical portfolio", "contact", "book", "mozahidul", "brand", "positioning"],
 };
 
@@ -73,11 +72,10 @@ export function retrieveKnowledge(query: string, maxPages = 3): string {
   scores.sort((a, b) => b.score - a.score);
   const topPages = scores.slice(0, maxPages).filter(s => s.score > 0);
 
-  // If no matches, return homepage + core-packages as fallback
+  // If no matches, return homepage as fallback
   if (topPages.length === 0) {
     const home = knowledgeBase.find(p => p.id === "homepage");
-    const core = knowledgeBase.find(p => p.id === "core-packages");
-    const fallback = [home, core].filter(Boolean) as KBPage[];
+    const fallback = [home].filter(Boolean) as KBPage[];
     return fallback.map(p => `[${p.title}]\n${p.content}`).join("\n\n---\n\n");
   }
 
