@@ -38,13 +38,13 @@ export default async function BlogPostPage({
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      {/* Header — white, matches the reference light theme */}
+      {/* Header - white, matches the reference light theme */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] shadow-[0_1px_0_0_rgba(0,0,0,0.03)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
           <a href="/" className="flex items-center gap-3 group">
             <Image
               src="/images/logo.png"
-              alt="MozIntelligence — E-Commerce Growth Intelligence"
+              alt="MozIntelligence - E-Commerce Growth Intelligence"
               width={44}
               height={44}
               className="rounded-lg transition-transform duration-300 group-hover:scale-105"
@@ -66,7 +66,7 @@ export default async function BlogPostPage({
         </div>
       </header>
 
-      {/* Hero — deep purple gradient with bokeh glow */}
+      {/* Hero - deep purple gradient with bokeh glow */}
       <section className="relative overflow-hidden border-b border-[#E5E7EB]">
         <div
           aria-hidden="true"

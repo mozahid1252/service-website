@@ -7,9 +7,9 @@ import { blogPosts } from "@/lib/blog-posts";
 import { SiteFooter } from "@/components/site/contact-footer";
 
 export const metadata: Metadata = {
-  title: "Blog — E-Commerce Data & Profit Insights | MozIntelligence",
+  title: "Blog - E-Commerce Data & Profit Insights | MozIntelligence",
   description:
-    "Practical, data-driven articles on e-commerce analytics — where profit leaks hide, what to measure, and how to turn dashboards into decisions.",
+    "Practical, data-driven articles on e-commerce analytics - where profit leaks hide, what to measure, and how to turn dashboards into decisions.",
   alternates: { canonical: "/blog" },
 };
 
@@ -18,13 +18,13 @@ export default function BlogIndexPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      {/* Header — white, matches the reference light theme */}
+      {/* Header - white, matches the reference light theme */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] shadow-[0_1px_0_0_rgba(0,0,0,0.03)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
           <a href="/" className="flex items-center gap-3 group">
             <Image
               src="/images/logo.png"
-              alt="MozIntelligence — E-Commerce Growth Intelligence"
+              alt="MozIntelligence - E-Commerce Growth Intelligence"
               width={44}
               height={44}
               className="rounded-lg transition-transform duration-300 group-hover:scale-105"
@@ -46,7 +46,7 @@ export default function BlogIndexPage() {
         </div>
       </header>
 
-      {/* Hero — deep purple gradient with bokeh glow */}
+      {/* Hero - deep purple gradient with bokeh glow */}
       <section className="relative overflow-hidden border-b border-[#E5E7EB]">
         <div
           aria-hidden="true"
@@ -87,7 +87,7 @@ export default function BlogIndexPage() {
             INSIGHTS THAT PROTECT YOUR PROFIT.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#E0E7FF] sm:text-lg">
-            Practical, data-driven articles on e-commerce analytics — where leaks hide, what to
+            Practical, data-driven articles on e-commerce analytics - where leaks hide, what to
             measure, and how to turn dashboards into decisions.
           </p>
         </div>
@@ -147,7 +147,7 @@ export default function BlogIndexPage() {
                 More articles on the way
               </p>
               <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-[#6B7280]">
-                New data-driven breakdowns are being written right now — on retention, CRO, marketing
+                New data-driven breakdowns are being written right now - on retention, CRO, marketing
                 spend and profitability. Check back soon.
               </p>
             </div>
