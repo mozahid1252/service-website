@@ -38,7 +38,6 @@ const NAV_LINKS = [
   { label: 'Technical Portfolio', href: '#technical-portfolio' },
   { label: 'Process', href: '#process' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Blog', href: '/blog' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ];
