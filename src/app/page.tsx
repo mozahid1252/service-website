@@ -37,6 +37,7 @@ const NAV_LINKS = [
   { label: 'Case Studies', href: '#case-studies' },
   { label: 'Technical Portfolio', href: '#technical-portfolio' },
   { label: 'Process', href: '#process' },
+  { label: 'Blog', href: '/blog' },
   { label: 'FAQ', href: '#faq' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
