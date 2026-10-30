@@ -37,9 +37,9 @@ export default async function BlogPostPage({
   if (!post) return null;
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#000000]">
-      {/* Header — dark, matches the about-mozintelligence sub-page header */}
-      <header className="sticky top-0 z-50 bg-[rgba(8,14,24,0.92)] backdrop-blur-xl border-b border-[rgba(0,198,255,0.08)]">
+    <div className="min-h-screen flex flex-col bg-white">
+      {/* Header — white, matches the reference light theme */}
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] shadow-[0_1px_0_0_rgba(0,0,0,0.03)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[72px]">
           <a href="/" className="flex items-center gap-3 group">
             <Image
@@ -47,17 +47,17 @@ export default async function BlogPostPage({
               alt="MozIntelligence — E-Commerce Growth Intelligence"
               width={44}
               height={44}
-              className="rounded-lg transition-transform duration-300 group-hover:scale-105 img-premium"
+              className="rounded-lg transition-transform duration-300 group-hover:scale-105"
               priority
             />
             <div className="hidden sm:block">
-              <div className="text-sm font-bold text-white leading-tight">MozIntelligence</div>
-              <div className="text-[11px] text-[#8899AA] leading-tight">E-Commerce Growth Focused</div>
+              <div className="text-sm font-bold text-[#1F2937] leading-tight">MozIntelligence</div>
+              <div className="text-[11px] text-[#9CA3AF] leading-tight">E-Commerce Growth Focused</div>
             </div>
           </a>
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md text-sm font-medium text-[#8899AA] hover:text-[#00C6FF] transition-colors"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-md text-sm font-medium text-[#6B7280] hover:text-[#7C3AED] transition-colors"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
             <span className="hidden sm:inline">Back to Blog</span>
@@ -66,27 +66,31 @@ export default async function BlogPostPage({
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden border-b border-[rgba(0,198,255,0.08)]">
+      {/* Hero — deep purple gradient with bokeh glow */}
+      <section className="relative overflow-hidden border-b border-[#E5E7EB]">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-br from-[#0a1424] via-[#060b16] to-[#000000]"
+          className="absolute inset-0 bg-gradient-to-br from-[#2D1B69] via-[#4A2C8A] to-[#5B21B6]"
         />
         <div
           aria-hidden="true"
-          className="absolute -top-24 right-0 h-72 w-72 rounded-full bg-[#00C6FF] opacity-[0.07] blur-3xl"
+          className="absolute -top-24 right-10 h-72 w-72 rounded-full bg-[#A78BFA] opacity-[0.25] blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute top-1/3 -left-20 h-64 w-64 rounded-full bg-[#818CF8] opacity-[0.18] blur-3xl"
         />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
           <nav aria-label="Breadcrumb" className="mb-4">
-            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-[#8899AA]">
+            <ol className="flex flex-wrap items-center gap-1.5 text-sm text-white/70">
               <li className="flex items-center gap-1.5">
-                <Link href="/" className="transition-colors hover:text-[#00C6FF]">
+                <Link href="/" className="transition-colors hover:text-white">
                   Home
                 </Link>
                 <span aria-hidden="true">/</span>
               </li>
               <li className="flex items-center gap-1.5">
-                <Link href="/blog" className="transition-colors hover:text-[#00C6FF]">
+                <Link href="/blog" className="transition-colors hover:text-white">
                   Blog
                 </Link>
                 <span aria-hidden="true">/</span>
@@ -98,7 +102,7 @@ export default async function BlogPostPage({
               </li>
             </ol>
           </nav>
-          <span className="mb-3 inline-flex w-fit items-center rounded-full border border-[rgba(0,198,255,0.3)] bg-[rgba(0,198,255,0.08)] px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[#00C6FF]">
+          <span className="mb-3 inline-flex w-fit items-center rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white backdrop-blur">
             {post.category} · {post.date} · {post.readTime}
           </span>
           <h1 className="max-w-3xl text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-[44px]">
@@ -112,7 +116,7 @@ export default async function BlogPostPage({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <article className="mx-auto flex max-w-3xl flex-col">
             {/* Cover image */}
-            <figure className="relative overflow-hidden rounded-2xl border border-[rgba(0,198,255,0.12)] shadow-[0_20px_48px_-20px_rgba(0,198,255,0.35)]">
+            <figure className="relative overflow-hidden rounded-[5px] border border-[#E5E7EB] shadow-[0_20px_48px_-20px_rgba(124,58,237,0.30)]">
               <Image
                 src={post.coverImage}
                 alt={post.coverAlt}
@@ -123,29 +127,29 @@ export default async function BlogPostPage({
               />
               <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#00C6FF]/15 via-transparent to-transparent"
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#7C3AED]/15 via-transparent to-transparent"
               />
             </figure>
 
             {/* Author row */}
-            <div className="mt-8 flex items-center gap-3 border-b border-[rgba(0,198,255,0.12)] pb-6">
+            <div className="mt-8 flex items-center gap-3 border-b border-[#E5E7EB] pb-6">
               <span
                 aria-hidden="true"
-                className="flex h-11 w-11 items-center justify-center rounded-full bg-[#00C6FF] text-base font-bold text-[#000000]"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-[#7C3AED] text-base font-bold text-white"
               >
                 M
               </span>
               <div>
-                <p className="text-sm font-semibold text-white">{post.author.name}</p>
-                <p className="text-xs text-[#8899AA]">{post.author.role}</p>
+                <p className="text-sm font-semibold text-[#1F2937]">{post.author.name}</p>
+                <p className="text-xs text-[#9CA3AF]">{post.author.role}</p>
               </div>
-              <div className="ml-auto hidden items-center gap-3 text-xs font-medium text-[#8899AA] sm:flex">
+              <div className="ml-auto hidden items-center gap-3 text-xs font-medium text-[#9CA3AF] sm:flex">
                 <span className="inline-flex items-center gap-1.5">
-                  <CalendarDays className="h-3.5 w-3.5 text-[#00C6FF]" aria-hidden="true" />
+                  <CalendarDays className="h-3.5 w-3.5 text-[#7C3AED]" aria-hidden="true" />
                   {post.date}
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <Clock3 className="h-3.5 w-3.5 text-[#00C6FF]" aria-hidden="true" />
+                  <Clock3 className="h-3.5 w-3.5 text-[#7C3AED]" aria-hidden="true" />
                   {post.readTime}
                 </span>
               </div>
@@ -158,11 +162,11 @@ export default async function BlogPostPage({
                   return (
                     <h2
                       key={i}
-                      className="mt-10 flex items-baseline gap-3 text-xl font-bold leading-snug text-white sm:text-2xl"
+                      className="mt-10 flex items-baseline gap-3 text-xl font-bold leading-snug text-[#1F2937] sm:text-2xl"
                     >
                       <span
                         aria-hidden="true"
-                        className="h-px w-6 shrink-0 translate-y-[-4px] bg-[#00C6FF]/70"
+                        className="h-px w-6 shrink-0 translate-y-[-4px] bg-[#7C3AED]/70"
                       />
                       {block.text}
                     </h2>
@@ -174,11 +178,11 @@ export default async function BlogPostPage({
                       {block.items.map((item) => (
                         <li
                           key={item}
-                          className="flex items-start gap-3 text-[15px] leading-relaxed text-[#B8C5D3]"
+                          className="flex items-start gap-3 text-[15px] leading-relaxed text-[#4B5563]"
                         >
                           <span
                             aria-hidden="true"
-                            className="mt-[9px] inline-flex h-1.5 w-1.5 shrink-0 rounded-full bg-[#00C6FF]"
+                            className="mt-[9px] inline-flex h-1.5 w-1.5 shrink-0 rounded-full bg-[#7C3AED]"
                           />
                           {item}
                         </li>
@@ -190,7 +194,7 @@ export default async function BlogPostPage({
                   return (
                     <figure
                       key={i}
-                      className="mt-9 overflow-hidden rounded-2xl border border-[rgba(0,198,255,0.12)] bg-[rgba(13,21,32,0.5)] shadow-[0_16px_40px_-22px_rgba(0,0,0,0.7)]"
+                      className="mt-9 overflow-hidden rounded-[5px] border border-[#E5E7EB] bg-[#F5F3FF] shadow-[0_16px_40px_-22px_rgba(31,31,31,0.15)]"
                     >
                       <Image
                         src={block.src}
@@ -199,10 +203,10 @@ export default async function BlogPostPage({
                         height={720}
                         className="h-auto w-full object-cover"
                       />
-                      <figcaption className="flex items-start gap-2.5 border-t border-[rgba(0,198,255,0.12)] px-5 py-3.5 text-[13px] leading-relaxed text-[#8899AA]">
+                      <figcaption className="flex items-start gap-2.5 border-t border-[#E5E7EB] px-5 py-3.5 text-[13px] leading-relaxed text-[#6B7280]">
                         <span
                           aria-hidden="true"
-                          className="mt-[7px] inline-flex h-1.5 w-1.5 shrink-0 rounded-full bg-[#00C6FF]"
+                          className="mt-[7px] inline-flex h-1.5 w-1.5 shrink-0 rounded-full bg-[#7C3AED]"
                         />
                         {block.caption}
                       </figcaption>
@@ -213,16 +217,16 @@ export default async function BlogPostPage({
                   return (
                     <aside
                       key={i}
-                      className="mt-10 rounded-2xl border border-[rgba(0,198,255,0.25)] bg-[rgba(0,198,255,0.06)] p-6 shadow-[0_10px_30px_-18px_rgba(0,198,255,0.4)] sm:p-7"
+                      className="mt-10 rounded-[5px] border border-[#A855F7]/25 bg-[#F5F3FF] p-6 shadow-[0_10px_30px_-18px_rgba(124,58,237,0.30)] sm:p-7"
                     >
-                      <p className="text-[15px] font-medium leading-relaxed text-white">
+                      <p className="text-[15px] font-medium leading-relaxed text-[#1F2937]">
                         {block.text}
                       </p>
                       <a
                         href="https://calendar.app.google/TGnzfC65zBF3hVeD9"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-5 inline-flex w-fit items-center justify-center gap-2 rounded-md bg-[#00C6FF] px-6 py-3 text-sm font-semibold text-[#000000] transition-colors duration-300 hover:bg-[#33d4ff]"
+                        className="mt-5 inline-flex w-fit items-center justify-center gap-2 rounded-[5px] bg-[#A855F7] px-6 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#7E22CE]"
                       >
                         Book a Free Discovery Call{" "}
                         <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -231,7 +235,7 @@ export default async function BlogPostPage({
                   );
                 }
                 return (
-                  <p key={i} className="mt-5 text-[15px] leading-[1.85] text-[#B8C5D3]">
+                  <p key={i} className="mt-5 text-[15px] leading-[1.85] text-[#4B5563]">
                     {block.text}
                   </p>
                 );
@@ -239,10 +243,10 @@ export default async function BlogPostPage({
             </div>
 
             {/* Back to blog */}
-            <div className="mt-12 border-t border-[rgba(0,198,255,0.12)] pt-6">
+            <div className="mt-12 border-t border-[#E5E7EB] pt-6">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#00C6FF] transition-colors hover:text-[#33d4ff]"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#7C3AED] transition-colors hover:text-[#5B21B6]"
               >
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
                 Back to all articles
