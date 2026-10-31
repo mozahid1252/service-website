@@ -172,6 +172,16 @@ export default async function BlogPostPage({
                     </h2>
                   );
                 }
+                if (block.type === "subheading") {
+                  return (
+                    <h3
+                      key={i}
+                      className="mt-7 text-lg font-semibold leading-snug text-[#1F2937] sm:text-xl"
+                    >
+                      {block.text}
+                    </h3>
+                  );
+                }
                 if (block.type === "list") {
                   return (
                     <ul key={i} className="mt-5 flex flex-col gap-2.5">
@@ -201,6 +211,8 @@ export default async function BlogPostPage({
                         alt={block.alt}
                         width={1280}
                         height={720}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 768px"
+                        loading="lazy"
                         className="h-auto w-full object-cover"
                       />
                       <figcaption className="flex items-start gap-2.5 border-t border-[#E5E7EB] px-5 py-3.5 text-[13px] leading-relaxed text-[#6B7280]">
@@ -211,6 +223,47 @@ export default async function BlogPostPage({
                         {block.caption}
                       </figcaption>
                     </figure>
+                  );
+                }
+                if (block.type === "table") {
+                  return (
+                    <div
+                      key={i}
+                      className="mt-7 overflow-x-auto rounded-[5px] border border-[#E5E7EB] shadow-[0_12px_30px_-20px_rgba(31,31,31,0.18)]"
+                    >
+                      <table className="w-full border-collapse text-left text-sm">
+                        <thead>
+                          <tr className="bg-[#F5F3FF]">
+                            {block.headers.map((h) => (
+                              <th
+                                key={h}
+                                scope="col"
+                                className="border-b border-[#E5E7EB] px-4 py-3 text-[13px] font-semibold uppercase tracking-wide text-[#6D28D9]"
+                              >
+                                {h}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {block.rows.map((row, ri) => (
+                            <tr
+                              key={ri}
+                              className={ri % 2 === 1 ? "bg-[#FAFAFE]" : "bg-white"}
+                            >
+                              {row.map((cell, ci) => (
+                                <td
+                                  key={ci}
+                                  className="border-b border-[#EEF0F4] px-4 py-3 align-top text-[14px] leading-relaxed text-[#4B5563] last:border-b-0"
+                                >
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
                   );
                 }
                 if (block.type === "callout") {
