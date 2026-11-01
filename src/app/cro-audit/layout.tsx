@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Funnel & Conversion Review | Moz Intelligence',
+  title: 'Funnel & Conversion Audit | Moz Intelligence',
   description: 'Find exactly where visitors are leaving your site without buying. A deep-dive review mapping funnel drop-offs, cart abandonment, and checkout friction.',
 };
 

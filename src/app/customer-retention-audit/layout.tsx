@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Customer Retention & LTV Review | Moz Intelligence',
+  title: 'Customer Retention & LTV Audit | Moz Intelligence',
   description: 'Identify why customers buy once and disappear. A deep-dive retention audit analyzing RFM segments, churn patterns, and cohort behavior.',
 };
 

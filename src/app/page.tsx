@@ -231,7 +231,7 @@ const ADD_ON_PACKAGES = [
     route: '/marketing-spend-audit',
   },
   {
-    name: 'Customer Retention & LTV Review',
+    name: 'Customer Retention & LTV Audit',
     price: '$350 – $700 · 7–12 Days',
     problem: '"Customers buy once and disappear."',
     promise: 'You will know which customers are about to leave (and how to reach them before they do), which channels bring loyal customers, and have an upload-ready segmented list for immediate retention campaigns.',
@@ -247,7 +247,7 @@ const ADD_ON_PACKAGES = [
     route: '/product-portfolio-audit',
   },
   {
-    name: 'Funnel & Conversion Review',
+    name: 'Funnel & Conversion Audit',
     price: '$250 – $500 · 7–10 Days',
     problem: '"Traffic is there but nobody\'s buying."',
     promise: 'You will know exactly where visitors are abandoning (and why), which fixes will have the highest impact, and have a prioritized action list to increase conversion by 20–40% using your existing traffic.',
@@ -2216,9 +2216,9 @@ function ServicesSection() {
                 <div className="text-[#00E676] text-xs font-semibold mb-2">What We Can Implement</div>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Marketing Performance & Profitability Audit</strong>: Implement campaign tracking, attribution setup, or budget monitoring.</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Customer Retention & LTV Review</strong>: Implement retention flows, customer segments, or re-engagement campaigns.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Customer Retention & LTV Audit</strong>: Implement retention flows, customer segments, or re-engagement campaigns.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Product Profitability & Portfolio Audit</strong>: Implement product bundling, cross-sell setup, or product merchandising changes.</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Funnel & Conversion Review</strong>: Implement recommended changes to your product pages, cart, checkout, or conversion flow.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Funnel & Conversion Audit</strong>: Implement recommended changes to your product pages, cart, checkout, or conversion flow.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">E-Commerce Profitability Audit</strong>: Implement margin tracking, product-level profitability monitoring, or profit alerts.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Operations Efficiency Audit</strong>: Implement workflow automation, operational tracking, or cost monitoring.</span></li>
                 </ul>
