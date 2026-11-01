@@ -278,6 +278,14 @@ const ADD_ON_PACKAGES = [
     cssClass: 'meta-ads',
     route: '/meta-ads-performance-audit',
   },
+  {
+    name: 'E-Commerce Tracking & Attribution Review',
+    price: 'Starting at $450 · 7–10 Days',
+    problem: '"Shopify, GA4, Meta, and Google Ads all show different numbers and I don\'t know which to trust."',
+    promise: 'You will know why your platform numbers differ, where tracking is breaking, whether conversions are being double-counted, and receive a prioritized correction roadmap your developer or agency can act on.',
+    cssClass: 'tracking',
+    route: '/e-commerce-tracking-attribution-review',
+  },
 ];
 
 const DATA_BUNDLES = [
