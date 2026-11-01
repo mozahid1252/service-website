@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Meta Ads Performance Audit | Moz Intelligence',
-  description: 'A deep-dive audit into your marketing channels, true CAC, and campaign-level ROI to reallocate your budget profitably.',
+  title: 'Meta Ads Measurement & Profitability Review | Moz Intelligence',
+  description: 'A measurement, profitability, and decision review connecting Meta campaign performance, audience quality, creative efficiency, tracking reliability, post-click behaviour, and acquisition economics into one prioritized growth plan.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

@@ -271,10 +271,10 @@ const ADD_ON_PACKAGES = [
     route: '/operations-efficiency-audit',
   },
   {
-    name: 'Meta Ads Performance Audit',
-    price: '$500 – $900 · 10–14 Days',
+    name: 'Meta Ads Measurement & Profitability Review',
+    price: 'Starting at $900 · 10–14 Days',
     problem: '"My Meta Ads are spending, but I don\'t know what\'s actually driving profitable growth."',
-    promise: 'You will know which campaigns, audiences, creatives, and placements are driving profitable results, where your ad spend is leaking, and exactly what to scale, optimize, or cut.',
+    promise: 'You will know which campaigns, audiences, creatives, and placements are driving profitable results, whether your Meta data can be trusted, and receive a 30-day prioritized action plan showing what to scale, test, refresh, reduce, or pause.',
     cssClass: 'meta-ads',
     route: '/meta-ads-performance-audit',
   },
