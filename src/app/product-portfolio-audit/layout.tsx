@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Product Portfolio Audit | Moz Intelligence',
+  title: 'Product Profitability & Portfolio Audit | Moz Intelligence',
   description: 'Find out which products to keep, scale, or cut. A deep-dive audit analyzing 50+ SKUs, profit margins, dead stock, and bundle opportunities.',
 };
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Profitability Audit | Moz Intelligence',
+  title: 'E-Commerce Profitability Audit | Moz Intelligence',
   description: 'Find out where your revenue is going. A deep-dive financial audit analyzing true product margins, cost leaks, discount impact, and cash flow patterns.',
 };
 

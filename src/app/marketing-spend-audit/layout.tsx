@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Marketing Spend Audit | Moz Intelligence',
+  title: 'Marketing Performance & Profitability Audit | Moz Intelligence',
   description: 'A deep-dive audit into your marketing channels, true CAC, and campaign-level ROI to reallocate your budget profitably.',
 };
 
