@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'E-Commerce Tracking & Attribution Review | Moz Intelligence',
+  title: 'Marketing Measurement & Attribution Review | Moz Intelligence',
   description: 'A measurement and attribution review that explains why Shopify, GA4, Meta, and Google numbers differ, and delivers a prioritized tracking correction roadmap.',
 };
 

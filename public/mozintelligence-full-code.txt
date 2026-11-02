@@ -2,7 +2,6 @@
 MOZINTELLIGENCE - FULL WEBSITE CODEBASE
 Next.js 16 (App Router) + TypeScript + Tailwind CSS 4 + shadcn/ui
 ================================================================================
-
 TABLE OF CONTENTS
 --------------------------------------------------------------------------------
   PART 0 - Project Config Files  (8 files)
@@ -14,7 +13,7 @@ TABLE OF CONTENTS
   PART 6 - Landing Pages (C. Data Setup & Infrastructure)  (18 files)
   PART 7 - Landing Pages (D. Custom Analytics & Infrastructure)  (24 files)
   PART 8 - Landing Pages (E. Other Landing Pages)  (18 files)
-  PART 9 - API Routes (chat, contact, booking, download)  (8 files)
+  PART 9 - API Routes  (8 files)
   PART 10 - Custom Components  (18 files)
   PART 11 - Lib & Hooks  (4 files)
   PART 12 - shadcn/ui Components  (48 files)
@@ -22,11 +21,9 @@ TABLE OF CONTENTS
 TOTAL: 229 files
 ================================================================================
 
-
 ================================================================================
 ## PART 0 - Project Config Files
 ================================================================================
-
 ### FILE: package.json
 ```json
 {
@@ -130,7 +127,6 @@ TOTAL: 229 files
   }
 }
 ```
-
 ### FILE: next.config.ts
 ```ts
 import type { NextConfig } from "next";
@@ -163,7 +159,6 @@ const nextConfig: NextConfig = {
 
 export default nextConfig;
 ```
-
 ### FILE: tsconfig.json
 ```json
 {
@@ -208,7 +203,6 @@ export default nextConfig;
   ]
 }
 ```
-
 ### FILE: vercel.json
 ```json
 {
@@ -216,7 +210,6 @@ export default nextConfig;
   "framework": "nextjs"
 }
 ```
-
 ### FILE: components.json
 ```json
 {
@@ -241,7 +234,6 @@ export default nextConfig;
   "iconLibrary": "lucide"
 }
 ```
-
 ### FILE: postcss.config.mjs
 ```mjs
 const config = {
@@ -250,7 +242,6 @@ const config = {
 
 export default config;
 ```
-
 ### FILE: eslint.config.mjs
 ```mjs
 import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
@@ -304,7 +295,6 @@ const eslintConfig = [...nextCoreWebVitals, ...nextTypescript, {
 
 export default eslintConfig;
 ```
-
 ### FILE: prisma/schema.prisma
 ```prisma
 // This is your Prisma schema file,
@@ -368,11 +358,9 @@ model ContactMessage {
 }
 ```
 
-
 ================================================================================
 ## PART 1 - App Root (layout, homepage, globals, sitemap, robots)
 ================================================================================
-
 ### FILE: src/app/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -494,7 +482,6 @@ export default function RootLayout({
   );
 }
 ```
-
 ### FILE: src/app/page.tsx
 ```tsx
 'use client';
@@ -778,7 +765,7 @@ const ADD_ON_PACKAGES = [
     route: '/meta-ads-performance-audit',
   },
   {
-    name: 'E-Commerce Tracking & Attribution Review',
+    name: 'Marketing Measurement & Attribution Review',
     price: 'Starting at $450 · 7–10 Days',
     problem: '"Shopify, GA4, Meta, and Google Ads all show different numbers and I don\'t know which to trust."',
     promise: 'You will know why your platform numbers differ, where tracking is breaking, whether conversions are being double-counted, and receive a prioritized correction roadmap your developer or agency can act on.',
@@ -3067,7 +3054,6 @@ export default function PortfolioPage() {
   );
 }
 ```
-
 ### FILE: src/app/globals.css
 ```css
 @import "tailwindcss";
@@ -8769,7 +8755,6 @@ span[id], a[id] {
   .plat-track-left { animation: none; }
 }
 ```
-
 ### FILE: src/app/sitemap.ts
 ```ts
 import { MetadataRoute } from "next";
@@ -8902,7 +8887,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 }
 ```
-
 ### FILE: src/app/robots.ts
 ```ts
 import { MetadataRoute } from "next";
@@ -8921,11 +8905,9 @@ export default function robots(): MetadataRoute.Robots {
 }
 ```
 
-
 ================================================================================
 ## PART 2 - Blog (index + post page + data)
 ================================================================================
-
 ### FILE: src/app/blog/page.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -9146,7 +9128,6 @@ export default function BlogIndexPage() {
   );
 }
 ```
-
 ### FILE: src/app/blog/[slug]/page.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -9465,7 +9446,6 @@ export default async function BlogPostPage({
   );
 }
 ```
-
 ### FILE: src/lib/blog-posts.ts
 ```ts
 /**
@@ -10008,11 +9988,9 @@ export function getBlogPost(slug: string): BlogPost | undefined {
 }
 ```
 
-
 ================================================================================
 ## PART 3 - Sub-Pages (book, about-founder, about-mozintelligence)
 ================================================================================
-
 ### FILE: src/app/book/page.tsx
 ```tsx
 'use client';
@@ -10286,7 +10264,6 @@ export default function BookPage() {
   );
 }
 ```
-
 ### FILE: src/app/about-founder/page.tsx
 ```tsx
 import Link from "next/link";
@@ -10498,7 +10475,6 @@ export default function AboutFounderPage() {
   );
 }
 ```
-
 ### FILE: src/app/about-mozintelligence/page.tsx
 ```tsx
 import Link from "next/link";
@@ -10557,11 +10533,9 @@ export default function AboutMozIntelligencePage() {
 }
 ```
 
-
 ================================================================================
 ## PART 4 - Landing Pages (A. Core E-Commerce Packages)
 ================================================================================
-
 ### FILE: src/app/analytics-partner-retainer/page.tsx
 ```tsx
 import fs from "fs";
@@ -10582,7 +10556,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/analytics-partner-retainer/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -10605,7 +10578,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/analytics-partner-retainer/landing-content.tsx
 ```tsx
 "use client";
@@ -10632,7 +10604,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/analytics-partner-retainer/landing-body.html
 ```html
 
@@ -10860,7 +10831,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/analytics-partner-retainer/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -10936,7 +10906,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/analytics-partner-retainer/landing.css
 ```css
 
@@ -11118,7 +11087,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .nav { border-radius: 16px; }
 }
 ```
-
 ### FILE: src/app/data-driven-growth-system/page.tsx
 ```tsx
 import fs from "fs";
@@ -11139,7 +11107,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/data-driven-growth-system/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -11162,7 +11129,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/data-driven-growth-system/landing-content.tsx
 ```tsx
 "use client";
@@ -11189,7 +11155,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/data-driven-growth-system/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -11754,7 +11719,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/data-driven-growth-system/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -11830,7 +11794,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/data-driven-growth-system/landing.css
 ```css
 
@@ -12024,7 +11987,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .outcomes-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 }
 ```
-
 ### FILE: src/app/health-check/page.tsx
 ```tsx
 import fs from "fs";
@@ -12045,7 +12007,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/health-check/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -12068,7 +12029,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/health-check/landing-content.tsx
 ```tsx
 "use client";
@@ -12095,7 +12055,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/health-check/landing-body.html
 ```html
 
@@ -12417,7 +12376,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/health-check/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -12493,7 +12451,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/health-check/landing.css
 ```css
 
@@ -12670,7 +12627,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .nav { border-radius: 16px; }
 }
 ```
-
 ### FILE: src/app/revenue-growth-accelerator/page.tsx
 ```tsx
 import fs from "fs";
@@ -12691,7 +12647,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/revenue-growth-accelerator/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -12714,7 +12669,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/revenue-growth-accelerator/landing-content.tsx
 ```tsx
 "use client";
@@ -12741,7 +12695,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/revenue-growth-accelerator/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -13089,7 +13042,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/revenue-growth-accelerator/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -13165,7 +13117,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/revenue-growth-accelerator/landing.css
 ```css
 
@@ -13335,11 +13286,9 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
 }
 ```
 
-
 ================================================================================
 ## PART 5 - Landing Pages (B. Specialized Add-On Audits)
 ================================================================================
-
 ### FILE: src/app/cro-audit/page.tsx
 ```tsx
 import fs from "fs";
@@ -13360,7 +13309,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/cro-audit/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -13383,7 +13331,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/cro-audit/landing-content.tsx
 ```tsx
 "use client";
@@ -13410,7 +13357,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/cro-audit/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -14013,7 +13959,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/cro-audit/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -14089,7 +14034,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/cro-audit/landing.css
 ```css
 
@@ -14097,7 +14041,7 @@ document.querySelectorAll('.faq-item').forEach(item => {
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-h1, h2, h3, h4, h5 { font-family: 'Manrope', sans-serif; font-weight: 700; letter-spacing: -0.02em; color: var(--text); line-height: 1.2; }
+h1, h2, h3, h4, h5 { font-family: 'Manrope', sans-serif; font-weight: 700; letter-spacing: -0.02em; color: var(--text) !important; line-height: 1.2; }
 .mono { font-family: 'JetBrains Mono', monospace; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 section { padding: 80px 0; border-bottom: 1px solid var(--border); }
@@ -14139,22 +14083,22 @@ a { text-decoration: none; color: inherit; }
 .analysis-block { margin-bottom: 48px; }
 .analysis-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
 .analysis-num { width: 40px; height: 40px; background: var(--accent); color: #FFF; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0; }
-.analysis-title h3 { font-size: 22px; margin-bottom: 4px; }
-.analysis-title span { font-size: 13px; color: var(--accent); font-weight: 600; text-transform: uppercase; }
+.analysis-title h3 { font-size: 22px; margin-bottom: 4px; color: var(--text) !important; }
+.analysis-title span { font-size: 13px; color: var(--accent) !important; font-weight: 600; text-transform: uppercase; }
 .analysis-content { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow); }
 .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
-.analysis-text p { font-size: 15px; color: var(--muted); margin-bottom: 16px; }
-.analysis-text p strong { color: var(--text); font-weight: 700; }
+.analysis-text p { font-size: 15px; color: var(--muted) !important; margin-bottom: 16px; }
+.analysis-text p strong { color: var(--text) !important; font-weight: 700; }
 .insight-box { background: var(--surface-2); border-left: 4px solid var(--accent); padding: 16px; border-radius: 0 8px 8px 0; margin-top: 16px; font-size: 14px; }
-.insight-box b { color: var(--text); }
+.insight-box b { color: var(--text) !important; }
 .chart-mock { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
 .bar-chart { display: flex; flex-direction: column; gap: 12px; }
 .bar-row { display: grid; grid-template-columns: 120px 1fr 60px; align-items: center; gap: 12px; }
-.bar-label { font-size: 12px; color: var(--muted); text-align: right; }
+.bar-label { font-size: 12px; color: var(--muted) !important; text-align: right; }
 .bar-track { height: 20px; background: var(--border); border-radius: 4px; overflow: hidden; }
 .bar-fill { height: 100%; border-radius: 4px; background: var(--accent); opacity: 0.8; }
 .bar-fill.success { background: var(--success); } .bar-fill.warning { background: var(--warning); } .bar-fill.danger { background: var(--danger); }
-.bar-value { font-size: 12px; font-weight: 600; }
+.bar-value { font-size: 12px; font-weight: 600; color: var(--text) !important; }
 .kpi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
 .kpi-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; text-align: center; }
 .kpi-card .kpi-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
@@ -14327,7 +14271,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .outcomes-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 }
 ```
-
 ### FILE: src/app/customer-retention-audit/page.tsx
 ```tsx
 import fs from "fs";
@@ -14348,7 +14291,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/customer-retention-audit/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -14371,7 +14313,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/customer-retention-audit/landing-content.tsx
 ```tsx
 "use client";
@@ -14398,7 +14339,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/customer-retention-audit/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -14848,7 +14788,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/customer-retention-audit/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -14924,7 +14863,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/customer-retention-audit/landing.css
 ```css
 
@@ -15126,7 +15064,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .outcomes-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 }
 ```
-
 ### FILE: src/app/e-commerce-tracking-attribution-review/page.tsx
 ```tsx
 import fs from "fs";
@@ -15147,13 +15084,12 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/e-commerce-tracking-attribution-review/layout.tsx
 ```tsx
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'E-Commerce Tracking & Attribution Review | Moz Intelligence',
+  title: 'Marketing Measurement & Attribution Review | Moz Intelligence',
   description: 'A measurement and attribution review that explains why Shopify, GA4, Meta, and Google numbers differ, and delivers a prioritized tracking correction roadmap.',
 };
 
@@ -15170,7 +15106,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/e-commerce-tracking-attribution-review/landing-content.tsx
 ```tsx
 "use client";
@@ -15227,7 +15162,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   );
 }
 ```
-
 ### FILE: src/app/e-commerce-tracking-attribution-review/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -15266,30 +15200,55 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <header class="hero">
   <div class="container">
-    <div class="eyebrow" style="margin: 0 auto;">Specialized Add-On · Package 08:E-Commerce Tracking & Attribution Review</div>
-    <h1>MAKE YOUR MARKETING DATA <em>RELIABLE</em> AGAIN.</h1>
-    <p>Shopify, GA4, Meta, and Google Ads each report different numbers for the same store. This review explains why they differ, finds where tracking is breaking, and delivers a prioritized correction roadmap your developer or agency can act on - before you make your next growth decision.</p>
+    <div class="eyebrow" style="margin: 0 auto;">Specialized Add-On · Package 08: Marketing Measurement & Attribution Review</div>
+    <h1>Know Whether Your Marketing Data Can Be <em>Trusted</em>.</h1>
+    <p>Shopify, GA4, Meta, and Google can report different orders, revenue, and conversions. This review identifies tracking gaps, duplicate signals, attribution differences, and the technical fixes required to make your marketing data more reliable.</p>
     <div class="hero-cta">
-      <a href="#pricing" class="btn btn-primary">Review My Tracking</a>
+      <a href="#pricing" class="btn btn-primary">Review My Marketing Tracking</a>
       <a href="#outcomes" class="btn btn-outline" style="border-color:var(--border-dark);">What You'll Know</a>
     </div>
+    <div class="kpi-grid" style="max-width: 920px; margin: 40px auto 0;">
+      <div class="kpi-card"><div class="kpi-label">Shopify Orders</div><div class="kpi-val" style="color:var(--success);">100</div></div>
+      <div class="kpi-card"><div class="kpi-label">GA4 Purchases</div><div class="kpi-val" style="color:var(--warning);">92</div></div>
+      <div class="kpi-card"><div class="kpi-label">Meta-Attributed</div><div class="kpi-val" style="color:var(--danger);">65</div></div>
+      <div class="kpi-card"><div class="kpi-label">Tracking Gap</div><div class="kpi-val" style="color:var(--danger); font-size: 22px;">Needs Review</div></div>
+    </div>
+    <p style="text-align: center; font-size: 12px; color: var(--muted); margin-top: 16px; font-style: italic;">Illustrative example — actual findings depend on your tracking data.</p>
   </div>
 </header>
 
-<!-- After This Review, You Will Know -->
+<!-- What This Review Covers -->
 <section id="outcomes" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">The Outcome</div>
-      <h2>After This Review, You Will Know</h2>
+      <div class="eyebrow">Scope</div>
+      <h2>What This Review Covers</h2>
+      <p style="max-width: 760px; margin: 12px auto 0; color: var(--ink);">To evaluate whether your Shopify, GA4, and advertising-platform tracking is capturing and attributing conversions consistently.</p>
     </div>
-    <div class="outcomes-grid">
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-circle-check"></i></div><h4>Which Data You Can Trust</h4><p>Understand how Shopify, GA4, Meta, and Google numbers differ and which source is appropriate for each business decision.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-link-slash"></i></div><h4>Where Tracking Is Breaking</h4><p>Identify missing purchase events, duplicate conversions, incorrect values, currency errors, and broken event parameters.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-scale-unbalanced"></i></div><h4>Why Platform Numbers Differ</h4><p>Understand the effect of attribution windows, consent, browser privacy, cross-device journeys, and platform reporting rules.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-clone"></i></div><h4>Double-Counted Conversions</h4><p>Check whether browser and server-side events are both counting the same purchase.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-tags"></i></div><h4>Misclassified Traffic</h4><p>Find paid, email, referral, or campaign traffic appearing incorrectly as Direct, Organic, or Unassigned.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-list-check"></i></div><h4>What To Fix First</h4><p>Receive a prioritized correction roadmap that your developer, GTM specialist, or marketing agency can act on.</p></div>
+    <div class="info-grid" style="margin-top: 40px;">
+      <div class="info-card scroll-reveal">
+        <div class="info-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <h4>Problems Solved</h4>
+        <ul style="list-style: none; padding-left: 0; margin-top: 12px;">
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 10px;"><i class="fa-solid fa-circle-xmark" style="color: var(--danger); margin-right: 8px;"></i>Shopify, GA4, Meta, and Google numbers do not match</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 10px;"><i class="fa-solid fa-circle-xmark" style="color: var(--danger); margin-right: 8px;"></i>Purchase events are missing or duplicated</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 10px;"><i class="fa-solid fa-circle-xmark" style="color: var(--danger); margin-right: 8px;"></i>Marketing traffic is appearing as Direct or Unassigned</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 10px;"><i class="fa-solid fa-circle-xmark" style="color: var(--danger); margin-right: 8px;"></i>Pixel, GTM, or server-side events are unreliable</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 10px;"><i class="fa-solid fa-circle-xmark" style="color: var(--danger); margin-right: 8px;"></i>Ad platforms are reporting more or fewer conversions than the store</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 0;"><i class="fa-solid fa-circle-xmark" style="color: var(--danger); margin-right: 8px;"></i>You do not know which data source to trust</li>
+        </ul>
+      </div>
+      <div class="info-card scroll-reveal" style="background: var(--accent-light); border-color: var(--accent);">
+        <div class="info-icon" style="background: rgba(255,255,255,0.3); color: var(--accent-dark);"><i class="fa-solid fa-clipboard-check"></i></div>
+        <h4>Decisions Supported</h4>
+        <ul style="list-style: none; padding-left: 0; margin-top: 12px;">
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Which data source should be used as the store-sales baseline</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Whether your ad performance reports are inflated or incomplete</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Which tracking issues need immediate correction</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Whether your business is ready for marketing scaling</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 0;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>What your developer or agency should fix first</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -15600,8 +15559,8 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 <section id="pricing" style="background: var(--bg);">
   <div class="container">
     <div class="pricing-card scroll-reveal">
-      <div class="eyebrow" style="margin: 0 auto;">E-Commerce Tracking & Attribution Review</div>
-      <h3 style="font-size: 28px; margin-top: 16px;">Tracking & Attribution Review</h3>
+      <div class="eyebrow" style="margin: 0 auto;">Marketing Measurement & Attribution Review</div>
+      <h3 style="font-size: 28px; margin-top: 16px;">Marketing Measurement & Attribution Review</h3>
       <div class="price-amt">Starting at $450</div>
       <p class="price-sub">One-time investment · Delivered in 7–10 business days</p>
       <ul class="price-features">
@@ -15618,14 +15577,13 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
       </ul>
       <p style="font-size: 12px; color: var(--light); margin-top: 12px; font-style: italic;">Scope note: Standard scope covers Shopify plus GA4 and up to two major marketing platforms. Complex multi-platform or server-side tracking environments may require a custom quote.</p>
       <p style="font-size: 12px; color: var(--danger); margin-top: 6px; font-style: italic;">Important: Implementation, coding, dashboard development, GTM/GA4 repair, CAPI setup, and ongoing monitoring are not included in the base review.</p>
-      <a href="/book?package=e-commerce-tracking-attribution-review" class="btn btn-primary booking-modal-trigger" data-package="E-Commerce Tracking & Attribution Review" style="width: 100%; justify-content: center;">Review My E-Commerce Tracking →</a>
+      <a href="/book?package=e-commerce-tracking-attribution-review" class="btn btn-primary booking-modal-trigger" data-package="Marketing Measurement & Attribution Review" style="width: 100%; justify-content: center;">Review My Marketing Tracking →</a>
     </div>
   </div>
 </section>
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/e-commerce-tracking-attribution-review/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -15701,7 +15659,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/e-commerce-tracking-attribution-review/landing.css
 ```css
 
@@ -15914,7 +15871,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .outcomes-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 }
 ```
-
 ### FILE: src/app/marketing-spend-audit/page.tsx
 ```tsx
 import fs from "fs";
@@ -15935,7 +15891,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/marketing-spend-audit/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -15958,7 +15913,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/marketing-spend-audit/landing-content.tsx
 ```tsx
 "use client";
@@ -16015,7 +15969,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   );
 }
 ```
-
 ### FILE: src/app/marketing-spend-audit/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -16472,7 +16425,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/marketing-spend-audit/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -16548,7 +16500,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/marketing-spend-audit/landing.css
 ```css
 
@@ -16761,7 +16712,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .outcomes-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 }
 ```
-
 ### FILE: src/app/meta-ads-performance-audit/page.tsx
 ```tsx
 import fs from "fs";
@@ -16782,7 +16732,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/meta-ads-performance-audit/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -16805,7 +16754,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/meta-ads-performance-audit/landing-content.tsx
 ```tsx
 "use client";
@@ -16832,7 +16780,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/meta-ads-performance-audit/landing-body.html
 ```html
 
@@ -16874,21 +16821,67 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
   <div class="hero-deco">
-    <div class="float-chip c1"><span class="chip-dot" style="background:#10B981"></span><span><strong>ROAS 4.2×</strong> Retargeting</span></div>
-    <div class="float-chip c2"><span class="chip-dot" style="background:#DC2626"></span><span><strong>$52 CPA</strong> Broad</span></div>
-    <div class="float-chip c3"><span class="chip-dot" style="background:#4F46E5"></span><span><strong>390 Purchases</strong> from 8,500 clicks</span></div>
-    <div class="float-chip c4"><span class="chip-dot" style="background:#F59E0B"></span><span><strong>LTV:CAC 3.3:1</strong> True economics</span></div>
+    <div class="float-chip c1"><span class="chip-dot" style="background:#10B981"></span><span><strong>Reported ROAS 3.0×</strong></span></div>
+    <div class="float-chip c2"><span class="chip-dot" style="background:#DC2626"></span><span><strong>Reconciled Return 2.6×</strong></span></div>
+    <div class="float-chip c3"><span class="chip-dot" style="background:#4F46E5"></span><span><strong>Meta CAC $33</strong></span></div>
+    <div class="float-chip c4"><span class="chip-dot" style="background:#F59E0B"></span><span><strong>Business CAC $38</strong></span></div>
   </div>
   <div class="container">
     <div class="hero-inner">
       <span class="eyebrow"><span class="dot"></span>Specialized Add-On · Package 07: Meta Ads Measurement &amp; Profitability Review</span>
-      <h1 class="hero-title">Stop Guessing Which <span class="accent-word">Meta Ads</span> Are Actually Making You Money.</h1>
+      <h1 class="hero-title">Find Where Your <span class="accent-word">Meta Budget</span> Is Going — And Whether It Is Creating Profitable Growth.</h1>
+      <p class="hero-sub" style="font-size: 18px; color: var(--text-2, #475569); max-width: 680px; margin: 0 auto 28px; line-height: 1.6;">Your Meta Ads account may report healthy ROAS while campaigns, audiences, creatives, or tracking signals tell a different story. We review your Meta account, conversion tracking, post-click funnel, and acquisition economics to show what to scale, test, reduce, or pause.</p>
       <div class="hero-cta">
         <a href="#pricing" class="btn-primary">Review My Meta Ads
           <span class="arrow">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </span>
         </a>
+      </div>
+      <p style="font-size: 12px; color: var(--text-3, #94A3B8); margin-top: 16px; font-style: italic;">Illustrative example only. Actual findings depend on the client's Meta, Shopify, and analytics data.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION: WHAT THIS REVIEW COVERS ============ -->
+<section class="section" id="scope" style="background: var(--surface, #FFFFFF);">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-label">Scope</span>
+      <h2 class="section-title">What This Review Covers</h2>
+    </div>
+    <div class="info-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px">
+      <div class="info-card reveal" style="background:var(--surface-2,#F1F5F9);border:1px solid var(--border-1,#E2E8F0);border-radius:12px;padding:28px">
+        <div style="width:40px;height:40px;background:var(--accent-soft,#EBF0FB);color:var(--accent,#1E3A8A);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:18px"><i class="fa-solid fa-bullseye"></i></div>
+        <h4 style="font-size:16px;font-weight:700;color:var(--text-1,#0F172A);margin-bottom:8px">The Purpose</h4>
+        <p style="font-size:14px;color:var(--text-2,#475569);line-height:1.6">To connect Meta campaign performance, audience quality, creative efficiency, tracking reliability, post-click behaviour, and acquisition economics in one decision-ready review.</p>
+      </div>
+      <div class="info-card reveal reveal-delay-1" style="background:var(--surface-2,#F1F5F9);border:1px solid var(--border-1,#E2E8F0);border-radius:12px;padding:28px">
+        <div style="width:40px;height:40px;background:var(--accent-soft,#EBF0FB);color:var(--accent,#1E3A8A);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:18px"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <h4 style="font-size:16px;font-weight:700;color:var(--text-1,#0F172A);margin-bottom:8px">This Review Helps Solve</h4>
+        <ul style="list-style:none;padding:0;margin:0;font-size:13px;color:var(--text-2,#475569);line-height:1.8">
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Meta ROAS is declining or unreliable</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>CAC is increasing</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Campaigns are spending without sustainable returns</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Retargeting appears strong but may be over-claiming conversions</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Creative fatigue is reducing performance</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Broad, Lookalike, or Advantage+ campaigns are difficult to evaluate</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Pixel and CAPI data may be incomplete or duplicated</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Meta reports do not match Shopify or GA4</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>You do not know where the next advertising dollar should go</li>
+        </ul>
+      </div>
+      <div class="info-card reveal reveal-delay-2" style="background:var(--surface-2,#F1F5F9);border:1px solid var(--border-1,#E2E8F0);border-radius:12px;padding:28px">
+        <div style="width:40px;height:40px;background:var(--accent-soft,#EBF0FB);color:var(--accent,#1E3A8A);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:18px"><i class="fa-solid fa-clipboard-check"></i></div>
+        <h4 style="font-size:16px;font-weight:700;color:var(--text-1,#0F172A);margin-bottom:8px">Decisions Supported</h4>
+        <ul style="list-style:none;padding:0;margin:0;font-size:13px;color:var(--text-2,#475569);line-height:1.8">
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Which campaigns to scale, maintain, test, reduce, or pause</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Which audiences deserve more or less budget</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Which creatives need to be refreshed</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Which placements are producing efficient traffic</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Whether the main problem is the ad, tracking, landing page, or offer</li>
+          <li style="margin-bottom:6px"><i class="fa-solid fa-circle" style="font-size:4px;color:var(--accent,#1E3A8A);margin-right:8px;vertical-align:middle"></i>Whether Meta-reported performance reflects sustainable acquisition economics</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -18210,7 +18203,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   </div>
 </footer>
 ```
-
 ### FILE: src/app/meta-ads-performance-audit/landing-script.js
 ```js
 
@@ -18293,7 +18285,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   }
 })();
 ```
-
 ### FILE: src/app/meta-ads-performance-audit/landing.css
 ```css
 
@@ -19311,7 +19302,6 @@ html{overflow-x:hidden}
   .nav-cta { display: none; }
 }
 ```
-
 ### FILE: src/app/operations-efficiency-audit/page.tsx
 ```tsx
 import fs from "fs";
@@ -19332,7 +19322,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/operations-efficiency-audit/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -19355,7 +19344,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/operations-efficiency-audit/landing-content.tsx
 ```tsx
 "use client";
@@ -19382,7 +19370,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/operations-efficiency-audit/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -19931,7 +19918,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/operations-efficiency-audit/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -20007,7 +19993,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/operations-efficiency-audit/landing.css
 ```css
 
@@ -20212,7 +20197,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .outcomes-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 }
 ```
-
 ### FILE: src/app/product-portfolio-audit/page.tsx
 ```tsx
 import fs from "fs";
@@ -20233,7 +20217,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/product-portfolio-audit/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -20256,7 +20239,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/product-portfolio-audit/landing-content.tsx
 ```tsx
 "use client";
@@ -20283,7 +20265,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/product-portfolio-audit/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -20798,7 +20779,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/product-portfolio-audit/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -20874,7 +20854,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/product-portfolio-audit/landing.css
 ```css
 
@@ -21078,7 +21057,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .outcomes-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 }
 ```
-
 ### FILE: src/app/profitability-audit/page.tsx
 ```tsx
 import fs from "fs";
@@ -21099,7 +21077,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/profitability-audit/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -21122,7 +21099,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/profitability-audit/landing-content.tsx
 ```tsx
 "use client";
@@ -21149,7 +21125,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/profitability-audit/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -21682,7 +21657,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/profitability-audit/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -21758,7 +21732,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/profitability-audit/landing.css
 ```css
 
@@ -21964,11 +21937,9 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
 }
 ```
 
-
 ================================================================================
 ## PART 6 - Landing Pages (C. Data Setup & Infrastructure)
 ================================================================================
-
 ### FILE: src/app/basic-setup/page.tsx
 ```tsx
 import fs from "fs";
@@ -21989,7 +21960,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/basic-setup/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -22012,7 +21982,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/basic-setup/landing-content.tsx
 ```tsx
 "use client";
@@ -22039,7 +22008,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/basic-setup/landing-body.html
 ```html
 
@@ -22382,7 +22350,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/basic-setup/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -22458,7 +22425,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/basic-setup/landing.css
 ```css
 
@@ -22619,7 +22585,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .nav { border-radius: 16px; }
 }
 ```
-
 ### FILE: src/app/full-pipeline-automation/page.tsx
 ```tsx
 import fs from "fs";
@@ -22640,7 +22605,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/full-pipeline-automation/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -22663,7 +22627,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/full-pipeline-automation/landing-content.tsx
 ```tsx
 "use client";
@@ -22690,7 +22653,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/full-pipeline-automation/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -23189,7 +23151,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/full-pipeline-automation/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -23296,7 +23257,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/full-pipeline-automation/landing.css
 ```css
 
@@ -23493,7 +23453,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .code-snippet { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
 }
 ```
-
 ### FILE: src/app/full-pipeline-setup/page.tsx
 ```tsx
 import fs from "fs";
@@ -23514,7 +23473,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/full-pipeline-setup/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -23537,7 +23495,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/full-pipeline-setup/landing-content.tsx
 ```tsx
 "use client";
@@ -23564,7 +23521,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/full-pipeline-setup/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -24035,7 +23991,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/full-pipeline-setup/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -24111,7 +24066,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/full-pipeline-setup/landing.css
 ```css
 
@@ -24344,11 +24298,9 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
 }
 ```
 
-
 ================================================================================
 ## PART 7 - Landing Pages (D. Custom Analytics & Infrastructure)
 ================================================================================
-
 ### FILE: src/app/automated-dashboard-analytics-system/page.tsx
 ```tsx
 import fs from "fs";
@@ -24369,7 +24321,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/automated-dashboard-analytics-system/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -24392,7 +24343,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/automated-dashboard-analytics-system/landing-content.tsx
 ```tsx
 "use client";
@@ -24419,7 +24369,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/automated-dashboard-analytics-system/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -24918,7 +24867,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/automated-dashboard-analytics-system/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -25025,7 +24973,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/automated-dashboard-analytics-system/landing.css
 ```css
 
@@ -25222,7 +25169,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .code-snippet { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
 }
 ```
-
 ### FILE: src/app/custom-infrastructure/page.tsx
 ```tsx
 import fs from "fs";
@@ -25243,7 +25189,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/custom-infrastructure/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -25266,7 +25211,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/custom-infrastructure/landing-content.tsx
 ```tsx
 "use client";
@@ -25293,7 +25237,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/custom-infrastructure/landing-body.html
 ```html
 
@@ -25499,13 +25442,11 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 MozIntelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/custom-infrastructure/landing-script.js
 ```js
 const io = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 ```
-
 ### FILE: src/app/custom-infrastructure/landing.css
 ```css
 
@@ -25604,7 +25545,6 @@ footer { padding: 40px 0; border-top: 1px solid var(--border); text-align: cente
   .services-grid { grid-template-columns: 1fr; }
 }
 ```
-
 ### FILE: src/app/data-pipeline-dashboard-setup/page.tsx
 ```tsx
 import fs from "fs";
@@ -25625,7 +25565,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/data-pipeline-dashboard-setup/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -25648,7 +25587,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/data-pipeline-dashboard-setup/landing-content.tsx
 ```tsx
 "use client";
@@ -25675,7 +25613,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/data-pipeline-dashboard-setup/landing-body.html
 ```html
 <!-- MOBILE-OVERRIDE-SAFETY -->
@@ -26146,7 +26083,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/data-pipeline-dashboard-setup/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -26222,7 +26158,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/data-pipeline-dashboard-setup/landing.css
 ```css
 
@@ -26454,7 +26389,6 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .light-dashboard-mock .ld-body { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
 ```
-
 ### FILE: src/app/data-preparation-integration/page.tsx
 ```tsx
 import fs from "fs";
@@ -26475,7 +26409,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/data-preparation-integration/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -26498,7 +26431,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/data-preparation-integration/landing-content.tsx
 ```tsx
 "use client";
@@ -26525,7 +26457,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/data-preparation-integration/landing-body.html
 ```html
 
@@ -26868,7 +26799,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 ```
-
 ### FILE: src/app/data-preparation-integration/landing-script.js
 ```js
 document.querySelectorAll('.faq-item').forEach(item => {
@@ -26944,7 +26874,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/data-preparation-integration/landing.css
 ```css
 
@@ -27106,11 +27035,9 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
 }
 ```
 
-
 ================================================================================
 ## PART 8 - Landing Pages (E. Other Landing Pages)
 ================================================================================
-
 ### FILE: src/app/core-packages/page.tsx
 ```tsx
 import fs from "fs";
@@ -27131,7 +27058,6 @@ export default function CorePackagesPage() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/core-packages/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -27166,7 +27092,6 @@ export default function CorePackagesLayout({
   );
 }
 ```
-
 ### FILE: src/app/core-packages/landing-content.tsx
 ```tsx
 "use client";
@@ -27198,7 +27123,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/core-packages/landing-body.html
 ```html
 
@@ -28122,7 +28046,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   </div>
 </footer>
 ```
-
 ### FILE: src/app/core-packages/landing-script.js
 ```js
 
@@ -28215,7 +28138,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
 })();
 ```
-
 ### FILE: src/app/core-packages/landing.css
 ```css
 
@@ -28863,7 +28785,6 @@ footer{background:var(--bg-2);border-top:1px solid var(--border);padding:56px 0 
   html{scroll-behavior:auto}
 }
 ```
-
 ### FILE: src/app/data-setup-infrastructure/page.tsx
 ```tsx
 import fs from "fs";
@@ -28884,7 +28805,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/data-setup-infrastructure/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -28908,7 +28828,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/data-setup-infrastructure/landing-content.tsx
 ```tsx
 "use client";
@@ -28935,7 +28854,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/data-setup-infrastructure/landing-body.html
 ```html
 
@@ -29476,7 +29394,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   </div>
 </footer>
 ```
-
 ### FILE: src/app/data-setup-infrastructure/landing-script.js
 ```js
 // Scroll Reveal Animation
@@ -29505,7 +29422,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
     }
   });
 ```
-
 ### FILE: src/app/data-setup-infrastructure/landing.css
 ```css
 
@@ -30361,7 +30277,6 @@ footer {
   .dash-card.large { grid-column: span 1; }
 }
 ```
-
 ### FILE: src/app/specialized-add-on-packages/page.tsx
 ```tsx
 import fs from "fs";
@@ -30382,7 +30297,6 @@ export default function Page() {
   return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
 }
 ```
-
 ### FILE: src/app/specialized-add-on-packages/layout.tsx
 ```tsx
 import type { Metadata } from "next";
@@ -30406,7 +30320,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 ```
-
 ### FILE: src/app/specialized-add-on-packages/landing-content.tsx
 ```tsx
 "use client";
@@ -30433,7 +30346,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
 }
 ```
-
 ### FILE: src/app/specialized-add-on-packages/landing-body.html
 ```html
 
@@ -30961,7 +30873,6 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   </div>
 </footer>
 ```
-
 ### FILE: src/app/specialized-add-on-packages/landing-script.js
 ```js
 // Sticky nav
@@ -30996,7 +30907,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 ```
-
 ### FILE: src/app/specialized-add-on-packages/landing.css
 ```css
 
@@ -31193,11 +31103,9 @@ footer{padding:60px 0 40px;border-top:1px solid var(--border);background:var(--b
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none !important}html{scroll-behavior:auto}}
 ```
 
-
 ================================================================================
-## PART 9 - API Routes (chat, contact, booking, download)
+## PART 9 - API Routes
 ================================================================================
-
 ### FILE: src/app/api/chat/route.ts
 ```ts
 import { NextRequest, NextResponse } from "next/server";
@@ -31317,7 +31225,6 @@ export async function GET() {
   });
 }
 ```
-
 ### FILE: src/app/api/chat/system-prompt.ts
 ```ts
 // MozIntelligence AI Chatbot — System Prompt v2
@@ -31635,7 +31542,6 @@ Below is the retrieved knowledge base content relevant to the user's question. U
 
 Now respond to the user's question following ALL the rules above. Remember: clean text, no Markdown, accurate pricing from the table, and end with a [CTA] block.`;
 ```
-
 ### FILE: src/app/api/chat/retrieve.ts
 ```ts
 // Simple keyword-based retrieval for the MozIntelligence knowledge base.
@@ -31730,7 +31636,6 @@ export function getAllKnowledge(): string {
   return knowledgeBase.map(p => `[${p.title}]\n${p.content}`).join("\n\n---\n\n");
 }
 ```
-
 ### FILE: src/app/api/chat/pricing.ts
 ```ts
 // AUTHORITATIVE PRICING TABLE — Single Source of Truth
@@ -31868,7 +31773,6 @@ export function formatPricingTable(): string {
   return output;
 }
 ```
-
 ### FILE: src/app/api/chat/knowledge-base.json
 ```json
 [
@@ -31957,10 +31861,10 @@ export function formatPricingTable(): string {
   },
   {
     "id": "e-commerce-tracking-attribution-review",
-    "title": "E-Commerce Tracking & Attribution Review",
+    "title": "Marketing Measurement & Attribution Review",
     "category": "Part 2 - Specialized Add-On Packages",
     "url": "/e-commerce-tracking-attribution-review",
-    "content": "Part 2 - Specialized Add-On Packages -> E-Commerce Tracking & Attribution Review\nURL: /e-commerce-tracking-attribution-review\n\nSpecialized Add-On - Package 08: E-Commerce Tracking & Attribution Review\nMAKE YOUR MARKETING DATA RELIABLE AGAIN. Make your marketing data more reliable before making your next growth decision.\nStarting at $450. One-time investment - Delivered in 7-10 business days.\n\nAFTER THIS REVIEW, YOU WILL KNOW:\n- Which Data You Can Trust: how Shopify, GA4, Meta, and Google numbers differ and which source is appropriate for each decision.\n- Where Tracking Is Breaking: missing purchase events, duplicate conversions, incorrect values, currency errors, broken event parameters.\n- Why Platform Numbers Differ: attribution windows, consent, browser privacy, cross-device journeys, platform reporting rules.\n- Whether Conversions Are Double-Counted: whether browser and server-side events are both counting the same purchase.\n- Which Traffic Sources Are Misclassified: paid, email, referral, or campaign traffic appearing as Direct, Organic, or Unassigned.\n- What Needs To Be Fixed First: a prioritized correction roadmap for developer, GTM specialist, or agency.\n\n6 MARKETING MEASUREMENT ANALYSES:\n1. Shopify, GA4 & Ad Platform Reconciliation - Objective: Explain Why Your Numbers Do Not Match. Compare Shopify orders/revenue with GA4, Meta, Google. Define Shopify as the store-sales baseline.\n2. Pixel & Conversion Event Health - Objective: Verify Important Events Are Firing Correctly. Review view_item, add_to_cart, begin_checkout, purchase, transaction IDs, values, currency.\n3. CAPI & Server-Side Tracking Review - Objective: Check Browser and Server-Side Signal Quality. Event IDs, Event Match Quality, deduplication.\n4. UTM & Source/Medium Tracking Review - Objective: Improve Traffic-Source Classification. Consistent UTM naming, paid/email appearing as Direct.\n5. Attribution Difference & Privacy Limitation Review - Objective: Explain Limits Behind Reported Performance. iOS privacy, consent, attribution windows, click vs view-through.\n6. Tracking Correction Roadmap - Objective: Turn Findings Into an Action Plan. Each issue with impact, correction, responsible party, validation. Priority levels: Critical/High/Medium/Low.\n\nWHAT YOU WILL RECEIVE (8 deliverables):\n01 Marketing Measurement Report\n02 Platform Reconciliation Matrix (Shopify, GA4, Meta, Google side-by-side)\n03 Event Tracking Health Summary\n04 Attribution & Privacy Limitations Map\n05 Prioritized Tracking Correction Roadmap\n06 Measurement Decision Guide (which data source for store orders, funnel, campaign attribution, profitability, technical validation)\n07 45-Minute Review Call\n08 Limited Clarification Support (2 weeks, 3 follow-up questions by email)\n\nOPTIONAL UPGRADES:\n- Optional Tracking Implementation & Repair: GTM config, GA4 event repair, Meta Pixel correction, CAPI setup, event deduplication, Google Ads conversion setup, UTM framework, test-order validation, tracking docs. Implementation/coding/server-side not included in audit unless separately scoped.\n- Optional Measurement Dashboard: Shopify order baseline, GA4 purchase tracking, platform conversion comparison, revenue reconciliation, tracking issue monitoring, channel data-quality indicators, custom KPI views.\n\nFAQ:\n- Who is this for: e-commerce brands using Shopify, GA4, Meta, Google Ads whose reported numbers do not align.\n- Platforms included: Shopify, GA4, Google Tag Manager, and up to two major platforms (Meta Ads, Google Ads, TikTok Ads, Klaviyo). Additional platforms may require custom quote.\n- Will numbers match exactly: Not necessarily. Different attribution rules, windows, consent. Goal is to explain differences and make data more reliable.\n- Implementation included: No. Findings, recommendations, validation steps, handoff roadmap. Implementation is separate.\n- Ad management included: No. This is measurement/attribution review, not paid-media management.\n- Data access: Shopify, GA4, GTM, Meta Events Manager, Meta Ads Manager, Google Ads, tracking docs.\n- Timeline: 7-10 business days after access and data are available.\n"
+    "content": "Part 2 - Specialized Add-On Packages -> Marketing Measurement & Attribution Review\nURL: /e-commerce-tracking-attribution-review\n\nSpecialized Add-On - Package 08: Marketing Measurement & Attribution Review\nKNOW WHETHER YOUR MARKETING DATA CAN BE TRUSTED. Shopify, GA4, Meta, and Google can report different orders, revenue, and conversions. This review identifies tracking gaps, duplicate signals, attribution differences, and the technical fixes required to make your marketing data more reliable.\nStarting at $450. One-time investment - Delivered in 7-10 business days.\n\nSCOPE - WHAT THIS REVIEW COVERS:\nPurpose: To evaluate whether your Shopify, GA4, and advertising-platform tracking is capturing and attributing conversions consistently.\n\nPROBLEMS SOLVED:\n- Shopify, GA4, Meta, and Google numbers do not match\n- Purchase events are missing or duplicated\n- Marketing traffic is appearing as Direct or Unassigned\n- Pixel, GTM, or server-side events are unreliable\n- Ad platforms are reporting more or fewer conversions than the store\n- You do not know which data source to trust\n\nDECISIONS SUPPORTED:\n- Which data source should be used as the store-sales baseline\n- Whether your ad performance reports are inflated or incomplete\n- Which tracking issues need immediate correction\n- Whether your business is ready for marketing scaling\n- What your developer or agency should fix first\n\nHERO METRICS (illustrative example - actual findings depend on tracking data):\n- Shopify Orders: 100\n- GA4 Purchases: 92\n- Meta-Attributed: 65\n- Tracking Gap: Needs Review\n\n6 MARKETING MEASUREMENT ANALYSES:\n1. Shopify, GA4 & Ad Platform Reconciliation - Objective: Explain Why Your Numbers Do Not Match. Compare Shopify orders/revenue with GA4, Meta, Google. Define Shopify as the store-sales baseline.\n2. Pixel & Conversion Event Health - Objective: Verify Important Events Are Firing Correctly. Review view_item, add_to_cart, begin_checkout, purchase, transaction IDs, values, currency.\n3. CAPI & Server-Side Tracking Review - Objective: Check Browser and Server-Side Signal Quality. Event IDs, Event Match Quality, deduplication.\n4. UTM & Source/Medium Tracking Review - Objective: Improve Traffic-Source Classification. Consistent UTM naming, paid/email appearing as Direct.\n5. Attribution Difference & Privacy Limitation Review - Objective: Explain Limits Behind Reported Performance. iOS privacy, consent, attribution windows, click vs view-through.\n6. Tracking Correction Roadmap - Objective: Turn Findings Into an Action Plan. Each issue with impact, correction, responsible party, validation. Priority levels: Critical/High/Medium/Low.\n\nWHAT YOU WILL RECEIVE (8 deliverables):\n01 Marketing Measurement Report\n02 Platform Reconciliation Matrix (Shopify, GA4, Meta, Google side-by-side)\n03 Event Tracking Health Summary\n04 Attribution & Privacy Limitations Map\n05 Prioritized Tracking Correction Roadmap\n06 Measurement Decision Guide (which data source for store orders, funnel, campaign attribution, profitability, technical validation)\n07 45-Minute Review Call\n08 Limited Clarification Support (2 weeks, 3 follow-up questions by email)\n\nOPTIONAL UPGRADES:\n- Optional Tracking Implementation & Repair: GTM config, GA4 event repair, Meta Pixel correction, CAPI setup, event deduplication, Google Ads conversion setup, UTM framework, test-order validation, tracking docs. Implementation/coding/server-side not included in audit unless separately scoped.\n- Optional Measurement Dashboard: Shopify order baseline, GA4 purchase tracking, platform conversion comparison, revenue reconciliation, tracking issue monitoring, channel data-quality indicators, custom KPI views.\n\nFAQ:\n- Who is this for: e-commerce brands using Shopify, GA4, Meta, Google Ads whose reported numbers do not align.\n- Platforms included: Shopify, GA4, Google Tag Manager, and up to two major platforms (Meta Ads, Google Ads, TikTok Ads, Klaviyo). Additional platforms may require custom quote.\n- Will numbers match exactly: Not necessarily. Different attribution rules, windows, consent. Goal is to explain differences and make data more reliable.\n- Implementation included: No. Findings, recommendations, validation steps, handoff roadmap. Implementation is separate.\n- Ad management included: No. This is measurement/attribution review, not paid-media management.\n- Data access: Shopify, GA4, GTM, Meta Events Manager, Meta Ads Manager, Google Ads, tracking docs.\n- Timeline: 7-10 business days after access and data are available.\n"
   },
   {
     "id": "basic-setup",
@@ -31985,7 +31889,6 @@ export function formatPricingTable(): string {
   }
 ]
 ```
-
 ### FILE: src/app/api/contact/route.ts
 ```ts
 import { NextResponse } from "next/server";
@@ -32123,7 +32026,6 @@ export async function POST(request: Request) {
   }
 }
 ```
-
 ### FILE: src/app/api/booking/route.ts
 ```ts
 import { NextRequest, NextResponse } from "next/server";
@@ -32223,7 +32125,6 @@ export async function GET() {
   return NextResponse.json({ status: "ok", service: "MozIntelligence Booking API" });
 }
 ```
-
 ### FILE: src/app/api/download-full-code/route.ts
 ```ts
 import { NextRequest, NextResponse } from "next/server";
@@ -32257,11 +32158,9 @@ export async function GET(_req: NextRequest) {
 }
 ```
 
-
 ================================================================================
 ## PART 10 - Custom Components
 ================================================================================
-
 ### FILE: src/components/CaseStudiesSection.tsx
 ```tsx
 "use client";
@@ -32765,7 +32664,6 @@ export default function CaseStudiesSection() {
   );
 }
 ```
-
 ### FILE: src/components/FaqSection.tsx
 ```tsx
 "use client";
@@ -32958,7 +32856,6 @@ export function FaqSection() {
   );
 }
 ```
-
 ### FILE: src/components/PrinciplesSection.tsx
 ```tsx
 /* ==========================================================================
@@ -33183,7 +33080,6 @@ export function PrinciplesSection() {
   );
 }
 ```
-
 ### FILE: src/components/TechnicalPortfolioSection.tsx
 ```tsx
 import Image from "next/image";
@@ -33366,7 +33262,6 @@ export function TechnicalPortfolioSection() {
   );
 }
 ```
-
 ### FILE: src/components/WhyDifferentSection.tsx
 ```tsx
 /* ==========================================================================
@@ -33874,7 +33769,6 @@ export function WhyDifferentSection() {
 
 export default WhyDifferentSection;
 ```
-
 ### FILE: src/components/chatbot-widget.tsx
 ```tsx
 "use client";
@@ -34181,7 +34075,6 @@ export function ChatWidget() {
 // without any edits to page.tsx.
 export { ChatWidget as ChatbotWidget };
 ```
-
 ### FILE: src/components/booking-modal.tsx
 ```tsx
 'use client';
@@ -34584,7 +34477,6 @@ export function BookingModal({ isOpen, onClose, defaultPackage }: BookingModalPr
   );
 }
 ```
-
 ### FILE: src/components/site/about-data.ts
 ```ts
 /**
@@ -34632,7 +34524,6 @@ export const aboutSectionData = {
   },
 };
 ```
-
 ### FILE: src/components/site/about-section.tsx
 ```tsx
 import Image from "next/image";
@@ -34858,7 +34749,6 @@ export function AboutSection() {
   );
 }
 ```
-
 ### FILE: src/components/site/contact-footer.tsx
 ```tsx
 "use client";
@@ -35410,7 +35300,6 @@ export function FooterConnectIcon({ icon }: { icon: string }) {
   return Icon ? <Icon className="h-4 w-4" aria-hidden="true" /> : null;
 }
 ```
-
 ### FILE: src/components/site/dashboard-showcase.tsx
 ```tsx
 "use client";
@@ -35745,7 +35634,6 @@ export function DashboardShowcaseSection() {
   );
 }
 ```
-
 ### FILE: src/components/site/platforms-showcase.tsx
 ```tsx
 import Image from "next/image";
@@ -35949,7 +35837,6 @@ export function PlatformsShowcaseSection() {
   );
 }
 ```
-
 ### FILE: src/components/site/quick-proof.tsx
 ```tsx
 "use client";
@@ -36222,7 +36109,6 @@ export function QuickProofSection() {
   );
 }
 ```
-
 ### FILE: src/components/site/reveal.tsx
 ```tsx
 "use client";
@@ -36273,7 +36159,6 @@ export function FadeIn({
   );
 }
 ```
-
 ### FILE: src/components/site/tech-stack.tsx
 ```tsx
 "use client";
@@ -36674,7 +36559,6 @@ function StackChip({ item }: { item: TechItem }) {
   );
 }
 ```
-
 ### FILE: src/components/site/testimonials-data.ts
 ```ts
 /* ================================================================
@@ -36757,7 +36641,6 @@ export const testimonialsData: TestimonialsData = {
   ],
 };
 ```
-
 ### FILE: src/components/site/testimonials.tsx
 ```tsx
 import { MoveRight } from "lucide-react";
@@ -36885,7 +36768,6 @@ function TestimonialCard({ t }: { t: Testimonial }) {
   );
 }
 ```
-
 ### FILE: src/components/site/what-we-do.tsx
 ```tsx
 "use client";
@@ -37324,11 +37206,9 @@ function FadeStep({ index, children }: { index: number; children: ReactNode }) {
 }
 ```
 
-
 ================================================================================
 ## PART 11 - Lib & Hooks
 ================================================================================
-
 ### FILE: src/lib/utils.ts
 ```ts
 import { clsx, type ClassValue } from "clsx"
@@ -37338,7 +37218,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 ```
-
 ### FILE: src/lib/db.ts
 ```ts
 import { PrismaClient } from '@prisma/client'
@@ -37355,7 +37234,6 @@ export const db =
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = db
 ```
-
 ### FILE: src/hooks/use-mobile.ts
 ```ts
 import * as React from "react"
@@ -37378,7 +37256,6 @@ export function useIsMobile() {
   return !!isMobile
 }
 ```
-
 ### FILE: src/hooks/use-toast.ts
 ```ts
 "use client"
@@ -37577,11 +37454,9 @@ function useToast() {
 export { useToast, toast }
 ```
 
-
 ================================================================================
 ## PART 12 - shadcn/ui Components
 ================================================================================
-
 ### FILE: src/components/ui/accordion.tsx
 ```tsx
 "use client"
@@ -37651,7 +37526,6 @@ function AccordionContent({
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
 ```
-
 ### FILE: src/components/ui/alert-dialog.tsx
 ```tsx
 "use client"
@@ -37812,7 +37686,6 @@ export {
   AlertDialogCancel,
 }
 ```
-
 ### FILE: src/components/ui/alert.tsx
 ```tsx
 import * as React from "react"
@@ -37882,7 +37755,6 @@ function AlertDescription({
 
 export { Alert, AlertTitle, AlertDescription }
 ```
-
 ### FILE: src/components/ui/aspect-ratio.tsx
 ```tsx
 "use client"
@@ -37897,7 +37769,6 @@ function AspectRatio({
 
 export { AspectRatio }
 ```
-
 ### FILE: src/components/ui/avatar.tsx
 ```tsx
 "use client"
@@ -37954,7 +37825,6 @@ function AvatarFallback({
 
 export { Avatar, AvatarImage, AvatarFallback }
 ```
-
 ### FILE: src/components/ui/badge.tsx
 ```tsx
 import * as React from "react"
@@ -38004,7 +37874,6 @@ function Badge({
 
 export { Badge, badgeVariants }
 ```
-
 ### FILE: src/components/ui/breadcrumb.tsx
 ```tsx
 import * as React from "react"
@@ -38117,7 +37986,6 @@ export {
   BreadcrumbEllipsis,
 }
 ```
-
 ### FILE: src/components/ui/button.tsx
 ```tsx
 import * as React from "react"
@@ -38180,7 +38048,6 @@ function Button({
 
 export { Button, buttonVariants }
 ```
-
 ### FILE: src/components/ui/calendar.tsx
 ```tsx
 "use client"
@@ -38397,7 +38264,6 @@ function CalendarDayButton({
 
 export { Calendar, CalendarDayButton }
 ```
-
 ### FILE: src/components/ui/card.tsx
 ```tsx
 import * as React from "react"
@@ -38493,7 +38359,6 @@ export {
   CardContent,
 }
 ```
-
 ### FILE: src/components/ui/carousel.tsx
 ```tsx
 "use client"
@@ -38738,7 +38603,6 @@ export {
   CarouselNext,
 }
 ```
-
 ### FILE: src/components/ui/chart.tsx
 ```tsx
 "use client"
@@ -39095,7 +38959,6 @@ export {
   ChartStyle,
 }
 ```
-
 ### FILE: src/components/ui/checkbox.tsx
 ```tsx
 "use client"
@@ -39131,7 +38994,6 @@ function Checkbox({
 
 export { Checkbox }
 ```
-
 ### FILE: src/components/ui/collapsible.tsx
 ```tsx
 "use client"
@@ -39168,7 +39030,6 @@ function CollapsibleContent({
 
 export { Collapsible, CollapsibleTrigger, CollapsibleContent }
 ```
-
 ### FILE: src/components/ui/command.tsx
 ```tsx
 "use client"
@@ -39356,7 +39217,6 @@ export {
   CommandSeparator,
 }
 ```
-
 ### FILE: src/components/ui/context-menu.tsx
 ```tsx
 "use client"
@@ -39612,7 +39472,6 @@ export {
   ContextMenuRadioGroup,
 }
 ```
-
 ### FILE: src/components/ui/dialog.tsx
 ```tsx
 "use client"
@@ -39759,7 +39618,6 @@ export {
   DialogTrigger,
 }
 ```
-
 ### FILE: src/components/ui/drawer.tsx
 ```tsx
 "use client"
@@ -39898,7 +39756,6 @@ export {
   DrawerDescription,
 }
 ```
-
 ### FILE: src/components/ui/dropdown-menu.tsx
 ```tsx
 "use client"
@@ -40159,7 +40016,6 @@ export {
   DropdownMenuSubContent,
 }
 ```
-
 ### FILE: src/components/ui/form.tsx
 ```tsx
 "use client"
@@ -40330,7 +40186,6 @@ export {
   FormField,
 }
 ```
-
 ### FILE: src/components/ui/hover-card.tsx
 ```tsx
 "use client"
@@ -40378,7 +40233,6 @@ function HoverCardContent({
 
 export { HoverCard, HoverCardTrigger, HoverCardContent }
 ```
-
 ### FILE: src/components/ui/input-otp.tsx
 ```tsx
 "use client"
@@ -40459,7 +40313,6 @@ function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
 
 export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator }
 ```
-
 ### FILE: src/components/ui/input.tsx
 ```tsx
 import * as React from "react"
@@ -40484,7 +40337,6 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
 
 export { Input }
 ```
-
 ### FILE: src/components/ui/label.tsx
 ```tsx
 "use client"
@@ -40512,7 +40364,6 @@ function Label({
 
 export { Label }
 ```
-
 ### FILE: src/components/ui/menubar.tsx
 ```tsx
 "use client"
@@ -40792,7 +40643,6 @@ export {
   MenubarSubContent,
 }
 ```
-
 ### FILE: src/components/ui/navigation-menu.tsx
 ```tsx
 import * as React from "react"
@@ -40964,7 +40814,6 @@ export {
   navigationMenuTriggerStyle,
 }
 ```
-
 ### FILE: src/components/ui/pagination.tsx
 ```tsx
 import * as React from "react"
@@ -41095,7 +40944,6 @@ export {
   PaginationEllipsis,
 }
 ```
-
 ### FILE: src/components/ui/popover.tsx
 ```tsx
 "use client"
@@ -41147,7 +40995,6 @@ function PopoverAnchor({
 
 export { Popover, PopoverTrigger, PopoverContent, PopoverAnchor }
 ```
-
 ### FILE: src/components/ui/progress.tsx
 ```tsx
 "use client"
@@ -41182,7 +41029,6 @@ function Progress({
 
 export { Progress }
 ```
-
 ### FILE: src/components/ui/radio-group.tsx
 ```tsx
 "use client"
@@ -41231,7 +41077,6 @@ function RadioGroupItem({
 
 export { RadioGroup, RadioGroupItem }
 ```
-
 ### FILE: src/components/ui/resizable.tsx
 ```tsx
 "use client"
@@ -41291,7 +41136,6 @@ function ResizableHandle({
 
 export { ResizablePanelGroup, ResizablePanel, ResizableHandle }
 ```
-
 ### FILE: src/components/ui/scroll-area.tsx
 ```tsx
 "use client"
@@ -41353,7 +41197,6 @@ function ScrollBar({
 
 export { ScrollArea, ScrollBar }
 ```
-
 ### FILE: src/components/ui/select.tsx
 ```tsx
 "use client"
@@ -41542,7 +41385,6 @@ export {
   SelectValue,
 }
 ```
-
 ### FILE: src/components/ui/separator.tsx
 ```tsx
 "use client"
@@ -41574,7 +41416,6 @@ function Separator({
 
 export { Separator }
 ```
-
 ### FILE: src/components/ui/sheet.tsx
 ```tsx
 "use client"
@@ -41717,7 +41558,6 @@ export {
   SheetDescription,
 }
 ```
-
 ### FILE: src/components/ui/sidebar.tsx
 ```tsx
 "use client"
@@ -42447,7 +42287,6 @@ export {
   useSidebar,
 }
 ```
-
 ### FILE: src/components/ui/skeleton.tsx
 ```tsx
 import { cn } from "@/lib/utils"
@@ -42464,7 +42303,6 @@ function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
 
 export { Skeleton }
 ```
-
 ### FILE: src/components/ui/slider.tsx
 ```tsx
 "use client"
@@ -42531,7 +42369,6 @@ function Slider({
 
 export { Slider }
 ```
-
 ### FILE: src/components/ui/sonner.tsx
 ```tsx
 "use client"
@@ -42560,7 +42397,6 @@ const Toaster = ({ ...props }: ToasterProps) => {
 
 export { Toaster }
 ```
-
 ### FILE: src/components/ui/switch.tsx
 ```tsx
 "use client"
@@ -42595,7 +42431,6 @@ function Switch({
 
 export { Switch }
 ```
-
 ### FILE: src/components/ui/table.tsx
 ```tsx
 "use client"
@@ -42715,7 +42550,6 @@ export {
   TableCaption,
 }
 ```
-
 ### FILE: src/components/ui/tabs.tsx
 ```tsx
 "use client"
@@ -42785,7 +42619,6 @@ function TabsContent({
 
 export { Tabs, TabsList, TabsTrigger, TabsContent }
 ```
-
 ### FILE: src/components/ui/textarea.tsx
 ```tsx
 import * as React from "react"
@@ -42807,7 +42640,6 @@ function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
 
 export { Textarea }
 ```
-
 ### FILE: src/components/ui/toast.tsx
 ```tsx
 "use client"
@@ -42940,7 +42772,6 @@ export {
   ToastAction,
 }
 ```
-
 ### FILE: src/components/ui/toaster.tsx
 ```tsx
 "use client"
@@ -42979,7 +42810,6 @@ export function Toaster() {
   )
 }
 ```
-
 ### FILE: src/components/ui/toggle-group.tsx
 ```tsx
 "use client"
@@ -43056,7 +42886,6 @@ function ToggleGroupItem({
 
 export { ToggleGroup, ToggleGroupItem }
 ```
-
 ### FILE: src/components/ui/toggle.tsx
 ```tsx
 "use client"
@@ -43107,7 +42936,6 @@ function Toggle({
 
 export { Toggle, toggleVariants }
 ```
-
 ### FILE: src/components/ui/tooltip.tsx
 ```tsx
 "use client"
@@ -43172,8 +43000,6 @@ function TooltipContent({
 
 export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }
 ```
-
-
 ================================================================================
 END OF CODEBASE
 ================================================================================
