@@ -51,6 +51,10 @@ a { text-decoration: none; color: inherit; }
 .analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
 .analysis-text p { font-size: 15px; color: var(--muted) !important; margin-bottom: 16px; }
 .analysis-text p strong { color: var(--text) !important; font-weight: 700; }
+.analysis-text ul { margin: 8px 0 12px 18px; font-size: 14.5px; color: var(--muted) !important; line-height: 1.8; }
+.analysis-text ul li { color: var(--muted) !important; }
+.analysis-text ul li strong { color: var(--text) !important; font-weight: 700; }
+.analysis-text strong { color: var(--text) !important; font-weight: 700; }
 .insight-box { background: var(--surface-2); border-left: 4px solid var(--accent); padding: 16px; border-radius: 0 8px 8px 0; margin-top: 16px; font-size: 14px; }
 .insight-box b { color: var(--text) !important; }
 .chart-mock { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
