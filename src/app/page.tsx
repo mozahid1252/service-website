@@ -248,9 +248,9 @@ const ADD_ON_PACKAGES = [
   },
   {
     name: 'Funnel & Conversion Audit',
-    price: '$250 – $500 · 7–10 Days',
+    price: 'Starting at $650 · 7–10 Days',
     problem: '"Traffic is there but nobody\'s buying."',
-    promise: 'You will know exactly where visitors are abandoning (and why), which fixes will have the highest impact, and have a prioritized action list to increase conversion by 20–40% using your existing traffic.',
+    promise: 'You will know where customers are dropping off, whether the issue is traffic or experience, which device or segment converts poorly, and receive a prioritized, testable conversion improvement plan.',
     cssClass: 'cro',
     route: '/cro-audit',
   },
