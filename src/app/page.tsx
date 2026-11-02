@@ -247,10 +247,10 @@ const ADD_ON_PACKAGES = [
     route: '/product-portfolio-audit',
   },
   {
-    name: 'Funnel & Conversion Audit',
-    price: 'Starting at $650 · 7–10 Days',
+    name: 'E-Commerce CRO Audit',
+    price: 'Starting at $900 · 10–15 Days',
     problem: '"Traffic is there but nobody\'s buying."',
-    promise: 'You will know where customers are dropping off, whether the issue is traffic or experience, which device or segment converts poorly, and receive a prioritized, testable conversion improvement plan.',
+    promise: 'You will know where customers are dropping off across 11 CRO analyses, whether the issue is traffic or experience, which device or segment converts poorly, and receive a prioritized, testable conversion improvement roadmap.',
     cssClass: 'cro',
     route: '/cro-audit',
   },
@@ -2218,7 +2218,7 @@ function ServicesSection() {
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Marketing Performance & Profitability Audit</strong>: Implement campaign tracking, attribution setup, or budget monitoring.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Customer Retention & LTV Audit</strong>: Implement retention flows, customer segments, or re-engagement campaigns.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Product Profitability & Portfolio Audit</strong>: Implement product bundling, cross-sell setup, or product merchandising changes.</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Funnel & Conversion Audit</strong>: Implement recommended changes to your product pages, cart, checkout, or conversion flow.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">E-Commerce CRO Audit</strong>: Implement recommended changes to your product pages, cart, checkout, or conversion flow.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">E-Commerce Profitability Audit</strong>: Implement margin tracking, product-level profitability monitoring, or profit alerts.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Operations Efficiency Audit</strong>: Implement workflow automation, operational tracking, or cost monitoring.</span></li>
                 </ul>

@@ -746,10 +746,10 @@ const ADD_ON_PACKAGES = [
     route: '/product-portfolio-audit',
   },
   {
-    name: 'Funnel & Conversion Audit',
-    price: 'Starting at $650 · 7–10 Days',
+    name: 'E-Commerce CRO Audit',
+    price: 'Starting at $900 · 10–15 Days',
     problem: '"Traffic is there but nobody\'s buying."',
-    promise: 'You will know where customers are dropping off, whether the issue is traffic or experience, which device or segment converts poorly, and receive a prioritized, testable conversion improvement plan.',
+    promise: 'You will know where customers are dropping off across 11 CRO analyses, whether the issue is traffic or experience, which device or segment converts poorly, and receive a prioritized, testable conversion improvement roadmap.',
     cssClass: 'cro',
     route: '/cro-audit',
   },
@@ -2717,7 +2717,7 @@ function ServicesSection() {
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Marketing Performance & Profitability Audit</strong>: Implement campaign tracking, attribution setup, or budget monitoring.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Customer Retention & LTV Audit</strong>: Implement retention flows, customer segments, or re-engagement campaigns.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Product Profitability & Portfolio Audit</strong>: Implement product bundling, cross-sell setup, or product merchandising changes.</span></li>
-                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Funnel & Conversion Audit</strong>: Implement recommended changes to your product pages, cart, checkout, or conversion flow.</span></li>
+                  <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">E-Commerce CRO Audit</strong>: Implement recommended changes to your product pages, cart, checkout, or conversion flow.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">E-Commerce Profitability Audit</strong>: Implement margin tracking, product-level profitability monitoring, or profit alerts.</span></li>
                   <li className="flex items-start gap-2 text-sm text-[#F0F4F8]"><Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> <span><strong className="text-white">Operations Efficiency Audit</strong>: Implement workflow automation, operational tracking, or cost monitoring.</span></li>
                 </ul>
@@ -13366,8 +13366,8 @@ export default function Page() {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Funnel & Conversion Audit | Moz Intelligence',
-  description: 'Find exactly where visitors are leaving your site without buying. A deep-dive review mapping funnel drop-offs, cart abandonment, and checkout friction.',
+  title: 'E-Commerce CRO Audit | Moz Intelligence',
+  description: 'A data-informed CRO audit that analyses the full customer journey and gives you a prioritized roadmap for improving conversion across landing pages, product pages, navigation, cart, checkout, and mobile.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -13425,7 +13425,7 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
       <li><a href="#outcomes" style="color:var(--muted); font-size:14px;">Outcomes</a></li>
       <li><a href="#analysis" style="color:var(--muted); font-size:14px;">Analysis</a></li>
       <li><a href="#deliverables" style="color:var(--muted); font-size:14px;">Deliverables</a></li>
-      <li><a href="#dashboard-upgrade" style="color:var(--muted); font-size:14px;">Dashboard</a></li>
+      <li><a href="#dashboard-upgrade" style="color:var(--muted); font-size:14px;">Add-Ons</a></li>
       <li><a href="#faq" style="color:var(--muted); font-size:14px;">FAQ</a></li>
       <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
       <li><a href="/" style="color:var(--muted); font-size:14px;">Back to MozIntelligence</a></li>
@@ -13441,7 +13441,7 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
     <a href="#outcomes">Outcomes</a>
     <a href="#analysis">Analysis</a>
     <a href="#deliverables">Deliverables</a>
-    <a href="#dashboard-upgrade">Dashboard</a>
+    <a href="#dashboard-upgrade">Add-Ons</a>
     <a href="#faq">FAQ</a>
     <a href="#pricing">Pricing</a>
     <a href="/">Back to MozIntelligence</a>
@@ -13451,11 +13451,11 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 
 <header class="hero">
   <div class="container">
-    <div class="eyebrow" style="margin: 0 auto;">Specialized Add-On · Package 04:Funnel & Conversion Audit</div>
-    <h1>FIND EXACTLY WHERE YOUR SITE IS <em>LEAKING SALES.</em></h1>
-    <p>The average e-commerce conversion rate is 1.5% to 3%. If yours is below that, you're leaving revenue on the table from traffic you're already paying for. This audit maps every step of your customer's journey - from landing page to checkout.</p>
+    <div class="eyebrow" style="margin: 0 auto;">Specialized Add-On · Package 04:E-Commerce CRO Audit</div>
+    <h1>FIND WHAT IS PREVENTING YOUR VISITORS FROM <em>BECOMING CUSTOMERS.</em></h1>
+    <p>Your traffic may be growing, but conversion problems can exist across your landing pages, product pages, navigation, cart, checkout, offer, and mobile experience. The E-Commerce CRO Audit analyses the full customer journey and gives you a prioritized roadmap for improving conversion.</p>
     <div class="hero-cta">
-      <a href="#pricing" class="btn btn-primary">Audit My Conversion Funnel</a>
+      <a href="#pricing" class="btn btn-primary">Audit My E-Commerce Conversion</a>
       <a href="#scope" class="btn btn-outline" style="border-color:var(--border-dark);">What's Covered</a>
     </div>
   </div>
@@ -13466,24 +13466,34 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
   <div class="container">
     <div class="header-center">
       <div class="eyebrow">The Scope</div>
-      <h2>What This Audit Covers</h2>
-      <p>Mapping exactly where revenue leaks out of your store.</p>
+      <h2>What This Audit Helps Solve</h2>
+      <p>Common conversion problems this audit is designed to diagnose.</p>
     </div>
     <div class="info-grid">
       <div class="info-card scroll-reveal">
-        <div class="info-icon"><i class="fa-solid fa-filter"></i></div>
-        <h4>The Purpose</h4>
-        <p>To identify the exact pages and steps where visitors abandon the purchase journey and where the highest-impact conversion opportunity exists.</p>
+        <div class="info-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h4>Traffic vs Revenue Gap</h4>
+        <p>Traffic is increasing, but revenue remains flat. Visitors view products but rarely add them to the cart.</p>
       </div>
       <div class="info-card scroll-reveal">
         <div class="info-icon"><i class="fa-solid fa-cart-arrow-down"></i></div>
-        <h4>Problems Solved</h4>
-        <p>Low conversion rates, high cart abandonment, weak mobile conversion, landing-page message gaps, and checkout friction.</p>
+        <h4>Cart & Checkout Abandonment</h4>
+        <p>High abandonment rates after add-to-cart or during checkout. Mobile conversion is significantly lower than desktop.</p>
       </div>
       <div class="info-card scroll-reveal">
-        <div class="info-icon"><i class="fa-solid fa-wrench"></i></div>
-        <h4>Decisions Supported</h4>
-        <p>UX redesigns, checkout flow simplification, message-match fixes, device-specific optimizations, and prioritized testing.</p>
+        <div class="info-icon"><i class="fa-solid fa-route"></i></div>
+        <h4>Unclear Priorities</h4>
+        <p>Paid traffic reaches the store but does not convert. The internal team is unsure which conversion problem to fix first.</p>
+      </div>
+      <div class="info-card scroll-reveal">
+        <div class="info-icon"><i class="fa-solid fa-window-restore"></i></div>
+        <h4>Message-Match Gaps</h4>
+        <p>Marketing offers do not match the landing-page experience. Customers are uncertain about pricing, shipping, returns, or product quality.</p>
+      </div>
+      <div class="info-card scroll-reveal">
+        <div class="info-icon"><i class="fa-solid fa-compass"></i></div>
+        <h4>Navigation Friction</h4>
+        <p>Navigation makes product discovery difficult. Previous CRO changes were made without reliable data or testing.</p>
       </div>
     </div>
   </div>
@@ -13498,90 +13508,97 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
       <p>Where customers are dropping off, whether the issue is traffic or experience, and what to improve first.</p>
     </div>
     <div class="outcomes-grid">
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-filter"></i></div><h4>Where Customers Are Dropping Off</h4><p>Understand how visitors move from landing page to product page, cart, checkout, and purchase.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-crosshairs"></i></div><h4>Which Funnel Stage Needs Attention First</h4><p>Separate the highest-impact bottleneck from minor issues that may not materially affect revenue.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-traffic-light"></i></div><h4>Whether the Problem Is Traffic or Experience</h4><p>Identify whether low conversion is caused by traffic quality, weak messaging, product-page friction, offer problems, or checkout issues.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-window-restore"></i></div><h4>Whether Your Pages Match Customer Intent</h4><p>Find gaps between the campaign promise and the landing-page or product-page experience.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-mobile-screen"></i></div><h4>Which Device or Segment Converts Poorly</h4><p>Compare mobile, desktop, new visitors, returning visitors, traffic sources, campaigns, and products where reliable data is available.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-arrow-up"></i></div><h4>What to Improve First</h4><p>Receive a prioritized action plan based on potential impact, implementation effort, available evidence, and testing requirements.</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-filter"></i></div><h4>Where Customers Are Dropping Off</h4><p>Understand how visitors move from traffic source to landing page, product page, cart, checkout, and completed purchase.</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-crosshairs"></i></div><h4>Which Funnel Stage Needs Attention First</h4><p>Identify the highest-impact bottleneck instead of spending time on low-impact cosmetic changes.</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-traffic-light"></i></div><h4>Whether the Problem Is Traffic or Experience</h4><p>Determine whether low conversion is related to traffic quality, messaging, product presentation, offer structure, or checkout friction.</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-window-restore"></i></div><h4>Whether Your Pages Match Customer Intent</h4><p>Find gaps between the campaign promise, landing page, product page, and checkout experience.</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-mobile-screen"></i></div><h4>Which Devices and Segments Perform Poorly</h4><p>Compare mobile, desktop, new visitors, returning visitors, traffic sources, campaigns, products, and geographic segments where reliable data is available.</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-arrow-up"></i></div><h4>What Should Be Improved First</h4><p>Receive a prioritized roadmap based on potential impact, implementation effort, evidence quality, and testing requirements.</p></div>
     </div>
   </div>
 </section>
 
-<!-- Funnel & Conversion Analyses -->
+<!-- CRO Analyses -->
 <section id="analysis" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">Funnel & Conversion Analyses</div>
-      <h2>6 Funnel & Conversion Analyses</h2>
-      <p>Each area is reviewed separately and combined into one prioritized conversion improvement plan.</p>
+      <div class="eyebrow">What We Analyze</div>
+      <h2>11 Comprehensive CRO Analyses</h2>
+      <p>Each area is reviewed independently and combined into one prioritized conversion improvement plan.</p>
     </div>
 
-    <!-- Analysis 1 -->
+    <!-- Analysis 01 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">1</div><div class="analysis-title"><h3>Traffic Quality & Landing-Page Performance</h3><span>Objective: Determine Whether Visitors Arrive With the Right Intent</span></div></div>
+      <div class="analysis-header"><div class="analysis-num">1</div><div class="analysis-title"><h3>Measurement Readiness</h3><span>Confirm That Your Funnel Data Can Support CRO Decisions</span></div></div>
       <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> Traffic source, campaign, landing page, sessions, engagement signals, conversion rate, revenue, and available customer-quality data.</p>
-          <p>We review paid, organic, direct, email, and referral traffic, conversion rate by source, landing-page performance, campaign-to-landing-page relationship, new versus returning visitors, mobile versus desktop traffic, high-volume but low-converting traffic, and traffic quality versus acquisition cost.</p>
+          <p><strong>Data Analyzed:</strong> Shopify order data, GA4 funnel events, landing-page views, product views, add-to-cart events, checkout events, purchase events, missing or duplicate events, Shopify and GA4 purchase consistency, and transaction value data.</p>
+          <p>Before interpreting conversion performance, we verify whether the available data is reliable enough for analysis. You will know which findings are supported by reliable data and which require tracking improvement before a confident decision can be made.</p>
+          <div class="insight-box" style="background: var(--warning-light); border-color: rgba(217,119,6,0.2);"><b>Note:</b> Full GTM, GA4, Pixel, CAPI, or server-side tracking implementation is not included in this audit. These services can be scoped separately through the E-Commerce Tracking & Attribution Audit.</div>
+        </div>
+        <div class="chart-mock">
+          <div class="kpi-grid">
+            <div class="kpi-card"><div class="kpi-label">Shopify Orders</div><div class="kpi-val" style="color: var(--success);">100</div></div>
+            <div class="kpi-card"><div class="kpi-label">GA4 Purchases</div><div class="kpi-val" style="color: var(--warning);">92</div></div>
+            <div class="kpi-card" style="grid-column: span 2;"><div class="kpi-label">Data Consistency</div><div class="kpi-val" style="color: var(--warning);">92%</div></div>
+          </div>
+          <div class="bar-chart" style="margin-top: 16px;">
+            <div class="bar-row"><span class="bar-label">Shopify</span><div class="bar-track"><div class="bar-fill success" style="width: 100%;"></div></div><span class="bar-value">100</span></div>
+            <div class="bar-row"><span class="bar-label">GA4</span><div class="bar-track"><div class="bar-fill warning" style="width: 92%;"></div></div><span class="bar-value">92</span></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 02 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">2</div><div class="analysis-title"><h3>Traffic Quality Analysis</h3><span>Identify Which Visitors Arrive With the Right Purchase Intent</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid">
+        <div class="analysis-text">
+          <p><strong>Data Analyzed:</strong> Paid, organic, direct, email, referral, campaign, landing-page, engagement, and conversion data.</p>
+          <p>We review conversion rate by traffic source, high-volume but low-converting traffic, new versus returning visitors, paid versus organic performance, campaign-to-landing-page relationships, mobile versus desktop traffic, traffic quality versus acquisition cost, and source-specific funnel progression.</p>
           <div class="insight-box"><b>Example Insight:</b> “Paid social generates strong landing-page traffic volume but a much lower product-view rate than branded search, suggesting a possible intent or message-match gap.”</div>
           <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Separate traffic-quality problems from on-page conversion problems before changing the page or increasing ad spend.</div>
         </div>
         <div class="chart-mock">
           <div class="bar-chart">
-            <div class="bar-row"><span class="bar-label">Branded Search</span><div class="bar-track"><div class="bar-fill success" style="width: 100%;"></div></div><span class="bar-value">6.8% CVR</span></div>
+            <div class="bar-row"><span class="bar-label">Branded Search</span><div class="bar-track"><div class="bar-fill success" style="width: 100%;"></div></div><span class="bar-value">6.8%</span></div>
             <div class="bar-row"><span class="bar-label">Organic</span><div class="bar-track"><div class="bar-fill" style="width: 60%;"></div></div><span class="bar-value">2.4%</span></div>
             <div class="bar-row"><span class="bar-label">Email</span><div class="bar-track"><div class="bar-fill" style="width: 52%;"></div></div><span class="bar-value">2.0%</span></div>
             <div class="bar-row"><span class="bar-label">Paid Social</span><div class="bar-track"><div class="bar-fill warning" style="width: 18%;"></div></div><span class="bar-value">0.7%</span></div>
           </div>
-          <div class="kpi-grid" style="margin-top: 16px;">
-            <div class="kpi-card"><div class="kpi-label">Best Source</div><div class="kpi-val" style="color: var(--success);">Branded</div></div>
-            <div class="kpi-card"><div class="kpi-label">Intent Gap</div><div class="kpi-val" style="color: var(--danger);">Paid Social</div></div>
-          </div>
         </div>
       </div></div>
     </div>
 
-    <!-- Analysis 2 -->
+    <!-- Analysis 03 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">2</div><div class="analysis-title"><h3>Landing-Page & Message-Match Analysis</h3><span>Objective: Reduce Friction Between the Campaign Promise and the Page Experience</span></div></div>
+      <div class="analysis-header"><div class="analysis-num">3</div><div class="analysis-title"><h3>Landing-Page Audit</h3><span>Improve the First Experience After the Click</span></div></div>
       <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> Campaign message, ad offer, landing-page content, headline, product promise, call-to-action, traffic source, and conversion behaviour.</p>
-          <p>We review ad-to-page message consistency, headline clarity, offer visibility, customer problem and solution clarity, call-to-action visibility, proof and trust elements, price and promotion communication, shipping and return information, page relevance by traffic source, and mobile message hierarchy.</p>
+          <p><strong>Data Analyzed:</strong> Landing-page performance, campaign source, page content, engagement, conversion behaviour, and available user segments.</p>
+          <p>We review headline clarity, above-the-fold experience, offer visibility, CTA placement, customer problem and solution clarity, message hierarchy, trust signals, reviews and social proof, shipping and returns information, mobile layout, and page relevance by traffic source.</p>
           <div class="insight-box"><b>Example Insight:</b> “The campaign promotes a specific product benefit, but the landing page leads with general brand information. Visitors must search for the offer that brought them to the page.”</div>
-          <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Align the headline, offer, proof, and call-to-action with the intent of the traffic source.</div>
+          <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Align the headline, offer, proof, and CTA with the intent of the traffic source.</div>
         </div>
         <div class="chart-mock">
           <div class="funnel-wrapper">
-            <div class="funnel-step funnel-1">
-              <span class="funnel-label">Ad Click</span>
-              <span class="funnel-value">8.5k</span>
-            </div>
-            <div class="funnel-step funnel-2">
-              <span class="funnel-label">Landing View</span>
-              <span class="funnel-value">7.2k</span>
-            </div>
-            <div class="funnel-step funnel-3">
-              <span class="funnel-label">Offer Found</span>
-              <span class="funnel-value">3.1k</span>
-            </div>
-            <div class="funnel-step funnel-4">
-              <span class="funnel-label">CTA Click</span>
-              <span class="funnel-value">1.4k</span>
-            </div>
+            <div class="funnel-step funnel-1"><span class="funnel-label">Ad Click</span><span class="funnel-value">8.5k</span></div>
+            <div class="funnel-step funnel-2"><span class="funnel-label">Landing View</span><span class="funnel-value">7.2k</span></div>
+            <div class="funnel-step funnel-3"><span class="funnel-label">Offer Found</span><span class="funnel-value">3.1k</span></div>
+            <div class="funnel-step funnel-4"><span class="funnel-label">CTA Click</span><span class="funnel-value">1.4k</span></div>
           </div>
         </div>
       </div></div>
     </div>
 
-    <!-- Analysis 3 -->
+    <!-- Analysis 04 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">3</div><div class="analysis-title"><h3>Product-Page Conversion Analysis</h3><span>Objective: Understand Why Product Views Are Not Becoming Add-to-Carts</span></div></div>
+      <div class="analysis-header"><div class="analysis-num">4</div><div class="analysis-title"><h3>Product-Page Audit</h3><span>Understand Why Product Views Are Not Becoming Add-to-Carts</span></div></div>
       <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> Product views, add-to-cart events, product price, discount, variant selection, inventory availability, reviews, images, descriptions, and purchase behaviour.</p>
-          <p>We review product-page-to-cart conversion, product information clarity, images and video, product benefits and use cases, variant and size selection, price and discount presentation, reviews and social proof, shipping and delivery information, return-policy visibility, stock or availability issues, add-to-cart visibility, and mobile product-page experience.</p>
+          <p><strong>Data Analyzed:</strong> Product views, add-to-cart events, product information, price, discount, variants, reviews, inventory, and purchase behaviour.</p>
+          <p>We review product benefits and use cases, images and video, description clarity, variant and size selection, pricing and discount presentation, reviews and social proof, shipping and delivery information, return-policy visibility, stock availability, add-to-cart visibility, and mobile product-page experience.</p>
           <div class="insight-box"><b>Example Insight:</b> “The product receives strong traffic but weak add-to-cart activity. Delivery timing, returns, and the main product benefit are not clearly communicated near the purchase decision.”</div>
           <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Prioritize product-page changes that reduce uncertainty and improve purchase intent.</div>
         </div>
@@ -13591,48 +13608,80 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
             <div class="kpi-card"><div class="kpi-label">Add to Cart</div><div class="kpi-val" style="color: var(--danger);">1,120</div></div>
             <div class="kpi-card" style="grid-column: span 2;"><div class="kpi-label">View → Cart Rate</div><div class="kpi-val" style="color: var(--warning);">19%</div></div>
           </div>
-          <div class="bar-chart" style="margin-top: 16px;">
-            <div class="bar-row"><span class="bar-label">Product Views</span><div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div><span class="bar-value">5,890</span></div>
-            <div class="bar-row"><span class="bar-label">Add to Cart</span><div class="bar-track"><div class="bar-fill warning" style="width: 19%;"></div></div><span class="bar-value">1,120</span></div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 05 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">5</div><div class="analysis-title"><h3>Navigation & User-Journey Audit</h3><span>Identify Friction From Discovery to Purchase</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid">
+        <div class="analysis-text">
+          <p><strong>Data Analyzed:</strong> Entry pages, navigation paths, collection pages, search behaviour, product views, internal links, and exit points.</p>
+          <p>We review homepage-to-product journey, collection and category navigation, site-search experience, product discovery, internal links, recommended products, navigation clarity, unnecessary steps, confusing paths, and exit points before purchase.</p>
+          <div class="insight-box"><b>Example Insight:</b> “Visitors entering through content pages rarely reach a product page, suggesting that product links, recommendations, or calls to action may be too weak.”</div>
+          <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Improve product discovery and reduce unnecessary steps between entry, evaluation, and purchase.</div>
+        </div>
+        <div class="chart-mock">
+          <div class="bar-chart">
+            <div class="bar-row"><span class="bar-label">Home → Product</span><div class="bar-track"><div class="bar-fill success" style="width: 70%;"></div></div><span class="bar-value">70%</span></div>
+            <div class="bar-row"><span class="bar-label">Collection → Product</span><div class="bar-track"><div class="bar-fill" style="width: 55%;"></div></div><span class="bar-value">55%</span></div>
+            <div class="bar-row"><span class="bar-label">Content → Product</span><div class="bar-track"><div class="bar-fill danger" style="width: 15%;"></div></div><span class="bar-value">15%</span></div>
           </div>
         </div>
       </div></div>
     </div>
 
-    <!-- Analysis 4 -->
+    <!-- Analysis 06 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">4</div><div class="analysis-title"><h3>Cart & Checkout Friction Analysis</h3><span>Objective: Identify Why Customers Abandon After Showing Purchase Intent</span></div></div>
+      <div class="analysis-header"><div class="analysis-num">6</div><div class="analysis-title"><h3>Cart Audit</h3><span>Identify Friction Before Checkout Begins</span></div></div>
       <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> Add-to-cart events, cart sessions, checkout starts, payment attempts, completed purchases, device type, shipping cost, discount codes, and payment-method data where available.</p>
-          <p>We review add-to-cart-to-checkout progression, checkout-start-to-purchase completion, unexpected shipping costs, discount-code friction, payment-method availability, account-creation requirements, form complexity, mobile checkout experience, delivery-time uncertainty, trust or security concerns, and failed payment or technical error signals.</p>
-          <div class="insight-box"><b>Example Insight:</b> “Checkout initiation is strong, but completion drops sharply on mobile after shipping information appears. Shipping cost or delivery clarity should be investigated before changing the product offer.”</div>
-          <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Address the highest-impact checkout friction point and validate the change with a controlled test where possible.</div>
+          <p><strong>Data Analyzed:</strong> Cart sessions, products added, cart value, shipping information, discount usage, quantity changes, and cart-to-checkout progression.</p>
+          <p>We review cart clarity, product and variant visibility, quantity and editing controls, shipping-cost visibility, free-shipping thresholds, discount-code friction, upsell and cross-sell opportunities, delivery expectations, cart-to-checkout progression, and mobile cart experience.</p>
+          <div class="insight-box"><b>Example Insight:</b> “A significant number of customers add products to the cart but leave after shipping information becomes visible, suggesting a possible cost or delivery-expectation issue.”</div>
+          <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Improve cart transparency and reduce uncertainty before customers begin checkout.</div>
         </div>
         <div class="chart-mock">
           <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-label">Cart Started</div><div class="kpi-val">1,120</div></div>
-            <div class="kpi-card"><div class="kpi-label">Checkout Started</div><div class="kpi-val">640</div></div>
-            <div class="kpi-card"><div class="kpi-label">Mobile Drop</div><div class="kpi-val" style="color: var(--danger);">68%</div></div>
-            <div class="kpi-card"><div class="kpi-label">Desktop Drop</div><div class="kpi-val" style="color: var(--warning);">42%</div></div>
-          </div>
-          <div class="bar-chart" style="margin-top: 16px;">
-            <div class="bar-row"><span class="bar-label">Mobile Drop</span><div class="bar-track"><div class="bar-fill danger" style="width: 68%;"></div></div><span class="bar-value">68%</span></div>
-            <div class="bar-row"><span class="bar-label">Desktop Drop</span><div class="bar-track"><div class="bar-fill warning" style="width: 42%;"></div></div><span class="bar-value">42%</span></div>
+            <div class="kpi-card"><div class="kpi-label">Carts Created</div><div class="kpi-val">1,120</div></div>
+            <div class="kpi-card"><div class="kpi-label">Checkout Started</div><div class="kpi-val" style="color: var(--warning);">640</div></div>
+            <div class="kpi-card" style="grid-column: span 2;"><div class="kpi-label">Cart → Checkout Drop</div><div class="kpi-val" style="color: var(--danger);">43%</div></div>
           </div>
         </div>
       </div></div>
     </div>
 
-    <!-- Analysis 5 -->
+    <!-- Analysis 07 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">5</div><div class="analysis-title"><h3>Device, Segment & Channel Conversion Analysis</h3><span>Objective: Find Where the Conversion Experience Is Uneven</span></div></div>
+      <div class="analysis-header"><div class="analysis-num">7</div><div class="analysis-title"><h3>Checkout Audit</h3><span>Identify Why Customers Abandon After Showing Purchase Intent</span></div></div>
       <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> Device, browser, traffic source, campaign, landing page, new/returning status, geography, product, and funnel-stage conversion rates.</p>
-          <p>We review mobile versus desktop, new versus returning visitors, browser differences, traffic-source conversion, campaign-level funnel progression, product-level conversion, region or market differences, landing-page variation, and returning-customer checkout behaviour.</p>
-          <div class="insight-box"><b>Example Insight:</b> “Mobile sessions represent most traffic, but mobile add-to-cart and checkout completion are materially lower than desktop, making the mobile purchase flow a higher-priority opportunity.”</div>
-          <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Prioritize improvements based on traffic volume, conversion gap, revenue opportunity, and confidence in the data.</div>
+          <p><strong>Data Analyzed:</strong> Checkout starts, payment attempts, completed purchases, device type, shipping cost, payment method, and available error data.</p>
+          <p>We review checkout-start-to-purchase completion, form complexity, guest checkout availability, payment-method options, shipping-cost disclosure, delivery-time clarity, account-creation requirements, trust and security signals, mobile checkout experience, and payment or technical error signals.</p>
+          <div class="insight-box"><b>Example Insight:</b> “Checkout initiation is strong, but completion drops sharply on mobile after shipping information appears. Shipping cost or delivery clarity should be investigated before changing the product offer.”</div>
+          <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Address the highest-impact checkout friction point and validate the change through controlled testing where possible.</div>
+        </div>
+        <div class="chart-mock">
+          <div class="kpi-grid">
+            <div class="kpi-card"><div class="kpi-label">Checkout Started</div><div class="kpi-val">640</div></div>
+            <div class="kpi-card"><div class="kpi-label">Completed</div><div class="kpi-val" style="color: var(--success);">200</div></div>
+            <div class="kpi-card"><div class="kpi-label">Mobile Drop</div><div class="kpi-val" style="color: var(--danger);">68%</div></div>
+            <div class="kpi-card"><div class="kpi-label">Desktop Drop</div><div class="kpi-val" style="color: var(--warning);">42%</div></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 08 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">8</div><div class="analysis-title"><h3>Mobile CRO Audit</h3><span>Find Conversion Gaps on Mobile Devices</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid">
+        <div class="analysis-text">
+          <p><strong>Data Analyzed:</strong> Device-level traffic, funnel progression, page performance, mobile interactions, cart behaviour, and checkout completion.</p>
+          <p>We review responsive page layout, mobile navigation, tap-target usability, sticky CTA opportunities, product-image interaction, above-the-fold content, mobile cart, mobile checkout, device-level conversion gaps, and mobile-specific friction.</p>
+          <div class="insight-box"><b>Example Insight:</b> “Mobile sessions represent most store traffic, but mobile add-to-cart and checkout completion are materially lower than desktop.”</div>
+          <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Prioritize mobile improvements based on traffic volume, conversion gap, revenue opportunity, and evidence quality.</div>
         </div>
         <div class="chart-mock">
           <div class="kpi-grid">
@@ -13648,16 +13697,63 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
       </div></div>
     </div>
 
-    <!-- Analysis 6 -->
+    <!-- Analysis 09 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">6</div><div class="analysis-title"><h3>Conversion Opportunity & Experimentation Plan</h3><span>Objective: Turn Findings Into Testable Improvements</span></div></div>
+      <div class="analysis-header"><div class="analysis-num">9</div><div class="analysis-title"><h3>Offer, Pricing & Trust Audit</h3><span>Understand What Helps or Prevents the Purchase Decision</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid">
+        <div class="analysis-text">
+          <p><strong>Data Analyzed:</strong> Pricing, discounts, offers, shipping policies, return policies, reviews, guarantees, trust elements, and conversion behaviour.</p>
+          <p>We review offer clarity, price presentation, discount communication, free-shipping thresholds, bundle opportunities, guarantees, return-policy visibility, reviews and user-generated content, trust badges, payment confidence, urgency and scarcity where appropriate, and value communication.</p>
+          <div class="insight-box"><b>Example Insight:</b> “Customers can see the product price, but the total value of the offer and the conditions of the promotion are not clear before the purchase decision.”</div>
+          <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Clarify the offer, reduce perceived risk, and make the value proposition easier to understand.</div>
+        </div>
+        <div class="chart-mock">
+          <div class="bar-chart">
+            <div class="bar-row"><span class="bar-label">Price Clarity</span><div class="bar-track"><div class="bar-fill success" style="width: 90%;"></div></div><span class="bar-value">High</span></div>
+            <div class="bar-row"><span class="bar-label">Shipping Info</span><div class="bar-track"><div class="bar-fill warning" style="width: 50%;"></div></div><span class="bar-value">Med</span></div>
+            <div class="bar-row"><span class="bar-label">Returns Info</span><div class="bar-track"><div class="bar-fill danger" style="width: 30%;"></div></div><span class="bar-value">Low</span></div>
+            <div class="bar-row"><span class="bar-label">Trust Signals</span><div class="bar-track"><div class="bar-fill warning" style="width: 55%;"></div></div><span class="bar-value">Med</span></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 10 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">10</div><div class="analysis-title"><h3>Segment & Conversion Analysis</h3><span>Identify Where Conversion Performance Is Uneven</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid">
+        <div class="analysis-text">
+          <p><strong>Data Analyzed:</strong> Device, browser, traffic source, campaign, landing page, product, geography, new/returning status, and funnel-stage conversion rates.</p>
+          <p>We review mobile versus desktop, new versus returning visitors, browser differences, traffic-source conversion, campaign-level funnel progression, product-level conversion, geographic differences, landing-page variation, and returning-customer behaviour.</p>
+          <div class="insight-box"><b>Example Insight:</b> “Returning visitors convert strongly on desktop, while new mobile visitors show the largest drop before adding a product to the cart.”</div>
+          <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Prioritize improvements for the segments with the largest combination of traffic volume, conversion gap, and revenue opportunity.</div>
+        </div>
+        <div class="chart-mock">
+          <div class="bar-chart">
+            <div class="bar-row"><span class="bar-label">Returning Desktop</span><div class="bar-track"><div class="bar-fill success" style="width: 100%;"></div></div><span class="bar-value">5.8%</span></div>
+            <div class="bar-row"><span class="bar-label">New Desktop</span><div class="bar-track"><div class="bar-fill" style="width: 72%;"></div></div><span class="bar-value">3.1%</span></div>
+            <div class="bar-row"><span class="bar-label">Returning Mobile</span><div class="bar-track"><div class="bar-fill warning" style="width: 48%;"></div></div><span class="bar-value">2.0%</span></div>
+            <div class="bar-row"><span class="bar-label">New Mobile</span><div class="bar-track"><div class="bar-fill danger" style="width: 26%;"></div></div><span class="bar-value">0.8%</span></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 11 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">11</div><div class="analysis-title"><h3>Experimentation & Prioritization Plan</h3><span>Turn Findings Into Testable Improvements</span></div></div>
       <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
           <p><strong>Data Analyzed:</strong> Funnel findings, page observations, segment performance, revenue impact, implementation effort, and existing test history.</p>
-          <p>We prioritize high-impact friction points, high-volume funnel stages, low-converting pages, message-match opportunities, product-page improvements, checkout improvements, mobile experience improvements, offer and trust experiments, and measurement fixes required before testing. Each recommendation includes the problem, evidence, recommended change, expected impact, implementation effort, confidence level, suggested test method, and success metric.</p>
+          <p>Every recommendation is structured around evidence and action. Each includes the problem, evidence, recommended change, hypothesis, expected impact, implementation effort, confidence level, suggested test method, primary success metric, and secondary metric.</p>
+          <p><strong>Priority Categories:</strong></p>
+          <ul style="margin:8px 0 12px 18px;font-size:14.5px;color:var(--muted);line-height:1.8">
+            <li><strong>Immediate Opportunities</strong> - High-impact changes that require limited technical effort.</li>
+            <li><strong>High-Impact Improvements</strong> - Structural changes requiring design, copy, or development effort.</li>
+            <li><strong>Testing Opportunities</strong> - Hypothesis-led changes that should be validated through A/B testing or another controlled method.</li>
+            <li><strong>Monitoring Items</strong> - Metrics or issues that should be observed over time before further action.</li>
+          </ul>
           <div class="insight-box"><b>Example Action:</b> “Test a clearer delivery and returns message above the mobile add-to-cart button. Measure product-page-to-cart rate and completed-purchase rate for new mobile visitors.”</div>
-          <div class="insight-box" style="margin-top: 12px;"><b>Recommendation:</b> Use controlled testing where possible. If A/B testing is not feasible, prioritize changes using available evidence and monitor the relevant conversion metric.</div>
-          <div class="insight-box" style="margin-top: 12px; background: var(--warning-light); border-color: rgba(217,119,6,0.2);"><b>Measurement Readiness Check:</b> Before interpreting funnel performance, we verify whether the available events are sufficiently reliable. Missing funnel events, duplicate events, inconsistent purchase data, Shopify and GA4 alignment, and reliable add-to-cart, checkout, and purchase signals are checked. Major tracking repair is not included in this audit - it can be scoped separately through the E-Commerce Tracking & Attribution Review.</div>
         </div>
         <div class="chart-mock">
           <h5 style="font-size: 12px; color: var(--muted); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em;">Conversion Decision Framework</h5>
@@ -13665,6 +13761,7 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
             <div class="bar-row"><span class="bar-label">Traffic</span><div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div><span class="bar-value">Refine</span></div>
             <div class="bar-row"><span class="bar-label">Landing Page</span><div class="bar-track"><div class="bar-fill" style="width: 90%;"></div></div><span class="bar-value">Clarify</span></div>
             <div class="bar-row"><span class="bar-label">Product Page</span><div class="bar-track"><div class="bar-fill" style="width: 75%;"></div></div><span class="bar-value">Improve</span></div>
+            <div class="bar-row"><span class="bar-label">Navigation</span><div class="bar-track"><div class="bar-fill" style="width: 60%;"></div></div><span class="bar-value">Simplify</span></div>
             <div class="bar-row"><span class="bar-label">Cart</span><div class="bar-track"><div class="bar-fill warning" style="width: 50%;"></div></div><span class="bar-value">Simplify</span></div>
             <div class="bar-row"><span class="bar-label">Checkout</span><div class="bar-track"><div class="bar-fill danger" style="width: 35%;"></div></div><span class="bar-value">Fix</span></div>
             <div class="bar-row"><span class="bar-label">Mobile</span><div class="bar-track"><div class="bar-fill danger" style="width: 30%;"></div></div><span class="bar-value">Prioritize</span></div>
@@ -13680,195 +13777,145 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 <section id="deliverables" style="background: var(--bg);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">Handover</div>
-      <h2>What You'll Receive</h2>
+      <div class="eyebrow">Deliverables</div>
+      <h2>What You Will Receive</h2>
     </div>
     <div class="outcomes-grid cols-4">
       <div class="deliverable-card scroll-reveal">
         <div class="deliverable-icon"><i class="fa-regular fa-file-lines"></i></div>
         <h4>01</h4>
-        <p>Funnel & Conversion Audit Report</p>
-        <span style="font-size: 13px; color: var(--muted);">A clear report explaining the main funnel bottlenecks, conversion opportunities, evidence, and recommended priorities.</span>
+        <p>E-Commerce CRO Audit Report</p>
+        <span style="font-size: 13px; color: var(--muted);">A decision-ready report covering the customer journey, conversion barriers, supporting evidence, and recommended priorities.</span>
       </div>
       <div class="deliverable-card scroll-reveal">
         <div class="deliverable-icon"><i class="fa-solid fa-map"></i></div>
         <h4>02</h4>
-        <p>Funnel Performance Map</p>
-        <span style="font-size: 13px; color: var(--muted);">A visual breakdown of the customer journey from traffic or landing-page entry to completed purchase.</span>
+        <p>Full Funnel Performance Map</p>
+        <span style="font-size: 13px; color: var(--muted);">A visual model of movement from traffic source to landing page, product page, cart, checkout, and completed purchase.</span>
       </div>
       <div class="deliverable-card scroll-reveal">
         <div class="deliverable-icon"><i class="fa-solid fa-window-restore"></i></div>
         <h4>03</h4>
-        <p>Landing-Page & Message-Match Findings</p>
-        <span style="font-size: 13px; color: var(--muted);">A review of campaign intent, landing-page relevance, headline, offer, proof, and call-to-action.</span>
+        <p>Landing-Page & Product-Page Findings</p>
+        <span style="font-size: 13px; color: var(--muted);">A review of page clarity, messaging, offer presentation, proof, CTAs, product information, and conversion friction.</span>
       </div>
       <div class="deliverable-card scroll-reveal">
-        <div class="deliverable-icon"><i class="fa-solid fa-box"></i></div>
+        <div class="deliverable-icon"><i class="fa-solid fa-route"></i></div>
         <h4>04</h4>
-        <p>Product-Page Conversion Findings</p>
-        <span style="font-size: 13px; color: var(--muted);">A structured assessment of product-page friction, customer uncertainty, product information, and add-to-cart performance.</span>
+        <p>Navigation & User-Journey Findings</p>
+        <span style="font-size: 13px; color: var(--muted);">A structured assessment of product discovery, navigation paths, internal links, and journey bottlenecks.</span>
       </div>
       <div class="deliverable-card scroll-reveal">
         <div class="deliverable-icon"><i class="fa-solid fa-cart-arrow-down"></i></div>
         <h4>05</h4>
-        <p>Cart & Checkout Friction Summary</p>
-        <span style="font-size: 13px; color: var(--muted);">A review of where purchase intent is lost after the customer adds a product to the cart.</span>
+        <p>Cart & Checkout Friction Analysis</p>
+        <span style="font-size: 13px; color: var(--muted);">A review of where purchase intent is lost after a customer adds a product to the cart.</span>
       </div>
       <div class="deliverable-card scroll-reveal">
         <div class="deliverable-icon"><i class="fa-solid fa-mobile-screen"></i></div>
         <h4>06</h4>
-        <p>Device, Segment & Channel Conversion Matrix</p>
-        <span style="font-size: 13px; color: var(--muted);">A comparison of mobile, desktop, traffic source, campaign, product, and customer segments where reliable data is available.</span>
+        <p>Mobile CRO Findings</p>
+        <span style="font-size: 13px; color: var(--muted);">A dedicated assessment of mobile layout, interaction, funnel progression, and device-level conversion gaps.</span>
+      </div>
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon"><i class="fa-solid fa-tags"></i></div>
+        <h4>07</h4>
+        <p>Offer, Pricing & Trust Review</p>
+        <span style="font-size: 13px; color: var(--muted);">An evaluation of value communication, pricing presentation, shipping, returns, guarantees, reviews, and trust elements.</span>
+      </div>
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h4>08</h4>
+        <p>Segment & Device Conversion Matrix</p>
+        <span style="font-size: 13px; color: var(--muted);">A comparison of conversion performance across devices, visitor types, traffic sources, campaigns, products, and relevant segments.</span>
       </div>
       <div class="deliverable-card scroll-reveal">
         <div class="deliverable-icon"><i class="fa-solid fa-list-check"></i></div>
-        <h4>07</h4>
-        <p>Prioritized Conversion Action Plan</p>
-        <span style="font-size: 13px; color: var(--muted);">Immediate fixes, near-term improvements, test opportunities, monitoring items, and data gaps requiring attention.</span>
+        <h4>09</h4>
+        <p>Prioritized CRO Action Plan</p>
+        <span style="font-size: 13px; color: var(--muted);">A roadmap divided into immediate opportunities, high-impact improvements, testing opportunities, monitoring items, and data gaps.</span>
       </div>
       <div class="deliverable-card scroll-reveal">
         <div class="deliverable-icon"><i class="fa-solid fa-flask"></i></div>
-        <h4>08</h4>
+        <h4>10</h4>
         <p>Experimentation Brief</p>
-        <span style="font-size: 13px; color: var(--muted);">Suggested tests with hypothesis, funnel or page area, recommended change, primary metric, secondary metric, required tracking, and testing considerations.</span>
+        <span style="font-size: 13px; color: var(--muted);">Suggested tests with hypothesis, page or funnel area, recommended change, primary and secondary metrics, required tracking, and testing considerations.</span>
       </div>
       <div class="deliverable-card scroll-reveal">
         <div class="deliverable-icon"><i class="fa-solid fa-headset"></i></div>
-        <h4>09</h4>
-        <p>45-Minute Strategy Call</p>
-        <span style="font-size: 13px; color: var(--muted);">A live walkthrough of the findings and recommended next steps.</span>
+        <h4>11</h4>
+        <p>45-Minute Live Strategy Session</p>
+        <span style="font-size: 13px; color: var(--muted);">A walkthrough of the findings, priorities, and recommended next steps.</span>
       </div>
-      <div class="deliverable-card scroll-reveal" style="grid-column: span 2;">
+      <div class="deliverable-card scroll-reveal">
         <div class="deliverable-icon"><i class="fa-regular fa-envelope"></i></div>
-        <h4>10</h4>
-        <p>Limited Clarification Support</p>
-        <span style="font-size: 13px; color: var(--muted);">Two weeks of clarification support for the delivered findings, limited to three follow-up questions by email.</span>
+        <h4>12</h4>
+        <p>Two Weeks of Clarification Support</p>
+        <span style="font-size: 13px; color: var(--muted);">Limited follow-up support, covering up to three clarification questions by email.</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Optional Add-Ons -->
+<!-- Separately Scoped Services -->
 <section id="dashboard-upgrade" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">Optional Add-Ons</div>
-      <h2>Turn Funnel Findings Into a Working System</h2>
-      <p>Each add-on is scoped separately, based on the findings from your Funnel & Conversion Audit.</p>
+      <div class="eyebrow">Separately Scoped Services</div>
+      <h2>Turn CRO Findings Into a Working System</h2>
+      <p>The audit fee covers diagnosis, recommendations, CRO strategy, copy suggestions, test hypotheses, and prioritization. The following services are quoted separately.</p>
     </div>
 
     <div class="info-grid" style="margin-bottom: 48px; grid-template-columns: repeat(2, 1fr);">
       <div class="info-card scroll-reveal">
-        <div class="info-icon"><i class="fa-solid fa-gauge-high"></i></div>
-        <h4>Conversion Dashboard</h4>
-        <p style="font-size: 14px; color: var(--muted); margin-top: 8px;">An optional Power BI or Looker Studio dashboard for:</p>
+        <div class="info-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <h4>CRO Implementation</h4>
         <ul style="list-style: none; padding-left: 0; margin-top: 8px;">
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Funnel-stage conversion</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Landing-page performance</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Product-page conversion</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Add-to-cart rate</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Checkout completion</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Purchase conversion</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Device and source comparison</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Revenue-opportunity tracking</li>
-          <li style="font-size: 13px; color: var(--muted); margin-bottom: 8px; font-style: italic;">Available as an optional upgrade</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Landing-page redesign</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Product-page optimization</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Cart and checkout updates</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Mobile UX improvements</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>CTA and offer restructuring</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Shopify theme development</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Developer handoff</li>
         </ul>
       </div>
       <div class="info-card scroll-reveal" style="background: var(--accent-light); border-color: var(--accent);">
-        <div class="info-icon" style="background: rgba(255,255,255,0.3); color: var(--accent-dark);"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <div class="info-icon" style="background: rgba(255,255,255,0.3); color: var(--accent-dark);"><i class="fa-solid fa-flask"></i></div>
+        <h4>Experimentation Support</h4>
+        <ul style="list-style: none; padding-left: 0; margin-top: 8px;">
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>A/B test planning</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Variant creation</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Test setup</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Launch tracking</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Statistical analysis</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Follow-up experiment planning</li>
+        </ul>
+      </div>
+      <div class="info-card scroll-reveal">
+        <div class="info-icon"><i class="fa-solid fa-code"></i></div>
         <h4>Tracking Implementation</h4>
-        <p style="font-size: 14px; color: var(--ink); margin-top: 8px;">Separately scoped:</p>
         <ul style="list-style: none; padding-left: 0; margin-top: 8px;">
           <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>GA4 funnel-event repair</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>GTM event configuration</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>GTM configuration</li>
           <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Shopify event validation</li>
           <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Purchase-event correction</li>
           <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Funnel dashboard setup</li>
           <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Test-order validation</li>
         </ul>
       </div>
-      <div class="info-card scroll-reveal">
-        <div class="info-icon"><i class="fa-solid fa-window-maximize"></i></div>
-        <h4>Landing-Page Implementation</h4>
-        <p style="font-size: 14px; color: var(--muted); margin-top: 8px;">Separately scoped:</p>
-        <ul style="list-style: none; padding-left: 0; margin-top: 8px;">
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Landing-page redesign</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Copy revision</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Offer and CTA restructuring</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Mobile-layout improvements</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Developer handoff</li>
-        </ul>
-      </div>
       <div class="info-card scroll-reveal" style="background: var(--accent-light); border-color: var(--accent);">
-        <div class="info-icon" style="background: rgba(255,255,255,0.3); color: var(--accent-dark);"><i class="fa-solid fa-flask"></i></div>
-        <h4>A/B Test Support</h4>
-        <p style="font-size: 14px; color: var(--ink); margin-top: 8px;">Separately scoped:</p>
+        <div class="info-icon" style="background: rgba(255,255,255,0.3); color: var(--accent-dark);"><i class="fa-solid fa-arrows-rotate"></i></div>
+        <h4>Ongoing CRO Retainer</h4>
         <ul style="list-style: none; padding-left: 0; margin-top: 8px;">
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Test planning</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Hypothesis development</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Variant briefing</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Test setup</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Results analysis</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Follow-up experiment plan</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Monthly conversion monitoring</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Experiment roadmapping</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Test-result review</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Continuous optimization</li>
+          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Monthly CRO recommendations</li>
         </ul>
       </div>
     </div>
-
-    <!-- Large Conversion Dashboard Visualization -->
-    <div class="cro-dashboard-mock scroll-reveal">
-      <div class="cro-dash-header">
-        <div class="cro-dash-title"><i class="fa-solid fa-gauge-high" style="color: var(--success);"></i> Conversion Performance Dashboard</div>
-        <div class="cro-dash-live">Auto-refresh: ON</div>
-      </div>
-      <div class="cro-dash-body">
-
-        <!-- Row 1: KPI Cards -->
-        <div class="cro-dash-row cro-kpi-row">
-          <div class="cro-kpi">
-            <div class="cro-kpi-label">Conversion Rate</div>
-            <div class="cro-kpi-val">1.9%</div>
-            <div class="cro-kpi-trend" style="color: var(--success);"><i class="fa-solid fa-arrow-up"></i> +0.3%</div>
-          </div>
-          <div class="cro-kpi">
-            <div class="cro-kpi-label">Cart Abandonment</div>
-            <div class="cro-kpi-val" style="color: #F87171;">75%</div>
-            <div class="cro-kpi-trend" style="color: var(--success);"><i class="fa-solid fa-arrow-down"></i> -2%</div>
-          </div>
-          <div class="cro-kpi">
-            <div class="cro-kpi-label">Checkout Rate</div>
-            <div class="cro-kpi-val">27%</div>
-            <div class="cro-kpi-trend" style="color: var(--success);"><i class="fa-solid fa-arrow-up"></i> +4%</div>
-          </div>
-          <div class="cro-kpi">
-            <div class="cro-kpi-label">Bounce Rate</div>
-            <div class="cro-kpi-val" style="color: #FBBF24;">48%</div>
-            <div class="cro-kpi-trend" style="color: var(--success);"><i class="fa-solid fa-arrow-down"></i> -5%</div>
-          </div>
-        </div>
-
-        <!-- Row 2: Funnel & Device Donut -->
-        <div class="cro-dash-row cro-chart-row">
-          <div class="cro-chart-box">
-            <div class="cro-chart-title">Funnel Drop-Off Tracking</div>
-            <div class="cro-bars">
-              <div class="cro-bar-row"><span class="cro-bar-label">Landing</span><div class="cro-bar-track"><div class="cro-bar-fill" style="width: 100%; background: #3B82F6;"></div></div><span class="cro-bar-val">10k</span></div>
-              <div class="cro-bar-row"><span class="cro-bar-label">Product</span><div class="cro-bar-track"><div class="cro-bar-fill" style="width: 62%; background: #3B82F6;"></div></div><span class="cro-bar-val">6.2k</span></div>
-              <div class="cro-bar-row"><span class="cro-bar-label">Cart</span><div class="cro-bar-track"><div class="cro-bar-fill" style="width: 21%; background: #F59E0B;"></div></div><span class="cro-bar-val">2.1k</span></div>
-              <div class="cro-bar-row"><span class="cro-bar-label">Checkout</span><div class="cro-bar-track"><div class="cro-bar-fill" style="width: 10%; background: #EF4444;"></div></div><span class="cro-bar-val">1k</span></div>
-              <div class="cro-bar-row"><span class="cro-bar-label">Purchase</span><div class="cro-bar-track"><div class="cro-bar-fill" style="width: 8.5%; background: #10B981;"></div></div><span class="cro-bar-val">850</span></div>
-            </div>
-          </div>
-          <div class="cro-chart-box">
-            <div class="cro-chart-title">Mobile vs Desktop</div>
-            <div class="cro-donut-wrap">
-              <div class="cro-donut"></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -13883,19 +13930,23 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
     <div class="faq-container">
       <div class="faq-item active scroll-reveal">
         <div class="faq-q">Is this a website redesign service? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">No. This is a data-informed funnel and conversion audit. It identifies what should be improved and why. Design, copywriting, development, and implementation are scoped separately.</div>
+        <div class="faq-a">No. This is a data-informed CRO audit. It identifies what should be improved, why it matters, and how it could be tested. Design, copywriting, development, and implementation are scoped separately.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Does the audit cover the entire website? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The audit covers the primary conversion journey, including representative landing pages, product pages, navigation, cart, checkout, and mobile experience. A full site-wide audit requires a custom scope.</div>
       </div>
       <div class="faq-item scroll-reveal">
         <div class="faq-q">Do you guarantee a higher conversion rate? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">No. The audit identifies evidence-based opportunities, but results depend on traffic quality, product-market fit, offer, pricing, implementation, seasonality, and testing.</div>
+        <div class="faq-a">No. Results depend on traffic quality, product-market fit, offer, pricing, implementation, seasonality, and testing.</div>
       </div>
       <div class="faq-item scroll-reveal">
-        <div class="faq-q">Do you analyse landing pages? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">Yes. We review landing-page performance, message match, clarity, offer presentation, trust signals, and conversion behaviour where reliable data is available.</div>
+        <div class="faq-q">Do you analyse landing pages and product pages? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. The audit reviews page clarity, message match, product information, trust signals, offer presentation, CTAs, and conversion behaviour where reliable data is available.</div>
       </div>
       <div class="faq-item scroll-reveal">
-        <div class="faq-q">Do you analyse checkout? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">Yes. We review cart-to-checkout progression, checkout completion, device performance, shipping visibility, payment options, and abandonment signals where available.</div>
+        <div class="faq-q">Do you analyse cart and checkout? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. We review cart-to-checkout progression, checkout completion, shipping visibility, payment options, device performance, and abandonment signals where data is available.</div>
       </div>
       <div class="faq-item scroll-reveal">
         <div class="faq-q">Can you analyse mobile conversion? <i class="fa-solid fa-plus"></i></div>
@@ -13903,15 +13954,19 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
       </div>
       <div class="faq-item scroll-reveal">
         <div class="faq-q">Do you need heatmaps or session recordings? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">No. They can be useful, but they are not mandatory. The audit can use Shopify, GA4, funnel data, page review, and available customer-behaviour data.</div>
+        <div class="faq-a">No. They can be useful but are not mandatory. The audit can use Shopify, GA4, funnel data, page review, and available customer-behaviour data.</div>
       </div>
       <div class="faq-item scroll-reveal">
         <div class="faq-q">What if the tracking data is incomplete? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">We document the limitation and reduce the confidence of the relevant recommendation. Tracking repair can be scoped separately through the E-Commerce Tracking & Attribution Review.</div>
+        <div class="faq-a">We document the limitation and reduce the confidence of the relevant recommendation. Major tracking repair can be scoped separately.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Does the audit include A/B testing? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The audit includes test hypotheses and an experimentation brief. Test setup, variant development, launch, and statistical analysis are separate services.</div>
       </div>
       <div class="faq-item scroll-reveal">
         <div class="faq-q">How long does the audit take? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">The standard audit is delivered within 7-10 business days after the required data and access are available.</div>
+        <div class="faq-a">The standard audit is delivered within 10-15 business days after the required data and access are available.</div>
       </div>
     </div>
   </div>
@@ -13920,26 +13975,29 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 <section id="pricing" style="background: var(--surface);">
   <div class="container">
     <div class="pricing-card scroll-reveal">
-      <div class="eyebrow" style="margin: 0 auto;">Funnel & Conversion Audit</div>
-      <h3 style="font-size: 28px; margin-top: 16px;">Funnel & Conversion Audit</h3>
-      <div class="price-amt">Starting at $650</div>
-      <p class="price-sub">One-time investment · Delivered in 7–10 business days after the required access and data are available.</p>
+      <div class="eyebrow" style="margin: 0 auto;">E-Commerce CRO Audit</div>
+      <h3 style="font-size: 28px; margin-top: 16px;">E-Commerce CRO Audit</h3>
+      <div class="price-amt">Starting at $900</div>
+      <p class="price-sub">One-time investment · Delivered in 10–15 business days after the required access and data are received.</p>
       <ul class="price-features">
         <li><i class="fa-solid fa-check"></i> One e-commerce store</li>
-        <li><i class="fa-solid fa-check"></i> Shopify and available analytics data</li>
-        <li><i class="fa-solid fa-check"></i> Funnel-stage performance analysis</li>
-        <li><i class="fa-solid fa-check"></i> Landing-page and product-page analysis</li>
-        <li><i class="fa-solid fa-check"></i> Cart and checkout friction review</li>
-        <li><i class="fa-solid fa-check"></i> Device and traffic-source comparison</li>
-        <li><i class="fa-solid fa-check"></i> Prioritized conversion action plan</li>
+        <li><i class="fa-solid fa-check"></i> One primary conversion funnel</li>
+        <li><i class="fa-solid fa-check"></i> Representative landing and product pages</li>
+        <li><i class="fa-solid fa-check"></i> Shopify and GA4 analytics review</li>
+        <li><i class="fa-solid fa-check"></i> Navigation and user-journey diagnosis</li>
+        <li><i class="fa-solid fa-check"></i> Cart and checkout review</li>
+        <li><i class="fa-solid fa-check"></i> Mobile experience review</li>
+        <li><i class="fa-solid fa-check"></i> Offer, pricing, and trust review</li>
+        <li><i class="fa-solid fa-check"></i> Segment and conversion analysis</li>
+        <li><i class="fa-solid fa-check"></i> Prioritized CRO action plan</li>
         <li><i class="fa-solid fa-check"></i> Experimentation brief</li>
         <li><i class="fa-solid fa-check"></i> Audit report</li>
-        <li><i class="fa-solid fa-check"></i> 45-minute strategy call</li>
-        <li><i class="fa-solid fa-check"></i> Limited clarification support</li>
+        <li><i class="fa-solid fa-check"></i> 45-minute strategy session</li>
+        <li><i class="fa-solid fa-check"></i> Two weeks of limited clarification support</li>
       </ul>
-      <p style="font-size: 12px; color: var(--light); margin-top: 12px; font-style: italic;">Complex or custom scope: $900–$1,500+ for multiple stores/domains, multiple funnels, extensive historical analysis, several traffic channels, multiple landing pages or product categories, heatmap or session-recording analysis, detailed experimentation planning, or dashboard/implementation requirements.</p>
-      <p style="font-size: 12px; color: var(--danger); margin-top: 6px; font-style: italic;">Important: Website redesign, copywriting, development, A/B test setup, tracking implementation, dashboard development, and ongoing CRO management are not included in the base audit.</p>
-      <a href="/book?package=cro-audit" class="btn btn-primary" style="width: 100%; justify-content: center;">Audit My Conversion Funnel →</a>
+      <p style="font-size: 12px; color: var(--light); margin-top: 12px; font-style: italic;">Custom scope: $1,300–$2,000+ for multiple stores, multiple primary funnels, extensive page-level review, multiple markets or domains, extensive historical analysis, session-recording analysis, detailed experimentation planning, dashboard development, or implementation requirements.</p>
+      <p style="font-size: 12px; color: var(--danger); margin-top: 6px; font-style: italic;">Important: The base audit does not include website redesign, copywriting production, development, Shopify theme changes, tracking implementation, A/B test setup, dashboard development, or ongoing CRO management.</p>
+      <a href="/book?package=cro-audit" class="btn btn-primary" style="width: 100%; justify-content: center;">Audit My E-Commerce Conversion →</a>
     </div>
   </div>
 </section>
@@ -13947,7 +14005,8 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
 <section style="background: var(--bg); padding: 40px 0;">
   <div class="container">
     <div class="header-center">
-      <p style="font-size: 16px; color: var(--muted); font-style: italic; max-width: 700px; margin: 0 auto;">We identify where your e-commerce funnel is losing customers and turn the findings into a prioritized, testable conversion improvement plan.</p>
+      <p style="font-size: 16px; color: var(--muted); font-style: italic; max-width: 700px; margin: 0 auto;">The E-Commerce CRO Audit identifies where your customer journey loses potential buyers and provides a prioritized, data-informed roadmap for improving conversion.</p>
+      <p style="font-size: 13px; color: var(--light); margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">E-Commerce CRO Audit → CRO Implementation (separate fee) → A/B Testing Support (separate fee) → Ongoing CRO Retainer (monthly fee)</p>
     </div>
   </div>
 </section>
@@ -31870,10 +31929,10 @@ export function formatPricingTable(): string {
   },
   {
     "id": "cro-audit",
-    "title": "Funnel & Conversion Audit",
+    "title": "E-Commerce CRO Audit",
     "category": "Part 2 - Specialized Add-On Packages",
     "url": "/cro-audit",
-    "content": "Part 2 - Specialized Add-On Packages -> Funnel & Conversion Audit\nURL: /cro-audit\n\nSpecialized Add-On - Package 04: Funnel & Conversion Audit\nFIND EXACTLY WHERE YOUR SITE IS LEAKING SALES.\nStarting at $650. One-time investment - Delivered in 7-10 business days.\n\nAFTER THIS AUDIT, YOU WILL KNOW:\n- Where Customers Are Dropping Off: landing page -> product page -> cart -> checkout -> purchase.\n- Which Funnel Stage Needs Attention First: separate highest-impact bottleneck from minor issues.\n- Whether the Problem Is Traffic or Experience: traffic quality, weak messaging, product-page friction, offer problems, or checkout issues.\n- Whether Your Pages Match Customer Intent: gaps between campaign promise and landing/product page experience.\n- Which Device or Segment Converts Poorly: mobile, desktop, new/returning, traffic sources, campaigns, products.\n- What to Improve First: prioritized action plan based on impact, effort, evidence, and testing requirements.\n\n6 FUNNEL & CONVERSION ANALYSES:\n1. Traffic Quality & Landing-Page Performance - Determine whether visitors arrive with the right intent.\n2. Landing-Page & Message-Match Analysis - Reduce friction between campaign promise and page experience.\n3. Product-Page Conversion Analysis - Understand why product views are not becoming add-to-carts.\n4. Cart & Checkout Friction Analysis - Identify why customers abandon after showing purchase intent.\n5. Device, Segment & Channel Conversion Analysis - Find where the conversion experience is uneven.\n6. Conversion Opportunity & Experimentation Plan - Turn findings into testable improvements. Includes Measurement Readiness Check (verify events reliable; major tracking repair not included - scope via E-Commerce Tracking & Attribution Review).\n\nConversion Decision Framework: Traffic (Refine/Reclassify/Reduce/Test), Landing page (Clarify/Align/Simplify/Test), Product page (Improve/Reposition/Test), Cart (Investigate/Simplify/Test), Checkout (Fix/Reduce Friction/Validate), Mobile (Prioritize/Optimize/Monitor), Offer (Clarify/Test/Reposition), Measurement (Repair/Document/Monitor).\n\nWHAT YOU WILL RECEIVE (10 deliverables):\n01 Funnel & Conversion Audit Report\n02 Funnel Performance Map\n03 Landing-Page & Message-Match Findings\n04 Product-Page Conversion Findings\n05 Cart & Checkout Friction Summary\n06 Device, Segment & Channel Conversion Matrix\n07 Prioritized Conversion Action Plan (immediate fixes, near-term improvements, test opportunities, monitoring items, data gaps)\n08 Experimentation Brief (hypothesis, area, change, primary/secondary metric, required tracking, considerations)\n09 45-Minute Strategy Call\n10 Limited Clarification Support (2 weeks, 3 follow-up questions by email)\n\nOPTIONAL ADD-ONS:\n- Conversion Dashboard (Power BI / Looker Studio): funnel-stage conversion, landing-page performance, product-page conversion, add-to-cart rate, checkout completion, purchase conversion, device/source comparison, revenue-opportunity tracking.\n- Tracking Implementation: GA4 funnel-event repair, GTM config, Shopify event validation, purchase-event correction, funnel dashboard setup, test-order validation.\n- Landing-Page Implementation: redesign, copy revision, offer/CTA restructuring, mobile-layout improvements, developer handoff.\n- A/B Test Support: test planning, hypothesis development, variant briefing, test setup, results analysis, follow-up experiment plan.\n\nWHO IS THIS AUDIT FOR: e-commerce brands with consistent website traffic, stores with product views but weak add-to-cart activity, brands with high cart/checkout abandonment, businesses with weak mobile conversion, stores spending on paid traffic without sufficient purchase conversion, brands preparing landing-page/product-page/checkout improvement, stores with usable Shopify and analytics data.\n\nNOT SUITABLE FOR: very little traffic or conversion volume, websites without usable funnel data, brands looking for website design only, businesses seeking copywriting or development only, brands expecting guaranteed conversion-rate improvement, stores that have not clarified product/offer/target customer.\n\nDATA ACCESS: Shopify, GA4, GTM, Meta Ads Manager (if paid-social funnel included), Google Ads (if paid-search funnel included), landing pages, product pages, checkout and shipping settings, existing heatmap or session-recording tools, previous A/B test results, customer-support or return data where relevant.\n\nNOT INCLUDED: website redesign, landing-page development, copywriting, graphic design, UX implementation, A/B test setup, ongoing CRO management, heatmap/session-recording software fees, ad campaign management, creative production, full technical tracking implementation, guaranteed conversion-rate/revenue/profit improvement, unlimited revisions.\n\nPRICING: Starting at $650 (standard scope: one store, Shopify + analytics data, funnel-stage performance, landing-page and product-page analysis, cart/checkout friction review, device/traffic-source comparison, prioritized action plan, experimentation brief, audit report, 45-min call, limited support). Complex/custom scope: $900-$1,500+ (multiple stores/domains, multiple funnels, extensive historical analysis, several traffic channels, multiple landing pages/product categories, heatmap/session-recording analysis, detailed experimentation planning, dashboard/implementation requirements).\n\nFINAL POSITIONING: We identify where your e-commerce funnel is losing customers and turn the findings into a prioritized, testable conversion improvement plan."
+    "content": "Part 2 - Specialized Add-On Packages -> E-Commerce CRO Audit\nURL: /cro-audit\n\nSpecialized Add-On - Package 04: E-Commerce CRO Audit\nFIND WHAT IS PREVENTING YOUR VISITORS FROM BECOMING CUSTOMERS.\nData-Driven Conversion Optimization for E-Commerce Brands.\nStarting at $900. One-time investment - Delivered in 10-15 business days.\n\nWHAT THIS AUDIT HELPS SOLVE:\n- Traffic increasing but revenue flat\n- Visitors view products but rarely add to cart\n- High cart and checkout abandonment\n- Mobile conversion significantly lower than desktop\n- Paid traffic reaches store but does not convert\n- Marketing offers don't match landing-page experience\n- Customer uncertainty about pricing, shipping, returns, product quality\n- Navigation makes product discovery difficult\n- Team unsure which conversion problem to fix first\n- Previous CRO changes made without reliable data or testing\n\nAFTER THIS AUDIT, YOU WILL KNOW:\n- Where Customers Are Dropping Off\n- Which Funnel Stage Needs Attention First\n- Whether the Problem Is Traffic or Experience\n- Whether Your Pages Match Customer Intent\n- Which Devices and Segments Perform Poorly\n- What Should Be Improved First\n\n11 COMPREHENSIVE CRO ANALYSES:\n1. Measurement Readiness - Confirm funnel data can support CRO decisions. Shopify/GA4 consistency check. Full GTM/GA4/Pixel/CAPI implementation NOT included - scope via E-Commerce Tracking & Attribution Audit.\n2. Traffic Quality Analysis - Which visitors arrive with right purchase intent.\n3. Landing-Page Audit - Improve the first experience after the click.\n4. Product-Page Audit - Why product views are not becoming add-to-carts.\n5. Navigation & User-Journey Audit - Friction from discovery to purchase.\n6. Cart Audit - Friction before checkout begins.\n7. Checkout Audit - Why customers abandon after showing purchase intent.\n8. Mobile CRO Audit - Conversion gaps on mobile devices.\n9. Offer, Pricing & Trust Audit - What helps or prevents purchase decision.\n10. Segment & Conversion Analysis - Where conversion performance is uneven.\n11. Experimentation & Prioritization Plan - Turn findings into testable improvements. Priority categories: Immediate Opportunities, High-Impact Improvements, Testing Opportunities, Monitoring Items.\n\nConversion Decision Framework: Traffic (Refine/Reclassify/Reduce/Test), Landing page (Clarify/Align/Simplify/Test), Product page (Improve/Reposition/Test), Navigation (Simplify/Reorganize/Improve Discovery), Cart (Investigate/Simplify/Test), Checkout (Fix/Reduce Friction/Validate), Mobile (Prioritize/Optimize/Monitor), Offer (Clarify/Test/Reposition), Measurement (Repair/Document/Monitor).\n\nWHAT YOU WILL RECEIVE (12 deliverables):\n01 E-Commerce CRO Audit Report\n02 Full Funnel Performance Map\n03 Landing-Page & Product-Page Findings\n04 Navigation & User-Journey Findings\n05 Cart & Checkout Friction Analysis\n06 Mobile CRO Findings\n07 Offer, Pricing & Trust Review\n08 Segment & Device Conversion Matrix\n09 Prioritized CRO Action Plan (immediate opportunities, high-impact improvements, testing opportunities, monitoring items, data gaps)\n10 Experimentation Brief (hypothesis, area, change, primary/secondary metric, tracking, considerations)\n11 45-Minute Live Strategy Session\n12 Two Weeks of Clarification Support (3 clarification questions by email)\n\nSEPARATELY SCOPED SERVICES:\n- CRO Implementation: landing-page redesign, product-page optimization, cart/checkout updates, mobile UX, CTA/offer restructuring, Shopify theme development, developer handoff.\n- Experimentation Support: A/B test planning, variant creation, test setup, launch tracking, statistical analysis, follow-up experiment planning.\n- Tracking Implementation: GA4 funnel-event repair, GTM config, Shopify event validation, purchase-event correction, funnel dashboard setup, test-order validation.\n- Ongoing CRO Retainer: monthly conversion monitoring, experiment roadmapping, test-result review, continuous optimization, monthly CRO recommendations.\n\nWHO IS THIS AUDIT FOR: e-commerce brands with consistent traffic, stores with product views but weak add-to-cart, high cart/checkout abandonment, weak mobile conversion, stores spending on paid traffic without sufficient conversion, brands preparing landing-page/product-page/cart/checkout improvements, stores with usable Shopify and analytics data, teams needing evidence-based CRO roadmap before investing in implementation.\n\nNOT SUITABLE FOR: very little traffic/conversion volume, websites without usable funnel data, brands looking for website design only, businesses seeking copywriting/development only, brands expecting guaranteed conversion-rate improvement, stores that haven't clarified product/offer/target customer.\n\nDATA ACCESS: Shopify, GA4, GTM, Meta Ads Manager (if paid-social funnel included), Google Ads (if paid-search funnel included), landing pages, representative product pages, cart/checkout settings, shipping/return info, existing heatmap/session-recording tools, previous A/B test results, customer-support/return data.\n\nNOT INCLUDED: full website redesign, site-wide audit of every page, landing-page development, copywriting production, graphic design, UX implementation, Shopify theme development, A/B test setup, ongoing CRO management, heatmap/session-recording software fees, ad campaign management, creative production, full technical tracking implementation, guaranteed conversion-rate/revenue/profit improvement, unlimited revisions.\n\nFAQ: Not a redesign service. Covers primary conversion journey (not entire website). No conversion-rate guarantee. Analyses landing pages, product pages, cart, checkout. Mobile conversion analysis available. Heatmaps not mandatory. Incomplete tracking documented; repair scoped separately. Audit includes test hypotheses and experimentation brief; test setup/launch/analysis are separate. Delivered in 10-15 business days.\n\nPRICING: Starting at $900 (standard scope: one store, one primary funnel, representative pages, Shopify+GA4 review, navigation diagnosis, cart/checkout review, mobile review, offer/pricing/trust review, segment analysis, prioritized action plan, experimentation brief, report, 45-min session, 2 weeks clarification support). Custom scope: $1,300-$2,000+ (multiple stores, multiple funnels, extensive page-level review, multiple markets/domains, extensive historical analysis, session-recording analysis, detailed experimentation planning, dashboard development, implementation requirements, enterprise).\n\nBUSINESS MODEL: E-Commerce CRO Audit -> CRO Implementation (separate fee) -> A/B Testing Support (separate fee) -> Ongoing CRO Retainer (monthly fee).\n\nFINAL POSITIONING: The E-Commerce CRO Audit identifies where your customer journey loses potential buyers and provides a prioritized, data-informed roadmap for improving conversion."
   },
   {
     "id": "profitability-audit",
