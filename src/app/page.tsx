@@ -181,27 +181,6 @@ const CORE_PACKAGES = [
     route: '/data-driven-growth-system',
     featured: false,
   },
-  {
-    tag: 'NEVER GO STALE.',
-    name: 'Analytics Partner Retainer',
-    tier: 'RETAINER',
-    price: '$500 – $1,200 /mo',
-    timeline: 'Ongoing (Min. 2-month commitment)',
-    description: 'Your dedicated data analyst. A 4-week rhythm that keeps your business moving forward with continuous insight.',
-    features: [
-      'Monthly Performance & Customer Health Reports',
-      'Marketing Efficiency Review & Forward Planning',
-      '4 Ad-hoc Analyses per month',
-      '48-hr Email / Slack response',
-      'Proactive Anomaly Alerts',
-      'Dashboard Maintenance & 45-min Monthly Call',
-    ],
-    bestFor: 'Stores doing $15K+/mo needing a permanent data partner.',
-    promise: 'With this retainer, today\'s insight will never become outdated next month. We will detect problems between analyses before they cost you money, ensure your implemented changes are actually working, and keep you prepared for seasonal shifts before they catch you off guard.',
-    cta: 'Become a Retainer Client →',
-    route: '/analytics-partner-retainer',
-    featured: false,
-  },
 ];
 
 const ADD_ON_PACKAGES = [
@@ -421,7 +400,7 @@ const PROCESS_STEPS = [
   {
     num: 1,
     title: 'Discovery & Strategy',
-    text: 'You book a call, we assess your business needs, and you select the analytics package that fits your store (Starter, Growth, Advanced, or Retainer). No guessing, we map exactly which platforms hold your data.',
+    text: 'You book a call, we assess your business needs, and you select the analytics package that fits your store (Starter, Growth, or Advanced). No guessing, we map exactly which platforms hold your data.',
   },
   {
     num: 2,
@@ -441,7 +420,7 @@ const PROCESS_STEPS = [
   {
     num: 5,
     title: 'Execution & Monitoring (Ongoing)',
-    text: 'You implement the fixes, like pausing losing ads, flipping budgets, or sending win-back emails. If you are a Retainer client, I monitor your live dashboard 24/7, sending proactive anomaly alerts and updating your forecasts so today\'s insights never go stale.',
+    text: 'You implement the fixes, like pausing losing ads, flipping budgets, or sending win-back emails. If you partner with us on an ongoing basis, we monitor your live dashboard and send proactive anomaly alerts so today\'s insights never go stale.',
   },
 ];
 
@@ -1562,13 +1541,6 @@ function ServicesSection() {
                 className={`package-outer-wrapper service-card-wrapper ${pkg.tier.toLowerCase()}`}
               >
                 <div className="package-inner-card service-card-inner">
-                  {pkg.featured && (
-                    <div className="most-chosen-badge-container">
-                      <span className="most-chosen-badge">
-                        <span className="badge-star">⭐</span> Most Chosen
-                      </span>
-                    </div>
-                  )}
 
                 <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
                 <h4 className="text-white text-lg font-bold mb-2">{pkg.name}</h4>
@@ -1590,52 +1562,6 @@ function ServicesSection() {
               </div>
             ))}
           </div>
-
-          {/* Retainer full width */}
-          {(() => {
-            const pkg = CORE_PACKAGES[3];
-            return (
-              <div className="service-card-wrapper retainer">
-                <div className="service-card-inner">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
-                    <h4 className="text-white text-lg font-bold mb-1">{pkg.name}</h4>
-                    <div className="mb-4">
-                  <div className="text-[#8899AA] text-xs">Timeline</div>
-                  <div className="text-white text-sm font-medium">{pkg.timeline}</div>
-                  <div className="text-[#8899AA] text-xs mt-1">Investment</div>
-                  <div className="gradient-text-gold text-sm font-bold">{pkg.price}</div>
-                    {pkg.tagline && <div className="text-[#00C6FF] text-xs font-medium mt-2 leading-snug">{pkg.tagline}</div>}
-                </div>
-                    {pkg.description && <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>}
-                    <ul className="space-y-2 mb-5">
-                      {pkg.features.map((f, fi) => (
-                        <li key={fi} className="flex items-start gap-2 text-sm text-[#F0F4F8]">
-                          <Check size={14} className="text-[#00E676] shrink-0 mt-0.5" /> {f}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <div className="mb-5">
-                      <div className="text-[#00C6FF] text-xs font-semibold mb-1">Best For:</div>
-                      <p className="text-[#8899AA] text-sm"><BestForText text={pkg.bestFor} /></p>
-                    </div>
-                    <div className="p-4 rounded-lg bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.1)] mb-5">
-                      <div className="text-[#00C6FF] text-xs font-semibold mb-2">Our Promise To You:</div>
-                      <p className="text-[#F0F4F8] text-sm leading-relaxed"><PromiseText text={pkg.promise} /></p>
-                    </div>
-                    <a href={`/book?package=${pkg.route.replace('/', '')}`} className="service-book-btn">{pkg.cta}</a>
-                    <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-2 cursor-pointer no-underline w-full">
-                      <ExternalLink size={12} /> View Details
-                    </a>
-                  </div>
-                </div>
-                </div>
-              </div>
-            );
-          })()}
         </div>
 
         {/* Part 2: Add-On Packages */}
@@ -2240,7 +2166,7 @@ const processSectionData = {
       number: "1",
       title: "Discovery & Strategy",
       description:
-        "You book a call, we assess your business needs, and you select the analytics package that fits your store (Starter, Growth, Advanced, or Retainer). No guessing, we map exactly which platforms hold your data.",
+        "You book a call, we assess your business needs, and you select the analytics package that fits your store (Starter, Growth, or Advanced). No guessing, we map exactly which platforms hold your data.",
       image: `${basePath}/images/process-2.jpg`,
     },
     {
@@ -2268,7 +2194,7 @@ const processSectionData = {
       number: "5",
       title: "Execution & Monitoring (Ongoing)",
       description:
-        "You implement the fixes, like pausing losing ads, flipping budgets, or sending win-back emails. If you are a Retainer client, I monitor your live dashboard 24/7, sending proactive anomaly alerts and updating your forecasts so today's insights never go stale.",
+        "You implement the fixes, like pausing losing ads, flipping budgets, or sending win-back emails. If you partner with us on an ongoing basis, we monitor your live dashboard and send proactive anomaly alerts so today's insights never go stale.",
       image: `${basePath}/images/process-6b.jpg`,
     },
   ],

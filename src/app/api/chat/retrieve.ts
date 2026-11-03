@@ -18,7 +18,6 @@ const KEYWORD_MAP: Record<string, string[]> = {
   "health-check": ["health check", "health-check", "starter", "$500", "$800", "7-10 business days", "tier 1"],
   "revenue-growth-accelerator": ["revenue growth", "growth accelerator", "growth package", "$1,000", "$1,500", "14-21 business days", "tier 2", "rfm", "churn", "cohort", "ltv"],
   "data-driven-growth-system": ["data-driven", "growth system", "advanced", "$2,000", "$4,000", "20-30 business days", "tier 3", "bigquery", "looker studio", "dashboard", "forecast", "15 analyses"],
-  "analytics-partner-retainer": ["retainer", "monthly", "ongoing", "partner", "$1,000/month", "$2,500/month", "subscription"],
   "marketing-spend-audit": ["marketing spend", "marketing audit", "ad spend", "roas", "cac", "budget optimization"],
   "customer-retention-audit": ["retention", "customer retention", "churn", "repurchase", "win-back", "retention audit"],
   "product-portfolio-audit": ["product portfolio", "product audit", "inventory", "product performance", "bundle", "cross-sell"],
