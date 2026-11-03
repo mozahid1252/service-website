@@ -1,0 +1,829 @@
+<!-- MOBILE-OVERRIDE-SAFETY -->
+<style>
+@media(max-width:900px){.outcomes-grid,.outcomes-grid.cols-3,.outcomes-grid.cols-4{display:flex !important;flex-direction:column !important;gap:16px !important}}
+h1,h2,h3,h4,h5{color:var(--text) !important}
+h1 em,h2 em,h3 em{color:var(--accent) !important}
+.hero p{color:var(--muted) !important}
+.header-center p{color:var(--muted) !important}
+.eyebrow{color:var(--accent-dark) !important}
+.analysis-title h3{color:var(--text) !important}
+.analysis-title span{color:var(--accent) !important}
+.analysis-text p{color:var(--muted) !important}
+.analysis-text p strong{color:var(--text) !important}
+.analysis-text strong{color:var(--text) !important}
+.analysis-text ul li{color:var(--muted) !important}
+.analysis-text ul li strong{color:var(--text) !important}
+.insight-box{color:var(--muted) !important}
+.insight-box b{color:var(--text) !important}
+.bar-label{color:var(--muted) !important}
+.bar-value{color:var(--text) !important}
+.comparison-table td{color:var(--text) !important}
+.comparison-table th{color:var(--text) !important}
+.comparison-table td.std{color:var(--accent) !important}
+.comparison-table td.deep{color:var(--warning) !important}
+.card-list li{color:var(--muted) !important}
+.card-list li strong{color:var(--text) !important}
+.decision-card ul li{color:var(--muted) !important}
+.signs-list li{color:var(--muted) !important}
+.scorecard-table td{color:var(--text) !important}
+.scorecard-table th{color:var(--text) !important}
+.action-map-table td{color:var(--text) !important}
+.action-map-table th{color:var(--text) !important}
+.std-deliverable-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:900px; margin:0 auto; }
+.std-deliverable-card { display:flex; flex-direction:column !important; gap:10px; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:24px; transition:transform 0.3s ease, box-shadow 0.3s ease; }
+.std-deliverable-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+.std-deliverable-card .deliverable-icon { width:44px; height:44px; background:var(--accent-light); color:var(--accent); border-radius:12px; display:flex !important; align-items:center; justify-content:center; font-size:18px; margin:0; }
+.std-deliverable-card h4 { font-size:14px; color:var(--accent) !important; margin:0; font-weight:700; }
+.std-deliverable-card p { font-size:15px; font-weight:700; color:var(--text) !important; margin:0; line-height:1.4; }
+.std-deliverable-card span { font-size:13px; color:var(--muted) !important; line-height:1.6; }
+@media(max-width:900px){.std-deliverable-grid{grid-template-columns:1fr !important}}
+.deliverable-card p{color:var(--muted) !important}
+.deliverable-card span{color:var(--muted) !important}
+.not-included li{color:var(--muted) !important}
+.faq-a{color:var(--muted) !important}
+.faq-q{color:var(--text) !important}
+.pricing-features li{color:var(--muted) !important}
+.pricing-card .price-sub{color:var(--muted) !important}
+.next-step-card p{color:var(--muted) !important}
+.next-step-card .step-condition{color:var(--accent) !important}
+.boundary-note p{color:var(--muted) !important}
+.boundary-note h4{color:var(--warning) !important}
+</style>
+
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">Moz <span>Intelligence</span></a>
+    <ul class="nav-links" style="gap:24px; list-style:none;">
+      <li><a href="#signs" style="color:var(--muted); font-size:14px;">Warning Signs</a></li>
+      <li><a href="#comparison" style="color:var(--muted); font-size:14px;">Comparison</a></li>
+      <li><a href="#analysis" style="color:var(--muted); font-size:14px;">What We Analyze</a></li>
+      <li><a href="#deliverables" style="color:var(--muted); font-size:14px;">Deliverables</a></li>
+      <li><a href="#faq" style="color:var(--muted); font-size:14px;">FAQ</a></li>
+      <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
+      <li><a href="/health-check" style="color:var(--muted); font-size:14px;">Back to Health Check</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a href="#pricing" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="mobile-menu-healthcheck-deep">
+    <a href="#signs">Warning Signs</a>
+    <a href="#comparison">Comparison</a>
+    <a href="#analysis">What We Analyze</a>
+    <a href="#deliverables">Deliverables</a>
+    <a href="#faq">FAQ</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/health-check">Back to Health Check</a>
+    <a href="#pricing" class="nav-mobile-cta">Get Started</a>
+</div>
+
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow" style="margin: 0 auto;">Deep Health Check Audit</div>
+    <h1>Go Beyond Surface-Level Signals and Understand What Is Really Driving Your Business</h1>
+    <p>A comprehensive diagnostic for established e-commerce brands with larger datasets, multiple channels, and complex growth questions.</p>
+    <p style="font-size: 16px; color: var(--text); max-width: 720px; margin: 0 auto 16px;">Your business may be generating revenue while hidden issues affect profitability, marketing efficiency, customer value, conversion, and future growth. The Deep E-Commerce Health Check Audit examines your business across a longer historical period and a deeper level of product, channel, customer, funnel, profitability, and data analysis. You will receive a clear view of what is working, what is creating risk, where the largest business impact exists, and what should be addressed first.</p>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn btn-primary">Request a Deep Health Check</a>
+      <a href="#signs" class="btn btn-outline" style="border-color:var(--border-dark);">Warning Signs</a>
+    </div>
+    <p style="font-size: 13px; color: var(--light); margin-top: 20px; font-style: italic;">This is a comprehensive diagnostic and decision-support audit. Implementation, development, campaign management, and ongoing growth support are scoped separately.</p>
+  </div>
+</header>
+
+
+<!-- Warning Signs -->
+<section id="signs" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Warning Signs</div>
+      <h2>Is Your Business Complex Enough for a Deep Health Check?</h2>
+      <p>If several of these apply, your business likely needs a deeper diagnostic rather than a quick snapshot.</p>
+    </div>
+    <ul class="signs-list" style="list-style:none; max-width:760px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--warning); font-size:14px;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--warning); margin-right:8px;"></i>Your store has a large volume of orders, customers, or products</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--warning); font-size:14px;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--warning); margin-right:8px;"></i>You have multiple marketing channels</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--warning); font-size:14px;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--warning); margin-right:8px;"></i>Revenue and profit do not appear to move together</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--warning); font-size:14px;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--warning); margin-right:8px;"></i>Different platforms report significantly different results</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--warning); font-size:14px;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--warning); margin-right:8px;"></i>You need more than a recent 90-day snapshot</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--warning); font-size:14px;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--warning); margin-right:8px;"></i>You are unsure which products, channels, or customer groups create real value</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--warning); font-size:14px;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--warning); margin-right:8px;"></i>Conversion performance varies significantly by device, channel, product, or market</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--warning); font-size:14px;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--warning); margin-right:8px;"></i>Your business has enough historical data for deeper customer or cohort analysis</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--warning); font-size:14px;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--warning); margin-right:8px;"></i>You are preparing for a major budget, product, or growth decision</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--warning); font-size:14px;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--warning); margin-right:8px;"></i>A Standard Health Check has identified issues that require deeper investigation</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--warning); font-size:14px; grid-column: span 2;"><i class="fa-solid fa-triangle-exclamation" style="color:var(--warning); margin-right:8px;"></i>Your team needs a more detailed decision roadmap before investing in implementation</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- What This Audit Helps You Understand -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">What You Will Understand</div>
+      <h2>What This Audit Helps You Understand</h2>
+      <p>After the audit, you will have a deeper, connected view of:</p>
+    </div>
+    <div class="outcomes-grid" style="max-width:1000px;">
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-chart-line"></i></div><h4>Revenue Over Time</h4><p>How revenue, orders, and customer behaviour have changed over time</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-box"></i></div><h4>Product Value</h4><p>Which products create revenue, margin, and strategic value</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-bullhorn"></i></div><h4>Channel Efficiency</h4><p>Which channels appear efficient after available costs are considered</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-users"></i></div><h4>Customer Value</h4><p>Which customer groups contribute the most value</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-repeat"></i></div><h4>Retention Trend</h4><p>Whether repeat purchasing and customer value are improving or weakening</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-filter"></i></div><h4>Conversion Patterns</h4><p>Where conversion performance changes by device, channel, product, or customer type</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-coins"></i></div><h4>Profitability Impact</h4><p>How discounts, refunds, returns, and available fulfilment costs affect profitability</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-database"></i></div><h4>Tracking Reliability</h4><p>Whether tracking differences are large enough to affect business decisions</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-magnifying-glass"></i></div><h4>Cause vs Symptom</h4><p>Which issues are symptoms and which may be underlying causes</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-list-check"></i></div><h4>Priority Order</h4><p>Which actions should be executed first, later, tested, or monitored</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Standard vs Deep Comparison -->
+<section id="comparison" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Comparison</div>
+      <h2>Standard vs Deep Comparison</h2>
+      <p>Understand the difference in depth, scope, and deliverable between the two audits.</p>
+    </div>
+    <div class="comparison-table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Area</th>
+            <th class="std">Standard</th>
+            <th class="deep">Deep</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Primary purpose</td><td class="std">Rapid business diagnosis</td><td class="deep">Comprehensive root-cause analysis</td></tr>
+          <tr><td>Turnaround</td><td class="std">3-5 business days</td><td class="deep">10-12 business days</td></tr>
+          <tr><td>Historical period</td><td class="std">Recent performance, generally up to 90 days</td><td class="deep">Typically 6-12 months, depending on data</td></tr>
+          <tr><td>Product analysis</td><td class="std">High-level product signals</td><td class="deep">Detailed product/category comparison</td></tr>
+          <tr><td>Marketing analysis</td><td class="std">High-level channel health</td><td class="deep">Deeper channel efficiency and profitability analysis</td></tr>
+          <tr><td>Customer analysis</td><td class="std">Basic retention and customer-value signals</td><td class="deep">Detailed repeat, cohort, LTV, and segment analysis where supported</td></tr>
+          <tr><td>Funnel analysis</td><td class="std">High-level bottleneck signals</td><td class="deep">Device, source, product, and segment-level funnel analysis</td></tr>
+          <tr><td>Tracking analysis</td><td class="std">Basic consistency check</td><td class="deep">Deeper reconciliation and data-quality assessment</td></tr>
+          <tr><td>Deliverable</td><td class="std">Concise diagnostic report</td><td class="deep">Comprehensive report and detailed decision roadmap</td></tr>
+          <tr><td>Strategy session</td><td class="std">30 minutes</td><td class="deep">60 minutes</td></tr>
+          <tr><td>Best suited for</td><td class="std">Smaller or less complex brands</td><td class="deep">Established and data-rich businesses</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center; font-size:14px; color:var(--muted); margin-top:20px; max-width:700px; margin-left:auto; margin-right:auto; font-style:italic;">The exact depth of analysis depends on the quality, structure, and completeness of the data provided.</p>
+  </div>
+</section>
+
+
+<!-- What We Analyze -->
+<section id="analysis" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">What We Analyze</div>
+      <h2>11 Deep Business Health Areas</h2>
+      <p>Each area is reviewed in depth to identify root-cause patterns, business impact, and recommended priorities.</p>
+    </div>
+
+    <!-- Analysis 01 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">1</div><div class="analysis-title"><h3>Historical Revenue &amp; Sales Health</h3><span>Understand How the Business Has Changed Over Time</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We review your historical sales performance across a longer period to understand the direction, concentration, and durability of your business.</p>
+          <p><strong>We examine:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Monthly revenue trend</li>
+            <li>Order-volume trend</li>
+            <li>Average order value</li>
+            <li>Units per order (where available)</li>
+            <li>New versus returning customer revenue</li>
+            <li>Revenue concentration</li>
+            <li>Product and category contribution</li>
+            <li>Seasonal patterns</li>
+            <li>Growth and decline periods</li>
+            <li>Unusual spikes or drops</li>
+            <li>Revenue dependence on a small number of products or channels</li>
+          </ul>
+          <div class="insight-box"><b>You will learn:</b> Whether growth is consistent or concentrated; Which periods require further investigation; Whether revenue changes are driven by volume, pricing, product mix, or customer mix; Whether recent performance represents a meaningful trend or a temporary fluctuation.</div>
+          <div class="insight-box" style="margin-top:12px;"><b>Example insight:</b> "Revenue increased over the past six months, but most of the growth came from a limited number of products and one acquisition channel, creating concentration risk."</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 02 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">2</div><div class="analysis-title"><h3>Profitability &amp; Margin Health</h3><span>Identify Where Revenue Does&mdash;and Does Not&mdash;Translate Into Profit</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>Revenue does not always equal profit. We use the available cost and order data to identify where margin is created and where it may be lost.</p>
+          <p><strong>We examine:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Product cost or COGS</li>
+            <li>Gross-margin signals</li>
+            <li>Contribution-margin signals</li>
+            <li>Discount impact</li>
+            <li>Refund and return impact</li>
+            <li>Shipping and fulfilment costs (where available)</li>
+            <li>Payment-processing costs (where available)</li>
+            <li>Product-level margin differences</li>
+            <li>Category-level margin differences</li>
+            <li>High-revenue but low-margin products</li>
+            <li>Margin concentration</li>
+            <li>Available channel-level cost impact</li>
+          </ul>
+          <div class="insight-box"><b>You will learn:</b> Which products appear most profitable; Which products may be overvalued based on revenue alone; Where discounts, returns, or operational costs reduce margin; Which profitability questions require better cost data.</div>
+          <div class="insight-box" style="margin-top:12px;"><b>Example insight:</b> "A high-volume product contributes significant revenue but produces weaker contribution-margin signals than a lower-volume product after discounts, returns, and available fulfilment costs are considered."</div>
+          <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Full accounting, bookkeeping, tax analysis, and guaranteed profit forecasting are not included.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 03 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">3</div><div class="analysis-title"><h3>Product &amp; Portfolio Health</h3><span>Understand Which Products Deserve More, Less, or Different Attention</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We compare products and categories across revenue, margin signals, returns, discounts, and momentum to identify where attention should be focused.</p>
+          <p><strong>We examine:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Product and category revenue</li>
+            <li>Units sold</li>
+            <li>Sales velocity</li>
+            <li>Product growth and decline</li>
+            <li>Product-level margin signals</li>
+            <li>Product revenue concentration</li>
+            <li>Product return and refund patterns</li>
+            <li>Product discount dependence</li>
+            <li>Product availability signals</li>
+            <li>Bundle and cross-sell opportunities</li>
+            <li>Category-level contribution</li>
+            <li>Product investment priorities</li>
+          </ul>
+          <p><strong>Initial product directions may include:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Grow - Maintain - Investigate - Reprice - Bundle - Reduce - Retire (subject to sufficient evidence)</li>
+          </ul>
+          <div class="insight-box"><b>You will learn:</b> Which products are driving growth; Which products appear to create margin risk; Which categories are gaining or losing momentum; Where product-level investigation or implementation should begin.</div>
+          <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Full inventory, warehouse, supplier, purchase-order, demand-planning, or dead-stock analysis is not included unless separately scoped.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 04 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">4</div><div class="analysis-title"><h3>Marketing Channel Efficiency &amp; Profitability</h3><span>Compare Marketing Channels Using More Than Platform-Reported ROAS</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We compare channels using available spend, attributed revenue, acquisition, conversion, and profitability signals instead of relying on platform-reported ROAS alone.</p>
+          <p><strong>We examine:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Meta, Google, Email, Organic, Direct, Referral, Other available channels</li>
+            <li>Channel spend</li>
+            <li>Attributed revenue</li>
+            <li>Reported ROAS</li>
+            <li>CAC signals</li>
+            <li>New-customer acquisition</li>
+            <li>Returning-customer contribution</li>
+            <li>Channel-level conversion</li>
+            <li>Available product-cost and margin impact</li>
+            <li>Attribution limitations</li>
+            <li>Channel concentration and dependency</li>
+          </ul>
+          <div class="insight-box"><b>You will learn:</b> Which channels appear efficient; Which channels generate revenue without clear business profit; Which channels may be over- or under-credited; Whether acquisition performance differs from customer-value performance; Which channel questions require a specialist audit or implementation.</div>
+          <div class="insight-box" style="margin-top:12px;"><b>Example insight:</b> "One channel shows strong platform-reported ROAS, but its performance is concentrated among returning visitors, while another channel brings more new customers at a higher initial CAC."</div>
+          <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Detailed campaign, creative, audience, placement, and daily media-buying work is not included.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 05 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">5</div><div class="analysis-title"><h3>Tracking, Attribution &amp; Data Reconciliation</h3><span>Understand Which Numbers Can Support Important Decisions</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We reconcile the differences between store, analytics, and marketing-platform data to understand which numbers are reliable for important decisions.</p>
+          <p><strong>We examine:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Shopify or e-commerce-platform orders</li>
+            <li>GA4 purchases and revenue</li>
+            <li>Meta-reported conversions and revenue (where applicable)</li>
+            <li>Google Ads conversions and revenue (where applicable)</li>
+            <li>Event availability</li>
+            <li>Missing or duplicate conversion signals</li>
+            <li>Transaction-value consistency</li>
+            <li>UTM and source/medium quality</li>
+            <li>Attribution-window differences</li>
+            <li>New versus returning customer classification</li>
+            <li>Date and timezone differences</li>
+            <li>Reporting-definition differences</li>
+            <li>Data-source completeness</li>
+            <li>Important data limitations</li>
+          </ul>
+          <div class="insight-box"><b>You will learn:</b> Which source should be used as the commercial baseline; Why platform numbers may not match; Which metrics are suitable for which decisions; Whether a tracking issue may materially affect budget or performance decisions; Whether a dedicated Tracking &amp; Attribution Audit is required.</div>
+          <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> This audit documents and interprets measurement issues. Full GTM, GA4, Pixel, CAPI, server-side implementation, and technical repair are separate services.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 06 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">6</div><div class="analysis-title"><h3>Funnel, CRO &amp; Conversion Health</h3><span>Find Where Conversion Performance Changes Across the Customer Journey</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We review the customer journey across devices, sources, products, and visitor segments to identify where conversion performance changes most.</p>
+          <p><strong>We examine:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Sessions or landing-page visits</li>
+            <li>Product views</li>
+            <li>Add-to-cart activity</li>
+            <li>Checkout initiation</li>
+            <li>Purchase completion</li>
+            <li>Landing-page progression</li>
+            <li>Product-page progression</li>
+            <li>Cart-to-checkout progression</li>
+            <li>Checkout-to-purchase completion</li>
+            <li>Mobile versus desktop</li>
+            <li>Traffic-source funnel performance</li>
+            <li>Campaign-level funnel signals (where available)</li>
+            <li>Product-level conversion</li>
+            <li>New versus returning visitor behaviour</li>
+            <li>Available geographic or market differences</li>
+          </ul>
+          <div class="insight-box"><b>You will learn:</b> Which funnel stage creates the largest potential loss; Whether conversion weakness is concentrated in a device, channel, product, or visitor segment; Whether the issue appears to be traffic quality, page experience, offer, cart, or checkout; Whether a full E-Commerce CRO Audit should follow.</div>
+          <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> This is a deeper diagnostic, not a full page-by-page CRO audit, UX redesign, copywriting engagement, or development project.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 07 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">7</div><div class="analysis-title"><h3>Customer, Retention &amp; LTV Health</h3><span>Understand Which Customers Create Long-Term Value</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We review customer behaviour, repeat purchase, and customer-value signals to identify which customers drive long-term value.</p>
+          <p><strong>We examine:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>New versus returning customers</li>
+            <li>Repeat-purchase rate</li>
+            <li>Purchase frequency</li>
+            <li>Time between purchases</li>
+            <li>Customer revenue concentration</li>
+            <li>Customer-value distribution</li>
+            <li>Customer acquisition source</li>
+            <li>Basic LTV signals</li>
+            <li>Customer inactivity signals</li>
+            <li>Available customer segments</li>
+            <li>Retention trend over time</li>
+            <li>Acquisition cohort behaviour (where data supports it)</li>
+          </ul>
+          <div class="insight-box"><b>You will learn:</b> Whether the business depends heavily on new customer acquisition; Which customers or acquisition sources appear to create greater long-term value; Whether repeat purchase is improving or weakening; Where retention or customer-value improvement may be available; Whether a dedicated Retention &amp; LTV engagement is appropriate.</div>
+          <div class="insight-box" style="margin-top:12px;"><b>Example insight:</b> "Customers acquired during one period show stronger repeat purchase and higher available value signals than customers acquired through another channel, suggesting a quality&mdash;not only volume&mdash;difference in acquisition."</div>
+          <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Full RFM activation, churn prediction, email/SMS automation, and customer-platform implementation are not included.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 08 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">8</div><div class="analysis-title"><h3>Cohort &amp; Retention Trend Analysis</h3><span>Separate Temporary Customer Behaviour From Persistent Retention Problems</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We use cohort analysis to distinguish temporary customer behaviour from persistent retention problems over time.</p>
+          <p><strong>We examine:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Acquisition cohorts</li>
+            <li>Repeat-purchase behaviour over time</li>
+            <li>Revenue contribution by cohort</li>
+            <li>Purchase frequency</li>
+            <li>Retention trend</li>
+            <li>Available LTV progression</li>
+            <li>Cohort differences by channel or product</li>
+            <li>Changes in customer quality over time</li>
+          </ul>
+          <div class="insight-box"><b>You will learn:</b> Which customer groups retain better; Whether retention is improving or deteriorating; Whether a growth period brought valuable or low-value customers; Which cohort or acquisition question deserves deeper investigation.</div>
+          <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Cohort analysis requires sufficient historical order data. If the available history is limited, the finding will be marked as limited confidence.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 09 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">9</div><div class="analysis-title"><h3>Discount, Refund &amp; Return Impact</h3><span>Identify How Promotions and Post-Purchase Issues Affect Business Health</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We review how promotions, refunds, and returns affect revenue, margin, and customer value across the business.</p>
+          <p><strong>We examine:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Discount usage</li>
+            <li>Discount depth</li>
+            <li>Discounted versus non-discounted orders</li>
+            <li>Revenue lift signals</li>
+            <li>Margin impact</li>
+            <li>Refund rate</li>
+            <li>Return rate</li>
+            <li>Product-level return patterns</li>
+            <li>Category-level return patterns</li>
+            <li>Available return reasons</li>
+            <li>Lost revenue and margin signals</li>
+            <li>Customer or channel differences (where available)</li>
+          </ul>
+          <div class="insight-box"><b>You will learn:</b> Whether discounts appear to support profitable growth; Where promotion activity may reduce margin; Which products show unusual return or refund patterns; Whether a product, offer, or customer-experience issue requires further action.</div>
+          <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Supplier, warehouse, carrier, and physical fulfilment investigations are not included.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 10 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">10</div><div class="analysis-title"><h3>Product, Customer &amp; Channel Cross-Analysis</h3><span>Connect the Business Signals Instead of Reviewing Them in Isolation</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We connect product, customer, and channel signals so that one metric is not reviewed in isolation from the others.</p>
+          <p><strong>We examine:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Which channels sell which products</li>
+            <li>Which products attract repeat customers</li>
+            <li>Which products are purchased by high-value customers</li>
+            <li>Which products have strong revenue but weak margin signals</li>
+            <li>Which channels generate high-value versus low-value customers</li>
+            <li>Which customer groups respond to specific offers</li>
+            <li>Which products may support bundles or cross-sell opportunities</li>
+          </ul>
+          <div class="insight-box"><b>You will learn:</b> Where product, customer, and marketing performance reinforce each other; Where one metric looks strong but another reveals a risk; Which growth opportunities may be more commercially valuable; Which business question should be investigated next.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 11 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">11</div><div class="analysis-title"><h3>Data Readiness, Confidence &amp; Decision Risk</h3><span>Understand How Much Confidence You Can Place in the Findings</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We assess the quality, completeness, and reliability of the available data to indicate how much confidence each finding can support.</p>
+          <p><strong>We review:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Data-source availability</li>
+            <li>Historical depth</li>
+            <li>Data completeness</li>
+            <li>Cost-data quality</li>
+            <li>Customer-history quality</li>
+            <li>Product-data consistency</li>
+            <li>Tracking limitations</li>
+            <li>Attribution limitations</li>
+            <li>Missing fields</li>
+            <li>Conflicting definitions</li>
+            <li>Data preparation requirements</li>
+            <li>Confidence level by major finding</li>
+          </ul>
+          <p><strong>Findings may be classified as:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>High confidence - Moderate confidence - Limited confidence - Requires validation</li>
+          </ul>
+          <div class="insight-box"><b>You will learn:</b> Which findings can support immediate decisions; Which findings require better data; Which metrics should be standardized; Whether the business is ready for dashboards, automation, forecasting, or ongoing growth monitoring.</div>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Integrated Business Health Scorecard -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Scorecard</div>
+      <h2>Integrated Business Health Scorecard</h2>
+      <p>You will receive a scorecard that integrates business performance with the reliability of the information behind each finding.</p>
+    </div>
+    <div style="max-width:650px; margin:0 auto; overflow-x:auto;">
+      <table class="scorecard-table" style="width:100%; border-collapse:collapse; background:var(--surface); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow);">
+        <thead>
+          <tr style="background:var(--surface-2);">
+            <th style="padding:14px 20px; text-align:left; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--text) !important;">Business Area</th>
+            <th style="padding:14px 20px; text-align:left; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--text) !important;">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Revenue Health</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Strong / Watch / Concern</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Profitability Health</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Strong / Watch / Concern</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Product Health</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Strong / Watch / Concern</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Marketing Health</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Strong / Watch / Concern</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Tracking &amp; Attribution Health</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Strong / Watch / Concern</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Funnel &amp; Conversion Health</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Strong / Watch / Concern</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Customer &amp; Retention Health</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Strong / Watch / Concern</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Data Readiness</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Strong / Limited / Concern</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600;">Decision Risk</td><td style="padding:12px 20px; font-size:14px;">Low / Moderate / High</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="text-align:center; font-size:14px; color:var(--muted); margin-top:20px; max-width:650px; margin-left:auto; margin-right:auto;">The scorecard helps management understand both business performance and the reliability of the information behind each decision.</p>
+  </div>
+</section>
+
+
+<!-- What You Will Receive -->
+<section id="deliverables" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Deliverables</div>
+      <h2>What You Will Receive</h2>
+      <p>A comprehensive package covering findings, evidence, confidence levels, and a decision-ready roadmap.</p>
+    </div>
+    <div class="std-deliverable-grid">
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-regular fa-file-lines"></i></div><h4>01</h4><p>Comprehensive Deep Health Check Report</p><span>A detailed report covering the business findings, supporting evidence, data limitations, risk areas, and recommended priorities.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-clipboard-list"></i></div><h4>02</h4><p>Executive Summary</p><span>A concise management-level summary of what is working, what is not working, where the largest risks appear, which opportunities deserve attention, and what should happen next.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-chart-line"></i></div><h4>03</h4><p>Historical Revenue &amp; Profitability Analysis</p><span>A deeper view of revenue movement, product contribution, available margin signals, and changes over time.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-table-list"></i></div><h4>04</h4><p>Product &amp; Portfolio Performance Matrix</p><span>A comparison of products and categories across sales, trend, margin signals, returns, discounts, and recommended direction.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-bullhorn"></i></div><h4>05</h4><p>Marketing Channel Performance Matrix</p><span>A comparison of available channels across spend, revenue, acquisition, conversion, efficiency, and profitability signals.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-users"></i></div><h4>06</h4><p>Customer &amp; Retention Findings</p><span>A review of new versus returning customers, repeat-purchase behaviour, customer-value signals, and retention patterns.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-layer-group"></i></div><h4>07</h4><p>Cohort &amp; LTV Findings</p><span>Where supported by the data, a review of acquisition cohorts, customer-value development, and repeat-purchase behaviour.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-filter"></i></div><h4>08</h4><p>Funnel, Device &amp; Segment Analysis</p><span>A deeper comparison of funnel progression across available devices, channels, products, visitor types, and markets.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-database"></i></div><h4>09</h4><p>Tracking &amp; Attribution Reconciliation Summary</p><span>An explanation of important differences between store, analytics, and marketing-platform data.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-coins"></i></div><h4>10</h4><p>Discount, Refund &amp; Return Impact Summary</p><span>A review of promotion and post-purchase patterns that may affect revenue, margin, and customer value.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-clipboard-check"></i></div><h4>11</h4><p>Data Confidence &amp; Limitations Assessment</p><span>A clear explanation of which conclusions are strongly supported and which require additional data or validation.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-map"></i></div><h4>12</h4><p>Audit-to-Action Map</p><span>Each important finding connected to a practical next step.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-list-check"></i></div><h4>13</h4><p>Prioritized 30-60 Day Roadmap</p><span>Recommendations organized into Immediate Priorities, Near-Term Improvements, Testing Opportunities, Strategic Opportunities, and Monitoring Items.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-route"></i></div><h4>14</h4><p>Recommended Next Engagement</p><span>Where relevant, recommendations for E-Commerce Performance Improvement, CRO Audit, Tracking work, Marketing/Product/Retention work, Dashboard setup, or Growth Partnership.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-headset"></i></div><h4>15</h4><p>60-Minute Strategy Session</p><span>A live walkthrough of the findings, evidence, confidence levels, priorities, and recommended next steps.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-regular fa-envelope"></i></div><h4>16</h4><p>Limited Clarification Support</p><span>Limited post-audit clarification support for questions related to the delivered findings and roadmap.</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Audit-to-Action Map -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Action Map</div>
+      <h2>Audit-to-Action Map</h2>
+      <p>Each important finding is connected to its potential business impact and a recommended next step.</p>
+    </div>
+    <div style="max-width:900px; margin:0 auto; overflow-x:auto; border-radius:var(--radius-lg); box-shadow:var(--shadow);">
+      <table class="action-map-table" style="width:100%; border-collapse:collapse; background:var(--surface);">
+        <thead>
+          <tr style="background:var(--surface-2);">
+            <th style="padding:14px 20px; text-align:left; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--text) !important;">Finding</th>
+            <th style="padding:14px 20px; text-align:left; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--text) !important;">Potential business impact</th>
+            <th style="padding:14px 20px; text-align:left; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--text) !important;">Recommended next step</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Growth concentrated in low-margin products</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Profitability risk</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border); color:var(--accent);">Product profitability improvement</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Channel ROAS differs from customer-value signal</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Budget allocation risk</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border); color:var(--accent);">Marketing profitability work</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Mobile checkout gap</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Potential conversion loss</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border); color:var(--accent);">E-Commerce CRO work</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Weak repeat purchase in recent cohorts</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Long-term value risk</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border); color:var(--accent);">Retention improvement</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600; border-bottom:1px solid var(--border);">Shopify/GA4 revenue mismatch</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border);">Reporting risk</td><td style="padding:12px 20px; font-size:14px; border-bottom:1px solid var(--border); color:var(--accent);">Tracking &amp; Attribution work</td></tr>
+          <tr><td style="padding:12px 20px; font-size:14px; font-weight:600;">High discount dependence</td><td style="padding:12px 20px; font-size:14px;">Margin pressure</td><td style="padding:12px 20px; font-size:14px; color:var(--accent);">Offer and pricing improvement</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- How This Connects to the Next Step -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Next Steps</div>
+      <h2>How This Connects to the Next Step</h2>
+      <p>The Deep Health Check produces a decision-ready view of the business. Execution is scoped separately through a focused improvement engagement or an ongoing growth partnership.</p>
+    </div>
+    <div class="next-steps-grid">
+      <div class="next-step-card scroll-reveal">
+        <div class="step-icon"><i class="fa-solid fa-wrench"></i></div>
+        <p class="step-condition">If specific problems need to be fixed</p>
+        <h4>E-Commerce Performance Improvement</h4>
+        <p>A custom implementation engagement to solve selected problems identified in the Deep Health Check through CRO, marketing, product, tracking, retention, or analytics improvements.</p>
+        <a href="/book?package=performance-improvement" class="step-cta">Discuss My Improvement Plan &rarr;</a>
+      </div>
+      <div class="next-step-card scroll-reveal">
+        <div class="step-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <p class="step-condition">If you need continuous growth support</p>
+        <h4>E-Commerce Growth Intelligence Partnership</h4>
+        <p>An ongoing monthly partnership for continued monitoring, strategic planning, optimization, experimentation, and long-term growth.</p>
+        <a href="/book?package=growth-partnership" class="step-cta">Discuss a Growth Partnership &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- What Is Not Included -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Scope Boundary</div>
+      <h2>What Is Not Included</h2>
+    </div>
+    <div style="max-width:760px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <ul class="not-included" style="list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Website redesign</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full page-by-page CRO implementation</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full copywriting production</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Shopify theme development</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full GTM, GA4, Pixel, CAPI, or server-side implementation</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Daily Meta or Google Ads management</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Media buying</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Creative production</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Complete email or SMS automation</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full Klaviyo or Mailchimp implementation</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Physical warehouse or supplier audit</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full inventory planning</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Bookkeeping, tax, or statutory accounting</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Complete BigQuery infrastructure build</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Fully automated live dashboard, unless separately scoped</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Guaranteed revenue, profit, LTV, or conversion improvement</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited revisions</li>
+        <li style="font-size:14px; grid-column: span 2;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Guaranteed forecast accuracy</li>
+      </ul>
+      <p style="font-size:14px; color:var(--muted); margin-top:20px; font-style:italic;">The audit may identify implementation requirements and provide strategic recommendations. Execution is scoped separately through E-Commerce Performance Improvement or another approved engagement.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Who Is This Audit For -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Suitability</div>
+      <h2>Who Is This Audit For?</h2>
+    </div>
+    <div style="max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:32px;">
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px;">
+        <h4 style="font-size:16px; margin-bottom:16px; color:var(--success);"><i class="fa-solid fa-circle-check" style="margin-right:8px;"></i>Best Suited For</h4>
+        <ul style="list-style:none;">
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Established e-commerce brands with consistent sales volume</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Businesses with 6-12 months or more of usable historical data</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Brands with multiple products, categories, or markets</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Businesses using multiple marketing channels</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Brands with meaningful customer and order history</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Companies experiencing revenue growth without corresponding profit growth</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Businesses preparing for a significant marketing, product, or expansion decision</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Teams that need deeper customer, product, channel, or funnel analysis</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Brands that have already completed a Standard Health Check and need deeper investigation</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Businesses that want a detailed roadmap before commissioning implementation</li>
+        </ul>
+      </div>
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px;">
+        <h4 style="font-size:16px; margin-bottom:16px; color:var(--danger);"><i class="fa-solid fa-circle-xmark" style="margin-right:8px;"></i>May Not Be Suitable For</h4>
+        <ul style="list-style:none;">
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>New stores without meaningful sales history</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Businesses with very little customer or order data</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Brands seeking only a quick diagnosis</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Businesses looking for daily ad management</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Brands seeking only website design or development</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Businesses unwilling to provide the required data access</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Clients expecting implementation to be included</li>
+          <li style="font-size:14px; color:var(--muted); padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Businesses without reliable product, order, or cost data for the requested analysis</li>
+        </ul>
+      </div>
+    </div>
+    <div style="max-width:760px; margin:32px auto 0; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px;">
+      <h4 style="font-size:16px; margin-bottom:12px; color:var(--accent);"><i class="fa-solid fa-key" style="margin-right:8px;"></i>Data Access Required</h4>
+      <p style="font-size:14px; color:var(--muted); line-height:1.8;">Shopify or another e-commerce platform, GA4, Google Tag Manager, Meta Ads Manager, Google Ads, Email or CRM platform, Product and COGS data, Discount and promotion history, Refund and return data, Customer and order history, Shipping, fulfilment, or payment-cost data (where available), Existing dashboards or reporting files, Previous audit or performance reports.</p>
+      <p style="font-size:13px; color:var(--light); margin-top:12px; font-style:italic;">You do not need to have every data source. During the initial review, we will confirm what is available, what can be analysed, and how missing data affects the scope and confidence of the findings.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-container" style="max-width:800px; margin:0 auto;">
+      <div class="faq-item active scroll-reveal">
+        <div class="faq-q">What is the difference between the Standard and Deep Health Check? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The Standard Health Check is a rapid, high-level diagnostic designed to identify the most important business risks and priorities. The Deep Health Check uses more historical data and provides deeper product, profitability, channel, customer, cohort, funnel, and reconciliation analysis for larger or more complex businesses.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Do I need to complete the Standard Health Check first? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. You may start directly with the Deep Health Check if your business already has sufficient data and you know that a deeper analysis is required.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is this a full profitability audit? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">It provides deeper profitability analysis using the available product, order, discount, refund, return, shipping, payment, and cost data. It is not bookkeeping, tax, statutory accounting, or a replacement for audited financial statements.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is this a full CRO audit? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. The Deep Health Check investigates funnel and conversion patterns at a business-diagnostic level. A detailed page-by-page E-Commerce CRO Audit can be scoped separately.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is this a full Meta or Google Ads audit? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. The Deep Health Check reviews channel-level performance and available profitability signals. Detailed campaign, audience, creative, placement, and media-buying analysis requires a separate specialist scope.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Will you fix the problems found? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. The Deep Health Check identifies root-cause patterns, priorities, and recommended next steps. Implementation is available separately through E-Commerce Performance Improvement.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can you calculate LTV and cohort performance? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes, where sufficient customer-level order history and reliable acquisition-source data are available. If the data is incomplete, findings will be marked with the appropriate confidence level.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can you forecast future revenue or demand? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The Deep Health Check may identify trends and scenario-based planning signals, but it does not include a guaranteed forecast or full demand-planning system.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Will Shopify, GA4, and advertising-platform numbers match exactly? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Not necessarily. Different platforms use different attribution rules, time windows, consent signals, and reporting definitions. We reconcile the differences and explain which source is appropriate for each decision.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">What if my data is incomplete? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">We document the limitation, reduce the confidence of the affected findings, and identify the most important data improvement required.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Does this include a dashboard? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No live dashboard is included in the base Deep Health Check. A dashboard or monitoring system can be scoped separately.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">How long does the audit take? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The Deep Health Check is typically delivered within 10-12 business days after the required data and access are received.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Pricing -->
+<section id="pricing" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Pricing</div>
+      <h2>Deep E-Commerce Health Check Audit</h2>
+      <p>A one-time comprehensive diagnostic for established, data-rich businesses.</p>
+    </div>
+    <div class="pricing-card scroll-reveal" style="max-width:620px;">
+      <div class="eyebrow" style="margin: 0 auto;">Deep Health Check</div>
+      <h3 style="font-size: 26px; margin-top: 16px;">Deep E-Commerce Health Check Audit</h3>
+      <div class="price-amt">$1,200&ndash;$1,800</div>
+      <p class="price-sub">One-time investment &middot; Delivered in 10-12 business days after the required data and access are received.</p>
+      <p style="font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.05em; text-align:left; margin-bottom:10px;">Standard Deep scope includes:</p>
+      <ul class="price-features" style="grid-template-columns: 1fr 1fr;">
+        <li><i class="fa-solid fa-check"></i> One e-commerce business</li>
+        <li><i class="fa-solid fa-check"></i> Typically 6-12 months of historical data</li>
+        <li><i class="fa-solid fa-check"></i> Revenue and sales trend analysis</li>
+        <li><i class="fa-solid fa-check"></i> Profitability and margin analysis using available cost data</li>
+        <li><i class="fa-solid fa-check"></i> Product and category performance analysis</li>
+        <li><i class="fa-solid fa-check"></i> Marketing channel efficiency review</li>
+        <li><i class="fa-solid fa-check"></i> Tracking and attribution reconciliation</li>
+        <li><i class="fa-solid fa-check"></i> Funnel, device, and segment analysis</li>
+        <li><i class="fa-solid fa-check"></i> Customer and retention analysis</li>
+        <li><i class="fa-solid fa-check"></i> Cohort and LTV signals, where data supports them</li>
+        <li><i class="fa-solid fa-check"></i> Discount, refund, and return impact review</li>
+        <li><i class="fa-solid fa-check"></i> Data confidence and limitations assessment</li>
+        <li><i class="fa-solid fa-check"></i> Comprehensive audit report</li>
+        <li><i class="fa-solid fa-check"></i> Detailed business health scorecard</li>
+        <li><i class="fa-solid fa-check"></i> Audit-to-action map</li>
+        <li><i class="fa-solid fa-check"></i> 30-60 day prioritized roadmap</li>
+        <li><i class="fa-solid fa-check"></i> 60-minute strategy session</li>
+        <li><i class="fa-solid fa-check"></i> Limited clarification support</li>
+      </ul>
+      <p style="font-size:13px; font-weight:700; color:var(--warning); text-transform:uppercase; letter-spacing:0.05em; text-align:left; margin:8px 0 10px;">Custom pricing may apply for:</p>
+      <ul class="price-features" style="grid-template-columns: 1fr 1fr; margin-bottom: 20px;">
+        <li><i class="fa-solid fa-circle-info" style="color:var(--warning);"></i> Multiple stores</li>
+        <li><i class="fa-solid fa-circle-info" style="color:var(--warning);"></i> Multiple domains</li>
+        <li><i class="fa-solid fa-circle-info" style="color:var(--warning);"></i> Multiple markets or currencies</li>
+        <li><i class="fa-solid fa-circle-info" style="color:var(--warning);"></i> Multiple warehouses or business units</li>
+        <li><i class="fa-solid fa-circle-info" style="color:var(--warning);"></i> More than 12 months of historical data</li>
+        <li><i class="fa-solid fa-circle-info" style="color:var(--warning);"></i> Large customer or order datasets</li>
+        <li><i class="fa-solid fa-circle-info" style="color:var(--warning);"></i> Complex data environments</li>
+        <li><i class="fa-solid fa-circle-info" style="color:var(--warning);"></i> Extensive session-recording analysis</li>
+        <li><i class="fa-solid fa-circle-info" style="color:var(--warning);"></i> Custom dashboard requirements</li>
+        <li><i class="fa-solid fa-circle-info" style="color:var(--warning);"></i> Data engineering or implementation requirements</li>
+        <li><i class="fa-solid fa-circle-info" style="color:var(--warning);"></i> Additional workshops or stakeholder sessions</li>
+      </ul>
+      <p style="font-size: 12px; color: var(--light); margin-top: 4px; font-style: italic; text-align:center; margin-bottom:20px;">Final scope and price depend on data volume, data quality, number of sources, historical period, number of business units, and required analysis depth.</p>
+      <a href="/book?package=health-check-deep" class="btn btn-primary" style="width: 100%; justify-content: center;">Request a Deep Health Check</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Final CTA -->
+<section style="background: var(--surface); text-align:center; padding: 80px 0;">
+  <div class="container">
+    <div style="max-width:720px; margin:0 auto;">
+      <h2 style="font-size: 32px; margin-bottom: 16px;">Understand the Real Drivers Behind Your Growth Before Making a Major Decision</h2>
+      <p style="font-size: 17px; color: var(--muted); margin-bottom: 32px;">If your business has enough data but the answers are still unclear, a deeper health check can connect your revenue, products, customers, marketing, conversion, profitability, and measurement signals in one decision-ready view.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="/book?package=health-check-deep" class="btn btn-primary">Request a Deep Health Check</a>
+        <a href="/health-check/standard" class="btn btn-outline" style="border-color:var(--border-dark);">Need a faster diagnostic? Start with the Standard Health Check.</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Moz Intelligence. All rights reserved.</footer>
