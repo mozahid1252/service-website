@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'E-Commerce Health Check | Moz Intelligence',
-  description: 'A focused 5-day diagnostic audit for Shopify stores doing $5K-$50K/mo. Find your profit leaks, conversion blockers, and quick wins without touching a line of code.',
+  title: 'E-Commerce Health Check Audit | Moz Intelligence',
+  description: 'A business-level diagnostic audit across revenue, profitability, products, marketing, tracking, conversion, and customer health. Choose Standard or Deep level analysis.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
