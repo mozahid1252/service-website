@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: 'E-Commerce Health Check Audit | Moz Intelligence',
-  description: 'A business-level diagnostic audit across revenue, profitability, products, marketing, tracking, conversion, and customer health. Choose Standard or Deep level analysis.',
+  description: 'A business-level diagnostic audit across revenue, profitability, products, marketing, tracking, conversion, and customer health. See what is working, what is leaking money, and what needs attention first. Choose Standard or Deep.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

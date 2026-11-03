@@ -2041,8 +2041,8 @@ function ServicesSection() {
                 {pkg.tagline && <p className="text-[#F0F4F8] text-sm leading-relaxed mb-5">{pkg.tagline}</p>}
 
                 <a href={`/book?package=${pkg.route.replace('/', '')}`} className="service-book-btn package-book-btn">{pkg.cta}</a>
-                <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-2 cursor-pointer no-underline w-full">
-                  <ExternalLink size={12} /> View Details
+                <a href={`${basePath}${pkg.route}`} className="btn-press mt-3 px-4 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-2 cursor-pointer no-underline w-full">
+                  <ExternalLink size={14} /> View Details
                 </a>
                 </div>
               </div>
@@ -11353,7 +11353,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: 'E-Commerce Health Check Audit | Moz Intelligence',
-  description: 'A business-level diagnostic audit across revenue, profitability, products, marketing, tracking, conversion, and customer health. Choose Standard or Deep level analysis.',
+  description: 'A business-level diagnostic audit across revenue, profitability, products, marketing, tracking, conversion, and customer health. See what is working, what is leaking money, and what needs attention first. Choose Standard or Deep.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -11492,6 +11492,7 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
         <div class="card-delivery"><strong>Delivery:</strong> 3-5 business days</div>
         <div class="card-price">Starting at $499</div>
         <a href="/book?package=health-check-standard" class="btn btn-primary">Start Standard Health Check</a>
+        <a href="/health-check/standard" class="btn btn-outline" style="margin-top: 10px; width: 100%; justify-content: center; font-size: 14px;">View More</a>
         <p class="card-note">High-level diagnostic - Implementation and deep analysis scoped separately</p>
       </div>
 
@@ -11529,6 +11530,7 @@ export default function LandingContent({ bodyHtml, scriptCode }: Props) {
         <div class="card-delivery"><strong>Delivery:</strong> 10-12 business days</div>
         <div class="card-price">$1,200 - $1,800</div>
         <a href="/book?package=health-check-deep" class="btn btn-primary">Request Deep Health Check</a>
+        <a href="/health-check/deep" class="btn btn-outline" style="margin-top: 10px; width: 100%; justify-content: center; font-size: 14px;">View More</a>
         <p class="card-note">Comprehensive diagnostic - Implementation, dashboards, and live systems scoped separately</p>
       </div>
 
