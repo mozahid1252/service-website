@@ -72,7 +72,6 @@ const serviceOptions = [
   "E-Commerce Health Check",
   "Revenue Growth Accelerator",
   "Data-Driven Growth System",
-  "Ongoing Analytics Retainer",
   "Marketing Spend Audit",
   "Customer Retention Audit",
   "Product Portfolio Audit",
