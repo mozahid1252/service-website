@@ -12,13 +12,13 @@ TABLE OF CONTENTS
   PART 5 - Landing Pages (B. Specialized Add-On Audits)  (48 files)
   PART 6 - Landing Pages (C. Data Setup & Infrastructure)  (18 files)
   PART 7 - Landing Pages (D. Custom Analytics & Infrastructure)  (24 files)
-  PART 8 - Landing Pages (E. Other Landing Pages)  (18 files)
+  PART 8 - Landing Pages (E. Other Landing Pages)  (24 files)
   PART 9 - API Routes  (8 files)
   PART 10 - Custom Components  (18 files)
   PART 11 - Lib & Hooks  (4 files)
   PART 12 - shadcn/ui Components  (48 files)
 --------------------------------------------------------------------------------
-TOTAL: 223 files
+TOTAL: 229 files
 ================================================================================
 
 ================================================================================
@@ -29664,6 +29664,1268 @@ footer {
   .table-header, .table-row { grid-template-columns: 1.5fr 1fr 1fr 1fr; padding: 12px; font-size: 12px; }
   .dash-body { grid-template-columns: 1fr; }
   .dash-card.large { grid-column: span 1; }
+}
+```
+### FILE: src/app/performance-improvement/page.tsx
+```tsx
+import fs from "fs";
+import path from "path";
+import LandingContent from "./landing-content";
+import "./landing.css";
+
+export default function Page() {
+  const bodyHtml = fs.readFileSync(
+    path.join(process.cwd(), "src", "app", "performance-improvement", "landing-body.html"),
+    "utf-8"
+  );
+  const scriptCode = fs.readFileSync(
+    path.join(process.cwd(), "src", "app", "performance-improvement", "landing-script.js"),
+    "utf-8"
+  );
+
+  return <LandingContent bodyHtml={bodyHtml} scriptCode={scriptCode} />;
+}
+```
+### FILE: src/app/performance-improvement/layout.tsx
+```tsx
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'E-Commerce Performance Improvement | Moz Intelligence',
+  description: 'Turn your Health Check findings into measurable improvements. Custom CRO, marketing, product, tracking, retention, and reporting workstreams. Starting from $750.',
+};
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+### FILE: src/app/performance-improvement/landing-content.tsx
+```tsx
+"use client";
+
+import { useEffect } from "react";
+
+type Props = {
+  bodyHtml: string;
+  scriptCode: string;
+};
+
+export default function LandingContent({ bodyHtml, scriptCode }: Props) {
+  useEffect(() => {
+    try {
+      // eslint-disable-next-line no-new-func
+      const fn = new Function(scriptCode);
+      fn();
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.error("Landing page script error:", e);
+    }
+  }, [scriptCode]);
+
+  return <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />;
+}
+```
+### FILE: src/app/performance-improvement/landing-body.html
+```html
+<!-- MOBILE-OVERRIDE-SAFETY -->
+<style>
+@media(max-width:900px){.outcomes-grid,.outcomes-grid.cols-3,.outcomes-grid.cols-4{display:flex !important;flex-direction:column !important;gap:16px !important}}
+/* ===== GLOBAL COLOR OVERRIDES (prevents globals.css strong { color:#FFFFFF }) ===== */
+h1,h2,h3,h4,h5{color:var(--text) !important}
+h1 em,h2 em,h3 em{color:var(--accent) !important}
+p{color:var(--muted) !important}
+.hero p{color:var(--muted) !important}
+.header-center p{color:var(--muted) !important}
+.eyebrow{color:var(--accent-dark) !important}
+li{color:var(--muted) !important}
+td,th{color:var(--text) !important}
+span{color:var(--muted) !important}
+.analysis-title h3{color:var(--text) !important}
+.analysis-title span{color:var(--accent) !important}
+.analysis-text p{color:var(--muted) !important}
+.analysis-text p strong{color:var(--text) !important}
+.analysis-text strong{color:var(--text) !important}
+.analysis-text ul li{color:var(--muted) !important}
+.analysis-text ul li strong{color:var(--text) !important}
+.insight-box{color:var(--muted) !important}
+.insight-box b{color:var(--text) !important}
+.bar-label{color:var(--muted) !important}
+.bar-value{color:var(--text) !important}
+.faq-a{color:var(--muted) !important}
+.faq-q{color:var(--text) !important}
+.pricing-features li{color:var(--muted) !important}
+.pricing-features li strong{color:var(--text) !important}
+.card-list li{color:var(--muted) !important}
+.card-list li strong{color:var(--text) !important}
+.deliverable-card p{color:var(--muted) !important}
+.deliverable-card span{color:var(--muted) !important}
+.decision-card ul li{color:var(--muted) !important}
+.signs-list li{color:var(--muted) !important}
+.not-included li{color:var(--muted) !important}
+.comparison-table td{color:var(--text) !important}
+.comparison-table th{color:var(--text) !important}
+.next-step-card p{color:var(--muted) !important}
+.next-step-card .step-condition{color:var(--accent) !important}
+.boundary-note p{color:var(--muted) !important}
+.boundary-note h4{color:var(--warning) !important}
+.pricing-card .price-sub{color:var(--muted) !important}
+
+/* ===== STD DELIVERABLE GRID (vertical layout: icon top, number, title, desc) ===== */
+.std-deliverable-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:900px; margin:0 auto; }
+.std-deliverable-card { display:flex; flex-direction:column !important; gap:10px; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:24px; transition:transform 0.3s ease, box-shadow 0.3s ease; }
+.std-deliverable-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+.std-deliverable-card .deliverable-icon { width:44px; height:44px; background:var(--accent-light); color:var(--accent) !important; border-radius:12px; display:flex !important; align-items:center; justify-content:center; font-size:18px; margin:0; }
+.std-deliverable-card h4 { font-size:14px; color:var(--accent) !important; margin:0; font-weight:700; }
+.std-deliverable-card p { font-size:15px; font-weight:700; color:var(--text) !important; margin:0; line-height:1.4; }
+.std-deliverable-card span { font-size:13px; color:var(--muted) !important; line-height:1.6; }
+@media(max-width:900px){.std-deliverable-grid{grid-template-columns:1fr !important}}
+
+/* ===== CUSTOM LAYOUT HELPERS ===== */
+.simple-difference-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; max-width:900px; margin:0 auto; }
+@media(max-width:900px){.simple-difference-grid{grid-template-columns:1fr !important}}
+.simple-difference-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; text-align:center; }
+.simple-difference-card .sd-step { font-size:12px; font-weight:700; color:var(--accent) !important; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; }
+.simple-difference-card h4 { font-size:15px; color:var(--text) !important; margin-bottom:6px; }
+.simple-difference-card p { font-size:13px; color:var(--muted) !important; margin:0; }
+
+.priority-list { list-style:none; max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@media(max-width:900px){.priority-list{grid-template-columns:1fr !important}}
+.priority-list li { padding:14px 18px; background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; font-size:14px; }
+.priority-list li strong { color:var(--text) !important; display:block; margin-bottom:4px; font-size:15px; }
+
+.priority-criteria { max-width:860px; margin:0 auto 32px; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px 32px; }
+.priority-criteria p { font-size:15px; color:var(--muted) !important; margin-bottom:12px; }
+.priority-criteria ul { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+@media(max-width:900px){.priority-criteria ul{grid-template-columns:1fr !important}}
+.priority-criteria ul li { font-size:14px; color:var(--muted) !important; padding:6px 0; display:flex; align-items:flex-start; gap:8px; }
+.priority-criteria ul li i { color:var(--accent); font-size:6px; margin-top:8px; }
+
+.examples-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:1000px; margin:0 auto; }
+@media(max-width:900px){.examples-grid{grid-template-columns:1fr !important}}
+.example-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px; transition:transform 0.3s ease, box-shadow 0.3s ease; }
+.example-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+.example-card .example-tag { display:inline-block; padding:4px 12px; background:var(--accent-light); color:var(--accent) !important; border-radius:100px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:12px; }
+.example-card h4 { font-size:18px; color:var(--text) !important; margin-bottom:8px; }
+.example-card .example-for { font-size:13px; color:var(--muted) !important; margin-bottom:16px; }
+.example-card .example-includes-label { font-size:12px; font-weight:700; color:var(--accent) !important; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; }
+.example-card ul { list-style:none; }
+.example-card ul li { font-size:13px; color:var(--muted) !important; padding:4px 0; display:flex; align-items:flex-start; gap:8px; }
+.example-card ul li i { color:var(--accent); font-size:11px; margin-top:4px; }
+
+.success-metric-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:1000px; margin:0 auto; }
+@media(max-width:900px){.success-metric-grid{grid-template-columns:1fr !important}}
+.success-metric-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; }
+.success-metric-card .sm-icon { width:40px; height:40px; background:var(--accent-light); color:var(--accent) !important; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:18px; margin-bottom:12px; }
+.success-metric-card h4 { font-size:16px; color:var(--text) !important; margin-bottom:10px; }
+.success-metric-card ul { list-style:none; }
+.success-metric-card ul li { font-size:13px; color:var(--muted) !important; padding:4px 0; display:flex; align-items:flex-start; gap:8px; }
+.success-metric-card ul li i { color:var(--accent); font-size:6px; margin-top:8px; }
+
+.pricing-4-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:1000px; margin:0 auto; }
+@media(max-width:900px){.pricing-4-grid{grid-template-columns:1fr !important}}
+.pricing-tier-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; box-shadow:var(--shadow); transition:transform 0.3s ease, box-shadow 0.3s ease; }
+.pricing-tier-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.pricing-tier-card.featured { border:2px solid var(--accent); box-shadow:0 20px 40px -10px rgba(37,99,235,0.18); }
+.pricing-tier-card .tier-label { font-size:12px; font-weight:700; color:var(--accent) !important; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px; }
+.pricing-tier-card h3 { font-size:20px; color:var(--text) !important; margin-bottom:8px; }
+.pricing-tier-card .tier-for { font-size:14px; color:var(--muted) !important; margin-bottom:20px; line-height:1.6; }
+.pricing-tier-card .tier-price { font-size:30px; font-weight:800; color:var(--text) !important; margin:8px 0; }
+.pricing-tier-card .tier-timeline { font-size:13px; color:var(--muted) !important; margin-bottom:20px; }
+.pricing-tier-card .btn { width:100%; justify-content:center; }
+</style>
+
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">Moz <span>Intelligence</span></a>
+    <ul class="nav-links" style="gap:20px; list-style:none;">
+      <li><a href="#signs" style="color:var(--muted); font-size:14px;">Signs</a></li>
+      <li><a href="#workstreams" style="color:var(--muted); font-size:14px;">Workstreams</a></li>
+      <li><a href="#process" style="color:var(--muted); font-size:14px;">Process</a></li>
+      <li><a href="#deliverables" style="color:var(--muted); font-size:14px;">Deliverables</a></li>
+      <li><a href="#faq" style="color:var(--muted); font-size:14px;">FAQ</a></li>
+      <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
+      <li><a href="/" style="color:var(--muted); font-size:14px;">Back to MozIntelligence</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a href="#pricing" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="mobile-menu-performance-improvement">
+    <a href="#signs">Signs</a>
+    <a href="#workstreams">Workstreams</a>
+    <a href="#process">Process</a>
+    <a href="#deliverables">Deliverables</a>
+    <a href="#faq">FAQ</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/">Back to MozIntelligence</a>
+    <a href="#pricing" class="nav-mobile-cta">Get Started</a>
+</div>
+
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow" style="margin: 0 auto;">Core Package &middot; Step 02: Improve</div>
+    <h1>Turn Your Health Check Findings Into Measurable Improvements</h1>
+    <p>Your Health Check identifies where revenue, profitability, conversion, marketing efficiency, customer value, or data quality may be holding your business back. The E-Commerce Performance Improvement engagement turns those findings into a focused improvement plan and executes the highest-priority work required to strengthen your business performance.</p>
+    <p style="font-size: 16px; color: var(--text); max-width: 680px; margin: 0 auto 32px;">Every engagement is custom-built around your Health Check results, business goals, available resources, and technical requirements.</p>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn btn-primary">Discuss My Improvement Plan</a>
+      <a href="#workstreams" class="btn btn-outline" style="border-color:var(--border-dark);">View Workstreams</a>
+    </div>
+    <p style="font-size: 13px; color: var(--light); margin-top: 20px; font-style: italic;">This is a custom project. The final scope, timeline, deliverables, and investment are defined after reviewing your Health Check findings.</p>
+  </div>
+</header>
+
+
+<!-- WHAT THIS ENGAGEMENT IS FOR -->
+<section id="signs" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Is This You?</div>
+      <h2>Is Your Business Showing These Signs?</h2>
+      <p>If your Health Check, internal data, or recent business performance points to one or more of these issues, the Performance Improvement engagement can convert those signals into focused execution.</p>
+    </div>
+    <ul class="signs-list" style="list-style:none; max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>A conversion bottleneck</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Weak mobile performance</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Low product-page conversion</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Unprofitable marketing activity</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Tracking or reporting problems</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Low repeat purchase</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Weak product or offer economics</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Discount-related margin loss</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Poor customer-value signals</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>A need for better KPI monitoring</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px; grid-column: span 2;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Multiple connected problems requiring a coordinated plan</li>
+    </ul>
+
+    <div style="max-width:900px; margin:48px auto 0;">
+      <h3 style="text-align:center; font-size:22px; margin-bottom:24px; color:var(--text) !important;">The Simple Difference</h3>
+      <div class="simple-difference-grid">
+        <div class="simple-difference-card scroll-reveal">
+          <div class="sd-step">Step 01</div>
+          <h4>Health Check</h4>
+          <p>Identify the problem</p>
+        </div>
+        <div class="simple-difference-card scroll-reveal" style="border:2px solid var(--accent); box-shadow:0 12px 30px -10px rgba(37,99,235,0.2);">
+          <div class="sd-step">Step 02 &middot; You Are Here</div>
+          <h4>Performance Improvement</h4>
+          <p>Fix the selected problem</p>
+        </div>
+        <div class="simple-difference-card scroll-reveal">
+          <div class="sd-step">Step 03</div>
+          <h4>Growth Intelligence Partnership</h4>
+          <p>Continuously monitor and improve the business</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT THIS ENGAGEMENT CAN IMPROVE (6 ANALYSIS BLOCKS, SINGLE COLUMN) -->
+<section id="workstreams" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Workstreams</div>
+      <h2>What This Engagement Can Improve</h2>
+      <p>Each engagement is built from one or more of these workstreams. The final combination is selected based on your Health Check findings and business priorities.</p>
+    </div>
+
+    <!-- Analysis 01 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">1</div><div class="analysis-title"><h3>Conversion &amp; CRO Improvement</h3><span>For businesses losing customers across the website or purchase journey</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p><strong>Objective:</strong> For businesses losing customers across the website or purchase journey, this workstream improves the conversion path from landing through cart and checkout.</p>
+          <p><strong>Possible work:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Landing-page improvement</li>
+            <li>Product-page optimization</li>
+            <li>Message and offer alignment</li>
+            <li>CTA restructuring</li>
+            <li>Product-information improvement</li>
+            <li>Mobile conversion improvements</li>
+            <li>Navigation and product-discovery improvements</li>
+            <li>Cart-friction reduction</li>
+            <li>Checkout-friction recommendations</li>
+            <li>CRO test planning</li>
+            <li>Conversion KPI setup</li>
+            <li>A/B test coordination</li>
+          </ul>
+          <p><strong>Possible deliverables:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>CRO implementation brief</li>
+            <li>Page-level improvement recommendations</li>
+            <li>Updated page structure</li>
+            <li>Conversion-focused copy direction</li>
+            <li>Developer/design handoff</li>
+            <li>Test hypothesis and measurement plan</li>
+            <li>Before-and-after conversion review</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Design, copywriting, development, and A/B test execution are included only when specifically approved in the project scope.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 02 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">2</div><div class="analysis-title"><h3>Marketing Performance Improvement</h3><span>For businesses where marketing spend, channel efficiency, or acquisition economics need attention</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p><strong>Objective:</strong> For businesses where marketing spend, channel efficiency, or acquisition economics need attention, this workstream improves the connection between spend, acquisition, and business outcome.</p>
+          <p><strong>Possible work:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Marketing budget reallocation</li>
+            <li>Channel-priority framework</li>
+            <li>CAC and contribution-margin review</li>
+            <li>Meta or Google campaign improvement recommendations</li>
+            <li>Prospecting and retargeting structure</li>
+            <li>Campaign measurement correction</li>
+            <li>Creative-testing framework</li>
+            <li>Offer and audience testing direction</li>
+            <li>Marketing KPI system</li>
+            <li>Channel performance review</li>
+          </ul>
+          <p><strong>Possible deliverables:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Marketing improvement roadmap</li>
+            <li>Budget allocation recommendation</li>
+            <li>Campaign-priority matrix</li>
+            <li>Channel KPI framework</li>
+            <li>Testing plan</li>
+            <li>Reporting structure</li>
+            <li>Before-and-after performance review</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Daily media buying, campaign management, and ad creative production are separate services unless explicitly included.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 03 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">3</div><div class="analysis-title"><h3>Product &amp; Profitability Improvement</h3><span>For businesses where product mix, pricing, discounting, or margin leakage is limiting growth</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p><strong>Objective:</strong> For businesses where product mix, pricing, discounting, or margin leakage is limiting growth, this workstream improves product-level profitability and offer economics.</p>
+          <p><strong>Possible work:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Product pricing review</li>
+            <li>Product-level margin improvement</li>
+            <li>Low-margin bestseller investigation</li>
+            <li>Discount strategy improvement</li>
+            <li>Bundle development</li>
+            <li>Cross-sell and upsell planning</li>
+            <li>Product portfolio prioritization</li>
+            <li>Return/refund-related margin improvement</li>
+            <li>Product-page value communication</li>
+            <li>Contribution-margin monitoring</li>
+          </ul>
+          <p><strong>Possible deliverables:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Product action matrix</li>
+            <li>Pricing or discount recommendations</li>
+            <li>Bundle and cross-sell plan</li>
+            <li>Product profitability improvement roadmap</li>
+            <li>Margin KPI framework</li>
+            <li>Product-page improvement brief</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Product cost, shipping, fulfilment, and return data must be available for detailed margin-related work.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 04 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">4</div><div class="analysis-title"><h3>Tracking &amp; Data Improvement</h3><span>For businesses making decisions from incomplete, inconsistent, or unreliable data</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p><strong>Objective:</strong> For businesses making decisions from incomplete, inconsistent, or unreliable data, this workstream corrects measurement gaps so future decisions can be made with confidence.</p>
+          <p><strong>Possible work:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>GA4 funnel-event correction</li>
+            <li>GTM event configuration</li>
+            <li>Shopify event validation</li>
+            <li>Purchase-event validation</li>
+            <li>Meta Pixel/CAPI coordination</li>
+            <li>UTM structure improvement</li>
+            <li>Platform reconciliation</li>
+            <li>KPI-definition correction</li>
+            <li>Reporting logic improvement</li>
+            <li>Data-quality monitoring plan</li>
+          </ul>
+          <p><strong>Possible deliverables:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Tracking correction plan</li>
+            <li>Event specification</li>
+            <li>Measurement documentation</li>
+            <li>UTM framework</li>
+            <li>Data-quality checklist</li>
+            <li>Platform reconciliation framework</li>
+            <li>Developer handoff document</li>
+            <li>Validation report</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Technical implementation may require a developer or specialist partner. Third-party implementation fees are not automatically included.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 05 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">5</div><div class="analysis-title"><h3>Customer Retention &amp; LTV Improvement</h3><span>For businesses with weak repeat purchase, low customer value, or underdeveloped retention</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p><strong>Objective:</strong> For businesses with weak repeat purchase, low customer value, or underdeveloped retention, this workstream improves the post-purchase journey and customer lifetime value.</p>
+          <p><strong>Possible work:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Repeat-purchase improvement plan</li>
+            <li>VIP customer strategy</li>
+            <li>At-risk customer re-engagement plan</li>
+            <li>RFM segment activation</li>
+            <li>Cross-sell and upsell strategy</li>
+            <li>Post-purchase journey planning</li>
+            <li>Email/SMS flow recommendations</li>
+            <li>Retention KPI framework</li>
+            <li>LTV improvement roadmap</li>
+            <li>Customer-segment prioritization</li>
+          </ul>
+          <p><strong>Possible deliverables:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Retention action plan</li>
+            <li>Customer-segment priority list</li>
+            <li>Post-purchase journey map</li>
+            <li>Re-engagement campaign brief</li>
+            <li>Cross-sell strategy</li>
+            <li>Retention KPI framework</li>
+            <li>LTV measurement plan</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Klaviyo/Mailchimp setup, email copy production, automation build, and campaign execution are separate unless explicitly included.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Analysis 06 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">6</div><div class="analysis-title"><h3>Reporting &amp; KPI Improvement</h3><span>For businesses that need better visibility after the Health Check</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p><strong>Objective:</strong> For businesses that need better visibility after the Health Check, this workstream creates the reporting and KPI structure that supports clearer decisions going forward.</p>
+          <p><strong>Possible work:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>KPI definition</li>
+            <li>Management reporting structure</li>
+            <li>Profitability monitoring</li>
+            <li>Marketing performance reporting</li>
+            <li>Funnel monitoring</li>
+            <li>Customer-retention monitoring</li>
+            <li>Monthly reporting template</li>
+            <li>Dashboard requirements document</li>
+            <li>Decision-making framework</li>
+          </ul>
+          <p><strong>Possible deliverables:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>KPI dictionary</li>
+            <li>Reporting template</li>
+            <li>Monthly performance scorecard</li>
+            <li>Dashboard specification</li>
+            <li>Management review format</li>
+            <li>Data-monitoring checklist</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Full dashboard development and automated data infrastructure are separately scoped when required.</div>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- HOW THE WORK IS PRIORITIZED -->
+<section id="priority" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Prioritization</div>
+      <h2>How the Work Is Prioritized</h2>
+      <p>Each possible improvement is assessed against a consistent set of criteria so that the highest-value work is selected first.</p>
+    </div>
+
+    <div class="priority-criteria scroll-reveal">
+      <p><strong>Each possible improvement is assessed using:</strong></p>
+      <ul>
+        <li><i class="fa-solid fa-circle"></i>Business impact</li>
+        <li><i class="fa-solid fa-circle"></i>Urgency</li>
+        <li><i class="fa-solid fa-circle"></i>Evidence quality</li>
+        <li><i class="fa-solid fa-circle"></i>Implementation effort</li>
+        <li><i class="fa-solid fa-circle"></i>Technical complexity</li>
+        <li><i class="fa-solid fa-circle"></i>Dependency on other work</li>
+        <li><i class="fa-solid fa-circle"></i>Available internal resources</li>
+        <li><i class="fa-solid fa-circle"></i>Ability to measure the outcome</li>
+      </ul>
+    </div>
+
+    <div class="header-center" style="margin-bottom:32px;">
+      <h3 style="font-size:22px; color:var(--text) !important;">Priority Categories</h3>
+    </div>
+    <ul class="priority-list">
+      <li class="scroll-reveal"><strong>Immediate Improvements</strong>High-priority issues that can be addressed quickly.</li>
+      <li class="scroll-reveal"><strong>High-Impact Improvements</strong>Structural changes that may require design, development, or technical support.</li>
+      <li class="scroll-reveal"><strong>Measurement Improvements</strong>Tracking or reporting work required before performance can be evaluated reliably.</li>
+      <li class="scroll-reveal"><strong>Testing Opportunities</strong>Changes that should be validated through an experiment.</li>
+      <li class="scroll-reveal" style="grid-column: span 2;"><strong>Future Opportunities</strong>Useful improvements that are not the first priority.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- WHAT YOU RECEIVE (8 DELIVERABLE CARDS, 2 PER ROW) -->
+<section id="deliverables" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Deliverables</div>
+      <h2>What You Receive</h2>
+      <p>A complete package covering scoping, prioritized execution, measurement, review, and handover documentation.</p>
+    </div>
+    <div class="std-deliverable-grid">
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-clipboard-list"></i></div><h4>01</h4><p>Custom Improvement Scope</p><span>Problems being addressed, approved workstreams, deliverables, responsibilities, timeline, required access, success metrics, and excluded work.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-route"></i></div><h4>02</h4><p>Prioritized Implementation Roadmap</p><span>What happens first, what depends on another task, who is responsible, what must be measured, and what should happen next.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div><h4>03</h4><p>Selected Improvement Work</p><span>Implementation or coordination of the approved CRO, marketing, product, tracking, retention, or reporting work.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-gauge-high"></i></div><h4>04</h4><p>KPI &amp; Measurement Framework</p><span>Primary KPI, secondary KPI, baseline, target direction, measurement period, data source, and review frequency.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-arrows-rotate"></i></div><h4>05</h4><p>Progress &amp; Findings Updates</p><span>Completed work, current risks, open decisions, data issues, and next priorities.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></div><h4>06</h4><p>Before-and-After Review</p><span>Compare performance before and after the improvement where sufficient data and time are available.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-headset"></i></div><h4>07</h4><p>Strategy Review Call</p><span>A review of completed work, early results, remaining issues, and recommended next steps.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-file-export"></i></div><h4>08</h4><p>Handover Documentation</p><span>Relevant documentation for internal teams, developers, designers, media buyers, email specialists, and future service providers.</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOW IT WORKS (6 PROCESS STEPS) -->
+<section id="process" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Process</div>
+      <h2>How It Works</h2>
+      <p>Six steps from Health Check findings to a measured, reviewed improvement outcome.</p>
+    </div>
+    <div class="process-grid" style="grid-template-columns: repeat(3, 1fr); max-width:900px;">
+      <div class="process-step scroll-reveal">
+        <div class="step-num">1</div>
+        <h4>Review the Health Check</h4>
+        <p>Review Standard or Deep Health Check findings and identify issues with strongest business impact.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">2</div>
+        <h4>Select the Workstream</h4>
+        <p>Determine whether the project should focus on CRO, Marketing, Product profitability, Tracking, Retention, Reporting, or a combination.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">3</div>
+        <h4>Define the Scope</h4>
+        <p>Receive a custom proposal showing work, deliverables, timeline, access, success metrics, fees, and exclusions.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">4</div>
+        <h4>Execute the Approved Work</h4>
+        <p>Selected improvements are implemented or coordinated according to the agreed scope.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">5</div>
+        <h4>Measure the Result</h4>
+        <p>Relevant KPIs are reviewed against the original baseline where data and timing allow.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">6</div>
+        <h4>Decide the Next Phase</h4>
+        <p>Complete another focused improvement, move into Growth Intelligence Partnership, continue internally, or pause and monitor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- EXAMPLE PROJECT CONFIGURATIONS -->
+<section id="examples" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Examples</div>
+      <h2>Example Project Configurations</h2>
+      <p>Representative arrangements. Every engagement is custom-scoped after the Health Check review.</p>
+    </div>
+    <div class="examples-grid">
+      <div class="example-card scroll-reveal">
+        <span class="example-tag">Example A</span>
+        <h4>Conversion Improvement Project</h4>
+        <p class="example-for">For a brand with mobile and checkout problems.</p>
+        <div class="example-includes-label">May Include</div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i>Mobile funnel review</li>
+          <li><i class="fa-solid fa-check"></i>Cart and checkout improvement plan</li>
+          <li><i class="fa-solid fa-check"></i>Product-page CTA recommendations</li>
+          <li><i class="fa-solid fa-check"></i>Tracking validation</li>
+          <li><i class="fa-solid fa-check"></i>Developer handoff</li>
+          <li><i class="fa-solid fa-check"></i>Before-and-after conversion review</li>
+        </ul>
+      </div>
+      <div class="example-card scroll-reveal">
+        <span class="example-tag">Example B</span>
+        <h4>Profitability Improvement Project</h4>
+        <p class="example-for">For a brand with strong revenue but weak margin.</p>
+        <div class="example-includes-label">May Include</div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i>Product-margin review</li>
+          <li><i class="fa-solid fa-check"></i>Discount analysis</li>
+          <li><i class="fa-solid fa-check"></i>Low-margin bestseller investigation</li>
+          <li><i class="fa-solid fa-check"></i>Bundle and pricing recommendations</li>
+          <li><i class="fa-solid fa-check"></i>Margin KPI framework</li>
+          <li><i class="fa-solid fa-check"></i>Product action matrix</li>
+        </ul>
+      </div>
+      <div class="example-card scroll-reveal">
+        <span class="example-tag">Example C</span>
+        <h4>Marketing Efficiency Project</h4>
+        <p class="example-for">For a brand spending more without profitable growth.</p>
+        <div class="example-includes-label">May Include</div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i>Channel performance review</li>
+          <li><i class="fa-solid fa-check"></i>Budget reallocation</li>
+          <li><i class="fa-solid fa-check"></i>CAC and contribution-margin framework</li>
+          <li><i class="fa-solid fa-check"></i>Campaign-priority plan</li>
+          <li><i class="fa-solid fa-check"></i>Measurement correction</li>
+          <li><i class="fa-solid fa-check"></i>Testing roadmap</li>
+        </ul>
+      </div>
+      <div class="example-card scroll-reveal">
+        <span class="example-tag">Example D</span>
+        <h4>Retention Improvement Project</h4>
+        <p class="example-for">For a brand with low repeat purchase.</p>
+        <div class="example-includes-label">May Include</div>
+        <ul>
+          <li><i class="fa-solid fa-check"></i>Customer-segment review</li>
+          <li><i class="fa-solid fa-check"></i>Repeat-purchase analysis</li>
+          <li><i class="fa-solid fa-check"></i>At-risk customer prioritization</li>
+          <li><i class="fa-solid fa-check"></i>Post-purchase journey</li>
+          <li><i class="fa-solid fa-check"></i>Cross-sell plan</li>
+          <li><i class="fa-solid fa-check"></i>Retention KPI framework</li>
+        </ul>
+      </div>
+      <div class="example-card scroll-reveal" style="grid-column: span 2;">
+        <span class="example-tag">Example E</span>
+        <h4>Combined Improvement Project</h4>
+        <p class="example-for">For a brand with connected tracking, CRO, and marketing problems.</p>
+        <div class="example-includes-label">May Include</div>
+        <ul style="display:grid; grid-template-columns:1fr 1fr; gap:4px 24px;">
+          <li><i class="fa-solid fa-check"></i>Tracking correction plan</li>
+          <li><i class="fa-solid fa-check"></i>Funnel improvement</li>
+          <li><i class="fa-solid fa-check"></i>Channel measurement</li>
+          <li><i class="fa-solid fa-check"></i>Budget decision framework</li>
+          <li><i class="fa-solid fa-check"></i>Conversion testing roadmap</li>
+          <li><i class="fa-solid fa-check"></i>Monthly performance review setup</li>
+        </ul>
+      </div>
+    </div>
+    <div class="boundary-note scroll-reveal" style="max-width:900px; margin:32px auto 0;">
+      <h4><i class="fa-solid fa-circle-info"></i> Note on Combined Projects</h4>
+      <p>Combined projects require a custom scope and may be delivered in phases.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT IS NOT INCLUDED BY DEFAULT -->
+<section id="not-included" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Scope Boundary</div>
+      <h2>What Is Not Included by Default</h2>
+      <p>Clarity on what is out of scope so the engagement stays focused and predictable.</p>
+    </div>
+    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <ul class="not-included" style="list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Daily Meta or Google Ads management</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Media buying</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Website redesign</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full website development</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited copywriting</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full creative production</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full Klaviyo or Mailchimp implementation</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Complete email/SMS campaign management</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full GTM, GA4, Pixel, or CAPI implementation</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>BigQuery infrastructure</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Automated dashboard development</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Warehouse or supplier operations</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Bookkeeping or tax accounting</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Guaranteed revenue or profit improvement</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited revisions</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited meetings</li>
+        <li style="font-size:14px; grid-column: span 2;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Work outside the approved scope</li>
+      </ul>
+      <div class="insight-box" style="margin-top:20px;"><b>Note:</b> Any additional work can be added through a revised scope and fee.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHO IS THIS ENGAGEMENT FOR -->
+<section id="suitability" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Suitability</div>
+      <h2>Who Is This Engagement For?</h2>
+      <p>Confirm whether this engagement matches your situation before requesting a custom scope.</p>
+    </div>
+    <div style="max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:32px;">
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px;">
+        <h4 style="font-size:16px; margin-bottom:16px; color:var(--accent) !important;"><i class="fa-solid fa-circle-check" style="margin-right:8px;"></i>Best Suited For</h4>
+        <ul style="list-style:none;">
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Businesses that have completed a Health Check</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Brands that know their main performance issue</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Teams ready to invest in selected improvements</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Businesses with access to the required data and platforms</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Brands that want implementation guidance rather than another general report</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Businesses that can assign an internal decision-maker</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Companies willing to measure performance before and after changes</li>
+        </ul>
+      </div>
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px;">
+        <h4 style="font-size:16px; margin-bottom:16px; color:var(--danger) !important;"><i class="fa-solid fa-circle-xmark" style="margin-right:8px;"></i>May Not Be Suitable For</h4>
+        <ul style="list-style:none;">
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Businesses that only want a general business diagnosis</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Clients unwilling to provide the required access</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Brands expecting one fixed package to solve every problem</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Businesses looking for guaranteed growth</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Clients requiring daily ad management only</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Businesses without someone available to approve changes</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Projects where the required technical work is outside the agreed capability or budget</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Pricing</div>
+      <h2>Pricing</h2>
+      <p>Custom project pricing based on the workstreams, complexity, and implementation depth selected after your Health Check.</p>
+    </div>
+    <div class="pricing-4-grid">
+      <div class="pricing-tier-card scroll-reveal">
+        <div class="tier-label">Tier 01</div>
+        <h3>Focused Improvement Sprint</h3>
+        <p class="tier-for">For one clearly defined problem or one workstream.</p>
+        <div class="tier-price">From $750</div>
+        <p class="tier-timeline">Typical timeline: 2&ndash;4 weeks</p>
+        <a href="/book?package=performance-improvement" class="btn btn-primary">Discuss This Option</a>
+      </div>
+      <div class="pricing-tier-card featured scroll-reveal">
+        <div class="tier-label">Tier 02</div>
+        <h3>Multi-Workstream Improvement Project</h3>
+        <p class="tier-for">For two or more connected workstreams.</p>
+        <div class="tier-price">From $1,500</div>
+        <p class="tier-timeline">Typical timeline: 4&ndash;8 weeks</p>
+        <a href="/book?package=performance-improvement" class="btn btn-primary">Discuss This Option</a>
+      </div>
+      <div class="pricing-tier-card scroll-reveal">
+        <div class="tier-label">Tier 03</div>
+        <h3>Complex Improvement Program</h3>
+        <p class="tier-for">For larger brands requiring multiple stakeholders, technical coordination, several markets, or phased implementation.</p>
+        <div class="tier-price">From $2,500</div>
+        <p class="tier-timeline">Typical timeline: 8&ndash;12+ weeks</p>
+        <a href="/book?package=performance-improvement" class="btn btn-primary">Discuss This Option</a>
+      </div>
+      <div class="pricing-tier-card scroll-reveal">
+        <div class="tier-label">Add-On</div>
+        <h3>Third-Party Implementation Costs</h3>
+        <p class="tier-for">Developer, designer, copywriter, media buyer, email specialist, software, or platform fees may be quoted separately.</p>
+        <div class="tier-price">Quoted Separately</div>
+        <p class="tier-timeline">Based on actual scope and partners required</p>
+        <a href="/book?package=performance-improvement" class="btn btn-outline">Discuss Requirements</a>
+      </div>
+    </div>
+    <div class="boundary-note scroll-reveal" style="max-width:900px; margin:32px auto 0;">
+      <h4><i class="fa-solid fa-circle-info"></i> Pricing Note</h4>
+      <p>Custom project pricing &middot; Scoped after your Health Check findings. Focused improvement projects typically start from $750. Larger multi-workstream engagements are quoted based on complexity, technical requirements, and implementation depth.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- SUCCESS MEASUREMENT -->
+<section id="success" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Measurement</div>
+      <h2>Success Measurement</h2>
+      <p>Possible metrics by category &mdash; the final measurement framework is agreed during scoping.</p>
+    </div>
+    <div class="success-metric-grid">
+      <div class="success-metric-card scroll-reveal">
+        <div class="sm-icon"><i class="fa-solid fa-filter"></i></div>
+        <h4>CRO</h4>
+        <ul>
+          <li><i class="fa-solid fa-circle"></i>Product-page-to-cart rate</li>
+          <li><i class="fa-solid fa-circle"></i>Cart-to-checkout rate</li>
+          <li><i class="fa-solid fa-circle"></i>Checkout completion rate</li>
+          <li><i class="fa-solid fa-circle"></i>Purchase conversion rate</li>
+          <li><i class="fa-solid fa-circle"></i>Mobile conversion rate</li>
+        </ul>
+      </div>
+      <div class="success-metric-card scroll-reveal">
+        <div class="sm-icon"><i class="fa-solid fa-bullhorn"></i></div>
+        <h4>Marketing</h4>
+        <ul>
+          <li><i class="fa-solid fa-circle"></i>CAC</li>
+          <li><i class="fa-solid fa-circle"></i>Contribution-margin CAC</li>
+          <li><i class="fa-solid fa-circle"></i>New-customer revenue</li>
+          <li><i class="fa-solid fa-circle"></i>Channel efficiency</li>
+          <li><i class="fa-solid fa-circle"></i>Blended marketing efficiency</li>
+        </ul>
+      </div>
+      <div class="success-metric-card scroll-reveal">
+        <div class="sm-icon"><i class="fa-solid fa-coins"></i></div>
+        <h4>Product</h4>
+        <ul>
+          <li><i class="fa-solid fa-circle"></i>Contribution margin</li>
+          <li><i class="fa-solid fa-circle"></i>Average order value</li>
+          <li><i class="fa-solid fa-circle"></i>Bundle attach rate</li>
+          <li><i class="fa-solid fa-circle"></i>Discount-adjusted margin</li>
+          <li><i class="fa-solid fa-circle"></i>Return/refund impact</li>
+        </ul>
+      </div>
+      <div class="success-metric-card scroll-reveal">
+        <div class="sm-icon"><i class="fa-solid fa-users"></i></div>
+        <h4>Retention</h4>
+        <ul>
+          <li><i class="fa-solid fa-circle"></i>Repeat-purchase rate</li>
+          <li><i class="fa-solid fa-circle"></i>Time to second order</li>
+          <li><i class="fa-solid fa-circle"></i>Customer value</li>
+          <li><i class="fa-solid fa-circle"></i>Retention by cohort</li>
+          <li><i class="fa-solid fa-circle"></i>Re-engagement rate</li>
+        </ul>
+      </div>
+      <div class="success-metric-card scroll-reveal" style="grid-column: span 2;">
+        <div class="sm-icon"><i class="fa-solid fa-database"></i></div>
+        <h4>Tracking</h4>
+        <ul style="display:grid; grid-template-columns:1fr 1fr; gap:4px 24px;">
+          <li><i class="fa-solid fa-circle"></i>Event coverage</li>
+          <li><i class="fa-solid fa-circle"></i>Purchase-event consistency</li>
+          <li><i class="fa-solid fa-circle"></i>Data reconciliation</li>
+          <li><i class="fa-solid fa-circle"></i>Reporting confidence</li>
+          <li><i class="fa-solid fa-circle"></i>UTM completeness</li>
+        </ul>
+      </div>
+    </div>
+    <div class="boundary-note scroll-reveal" style="max-width:900px; margin:32px auto 0;">
+      <h4><i class="fa-solid fa-triangle-exclamation"></i> Note</h4>
+      <p>Metrics are used to evaluate direction and performance. They do not create a guarantee of a specific result.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-container" style="max-width:800px; margin:0 auto;">
+      <div class="faq-item active scroll-reveal">
+        <div class="faq-q">Do I need to complete a Health Check first? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Usually, yes. The Health Check provides the evidence needed to create an efficient custom scope. If you already have a recent, reliable audit or equivalent analysis, we can review it before deciding whether a new Health Check is necessary.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is this a fixed package? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. E-Commerce Performance Improvement is a custom engagement based on the problems identified and the work required.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Will you fix every issue found in the Health Check? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Not automatically. We select the highest-priority issues based on impact, effort, dependencies, and available budget. Additional issues can be addressed in later phases.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Do you implement the changes directly? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Implementation depends on the approved scope. MozIntelligence may provide strategy, documentation, coordination, analysis, and selected implementation. Developer, designer, copywriter, media buyer, or email-specialist work may require separate resources.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is CRO implementation included? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Only if CRO work is included in the approved project scope.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is campaign management included? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No, not by default. Daily media buying and campaign management require a separate scope.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is a dashboard included? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. KPI planning or reporting recommendations may be included. Dashboard development and automated data infrastructure are separately scoped.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Do you guarantee growth? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. The engagement is designed to improve decision quality and address identified performance constraints. Results depend on implementation, traffic, product-market fit, pricing, market conditions, and other factors.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can the work be delivered in phases? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. A phased approach is recommended when multiple problems are connected or the project is technically complex.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">How long does a project take? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">A focused sprint typically takes 2&ndash;4 weeks. Multi-workstream projects generally take 4&ndash;8 weeks. The final timeline is confirmed in the custom proposal.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">What happens after the project? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">You may continue with another improvement phase or move into the E-Commerce Growth Intelligence Partnership for ongoing monitoring, strategic planning, and continuous optimization.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section style="background: var(--bg); text-align:center; padding: 80px 0;">
+  <div class="container">
+    <div style="max-width:720px; margin:0 auto;">
+      <h2 style="font-size: 32px; margin-bottom: 16px;">Ready to Turn Your Findings Into Action?</h2>
+      <p style="font-size: 17px; color: var(--muted); margin-bottom: 32px;">Your Health Check has already identified where attention is needed. Now create a focused plan to address the issues with the greatest potential business impact.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="/book?package=performance-improvement" class="btn btn-primary">Discuss My Improvement Plan</a>
+        <a href="/health-check" class="btn btn-outline" style="border-color:var(--border-dark);">Need a diagnostic first? Start with the E-Commerce Health Check.</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2025 Moz Intelligence. All rights reserved.</footer>
+```
+### FILE: src/app/performance-improvement/landing-script.js
+```js
+document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const active = document.querySelector('.faq-item.active');
+      if (active && active !== item) active.classList.remove('active');
+      item.classList.toggle('active');
+    });
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+// Mobile hamburger navigation
+(function() {
+  var hamburger = document.querySelector('.nav-hamburger');
+  var mobileMenu = document.querySelector('.nav-mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', function() {
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+    var links = mobileMenu.querySelectorAll('a');
+    links.forEach(function(link) {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+      }
+    });
+  }
+})();
+
+
+// Mobile: convert all grid layouts to stacked flex column to prevent horizontal overflow
+(function() {
+  function fixMobileGrids() {
+    var isMobile = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+    document.querySelectorAll('[class*="grid"], [class*="row"], [style*="grid-template"]').forEach(function(el) {
+      if (isMobile) {
+        if (!el.getAttribute('data-grid-fixed')) {
+          if (getComputedStyle(el).display === 'grid') {
+            el.setAttribute('data-grid-fixed', '1');
+            el.style.setProperty('display', 'flex', 'important');
+            el.style.setProperty('flex-direction', 'column', 'important');
+          }
+        }
+      } else {
+        if (el.getAttribute('data-grid-fixed')) {
+          el.style.removeProperty('display');
+          el.style.removeProperty('flex-direction');
+          el.removeAttribute('data-grid-fixed');
+        }
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixMobileGrids);
+  } else {
+    fixMobileGrids();
+  }
+  var rt;
+  window.addEventListener('resize', function() { clearTimeout(rt); rt = setTimeout(fixMobileGrids, 150); });
+})();
+```
+### FILE: src/app/performance-improvement/landing.css
+```css
+
+:root { 
+  --bg: #F8FAFC; --surface: #FFFFFF; --surface-2: #F1F5F9; 
+  --text: #0F172A; --muted: #475569; --light: #94A3B8; 
+  --border: #E2E8F0; --border-dark: #CBD5E1; 
+  --accent: #2563EB; --accent-dark: #1D4ED8; --accent-light: #DBEAFE; 
+  --success: #2563EB; --success-light: #DBEAFE; 
+  --warning: #D97706; --warning-light: #FEF3C7; 
+  --danger: #DC2626; --danger-light: #FEE2E2; 
+  --shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03); 
+  --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02); 
+  --radius: 12px; --radius-lg: 20px; 
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+h1, h2, h3, h4, h5 { font-family: 'Manrope', sans-serif; font-weight: 700; letter-spacing: -0.02em; color: var(--text); line-height: 1.2; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+section { padding: 80px 0; border-bottom: 1px solid var(--border); }
+a { text-decoration: none; color: inherit; }
+.nav { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 100; width: calc(100% - 32px); max-width: 1100px; background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.6); box-shadow: var(--shadow); border-radius: 100px; padding: 12px 24px; }
+.nav-inner { display: flex; justify-content: space-between; align-items: center; }
+  .nav-links { display:flex; align-items:center; }
+.logo { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 16px; display: flex; align-items: center; gap: 8px; }
+.logo span { color: var(--accent); }
+.nav-cta { background: var(--text); color: #FFF; padding: 8px 18px; border-radius: 100px; font-size: 13px; font-weight: 600; transition: all 0.2s ease; }
+.nav-cta:hover { background: var(--accent); }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: var(--accent-light); border: 1px solid rgba(5,150,105,0.1); border-radius: 100px; font-size: 12px; font-weight: 600; color: var(--accent-dark); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 24px; }
+.eyebrow::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+.header-center { text-align: center; max-width: 700px; margin: 0 auto 64px; }
+.header-center h2 { font-size: clamp(32px, 4vw, 44px); margin-bottom: 16px; }
+.header-center p { font-size: 18px; color: var(--muted); }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 8px; font-weight: 600; font-size: 15px; transition: all 0.2s; border: 1px solid transparent; cursor: pointer; }
+.btn-primary { background: var(--accent); color: #FFF; box-shadow: 0 4px 14px rgba(5,150,105,0.3); }
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(5,150,105,0.4); }
+.btn-outline { background: transparent; color: var(--text); border-color: var(--border-dark); }
+.btn-outline:hover { background: var(--text); color: #FFF; border-color: var(--text); transform: translateY(-2px); }
+.hero { padding-top: 160px; text-align: center; }
+.hero h1 { font-size: clamp(40px, 6vw, 72px); margin-bottom: 24px; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p { font-size: 19px; color: var(--muted); max-width: 680px; margin: 0 auto 40px; }
+.hero-cta { display: flex; gap: 16px; justify-content: center; }
+.outcomes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.outcome-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.outcome-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.outcome-icon { width: 40px; height: 40px; background: var(--accent-light); color: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 18px; }
+.outcome-card h4 { font-size: 15px; margin-bottom: 4px; }
+.outcome-card p { font-size: 13px; color: var(--muted); }
+.analysis-block { margin-bottom: 48px; }
+.analysis-header { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+.analysis-num { width: 40px; height: 40px; background: var(--accent); color: #FFF; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+.analysis-title h3 { font-size: 22px; margin-bottom: 4px; }
+.analysis-title span { font-size: 13px; color: var(--accent); font-weight: 600; text-transform: uppercase; }
+.analysis-content { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow); }
+.analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+.analysis-text p { font-size: 15px; color: var(--muted); margin-bottom: 16px; }
+.insight-box { background: var(--surface-2); border-left: 4px solid var(--accent); padding: 16px; border-radius: 0 8px 8px 0; margin-top: 16px; font-size: 14px; }
+.insight-box b { color: var(--text); }
+.chart-mock { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+.bar-chart { display: flex; flex-direction: column; gap: 12px; }
+.bar-row { display: grid; grid-template-columns: 100px 1fr 60px; align-items: center; gap: 12px; }
+.bar-label { font-size: 12px; color: var(--muted); text-align: right; }
+.bar-track { height: 20px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 4px; background: var(--accent); opacity: 0.8; }
+.bar-fill.success { background: var(--success); } .bar-fill.warning { background: var(--warning); } .bar-fill.danger { background: var(--danger); }
+.bar-value { font-size: 12px; font-weight: 600; }
+.donut-chart-wrapper { display: flex; align-items: center; gap: 24px; justify-content: center; }
+.donut-chart { width: 120px; height: 120px; border-radius: 50%; background: conic-gradient(var(--accent) 0% 20%, var(--warning) 0% 35%, var(--border) 35% 100%); position: relative; }
+.donut-chart::after { content: '20%'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--surface); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Manrope'; font-size: 16px; font-weight: 700; }
+.funnel-wrapper { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.funnel-step { width: 100%; padding: 12px; text-align: center; color: #FFF; font-weight: 600; font-size: 13px; border-radius: 4px; }
+.funnel-1 { width: 100%; background: var(--accent); } .funnel-2 { width: 65%; background: #34D399; } .funnel-3 { width: 25%; background: var(--warning); }
+.deliverables-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.deliverable-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; display: flex; gap: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.deliverable-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.deliverable-icon { width: 48px; height: 48px; background: var(--accent-light); color: var(--accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.deliverable-content h4 { font-size: 17px; margin-bottom: 6px; }
+.deliverable-content p { font-size: 14px; color: var(--muted); }
+.data-required-list { max-width: 800px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow); }
+.data-required-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; font-size: 16px; color: var(--text); line-height: 1.5; }
+.data-required-item:last-child { margin-bottom: 0; }
+.data-required-item i { color: var(--accent); font-size: 18px; margin-top: 4px; }
+.data-required-note { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); font-size: 15px; color: var(--muted); font-style: italic; }
+.faq-container { max-width: 800px; margin: 0 auto; }
+.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; box-shadow: var(--shadow); }
+.faq-q { padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 16px; color: var(--text); }
+.faq-q i { color: var(--accent); transition: transform 0.3s ease; font-size: 14px; }
+.faq-item.active .faq-q i { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 24px; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.faq-item.active .faq-a { max-height: 200px; padding-bottom: 24px; }
+.pricing-card { max-width: 500px; margin: 0 auto; background: var(--surface); border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 40px; text-align: center; box-shadow: 0 20px 40px -10px rgba(5,150,105,0.2); }
+.price-amt { font-size: 40px; font-weight: 800; margin: 16px 0 8px; }
+.price-sub { color: var(--muted); margin-bottom: 32px; }
+.price-features { text-align: left; list-style: none; margin-bottom: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.price-features li { display: flex; gap: 10px; font-size: 14px; color: var(--muted); align-items: flex-start; }
+.price-features i { color: var(--success); margin-top: 4px; }
+footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14px; }
+@media (max-width: 900px) { .outcomes-grid, .analysis-grid, .deliverables-grid, .price-features { grid-template-columns: 1fr; } .nav-links { display: none; } }
+.scroll-reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal { opacity: 1; transform: none; transition: none; }
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ===== MOBILE HAMBURGER NAVIGATION ===== */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-shrink: 0;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text, #0F172A);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.nav-hamburger span + span { margin-top: 5px; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-mobile-menu {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: var(--shadow, 0 4px 6px -1px rgba(0,0,0,0.05));
+  border-radius: 16px;
+  padding: 12px 0;
+  z-index: 99;
+  flex-direction: column;
+  gap: 0;
+}
+.nav-mobile-menu.open { display: flex; }
+.nav-mobile-menu a {
+  display: block;
+  padding: 12px 24px;
+  color: var(--muted, #475569);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.nav-mobile-menu a:hover, .nav-mobile-menu a:active {
+  background: var(--accent-light, #FFEDE6);
+  color: var(--accent, #E8542D);
+}
+.nav-mobile-menu a.nav-mobile-cta {
+  margin: 8px 16px;
+  background: var(--text, #0F172A);
+  color: #FFF;
+  border-radius: 100px;
+  text-align: center;
+  font-weight: 600;
+  padding: 10px 18px;
+}
+
+@media (max-width: 900px) {
+  .nav-hamburger { display: block; }
+  .nav-cta { display: none; }
+  .nav { border-radius: 16px; }
+}
+
+/* ===== DUAL PRICING CARDS ===== */
+.pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 900px; margin: 0 auto; }
+.dual-pricing-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 40px 32px; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.dual-pricing-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.dual-pricing-card.featured { border: 2px solid var(--accent); box-shadow: 0 20px 40px -10px rgba(5,150,105,0.2); }
+.dual-pricing-card .card-badge { display: inline-block; padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+.dual-pricing-card .card-badge.standard { background: var(--accent-light); color: var(--accent-dark); }
+.dual-pricing-card .card-badge.deep { background: var(--warning-light); color: var(--warning); }
+.dual-pricing-card h3 { font-size: 22px; margin-bottom: 8px; }
+.dual-pricing-card .card-subtitle { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+.dual-pricing-card .card-description { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
+.dual-pricing-card .card-section-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 10px; }
+.dual-pricing-card .card-list { list-style: none; margin-bottom: 20px; }
+.dual-pricing-card .card-list li { font-size: 13px; color: var(--muted); padding: 4px 0; display: flex; align-items: flex-start; gap: 8px; }
+.dual-pricing-card .card-list li i { color: var(--success); font-size: 11px; margin-top: 4px; }
+.dual-pricing-card .card-delivery { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.dual-pricing-card .card-delivery strong { color: var(--text); }
+.dual-pricing-card .card-price { font-size: 32px; font-weight: 800; margin: 8px 0 4px; }
+.dual-pricing-card .card-note { font-size: 12px; color: var(--light); font-style: italic; margin-top: 16px; }
+.dual-pricing-card .btn { width: 100%; justify-content: center; margin-top: 16px; }
+
+/* ===== DECISION GUIDE ===== */
+.decision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 800px; margin: 0 auto; }
+.decision-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
+.decision-card h4 { font-size: 18px; margin-bottom: 16px; }
+.decision-card.standard h4 { color: var(--accent); }
+.decision-card.deep h4 { color: var(--warning); }
+.decision-card ul { list-style: none; }
+.decision-card ul li { font-size: 14px; color: var(--muted); padding: 6px 0; display: flex; align-items: flex-start; gap: 8px; }
+.decision-card ul li i { color: var(--accent); font-size: 6px; margin-top: 8px; }
+.decision-card.deep ul li i { color: var(--warning); }
+
+/* ===== COMPARISON TABLE ===== */
+.comparison-table-wrap { overflow-x: auto; max-width: 1000px; margin: 0 auto; border-radius: var(--radius-lg); box-shadow: var(--shadow); }
+.comparison-table { width: 100%; border-collapse: collapse; background: var(--surface); }
+.comparison-table th, .comparison-table td { padding: 14px 20px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
+.comparison-table th { background: var(--surface-2); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; }
+.comparison-table th:first-child { width: 30%; }
+.comparison-table th.std, .comparison-table td.std { color: var(--accent); }
+.comparison-table th.deep, .comparison-table td.deep { color: var(--warning); }
+.comparison-table tr:last-child td { border-bottom: none; }
+.comparison-table td:first-child { font-weight: 600; color: var(--text); }
+
+/* ===== PROCESS STEPS ===== */
+.process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; max-width: 1000px; margin: 0 auto; }
+.process-step { text-align: center; }
+.process-step .step-num { width: 48px; height: 48px; background: var(--accent); color: #FFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px; margin: 0 auto 16px; }
+.process-step h4 { font-size: 15px; margin-bottom: 8px; }
+.process-step p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* ===== BOUNDARY NOTE ===== */
+.boundary-note { max-width: 800px; margin: 0 auto; background: var(--warning-light); border: 1px solid rgba(217,119,6,0.2); border-radius: var(--radius); padding: 24px 28px; }
+.boundary-note h4 { color: var(--warning); font-size: 16px; margin-bottom: 10px; }
+.boundary-note p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+/* ===== NEXT STEPS ===== */
+.next-steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 800px; margin: 0 auto; }
+.next-step-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; text-align: center; }
+.next-step-card .step-icon { width: 48px; height: 48px; background: var(--accent-light); color: var(--accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 22px; }
+.next-step-card h4 { font-size: 18px; margin-bottom: 8px; }
+.next-step-card .step-condition { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+.next-step-card p { font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.6; }
+.next-step-card .step-cta { font-size: 14px; font-weight: 600; color: var(--accent); }
+
+@media (max-width: 900px) {
+  .pricing-grid, .decision-grid, .next-steps-grid, .process-grid { grid-template-columns: 1fr; }
 }
 ```
 ### FILE: src/app/specialized-add-on-packages/page.tsx
