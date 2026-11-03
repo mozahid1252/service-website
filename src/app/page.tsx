@@ -131,70 +131,53 @@ const WHY_ME_REASONS = [
 
 const CORE_PACKAGES = [
   {
-    tag: 'STOP THE BLEED.',
-    name: 'E-Commerce Health Check',
+    tag: 'STEP 01 — DIAGNOSE',
+    name: 'E-Commerce Health Check Audit',
     tier: 'STARTER',
-    price: '$150 – $300',
-    timeline: '5–7 day',
-    description: 'A 90-day forensic audit across sales, funnel, customers, and true product profitability.',
-    features: [
-      '4 focused analyses (Sales, Funnel, Customers, Profit)',
-      'Executive Summary PDF (2-3 pages)',
-      'Visual Dashboard (Looker Studio / Power BI)',
-      'Action Priority List (This week / Month / Later)',
-      '30-min Video Walkthrough',
-      '1 Round of Revision',
-    ],
-    bestFor: 'Stores doing $5K+/mo',
-    promise: 'After this package, you will know **where your profit is leaking**, where your store is losing sales, which products are making you money and which are costing you profit, and where customers are dropping off before buying. You’ll get a clear picture of what needs fixing first, with the **top 3 actions to focus on this week** to improve your store’s performance and make better business decisions.\n\n**Find the profit leaks. Fix what matters. Make every sale count.**',
-    cta: 'Book the Health Check →',
+    badge: 'Start Here',
+    price: 'Standard from $499',
+    priceNote: 'Deep: $1,200–$1,800',
+    timeline: '',
+    tagline: 'Identify revenue leaks, profit risks, product issues, marketing inefficiencies, tracking gaps, conversion bottlenecks, and customer-health concerns.',
+    description: 'A full-store diagnostic audit that reveals exactly where your e-commerce business is losing revenue and profit.',
+    features: [],
+    bestFor: '',
+    promise: '',
+    cta: 'Get My Health Check →',
     route: '/health-check',
     featured: false,
   },
   {
-    tag: 'SCALE WHAT WORKS.',
-    name: 'E-Commerce Growth & Profit Intelligence',
+    tag: 'STEP 02 — IMPROVE',
+    name: 'E-Commerce Performance Improvement',
     tier: 'GROWTH',
-    price: '$600 – $1,200',
-    timeline: '10–14 day',
-    tagline: 'Cut Wasted Spend. Keep More Customers. Grow Profitably.',
-    description: '',
-    features: [
-      'Everything in Starter, plus 5 deeper analyses',
-      'Full 8-segment RFM Customer Segmentation',
-      'Marketing Audit',
-      'Customer & Channel LTV:CAC',
-      'Cross-sell & Bundle Opportunity Analysis',
-      'Churn Risk Identification Analysis',
-      'Interactive Dashboard + Klaviyo-ready CSV',
-      '60-min Strategy Call + 30-day Roadmap',
-    ],
-    bestFor: 'Stores doing $10K+/mo',
-    promise: 'After this package, you will know which customers bring the most value, which marketing channels are worth your money, where your thousands of dollars are being wasted, which products you can sell together to increase your average order value, and which customers may stop buying. You’ll get a clear picture of **who to target and where to invest**, along with a simple action plan to keep more customers coming back, spend smarter, and grow your business.\n\n**Less guessing, less wasted spend, and smarter growth.**',
-    cta: 'Book the Growth Package →',
+    badge: 'After Your Audit',
+    price: 'Custom project',
+    priceNote: 'Typically starts from $1,500',
+    timeline: '',
+    tagline: 'Turn your Health Check findings into focused improvements across CRO, marketing, products, tracking, retention, or analytics.',
+    description: 'Focused improvement projects that turn your audit findings into measurable business results.',
+    features: [],
+    bestFor: '',
+    promise: '',
+    cta: 'Discuss My Improvement Plan →',
     route: '/revenue-growth-accelerator',
     featured: true,
   },
   {
-    tag: 'LIVE IN THE DATA.',
-    name: 'Data-Driven Growth System',
+    tag: 'STEP 03 — GROW',
+    name: 'E-Commerce Growth Intelligence Partnership',
     tier: 'ADVANCED',
-    price: '$2,000 – $4,000',
-    timeline: '20–30 day',
-    description: 'Your complete analytics engine, built once, runs forever. 15 total analyses including cohorts, forecasts, and live dashboards.',
-    features: [
-      'Everything in Growth, plus 6 advanced analyses',
-      'Full Pipeline + Automation Setup Package Included Free',
-      'Complete Cohort Analysis & 90-Day Sales Forecast',
-      'Profit Margin Deep Dive (True per-product profit)',
-      'Automated Custom KPI Dashboard',
-      'Discount & Promotion Strategy Analysis',
-      'Return & Refund Pattern Analysis',
-      '90-min Strategy Session + 60-day Email Support',
-    ],
-    bestFor: 'Stores doing $50K+/mo',
-    promise: 'After this package, you will never make a major business decision without data to back it up. You will know your most valuable customers, most profitable products, and have a live dashboard that gives you your business pulse in under 5 minutes each morning.',
-    cta: 'Apply for Advanced →',
+    badge: 'Ongoing Support',
+    price: 'Advisory from $1,000/month',
+    priceNote: 'Performance Partnership from $2,000/month',
+    timeline: '',
+    tagline: 'Receive ongoing strategic and analytical support to monitor performance, prioritize opportunities, improve execution, and build sustainable e-commerce growth.',
+    description: 'An ongoing partnership that keeps your business moving forward with continuous insight and strategic guidance.',
+    features: [],
+    bestFor: '',
+    promise: '',
+    cta: 'Discuss a Growth Partnership →',
     route: '/data-driven-growth-system',
     featured: false,
   },
@@ -1569,7 +1552,8 @@ function ServicesSection() {
         {/* Part 1: Core Packages */}
         <div id="part-1" className="mb-20">
           <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 1: Core E-Commerce Packages</h3>
-          <p className="text-[#8899AA] text-sm mb-8">Three tiers, one retainer. Designed to meet your store wherever it is today.</p>
+          <p className="text-white text-base font-semibold mb-1">From Diagnosis to Sustainable Growth</p>
+          <p className="text-[#8899AA] text-sm mb-8">We help e-commerce businesses understand what is holding them back, improve the highest-priority problems, and build a clearer path to sustainable growth.</p>
 
           <div className="packages-grid mb-6">
             {CORE_PACKAGES.slice(0, 3).map((pkg) => (
@@ -1587,33 +1571,16 @@ function ServicesSection() {
                   )}
 
                 <div className="text-[#00C6FF] text-xs font-semibold tracking-widest uppercase mb-2">{pkg.tag}</div>
-                <h4 className="text-white text-lg font-bold mb-1">{pkg.name}</h4>
+                <h4 className="text-white text-lg font-bold mb-2">{pkg.name}</h4>
+                {pkg.badge && (
+                  <div className="inline-block px-3 py-1 rounded-full bg-[rgba(0,198,255,0.1)] border border-[rgba(0,198,255,0.2)] text-[#00C6FF] text-xs font-semibold mb-3">{pkg.badge}</div>
+                )}
                 <div className="mb-4">
-                  <div className="text-[#8899AA] text-xs">Timeline</div>
-                  <div className="text-white text-sm font-medium">{pkg.timeline}</div>
-                  <div className="text-[#8899AA] text-xs mt-1">Investment</div>
                   <div className="gradient-text-gold text-sm font-bold">{pkg.price}</div>
-                  {pkg.tagline && <div className="text-[#00C6FF] text-xs font-medium mt-2 leading-snug">{pkg.tagline}</div>}
+                  {pkg.priceNote && <div className="text-[#8899AA] text-xs mt-1">{pkg.priceNote}</div>}
                 </div>
-                {pkg.description && <p className="text-[#8899AA] text-sm leading-relaxed mb-5">{pkg.description}</p>}
-
-                <ul className="space-y-2 mb-5">
-                  {pkg.features.map((f, fi) => (
-                    <li key={fi} className="flex items-start gap-2 text-sm text-[#F0F4F8]">
-                      <span className="feature-icon feature-yes shrink-0 mt-0.5">{FeatureCheckIcon}</span> {f}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mb-5">
-                  <div className="text-[#00C6FF] text-xs font-semibold mb-1">Best For:</div>
-                  <p className="text-[#8899AA] text-sm"><BestForText text={pkg.bestFor} /></p>
-                </div>
-
-                <div className="p-4 rounded-lg bg-[rgba(0,198,255,0.05)] border border-[rgba(0,198,255,0.1)] mb-5">
-                  <div className="text-[#00C6FF] text-xs font-semibold mb-2">Our Promise To You:</div>
-                  <p className="text-[#F0F4F8] text-sm leading-relaxed"><PromiseText text={pkg.promise} /></p>
-                </div>
+                {pkg.description && <p className="text-[#8899AA] text-sm leading-relaxed mb-3">{pkg.description}</p>}
+                {pkg.tagline && <p className="text-[#F0F4F8] text-sm leading-relaxed mb-5">{pkg.tagline}</p>}
 
                 <a href={`/book?package=${pkg.route.replace('/', '')}`} className="service-book-btn package-book-btn">{pkg.cta}</a>
                 <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-2 cursor-pointer no-underline w-full">
