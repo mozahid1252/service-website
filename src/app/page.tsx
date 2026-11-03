@@ -148,7 +148,7 @@ const CORE_PACKAGES = [
     featured: false,
   },
   {
-    tag: 'STEP 02 — IMPROVE',
+    tag: 'STEP 02 — FIX & IMPROVE',
     name: 'E-Commerce Performance Improvement',
     tier: 'GROWTH',
     badge: 'After Your Audit',
