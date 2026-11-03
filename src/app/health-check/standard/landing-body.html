@@ -104,7 +104,7 @@ h1,h2,h3,h4,h5{color:var(--text) !important}
     </div>
     <div class="outcomes-grid" style="max-width:900px;">
       <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-chart-line"></i></div><h4>Revenue Sources</h4><p>Where your recent revenue is coming from</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-leak"></i></div><h4>Profit Leakage</h4><p>Where potential profit leakage may exist</p></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-droplet"></i></div><h4>Profit Leakage</h4><p>Where potential profit leakage may exist</p></div>
       <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-box"></i></div><h4>Product Attention</h4><p>Which products require attention</p></div>
       <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-bullhorn"></i></div><h4>Channel Signals</h4><p>Which marketing channels show strong or weak signals</p></div>
       <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-database"></i></div><h4>Data Reliability</h4><p>Whether your available data is reliable enough for key decisions</p></div>
@@ -129,7 +129,7 @@ h1,h2,h3,h4,h5{color:var(--text) !important}
     <!-- Analysis 01 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">1</div><div class="analysis-title"><h3>Revenue &amp; Sales Health</h3><span>Understand the direction and concentration of your business</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
           <p>We review your recent sales performance to understand the direction and concentration of your business.</p>
           <p><strong>We examine:</strong></p>
@@ -146,26 +146,13 @@ h1,h2,h3,h4,h5{color:var(--text) !important}
           </ul>
           <div class="insight-box"><b>You will learn:</b> Whether your revenue performance appears to be improving, stable, declining, or requires further investigation.</div>
         </div>
-        <div class="chart-mock">
-          <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-label">Revenue Trend</div><div class="kpi-val" style="color:var(--success);">Growing</div></div>
-            <div class="kpi-card"><div class="kpi-label">AOV</div><div class="kpi-val">$87</div></div>
-            <div class="kpi-card"><div class="kpi-label">Top Product</div><div class="kpi-val">Product A</div></div>
-            <div class="kpi-card"><div class="kpi-label">New vs Return</div><div class="kpi-val">68/32</div></div>
-          </div>
-          <div class="bar-chart" style="margin-top:16px;">
-            <div class="bar-row"><span class="bar-label">Product A</span><div class="bar-track"><div class="bar-fill success" style="width:90%;"></div></div><span class="bar-value">$12K</span></div>
-            <div class="bar-row"><span class="bar-label">Product B</span><div class="bar-track"><div class="bar-fill" style="width:60%;"></div></div><span class="bar-value">$8K</span></div>
-            <div class="bar-row"><span class="bar-label">Product C</span><div class="bar-track"><div class="bar-fill warning" style="width:30%;"></div></div><span class="bar-value">$4K</span></div>
-          </div>
-        </div>
       </div></div>
     </div>
 
     <!-- Analysis 02 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">2</div><div class="analysis-title"><h3>Profitability &amp; Margin Signals</h3><span>Identify obvious margin risks</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
           <p>Revenue does not always equal profit. We review the available cost and order data to identify obvious margin risks.</p>
           <p><strong>We examine:</strong></p>
@@ -182,23 +169,13 @@ h1,h2,h3,h4,h5{color:var(--text) !important}
           <div class="insight-box"><b>You will learn:</b> Which products or cost areas may be generating revenue while reducing actual profit.</div>
           <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> This is a high-level profitability check. Detailed product-level margin modeling is available through a deeper audit or custom scope.</div>
         </div>
-        <div class="chart-mock">
-          <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-label">Product A Revenue</div><div class="kpi-val">$12K</div><div class="kpi-sub" style="color:var(--danger);">Margin: 2%</div></div>
-            <div class="kpi-card"><div class="kpi-label">Product B Revenue</div><div class="kpi-val">$8K</div><div class="kpi-sub" style="color:var(--success);">Margin: 35%</div></div>
-          </div>
-          <div class="bar-chart" style="margin-top:16px;">
-            <div class="bar-row"><span class="bar-label">Product B</span><div class="bar-track"><div class="bar-fill success" style="width:70%;"></div></div><span class="bar-value">35%</span></div>
-            <div class="bar-row"><span class="bar-label">Product A</span><div class="bar-track"><div class="bar-fill danger" style="width:4%;"></div></div><span class="bar-value">2%</span></div>
-          </div>
-        </div>
       </div></div>
     </div>
 
     <!-- Analysis 03 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">3</div><div class="analysis-title"><h3>Product Portfolio Health</h3><span>Identify which areas appear strong, weak, or need deeper analysis</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
           <p>We review product performance to identify which areas appear strong, weak, or in need of deeper analysis.</p>
           <p><strong>We examine:</strong></p>
@@ -218,21 +195,13 @@ h1,h2,h3,h4,h5{color:var(--text) !important}
           </ul>
           <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Full inventory, warehouse, supplier, and dead-stock analysis is not included in the Standard Health Check.</div>
         </div>
-        <div class="chart-mock">
-          <div class="bar-chart">
-            <div class="bar-row"><span class="bar-label">Product A</span><div class="bar-track"><div class="bar-fill success" style="width:100%;"></div></div><span class="bar-value">Grow</span></div>
-            <div class="bar-row"><span class="bar-label">Product B</span><div class="bar-track"><div class="bar-fill" style="width:70%;"></div></div><span class="bar-value">Maintain</span></div>
-            <div class="bar-row"><span class="bar-label">Product C</span><div class="bar-track"><div class="bar-fill warning" style="width:40%;"></div></div><span class="bar-value">Investigate</span></div>
-            <div class="bar-row"><span class="bar-label">Product D</span><div class="bar-track"><div class="bar-fill danger" style="width:20%;"></div></div><span class="bar-value">Reduce</span></div>
-          </div>
-        </div>
       </div></div>
     </div>
 
     <!-- Analysis 04 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">4</div><div class="analysis-title"><h3>Marketing Health</h3><span>Identify performance signals and possible efficiency concerns</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
           <p>We review marketing channels at a high level to identify performance signals and possible efficiency concerns.</p>
           <p><strong>We examine:</strong></p>
@@ -248,21 +217,13 @@ h1,h2,h3,h4,h5{color:var(--text) !important}
           <div class="insight-box"><b>You will learn which channels appear to:</b> Produce strong performance signals; Generate revenue without clear profit; Receive potentially inefficient spend; Require better measurement; Require a deeper specialist audit.</div>
           <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Detailed campaign, creative, audience, placement, or daily media-buying analysis is not included.</div>
         </div>
-        <div class="chart-mock">
-          <div class="bar-chart">
-            <div class="bar-row"><span class="bar-label">Email</span><div class="bar-track"><div class="bar-fill success" style="width:90%;"></div></div><span class="bar-value">412%</span></div>
-            <div class="bar-row"><span class="bar-label">Google</span><div class="bar-track"><div class="bar-fill success" style="width:70%;"></div></div><span class="bar-value">280%</span></div>
-            <div class="bar-row"><span class="bar-label">Organic</span><div class="bar-track"><div class="bar-fill" style="width:55%;"></div></div><span class="bar-value">2.4%</span></div>
-            <div class="bar-row"><span class="bar-label">Meta</span><div class="bar-track"><div class="bar-fill warning" style="width:30%;"></div></div><span class="bar-value">85%</span></div>
-          </div>
-        </div>
       </div></div>
     </div>
 
     <!-- Analysis 05 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">5</div><div class="analysis-title"><h3>Tracking &amp; Data Health</h3><span>Check data consistency for high-level decision-making</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
           <p>We check whether your available business and marketing data is sufficiently consistent for high-level decision-making.</p>
           <p><strong>We examine:</strong></p>
@@ -279,20 +240,13 @@ h1,h2,h3,h4,h5{color:var(--text) !important}
           <div class="insight-box"><b>You will learn:</b> Which data source should be treated as the primary business baseline; Whether your available marketing data appears dependable; Where major tracking concerns may exist; Whether a deeper Tracking &amp; Attribution Audit may be needed.</div>
           <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Full GTM, GA4, Pixel, CAPI, server-side tracking, or technical implementation is not included.</div>
         </div>
-        <div class="chart-mock">
-          <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-label">Shopify Orders</div><div class="kpi-val" style="color:var(--success);">100</div></div>
-            <div class="kpi-card"><div class="kpi-label">GA4 Purchases</div><div class="kpi-val" style="color:var(--warning);">92</div></div>
-            <div class="kpi-card" style="grid-column:span 2;"><div class="kpi-label">Data Consistency</div><div class="kpi-val" style="color:var(--warning);">92%</div></div>
-          </div>
-        </div>
       </div></div>
     </div>
 
     <!-- Analysis 06 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">6</div><div class="analysis-title"><h3>Funnel &amp; CRO Health</h3><span>Identify major conversion warnings</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
           <p>We review the customer journey at a high level to identify major conversion warnings.</p>
           <p><strong>We examine:</strong></p>
@@ -311,22 +265,13 @@ h1,h2,h3,h4,h5{color:var(--text) !important}
           <div class="insight-box"><b>You will learn:</b> Whether a significant conversion bottleneck may exist; Whether the initial concern appears to be traffic or on-site experience; Whether mobile performance requires attention; Whether a full E-Commerce CRO Audit may be appropriate.</div>
           <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> This is a high-level funnel diagnostic. It does not include a page-by-page CRO audit, UX redesign, copywriting, or development.</div>
         </div>
-        <div class="chart-mock">
-          <div class="funnel-wrapper">
-            <div class="funnel-step funnel-1"><span class="funnel-label">Traffic</span><span class="funnel-value">10k</span></div>
-            <div class="funnel-step funnel-2"><span class="funnel-label">Product Views</span><span class="funnel-value">6.2k</span></div>
-            <div class="funnel-step funnel-3"><span class="funnel-label">Add to Cart</span><span class="funnel-value">2.1k</span></div>
-            <div class="funnel-step funnel-4"><span class="funnel-label">Checkout</span><span class="funnel-value">1k</span></div>
-            <div class="funnel-step funnel-5"><span class="funnel-label">Purchase</span><span class="funnel-value">850</span></div>
-          </div>
-        </div>
       </div></div>
     </div>
 
     <!-- Analysis 07 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">7</div><div class="analysis-title"><h3>Customer &amp; Retention Health</h3><span>Understand new vs repeat purchase dependency</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
           <p>We review basic customer behaviour to understand whether your business depends primarily on new customers or has a meaningful repeat-purchase base.</p>
           <p><strong>We examine:</strong></p>
@@ -341,13 +286,6 @@ h1,h2,h3,h4,h5{color:var(--text) !important}
           </ul>
           <div class="insight-box"><b>You will learn:</b> Whether retention appears strong, weak, or unclear; Whether the business is highly dependent on new customer acquisition; Whether a valuable customer base appears to exist; Whether deeper retention or LTV analysis may be useful.</div>
           <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Full RFM segmentation, cohort analysis, churn modeling, and email-platform segmentation are not included.</div>
-        </div>
-        <div class="chart-mock">
-          <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-label">New Customers</div><div class="kpi-val" style="color:var(--success);">68%</div></div>
-            <div class="kpi-card"><div class="kpi-label">Returning</div><div class="kpi-val" style="color:var(--warning);">32%</div></div>
-            <div class="kpi-card" style="grid-column:span 2;"><div class="kpi-label">Repeat Purchase Rate</div><div class="kpi-val" style="color:var(--warning);">15%</div></div>
-          </div>
         </div>
       </div></div>
     </div>
@@ -428,18 +366,28 @@ h1,h2,h3,h4,h5{color:var(--text) !important}
       <div class="eyebrow">Deliverables</div>
       <h2>What You Will Receive</h2>
     </div>
-    <div class="outcomes-grid cols-4">
-      <div class="deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-regular fa-file-lines"></i></div><h4>01</h4><p>Standard E-Commerce Health Check Report</p><span style="font-size:13px; color:var(--muted);">A concise, decision-ready report summarizing your business health, key risks, available evidence, and recommended priorities.</span></div>
-      <div class="deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-chart-pie"></i></div><h4>02</h4><p>Business Health Scorecard</p><span style="font-size:13px; color:var(--muted);">A high-level status view across revenue, profitability, products, marketing, tracking, funnel, customers, and data readiness.</span></div>
-      <div class="deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-magnifying-glass"></i></div><h4>03</h4><p>Key Findings Summary</p><span style="font-size:13px; color:var(--muted);">The most important risks, opportunities, and warning signals identified from the available data.</span></div>
-      <div class="deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-coins"></i></div><h4>04</h4><p>Revenue &amp; Profitability Signal Summary</p><span style="font-size:13px; color:var(--muted);">A review of revenue trends, product performance, cost signals, and potential margin concerns.</span></div>
-      <div class="deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-bullhorn"></i></div><h4>05</h4><p>Marketing &amp; Tracking Findings</p><span style="font-size:13px; color:var(--muted);">A high-level view of channel performance, reporting consistency, and important measurement limitations.</span></div>
-      <div class="deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-filter"></i></div><h4>06</h4><p>Funnel &amp; Customer Health Summary</p><span style="font-size:13px; color:var(--muted);">A summary of conversion signals, major funnel warnings, repeat-purchase indicators, and customer-health concerns.</span></div>
-      <div class="deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-database"></i></div><h4>07</h4><p>Data Readiness &amp; Limitations Summary</p><span style="font-size:13px; color:var(--muted);">A clear explanation of what the available data can and cannot support.</span></div>
-      <div class="deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-map"></i></div><h4>08</h4><p>Audit-to-Action Map</p><span style="font-size:13px; color:var(--muted);">Each important finding connected to a recommended next step.</span></div>
-      <div class="deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-list-check"></i></div><h4>09</h4><p>Prioritized Action Roadmap</p><span style="font-size:13px; color:var(--muted);">Recommendations grouped into Immediate Priorities, Near-Term Improvements, and Strategic Opportunities, plus Recommended Next Engagement.</span></div>
-      <div class="deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-headset"></i></div><h4>10</h4><p>30-Minute Strategy Walkthrough</p><span style="font-size:13px; color:var(--muted);">A live call to explain the findings, discuss priorities, and answer questions about the recommended next step.</span></div>
-      <div class="deliverable-card scroll-reveal" style="grid-column:span 2;"><div class="deliverable-icon"><i class="fa-regular fa-envelope"></i></div><h4>11</h4><p>Limited Clarification Support</p><span style="font-size:13px; color:var(--muted);">Limited clarification support for the delivered findings after the walkthrough call.</span></div>
+    <style>
+.std-deliverable-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; max-width:800px; margin:0 auto; }
+.std-deliverable-card { display:flex; align-items:flex-start; gap:14px; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px; transition:transform 0.3s ease, box-shadow 0.3s ease; }
+.std-deliverable-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-lg); }
+.std-deliverable-card .deliverable-icon { width:40px; height:40px; min-width:40px; background:var(--accent-light); color:var(--accent); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:16px; margin:0; }
+.std-deliverable-card h4 { font-size:13px; color:var(--text) !important; margin-bottom:2px; }
+.std-deliverable-card p { font-size:14px; font-weight:600; color:var(--text) !important; margin-bottom:4px; }
+.std-deliverable-card span { font-size:13px; color:var(--muted) !important; line-height:1.5; }
+@media(max-width:900px){.std-deliverable-grid{grid-template-columns:1fr !important}}
+</style>
+<div class="std-deliverable-grid">
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-regular fa-file-lines"></i></div><h4>01</h4><p>Standard E-Commerce Health Check Report</p><span style="font-size:13px; color:var(--muted);">A concise, decision-ready report summarizing your business health, key risks, available evidence, and recommended priorities.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-chart-pie"></i></div><h4>02</h4><p>Business Health Scorecard</p><span style="font-size:13px; color:var(--muted);">A high-level status view across revenue, profitability, products, marketing, tracking, funnel, customers, and data readiness.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-magnifying-glass"></i></div><h4>03</h4><p>Key Findings Summary</p><span style="font-size:13px; color:var(--muted);">The most important risks, opportunities, and warning signals identified from the available data.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-coins"></i></div><h4>04</h4><p>Revenue &amp; Profitability Signal Summary</p><span style="font-size:13px; color:var(--muted);">A review of revenue trends, product performance, cost signals, and potential margin concerns.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-bullhorn"></i></div><h4>05</h4><p>Marketing &amp; Tracking Findings</p><span style="font-size:13px; color:var(--muted);">A high-level view of channel performance, reporting consistency, and important measurement limitations.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-filter"></i></div><h4>06</h4><p>Funnel &amp; Customer Health Summary</p><span style="font-size:13px; color:var(--muted);">A summary of conversion signals, major funnel warnings, repeat-purchase indicators, and customer-health concerns.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-database"></i></div><h4>07</h4><p>Data Readiness &amp; Limitations Summary</p><span style="font-size:13px; color:var(--muted);">A clear explanation of what the available data can and cannot support.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-map"></i></div><h4>08</h4><p>Audit-to-Action Map</p><span style="font-size:13px; color:var(--muted);">Each important finding connected to a recommended next step.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-list-check"></i></div><h4>09</h4><p>Prioritized Action Roadmap</p><span style="font-size:13px; color:var(--muted);">Recommendations grouped into Immediate Priorities, Near-Term Improvements, and Strategic Opportunities, plus Recommended Next Engagement.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-headset"></i></div><h4>10</h4><p>30-Minute Strategy Walkthrough</p><span style="font-size:13px; color:var(--muted);">A live call to explain the findings, discuss priorities, and answer questions about the recommended next step.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-regular fa-envelope"></i></div><h4>11</h4><p>Limited Clarification Support</p><span style="font-size:13px; color:var(--muted);">Limited clarification support for the delivered findings after the walkthrough call.</span></div>
     </div>
   </div>
 </section>
