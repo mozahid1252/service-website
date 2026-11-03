@@ -161,7 +161,7 @@ const CORE_PACKAGES = [
     bestFor: '',
     promise: '',
     cta: 'Discuss My Improvement Plan →',
-    route: '/revenue-growth-accelerator',
+    route: '/performance-improvement',
     featured: true,
   },
   {
