@@ -9893,7 +9893,7 @@ import Image from 'next/image';
 import { Loader2, CheckCircle2, AlertCircle, ArrowRight, ChevronLeft } from 'lucide-react';
 
 const SERVICE_PACKAGES = [
-  { label: '─ Part 1: Core E-Commerce Packages ─', options: ['E-Commerce Health Check', 'E-Commerce Growth & Profit Intelligence', 'Data-Driven Growth System', 'Analytics Partner Retainer'] },
+  { label: '─ Part 1: Core E-Commerce Packages ─', options: ['E-Commerce Health Check', 'E-Commerce Growth & Profit Intelligence', 'Data-Driven Growth System'] },
   { label: '─ Part 2: Specialized Add-On Packages ─', options: ['Marketing Spend Audit', 'Customer Retention Audit', 'Product Portfolio Audit', 'CRO/Website Audit', 'Profitability Audit', 'Operations Efficiency Audit', 'Meta Ads Performance Audit'] },
   { label: '─ Part 3: Data Setup & Infrastructure ─', options: ['Data Preparation & Integration', 'Data Pipeline & Dashboard Setup', 'Automated Dashboard & Analytics System'] },
   { label: '─ Other ─', options: ['Custom Analytics Setup', 'Not sure yet (Need advice)'] },
@@ -9928,7 +9928,6 @@ const PACKAGE_MAP: Record<string, string> = {
   'health-check': 'E-Commerce Health Check',
   'revenue-growth-accelerator': 'E-Commerce Growth & Profit Intelligence',
   'data-driven-growth-system': 'Data-Driven Growth System',
-  'analytics-partner-retainer': 'Analytics Partner Retainer',
   'marketing-spend-audit': 'Marketing Spend Audit',
   'customer-retention-audit': 'Customer Retention Audit',
   'product-portfolio-audit': 'Product Portfolio Audit',
@@ -30699,7 +30698,6 @@ When the user asks "which package is right for me?" or similar package selection
    - E-Commerce Health Check — $150–$300, 5–7 Days. Starter diagnostic for immediate revenue/profitability leaks.
    - Revenue Growth Accelerator — $600–$1,200, 10–14 Days. Deeper RFM, LTV, churn analysis.
    - Data-Driven Growth System — $2,000–$4,000, 20–30 Days. Full 15-analysis system with live dashboard.
-   - Analytics Partner Retainer — $500–$1,200/mo, Ongoing. Monthly partnership for continuous support.
 
 3. Part 2 — Specialized Add-On Packages (ALL 7, with short descriptions):
    - Marketing Spend Audit — $300–$600, 7–10 Days. Find wasted ad spend and budget allocation opportunities.
@@ -31016,13 +31014,6 @@ export const AUTHORITATIVE_PRICING: PackageInfo[] = [
     price: "$2,000 – $4,000",
     timeline: "20–30 Days",
     description: "Advanced package with 15 total analyses, live custom Looker Studio dashboard, 90-day forecast document, segmented customer DB export, and marketing budget optimization plan.",
-  },
-  {
-    name: "Analytics Partner Retainer",
-    category: "Part 1 — Core E-Commerce Packages",
-    price: "$500 – $1,200/mo",
-    timeline: "Ongoing (Min. 2-month commitment)",
-    description: "Monthly retainer for ongoing partnership. Includes continuous analysis, dashboard maintenance, and strategic support.",
   },
   // PART 2 — SPECIALIZED ADD-ON PACKAGES
   {
@@ -33431,7 +33422,6 @@ const SERVICE_PACKAGES = [
     'E-Commerce Health Check',
     'Revenue Growth Accelerator',
     'Data-Driven Growth System',
-    'Analytics Partner Retainer',
   ]},
   { label: '─ Part 2: Specialized Add-On Packages ─', options: [
     'Marketing Spend Audit',
@@ -34162,7 +34152,6 @@ const serviceOptions = [
   "E-Commerce Health Check",
   "Revenue Growth Accelerator",
   "Data-Driven Growth System",
-  "Ongoing Analytics Retainer",
   "Marketing Spend Audit",
   "Customer Retention Audit",
   "Product Portfolio Audit",
@@ -34666,10 +34655,6 @@ const packageAssets: Record<string, DashboardAsset> = {
     src: "/dashboards/dash-system.png",
     alt: "Live business pulse command center with cohort retention and forecasts",
   },
-  "Analytics Partner Retainer": {
-    src: "/dashboards/dash-retainer.png",
-    alt: "Retail analysis dashboard tracking sales variance and store performance",
-  },
   "Custom Analytics & Insights": {
     src: "/dashboards/dash-custom.png",
     alt: "Custom analytics workspace with KPI scorecards and experiment results",
@@ -34745,15 +34730,6 @@ const packageItems: ShowcaseItem[] = [
     timeline: "20–30 Days",
     investment: "$2,000–$4,000",
     asset: packageAssets["Data-Driven Growth System"],
-  },
-  {
-    name: "Analytics Partner Retainer",
-    quote: "Ongoing weekly analytics partnership with proactive alerts and monthly strategy calls.",
-    kicker: "Ongoing",
-    badge: "Partner",
-    timeline: "Monthly",
-    investment: "$500–$1,200/mo",
-    asset: packageAssets["Analytics Partner Retainer"],
   },
   {
     name: "Custom Analytics & Insights",

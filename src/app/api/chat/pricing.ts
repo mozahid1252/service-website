@@ -33,13 +33,6 @@ export const AUTHORITATIVE_PRICING: PackageInfo[] = [
     timeline: "20–30 Days",
     description: "Advanced package with 15 total analyses, live custom Looker Studio dashboard, 90-day forecast document, segmented customer DB export, and marketing budget optimization plan.",
   },
-  {
-    name: "Analytics Partner Retainer",
-    category: "Part 1 — Core E-Commerce Packages",
-    price: "$500 – $1,200/mo",
-    timeline: "Ongoing (Min. 2-month commitment)",
-    description: "Monthly retainer for ongoing partnership. Includes continuous analysis, dashboard maintenance, and strategic support.",
-  },
   // PART 2 — SPECIALIZED ADD-ON PACKAGES
   {
     name: "Marketing Spend Audit",

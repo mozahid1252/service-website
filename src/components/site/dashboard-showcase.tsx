@@ -25,10 +25,6 @@ const packageAssets: Record<string, DashboardAsset> = {
     src: "/dashboards/dash-system.png",
     alt: "Live business pulse command center with cohort retention and forecasts",
   },
-  "Analytics Partner Retainer": {
-    src: "/dashboards/dash-retainer.png",
-    alt: "Retail analysis dashboard tracking sales variance and store performance",
-  },
   "Custom Analytics & Insights": {
     src: "/dashboards/dash-custom.png",
     alt: "Custom analytics workspace with KPI scorecards and experiment results",
@@ -104,15 +100,6 @@ const packageItems: ShowcaseItem[] = [
     timeline: "20–30 Days",
     investment: "$2,000–$4,000",
     asset: packageAssets["Data-Driven Growth System"],
-  },
-  {
-    name: "Analytics Partner Retainer",
-    quote: "Ongoing weekly analytics partnership with proactive alerts and monthly strategy calls.",
-    kicker: "Ongoing",
-    badge: "Partner",
-    timeline: "Monthly",
-    investment: "$500–$1,200/mo",
-    asset: packageAssets["Analytics Partner Retainer"],
   },
   {
     name: "Custom Analytics & Insights",

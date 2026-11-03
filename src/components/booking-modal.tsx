@@ -15,7 +15,6 @@ const SERVICE_PACKAGES = [
     'E-Commerce Health Check',
     'Revenue Growth Accelerator',
     'Data-Driven Growth System',
-    'Analytics Partner Retainer',
   ]},
   { label: '─ Part 2: Specialized Add-On Packages ─', options: [
     'Marketing Spend Audit',
