@@ -1,0 +1,844 @@
+<!-- MOBILE-OVERRIDE-SAFETY -->
+<style>
+/* Purple accent override for Growth Partnership page */
+:root {
+  --accent: #7C3AED;
+  --accent-dark: #6D28D9;
+  --accent-light: #EDE9FE;
+}
+@media(max-width:900px){.outcomes-grid,.outcomes-grid.cols-3,.outcomes-grid.cols-4{display:flex !important;flex-direction:column !important;gap:16px !important}}
+h1,h2,h3,h4,h5{color:var(--text) !important}
+h1 em,h2 em,h3 em{color:var(--accent) !important}
+.hero p{color:var(--muted) !important}
+.hero p strong{color:var(--text) !important}
+.header-center p{color:var(--muted) !important}
+.header-center p strong{color:var(--text) !important}
+.eyebrow{color:var(--accent-dark) !important}
+.analysis-title h3{color:var(--text) !important}
+.analysis-title span{color:var(--accent) !important}
+.analysis-text p{color:var(--muted) !important}
+.analysis-text p strong{color:var(--text) !important}
+.analysis-text strong{color:var(--text) !important}
+.analysis-text ul li{color:var(--muted) !important}
+.analysis-text ul li strong{color:var(--text) !important}
+.insight-box{color:var(--muted) !important}
+.insight-box b{color:var(--text) !important}
+.bar-label{color:var(--muted) !important}
+.bar-value{color:var(--text) !important}
+.card-list li{color:var(--muted) !important}
+.card-list li strong{color:var(--text) !important}
+.card-section-label{color:var(--accent) !important}
+.card-subtitle{color:var(--muted) !important}
+.card-description{color:var(--muted) !important}
+.card-delivery{color:var(--muted) !important}
+.card-delivery strong{color:var(--text) !important}
+.card-note{color:var(--light) !important}
+.decision-card ul li{color:var(--muted) !important}
+.signs-list li{color:var(--muted) !important}
+.deliverable-card p{color:var(--muted) !important}
+.deliverable-card span{color:var(--muted) !important}
+.not-included li{color:var(--muted) !important}
+.faq-a{color:var(--muted) !important}
+.faq-q{color:var(--text) !important}
+.pricing-features li{color:var(--muted) !important}
+.pricing-card .price-sub{color:var(--muted) !important}
+.next-step-card p{color:var(--muted) !important}
+.next-step-card .step-condition{color:var(--accent) !important}
+.boundary-note p{color:var(--muted) !important}
+.boundary-note h4{color:var(--warning) !important}
+.process-step p{color:var(--muted) !important}
+.process-step h4{color:var(--text) !important}
+.rhythm-step p{color:var(--muted) !important}
+.rhythm-step h4{color:var(--text) !important}
+.metric-card p{color:var(--muted) !important}
+.metric-card h4{color:var(--accent) !important}
+.month-card p{color:var(--muted) !important}
+.month-card h4{color:var(--text) !important}
+.suited-card h4{color:var(--success) !important}
+.suited-card.alt h4{color:var(--danger) !important}
+.suited-card ul li{color:var(--muted) !important}
+/* Deliverable grid inline CSS - vertical layout */
+.std-deliverable-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:900px; margin:0 auto; }
+.std-deliverable-card { display:flex; flex-direction:column !important; gap:10px; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:24px; transition:transform 0.3s ease, box-shadow 0.3s ease; }
+.std-deliverable-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+.std-deliverable-card .deliverable-icon { width:44px; height:44px; background:var(--accent-light); color:var(--accent); border-radius:12px; display:flex !important; align-items:center; justify-content:center; font-size:18px; margin:0; }
+.std-deliverable-card h4 { font-size:14px; color:var(--accent) !important; margin:0; font-weight:700; }
+.std-deliverable-card p { font-size:15px; font-weight:700; color:var(--text) !important; margin:0; line-height:1.4; }
+.std-deliverable-card span { font-size:13px; color:var(--muted) !important; line-height:1.6; }
+@media(max-width:900px){.std-deliverable-grid{grid-template-columns:1fr !important}}
+</style>
+
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo">Moz <span>Intelligence</span></a>
+    <ul class="nav-links" style="gap:24px; list-style:none;">
+      <li><a href="#signs" style="color:var(--muted); font-size:14px;">Signs</a></li>
+      <li><a href="#workstreams" style="color:var(--muted); font-size:14px;">Workstreams</a></li>
+      <li><a href="#cycle" style="color:var(--muted); font-size:14px;">Cycle</a></li>
+      <li><a href="#deliverables" style="color:var(--muted); font-size:14px;">Deliverables</a></li>
+      <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
+      <li><a href="#faq" style="color:var(--muted); font-size:14px;">FAQ</a></li>
+      <li><a href="/" style="color:var(--muted); font-size:14px;">Back to MozIntelligence</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a href="#pricing" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="mobile-menu-growthpartnership">
+    <a href="#signs">Signs</a>
+    <a href="#workstreams">Workstreams</a>
+    <a href="#cycle">Cycle</a>
+    <a href="#deliverables">Deliverables</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="/">Back to MozIntelligence</a>
+    <a href="#pricing" class="nav-mobile-cta">Get Started</a>
+</div>
+
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow" style="margin: 0 auto;">Core Package · Step 03: Grow</div>
+    <h1>Turn Business Data Into Consistent, <em>Measurable Growth</em></h1>
+    <p>Your business does not need another isolated report. It needs a reliable process for understanding what happened, identifying why it happened, deciding what matters next, and measuring whether the next action improved the business.</p>
+    <p style="font-size: 16px; max-width: 720px; margin: 0 auto 32px;">The E-Commerce Growth Intelligence Partnership provides ongoing analytical and strategic support across profitability, marketing, conversion, products, customers, retention, tracking, and growth priorities. Each partnership is customized around your business model, data environment, internal team, current priorities, and desired level of support.</p>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn btn-primary">Discuss a Growth Partnership</a>
+      <a href="#signs" class="btn btn-outline" style="border-color:var(--border-dark);">Is Your Business Ready?</a>
+    </div>
+    <p style="font-size: 13px; color: var(--light); margin-top: 20px; font-style: italic;">Custom monthly partnership · Initial three-month engagement recommended</p>
+  </div>
+</header>
+
+
+<!-- Is Your Business Ready? -->
+<section id="signs" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Readiness</div>
+      <h2>Is Your Business Ready?</h2>
+      <p>If several of these apply, your business is likely ready for an ongoing growth partnership rather than another one-time report.</p>
+    </div>
+    <ul class="signs-list" style="list-style:none; max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Your business has consistent sales and meaningful customer data</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Revenue is growing but profit growth is inconsistent</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Marketing platforms report numbers that are difficult to reconcile</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>CAC, margin, LTV, or conversion performance is unclear</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Your team has data but does not have a consistent decision process</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>You need regular prioritization instead of occasional analysis</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>You have completed a Health Check or already have a reliable business audit</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>You are running multiple marketing channels</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>You need to improve several connected areas over time</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>You want to test, measure, and refine growth decisions</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>You need an external analytical and strategic partner</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Your business is ready to implement approved recommendations</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- What This Partnership Does -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">The Growth Rhythm</div>
+      <h2>What This Partnership Does</h2>
+      <p>A repeating monthly rhythm that connects analysis, decisions, actions, and measurement.</p>
+    </div>
+    <div style="max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(4, 1fr); gap:16px;">
+      <div class="rhythm-step scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; text-align:center;">
+        <div style="width:40px; height:40px; background:var(--accent); color:#FFF; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; margin:0 auto 12px;">1</div>
+        <h4 style="font-size:15px; margin-bottom:6px;">Review Business Performance</h4>
+        <p style="font-size:13px;">Review what happened across the agreed KPIs</p>
+      </div>
+      <div class="rhythm-step scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; text-align:center;">
+        <div style="width:40px; height:40px; background:var(--accent); color:#FFF; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; margin:0 auto 12px;">2</div>
+        <h4 style="font-size:15px; margin-bottom:6px;">Identify Important Changes</h4>
+        <p style="font-size:13px;">Highlight what moved and why it matters</p>
+      </div>
+      <div class="rhythm-step scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; text-align:center;">
+        <div style="width:40px; height:40px; background:var(--accent); color:#FFF; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; margin:0 auto 12px;">3</div>
+        <h4 style="font-size:15px; margin-bottom:6px;">Investigate the Risk or Opportunity</h4>
+        <p style="font-size:13px;">Dig into the most important movement</p>
+      </div>
+      <div class="rhythm-step scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; text-align:center;">
+        <div style="width:40px; height:40px; background:var(--accent); color:#FFF; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; margin:0 auto 12px;">4</div>
+        <h4 style="font-size:15px; margin-bottom:6px;">Prioritize the Next Action</h4>
+        <p style="font-size:13px;">Rank possible next moves using impact and effort</p>
+      </div>
+      <div class="rhythm-step scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; text-align:center;">
+        <div style="width:40px; height:40px; background:var(--accent); color:#FFF; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; margin:0 auto 12px;">5</div>
+        <h4 style="font-size:15px; margin-bottom:6px;">Coordinate Approved Work</h4>
+        <p style="font-size:13px;">Brief, support, or coordinate the next improvement</p>
+      </div>
+      <div class="rhythm-step scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; text-align:center;">
+        <div style="width:40px; height:40px; background:var(--accent); color:#FFF; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; margin:0 auto 12px;">6</div>
+        <h4 style="font-size:15px; margin-bottom:6px;">Measure the Relevant KPI</h4>
+        <p style="font-size:13px;">Compare the result against the agreed baseline</p>
+      </div>
+      <div class="rhythm-step scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; text-align:center;">
+        <div style="width:40px; height:40px; background:var(--accent); color:#FFF; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; margin:0 auto 12px;">7</div>
+        <h4 style="font-size:15px; margin-bottom:6px;">Document the Learning</h4>
+        <p style="font-size:13px;">Capture what worked, what did not, and why</p>
+      </div>
+      <div class="rhythm-step scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; text-align:center;">
+        <div style="width:40px; height:40px; background:var(--accent); color:#FFF; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:16px; margin:0 auto 12px;">8</div>
+        <h4 style="font-size:15px; margin-bottom:6px;">Decide What to Do Next</h4>
+        <p style="font-size:13px;">Set the next priority and enter the next cycle</p>
+      </div>
+    </div>
+    <p style="max-width:760px; margin:32px auto 0; background:var(--accent-light); border:1px solid rgba(124,58,237,0.15); border-radius:var(--radius); padding:18px 24px; text-align:center; font-size:14px; color:var(--accent-dark) !important;"><strong style="color:var(--accent-dark) !important;">This is not a subscription for generic reports.</strong> It is an ongoing decision-support and optimization relationship.</p>
+  </div>
+</section>
+
+
+<!-- What You Can Work On -->
+<section id="workstreams" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Workstreams</div>
+      <h2>What You Can Work On</h2>
+      <p>Seven connected workstreams. Your monthly scope selects the priority areas based on current business needs.</p>
+    </div>
+
+    <!-- Workstream 01 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">1</div><div class="analysis-title"><h3>Profitability &amp; Business Performance</h3><span>Understand True Business Performance Across Revenue and Margin</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We can review:</p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Revenue and order trends</li>
+            <li>Average order value</li>
+            <li>Product-level margin signals</li>
+            <li>Contribution-margin trends</li>
+            <li>Discount impact</li>
+            <li>Refund and return impact</li>
+            <li>Shipping and payment-cost signals</li>
+            <li>Revenue concentration</li>
+            <li>Profit leakage</li>
+            <li>Product and channel investment priorities</li>
+          </ul>
+          <div class="insight-box"><b>Possible outcomes:</b> Better visibility into true business performance; Clearer product and offer decisions; More informed budget allocation; Stronger focus on profitable growth rather than revenue alone.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Workstream 02 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">2</div><div class="analysis-title"><h3>Marketing Intelligence</h3><span>Compare Channels Using More Than Platform-Reported ROAS</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We can review:</p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Meta performance</li>
+            <li>Google performance</li>
+            <li>Email and CRM contribution</li>
+            <li>Organic and direct performance</li>
+            <li>CAC</li>
+            <li>Channel efficiency</li>
+            <li>New-customer acquisition</li>
+            <li>Returning-customer contribution</li>
+            <li>Reported ROAS versus business return</li>
+            <li>Budget allocation</li>
+            <li>Channel dependency</li>
+            <li>Campaign or creative testing priorities</li>
+          </ul>
+          <div class="insight-box"><b>Possible outcomes:</b> Better channel prioritization; More informed marketing budget decisions; Clearer acquisition-quality signals; Better distinction between platform performance and business profitability.</div>
+          <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Daily media buying, campaign management, and ad creative production are not included by default.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Workstream 03 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">3</div><div class="analysis-title"><h3>CRO &amp; Conversion Improvement</h3><span>Find Where Conversion Performance Changes Across the Customer Journey</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We can review:</p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Landing-page performance</li>
+            <li>Product-page conversion</li>
+            <li>Message match</li>
+            <li>Offer presentation</li>
+            <li>Mobile performance</li>
+            <li>Product discovery</li>
+            <li>Cart friction</li>
+            <li>Checkout progression</li>
+            <li>Funnel-stage movement</li>
+            <li>Conversion test opportunities</li>
+            <li>Before-and-after performance</li>
+          </ul>
+          <div class="insight-box"><b>Possible outcomes:</b> A clearer CRO backlog; Better prioritization of website improvements; More structured testing; Better use of existing traffic; Improved decision-making around conversion investment.</div>
+          <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Design, copywriting, development, and A/B test execution require separate approval unless explicitly included in the scope.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Workstream 04 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">4</div><div class="analysis-title"><h3>Product &amp; Offer Intelligence</h3><span>Identify Which Products and Offers Deserve More Attention</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We can review:</p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Product and category performance</li>
+            <li>Product-level margin signals</li>
+            <li>Pricing opportunities</li>
+            <li>Discount strategy</li>
+            <li>Bundle opportunities</li>
+            <li>Cross-sell and upsell opportunities</li>
+            <li>Product-page value communication</li>
+            <li>Return and refund patterns</li>
+            <li>Product investment priorities</li>
+            <li>Offer performance</li>
+          </ul>
+          <div class="insight-box"><b>Possible outcomes:</b> Better product prioritization; Reduced dependence on weak-margin products; Stronger pricing and offer decisions; Better bundle and cross-sell opportunities.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Workstream 05 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">5</div><div class="analysis-title"><h3>Customer Retention &amp; LTV</h3><span>Understand Which Customers Create Long-Term Value</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>Where sufficient customer data is available, we can review:</p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>New versus returning customers</li>
+            <li>Repeat-purchase rate</li>
+            <li>Time to second purchase</li>
+            <li>Customer-value signals</li>
+            <li>LTV trends</li>
+            <li>Cohort performance</li>
+            <li>RFM priorities</li>
+            <li>Inactive-customer signals</li>
+            <li>VIP customer opportunities</li>
+            <li>Post-purchase opportunities</li>
+            <li>Customer quality by channel or product</li>
+          </ul>
+          <div class="insight-box"><b>Possible outcomes:</b> Better retention visibility; Improved customer prioritization; Stronger repeat-purchase strategy; Better understanding of customer quality; More informed LTV decisions.</div>
+          <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Email/SMS automation, campaign copy, Klaviyo or Mailchimp implementation are separate services unless specifically included.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Workstream 06 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">6</div><div class="analysis-title"><h3>Tracking, Reporting &amp; Data Quality</h3><span>Understand Which Numbers Can Support Important Decisions</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We can review:</p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Shopify and GA4 consistency</li>
+            <li>Meta and Google reporting differences</li>
+            <li>Funnel-event reliability</li>
+            <li>UTM structure</li>
+            <li>KPI definitions</li>
+            <li>Data-source alignment</li>
+            <li>Reporting limitations</li>
+            <li>Data-quality issues</li>
+            <li>Baseline metrics</li>
+            <li>Dashboard requirements</li>
+          </ul>
+          <div class="insight-box"><b>Possible outcomes:</b> More consistent performance reporting; Greater confidence in business decisions; Clearer KPI definitions; Faster identification of tracking issues; Better measurement of improvement work.</div>
+          <div class="insight-box" style="margin-top:12px; background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Technical implementation, GTM, Pixel, CAPI, server-side tracking, and data engineering require separate scope or technical resources.</div>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Workstream 07 -->
+    <div class="analysis-block scroll-reveal">
+      <div class="analysis-header"><div class="analysis-num">7</div><div class="analysis-title"><h3>Experimentation &amp; Growth Planning</h3><span>Maintain a Practical Backlog and Structured Test Briefs</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+        <div class="analysis-text">
+          <p>We can maintain a practical growth backlog covering:</p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>CRO experiments</li>
+            <li>Offer and pricing tests</li>
+            <li>Product-page improvements</li>
+            <li>Marketing tests</li>
+            <li>Retention initiatives</li>
+            <li>Budget allocation tests</li>
+            <li>Tracking improvements</li>
+            <li>Customer-segment tests</li>
+            <li>Product and bundle opportunities</li>
+          </ul>
+          <p><strong>Each approved test or improvement may include:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Business problem</li>
+            <li>Evidence</li>
+            <li>Hypothesis</li>
+            <li>Target segment</li>
+            <li>Recommended change</li>
+            <li>Primary KPI</li>
+            <li>Secondary KPI</li>
+            <li>Required tracking</li>
+            <li>Test method</li>
+            <li>Decision criteria</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> A testing-heavy program should only be recommended when the business has sufficient traffic and conversion volume. For lower-volume stores, implementation-first improvements and directional measurement are usually more appropriate.</div>
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Monthly Partnership Cycle -->
+<section id="cycle" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Monthly Cycle</div>
+      <h2>The Monthly Partnership Cycle</h2>
+      <p>Each month follows a structured cycle that connects analysis, decisions, actions, and measurement.</p>
+    </div>
+    <div class="process-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 900px;">
+      <div class="process-step scroll-reveal">
+        <div class="step-num">1</div>
+        <h4>Performance Review</h4>
+        <p>Review the agreed business and growth KPIs.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">2</div>
+        <h4>Diagnosis</h4>
+        <p>Investigate the most important movement, risk, or opportunity.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">3</div>
+        <h4>Prioritization</h4>
+        <p>Rank possible actions using impact, urgency, effort, evidence quality, and dependencies.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">4</div>
+        <h4>Action Support</h4>
+        <p>Provide recommendations, briefs, coordination, or approved implementation support according to the selected plan.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">5</div>
+        <h4>Measurement</h4>
+        <p>Compare performance with the agreed baseline where sufficient time and data are available.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">6</div>
+        <h4>Next-Month Planning</h4>
+        <p>Document what was learned and define the next priority.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- What You May Receive Each Month -->
+<section id="deliverables" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Deliverables</div>
+      <h2>What You May Receive Each Month</h2>
+      <p>The exact set of deliverables depends on the selected partnership level and monthly scope.</p>
+    </div>
+    <div class="std-deliverable-grid">
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-chart-line"></i></div><h4>01</h4><p>Monthly Growth Performance Review</p><span>Revenue, Orders, AOV, Profitability signals, Marketing performance, Conversion performance, Customer performance, Important changes, Risks and opportunities.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-list-check"></i></div><h4>02</h4><p>Monthly Priority Roadmap</p><span>Current priorities, Decisions required, Approved improvements, Experiments, Monitoring items, Dependencies, Owners.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-gauge-high"></i></div><h4>03</h4><p>KPI &amp; Measurement Review</p><span>Contribution margin, CAC, Blended marketing efficiency, Conversion rate, AOV, Repeat-purchase rate, LTV signals, Product margin, Return/refund impact.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-list-ul"></i></div><h4>04</h4><p>Growth Backlog</p><span>Proposed improvements, Evidence, Expected impact, Effort, Confidence, Status, Next decision.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-flask"></i></div><h4>05</h4><p>Experimentation Briefs</p><span>Hypothesis, Target audience, Recommended change, KPI, Test method, Measurement requirements, Result interpretation.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-handshake"></i></div><h4>06</h4><p>Strategy Sessions</p><span>Review performance, Discuss findings, Confirm priorities, Resolve decisions, Review implementation progress.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-calendar-week"></i></div><h4>07</h4><p>Quarterly Growth Review</p><span>Quarter-over-quarter performance, Profitability movement, Marketing efficiency, Customer-value trend, CRO progress, Product opportunities, Risks and next-quarter priorities.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-regular fa-folder-open"></i></div><h4>08</h4><p>Documentation &amp; Handover</p><span>Monthly summaries, KPI tracking, Learning documentation, Next-phase recommendations.</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Pricing -->
+<section id="pricing" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Pricing</div>
+      <h2>Choose Your Level of Partnership</h2>
+      <p>Two engagement models depending on whether you need strategic direction or strategic direction plus optimization support.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- Growth Advisory Card -->
+      <div class="dual-pricing-card scroll-reveal">
+        <span class="card-badge standard">Advisory</span>
+        <h3>Growth Advisory</h3>
+        <p class="card-subtitle">Strategic clarity for businesses with an internal execution team</p>
+        <p class="card-description">Growth Advisory is designed for businesses that need regular analysis, prioritization, and strategic direction but can execute most approved changes internally.</p>
+
+        <div class="card-section-label">May Include</div>
+        <ul class="card-list">
+          <li><i class="fa-solid fa-check"></i>Monthly business-performance review</li>
+          <li><i class="fa-solid fa-check"></i>Profitability and KPI analysis</li>
+          <li><i class="fa-solid fa-check"></i>Marketing/product/CRO/retention insights</li>
+          <li><i class="fa-solid fa-check"></i>Monthly priority roadmap</li>
+          <li><i class="fa-solid fa-check"></i>Growth backlog</li>
+          <li><i class="fa-solid fa-check"></i>Experiment recommendations</li>
+          <li><i class="fa-solid fa-check"></i>One monthly strategy session</li>
+          <li><i class="fa-solid fa-check"></i>Limited clarification support</li>
+          <li><i class="fa-solid fa-check"></i>Quarterly direction review (where applicable)</li>
+        </ul>
+
+        <div class="card-section-label">Best For</div>
+        <ul class="card-list">
+          <li><i class="fa-solid fa-check"></i>Brands with an internal team</li>
+          <li><i class="fa-solid fa-check"></i>Businesses that can execute recommendations themselves</li>
+          <li><i class="fa-solid fa-check"></i>Founders who need structured external decision support</li>
+          <li><i class="fa-solid fa-check"></i>Businesses that need ongoing intelligence but not regular implementation coordination</li>
+        </ul>
+
+        <div class="card-delivery"><strong>Recommended initial term:</strong> three months</div>
+        <div class="card-price">Starting at $1,000/month</div>
+        <a href="/book?package=growth-advisory" class="btn btn-primary">Explore Advisory Support</a>
+        <p class="card-note">Strategic direction and prioritization - implementation is handled by your internal team or scoped separately.</p>
+      </div>
+
+      <!-- Growth Performance Partnership Card -->
+      <div class="dual-pricing-card featured scroll-reveal">
+        <span class="card-badge deep">Partnership</span>
+        <h3>Growth Performance Partnership</h3>
+        <p class="card-subtitle">Ongoing analysis, optimization support, and performance coordination</p>
+        <p class="card-description">The main growth partnership for businesses that need more than recommendations. Combines ongoing intelligence with selected optimization support, experiment planning, implementation coordination, and before-and-after performance review.</p>
+
+        <div class="card-section-label">Includes everything in Growth Advisory, plus</div>
+        <ul class="card-list">
+          <li><i class="fa-solid fa-check"></i>Deeper monthly performance analysis</li>
+          <li><i class="fa-solid fa-check"></i>CRO and marketing optimization priorities</li>
+          <li><i class="fa-solid fa-check"></i>Product and offer improvement</li>
+          <li><i class="fa-solid fa-check"></i>Customer-retention initiatives</li>
+          <li><i class="fa-solid fa-check"></i>Experimentation roadmap</li>
+          <li><i class="fa-solid fa-check"></i>Selected implementation coordination</li>
+          <li><i class="fa-solid fa-check"></i>Before-and-after KPI review</li>
+          <li><i class="fa-solid fa-check"></i>More frequent strategy support</li>
+          <li><i class="fa-solid fa-check"></i>Quarterly growth planning</li>
+          <li><i class="fa-solid fa-check"></i>Cross-functional priority management</li>
+        </ul>
+
+        <div class="card-section-label">Best For</div>
+        <ul class="card-list">
+          <li><i class="fa-solid fa-check"></i>Brands with active growth initiatives</li>
+          <li><i class="fa-solid fa-check"></i>Businesses managing multiple performance problems</li>
+          <li><i class="fa-solid fa-check"></i>Teams that need an external growth partner</li>
+          <li><i class="fa-solid fa-check"></i>Businesses that want regular experimentation and optimization</li>
+          <li><i class="fa-solid fa-check"></i>Brands that have completed a Health Check or Performance Improvement project</li>
+        </ul>
+
+        <div class="card-delivery"><strong>Recommended initial term:</strong> three months</div>
+        <div class="card-price">Starting at $2,000/month</div>
+        <p class="card-note">Most custom engagements: $2,000-$3,500/month. Larger partnerships may be quoted privately.</p>
+        <a href="/book?package=growth-performance-partnership" class="btn btn-primary">Discuss a Performance Partnership</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- What Is Included / Not Included -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Scope Boundary</div>
+      <h2>What Is Included / Not Included</h2>
+      <p>The monthly scope defines what is delivered by MozIntelligence, what is coordinated, and what is handled by your team.</p>
+    </div>
+    <div style="max-width:920px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+      <div style="background:var(--accent-light); border:1px solid rgba(124,58,237,0.15); border-radius:var(--radius-lg); padding:28px;">
+        <h4 style="font-size:16px; margin-bottom:16px; color:var(--accent-dark) !important;"><i class="fa-solid fa-circle-check" style="margin-right:8px; color:var(--accent) !important;"></i>Included (according to selected scope)</h4>
+        <ul style="list-style:none;">
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Performance analysis</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Strategic recommendations</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Monthly prioritization</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>KPI review</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Growth backlog</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Experiment planning</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Strategy sessions</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Progress review</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--accent); margin-right:8px;"></i>Implementation coordination (where approved)</li>
+        </ul>
+      </div>
+      <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px;">
+        <h4 style="font-size:16px; margin-bottom:16px; color:var(--danger) !important;"><i class="fa-solid fa-circle-xmark" style="margin-right:8px;"></i>Not automatically included</h4>
+        <ul class="not-included" style="list-style:none;">
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Daily ad management</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Media buying</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Ad creative production</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full website redesign</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited copywriting</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Shopify theme development</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full GTM, GA4, Pixel, or CAPI implementation</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>BigQuery infrastructure</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Automated dashboard development</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Email/SMS campaign execution</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Klaviyo or Mailchimp setup</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Warehouse or supplier operations</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Bookkeeping or tax accounting</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited meetings</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited revisions</li>
+          <li style="font-size:13px; padding:4px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited response availability</li>
+        </ul>
+      </div>
+    </div>
+    <p style="max-width:760px; margin:32px auto 0; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius); padding:18px 24px; text-align:center; font-size:14px; color:var(--muted) !important; font-style:italic;">A written monthly scope will specify who is responsible for analysis, strategy, implementation, approvals, and technical work.</p>
+  </div>
+</section>
+
+
+<!-- How We Start -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">How We Start</div>
+      <h2>How We Start</h2>
+      <p>A structured onboarding process that confirms priorities, defines the partnership, and establishes the baseline.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step scroll-reveal">
+        <div class="step-num">1</div>
+        <h4>Review Existing Information</h4>
+        <p>Review Health Check, previous audit, business goals, reports, data sources, and current growth constraints.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">2</div>
+        <h4>Growth Discovery Session</h4>
+        <p>Discuss business model, revenue/profit goals, product priorities, marketing activity, customer/retention priorities, website/conversion issues, internal capabilities, technical environment, preferred communication cadence.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">3</div>
+        <h4>Define the Partnership</h4>
+        <p>Receive a proposal covering monthly objectives, selected workstreams, deliverables, meeting cadence, communication model, client responsibilities, success metrics, exclusions, monthly investment, initial term.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">4</div>
+        <h4>Establish the Baseline</h4>
+        <p>Document the starting point for the selected KPIs.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">5</div>
+        <h4>Begin the Monthly Growth Cycle</h4>
+        <p>Review, prioritize, support approved work, measure progress, and plan the next cycle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Success Measurement -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Measurement</div>
+      <h2>Success Measurement</h2>
+      <p>The metrics tracked depend on the selected workstreams and the available data quality.</p>
+    </div>
+    <div style="max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;">
+      <div class="metric-card scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
+        <h4 style="font-size:15px; margin-bottom:12px;"><i class="fa-solid fa-coins" style="margin-right:8px;"></i>Profitability</h4>
+        <p style="font-size:13px; line-height:1.8;">Contribution margin, Profit per order, AOV, Discount-adjusted margin, Refund and return impact.</p>
+      </div>
+      <div class="metric-card scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
+        <h4 style="font-size:15px; margin-bottom:12px;"><i class="fa-solid fa-bullhorn" style="margin-right:8px;"></i>Marketing</h4>
+        <p style="font-size:13px; line-height:1.8;">CAC, Blended marketing efficiency, New-customer revenue, Channel efficiency, Contribution-margin CAC.</p>
+      </div>
+      <div class="metric-card scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
+        <h4 style="font-size:15px; margin-bottom:12px;"><i class="fa-solid fa-filter" style="margin-right:8px;"></i>Conversion</h4>
+        <p style="font-size:13px; line-height:1.8;">Purchase conversion rate, Product-page-to-cart rate, Cart-to-checkout rate, Checkout completion rate, Mobile conversion rate.</p>
+      </div>
+      <div class="metric-card scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
+        <h4 style="font-size:15px; margin-bottom:12px;"><i class="fa-solid fa-users" style="margin-right:8px;"></i>Customer</h4>
+        <p style="font-size:13px; line-height:1.8;">Repeat-purchase rate, Time to second order, LTV signal, Retention by cohort, Re-engagement performance.</p>
+      </div>
+      <div class="metric-card scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
+        <h4 style="font-size:15px; margin-bottom:12px;"><i class="fa-solid fa-box" style="margin-right:8px;"></i>Product</h4>
+        <p style="font-size:13px; line-height:1.8;">Product margin, Product revenue, Bundle attach rate, Cross-sell rate, Return/refund impact.</p>
+      </div>
+      <div class="metric-card scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px;">
+        <h4 style="font-size:15px; margin-bottom:12px;"><i class="fa-solid fa-database" style="margin-right:8px;"></i>Measurement</h4>
+        <p style="font-size:13px; line-height:1.8;">Event completeness, Purchase-event consistency, UTM completeness, Data reconciliation, Reporting confidence.</p>
+      </div>
+    </div>
+    <div class="boundary-note" style="margin-top:32px;">
+      <h4>Important</h4>
+      <p>These metrics help measure direction and decision quality. They do not guarantee a specific revenue, profit, ROAS, CAC, LTV, or conversion outcome.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Recommended Commitment -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Commitment</div>
+      <h2>Recommended Commitment</h2>
+      <p>A three-month initial engagement is recommended to establish a baseline, support initial improvements, and measure early results.</p>
+    </div>
+    <div style="max-width:900px; margin:0 auto; display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;">
+      <div class="month-card scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px;">
+        <div style="display:inline-block; padding:4px 12px; background:var(--accent-light); color:var(--accent-dark) !important; border-radius:100px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:12px;">Month 1</div>
+        <h4 style="font-size:18px; margin-bottom:8px;">Baseline and priorities</h4>
+        <p style="font-size:14px; line-height:1.7;">Confirm data and KPIs, Review current performance, Finalize the backlog, Select initial actions.</p>
+      </div>
+      <div class="month-card scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px;">
+        <div style="display:inline-block; padding:4px 12px; background:var(--accent-light); color:var(--accent-dark) !important; border-radius:100px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:12px;">Month 2</div>
+        <h4 style="font-size:18px; margin-bottom:8px;">Improvement and learning</h4>
+        <p style="font-size:14px; line-height:1.7;">Support approved improvements, Review early signals, Launch or plan suitable tests, Adjust priorities.</p>
+      </div>
+      <div class="month-card scroll-reveal" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px;">
+        <div style="display:inline-block; padding:4px 12px; background:var(--accent-light); color:var(--accent-dark) !important; border-radius:100px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:12px;">Month 3</div>
+        <h4 style="font-size:18px; margin-bottom:8px;">Evaluate and plan</h4>
+        <p style="font-size:14px; line-height:1.7;">Compare against the baseline, Document learnings, Review remaining opportunities, Define the next quarter.</p>
+      </div>
+    </div>
+    <p style="max-width:760px; margin:32px auto 0; background:var(--warning-light); border:1px solid rgba(217,119,6,0.2); border-radius:var(--radius); padding:18px 24px; text-align:center; font-size:14px; color:var(--muted) !important; font-style:italic;">A longer commitment may be appropriate for larger businesses, complex technical work, or multi-step experimentation.</p>
+  </div>
+</section>
+
+
+<!-- Who Is This Partnership For? -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Suitability</div>
+      <h2>Who Is This Partnership For?</h2>
+    </div>
+    <div style="max-width:920px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:32px;">
+      <div class="suited-card" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px;">
+        <h4 style="font-size:16px; margin-bottom:16px;"><i class="fa-solid fa-circle-check" style="margin-right:8px;"></i>Best Suited For</h4>
+        <ul style="list-style:none;">
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Established e-commerce brands</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Businesses with consistent sales and customer data</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Brands that have completed a Health Check or equivalent analysis</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Teams that need ongoing performance interpretation</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Businesses with active marketing and growth initiatives</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Brands willing to implement approved recommendations</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Companies with an internal decision-maker</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Businesses that want a structured monthly growth process</li>
+        </ul>
+      </div>
+      <div class="suited-card alt" style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px;">
+        <h4 style="font-size:16px; margin-bottom:16px;"><i class="fa-solid fa-circle-xmark" style="margin-right:8px;"></i>May Not Be Suitable For</h4>
+        <ul style="list-style:none;">
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>New stores without meaningful data</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Businesses looking for a one-time diagnosis only</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Clients seeking only daily ad management</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Brands expecting guaranteed growth</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Businesses unwilling to provide data access</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Teams unable to approve or implement changes</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Brands needing only website design or development</li>
+          <li style="font-size:14px; color:var(--muted); padding:5px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Clients expecting unlimited services inside a fixed fee</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Data Access Required -->
+<section style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Data Access</div>
+      <h2>Data Access Required</h2>
+      <p>The exact requirement depends on the selected workstreams. Missing data may reduce confidence or require separate tracking work.</p>
+    </div>
+    <div class="data-required-list">
+      <div class="data-required-item"><i class="fa-solid fa-cart-shopping"></i><span>Shopify or another e-commerce platform</span></div>
+      <div class="data-required-item"><i class="fa-solid fa-chart-simple"></i><span>GA4</span></div>
+      <div class="data-required-item"><i class="fa-solid fa-tag"></i><span>Google Tag Manager</span></div>
+      <div class="data-required-item"><i class="fa-brands fa-meta"></i><span>Meta Ads Manager</span></div>
+      <div class="data-required-item"><i class="fa-brands fa-google"></i><span>Google Ads</span></div>
+      <div class="data-required-item"><i class="fa-solid fa-envelope"></i><span>Email or CRM platform</span></div>
+      <div class="data-required-item"><i class="fa-solid fa-box"></i><span>Product and COGS data</span></div>
+      <div class="data-required-item"><i class="fa-solid fa-rotate-left"></i><span>Refund and return data</span></div>
+      <div class="data-required-item"><i class="fa-solid fa-users"></i><span>Customer and order history</span></div>
+      <div class="data-required-item"><i class="fa-solid fa-truck"></i><span>Shipping and payment-cost data (where available)</span></div>
+      <div class="data-required-item"><i class="fa-solid fa-table"></i><span>Existing dashboards and reports</span></div>
+      <div class="data-required-item"><i class="fa-solid fa-file-lines"></i><span>Previous audit reports</span></div>
+      <div class="data-required-item"><i class="fa-solid fa-flask"></i><span>Experiment or campaign history</span></div>
+      <p class="data-required-note">You do not need every data source. The exact requirement depends on the selected workstreams. Missing data may reduce confidence or require separate tracking work.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-container" style="max-width:800px; margin:0 auto;">
+      <div class="faq-item active scroll-reveal">
+        <div class="faq-q">Do I need a Health Check first? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Usually, yes. The Health Check creates a baseline and identifies the most important priorities. If you already have a recent, reliable audit, we can review it before deciding whether a new Health Check is needed.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is this a fixed package? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. It is a custom monthly partnership. The scope depends on your business priorities, data, team, and selected support model.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is this the same as a full-service marketing agency retainer? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. The partnership focuses on analytics, performance interpretation, strategic prioritization, experimentation, and selected optimization support. Daily media buying and creative production are not automatically included.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Will you implement every recommendation? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. The monthly scope will state which work is provided by MozIntelligence, which work is coordinated, and which work must be completed by your internal team or another specialist.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is CRO implementation included? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Only when explicitly included in the approved monthly scope.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is campaign management included? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. Daily campaign management and media buying require a separate agreement.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is dashboard development included? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">KPI review may be included. New dashboard development, automated data connections, and data infrastructure require a separate scope.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Do you guarantee growth? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. The partnership improves measurement, prioritization, execution quality, and learning. Commercial results also depend on product-market fit, pricing, traffic, implementation, seasonality, competition, and other factors.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can we start with one workstream? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. A partnership can begin with one priority area and expand as the business develops.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">How often will we communicate? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The cadence is defined in the proposal. Depending on the support model, communication may be monthly, biweekly, or weekly.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">What happens after the first three months? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">We review the performance, remaining priorities, KPI direction, and future needs. The partnership may be renewed, expanded, reduced, or concluded.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can we adjust the scope or workstreams over time? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. As priorities shift, the monthly scope can be reviewed and adjusted. The partnership is designed to evolve with your business, available data, and current growth questions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Final CTA -->
+<section style="background: var(--bg); text-align:center; padding: 80px 0;">
+  <div class="container">
+    <div style="max-width:760px; margin:0 auto;">
+      <h2 style="font-size: 32px; margin-bottom: 16px;">Build a More Intelligent Growth System for Your Business</h2>
+      <p style="font-size: 17px; color: var(--muted); margin-bottom: 32px;">Stop making important decisions from disconnected reports, inconsistent platform numbers, and isolated one-time recommendations. Work with MozIntelligence to review performance, understand what changed, prioritize what matters, support the right improvements, and build a clearer growth process over time.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="/book?package=growth-partnership" class="btn btn-primary">Discuss a Growth Partnership</a>
+        <a href="/health-check" class="btn btn-outline" style="border-color:var(--border-dark);">Need to identify the problem first? Start with the E-Commerce Health Check.</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Moz Intelligence. All rights reserved.</footer>

@@ -178,7 +178,7 @@ const CORE_PACKAGES = [
     bestFor: '',
     promise: '',
     cta: 'Discuss a Growth Partnership →',
-    route: '/data-driven-growth-system',
+    route: '/growth-partnership',
     featured: false,
   },
 ];
