@@ -1555,8 +1555,8 @@ function ServicesSection() {
                 {pkg.tagline && <p className="text-[#F0F4F8] text-sm leading-relaxed mb-5">{pkg.tagline}</p>}
 
                 <a href={`/book?package=${pkg.route.replace('/', '')}`} className="service-book-btn package-book-btn">{pkg.cta}</a>
-                <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-2 cursor-pointer no-underline w-full">
-                  <ExternalLink size={12} /> View Details
+                <a href={`${basePath}${pkg.route}`} className="btn-press mt-3 px-4 py-2.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-2 cursor-pointer no-underline w-full">
+                  <ExternalLink size={14} /> View Details
                 </a>
                 </div>
               </div>
