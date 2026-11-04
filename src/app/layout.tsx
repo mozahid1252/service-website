@@ -1,40 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Syne, Anton, Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { GoogleAnalytics } from '@next/third-parties/google';
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-});
-
-const syne = Syne({
-  variable: "--font-syne",
-  subsets: ["latin"],
-  weight: ["700", "800"],
-});
-
-const anton = Anton({
-  variable: "--font-anton",
-  subsets: ["latin"],
-  weight: "400",
-});
-
-
-/* "Why We're Different" section display + body fonts */
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-});
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mozintelligence.vercel.app"),
@@ -101,8 +68,26 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=Anton&family=Fraunces:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+          rel="stylesheet"
+        />
+        <style>{`
+          :root {
+            --font-inter: 'Inter', sans-serif;
+            --font-manrope: 'Manrope', sans-serif;
+            --font-syne: 'Syne', sans-serif;
+            --font-anton: 'Anton', sans-serif;
+            --font-fraunces: 'Fraunces', serif;
+            --font-bricolage: 'Bricolage Grotesque', sans-serif;
+          }
+        `}</style>
+      </head>
       <body
-        className={`${inter.variable} ${syne.variable} ${anton.variable} ${fraunces.variable} ${manrope.variable} antialiased`}
+        className="antialiased"
         style={{ fontFamily: "var(--font-inter), sans-serif" }}
       >
         <script
