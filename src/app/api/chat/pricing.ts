@@ -65,14 +65,14 @@ export const AUTHORITATIVE_PRICING: PackageInfo[] = [
   {
     name: "Profitability Audit",
     category: "Part 2 — Specialized Add-On Packages",
-    price: "$350 – $700",
-    timeline: "8–12 Days",
+    price: "Starting from $650",
+    timeline: "10–14 Days",
     description: "True profitability analysis after COGS, ad spend, returns, and shipping to find where money is actually leaking.",
   },
   {
     name: "Operations Efficiency Audit",
     category: "Part 2 — Specialized Add-On Packages",
-    price: "$400 – $800",
+    price: "Starting from $850",
     timeline: "10–14 Days",
     description: "Reviews operational workflows, process efficiency, and identifies bottlenecks in your e-commerce operations.",
   },

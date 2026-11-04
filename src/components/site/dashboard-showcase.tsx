@@ -142,15 +142,15 @@ const auditItems: ShowcaseItem[] = [
   {
     name: "Profitability Audit",
     quote: "Uncover margin leaks and understand true profitability.",
-    timeline: "8–12 Days",
-    investment: "$350–$700",
+    timeline: "10–14 Days",
+    investment: "Starting from $650",
     asset: auditAssets["Profitability Audit"],
   },
   {
     name: "Operations Efficiency Audit",
     quote: "Identify operational inefficiencies affecting revenue and profit.",
     timeline: "10–14 Days",
-    investment: "$400–$800",
+    investment: "Starting from $850",
     asset: auditAssets["Operations Efficiency Audit"],
   },
   {

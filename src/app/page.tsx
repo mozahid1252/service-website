@@ -220,7 +220,7 @@ const ADD_ON_PACKAGES = [
   },
   {
     name: 'E-Commerce Profitability Audit',
-    price: '$350 – $700 · 8–12 Days',
+    price: 'Starting from $650 · 10–14 Days',
     problem: '"Revenue grows but profit doesn\'t."',
     promise: 'You will know your true profit margin on every product/channel, exactly where revenue is leaking into cost, if your promotions are eroding profit, and when your cash will be tight in coming months.',
     cssClass: 'profitability',
@@ -228,7 +228,7 @@ const ADD_ON_PACKAGES = [
   },
   {
     name: 'Operations Efficiency Audit',
-    price: '$400 – $800 · 10–14 Days',
+    price: 'Starting from $850 · 10–14 Days',
     problem: '"Returns climbing, inventory out of control."',
     promise: 'You will know which suppliers are causing financial problems, exactly how much inventory to order (and when based on 90-day demand), the true cost of your return rate, and how to free up cash locked in dead stock.',
     cssClass: 'operations',
