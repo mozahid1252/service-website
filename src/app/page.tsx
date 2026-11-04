@@ -204,7 +204,7 @@ const ADD_ON_PACKAGES = [
   },
   {
     name: 'Product Profitability & Portfolio Audit',
-    price: '$350 – $800 · 7–14 Days',
+    price: 'Starting from $450 · 7–10 Days',
     problem: '"50+ SKUs, I don\'t know what to focus on."',
     promise: 'You will know which products to invest in, optimize, or cut, the true profit margin on every SKU in your catalog, and exactly which products to bundle together to increase AOV.',
     cssClass: 'portfolio',

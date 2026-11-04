@@ -203,7 +203,7 @@ span{color:var(--muted) !important}
     <!-- Analysis 01 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">01</div><div class="analysis-title"><h3>Product Classification &amp; Portfolio Prioritization</h3><span>Objective: Understand Which Products Matter Most to the Business</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+      <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
           <p>We classify products according to their contribution to available revenue, sales volume, profitability signals, and strategic importance.</p>
           <p><strong>We may review:</strong></p>
@@ -234,13 +234,27 @@ span{color:var(--muted) !important}
           </ul>
           <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> ABC classification is a prioritization framework. It does not automatically mean that every C-Tier product should be discontinued.</div>
         </div>
+        <div class="chart-mock">
+          <div class="dash-chart-title">Portfolio Priority Distribution</div>
+          <div class="bar-chart">
+            <div class="bar-row"><span class="bar-label">A-Tier</span><div class="bar-track"><div class="bar-fill success" style="width: 78%;"></div></div><span class="bar-value">78%</span></div>
+            <div class="bar-row"><span class="bar-label">B-Tier</span><div class="bar-track"><div class="bar-fill warning" style="width: 52%;"></div></div><span class="bar-value">52%</span></div>
+            <div class="bar-row"><span class="bar-label">C-Tier</span><div class="bar-track"><div class="bar-fill danger" style="width: 18%;"></div></div><span class="bar-value">18%</span></div>
+          </div>
+          <div class="kpi-grid" style="margin-top: 20px;">
+            <div class="kpi-card"><div class="kpi-label">A-Tier SKUs</div><div class="kpi-val">12</div><div class="kpi-sub">Protect &amp; Grow</div></div>
+            <div class="kpi-card"><div class="kpi-label">B-Tier SKUs</div><div class="kpi-val">34</div><div class="kpi-sub">Optimize</div></div>
+            <div class="kpi-card"><div class="kpi-label">C-Tier SKUs</div><div class="kpi-val" style="color:var(--danger);">28</div><div class="kpi-sub" style="color:var(--danger);">Review</div></div>
+            <div class="kpi-card"><div class="kpi-label">Rev. Concentration</div><div class="kpi-val">68%</div><div class="kpi-sub">Top 12 SKUs</div></div>
+          </div>
+        </div>
       </div></div>
     </div>
 
     <!-- Analysis 02 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">02</div><div class="analysis-title"><h3>Product-Level Profitability Signals</h3><span>Objective: Separate Revenue Performance From Profit Contribution</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+      <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
           <p>We review available product-cost and order data to understand how much value products may create after relevant costs.</p>
           <p><strong>We may review:</strong></p>
@@ -265,13 +279,28 @@ span{color:var(--muted) !important}
           </ul>
           <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> True profit margin can only be calculated when the relevant cost data is reliable and complete. Where important costs are missing, findings will be labelled as estimates or profitability signals.</div>
         </div>
+        <div class="chart-mock">
+          <div class="dash-chart-title">Revenue vs Margin by Product</div>
+          <div class="bar-chart">
+            <div class="bar-row"><span class="bar-label">SKU-001 Rev</span><div class="bar-track"><div class="bar-fill success" style="width: 92%;"></div></div><span class="bar-value">$9.2K</span></div>
+            <div class="bar-row"><span class="bar-label">SKU-001 Margin</span><div class="bar-track"><div class="bar-fill success" style="width: 38%;"></div></div><span class="bar-value">38%</span></div>
+            <div class="bar-row"><span class="bar-label">SKU-044 Rev</span><div class="bar-track"><div class="bar-fill danger" style="width: 75%;"></div></div><span class="bar-value">$7.5K</span></div>
+            <div class="bar-row"><span class="bar-label">SKU-044 Margin</span><div class="bar-track"><div class="bar-fill danger" style="width: 9%;"></div></div><span class="bar-value">9%</span></div>
+          </div>
+          <div class="kpi-grid" style="margin-top: 20px;">
+            <div class="kpi-card"><div class="kpi-label">High Rev / Low Margin</div><div class="kpi-val" style="color:var(--danger);">8</div><div class="kpi-sub" style="color:var(--danger);">Investigate</div></div>
+            <div class="kpi-card"><div class="kpi-label">Strong Margin</div><div class="kpi-val" style="color:var(--success);">17</div><div class="kpi-sub">Protect</div></div>
+            <div class="kpi-card"><div class="kpi-label">Avg Discount Impact</div><div class="kpi-val">-12%</div><div class="kpi-sub" style="color:var(--warning);">Watch</div></div>
+            <div class="kpi-card"><div class="kpi-label">Return Impact</div><div class="kpi-val">-$1.4K</div><div class="kpi-sub" style="color:var(--danger);">Loss</div></div>
+          </div>
+        </div>
       </div></div>
     </div>
 
     <!-- Analysis 03 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">03</div><div class="analysis-title"><h3>Category Performance Analysis</h3><span>Objective: Identify Growing Declining and High-Priority Product Categories</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+      <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
           <p>We compare categories across sales, revenue, growth trend, profitability signals, returns, and available inventory information.</p>
           <p><strong>We may review:</strong></p>
@@ -294,13 +323,26 @@ span{color:var(--muted) !important}
             <li>Where product investment may be more appropriate</li>
           </ul>
         </div>
+        <div class="chart-mock">
+          <div class="dash-chart-title">Category Revenue &amp; Growth Trend</div>
+          <div class="bar-chart">
+            <div class="bar-row"><span class="bar-label">Apparel</span><div class="bar-track"><div class="bar-fill success" style="width: 88%;"></div></div><span class="bar-value">+$18%</span></div>
+            <div class="bar-row"><span class="bar-label">Skincare</span><div class="bar-track"><div class="bar-fill success" style="width: 65%;"></div></div><span class="bar-value">+$9%</span></div>
+            <div class="bar-row"><span class="bar-label">Electronics</span><div class="bar-track"><div class="bar-fill warning" style="width: 30%;"></div></div><span class="bar-value">-$4%</span></div>
+            <div class="bar-row"><span class="bar-label">Home</span><div class="bar-track"><div class="bar-fill danger" style="width: 15%;"></div></div><span class="bar-value">-$11%</span></div>
+          </div>
+          <div class="kpi-grid" style="margin-top: 20px;">
+            <div class="kpi-card"><div class="kpi-label">Top Category</div><div class="kpi-val" style="color:var(--success);">Apparel</div><div class="kpi-sub">+18% growth</div></div>
+            <div class="kpi-card"><div class="kpi-label">Declining Category</div><div class="kpi-val" style="color:var(--danger);">Home</div><div class="kpi-sub" style="color:var(--danger);">-11% decline</div></div>
+          </div>
+        </div>
       </div></div>
     </div>
 
     <!-- Analysis 04 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">04</div><div class="analysis-title"><h3>Pricing &amp; Offer Analysis</h3><span>Objective: Identify Products That May Need Pricing or Offer Review</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+      <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
           <p>We review current pricing alongside cost, sales, conversion, discount, and historical performance data where available.</p>
           <p><strong>We may review:</strong></p>
@@ -333,13 +375,28 @@ span{color:var(--muted) !important}
           </ul>
           <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> A recommended price is not a guaranteed optimal price. Actual price changes should be tested against demand, conversion, margin, and customer response.</div>
         </div>
+        <div class="chart-mock">
+          <div class="dash-chart-title">Pricing Recommendations</div>
+          <table class="dash-table">
+            <thead><tr><th>Product</th><th>Margin</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>SKU-001</td><td style="color:var(--success); font-weight:700;">42%</td><td><span class="status-pill status-scale">Price Test</span></td></tr>
+              <tr><td>SKU-018</td><td style="color:var(--warning); font-weight:700;">19%</td><td><span class="status-pill status-maintain">Review</span></td></tr>
+              <tr><td>SKU-044</td><td style="color:var(--danger); font-weight:700;">9%</td><td><span class="status-pill status-pause">Reprice</span></td></tr>
+            </tbody>
+          </table>
+          <div class="kpi-grid" style="margin-top: 20px;">
+            <div class="kpi-card"><div class="kpi-label">Price Tests Suggested</div><div class="kpi-val" style="color:var(--success);">11</div><div class="kpi-sub">Opportunity</div></div>
+            <div class="kpi-card"><div class="kpi-label">High Discount Risk</div><div class="kpi-val" style="color:var(--danger);">6</div><div class="kpi-sub" style="color:var(--danger);">Watch</div></div>
+          </div>
+        </div>
       </div></div>
     </div>
 
     <!-- Analysis 05 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">05</div><div class="analysis-title"><h3>Inventory Efficiency Analysis</h3><span>Objective: Understand Which Products May Be Moving Quickly or Slowly</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+      <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
           <p>Where inventory and purchasing data are available, we compare sales velocity with current stock and available replenishment information.</p>
           <p><strong>We may review:</strong></p>
@@ -363,13 +420,27 @@ span{color:var(--muted) !important}
           </ul>
           <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> This analysis requires reliable inventory data. Supplier lead times, purchase-order management, warehouse operations, and demand planning are not included in the base audit.</div>
         </div>
+        <div class="chart-mock">
+          <div class="dash-chart-title">Days of Inventory on Hand</div>
+          <div class="bar-chart">
+            <div class="bar-row"><span class="bar-label">SKU-001</span><div class="bar-track"><div class="bar-fill danger" style="width: 18%;"></div></div><span class="bar-value">8 days</span></div>
+            <div class="bar-row"><span class="bar-label">SKU-018</span><div class="bar-track"><div class="bar-fill success" style="width: 55%;"></div></div><span class="bar-value">32 days</span></div>
+            <div class="bar-row"><span class="bar-label">SKU-044</span><div class="bar-track"><div class="bar-fill warning" style="width: 92%;"></div></div><span class="bar-value">120 days</span></div>
+          </div>
+          <div class="kpi-grid" style="margin-top: 20px;">
+            <div class="kpi-card"><div class="kpi-label">Stockout Risk</div><div class="kpi-val" style="color:var(--danger);">3</div><div class="kpi-sub" style="color:var(--danger);">Reorder</div></div>
+            <div class="kpi-card"><div class="kpi-label">Overstock</div><div class="kpi-val" style="color:var(--warning);">7</div><div class="kpi-sub" style="color:var(--warning);">Reduce</div></div>
+            <div class="kpi-card"><div class="kpi-label">Avg Days on Hand</div><div class="kpi-val">54</div><div class="kpi-sub">Healthy</div></div>
+            <div class="kpi-card"><div class="kpi-label">Cash Tied Up</div><div class="kpi-val" style="color:var(--danger);">$12K</div><div class="kpi-sub" style="color:var(--danger);">Overstock</div></div>
+          </div>
+        </div>
       </div></div>
     </div>
 
     <!-- Analysis 06 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">06</div><div class="analysis-title"><h3>Slow-Moving and Dead-Stock Signals</h3><span>Objective: Identify Products That May Be Tying Up Cash</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+      <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
           <p>We review products with limited sales movement over a defined period and compare their available inventory value, age, and demand signals.</p>
           <p><strong>We may review:</strong></p>
@@ -393,13 +464,27 @@ span{color:var(--muted) !important}
           </ul>
           <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Estimated recovery value is directional. Actual recovery depends on customer demand, pricing, discounting, inventory condition, and execution.</div>
         </div>
+        <div class="chart-mock">
+          <div class="dash-chart-title">Slow-Moving Inventory Value</div>
+          <div class="bar-chart">
+            <div class="bar-row"><span class="bar-label">90+ Days</span><div class="bar-track"><div class="bar-fill danger" style="width: 88%;"></div></div><span class="bar-value">$8.4K</span></div>
+            <div class="bar-row"><span class="bar-label">60-90 Days</span><div class="bar-track"><div class="bar-fill warning" style="width: 52%;"></div></div><span class="bar-value">$2.6K</span></div>
+            <div class="bar-row"><span class="bar-label">30-60 Days</span><div class="bar-track"><div class="bar-fill" style="width: 22%;"></div></div><span class="bar-value">$1.0K</span></div>
+          </div>
+          <div class="kpi-grid" style="margin-top: 20px;">
+            <div class="kpi-card"><div class="kpi-label">Dead-Stock SKUs</div><div class="kpi-val" style="color:var(--danger);">14</div><div class="kpi-sub" style="color:var(--danger);">Clearance</div></div>
+            <div class="kpi-card"><div class="kpi-label">Value Tied Up</div><div class="kpi-val" style="color:var(--danger);">$12K</div><div class="kpi-sub" style="color:var(--danger);">Cash Locked</div></div>
+            <div class="kpi-card"><div class="kpi-label">Est. Recovery</div><div class="kpi-val" style="color:var(--success);">$7.2K</div><div class="kpi-sub">60% of value</div></div>
+            <div class="kpi-card"><div class="kpi-label">Bundling Options</div><div class="kpi-val" style="color:var(--success);">5</div><div class="kpi-sub">Opportunity</div></div>
+          </div>
+        </div>
       </div></div>
     </div>
 
     <!-- Analysis 07 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">07</div><div class="analysis-title"><h3>Cross-Sell &amp; Bundle Opportunity Analysis</h3><span>Objective: Identify Products Frequently Purchased Together</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+      <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
           <p>We review order-level product combinations to identify potential bundles and cross-sell opportunities.</p>
           <p><strong>We may review:</strong></p>
@@ -431,13 +516,25 @@ span{color:var(--muted) !important}
           </ul>
           <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Potential AOV impact is not guaranteed. Actual uplift must be measured after the bundle or cross-sell offer is implemented.</div>
         </div>
+        <div class="chart-mock">
+          <div class="dash-chart-title">Product Pair Frequency</div>
+          <div class="bar-chart">
+            <div class="bar-row"><span class="bar-label">SKU-01 + 02</span><div class="bar-track"><div class="bar-fill success" style="width: 85%;"></div></div><span class="bar-value">142 orders</span></div>
+            <div class="bar-row"><span class="bar-label">SKU-03 + 07</span><div class="bar-track"><div class="bar-fill success" style="width: 62%;"></div></div><span class="bar-value">98 orders</span></div>
+            <div class="bar-row"><span class="bar-label">SKU-12 + 18</span><div class="bar-track"><div class="bar-fill warning" style="width: 32%;"></div></div><span class="bar-value">44 orders</span></div>
+          </div>
+          <div class="kpi-grid" style="margin-top: 20px;">
+            <div class="kpi-card"><div class="kpi-label">Bundle Tests</div><div class="kpi-val" style="color:var(--success);">6</div><div class="kpi-sub">Opportunities</div></div>
+            <div class="kpi-card"><div class="kpi-label">Projected AOV Lift</div><div class="kpi-val" style="color:var(--success);">+$8</div><div class="kpi-sub">If implemented</div></div>
+          </div>
+        </div>
       </div></div>
     </div>
 
     <!-- Analysis 08 -->
     <div class="analysis-block scroll-reveal">
       <div class="analysis-header"><div class="analysis-num">08</div><div class="analysis-title"><h3>Product Return &amp; Refund Analysis</h3><span>Objective: Identify Products Losing Value Through Returns and Refunds</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
+      <div class="analysis-content"><div class="analysis-grid">
         <div class="analysis-text">
           <p>We review product-level return and refund patterns to understand where strong sales may be accompanied by avoidable losses.</p>
           <p><strong>We may review:</strong></p>
@@ -459,6 +556,20 @@ span{color:var(--muted) !important}
             <li>Whether product information sizing quality packaging or customer expectations may need review</li>
           </ul>
           <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> This audit identifies patterns. It does not include product quality testing, supplier investigation, warehouse inspection, or customer-support process redesign.</div>
+        </div>
+        <div class="chart-mock">
+          <div class="dash-chart-title">Return Rate by Product</div>
+          <div class="bar-chart">
+            <div class="bar-row"><span class="bar-label">SKU-044</span><div class="bar-track"><div class="bar-fill danger" style="width: 92%;"></div></div><span class="bar-value">28%</span></div>
+            <div class="bar-row"><span class="bar-label">SKU-018</span><div class="bar-track"><div class="bar-fill warning" style="width: 48%;"></div></div><span class="bar-value">14%</span></div>
+            <div class="bar-row"><span class="bar-label">SKU-001</span><div class="bar-track"><div class="bar-fill success" style="width: 12%;"></div></div><span class="bar-value">3.5%</span></div>
+          </div>
+          <div class="kpi-grid" style="margin-top: 20px;">
+            <div class="kpi-card"><div class="kpi-label">High-Return SKUs</div><div class="kpi-val" style="color:var(--danger);">5</div><div class="kpi-sub" style="color:var(--danger);">Investigate</div></div>
+            <div class="kpi-card"><div class="kpi-label">Refund Value</div><div class="kpi-val" style="color:var(--danger);">$3.8K</div><div class="kpi-sub" style="color:var(--danger);">Loss</div></div>
+            <div class="kpi-card"><div class="kpi-label">Avg Return Rate</div><div class="kpi-val">8.2%</div><div class="kpi-sub">Store Avg</div></div>
+            <div class="kpi-card"><div class="kpi-label">Margin Impact</div><div class="kpi-val" style="color:var(--danger);">-6%</div><div class="kpi-sub" style="color:var(--danger);">Lost</div></div>
+          </div>
         </div>
       </div></div>
     </div>
