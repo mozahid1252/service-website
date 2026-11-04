@@ -195,7 +195,8 @@ const ADD_ON_PACKAGES = [
   },
   {
     name: 'Customer Retention & LTV Audit',
-    price: '$350 – $700 · 7–12 Days',
+    price: 'Starting from $400 · 7–10 Days',
+    cta: 'Explore Retention Audit',
     problem: '"Customers buy once and disappear."',
     promise: 'You will know which customers are about to leave (and how to reach them before they do), which channels bring loyal customers, and have an upload-ready segmented list for immediate retention campaigns.',
     cssClass: 'retention',
