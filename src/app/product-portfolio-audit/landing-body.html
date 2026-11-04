@@ -1,16 +1,105 @@
 <!-- MOBILE-OVERRIDE-SAFETY -->
-<style>@media(max-width:900px){.outcomes-grid,.outcomes-grid.cols-3,.outcomes-grid.cols-4{display:flex !important;flex-direction:column !important;gap:16px !important}}</style>
+<style>
+@media(max-width:900px){.outcomes-grid,.outcomes-grid.cols-3,.outcomes-grid.cols-4{display:flex !important;flex-direction:column !important;gap:16px !important}}
+
+/* ===== GLOBAL COLOR OVERRIDES (prevents globals.css strong { color:#FFFFFF }) ===== */
+h1,h2,h3,h4,h5{color:var(--text) !important}
+h1 em,h2 em,h3 em{color:var(--accent) !important}
+strong,b{color:var(--text) !important}
+p{color:var(--muted) !important}
+.hero p{color:var(--muted) !important}
+.header-center p{color:var(--muted) !important}
+.eyebrow{color:var(--accent-dark) !important}
+li{color:var(--muted) !important}
+span{color:var(--muted) !important}
+.logo span{color:var(--accent) !important}
+.analysis-title h3{color:var(--text) !important}
+.analysis-title span{color:var(--accent) !important}
+.analysis-text p{color:var(--muted) !important}
+.analysis-text p strong{color:var(--text) !important}
+.analysis-text strong{color:var(--text) !important}
+.analysis-text ul li{color:var(--muted) !important}
+.analysis-text ul li strong{color:var(--text) !important}
+.insight-box{color:var(--muted) !important}
+.insight-box b{color:var(--text) !important}
+.faq-q{color:var(--text) !important}
+.faq-a{color:var(--muted) !important}
+.pricing-features li{color:var(--muted) !important}
+.signs-list li{color:var(--muted) !important}
+.not-included li{color:var(--muted) !important}
+.dash-include-list li{color:var(--muted) !important}
+.price-factor-list li{color:var(--muted) !important}
+.process-step h4{color:var(--text) !important}
+.process-step p{color:var(--muted) !important}
+.boundary-note p{color:var(--muted) !important}
+.boundary-note h4{color:var(--warning) !important}
+.outcome-card h4{color:var(--text) !important}
+.std-deliverable-card h4{color:var(--accent) !important}
+.std-deliverable-card p{color:var(--text) !important}
+.std-deliverable-card span{color:var(--muted) !important}
+.data-source-item span{color:var(--muted) !important}
+.pricing-card .price-sub{color:var(--muted) !important}
+
+/* ===== STD DELIVERABLE GRID (vertical layout: icon top, number, title, description) ===== */
+.std-deliverable-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:900px; margin:0 auto; }
+.std-deliverable-card { display:flex; flex-direction:column !important; gap:10px; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:24px; transition:transform 0.3s ease, box-shadow 0.3s ease; }
+.std-deliverable-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+.std-deliverable-card .deliverable-icon { width:44px; height:44px; background:var(--accent-light); color:var(--accent) !important; border-radius:12px; display:flex !important; align-items:center; justify-content:center; font-size:18px; margin:0; }
+.std-deliverable-card h4 { font-size:14px; color:var(--accent) !important; margin:0; font-weight:700; }
+.std-deliverable-card p { font-size:15px; font-weight:700; color:var(--text) !important; margin:0; line-height:1.4; }
+.std-deliverable-card span { font-size:13px; color:var(--muted) !important; line-height:1.6; }
+.std-deliverable-grid .span-2 { grid-column:span 2; }
+
+/* ===== PROCESS GRID ===== */
+.process-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; max-width:900px; margin:0 auto; }
+.process-step { text-align:center; }
+.process-step .step-num { width:48px; height:48px; background:var(--accent); color:#FFF; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:18px; margin:0 auto 16px; }
+.process-step h4 { font-size:15px; margin-bottom:8px; }
+.process-step p { font-size:13px; color:var(--muted); line-height:1.5; }
+
+/* ===== BOUNDARY NOTE ===== */
+.boundary-note { max-width:800px; margin:0 auto; background:var(--warning-light); border:1px solid rgba(217,119,6,0.2); border-radius:var(--radius); padding:24px 28px; }
+.boundary-note h4 { color:var(--warning) !important; font-size:16px; margin-bottom:10px; }
+.boundary-note p { font-size:14px; color:var(--muted) !important; line-height:1.6; }
+
+/* ===== DATA SOURCE GRID ===== */
+.data-source-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; max-width:900px; margin:0 auto; }
+.data-source-item { display:flex; align-items:flex-start; gap:10px; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:14px 16px; font-size:14px; }
+.data-source-item i { color:var(--accent); margin-top:3px; }
+
+/* ===== DASHBOARD INCLUDE LIST ===== */
+.dash-include-list { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.dash-include-list li { font-size:14px; }
+
+/* ===== PRICE FACTOR LIST ===== */
+.price-factor-list { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+.price-factor-list li { font-size:13px; }
+
+/* ===== TWO-COLUMN SUITABILITY GRID ===== */
+.two-col-grid { display:grid; grid-template-columns:1fr 1fr; gap:32px; max-width:860px; margin:0 auto; }
+
+/* ===== MOBILE SAFETY ===== */
+@media(max-width:900px){
+  .std-deliverable-grid{grid-template-columns:1fr !important}
+  .std-deliverable-grid .span-2{grid-column:auto !important}
+  .process-grid{grid-template-columns:1fr !important}
+  .data-source-grid{grid-template-columns:1fr !important}
+  .dash-include-list{grid-template-columns:1fr !important}
+  .price-factor-list{grid-template-columns:1fr !important}
+  .two-col-grid{grid-template-columns:1fr !important}
+  .signs-list,.not-included{display:flex !important;flex-direction:column !important;gap:12px !important}
+  .not-included li{grid-column:auto !important}
+}
+</style>
 
 
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="logo">Moz <span>Intelligence</span></a>
-    <ul class="nav-links" style="gap:32px; list-style:none;">
-      <li><a href="#scope" style="color:var(--muted); font-size:14px;">Scope</a></li>
-      <li><a href="#outcomes" style="color:var(--muted); font-size:14px;">Outcomes</a></li>
-      <li><a href="#analysis" style="color:var(--muted); font-size:14px;">Analysis</a></li>
+    <ul class="nav-links" style="gap:24px; list-style:none;">
+      <li><a href="#signs" style="color:var(--muted); font-size:14px;">Signs</a></li>
+      <li><a href="#analysis" style="color:var(--muted); font-size:14px;">What We Analyze</a></li>
       <li><a href="#deliverables" style="color:var(--muted); font-size:14px;">Deliverables</a></li>
-      <li><a href="#dashboard-upgrade" style="color:var(--muted); font-size:14px;">Dashboard</a></li>
       <li><a href="#faq" style="color:var(--muted); font-size:14px;">FAQ</a></li>
       <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
       <li><a href="/" style="color:var(--muted); font-size:14px;">Back to MozIntelligence</a></li>
@@ -22,11 +111,9 @@
   </div>
 </nav>
 <div class="nav-mobile-menu" id="mobile-menu-productportfolioaudit">
-    <a href="#scope">Scope</a>
-    <a href="#outcomes">Outcomes</a>
-    <a href="#analysis">Analysis</a>
+    <a href="#signs">Signs</a>
+    <a href="#analysis">What We Analyze</a>
     <a href="#deliverables">Deliverables</a>
-    <a href="#dashboard-upgrade">Dashboard</a>
     <a href="#faq">FAQ</a>
     <a href="#pricing">Pricing</a>
     <a href="/">Back to MozIntelligence</a>
@@ -36,228 +123,342 @@
 
 <header class="hero">
   <div class="container">
-    <div class="eyebrow" style="margin: 0 auto;">Specialized Add-On · Package 03:Product Profitability & Portfolio Audit</div>
-    <h1>CUT THE DEAD WEIGHT. <em>SCALE THE WINNERS.</em></h1>
-    <p>Managing 50+ SKUs is complex. Your best-selling product by revenue is often not your most profitable. This audit gives you complete clarity on your entire catalog so every inventory decision is data-backed.</p>
+    <div class="eyebrow" style="margin: 0 auto;">Specialized Add-On &middot; Package 03: Product Profitability &amp; Portfolio Audit</div>
+    <h1>Know Which Products Deserve <em>Investment</em>, Improvement, or Reduction</h1>
+    <p>A data-backed review of your product catalog to identify profitability signals, portfolio priorities, pricing opportunities, inventory risks, return patterns, and bundle potential.</p>
+    <p style="font-size: 16px; color: var(--text) !important; max-width: 720px; margin: 0 auto 16px;">A product that generates strong revenue is not always a profitable product. Discounts, product costs, shipping, returns, refunds, inventory holding costs, and operational expenses can significantly change the real value of a product.</p>
+    <p style="font-size: 16px; color: var(--text) !important; max-width: 720px; margin: 0 auto 32px;">The Product Profitability &amp; Portfolio Audit reviews your catalog to help you understand which products are creating value, which products may be creating risk, and where your next product or inventory decision should focus.</p>
     <div class="hero-cta">
-      <a href="#pricing" class="btn btn-primary">Audit My Catalog</a>
-      <a href="#scope" class="btn btn-outline" style="border-color:var(--border-dark);">What's Covered</a>
+      <a href="#pricing" class="btn btn-primary">Audit My Product Portfolio</a>
+      <a href="#signs" class="btn btn-outline" style="border-color:var(--border-dark);">See the Warning Signs</a>
     </div>
+    <p style="font-size: 13px; color: var(--light) !important; margin-top: 20px; font-style: italic;">This is a product and catalog diagnostic. Pricing changes, purchasing decisions, inventory liquidation, development, and ongoing product management are scoped separately.</p>
   </div>
 </header>
 
-<section id="scope" style="background: var(--surface);">
+
+<!-- IS YOUR PRODUCT PORTFOLIO SHOWING THESE SIGNS? -->
+<section id="signs" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">The Scope</div>
-      <h2>What This Audit Covers</h2>
-      <p>A complete product portfolio blueprint to identify what to grow, optimize, reprice, bundle, or remove.</p>
+      <div class="eyebrow">Warning Signs</div>
+      <h2>Is Your Product Portfolio Showing These Signs?</h2>
+      <p>If several of these feel familiar, your product decisions may be relying on incomplete information.</p>
     </div>
-    <div class="info-grid">
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-bullseye"></i></div><h4>The Purpose</h4><p>To evaluate every product across profitability, sales performance, pricing, inventory efficiency, returns, and growth potential, so your product decisions are backed by data.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-triangle-exclamation"></i></div><h4>Problems Solved</h4><p>Low-margin products, inefficient inventory, dead stock, unnecessary return costs, weak pricing, and missed cross-sell and bundle opportunities.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-scale-balanced"></i></div><h4>Decisions Supported</h4><p>Product growth or discontinuation, pricing adjustments, inventory investment, dead stock clearance, return reduction, and bundle creation.</p></div>
-    </div>
+    <ul class="signs-list" style="list-style:none; max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You have many products but do not know which deserve attention</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Your best-selling products may not be your most profitable</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Revenue is concentrated in a small number of SKUs</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Some products sell slowly or tie up inventory</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Discounts are necessary to move certain products</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Product returns or refunds are reducing margin</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You are unsure which products to reorder or reduce</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You want to create bundles but do not know which products belong together</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Product pricing has not been reviewed using cost and demand data</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Your catalog is growing faster than your ability to manage it</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Inventory decisions are being made mainly from revenue or intuition</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You do not have a clear product priority or classification system</li>
+    </ul>
   </div>
 </section>
 
+
+<!-- WHAT THIS AUDIT HELPS YOU UNDERSTAND -->
 <section id="outcomes" style="background: var(--bg);">
   <div class="container">
     <div class="header-center">
       <div class="eyebrow">The Outcome</div>
-      <h2>After This Package, You Will Know</h2>
-      <p>Every product opportunity identified. Every important decision prioritized.</p>
+      <h2>What This Audit Helps You Understand</h2>
+      <p>A clearer view of product value, portfolio priorities, and catalog risks.</p>
     </div>
-    <div class="outcomes-grid">
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-star"></i></div><h4>Top Product Drivers</h4><p>Which products and categories contribute the most value.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-coins"></i></div><h4>True Profitability</h4><p>Which products are actually profitable after key costs.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-tag"></i></div><h4>Pricing Opportunities</h4><p>Which products may have room for profitable price adjustments.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-warehouse"></i></div><h4>Inventory Efficiency</h4><p>Where you're overstocked, understocked, or tying up unnecessary cash.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-box-archive"></i></div><h4>Dead Stock</h4><p>Which products are holding cash and should be cleared, bundled, or discontinued.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-link"></i></div><h4>Bundle Opportunities</h4><p>Which products can be combined to increase AOV and create additional revenue.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-scissors"></i></div><h4>Cost Savings</h4><p>Where you can reduce unnecessary product, inventory, return, and operational costs.</p></div>
-      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-arrow-trend-up"></i></div><h4>Growth Opportunities</h4><p>Which products and categories deserve more investment for profitable growth.</p></div>
+    <div class="outcomes-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 860px; margin: 0 auto;">
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-chart-line"></i></div><h4>Which products and categories contribute the most value</h4></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-money-bill-trend-up"></i></div><h4>Which products show strong or weak margin signals</h4></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-arrow-trend-down"></i></div><h4>Which products generate revenue but may reduce profitability</h4></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-tag"></i></div><h4>Which products appear to require pricing or offer review</h4></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-gauge-high"></i></div><h4>Which products are moving quickly or slowly</h4></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-coins"></i></div><h4>Where inventory may be tying up cash</h4></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-warehouse"></i></div><h4>Which products may require stock or purchasing attention</h4></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-link"></i></div><h4>Which product combinations show cross-sell or bundle potential</h4></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-rotate-left"></i></div><h4>Which products have unusual return or refund patterns</h4></div>
+      <div class="outcome-card scroll-reveal"><div class="outcome-icon"><i class="fa-solid fa-clipboard-check"></i></div><h4>Which products should be prioritized for growth, optimization, investigation, or reduction</h4></div>
+    </div>
+    <div class="boundary-note scroll-reveal" style="max-width:860px; margin:32px auto 0;">
+      <h4><i class="fa-solid fa-circle-info"></i> Note</h4>
+      <p>Recommendations will be based on available product, cost, sales, inventory, and return data. They will not be presented as guaranteed demand, pricing, or inventory outcomes.</p>
     </div>
   </div>
 </section>
 
+
+<!-- WHAT WE ANALYZE -->
 <section id="analysis" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">Catalog Analysis</div>
-      <h2>8 Catalog Analyses</h2>
-      <p>A complete deep-dive into your product portfolio.</p>
+      <div class="eyebrow">Analysis</div>
+      <h2>What We Analyze</h2>
+      <p>Eight connected analyses covering portfolio prioritization, profitability signals, category performance, pricing, inventory efficiency, slow-moving stock, bundle opportunities, and return patterns.</p>
     </div>
 
+    <!-- Analysis 01 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">1</div><div class="analysis-title"><h3>ABC Product Classification</h3><span>Objective: Identify Your Most and Least Valuable Products</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-header"><div class="analysis-num">01</div><div class="analysis-title"><h3>Product Classification &amp; Portfolio Prioritization</h3><span>Objective: Understand Which Products Matter Most to the Business</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> Revenue contribution and sales performance of each SKU.</p>
-          <p>We classify every product in your catalog into three tiers based on its contribution to your business: A-Tier products that drive the most value, B-Tier products that need optimization, and C-Tier products that contribute the least and may need to be reduced or discontinued.</p>
-          <div class="insight-box"><b>Example Insight:</b> “Your A-Tier products generate the majority of revenue, while many C-Tier products contribute little but continue to tie up inventory and cash.”</div>
-          <div class="insight-box" style="margin-top: 12px;"><b>Strategic Recommendation:</b> Protect and grow high-value A-Tier products, optimize B-Tier products, and review C-Tier products for potential reduction or discontinuation.</div>
-        </div>
-        <div class="chart-mock">
-          <div class="bar-chart">
-            <div class="bar-row"><span class="bar-label">A-Tier</span><div class="bar-track"><div class="bar-fill success" style="width: 40%;"></div></div><span class="bar-value">Top 20%</span></div>
-            <div class="bar-row"><span class="bar-label">B-Tier</span><div class="bar-track"><div class="bar-fill warning" style="width: 60%;"></div></div><span class="bar-value">Mid 30%</span></div>
-            <div class="bar-row"><span class="bar-label">C-Tier</span><div class="bar-track"><div class="bar-fill danger" style="width: 100%;"></div></div><span class="bar-value">Low 50%</span></div>
-          </div>
+          <p>We classify products according to their contribution to available revenue, sales volume, profitability signals, and strategic importance.</p>
+          <p><strong>We may review:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Product revenue</li>
+            <li>Units sold</li>
+            <li>Order frequency</li>
+            <li>Sales trend</li>
+            <li>Margin signals</li>
+            <li>Return and refund signals</li>
+            <li>Product concentration</li>
+            <li>Category contribution</li>
+            <li>Customer demand signals</li>
+            <li>Available inventory data</li>
+          </ul>
+          <p><strong>Products may be grouped into practical priority tiers, such as:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>A-Tier: High-priority products that drive meaningful business value</li>
+            <li>B-Tier: Products requiring optimization or monitoring</li>
+            <li>C-Tier: Products with weaker contribution or higher risk</li>
+          </ul>
+          <p><strong>You will learn:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Which products deserve protection and investment</li>
+            <li>Which products need optimization</li>
+            <li>Which products require further investigation</li>
+            <li>Which products may need a pricing, bundle, inventory, or portfolio decision</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> ABC classification is a prioritization framework. It does not automatically mean that every C-Tier product should be discontinued.</div>
         </div>
       </div></div>
     </div>
 
+    <!-- Analysis 02 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">2</div><div class="analysis-title"><h3>Product-Level Profit Margin Analysis</h3><span>Objective: Find Your True Product Profitability</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-header"><div class="analysis-num">02</div><div class="analysis-title"><h3>Product-Level Profitability Signals</h3><span>Objective: Separate Revenue Performance From Profit Contribution</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> COGS, shipping costs, return costs, discounts, and proportional marketing costs per product.</p>
-          <p>We calculate the true profit margin of each product after accounting for the costs that are often missed when looking at revenue alone. This reveals which products are genuinely profitable and which top sellers may be quietly reducing your overall profit.</p>
-          <div class="insight-box"><b>Example Insight:</b> “Product A generates strong revenue but has only a 5% true profit margin, while Product B delivers a 45% margin. Your highest-selling products aren't always your most profitable.”</div>
-          <div class="insight-box" style="margin-top: 12px;"><b>Strategic Recommendation:</b> Reprice, bundle, or reduce marketing spend on low-margin products to protect and improve overall profitability.</div>
-        </div>
-        <div class="chart-mock">
-          <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-label">Product A Revenue</div><div class="kpi-val">$42K</div><div class="kpi-sub" style="color: var(--danger);">Margin: 5%</div></div>
-            <div class="kpi-card"><div class="kpi-label">Product B Revenue</div><div class="kpi-val">$28K</div><div class="kpi-sub">Margin: 45%</div></div>
-          </div>
-          <div class="bar-chart" style="margin-top: 16px;">
-            <div class="bar-row"><span class="bar-label">Product B</span><div class="bar-track"><div class="bar-fill success" style="width: 90%;"></div></div><span class="bar-value">45%</span></div>
-            <div class="bar-row"><span class="bar-label">Product A</span><div class="bar-track"><div class="bar-fill danger" style="width: 10%;"></div></div><span class="bar-value">5%</span></div>
-          </div>
+          <p>We review available product-cost and order data to understand how much value products may create after relevant costs.</p>
+          <p><strong>We may review:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Product cost or COGS</li>
+            <li>Gross-margin signals</li>
+            <li>Discount impact</li>
+            <li>Refund and return impact</li>
+            <li>Shipping-cost signals</li>
+            <li>Payment-cost signals</li>
+            <li>Fulfilment-cost signals where available</li>
+            <li>Product-level contribution-margin signals</li>
+            <li>Revenue-to-margin differences</li>
+          </ul>
+          <p><strong>You will learn:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Which products show stronger profitability signals</li>
+            <li>Which products may be high-revenue but low-margin</li>
+            <li>Which costs are reducing product contribution</li>
+            <li>Which products require more accurate cost data</li>
+            <li>Where pricing offer bundle or product-mix review may be useful</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> True profit margin can only be calculated when the relevant cost data is reliable and complete. Where important costs are missing, findings will be labelled as estimates or profitability signals.</div>
         </div>
       </div></div>
     </div>
 
+    <!-- Analysis 03 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">3</div><div class="analysis-title"><h3>Category Performance Analysis</h3><span>Objective: Identify Growing & Declining Categories</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-header"><div class="analysis-num">03</div><div class="analysis-title"><h3>Category Performance Analysis</h3><span>Objective: Identify Growing Declining and High-Priority Product Categories</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> Category-level revenue, sales growth, and profit margin trends over time.</p>
-          <p>We identify which product categories are growing, which are declining, and whether their growth is actually translating into healthy profitability.</p>
-          <div class="insight-box"><b>Example Insight:</b> “Category A is growing by 15% with a 38% profit margin, while Category B has declined by 10% and delivers only a 12% margin. The data shows where to invest, optimize, or reduce your product focus.”</div>
-          <div class="insight-box" style="margin-top: 12px;"><b>Strategic Recommendation:</b> Expand high-growth, high-margin categories while reviewing declining or low-margin categories for pricing, product mix, or inventory changes.</div>
-        </div>
-        <div class="chart-mock">
-          <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-label">Category A Growth</div><div class="kpi-val" style="color: var(--success);">+15%</div><div class="kpi-sub">Margin: 38%</div></div>
-            <div class="kpi-card"><div class="kpi-label">Category B Growth</div><div class="kpi-val" style="color: var(--danger);">-10%</div><div class="kpi-sub" style="color: var(--warning);">Margin: 12%</div></div>
-          </div>
-          <div class="bar-chart" style="margin-top: 16px;">
-            <div class="bar-row"><span class="bar-label">Cat A Margin</span><div class="bar-track"><div class="bar-fill success" style="width: 76%;"></div></div><span class="bar-value">38%</span></div>
-            <div class="bar-row"><span class="bar-label">Cat B Margin</span><div class="bar-track"><div class="bar-fill warning" style="width: 24%;"></div></div><span class="bar-value">12%</span></div>
-          </div>
+          <p>We compare categories across sales, revenue, growth trend, profitability signals, returns, and available inventory information.</p>
+          <p><strong>We may review:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Category revenue</li>
+            <li>Units sold</li>
+            <li>Category growth or decline</li>
+            <li>Product concentration within each category</li>
+            <li>Category margin signals</li>
+            <li>Discount dependence</li>
+            <li>Return and refund patterns</li>
+            <li>Inventory exposure</li>
+            <li>Customer demand signals</li>
+          </ul>
+          <p><strong>You will learn:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Which categories show stronger momentum</li>
+            <li>Whether category growth is translating into healthy margin</li>
+            <li>Which categories may need pricing or product-mix review</li>
+            <li>Where product investment may be more appropriate</li>
+          </ul>
         </div>
       </div></div>
     </div>
 
+    <!-- Analysis 04 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">4</div><div class="analysis-title"><h3>Pricing Analysis</h3><span>Objective: Identify Pricing Opportunities</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-header"><div class="analysis-num">04</div><div class="analysis-title"><h3>Pricing &amp; Offer Analysis</h3><span>Objective: Identify Products That May Need Pricing or Offer Review</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> Current prices, sales volume, conversion rates, and historical pricing performance.</p>
-          <p>We assess whether your current pricing is leaving profit on the table and identify products where a price adjustment could increase margins without significantly hurting demand.</p>
-          <div class="insight-box"><b>Example Insight:</b> “Item 1 is converting strongly at $20 but has limited margin. A move to $24 could improve profitability while maintaining healthy demand.”</div>
-          <div class="insight-box" style="margin-top: 12px;"><b>Strategic Recommendation:</b> Test targeted price increases on high-conversion, low-margin products and monitor conversion and sales volume before wider implementation.</div>
-        </div>
-        <div class="chart-mock">
-          <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-label">Item 1 Current</div><div class="kpi-val">$20</div><div class="kpi-sub" style="color: var(--accent);">Rec: $24</div></div>
-            <div class="kpi-card"><div class="kpi-label">Item 2 Current</div><div class="kpi-val">$45</div><div class="kpi-sub" style="color: var(--accent);">Rec: $49</div></div>
-          </div>
-          <div class="bar-chart" style="margin-top: 16px;">
-            <div class="bar-row"><span class="bar-label">Item 1 Rec</span><div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div><span class="bar-value">$24</span></div>
-            <div class="bar-row"><span class="bar-label">Item 1 Cur</span><div class="bar-track"><div class="bar-fill warning" style="width: 83%;"></div></div><span class="bar-value">$20</span></div>
-          </div>
+          <p>We review current pricing alongside cost, sales, conversion, discount, and historical performance data where available.</p>
+          <p><strong>We may review:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Current selling price</li>
+            <li>Product cost</li>
+            <li>Gross-margin signals</li>
+            <li>Sales volume</li>
+            <li>Conversion signals</li>
+            <li>Discount depth and frequency</li>
+            <li>Price changes over time</li>
+            <li>Product demand signals</li>
+            <li>Competitor or market pricing if separately provided</li>
+          </ul>
+          <p><strong>You will learn:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Which products may have limited margin at the current price</li>
+            <li>Which products may have room for a pricing test</li>
+            <li>Where discounting may be reducing profitability</li>
+            <li>Which products may benefit from a bundle or offer change</li>
+          </ul>
+          <p><strong>Recommendations will be framed as:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Pricing review</li>
+            <li>Controlled price test</li>
+            <li>Offer test</li>
+            <li>Bundle test</li>
+            <li>Maintain current price</li>
+            <li>Further investigation</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> A recommended price is not a guaranteed optimal price. Actual price changes should be tested against demand, conversion, margin, and customer response.</div>
         </div>
       </div></div>
     </div>
 
+    <!-- Analysis 05 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">5</div><div class="analysis-title"><h3>Inventory Efficiency Analysis</h3><span>Objective: Optimize Inventory & Free Up Cash</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-header"><div class="analysis-num">05</div><div class="analysis-title"><h3>Inventory Efficiency Analysis</h3><span>Objective: Understand Which Products May Be Moving Quickly or Slowly</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> Sales velocity, inventory levels, and days of inventory on hand.</p>
-          <p>We identify which products are moving quickly and may face stockouts, as well as slow-moving products that are holding too much inventory and tying up valuable cash.</p>
-          <div class="insight-box"><b>Example Insight:</b> “Product A has 120 days of inventory and is moving slowly, while Product B has only 15 days remaining and may require a faster reorder.”</div>
-          <div class="insight-box" style="margin-top: 12px;"><b>Strategic Recommendation:</b> Reorder high-velocity products before they run low and reduce or pause purchasing for slow-moving products to free up cash.</div>
-        </div>
-        <div class="chart-mock">
-          <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-label">Product A Days</div><div class="kpi-val" style="color: var(--danger);">120 D</div><div class="kpi-sub" style="color: var(--danger);">Overstock Risk</div></div>
-            <div class="kpi-card"><div class="kpi-label">Product B Days</div><div class="kpi-val" style="color: var(--warning);">15 D</div><div class="kpi-sub" style="color: var(--warning);">Stockout Risk</div></div>
-          </div>
-          <div class="bar-chart" style="margin-top: 16px;">
-            <div class="bar-row"><span class="bar-label">Product A</span><div class="bar-track"><div class="bar-fill danger" style="width: 100%;"></div></div><span class="bar-value">120 D</span></div>
-            <div class="bar-row"><span class="bar-label">Product B</span><div class="bar-track"><div class="bar-fill warning" style="width: 12%;"></div></div><span class="bar-value">15 D</span></div>
-          </div>
+          <p>Where inventory and purchasing data are available, we compare sales velocity with current stock and available replenishment information.</p>
+          <p><strong>We may review:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Units sold</li>
+            <li>Sales velocity</li>
+            <li>Current inventory</li>
+            <li>Days of inventory on hand</li>
+            <li>Stockout signals</li>
+            <li>Overstock signals</li>
+            <li>Reorder status</li>
+            <li>Product availability</li>
+            <li>Purchase or replenishment data where available</li>
+          </ul>
+          <p><strong>You will learn:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Which products may require replenishment attention</li>
+            <li>Which products may be overstocked</li>
+            <li>Which products are tying up cash</li>
+            <li>Which inventory decisions deserve further review</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> This analysis requires reliable inventory data. Supplier lead times, purchase-order management, warehouse operations, and demand planning are not included in the base audit.</div>
         </div>
       </div></div>
     </div>
 
+    <!-- Analysis 06 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">6</div><div class="analysis-title"><h3>Dead Stock Identification</h3><span>Objective: Free Up Cash Tied Up in Slow-Moving Products</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-header"><div class="analysis-num">06</div><div class="analysis-title"><h3>Slow-Moving and Dead-Stock Signals</h3><span>Objective: Identify Products That May Be Tying Up Cash</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> Products with little or no sales movement over a defined period, along with their inventory value and holding costs.</p>
-          <p>We identify products that are no longer selling and calculate how much cash is tied up in them. We then estimate how much value could potentially be recovered through discounts, bundles, promotions, or other liquidation strategies.</p>
-          <div class="insight-box"><b>Example Insight:</b> “$1.2K is currently tied up in products with little or no movement. We estimate that approximately $800 could be recovered through targeted clearance and bundling strategies.”</div>
-          <div class="insight-box" style="margin-top: 12px;"><b>Strategic Recommendation:</b> Bundle dead stock with high-performing products, run targeted clearance offers, or discontinue products that are unlikely to recover their costs.</div>
-        </div>
-        <div class="chart-mock">
-          <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-label">Holding Cost</div><div class="kpi-val" style="color: var(--danger);">$1.2K</div><div class="kpi-sub" style="color: var(--muted);">Tied Up</div></div>
-            <div class="kpi-card"><div class="kpi-label">Recoverable</div><div class="kpi-val" style="color: var(--success);">$800</div><div class="kpi-sub">Est. Recovery</div></div>
-          </div>
-          <div class="bar-chart" style="margin-top: 16px;">
-            <div class="bar-row"><span class="bar-label">Holding Cost</span><div class="bar-track"><div class="bar-fill danger" style="width: 100%;"></div></div><span class="bar-value">$1.2K</span></div>
-            <div class="bar-row"><span class="bar-label">Recoverable</span><div class="bar-track"><div class="bar-fill success" style="width: 66%;"></div></div><span class="bar-value">$800</span></div>
-          </div>
+          <p>We review products with limited sales movement over a defined period and compare their available inventory value, age, and demand signals.</p>
+          <p><strong>We may review:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Units sold during the selected period</li>
+            <li>Days since last sale</li>
+            <li>Current inventory value</li>
+            <li>Inventory age</li>
+            <li>Holding-cost signals where available</li>
+            <li>Discount history</li>
+            <li>Return or quality concerns</li>
+            <li>Product demand trend</li>
+            <li>Potential clearance or bundling options</li>
+          </ul>
+          <p><strong>You will learn:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Which products show slow-moving or dead-stock risk</li>
+            <li>How much inventory value may be tied up</li>
+            <li>Which products may be suitable for clearance bundling or further review</li>
+            <li>Which products should not receive additional purchasing priority</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Estimated recovery value is directional. Actual recovery depends on customer demand, pricing, discounting, inventory condition, and execution.</div>
         </div>
       </div></div>
     </div>
 
+    <!-- Analysis 07 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">7</div><div class="analysis-title"><h3>Cross-Sell & Bundle Opportunity Analysis</h3><span>Objective: Increase Average Order Value</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-header"><div class="analysis-num">07</div><div class="analysis-title"><h3>Cross-Sell &amp; Bundle Opportunity Analysis</h3><span>Objective: Identify Products Frequently Purchased Together</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> Products frequently purchased together and customer purchase patterns.</p>
-          <p>We identify which products customers most often buy together and uncover the strongest opportunities for cross-selling and product bundles. Based on these patterns, we recommend specific bundles designed to increase average order value.</p>
-          <div class="insight-box"><b>Example Insight:</b> “Customers who purchase Product A frequently purchase Product B in the same order. Combining them into a bundle could create a strong opportunity to increase AOV.”</div>
-          <div class="insight-box" style="margin-top: 12px;"><b>Strategic Recommendation:</b> Prioritize the strongest product combinations for bundling and test them with targeted offers to measure their actual impact on AOV.</div>
-        </div>
-        <div class="chart-mock">
-          <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-label">Bundle A + B</div><div class="kpi-val" style="color: var(--success);">+25%</div><div class="kpi-sub">AOV Uplift</div></div>
-            <div class="kpi-card"><div class="kpi-label">Bundle C + D</div><div class="kpi-val" style="color: var(--success);">+18%</div><div class="kpi-sub">AOV Uplift</div></div>
-          </div>
-          <div class="bar-chart" style="margin-top: 16px;">
-            <div class="bar-row"><span class="bar-label">Bundle A+B</span><div class="bar-track"><div class="bar-fill success" style="width: 100%;"></div></div><span class="bar-value">+25%</span></div>
-            <div class="bar-row"><span class="bar-label">Bundle C+D</span><div class="bar-track"><div class="bar-fill" style="width: 72%; background: var(--accent);"></div></div><span class="bar-value">+18%</span></div>
-          </div>
+          <p>We review order-level product combinations to identify potential bundles and cross-sell opportunities.</p>
+          <p><strong>We may review:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Products purchased in the same order</li>
+            <li>Purchase frequency of product pairs</li>
+            <li>Category relationships</li>
+            <li>Product margin signals</li>
+            <li>Bundle price feasibility</li>
+            <li>AOV signals</li>
+            <li>Attach-rate signals</li>
+            <li>Customer purchase patterns</li>
+          </ul>
+          <p><strong>You will learn:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Which products show natural purchase relationships</li>
+            <li>Which combinations may be suitable for bundles</li>
+            <li>Which cross-sell opportunities may support AOV</li>
+            <li>Which combinations should be tested first</li>
+          </ul>
+          <p><strong>Possible recommendation types:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Bundle test</li>
+            <li>Cart cross-sell</li>
+            <li>Product-page cross-sell</li>
+            <li>Post-purchase recommendation</li>
+            <li>Complementary offer</li>
+            <li>No bundle recommendation due to weak evidence</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> Potential AOV impact is not guaranteed. Actual uplift must be measured after the bundle or cross-sell offer is implemented.</div>
         </div>
       </div></div>
     </div>
 
+    <!-- Analysis 08 -->
     <div class="analysis-block scroll-reveal">
-      <div class="analysis-header"><div class="analysis-num">8</div><div class="analysis-title"><h3>Product Return & Refund Analysis</h3><span>Objective: Identify Products Losing Profit Through Returns</span></div></div>
-      <div class="analysis-content"><div class="analysis-grid">
+      <div class="analysis-header"><div class="analysis-num">08</div><div class="analysis-title"><h3>Product Return &amp; Refund Analysis</h3><span>Objective: Identify Products Losing Value Through Returns and Refunds</span></div></div>
+      <div class="analysis-content"><div class="analysis-grid" style="grid-template-columns: 1fr;">
         <div class="analysis-text">
-          <p><strong>Data Analyzed:</strong> Product-level return rates, refund amounts, return reasons, and revenue impact.</p>
-          <p>We identify which products generate unusually high returns and refunds, and measure how much revenue and profit those returns are costing your business. This helps separate products that sell well from products that actually deliver profitable sales.</p>
-          <div class="insight-box"><b>Example Insight:</b> “Product A has a 14% return rate, significantly higher than the 5% portfolio average. Returns from this product are reducing its actual profitability despite strong sales.”</div>
-          <div class="insight-box" style="margin-top: 12px;"><b>Strategic Recommendation:</b> Investigate the main causes of high returns and improve product descriptions, quality, sizing, packaging, or customer expectations to reduce avoidable refunds.</div>
-        </div>
-        <div class="chart-mock">
-          <div class="kpi-grid">
-            <div class="kpi-card"><div class="kpi-label">Product A Return</div><div class="kpi-val" style="color: var(--danger);">14%</div><div class="kpi-sub" style="color: var(--danger);">Refunds: $2.4K</div></div>
-            <div class="kpi-card"><div class="kpi-label">Product B Return</div><div class="kpi-val" style="color: var(--success);">5%</div><div class="kpi-sub">Refunds: $680</div></div>
-          </div>
-          <div class="bar-chart" style="margin-top: 16px;">
-            <div class="bar-row"><span class="bar-label">Product A</span><div class="bar-track"><div class="bar-fill danger" style="width: 100%;"></div></div><span class="bar-value">14%</span></div>
-            <div class="bar-row"><span class="bar-label">Product B</span><div class="bar-track"><div class="bar-fill success" style="width: 35%;"></div></div><span class="bar-value">5%</span></div>
-          </div>
+          <p>We review product-level return and refund patterns to understand where strong sales may be accompanied by avoidable losses.</p>
+          <p><strong>We may review:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Product return rate</li>
+            <li>Refund amount</li>
+            <li>Return reasons</li>
+            <li>Product-level return concentration</li>
+            <li>Category-level return patterns</li>
+            <li>Discounted versus non-discounted returns</li>
+            <li>Customer or market differences where available</li>
+            <li>Available margin impact</li>
+          </ul>
+          <p><strong>You will learn:</strong></p>
+          <ul style="margin:8px 0 16px 18px; font-size:14px; line-height:1.8;">
+            <li>Which products show unusually high return or refund signals</li>
+            <li>How returns may affect product profitability</li>
+            <li>Which products require investigation</li>
+            <li>Whether product information sizing quality packaging or customer expectations may need review</li>
+          </ul>
+          <div class="insight-box" style="background:var(--warning-light); border-left-color:var(--warning);"><b>Note:</b> This audit identifies patterns. It does not include product quality testing, supplier investigation, warehouse inspection, or customer-support process redesign.</div>
         </div>
       </div></div>
     </div>
@@ -265,251 +466,340 @@
   </div>
 </section>
 
-<!-- What You'll Receive -->
+
+<!-- WHAT YOU WILL RECEIVE -->
 <section id="deliverables" style="background: var(--bg);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">Handover</div>
-      <h2>What You'll Receive</h2>
+      <div class="eyebrow">Deliverables</div>
+      <h2>What You Will Receive</h2>
+      <p>A complete audit package: findings, classification, profitability signals, priority matrix, and a strategy walkthrough.</p>
     </div>
-    <div class="outcomes-grid cols-4">
-      <div class="deliverable-card scroll-reveal">
-        <div class="deliverable-icon"><i class="fa-regular fa-file-lines"></i></div>
-        <h4>01</h4>
-        <p>Product Portfolio Report (8-12 pages)</p>
-        <span style="font-size: 13px; color: var(--muted);">Full catalog analysis with product-level findings across profitability, pricing, inventory, returns, and growth opportunities.</span>
-      </div>
-      <div class="deliverable-card scroll-reveal">
-        <div class="deliverable-icon"><i class="fa-solid fa-table"></i></div>
-        <h4>02</h4>
-        <p>ABC Classification Spreadsheet</p>
-        <span style="font-size: 13px; color: var(--muted);">Complete product list with tier assignments, profit margin data, sales velocity, and key product metrics.</span>
-      </div>
-      <div class="deliverable-card scroll-reveal">
-        <div class="deliverable-icon"><i class="fa-solid fa-box-archive"></i></div>
-        <h4>03</h4>
-        <p>Dead Stock Report</p>
-        <span style="font-size: 13px; color: var(--muted);">Products to liquidate, with estimated holding costs, recoverable value, and suggested clearance strategies.</span>
-      </div>
-      <div class="deliverable-card scroll-reveal">
-        <div class="deliverable-icon"><i class="fa-solid fa-box-open"></i></div>
-        <h4>04</h4>
-        <p>Top 5 Bundle Recommendations</p>
-        <span style="font-size: 13px; color: var(--muted);">Specific product pairings with estimated AOV uplift and recommended bundling opportunities.</span>
-      </div>
-      <div class="deliverable-card scroll-reveal">
-        <div class="deliverable-icon"><i class="fa-solid fa-list-ol"></i></div>
-        <h4>05</h4>
-        <p>Inventory Investment Priority List</p>
-        <span style="font-size: 13px; color: var(--muted);">Where to reorder immediately, where to reduce inventory, and where to pause purchasing.</span>
-      </div>
-      <div class="deliverable-card scroll-reveal">
-        <div class="deliverable-icon"><i class="fa-solid fa-tag"></i></div>
-        <h4>06</h4>
-        <p>Pricing Adjustment Recommendations</p>
-        <span style="font-size: 13px; color: var(--muted);">Specific products where data supports a potential price adjustment to improve profitability.</span>
-      </div>
-      <div class="deliverable-card scroll-reveal">
-        <div class="deliverable-icon"><i class="fa-solid fa-rotate-left"></i></div>
-        <h4>07</h4>
-        <p>Product Return & Refund Findings</p>
-        <span style="font-size: 13px; color: var(--muted);">Products with unusually high return rates, refund costs, and recommendations to reduce avoidable losses.</span>
-      </div>
-      <div class="deliverable-card scroll-reveal">
-        <div class="deliverable-icon"><i class="fa-solid fa-headset"></i></div>
-        <h4>08</h4>
-        <p>45-Minute Strategy Call + 2 Weeks Email Support</p>
-        <span style="font-size: 13px; color: var(--muted);">Review the full portfolio findings and align on which actions to take first; questions answered as you implement the recommendations.</span>
-      </div>
+    <div class="std-deliverable-grid">
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-file-lines"></i></div><h4>01</h4><p>Product Profitability &amp; Portfolio Audit Report</p><span>Product and category findings, profitability signals, pricing opportunities, inventory risks, dead-stock signals, bundle opportunities, return and refund findings, data limitations, and prioritized recommendations.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-table-list"></i></div><h4>02</h4><p>Product Classification Spreadsheet</p><span>Product or SKU, category, revenue, units sold, cost data where available, margin signals, return/refund signals, sales trend, inventory indicators, portfolio priority, and recommended direction.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-chart-column"></i></div><h4>03</h4><p>Product Profitability Summary</p><span>Product-level view of available revenue, cost, margin, discount impact, refund and return impact, and contribution-margin signals.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-table-cells-large"></i></div><h4>04</h4><p>Product and Category Priority Matrix</p><span>Which products or categories should receive attention based on business impact, profitability signal, sales momentum, inventory risk, return risk, evidence quality, and recommended next action.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-box-open"></i></div><h4>05</h4><p>Slow-Moving and Dead-Stock Report</p><span>Where reliable inventory data is available: slow-moving products, inventory value, days since sale, holding-cost signals, clearance or bundling direction, and products requiring further investigation.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-link"></i></div><h4>06</h4><p>Bundle and Cross-Sell Recommendations</p><span>Data-supported product combinations with products involved, purchase relationship, margin consideration, recommended offer type, test priority, and measurement recommendation.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-warehouse"></i></div><h4>07</h4><p>Inventory Investment Priority List</p><span>Where inventory data supports it: products requiring replenishment review, purchasing caution, overstock signals, stockout-risk attention, or monitoring.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-tag"></i></div><h4>08</h4><p>Pricing and Offer Recommendations</p><span>Products where available data supports price review, controlled price test, discount reduction, bundle test, offer restructuring, or maintain-current-price recommendation.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-rotate-left"></i></div><h4>09</h4><p>Product Return &amp; Refund Findings</p><span>High-return products, refund concentration, available return reasons, margin implications, and recommended investigation areas.</span></div>
+      <div class="std-deliverable-card scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-headset"></i></div><h4>10</h4><p>45-Minute Strategy Walkthrough</p><span>Portfolio priorities, profitability signals, inventory risks, product actions, pricing opportunities, bundle recommendations, and recommended next steps.</span></div>
+      <div class="std-deliverable-card span-2 scroll-reveal"><div class="deliverable-icon"><i class="fa-solid fa-envelope-open-text"></i></div><h4>11</h4><p>Two Weeks of Limited Email Clarification</p><span>Limited clarification support related to the delivered report, spreadsheet, recommendations, and action priorities.</span></div>
     </div>
   </div>
 </section>
 
-<!-- Scale & Automate: Optional Automated Product Intelligence (Moved to before FAQ) -->
+
+<!-- OPTIONAL DASHBOARD UPGRADE -->
 <section id="dashboard-upgrade" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">Scale & Automate</div>
-      <h2>Optional Automated Product Intelligence</h2>
-      <p>Turn your product portfolio analysis into an ongoing monitoring system. Instead of reviewing your catalog manually, get a centralized dashboard that continuously tracks product performance, profitability, inventory, returns, and growth opportunities.</p>
+      <div class="eyebrow">Optional Upgrade</div>
+      <h2>Turn Product Insights Into an Automated Product Intelligence System</h2>
+      <p>If you need recurring visibility after the audit, the findings can be used to scope a separate data automation project.</p>
     </div>
-
-    <div class="info-grid" style="margin-bottom: 48px; grid-template-columns: repeat(2, 1fr);">
-      <div class="info-card scroll-reveal">
-        <div class="info-icon"><i class="fa-solid fa-list-check"></i></div>
-        <h4>Automated Product Portfolio Dashboard</h4>
-        <ul style="list-style: none; padding-left: 0; margin-top: 8px;">
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Product revenue & profit monitoring</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>ABC classification tracking</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Inventory and low-stock monitoring</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Dead stock identification</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Return & refund tracking</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Pricing performance monitoring</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Category performance trends</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px;"><i class="fa-solid fa-check" style="color: var(--success); margin-right: 8px;"></i>Bundle & cross-sell opportunities</li>
-          <li style="font-size: 14px; color: var(--muted); margin-bottom: 8px; font-style: italic;">Available as an optional upgrade</li>
-        </ul>
-      </div>
-      <div class="info-card scroll-reveal" style="background: var(--accent-light); border-color: var(--accent);">
-        <div class="info-icon" style="background: rgba(255,255,255,0.3); color: var(--accent-dark);"><i class="fa-solid fa-stopwatch"></i></div>
-        <h4>The Benefit</h4>
-        <p style="font-size: 15px; color: var(--ink); margin-top: 8px;">Keep your product portfolio under continuous visibility and quickly spot products that need attention, without repeatedly rebuilding the analysis manually.</p>
-      </div>
+    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <p style="font-size:15px; margin-bottom:16px;"><strong>An optional product dashboard may include:</strong></p>
+      <ul class="dash-include-list">
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Product revenue and profit monitoring</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Product margin tracking</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>ABC classification monitoring</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Category performance trends</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Inventory and low-stock signals</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Slow-moving inventory monitoring</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Return and refund tracking</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Pricing-performance monitoring</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Bundle and cross-sell opportunity views</li>
+      </ul>
     </div>
-
-    <!-- Large Premium Product Portfolio Dashboard Visualization -->
-    <div class="dashboard-mock scroll-reveal">
-      <div class="dash-header">
-        <div class="dash-title"><i class="fa-solid fa-boxes-stacked" style="color: var(--accent);"></i> Product Portfolio Dashboard</div>
-        <div class="dash-live">Auto-refresh: ON</div>
-      </div>
-      <div class="dash-body">
-        
-        <!-- Row 1: KPI Cards -->
-        <div class="dash-row dash-kpi-row">
-          <div class="dash-kpi">
-            <div class="dash-kpi-label">Total Revenue</div>
-            <div class="dash-kpi-val">$184K</div>
-            <div class="dash-kpi-trend" style="color: var(--success);"><i class="fa-solid fa-arrow-up"></i> +12%</div>
-          </div>
-          <div class="dash-kpi">
-            <div class="dash-kpi-label">Total Profit</div>
-            <div class="dash-kpi-val">$68K</div>
-            <div class="dash-kpi-trend" style="color: var(--success);"><i class="fa-solid fa-arrow-up"></i> +8%</div>
-          </div>
-          <div class="dash-kpi">
-            <div class="dash-kpi-label">Avg Margin</div>
-            <div class="dash-kpi-val">37%</div>
-            <div class="dash-kpi-trend" style="color: var(--success);"><i class="fa-solid fa-arrow-up"></i> +2%</div>
-          </div>
-          <div class="dash-kpi">
-            <div class="dash-kpi-label">Dead Stock Value</div>
-            <div class="dash-kpi-val" style="color: var(--danger);">$1.2K</div>
-            <div class="dash-kpi-trend" style="color: var(--danger);"><i class="fa-solid fa-arrow-up"></i> +$200</div>
-          </div>
-        </div>
-
-        <!-- Row 2: ABC Chart & Category Trends -->
-        <div class="dash-row dash-chart-row">
-          <div class="dash-chart-box">
-            <div class="dash-chart-title">ABC Classification Tracking</div>
-            <div class="dash-bars">
-              <div class="dash-bar-row"><span class="dash-bar-label">A-Tier</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width: 40%; background: var(--success);"></div></div><span class="dash-bar-val">20%</span></div>
-              <div class="dash-bar-row"><span class="dash-bar-label">B-Tier</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width: 60%; background: var(--warning);"></div></div><span class="dash-bar-val">30%</span></div>
-              <div class="dash-bar-row"><span class="dash-bar-label">C-Tier</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width: 100%; background: var(--danger);"></div></div><span class="dash-bar-val">50%</span></div>
-            </div>
-          </div>
-          <div class="dash-chart-box">
-            <div class="dash-chart-title">Category Growth Trends</div>
-            <div class="dash-bars">
-              <div class="dash-bar-row"><span class="dash-bar-label">Cat A</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width: 100%; background: var(--accent);"></div></div><span class="dash-bar-val">+15%</span></div>
-              <div class="dash-bar-row"><span class="dash-bar-label">Cat B</span><div class="dash-bar-track"><div class="dash-bar-fill" style="width: 20%; background: var(--danger);"></div></div><span class="dash-bar-val">-10%</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row 3: Product Performance Table -->
-        <div class="dash-row dash-table-row">
-          <div class="dash-chart-box">
-            <div class="dash-chart-title">Product Performance & Inventory Matrix</div>
-            <table class="dash-table">
-              <thead>
-                <tr>
-                  <th>Product</th>
-                  <th>Revenue</th>
-                  <th>Margin</th>
-                  <th>Days Inv.</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Vitamin C Serum</td>
-                  <td>$42K</td>
-                  <td style="color: var(--danger); font-weight: 700;">5%</td>
-                  <td>120 D</td>
-                  <td><span class="status-pill status-pause">Reprice</span></td>
-                </tr>
-                <tr>
-                  <td>SPF 50 Sunscreen</td>
-                  <td>$28K</td>
-                  <td style="color: var(--success); font-weight: 700;">45%</td>
-                  <td>15 D</td>
-                  <td><span class="status-pill status-scale">Reorder</span></td>
-                </tr>
-                <tr>
-                  <td>Retinol Cream</td>
-                  <td>$15K</td>
-                  <td style="color: var(--success); font-weight: 700;">38%</td>
-                  <td>45 D</td>
-                  <td><span class="status-pill status-maintain">Maintain</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-      </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="/automated-dashboard-analytics-system" class="btn btn-primary">Discuss a Product Intelligence Dashboard</a>
     </div>
-
+    <div class="boundary-note scroll-reveal" style="max-width:860px; margin:32px auto 0;">
+      <h4><i class="fa-solid fa-circle-info"></i> Note</h4>
+      <p>This is not included in the base audit price. Dashboard development, data pipelines, automated scheduling, alerts, inventory-system integration, cloud costs, and ongoing maintenance are scoped separately.</p>
+    </div>
   </div>
 </section>
 
+
+<!-- HOW THE AUDIT WORKS -->
+<section id="process" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Process</div>
+      <h2>How the Audit Works</h2>
+      <p>From scope confirmation to the strategy walkthrough in six steps.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step scroll-reveal">
+        <div class="step-num">1</div>
+        <h4>Confirm the Product and Inventory Scope</h4>
+        <p>Confirm the number of SKUs, categories, stores, markets, currencies, inventory systems, and business questions.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">2</div>
+        <h4>Connect the Required Data</h4>
+        <p>Provide access to e-commerce platform, product catalog, cost files, inventory system, order history, returns system, and analytics tools.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">3</div>
+        <h4>Validate the Data</h4>
+        <p>Check SKU consistency, product and variant identifiers, COGS availability, inventory records, duplicate products, returns and refunds, discount records, category structure, and historical period.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">4</div>
+        <h4>Analyze the Portfolio</h4>
+        <p>Review product performance, cost, profitability signals, inventory, pricing, bundle relationships, and return patterns.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">5</div>
+        <h4>Build the Product Action Plan</h4>
+        <p>Create the product priority matrix, pricing and bundle recommendations, inventory directions, and next-step roadmap.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">6</div>
+        <h4>Walk Through the Findings</h4>
+        <p>Explain the results during a 45-minute strategy session.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHO IS THIS AUDIT FOR? -->
+<section id="suitability" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Suitability</div>
+      <h2>Who Is This Audit For?</h2>
+      <p>Confirm whether this audit matches your situation before booking.</p>
+    </div>
+    <div class="two-col-grid">
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px;">
+        <h4 style="font-size:16px; margin-bottom:16px; color:var(--success) !important;"><i class="fa-solid fa-circle-check" style="margin-right:8px;"></i>Best Suited For</h4>
+        <ul style="list-style:none;">
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>E-commerce brands with a meaningful product catalog</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Businesses with approximately 25 or more active SKUs</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Brands with significant inventory investment</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Businesses with product-level cost data</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Stores experiencing slow-moving or excess inventory</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Brands planning to expand or rationalize their catalog</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Businesses with product-level return or refund concerns</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Teams making pricing, purchasing, bundling, or product investment decisions</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Brands that want to move beyond revenue-only product decisions</li>
+        </ul>
+      </div>
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:28px;">
+        <h4 style="font-size:16px; margin-bottom:16px; color:var(--danger) !important;"><i class="fa-solid fa-circle-xmark" style="margin-right:8px;"></i>May Not Be Suitable For</h4>
+        <ul style="list-style:none;">
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>New stores without meaningful product or sales history</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Businesses without product-level identifiers</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Brands without any cost or inventory data</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Stores selling a very small number of products</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Businesses seeking full warehouse or supplier operations support</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Clients expecting guaranteed price increases or AOV growth</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Brands requiring daily inventory management</li>
+          <li style="font-size:14px; color:var(--muted); padding:6px 0;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Businesses seeking product design or sourcing services</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- DATA ACCESS REQUIRED -->
+<section id="data-access" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Data Access</div>
+      <h2>Data Access Required</h2>
+      <p>You do not need every source. The analysis depth depends on what is available and how consistently product, cost, order, and inventory records can be connected.</p>
+    </div>
+    <div class="data-source-grid">
+      <div class="data-source-item"><i class="fa-solid fa-cart-shopping"></i><span>Shopify or another e-commerce platform</span></div>
+      <div class="data-source-item"><i class="fa-solid fa-boxes-stacked"></i><span>Product and variant catalog</span></div>
+      <div class="data-source-item"><i class="fa-solid fa-tag"></i><span>Product cost or COGS data</span></div>
+      <div class="data-source-item"><i class="fa-solid fa-warehouse"></i><span>Inventory records</span></div>
+      <div class="data-source-item"><i class="fa-solid fa-truck"></i><span>Purchase or replenishment data</span></div>
+      <div class="data-source-item"><i class="fa-solid fa-receipt"></i><span>Order history</span></div>
+      <div class="data-source-item"><i class="fa-solid fa-percent"></i><span>Discount and promotion data</span></div>
+      <div class="data-source-item"><i class="fa-solid fa-rotate-left"></i><span>Refund and return data</span></div>
+      <div class="data-source-item"><i class="fa-solid fa-truck-fast"></i><span>Shipping and fulfilment-cost data where available</span></div>
+      <div class="data-source-item"><i class="fa-solid fa-layer-group"></i><span>Product categories</span></div>
+      <div class="data-source-item"><i class="fa-solid fa-chart-simple"></i><span>GA4 or analytics data</span></div>
+      <div class="data-source-item"><i class="fa-solid fa-table"></i><span>Existing product or inventory reports</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT IS NOT INCLUDED -->
+<section id="not-included" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Scope Boundary</div>
+      <h2>What Is Not Included</h2>
+      <p>Clarity on what is out of scope so the audit stays focused and predictable.</p>
+    </div>
+    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <ul class="not-included" style="list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Supplier or manufacturer audit</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Product quality testing</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Warehouse inspection</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Purchase-order management</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Demand-planning system</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Daily inventory management</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Inventory procurement</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Product sourcing</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Product design or development</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Website redesign</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Product-page copywriting</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full CRO audit</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Guaranteed pricing outcomes</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Guaranteed AOV increase</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Guaranteed inventory recovery value</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full ERP or inventory-system implementation</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Automated live dashboard</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Automated data pipeline</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Ongoing monitoring</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Daily product management</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Bookkeeping or tax accounting</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited revisions</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited support</li>
+      </ul>
+      <div class="insight-box" style="margin-top:20px;"><b>Note:</b> Product implementation, inventory operations, product-page improvements, dashboard development, and data infrastructure are available through separate scopes.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Pricing</div>
+      <h2>Pricing &amp; Investment</h2>
+      <p>A one-time audit investment. The final price depends on catalog size, data quality, and analysis depth.</p>
+    </div>
+    <div class="pricing-card scroll-reveal">
+      <div class="eyebrow" style="margin: 0 auto;">Specialized Add-On</div>
+      <h3 style="font-size: 26px; margin-top: 16px;">Product Profitability &amp; Portfolio Audit</h3>
+      <div class="price-amt">Starting from $450</div>
+      <p class="price-sub">One-time investment &middot; Delivered in 7&ndash;10 business days</p>
+      <div style="text-align:left; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius); padding:20px 24px; margin-bottom:24px;">
+        <p style="font-size:14px; margin-bottom:10px;"><strong>The final price depends on:</strong></p>
+        <ul class="price-factor-list">
+          <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Number of SKUs and variants</li>
+          <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Number of categories</li>
+          <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Historical data length</li>
+          <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Availability of COGS and cost data</li>
+          <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Inventory-data quality</li>
+          <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Return and refund-data availability</li>
+          <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Number of stores or markets</li>
+          <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Pricing and bundle-analysis depth</li>
+          <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Spreadsheet or data-preparation requirements</li>
+        </ul>
+      </div>
+      <p style="font-size:14px; text-align:left; margin-bottom:10px;"><strong>Base audit scope:</strong></p>
+      <ul class="price-features">
+        <li><i class="fa-solid fa-check"></i> One e-commerce business</li>
+        <li><i class="fa-solid fa-check"></i> Product and category review</li>
+        <li><i class="fa-solid fa-check"></i> Product profitability signals</li>
+        <li><i class="fa-solid fa-check"></i> ABC portfolio classification</li>
+        <li><i class="fa-solid fa-check"></i> Pricing and offer review</li>
+        <li><i class="fa-solid fa-check"></i> Bundle and cross-sell analysis</li>
+        <li><i class="fa-solid fa-check"></i> Return and refund review</li>
+        <li><i class="fa-solid fa-check"></i> Inventory or slow-moving signals where data supports it</li>
+        <li><i class="fa-solid fa-check"></i> Product priority matrix</li>
+        <li><i class="fa-solid fa-check"></i> 45-minute strategy call</li>
+        <li><i class="fa-solid fa-check"></i> Limited clarification support</li>
+      </ul>
+      <a href="/book?package=product-portfolio-audit" class="btn btn-primary" style="width: 100%; justify-content: center;">Audit My Product Portfolio</a>
+    </div>
+    <div class="boundary-note scroll-reveal" style="max-width:860px; margin:32px auto 0;">
+      <h4><i class="fa-solid fa-circle-info"></i> Pricing Note</h4>
+      <p>Larger catalogs, multiple stores, complex inventory systems, detailed cost allocation, or extensive data preparation may require a custom quote.</p>
+    </div>
+  </div>
+</section>
+
+
 <!-- FAQ -->
-<section id="faq" style="background: var(--bg);">
+<section id="faq" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
       <div class="eyebrow">FAQ</div>
       <h2>Frequently Asked Questions</h2>
-      <p>Everything you need to know.</p>
     </div>
-    <div class="faq-container">
+    <div class="faq-container" style="max-width:800px; margin:0 auto;">
       <div class="faq-item active scroll-reveal">
         <div class="faq-q">Who is this audit for? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">Stores with large product catalogs (50+ SKUs), high inventory investment, or plans to expand/rationalize their product line.</div>
+        <div class="faq-a">It is best suited for e-commerce businesses with enough product, sales, cost, and inventory data to make product-level decisions.</div>
       </div>
       <div class="faq-item scroll-reveal">
-        <div class="faq-q">What data access is required? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">We need read-only access to Shopify admin (products, orders, inventory) and your COGS (Cost of Goods Sold) data to calculate true margins.</div>
+        <div class="faq-q">Do I need 50 or more SKUs? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. The audit may be useful with fewer SKUs if product profitability, pricing, inventory, or returns are important business questions. The required scope depends on catalog complexity and data availability.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can you calculate true profit for every product? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">We can calculate or estimate product profitability where reliable COGS and relevant cost data are available. If shipping, returns, fulfilment, payment, or marketing costs are missing, the result will be labelled as a profitability signal or estimate.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Will you tell me exactly which products to discontinue? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">We may identify products for reduction, clearance, or further investigation when the evidence supports that direction. Final discontinuation decisions also depend on brand strategy, customer demand, supplier constraints, and future product plans.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can you recommend new prices? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">We can identify products suitable for price review or controlled price testing. A recommended price is not a guarantee of higher profit or stable demand.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Will you find dead stock? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">We can identify slow-moving or dead-stock signals when reliable inventory and sales data are available. A full inventory audit or warehouse review is not included.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can you guarantee bundle or AOV improvement? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. We identify product combinations with supporting purchase patterns and recommend how they may be tested. Actual AOV impact must be measured after implementation.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Will you manage inventory or purchasing? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. The audit provides priorities and recommendations. Daily inventory management, purchasing, supplier coordination, and warehouse operations are separate services.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Are returns and refunds included? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes, where product-level return, refund, and reason data is available. The analysis identifies patterns and potential impact; it does not include product testing or operational investigation.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is the automated product dashboard included? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. It is an optional data automation project and is scoped separately.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can I add an automated dashboard? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. An automated dashboard and data pipeline can be scoped separately through the Automate Your Data Infrastructure &amp; Dashboards service.</div>
       </div>
       <div class="faq-item scroll-reveal">
         <div class="faq-q">How long does the audit take? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">The audit is completed within 7,14 business days, depending on catalog size.</div>
-      </div>
-      <div class="faq-item scroll-reveal">
-        <div class="faq-q">Will implementation be included? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">Implementation is not included, but we provide a 45-minute strategy call and 2 weeks of email support to guide your catalog restructuring.</div>
-      </div>
-      <div class="faq-item scroll-reveal">
-        <div class="faq-q">Is the automated dashboard included in the package? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">No. The automated dashboard is not included in the standard Product Profitability & Portfolio Audit package. It is an optional upgrade and must be purchased separately.</div>
+        <div class="faq-a">The audit is typically delivered within 7&ndash;10 business days after the required data and access are received.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="pricing" style="background: var(--surface);">
+
+<!-- FINAL CTA -->
+<section style="background: var(--bg); text-align:center; padding: 80px 0;">
   <div class="container">
-    <div class="pricing-card scroll-reveal">
-      <div class="eyebrow" style="margin: 0 auto;">Product Profitability & Portfolio Audit</div>
-      <h3 style="font-size: 28px; margin-top: 16px;">Catalog Blueprint</h3>
-      <div class="price-amt">$350–$800</div>
-      <p class="price-sub">One-time investment · Delivered in 7–14 days</p>
-      <ul class="price-features">
-        <li><i class="fa-solid fa-check"></i> 8 Catalog Analyses</li>
-        <li><i class="fa-solid fa-check"></i> ABC Classification Sheet</li>
-        <li><i class="fa-solid fa-check"></i> Dead Stock Report</li>
-        <li><i class="fa-solid fa-check"></i> 5 Bundle Recs</li>
-        <li><i class="fa-solid fa-check"></i> 45-min Strategy Call</li>
-        <li><i class="fa-solid fa-check"></i> 2 Weeks Email Support</li>
-      </ul>
-      <a href="/book?package=product-portfolio-audit" class="btn btn-primary" style="width: 100%; justify-content: center;">Book Audit</a>
+    <div style="max-width:720px; margin:0 auto;">
+      <h2 style="font-size: 32px; margin-bottom: 16px;">Make Product Decisions With More Than Revenue Data</h2>
+      <p style="font-size: 17px; color: var(--muted) !important; margin-bottom: 32px;">Understand which products create value, where margin or inventory risk may exist, and what your catalog should prioritize next.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="/book?package=product-portfolio-audit" class="btn btn-primary">Audit My Product Portfolio</a>
+        <a href="/health-check" class="btn btn-outline" style="border-color:var(--border-dark);">Need a broader business diagnosis? Start with the E-Commerce Health Check.</a>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>© 2025 Moz Intelligence. All rights reserved.</footer>
-
-
-
-
+<footer>&copy; 2025 Moz Intelligence. All rights reserved.</footer>
