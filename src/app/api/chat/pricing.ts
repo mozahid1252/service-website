@@ -51,8 +51,8 @@ export const AUTHORITATIVE_PRICING: PackageInfo[] = [
   {
     name: "Product Portfolio Audit",
     category: "Part 2 — Specialized Add-On Packages",
-    price: "Starting from $650",
-    timeline: "10–14 Days",
+    price: "$350 – $800",
+    timeline: "7–14 Days",
     description: "Reviews product performance, inventory opportunities, bundling, and cross-sell potential.",
   },
   {
@@ -72,7 +72,7 @@ export const AUTHORITATIVE_PRICING: PackageInfo[] = [
   {
     name: "Operations Efficiency Audit",
     category: "Part 2 — Specialized Add-On Packages",
-    price: "Starting from $650",
+    price: "$400 – $800",
     timeline: "10–14 Days",
     description: "Reviews operational workflows, process efficiency, and identifies bottlenecks in your e-commerce operations.",
   },
