@@ -204,7 +204,7 @@ const ADD_ON_PACKAGES = [
   },
   {
     name: 'Product Profitability & Portfolio Audit',
-    price: 'Starting from $450 · 7–10 Days',
+    price: 'Starting from $650 · 10–14 Days',
     problem: '"50+ SKUs, I don\'t know what to focus on."',
     promise: 'You will know which products to invest in, optimize, or cut, the true profit margin on every SKU in your catalog, and exactly which products to bundle together to increase AOV.',
     cssClass: 'portfolio',
@@ -228,7 +228,7 @@ const ADD_ON_PACKAGES = [
   },
   {
     name: 'Operations Efficiency Audit',
-    price: '$400 – $800 · 10–14 Days',
+    price: 'Starting from $650 · 10–14 Days',
     problem: '"Returns climbing, inventory out of control."',
     promise: 'You will know which suppliers are causing financial problems, exactly how much inventory to order (and when based on 90-day demand), the true cost of your return rate, and how to free up cash locked in dead stock.',
     cssClass: 'operations',
