@@ -1,11 +1,54 @@
+<!-- MOBILE-OVERRIDE-SAFETY -->
+<style>
+@media(max-width:900px){.outcomes-grid,.outcomes-grid.cols-3,.outcomes-grid.cols-4{display:flex !important;flex-direction:column !important;gap:16px !important}}
+
+/* ===== GLOBAL COLOR OVERRIDES (prevents globals.css strong { color:#FFFFFF }) ===== */
+h1,h2,h3,h4,h5{color:var(--text) !important}
+h1 em,h2 em,h3 em{color:var(--accent) !important}
+strong,b{color:var(--text) !important}
+p{color:var(--muted) !important}
+.hero p{color:var(--muted) !important}
+.header-center p{color:var(--muted) !important}
+.eyebrow{color:var(--accent-dark) !important}
+li{color:var(--muted) !important}
+span{color:var(--muted) !important}
+.logo span{color:var(--accent) !important}
+.signs-list li{color:var(--muted) !important}
+.not-included li{color:var(--muted) !important}
+.platform-item span{color:var(--muted) !important}
+.data-area-card ul li{color:var(--muted) !important}
+.scope-card ul li{color:var(--muted) !important}
+.scope-card h5{color:var(--text) !important}
+.scope-card .scope-sub{color:var(--muted) !important}
+.scope-card .scope-timeline{color:var(--muted) !important}
+.scope-card .scope-price{color:var(--text) !important}
+.deliverable-card p{color:var(--muted) !important}
+.process-step h4{color:var(--text) !important}
+.process-step p{color:var(--muted) !important}
+.boundary-note p{color:var(--muted) !important}
+.boundary-note h4{color:var(--warning) !important}
+.outcome-card h4{color:var(--text) !important}
+.outcome-card p{color:var(--muted) !important}
+.faq-q{color:var(--text) !important}
+.faq-a{color:var(--muted) !important}
+.pricing-features li{color:var(--muted) !important}
+.price-factor-list li{color:var(--muted) !important}
+.pricing-card .price-sub{color:var(--muted) !important}
+.data-area-card h4{color:var(--text) !important}
+.deliverable-card h4{color:var(--text) !important}
+.insight-box{color:var(--muted) !important}
+.insight-box b{color:var(--text) !important}
+</style>
 
 
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="logo">Moz <span>Intelligence</span></a>
-    <ul class="nav-links" style="gap:32px; list-style:none;">
-      <li><a href="#process" style="color:var(--muted); font-size:14px;">Process</a></li>
-      <li><a href="#services" style="color:var(--muted); font-size:14px;">Services</a></li>
+    <ul class="nav-links" style="gap:24px; list-style:none;">
+      <li><a href="#signs" style="color:var(--muted); font-size:14px;">When You Need It</a></li>
+      <li><a href="#what-we-prepare" style="color:var(--muted); font-size:14px;">What We Prepare</A></li>
+      <li><a href="#scope" style="color:var(--muted); font-size:14px;">Choose Scope</a></li>
+      <li><a href="#deliverables" style="color:var(--muted); font-size:14px;">What You Receive</a></li>
       <li><a href="#faq" style="color:var(--muted); font-size:14px;">FAQ</a></li>
       <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
       <li><a href="/" style="color:var(--muted); font-size:14px;">Back to MozIntelligence</a></li>
@@ -16,9 +59,11 @@
     <a href="#pricing" class="nav-cta">Get Started</a>
   </div>
 </nav>
-<div class="nav-mobile-menu" id="mobile-menu-basicsetup">
-    <a href="#process">Process</a>
-    <a href="#services">Services</a>
+<div class="nav-mobile-menu" id="mobile-menu-dataprep">
+    <a href="#signs">When You Need It</a>
+    <a href="#what-we-prepare">What We Prepare</a>
+    <a href="#scope">Choose Scope</a>
+    <a href="#deliverables">What You Receive</a>
     <a href="#faq">FAQ</a>
     <a href="#pricing">Pricing</a>
     <a href="/">Back to MozIntelligence</a>
@@ -28,317 +73,529 @@
 
 <header class="hero">
   <div class="container">
-    <div class="eyebrow" style="margin: 0 auto;">Bundle 01 · Data Preparation & Integration</div>
-    <h1>THE FAST TRACK TO CLEAN, <em>CONNECTED DATA.</em></h1>
-    <p>Before any analysis can begin, your data needs to be extracted and cleaned. This one-time infrastructure setup connects your core platforms and structures your data for a single, reliable analytics engagement. No manual exports, no spreadsheet mess.</p>
-    <div class="hero-cta">
-      <a href="#pricing" class="btn btn-primary">Start Data Preparation & Integration</a>
-      <a href="#process" class="btn btn-outline" style="border-color:var(--border-dark);">How It Works</a>
+    <div class="eyebrow" style="margin: 0 auto;">Bundle 01 &middot; Data Preparation &amp; Integration</div>
+    <h1>Prepare the Data Behind Better <em>E-Commerce Decisions</em></h1>
+    <p style="font-size: 19px; color: var(--muted) !important; max-width: 680px; margin: 0 auto 24px;">Your audit is only as reliable as the data behind it.</p>
+    <p style="font-size: 16px; color: var(--text) !important; max-width: 720px; margin: 0 auto 32px;">We collect, connect, clean, organize, and validate the data required for your selected audit, E-Commerce Health Check, or custom analysis &mdash; so your business decisions are based on a clearer and more consistent data foundation.</p>
+    <div style="display:inline-flex; align-items:center; gap:8px; padding:8px 16px; background:var(--accent-light); border:1px solid rgba(14,165,233,0.2); border-radius:100px; font-size:14px; font-weight:600; color:var(--accent-dark) !important; margin-bottom:32px;">
+      <i class="fa-solid fa-layer-group" style="color:var(--accent);"></i> Up to 5 standard platforms or data sources &middot; One-time data preparation service
     </div>
+    <div class="hero-cta">
+      <a href="#pricing" class="btn btn-primary">Prepare My Business Data</a>
+      <a href="#signs" class="btn btn-outline" style="border-color:var(--border-dark);">When You May Need This</a>
+    </div>
+    <p style="font-size: 13px; color: var(--light) !important; margin-top: 20px; font-style: italic;">This service prepares your data for analysis. Audit recommendations, dashboards, automation, and ongoing monitoring are separate services.</p>
   </div>
 </header>
 
-<!-- What Happens During This Setup -->
-<section id="process" style="background: var(--surface);">
+
+<!-- WHEN YOU MAY NEED THIS SERVICE -->
+<section id="signs" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">The Engineering Process</div>
-      <h2>What Happens During This Setup</h2>
-      <p>A simple, structured process to connect your business data, organize it properly, and prepare it for reliable analysis.</p>
+      <div class="eyebrow">When You Need It</div>
+      <h2>When You May Need This Service</h2>
+      <p>Data Preparation &amp; Integration may be useful if:</p>
     </div>
-    <div class="workflow-vertical">
-      <div class="workflow-step scroll-reveal"><h4>1. Understand Your Data</h4><p>We review your current platforms and identify which data sources are needed.</p></div>
-      <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="workflow-step scroll-reveal"><h4>2. Check Platform Access</h4><p>We confirm that the required data can be accessed safely from each platform.</p></div>
-      <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="workflow-step scroll-reveal"><h4>3. Set Up Your Data Environment</h4><p>We create the required cloud database environment where your business data can be stored securely.</p></div>
-      <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="workflow-step scroll-reveal"><h4>4. Connect Your Platforms</h4><p>We securely connect platforms such as Shopify, GA4, and advertising accounts to the data environment.</p></div>
-      <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="workflow-step scroll-reveal"><h4>5. Prepare the Data Flow</h4><p>We set up the required data flow so information from your connected platforms can be collected and organized for analysis.</p></div>
-      <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="workflow-step scroll-reveal"><h4>6. Clean & Check the Data</h4><p>We remove errors, standardize the data, and verify that the numbers are accurate and complete.</p></div>
-      <div class="workflow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="workflow-step scroll-reveal"><h4>7. Ready for Analysis</h4><p>You receive a clean, organized dataset that is ready for audits, dashboards, reporting, and future analysis.</p></div>
-    </div>
+    <ul class="signs-list" style="list-style:none; max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Your business data is spread across several platforms</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You rely on manual CSV exports or spreadsheets</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Shopify, GA4, Meta, and Google show different numbers</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Product, customer, marketing, or profitability data is not organized</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Your audit requires data from multiple sources</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You are unsure whether your data is complete or consistent</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You want to avoid repeatedly preparing the same data for future analysis</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You need a clean dataset before starting a Health Check or specialist audit</li>
+    </ul>
   </div>
 </section>
 
-<!-- Engineering Workflow -->
-<section style="background: var(--bg);">
+
+<!-- WHAT WE PREPARE -->
+<section id="what-we-prepare" style="background: var(--bg);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">System Architecture</div>
-      <h2>Engineering Workflow</h2>
-      <p>How data moves from disparate platforms into a unified, analysis-ready state.</p>
+      <div class="eyebrow">Data Areas</div>
+      <h2>What We Prepare</h2>
+      <p>Depending on your selected audit or analysis, we may prepare:</p>
     </div>
-    <div class="arch-diagram scroll-reveal">
-      <div class="arch-node"><i class="fa-solid fa-plug"></i><h5>Platforms API</h5></div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node"><i class="fa-solid fa-cloud"></i><h5>Extraction Script</h5></div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node"><i class="fa-solid fa-broom"></i><h5>Cleaning Logic</h5></div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node"><i class="fa-solid fa-code-merge"></i><h5>Merge Logic</h5></div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node"><i class="fa-solid fa-database"></i><h5>Clean Dataset</h5></div>
-    </div>
-  </div>
-</section>
-
-<!-- Service Breakdown -->
-<section id="services" style="background: var(--surface);">
-  <div class="container">
-    <div class="header-center">
-      <div class="eyebrow">Technical Scope</div>
-      <h2>What We Build</h2>
-      <p>Every component of the Data Preparation & Integration package is designed to create a reliable foundation for your business data and future analysis.</p>
-    </div>
-
-    <div class="service-block scroll-reveal">
-      <div class="service-header">
-        <h3>1. Cloud Infrastructure Setup</h3>
-      </div>
-      <div class="service-content">
-        <div class="service-text">
-          <p><strong>Purpose:</strong> Create the central home for your business data.</p>
-          <p><strong>What We Configure:</strong> A Google Cloud Platform (GCP) project, billing configuration, and BigQuery database.</p>
-          <p><strong>Why It Matters:</strong> Provides a secure and scalable cloud data warehouse for your business data. Instead of relying on local files or scattered spreadsheets, your data is stored in a structured cloud environment.</p>
-        </div>
-        <div class="service-visual">
-          <div class="code-snippet">
-            # GCP Infrastructure<br>
-            project_id = "moz-client-prod"<br>
-            dataset = "raw_data"<br>
-            location = "US"
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="service-block scroll-reveal">
-      <div class="service-header">
-        <h3>2. API Connection</h3>
-      </div>
-      <div class="service-content">
-        <div class="service-text">
-          <p><strong>Purpose:</strong> Establish a secure connection to your business data.</p>
-          <p><strong>What We Configure:</strong> Secure API authentication, access credentials, and the required permission scopes for each connected platform.</p>
-          <p><strong>Why It Matters:</strong> Allows us to securely retrieve relevant orders, customers, products, analytics, or other required business data without unnecessarily exposing or modifying your platform.</p>
-        </div>
-        <div class="service-visual">
-           <div class="arch-diagram" style="padding: 16px; background: var(--surface); border: none; box-shadow: none;">
-            <div class="arch-node"><i class="fa-solid fa-lock"></i><h5>Auth Token</h5></div>
-            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="arch-node"><i class="fa-solid fa-code"></i><h5>API Call</h5></div>
-            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="arch-node"><i class="fa-solid fa-file-export"></i><h5>JSON Data</h5></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="service-block scroll-reveal">
-      <div class="service-header">
-        <h3>3. Data Pipeline Build (Per Platform)</h3>
-      </div>
-      <div class="service-content">
-        <div class="service-text">
-          <p><strong>Purpose:</strong> Automate the extraction of your business data.</p>
-          <p><strong>What We Configure:</strong> Python-based extraction scripts that securely pull required data from your connected platforms on demand. Includes 2–3 platforms.</p>
-          <p><strong>Why It Matters:</strong> Replaces repetitive manual CSV exports with a reproducible data pipeline, improving consistency, reliability, and efficiency.</p>
-        </div>
-        <div class="service-visual">
-          <div class="code-snippet">
-            def extract_data():<br>
-            &nbsp;&nbsp;url = f"{base_url}/orders.json"<br>
-            &nbsp;&nbsp;response = requests.get(url)<br>
-            &nbsp;&nbsp;return response.json()
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="service-block scroll-reveal">
-      <div class="service-header">
-        <h3>4. Data Cleaning & Standardization</h3>
-      </div>
-      <div class="service-content">
-        <div class="service-text">
-          <p><strong>Purpose:</strong> Make data from different sources consistent and analysis-ready.</p>
-          <p><strong>What We Configure:</strong> Standardization of column names, currencies, date formats, timezones, and other relevant data fields.</p>
-          <p><strong>Why It Matters:</strong> Raw data often contains inconsistencies. Cleaning and standardization ensures your data is accurate, consistent, and ready for reliable analysis.</p>
-        </div>
-        <div class="service-visual">
-          <div class="arch-diagram" style="padding: 16px; background: var(--surface); border: none; box-shadow: none;">
-            <div class="arch-node" style="border-color: var(--danger);"><h5 style="color:var(--danger);">Raw Format</h5></div>
-            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="arch-node" style="border-color: var(--accent);"><i class="fa-solid fa-broom"></i></div>
-            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="arch-node" style="border-color: var(--success);"><h5 style="color:var(--success);">Standardized</h5></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="service-block scroll-reveal">
-      <div class="service-header">
-        <h3>5. Data Integration & Platform Preparation (2–3 Platforms)</h3>
-      </div>
-      <div class="service-content">
-        <div class="service-text">
-          <p><strong>Purpose:</strong> Prepare data from your connected platforms for analysis.</p>
-          <p><strong>What We Configure:</strong> We organize and prepare data from your connected platforms, including the required fields, formats, and data structures needed for analysis.</p>
-          <p><strong>Why It Matters:</strong> Your data is prepared in a consistent structure so the required analysis can be performed accurately.</p>
-          <p style="color: var(--muted); font-size: 13px; margin-top: 16px; font-style: italic;">Complex multi-platform data merging and unified data modeling are NOT included in the Data Preparation & Integration package and are available with the Data Pipeline & Dashboard Setup.</p>
-        </div>
-        <div class="service-visual">
-          <div class="arch-diagram" style="padding: 16px; background: var(--surface); border: none; box-shadow: none;">
-            <div class="arch-node"><i class="fa-solid fa-shopify"></i><h5>Platform 1</h5></div>
-            <div class="arch-arrow"><i class="fa-solid fa-plus"></i></div>
-            <div class="arch-node"><i class="fa-solid fa-chart-line"></i><h5>Platform 2</h5></div>
-            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="arch-node" style="border-color: var(--success);"><i class="fa-solid fa-check"></i><h5>Prepared</h5></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Before vs After -->
-<section style="background: var(--bg);">
-  <div class="container">
-    <div class="header-center">
-      <div class="eyebrow">The Transformation</div>
-      <h2>Without Proper Data Infrastructure vs With Our Infrastructure</h2>
-    </div>
-    <div class="ba-grid">
-      <div class="ba-card bad scroll-reveal">
-        <h4>Without Setup</h4>
-        <ul class="ba-list">
-          <li><i class="fa-solid fa-times-circle"></i> Disconnected Platforms</li>
-          <li><i class="fa-solid fa-times-circle"></i> Manual CSV Exports</li>
-          <li><i class="fa-solid fa-times-circle"></i> Inconsistent Data Formats</li>
-          <li><i class="fa-solid fa-times-circle"></i> Scattered Information</li>
-          <li><i class="fa-solid fa-times-circle"></i> No Data Integration</li>
+    <div class="data-area-grid">
+      <div class="data-area-card scroll-reveal">
+        <div class="data-area-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+        <h4>E-Commerce and Order Data</h4>
+        <ul>
+          <li>Orders</li>
+          <li>Order items</li>
+          <li>Customers</li>
+          <li>Products and variants</li>
+          <li>Discounts</li>
+          <li>Refunds</li>
+          <li>Returns</li>
+          <li>Cancellations</li>
+          <li>Order dates and status</li>
         </ul>
       </div>
-      <div class="ba-card good scroll-reveal">
-        <h4>With Our Infrastructure</h4>
-        <ul class="ba-list">
-          <li><i class="fa-solid fa-check-circle"></i> API Connected Sources</li>
-          <li><i class="fa-solid fa-check-circle"></i> Automated Extraction</li>
-          <li><i class="fa-solid fa-check-circle"></i> Standardized Data</li>
-          <li><i class="fa-solid fa-check-circle"></i> Clean Dataset Ready</li>
-          <li><i class="fa-solid fa-check-circle"></i> Connected Data Sources</li>
+      <div class="data-area-card scroll-reveal">
+        <div class="data-area-icon"><i class="fa-solid fa-bullhorn"></i></div>
+        <h4>Marketing and Analytics Data</h4>
+        <ul>
+          <li>Meta Ads data</li>
+          <li>Google Ads data</li>
+          <li>GA4 data</li>
+          <li>Email or CRM data</li>
+          <li>Campaign and source fields</li>
+          <li>UTM and source/medium fields</li>
+          <li>Spend, clicks, sessions, and conversion data</li>
+        </ul>
+      </div>
+      <div class="data-area-card scroll-reveal">
+        <div class="data-area-icon"><i class="fa-solid fa-tags"></i></div>
+        <h4>Product and Profitability Data</h4>
+        <ul>
+          <li>Product cost or COGS</li>
+          <li>Selling price</li>
+          <li>Discounts</li>
+          <li>Shipping costs</li>
+          <li>Payment fees</li>
+          <li>Fulfilment costs</li>
+          <li>Product-level margin fields</li>
+        </ul>
+      </div>
+      <div class="data-area-card scroll-reveal">
+        <div class="data-area-icon"><i class="fa-solid fa-users"></i></div>
+        <h4>Customer and Retention Data</h4>
+        <ul>
+          <li>Customer ID</li>
+          <li>First and last purchase date</li>
+          <li>Number of orders</li>
+          <li>Total customer revenue</li>
+          <li>Repeat-purchase fields</li>
+          <li>Cohort-ready fields</li>
+          <li>RFM-ready fields</li>
+        </ul>
+      </div>
+      <div class="data-area-card scroll-reveal">
+        <div class="data-area-icon"><i class="fa-solid fa-warehouse"></i></div>
+        <h4>Inventory and Operations Data</h4>
+        <ul>
+          <li>Inventory quantity</li>
+          <li>Sales velocity</li>
+          <li>Stock availability</li>
+          <li>Fulfilment status</li>
+          <li>Shipping data</li>
+          <li>Return and delivery fields</li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- Technology Stack -->
-<section style="background: var(--surface);">
-  <div class="container">
-    <div class="header-center">
-      <div class="eyebrow">Infrastructure</div>
-      <h2>E-commerce Platforms</h2>
-      <p>Technology Stack</p>
-    </div>
-    <div class="tech-grid">
-      <div class="tech-card scroll-reveal"><i class="fa-brands fa-shopify"></i><span>Shopify / E-commerce Platform</span></div>
-      <div class="tech-card scroll-reveal"><i class="fa-solid fa-chart-line"></i><span>GA4</span></div>
-      <div class="tech-card scroll-reveal"><i class="fa-solid fa-database"></i><span>BigQuery</span></div>
-      <div class="tech-card scroll-reveal"><i class="fa-brands fa-google"></i><span>GCP</span></div>
-      <div class="tech-card scroll-reveal"><i class="fa-brands fa-python"></i><span>Python</span></div>
+    <div class="boundary-note scroll-reveal" style="max-width:860px; margin:32px auto 0;">
+      <h4><i class="fa-solid fa-circle-info"></i> Note</h4>
+      <p>The exact data prepared depends on the selected audit and the data available from your business systems.</p>
     </div>
   </div>
 </section>
 
-<!-- Target Fit -->
-<section style="background: var(--bg);">
+
+<!-- CHOOSE THE PREPARATION SCOPE -->
+<section id="scope" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">Target Fit</div>
-      <h2>Who This Package Is For</h2>
+      <div class="eyebrow">Preparation Scope</div>
+      <h2>Choose the Preparation Scope You Need</h2>
+      <p>Two scope options depending on whether you need data for one focused audit or a broader Health Check.</p>
     </div>
-    <div class="info-grid">
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-store"></i></div><h4>Starter & Growth Package Clients</h4><p>Businesses that need reliable data infrastructure before starting their analysis.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-rotate"></i></div><h4>One-Time & Recurring Clients</h4><p>Businesses that need a structured data setup for either a single analysis or ongoing reporting.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-layer-group"></i></div><h4>Multi-Platform Businesses</h4><p>Businesses working with multiple data sources that need their data securely connected and organized.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-seedling"></i></div><h4>Data Beginners</h4><p>Businesses without an existing cloud data environment or automated data pipeline.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-rocket"></i></div><h4>Growing E-commerce Businesses</h4><p>Businesses that want a reliable data foundation that can support future dashboards, reporting, and deeper analytics.</p></div>
+    <div class="scope-grid">
+      <!-- Scope 01 -->
+      <div class="scope-card scroll-reveal">
+        <span class="scope-num">01 &mdash; Specialist Audit Data Preparation</span>
+        <h3>For One Focused Audit</h3>
+        <p class="scope-sub">Prepare the data required for one specialist audit, such as Marketing Performance, Customer Retention, Product Profitability, CRO, or Measurement &amp; Attribution.</p>
+        <h5>May include</h5>
+        <ul>
+          <li>Data collection or platform access setup</li>
+          <li>Up to 5 standard platforms or data sources</li>
+          <li>Required data extraction or file preparation</li>
+          <li>Basic data cleaning</li>
+          <li>Basic field mapping</li>
+          <li>Date, currency, and format standardization</li>
+          <li>Missing and duplicate-data review</li>
+          <li>Limited cross-platform reconciliation</li>
+          <li>Audit-ready data export</li>
+          <li>Basic data-quality notes</li>
+        </ul>
+        <h5>Best for</h5>
+        <ul>
+          <li>One focused specialist audit</li>
+          <li>A limited analysis question</li>
+          <li>Businesses with relatively clean data</li>
+          <li>Standard platforms and files</li>
+          <li>Short or clearly defined historical periods</li>
+        </ul>
+        <div class="scope-meta">
+          <p class="scope-timeline"><i class="fa-solid fa-clock" style="color:var(--accent); margin-right:6px;"></i>Timeline: Typically 2&ndash;5 business days</p>
+          <div class="scope-price">$99&ndash;$199</div>
+          <a href="/book?package=data-preparation-integration" class="btn btn-primary" style="width:100%; justify-content:center;">Prepare Data for My Audit</a>
+        </div>
+      </div>
+      <!-- Scope 02 -->
+      <div class="scope-card scroll-reveal">
+        <span class="scope-num">02 &mdash; Health Check Data Preparation</span>
+        <h3>For a Broader E-Commerce Health Check</h3>
+        <p class="scope-sub">Prepare and organize data across multiple business areas so the Health Check can review the overall condition of your e-commerce business.</p>
+        <h5>May include</h5>
+        <ul>
+          <li>Up to 5 standard platforms or data sources</li>
+          <li>E-commerce and order-data preparation</li>
+          <li>Product and customer-data preparation</li>
+          <li>Marketing and analytics data preparation</li>
+          <li>Basic profitability-data mapping</li>
+          <li>Discount, refund, and return-data preparation</li>
+          <li>Basic cross-platform reconciliation</li>
+          <li>Missing and duplicate-data review</li>
+          <li>Health Check-ready dataset</li>
+          <li>Data-quality summary</li>
+          <li>Basic data dictionary</li>
+          <li>Technical handover notes</li>
+        </ul>
+        <h5>Best for</h5>
+        <ul>
+          <li>A full E-Commerce Health Check</li>
+          <li>Businesses with multiple data areas to review</li>
+          <li>Brands preparing data for a broader diagnosis</li>
+          <li>Businesses with scattered data across platforms</li>
+          <li>Health Checks requiring sales, product, customer, marketing, and profitability signals</li>
+        </ul>
+        <div class="scope-meta">
+          <p class="scope-timeline"><i class="fa-solid fa-clock" style="color:var(--accent); margin-right:6px;"></i>Timeline: Typically 5&ndash;10 business days</p>
+          <div class="scope-price">$299&ndash;$599</div>
+          <a href="/book?package=data-preparation-integration" class="btn btn-primary" style="width:100%; justify-content:center;">Prepare Data for My Health Check</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- What You'll Receive -->
-<section style="background: var(--surface);">
+
+<!-- UP TO 5 STANDARD PLATFORMS -->
+<section id="platforms" style="background: var(--bg);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">Handover</div>
-      <h2>What You'll Receive</h2>
+      <div class="eyebrow">Platforms</div>
+      <h2>Up to 5 Standard Platforms or Data Sources</h2>
+      <p>The service can work with up to five standard platforms or data sources, such as:</p>
     </div>
-    <div class="info-grid">
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-cloud"></i></div><h4>Configured Cloud Environment</h4><p>Your own GCP project and BigQuery data warehouse.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-link"></i></div><h4>Connected APIs</h4><p>Securely authenticated data sources.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-file-code"></i></div><h4>Extraction Scripts</h4><p>The Python code used to pull your data.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-broom"></i></div><h4>Clean & Standardized Data</h4><p>Data cleaned, structured, and standardized for reliable analysis.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-check-double"></i></div><h4>Analysis-Ready Dataset</h4><p>A clean, organized dataset ready for audits, reporting, dashboards, and analysis.</p></div>
+    <div class="platform-grid">
+      <div class="platform-item"><i class="fa-solid fa-cart-shopping"></i><span>Shopify</span></div>
+      <div class="platform-item"><i class="fa-solid fa-chart-simple"></i><span>GA4</span></div>
+      <div class="platform-item"><i class="fa-brands fa-meta"></i><span>Meta Ads</span></div>
+      <div class="platform-item"><i class="fa-brands fa-google"></i><span>Google Ads</span></div>
+      <div class="platform-item"><i class="fa-solid fa-envelope"></i><span>Klaviyo or another CRM</span></div>
+      <div class="platform-item"><i class="fa-solid fa-table"></i><span>Google Sheets</span></div>
+      <div class="platform-item"><i class="fa-solid fa-file-csv"></i><span>CSV cost files</span></div>
+      <div class="platform-item"><i class="fa-solid fa-boxes-stacked"></i><span>Inventory exports</span></div>
+      <div class="platform-item"><i class="fa-solid fa-rotate-left"></i><span>Returns or refunds files</span></div>
+      <div class="platform-item"><i class="fa-solid fa-file-lines"></i><span>Existing reporting files</span></div>
+    </div>
+    <div style="max-width:860px; margin:32px auto 0;">
+      <p style="font-size:15px; margin-bottom:12px;"><strong>Example combinations:</strong></p>
+      <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius); padding:16px 20px; margin-bottom:12px;">
+        <p style="font-size:14px; color:var(--text) !important;"><i class="fa-solid fa-layer-group" style="color:var(--accent); margin-right:8px;"></i>Shopify + GA4 + Meta Ads + Google Ads + Klaviyo</p>
+      </div>
+      <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius); padding:16px 20px;">
+        <p style="font-size:14px; color:var(--text) !important;"><i class="fa-solid fa-layer-group" style="color:var(--accent); margin-right:8px;"></i>Shopify + Product Cost File + Inventory File + Returns File + Google Analytics</p>
+      </div>
+    </div>
+    <div class="boundary-note scroll-reveal" style="max-width:860px; margin:32px auto 0;">
+      <h4><i class="fa-solid fa-circle-info"></i> Note</h4>
+      <p>One platform may contain several data areas. Multiple stores, markets, currencies, complex APIs, or large historical datasets may require additional scope.</p>
     </div>
   </div>
 </section>
+
+
+<!-- WHAT YOU RECEIVE -->
+<section id="deliverables" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Deliverables</div>
+      <h2>What You Receive</h2>
+      <p>Depending on the selected preparation scope, you may receive:</p>
+    </div>
+    <div class="deliverable-grid">
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon"><i class="fa-solid fa-broom"></i></div>
+        <h4>Cleaned and Organized Data</h4>
+        <p>Data is prepared in a consistent structure for the agreed audit or analysis.</p>
+      </div>
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+        <h4>Standardized Fields</h4>
+        <p>Where applicable, we standardize field names, dates, time zones, currencies, product identifiers, customer identifiers, channel names, and order statuses.</p>
+      </div>
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+        <h4>Basic Data Validation</h4>
+        <p>We check for missing fields, duplicate records, inconsistent formats, unusual gaps, mismatched identifiers, and basic cross-platform differences.</p>
+      </div>
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon"><i class="fa-solid fa-folder-tree"></i></div>
+        <h4>Audit-Ready Dataset</h4>
+        <p>The prepared data is structured for the selected Health Check, specialist audit, report, or custom analysis.</p>
+      </div>
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+        <h4>Data-Quality Notes</h4>
+        <p>You receive a summary of available data, missing data, important limitations, reconciliation issues, and fields requiring further review.</p>
+      </div>
+      <div class="deliverable-card scroll-reveal">
+        <div class="deliverable-icon"><i class="fa-solid fa-book"></i></div>
+        <h4>Basic Data Dictionary</h4>
+        <p>Where appropriate, we document main fields, data sources, metric definitions, important assumptions, and known limitations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section id="process" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Process</div>
+      <h2>How It Works</h2>
+      <p>From objective confirmation to data delivery in six steps.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step scroll-reveal">
+        <div class="step-num">1</div>
+        <h4>Confirm the Objective</h4>
+        <p>We first confirm whether the data is being prepared for a specialist audit, an E-Commerce Health Check, a custom analysis, or a future dashboard or reporting project.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">2</div>
+        <h4>Review the Data Sources</h4>
+        <p>We identify the required platforms, files, historical period, fields, and access method.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">3</div>
+        <h4>Collect or Connect the Data</h4>
+        <p>You provide the required access, exports, files, or platform credentials through the agreed secure process.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">4</div>
+        <h4>Clean and Standardize</h4>
+        <p>We organize the data and correct basic issues with formats, fields, identifiers, dates, currencies, and records.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">5</div>
+        <h4>Validate the Dataset</h4>
+        <p>We perform basic quality checks and document any missing or inconsistent information.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">6</div>
+        <h4>Deliver the Prepared Data</h4>
+        <p>You receive the agreed dataset, data-quality notes, and relevant handover documentation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT IS NOT INCLUDED -->
+<section id="not-included" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Scope Boundary</div>
+      <h2>What Is Not Included</h2>
+      <p>Clarity on what is out of scope so the service stays focused and predictable.</p>
+    </div>
+    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <ul class="not-included">
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Business or marketing recommendations</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>CRO analysis</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Retention strategy</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Product strategy</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Profitability conclusions</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full attribution modelling</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Predictive LTV or churn modelling</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Machine-learning models</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Advanced customer identity resolution</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full data warehouse architecture</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Live dashboard development</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Automated scheduling</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Automated data refresh</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Error alerts</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Ongoing monitoring</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Daily data maintenance</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Pipeline maintenance</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Accounting or bookkeeping</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Formal financial reporting</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Campaign management</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Website implementation</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Email or CRM campaign execution</li>
+      </ul>
+      <div class="insight-box" style="margin-top:20px;"><b>Note:</b> Dashboards, automated pipelines, scheduled refreshes, alerts, and ongoing data monitoring are available through Automate Your Data Infrastructure &amp; Dashboards.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ADDITIONAL SCOPE AND PRICING -->
+<section id="additional-scope" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Additional Scope</div>
+      <h2>Additional Scope and Pricing</h2>
+      <p>The advertised prices apply to the agreed preparation scope and up to five standard platforms or data sources.</p>
+    </div>
+    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <p style="font-size:15px; margin-bottom:16px;"><strong>Additional fees may apply for:</strong></p>
+      <ul class="price-factor-list">
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Multiple stores</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Multiple countries or currencies</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Complex API connections</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Large historical datasets</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Advanced data reconciliation</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Extensive data cleanup</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Difficult product or customer matching</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Accounting-system integration</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Custom data modelling</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Additional data sources</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Dashboard or automation requirements</li>
+      </ul>
+      <div class="boundary-note scroll-reveal" style="margin-top:20px;">
+        <h4><i class="fa-solid fa-circle-info"></i> Pricing Note</h4>
+        <p>Final pricing is confirmed after reviewing the selected objective, data sources, data quality, historical period, and preparation requirements.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- FAQ -->
-<section id="faq" style="background: var(--bg);">
+<section id="faq" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
       <div class="eyebrow">FAQ</div>
       <h2>Frequently Asked Questions</h2>
-      <p>Everything you need to know.</p>
     </div>
-    <div class="faq-container">
+    <div class="faq-container" style="max-width:800px; margin:0 auto;">
       <div class="faq-item active scroll-reveal">
-        <div class="faq-q">Does this include automated daily updates? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">No. The Data Preparation & Integration package is designed for one-time analysis engagements. It pulls your data once, cleans it, and prepares it for immediate use. If you need daily automated updates, you should consider the Automated Dashboard & Analytics System bundle.</div>
+        <div class="faq-q">Is this an audit? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. This service prepares and organizes data for an audit, Health Check, report, or custom analysis. The actual analysis and recommendations are separate.</div>
       </div>
       <div class="faq-item scroll-reveal">
-        <div class="faq-q">Which platforms can you connect? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">We can connect platforms such as Shopify, WooCommerce, BigCommerce, GA4, Meta Ads, Google Ads, Klaviyo, and other relevant business data sources. This Basic Setup includes 2–3 platforms of your choice. If you need multiple platforms fully merged into a unified data environment, please look at the Full Pipeline Setup.</div>
+        <div class="faq-q">Does &ldquo;up to 5 platforms&rdquo; apply to both options? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. Both Specialist Audit Data Preparation and Health Check Data Preparation can include up to five standard platforms or data sources, subject to the agreed scope and data complexity.</div>
       </div>
       <div class="faq-item scroll-reveal">
-        <div class="faq-q">Is my data secure? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">Absolutely. We use read-only API access and follow strict security protocols. We do not store your credentials in plain text, and we never modify your live business data.</div>
+        <div class="faq-q">What is the difference between the two options? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Specialist Audit Data Preparation prepares data for one focused audit. Health Check Data Preparation covers a broader set of business data required to review multiple areas of an e-commerce business.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can you connect Shopify, GA4, Meta, and Google Ads? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes, where the required access is available and the data can be accessed through standard platform connections or files.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Will you combine all my data into one complete data warehouse? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Not by default. This service prepares data for the agreed audit or analysis. A full data warehouse, unified data model, dashboard, or automated data system requires a separate scope.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Will you fix mismatched numbers between platforms? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">We can perform basic reconciliation and document important differences. Advanced attribution modelling or complete tracking correction is not included by default.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can I use the prepared data for another audit later? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The prepared data may be reusable if the structure and historical period are suitable. Additional preparation may be required for a different audit or analysis objective.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is the data preparation fee included in the audit price? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">It depends on the proposal. Data preparation may be listed separately or bundled with a selected audit. The final proposal will clearly show the audit fee, preparation fee, and total investment.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Do you provide a dashboard? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. Dashboard setup is a separate service under Automate Your Data Infrastructure &amp; Dashboards.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">How long does preparation take? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Specialist Audit Data Preparation typically takes 2&ndash;5 business days. Health Check Data Preparation typically takes 5&ndash;10 business days, depending on data access and complexity.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Pricing -->
-<section id="pricing" style="background: var(--surface);">
+
+<!-- PRICING -->
+<section id="pricing" style="background: var(--bg);">
   <div class="container">
-    <div class="pricing-card scroll-reveal">
-      <div class="eyebrow" style="margin: 0 auto;">Basic Setup</div>
-      <h3 style="font-size: 28px; margin-top: 16px;">Infrastructure Foundation</h3>
-      <div class="price-amt">$150–$300</div>
-      <p class="price-sub">One-time fee · 2–3 Business Days</p>
-      <ul class="price-features">
-        <li><i class="fa-solid fa-check"></i> Cloud Infrastructure Setup</li>
-        <li><i class="fa-solid fa-check"></i> Platform API Connections (Up to 5)</li>
-        <li><i class="fa-solid fa-check"></i> Data Pipeline Build</li>
-        <li><i class="fa-solid fa-check"></i> Platform Data Merge (Up to 5 Platforms)</li>
-        <li><i class="fa-solid fa-check"></i> Basic Data Cleaning</li>
-      </ul>
-      <a href="/book?package=data-preparation-integration" class="btn btn-primary" style="width: 100%; justify-content: center;">Start Data Preparation & Integration</a>
+    <div class="header-center">
+      <div class="eyebrow">Pricing</div>
+      <h2>Pricing</h2>
+      <p>Three pricing options depending on the scope of preparation required.</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- Pricing Card 1 -->
+      <div class="pricing-card scroll-reveal">
+        <div class="eyebrow" style="margin: 0 auto;">Specialist Audit</div>
+        <h3 style="font-size: 20px; margin-top: 16px;">Specialist Audit Data Preparation</h3>
+        <div class="price-amt" style="font-size: 32px;">$99&ndash;$199</div>
+        <p class="price-sub">For one focused audit using up to five standard platforms or data sources.</p>
+        <ul class="price-features" style="grid-template-columns: 1fr;">
+          <li><i class="fa-solid fa-check"></i> Typical timeline: 2&ndash;5 business days</li>
+          <li><i class="fa-solid fa-check"></i> Up to 5 standard platforms</li>
+          <li><i class="fa-solid fa-check"></i> Basic data cleaning</li>
+          <li><i class="fa-solid fa-check"></i> Audit-ready data export</li>
+        </ul>
+        <a href="/book?package=data-preparation-integration" class="btn btn-primary" style="width: 100%; justify-content: center;">Prepare Data for My Audit</a>
+      </div>
+      <!-- Pricing Card 2 (Featured) -->
+      <div class="pricing-card featured scroll-reveal">
+        <div class="eyebrow" style="margin: 0 auto;">Health Check</div>
+        <h3 style="font-size: 20px; margin-top: 16px;">Health Check Data Preparation</h3>
+        <div class="price-amt" style="font-size: 32px;">$299&ndash;$599</div>
+        <p class="price-sub">For broader data preparation across multiple business areas using up to five standard platforms.</p>
+        <ul class="price-features" style="grid-template-columns: 1fr;">
+          <li><i class="fa-solid fa-check"></i> Typical timeline: 5&ndash;10 business days</li>
+          <li><i class="fa-solid fa-check"></i> Up to 5 standard platforms</li>
+          <li><i class="fa-solid fa-check"></i> Multi-area data preparation</li>
+          <li><i class="fa-solid fa-check"></i> Data-quality summary + data dictionary</li>
+        </ul>
+        <a href="/book?package=data-preparation-integration" class="btn btn-primary" style="width: 100%; justify-content: center;">Prepare Data for My Health Check</a>
+      </div>
+      <!-- Pricing Card 3 -->
+      <div class="pricing-card scroll-reveal">
+        <div class="eyebrow" style="margin: 0 auto;">Custom Analysis</div>
+        <h3 style="font-size: 20px; margin-top: 16px;">Small Custom Analysis Requests</h3>
+        <div class="price-amt" style="font-size: 32px;">Starting from $99</div>
+        <p class="price-sub">For a clearly defined, limited analysis request using available and reasonably clean data.</p>
+        <ul class="price-features" style="grid-template-columns: 1fr;">
+          <li><i class="fa-solid fa-check"></i> Clearly defined question</li>
+          <li><i class="fa-solid fa-check"></i> Available and reasonably clean data</li>
+          <li><i class="fa-solid fa-check"></i> Limited analysis output</li>
+          <li><i class="fa-solid fa-check"></i> Custom quote based on scope</li>
+        </ul>
+        <a href="/book?package=data-preparation-integration" class="btn btn-primary" style="width: 100%; justify-content: center;">Discuss My Analysis Request</a>
+      </div>
+    </div>
+    <div class="boundary-note scroll-reveal" style="max-width:860px; margin:32px auto 0;">
+      <h4><i class="fa-solid fa-circle-info"></i> Pricing Note</h4>
+      <p>Custom analysis pricing depends on the question, data sources, historical period, analysis depth, and required output. Final pricing is confirmed after reviewing the objective and data.</p>
     </div>
   </div>
 </section>
 
-<footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 
+<!-- FINAL CTA -->
+<section style="background: var(--surface); text-align:center; padding: 80px 0;">
+  <div class="container">
+    <div style="max-width:720px; margin:0 auto;">
+      <h2 style="font-size: 32px; margin-bottom: 16px;">Prepare Your Data for Better Decisions</h2>
+      <p style="font-size: 17px; color: var(--muted) !important; margin-bottom: 32px;">Stop repeatedly exporting and cleaning the same information. We prepare the data required for your selected audit, Health Check, or analysis.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="/book?package=data-preparation-integration" class="btn btn-primary">Prepare My Business Data</a>
+        <a href="/specialized-add-on-packages" class="btn btn-outline" style="border-color:var(--border-dark);">Explore E-Commerce Audits</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-
-
+<footer>&copy; 2025 Moz Intelligence. All rights reserved.</footer>
