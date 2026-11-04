@@ -153,7 +153,7 @@ const CORE_PACKAGES = [
     tier: 'GROWTH',
     badge: 'After Your Audit',
     price: 'Custom project',
-    priceNote: 'Typically starts from $1,500',
+    priceNote: 'Typically starts from $750',
     timeline: '',
     tagline: 'Turn your Health Check findings into focused improvements across CRO, marketing, products, tracking, retention, or analytics.',
     description: 'Focused improvement projects that turn your audit findings into measurable business results.',
