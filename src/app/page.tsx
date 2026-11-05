@@ -1690,6 +1690,26 @@ function ServicesSection() {
                           <span className="text-[#8899AA] text-xs font-medium">Available as add-ons</span>
                         </div>
                       </div>
+                      {/* Feature List (matches Automated Dashboard & Analytics System card) */}
+                      <div className="infra-feature-list">
+                        {BUNDLE_FEATURES.map((feat, fi) => {
+                          if (feat.feature === 'Basic KPI Dashboard') return null;
+                          const val = feat['auto' as keyof typeof feat];
+                          const has = val === true || typeof val === 'string';
+                          const note = typeof val === 'string' ? val : null;
+                          return (
+                            <div key={fi} className={`infra-feature-row ${has ? 'has' : 'not'}`}>
+                              <span className={`feature-icon ${has ? 'feature-yes' : 'feature-no'}`}>
+                                {has ? FeatureCheckIcon : FeatureCrossIcon}
+                              </span>
+                              <span className="feature-name">
+                                {feat.feature}
+                                {note && <span className="feature-note">{note}</span>}
+                              </span>
+                            </div>
+                          );
+                        })}
+                      </div>
                       <a href={`${basePath}/data-pipeline-dashboard-setup`} target="_blank" rel="noopener noreferrer" className="infra-book-btn">
                         Explore Intelligence &amp; Automation →
                       </a>
