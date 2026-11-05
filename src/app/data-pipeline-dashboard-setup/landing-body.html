@@ -33,6 +33,18 @@ span{color:var(--muted) !important}
 .card-section .card-sub{color:var(--muted) !important}
 .card-section .card-price{color:var(--text) !important}
 .card-section .card-timeline{color:var(--muted) !important}
+
+/* ===== Card 2: Automated Audit Intelligence — module mini-cards ===== */
+.card-section .mod-item{display:flex; align-items:center; gap:12px; padding:10px 12px; background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; transition:all 0.25s ease; cursor:default}
+.card-section .mod-item:hover{border-color:var(--accent); background:var(--accent-light); transform:translateX(4px); box-shadow:0 6px 16px -6px rgba(79,70,229,0.25)}
+.card-section .mod-icon-wrap{width:32px; height:32px; background:var(--accent-light); color:var(--accent) !important; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; transition:all 0.25s ease}
+.card-section .mod-item:hover .mod-icon-wrap{background:var(--accent); color:#fff !important}
+.card-section .mod-name{font-size:13.5px; font-weight:600; color:var(--text) !important; flex:1; line-height:1.3}
+.card-section .mod-chev{color:var(--light); font-size:11px; transition:all 0.25s ease}
+.card-section .mod-item:hover .mod-chev{color:var(--accent); transform:translateX(2px)}
+.card-section .mod-count-badge{display:inline-flex; align-items:center; gap:6px; padding:5px 12px; background:var(--surface); border:1px solid var(--accent); color:var(--accent) !important; border-radius:100px; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.05em}
+.card-section .mod-choose{font-size:12px; color:var(--muted) !important; font-weight:600}
+.card-section .dashed-top-bar{background:repeating-linear-gradient(90deg, var(--accent) 0 8px, transparent 8px 16px) !important; height:3px !important}
 </style>
 
 
@@ -200,21 +212,45 @@ span{color:var(--muted) !important}
       </div>
 
       <!-- Card 2: Automated Audit Intelligence -->
-      <div class="card-section" style="background:var(--surface); border:2px solid var(--border-dark); border-radius:var(--radius-lg); padding:32px;">
-        <div class="card-top-bar"></div>
-        <div class="card-num-badge" style="margin-bottom:8px;">Section 02</div>
-        <h3 style="font-size:20px; margin-bottom:4px;">Automated Audit Intelligence</h3>
-        <p class="card-sub" style="font-size:14px; margin:0 0 20px 0;">Add Deeper Monitoring to Your Dashboard</p>
-        <p style="font-size:14px; margin-bottom:20px;">The standard dashboard shows your important business metrics. Audit Automation adds deeper calculations, classifications, performance signals, insight summaries, and basic recommendations for a selected business area.</p>
-        <div class="card-list-label">Available modules</div>
-        <ul class="dash-include-list" style="margin-bottom:24px;">
-          <li><i class="fa-solid fa-bullhorn" style="color:var(--accent); margin-right:8px;"></i>Marketing Performance &amp; Profitability Automation</li>
-          <li><i class="fa-solid fa-users" style="color:var(--accent); margin-right:8px;"></i>Customer Retention &amp; LTV Automation</li>
-          <li><i class="fa-solid fa-boxes-stacked" style="color:var(--accent); margin-right:8px;"></i>Product Profitability &amp; Portfolio Automation</li>
-          <li><i class="fa-solid fa-coins" style="color:var(--accent); margin-right:8px;"></i>E-Commerce Profitability Automation</li>
-          <li><i class="fa-solid fa-gears" style="color:var(--accent); margin-right:8px;"></i>Operations Efficiency Automation</li>
+      <div class="card-section" style="background:linear-gradient(180deg, var(--surface) 0%, var(--accent-light) 280%); border:2px solid var(--border-dark); border-radius:var(--radius-lg); padding:32px; position:relative; overflow:hidden;">
+        <div class="card-top-bar dashed-top-bar"></div>
+        <!-- decorative glow -->
+        <div style="position:absolute; top:-40px; right:-40px; width:140px; height:140px; background:radial-gradient(circle, rgba(79,70,229,0.10) 0%, transparent 70%); border-radius:50%; pointer-events:none;"></div>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:4px; margin-bottom:12px; position:relative;">
+          <div class="card-num-badge" style="margin-bottom:0;">Section 02</div>
+          <div class="mod-count-badge"><i class="fa-solid fa-layer-group" style="font-size:10px;"></i>5 Modules</div>
+        </div>
+        <h3 style="font-size:20px; margin-bottom:4px; position:relative;">Automated Audit Intelligence</h3>
+        <p class="card-sub" style="font-size:14px; margin:0 0 16px 0; position:relative;">Add Deeper Monitoring to Your Dashboard</p>
+        <p style="font-size:14px; margin-bottom:20px; position:relative;">The standard dashboard shows your important business metrics. Audit Automation adds deeper calculations, classifications, performance signals, insight summaries, and basic recommendations for a selected business area.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px; position:relative;">
+          <div class="card-stat-pill">
+            <div class="pill-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+            <div>
+              <div class="pill-label">Starting from</div>
+              <div class="pill-value accent">$650 <span style="font-size:11px; font-weight:600; color:var(--muted);">/ module</span></div>
+            </div>
+          </div>
+          <div class="card-stat-pill">
+            <div class="pill-icon"><i class="fa-solid fa-plus"></i></div>
+            <div>
+              <div class="pill-label">Type</div>
+              <div class="pill-value" style="font-size:13px;">Optional Add-On</div>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:12px; position:relative;">
+          <div class="card-list-label" style="margin-bottom:0;">Available modules</div>
+          <span class="mod-choose">Choose any</span>
+        </div>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; margin-bottom:24px; position:relative;">
+          <li class="mod-item"><span class="mod-icon-wrap"><i class="fa-solid fa-bullhorn"></i></span><span class="mod-name">Marketing Performance &amp; Profitability</span><i class="fa-solid fa-chevron-right mod-chev"></i></li>
+          <li class="mod-item"><span class="mod-icon-wrap"><i class="fa-solid fa-users"></i></span><span class="mod-name">Customer Retention &amp; LTV</span><i class="fa-solid fa-chevron-right mod-chev"></i></li>
+          <li class="mod-item"><span class="mod-icon-wrap"><i class="fa-solid fa-boxes-stacked"></i></span><span class="mod-name">Product Profitability &amp; Portfolio</span><i class="fa-solid fa-chevron-right mod-chev"></i></li>
+          <li class="mod-item"><span class="mod-icon-wrap"><i class="fa-solid fa-coins"></i></span><span class="mod-name">E-Commerce Profitability</span><i class="fa-solid fa-chevron-right mod-chev"></i></li>
+          <li class="mod-item"><span class="mod-icon-wrap"><i class="fa-solid fa-gears"></i></span><span class="mod-name">Operations Efficiency</span><i class="fa-solid fa-chevron-right mod-chev"></i></li>
         </ul>
-        <div class="card-cta-group">
+        <div class="card-cta-group" style="position:relative;">
           <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary"><i class="fa-solid fa-plus" style="margin-right:8px;"></i>Add Audit Automation</a>
           <a href="/automated-audit-intelligence" class="btn btn-outline" style="border-color:var(--border-dark);"><i class="fa-solid fa-eye" style="margin-right:6px;"></i>View Details</a>
         </div>
