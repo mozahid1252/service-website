@@ -116,7 +116,6 @@ const footerData = {
     { label: "Data-Driven Growth System", href: "/data-driven-growth-system" },
     { label: "Data Preparation & Integration", href: "/data-preparation-integration" },
     { label: "Data Pipeline & Dashboard Setup", href: "/data-pipeline-dashboard-setup" },
-    { label: "Automated Dashboard & Analytics System", href: "/automated-dashboard-analytics-system" },
   ],
   detailsAudits: [
     { label: "Marketing Audit", href: "/marketing-spend-audit" },

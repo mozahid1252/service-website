@@ -255,7 +255,6 @@ const ADD_ON_PACKAGES = [
 const DATA_BUNDLES = [
   { name: 'Data Preparation & Integration', bestFor: 'For One-Time Analysis Projects\nData cleaning, preparation & integration across up to 5 platforms', timeline: '2–3 Days', investment: '$150 – $300', cssClass: 'infra-wrapper-basic', route: '/data-preparation-integration' },
   { name: 'Data Pipeline & Dashboard Setup', bestFor: 'Multi-platform data integration, automated data pipelines & dashboard setup', timeline: '5–7 Days', investment: '$500 – $900', cssClass: 'infra-wrapper-pipeline', route: '/data-pipeline-dashboard-setup' },
-  { name: 'Automated Dashboard & Analytics System', bestFor: 'For Continuous Business Intelligence\nAuto-updating dashboards, scheduled data refreshes & performance monitoring', timeline: '7–10 Days', investment: '$700 – $1,200', cssClass: 'infra-wrapper-auto', route: '/automated-dashboard-analytics-system' },
 ];
 
 const BUNDLE_FEATURES = [
@@ -273,9 +272,6 @@ const BUNDLE_FEATURES = [
   { feature: 'Automated Scheduling', basic: false, full: false, auto: true },
   { feature: 'Error Alerts', basic: false, full: false, auto: true },
 ];
-
-/* Tier key per bundle (indexes match DATA_BUNDLES order) */
-const BUNDLE_TIER_KEYS = ['basic', 'full', 'auto'] as const;
 
 /* Shared check / cross icons used inside each package card's feature list */
 const FeatureCheckIcon = (
@@ -1690,7 +1686,7 @@ function ServicesSection() {
                           <span className="text-[#8899AA] text-xs font-medium">Available as add-ons</span>
                         </div>
                       </div>
-                      {/* Feature List (matches Automated Dashboard & Analytics System card) */}
+                      {/* Feature List */}
                       <div className="infra-feature-list">
                         {BUNDLE_FEATURES.map((feat, fi) => {
                           if (feat.feature === 'Basic KPI Dashboard') return null;
@@ -1720,60 +1716,7 @@ function ServicesSection() {
                   </div>
                 );
               }
-              const tierKey = BUNDLE_TIER_KEYS[i];
-              return (
-                <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
-                  <div className="infra-card-inner">
-                  <h4 className="text-white font-bold text-lg mb-2">{bundle.name}</h4>
-                  <div className="text-[#8899AA] text-sm mb-3">
-                    {bundle.bestFor.split("\\n").map((line, li) => (
-                      <span key={li}>
-                        {li === 0 && <span>{line}</span>}
-                        {li > 0 && <>{line}</>}
-                        {li < bundle.bestFor.split("\\n").length - 1 && <br/>}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-[#8899AA] text-xs">Timeline</div>
-                      <div className="text-white text-sm font-medium">{bundle.timeline}</div>
-                    </div>
-                    <div>
-                      <div className="text-[#8899AA] text-xs">Investment</div>
-                      <div className="gradient-text-gold text-sm font-bold">{bundle.investment}</div>
-                    </div>
-                  </div>
-                  {/* Feature List (merged from former comparison table) */}
-                  <div className="infra-feature-list">
-                    {BUNDLE_FEATURES.map((feat, fi) => {
-                      const val = feat[tierKey];
-                      if (feat.feature === 'Basic KPI Dashboard' && tierKey === 'auto') return null;
-                      if (feat.feature === 'Automated Custom KPI Dashboard' && (tierKey === 'basic' || tierKey === 'full')) return null;
-                      const has = val === true || typeof val === 'string';
-                      const note = typeof val === 'string' ? val : null;
-                      return (
-                        <div key={fi} className={`infra-feature-row ${has ? 'has' : 'not'}`}>
-                          <span className={`feature-icon ${has ? 'feature-yes' : 'feature-no'}`}>
-                            {has ? FeatureCheckIcon : FeatureCrossIcon}
-                          </span>
-                          <span className="feature-name">
-                            {feat.feature}
-                            {note && <span className="feature-note">{note}</span>}
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                  <a href={`/book?package=${bundle.route.replace('/', '')}`} className="infra-book-btn">
-                    Book the {bundle.name} →
-                  </a>
-                  <a href={`${basePath}${bundle.route}`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline w-full">
-                    <ExternalLink size={12} /> View Details
-                  </a>
-                  </div>
-                </div>
-              );
+              return null;
             })}
           </div>
 
