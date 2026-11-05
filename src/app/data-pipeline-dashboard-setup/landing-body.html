@@ -160,22 +160,34 @@ span{color:var(--muted) !important}
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:1000px; margin:0 auto 24px;">
 
       <!-- Card 1: E-Commerce Intelligence Dashboard -->
-      <div class="card-section" style="background:var(--surface); border:2px solid var(--accent); border-radius:var(--radius-lg); padding:32px; box-shadow:0 20px 40px -10px rgba(79,70,229,0.15);">
-        <div style="font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">Section 01</div>
-        <h3 style="font-size:22px; margin-bottom:8px;">E-Commerce Intelligence Dashboard</h3>
-        <p class="card-sub" style="font-size:15px; margin-bottom:20px;">One Custom Dashboard for Your Business</p>
-        <p style="font-size:14px; margin-bottom:20px;">Connect up to five standard data sources and monitor the key areas of your e-commerce business in one dashboard.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
-          <div>
-            <div style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:2px;">Investment</div>
-            <div class="card-price" style="font-size:20px; font-weight:800;">Starting from $850</div>
-          </div>
-          <div>
-            <div style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:2px;">Timeline</div>
-            <div class="card-timeline" style="font-size:14px; font-weight:600;">Typically 5&ndash;7 business days</div>
+      <div class="card-section featured-card" style="background:var(--surface); border:2px solid var(--accent); border-radius:var(--radius-lg); padding:32px; box-shadow:0 20px 40px -10px rgba(79,70,229,0.15);">
+        <div class="card-top-bar"></div>
+        <div class="card-header">
+          <div class="card-icon-wrap"><i class="fa-solid fa-gauge-high"></i></div>
+          <div style="flex:1;">
+            <div class="card-num-badge">Section 01</div>
+            <h3 style="font-size:20px; margin-bottom:4px;">E-Commerce Intelligence Dashboard</h3>
+            <p class="card-sub" style="font-size:14px; margin:0;">One Custom Dashboard for Your Business</p>
           </div>
         </div>
-        <p style="font-size:14px; margin-bottom:10px;"><strong>Dashboard may include:</strong></p>
+        <p style="font-size:14px; margin-bottom:20px;">Connect up to five standard data sources and monitor the key areas of your e-commerce business in one dashboard.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px;">
+          <div class="card-stat-pill">
+            <div class="pill-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+            <div>
+              <div class="pill-label">Investment</div>
+              <div class="pill-value accent">Starting from $850</div>
+            </div>
+          </div>
+          <div class="card-stat-pill">
+            <div class="pill-icon"><i class="fa-solid fa-clock"></i></div>
+            <div>
+              <div class="pill-label">Timeline</div>
+              <div class="pill-value">5&ndash;7 business days</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-list-label">Dashboard may include</div>
         <ul class="dash-include-list" style="margin-bottom:24px;">
           <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Overall sales performance</li>
           <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Marketing performance</li>
@@ -186,17 +198,25 @@ span{color:var(--muted) !important}
           <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Inventory and returns metrics</li>
           <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Business performance trends</li>
         </ul>
-        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:12px;">Build My Intelligence Dashboard</a>
-        <a href="#sections" class="btn btn-outline" style="width:100%; justify-content:center; border-color:var(--border-dark);">View Details</a>
+        <div class="card-cta-group">
+          <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary"><i class="fa-solid fa-arrow-right" style="margin-right:8px;"></i>Build My Intelligence Dashboard</a>
+          <a href="#sections" class="btn btn-outline" style="border-color:var(--border-dark);"><i class="fa-solid fa-eye" style="margin-right:6px;"></i>View Details</a>
+        </div>
       </div>
 
       <!-- Card 2: Automated Audit Intelligence -->
-      <div class="card-section" style="background:var(--surface); border:2px solid var(--border-dark); border-radius:var(--radius-lg); padding:32px; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
-        <div style="font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">Section 02</div>
-        <h3 style="font-size:22px; margin-bottom:8px;">Automated Audit Intelligence</h3>
-        <p class="card-sub" style="font-size:15px; margin-bottom:20px;">Add Deeper Monitoring to Your Dashboard</p>
+      <div class="card-section" style="background:var(--surface); border:2px solid var(--border-dark); border-radius:var(--radius-lg); padding:32px;">
+        <div class="card-top-bar"></div>
+        <div class="card-header">
+          <div class="card-icon-wrap"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div style="flex:1;">
+            <div class="card-num-badge">Section 02</div>
+            <h3 style="font-size:20px; margin-bottom:4px;">Automated Audit Intelligence</h3>
+            <p class="card-sub" style="font-size:14px; margin:0;">Add Deeper Monitoring to Your Dashboard</p>
+          </div>
+        </div>
         <p style="font-size:14px; margin-bottom:20px;">The standard dashboard shows your important business metrics. Audit Automation adds deeper calculations, classifications, performance signals, insight summaries, and basic recommendations for a selected business area.</p>
-        <p style="font-size:14px; margin-bottom:10px;"><strong>Available modules:</strong></p>
+        <div class="card-list-label">Available modules</div>
         <ul class="dash-include-list" style="margin-bottom:24px;">
           <li><i class="fa-solid fa-bullhorn" style="color:var(--accent); margin-right:8px;"></i>Marketing Performance &amp; Profitability Automation</li>
           <li><i class="fa-solid fa-users" style="color:var(--accent); margin-right:8px;"></i>Customer Retention &amp; LTV Automation</li>
@@ -204,24 +224,35 @@ span{color:var(--muted) !important}
           <li><i class="fa-solid fa-coins" style="color:var(--accent); margin-right:8px;"></i>E-Commerce Profitability Automation</li>
           <li><i class="fa-solid fa-gears" style="color:var(--accent); margin-right:8px;"></i>Operations Efficiency Automation</li>
         </ul>
-        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:12px;">Add Audit Automation</a>
-        <a href="#sections" class="btn btn-outline" style="width:100%; justify-content:center; border-color:var(--border-dark);">View Details</a>
+        <div class="card-cta-group">
+          <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary"><i class="fa-solid fa-plus" style="margin-right:8px;"></i>Add Audit Automation</a>
+          <a href="#sections" class="btn btn-outline" style="border-color:var(--border-dark);"><i class="fa-solid fa-eye" style="margin-right:6px;"></i>View Details</a>
+        </div>
       </div>
     </div>
 
     <!-- 3rd card below (full width, centered) -->
-    <div class="card-section" style="background:var(--surface); border:2px solid var(--border-dark); border-radius:var(--radius-lg); padding:32px; max-width:700px; margin:0 auto; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
-      <div style="font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">Section 03</div>
-      <h3 style="font-size:22px; margin-bottom:8px;">Automated Scheduling, Refresh Monitoring &amp; Error Alerts</h3>
-      <p class="card-sub" style="font-size:15px; margin-bottom:20px;">Keep Your Dashboard Updated Automatically</p>
-      <p style="font-size:14px; margin-bottom:20px;">Add recurring data refresh and monitoring to your dashboard or selected audit automation module.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
-        <div>
-          <div style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:2px;">Investment</div>
-          <div class="card-price" style="font-size:20px; font-weight:800;">Starting from $200</div>
+    <div class="card-section" style="background:var(--surface); border:2px solid var(--border-dark); border-radius:var(--radius-lg); padding:32px; max-width:700px; margin:0 auto;">
+      <div class="card-top-bar"></div>
+      <div class="card-header">
+        <div class="card-icon-wrap"><i class="fa-solid fa-arrows-rotate"></i></div>
+        <div style="flex:1;">
+          <div class="card-num-badge">Section 03</div>
+          <h3 style="font-size:20px; margin-bottom:4px;">Automated Scheduling, Refresh Monitoring &amp; Error Alerts</h3>
+          <p class="card-sub" style="font-size:14px; margin:0;">Keep Your Dashboard Updated Automatically</p>
         </div>
       </div>
-      <p style="font-size:14px; margin-bottom:10px;"><strong>May include:</strong></p>
+      <p style="font-size:14px; margin-bottom:20px;">Add recurring data refresh and monitoring to your dashboard or selected audit automation module.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px;">
+        <div class="card-stat-pill">
+          <div class="pill-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+          <div>
+            <div class="pill-label">Investment</div>
+            <div class="pill-value accent">Starting from $200</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-list-label">May include</div>
       <ul class="dash-include-list" style="margin-bottom:24px;">
         <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Daily, weekly, or agreed refresh schedule</li>
         <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Automated pipeline execution</li>
@@ -232,8 +263,10 @@ span{color:var(--muted) !important}
         <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Refresh and error logs</li>
         <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Automated data validation</li>
       </ul>
-      <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:12px;">Add Automated Refresh</a>
-      <a href="#sections" class="btn btn-outline" style="width:100%; justify-content:center; border-color:var(--border-dark);">View Details</a>
+      <div class="card-cta-group">
+        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary"><i class="fa-solid fa-bolt" style="margin-right:8px;"></i>Add Automated Refresh</a>
+        <a href="#sections" class="btn btn-outline" style="border-color:var(--border-dark);"><i class="fa-solid fa-eye" style="margin-right:6px;"></i>View Details</a>
+      </div>
     </div>
   </div>
 </section>
