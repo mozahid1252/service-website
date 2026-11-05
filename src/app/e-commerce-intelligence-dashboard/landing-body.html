@@ -1,0 +1,835 @@
+<!-- MOBILE-OVERRIDE-SAFETY -->
+<style>
+@media(max-width:900px){.outcomes-grid,.outcomes-grid.cols-3,.outcomes-grid.cols-4{display:flex !important;flex-direction:column !important;gap:16px !important}}
+h1,h2,h3,h4,h5{color:var(--text) !important}
+h1 em,h2 em,h3 em{color:var(--accent) !important}
+strong,b{color:var(--text) !important}
+p{color:var(--muted) !important}
+.hero-desc-box p{color:var(--muted) !important}
+.header-center p{color:var(--muted) !important}
+.eyebrow{color:var(--accent-dark) !important}
+li{color:var(--muted) !important}
+span{color:var(--muted) !important}
+.logo span{color:var(--accent) !important}
+.signs-list li{color:var(--muted) !important}
+.view-grid li{color:var(--muted) !important}
+.view-block ul li{color:var(--muted) !important}
+.view-block .view-sub{color:var(--muted) !important}
+.include-content p{color:var(--muted) !important}
+.include-content p strong{color:var(--text) !important}
+.include-content ul li{color:var(--muted) !important}
+.include-content strong{color:var(--text) !important}
+.include-title h3{color:var(--text) !important}
+.include-title span{color:var(--accent) !important}
+.config-card ul li{color:var(--muted) !important}
+.config-card .config-code{color:var(--text) !important}
+.insight-box{color:var(--muted) !important}
+.insight-box b{color:var(--text) !important}
+.boundary-note p{color:var(--muted) !important}
+.boundary-note h4{color:var(--warning) !important}
+.faq-q{color:var(--text) !important}
+.faq-a{color:var(--muted) !important}
+.price-features li{color:var(--muted) !important}
+.price-factor-list li{color:var(--muted) !important}
+.not-included li{color:var(--muted) !important}
+.pricing-card .price-sub{color:var(--muted) !important}
+.process-step h4{color:var(--text) !important}
+.process-step p{color:var(--muted) !important}
+.hero-stat-value{color:var(--text) !important}
+.hero-stat-value.accent{color:var(--accent) !important}
+.hero-stat-label{color:var(--muted) !important}
+.hero-note{color:var(--muted) !important}
+</style>
+
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">Moz <span>Intelligence</span></a>
+    <ul class="nav-links" style="gap:24px; list-style:none;">
+      <li><a href="#signs" style="color:var(--muted); font-size:14px;">Warning Signs</a></li>
+      <li><a href="#included" style="color:var(--muted); font-size:14px;">What Is Included</a></li>
+      <li><a href="#views" style="color:var(--muted); font-size:14px;">Dashboard Views</a></li>
+      <li><a href="#process" style="color:var(--muted); font-size:14px;">How It Works</a></li>
+      <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
+      <li><a href="#faq" style="color:var(--muted); font-size:14px;">FAQ</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <a href="#pricing" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+<div class="nav-mobile-menu" id="mobile-menu-inteldash">
+    <a href="#signs">Warning Signs</a>
+    <a href="#included">What Is Included</a>
+    <a href="#views">Dashboard Views</a>
+    <a href="#process">How It Works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#pricing" class="nav-mobile-cta">Get Started</a>
+</div>
+
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow" style="margin: 0 auto;">E-Commerce Intelligence Dashboard</div>
+    <h1 class="hero-headline">Connect Your Data. Build a <em>Clearer View</em> of Your Business.</h1>
+    <div class="hero-desc-box">
+      <p>Your business data may be spread across your e-commerce platform, analytics tools, advertising accounts, CRM, spreadsheets, and inventory files.</p>
+      <p>The E-Commerce Intelligence Dashboard connects the relevant data sources and organizes the most important business metrics into one custom reporting environment. Instead of checking multiple platforms separately, you can monitor your sales, marketing, customer, product, profitability, and conversion performance in one place.</p>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+        <div class="hero-stat-label">Investment</div>
+        <div class="hero-stat-value accent">Starting from $850</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-icon"><i class="fa-solid fa-clock"></i></div>
+        <div class="hero-stat-label">Timeline</div>
+        <div class="hero-stat-value">7&ndash;10 business days</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <div class="hero-stat-label">Data Sources</div>
+        <div class="hero-stat-value">Up to 5 platforms</div>
+      </div>
+    </div>
+    <div class="hero-cta-wrap">
+      <a href="/book?package=e-commerce-intelligence-dashboard" class="btn btn-primary"><i class="fa-solid fa-chart-line" style="margin-right:8px;"></i>Build My Business Dashboard</a>
+      <a href="#signs" class="btn btn-outline" style="border-color:var(--border-dark);"><i class="fa-solid fa-eye" style="margin-right:8px;"></i>See the Warning Signs</a>
+    </div>
+    <div style="text-align:center;">
+      <span class="hero-note"><i class="fa-solid fa-circle-info"></i> One-time data pipeline and dashboard setup &middot; Automated scheduling, recurring refreshes, audit-specific intelligence, and live alerts are available as optional upgrades</span>
+    </div>
+  </div>
+</header>
+
+
+<!-- IS YOUR BUSINESS DATA DIFFICULT TO MONITOR? -->
+<section id="signs" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Warning Signs</div>
+      <h2>Is Your Business Data Difficult to Monitor?</h2>
+      <p>This service may be suitable if:</p>
+    </div>
+    <ul class="signs-list" style="list-style:none; max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Your data is spread across multiple platforms</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You manually export reports every week or month</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Shopify, GA4, Meta, and Google Ads show different numbers</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Your team cannot see sales, marketing, customer, and product data together</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Monthly reporting takes too much time</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You rely on disconnected spreadsheets</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Important KPIs are difficult to find</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You need one dashboard for management visibility</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You want to reduce repetitive data preparation</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You need a clearer view before making business decisions</li>
+      <li style="padding:12px 16px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px; grid-column: span 2;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You want a data foundation that can support future reporting</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- WHAT YOU CAN SEE IN ONE DASHBOARD -->
+<section id="what-you-see" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Core Views</div>
+      <h2>What You Can See in One Dashboard</h2>
+      <p>Depending on the selected data sources and agreed KPIs, the dashboard may include views for:</p>
+    </div>
+    <ul class="view-grid" style="list-style:none; max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <li style="padding:14px 18px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-chart-line" style="color:var(--accent); margin-right:8px;"></i>Overall sales and revenue</li>
+      <li style="padding:14px 18px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-bullhorn" style="color:var(--accent); margin-right:8px;"></i>Marketing performance</li>
+      <li style="padding:14px 18px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-users" style="color:var(--accent); margin-right:8px;"></i>Customer and retention</li>
+      <li style="padding:14px 18px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-boxes-stacked" style="color:var(--accent); margin-right:8px;"></i>Product performance</li>
+      <li style="padding:14px 18px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-coins" style="color:var(--accent); margin-right:8px;"></i>Profitability</li>
+      <li style="padding:14px 18px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-filter" style="color:var(--accent); margin-right:8px;"></i>Conversion and funnel activity</li>
+      <li style="padding:14px 18px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-warehouse" style="color:var(--accent); margin-right:8px;"></i>Inventory and returns</li>
+      <li style="padding:14px 18px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-arrow-trend-up" style="color:var(--accent); margin-right:8px;"></i>Business performance trends</li>
+    </ul>
+    <div class="boundary-note scroll-reveal" style="max-width:860px; margin:32px auto 0;">
+      <p style="font-size:15px; color:var(--text) !important;">The dashboard is designed around your selected business priorities. You do not need every available section, and every section does not need to use the same data source.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT IS INCLUDED (8 blocks) -->
+<section id="included" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">What Is Included</div>
+      <h2>What Is Included</h2>
+      <p>Eight connected steps from data source connections to technical handover.</p>
+    </div>
+
+    <div class="include-block scroll-reveal">
+      <div class="include-header"><div class="include-num">01</div><div class="include-title"><h3>Data Source Connections</h3><span>We connect up to five standard platforms or data sources</span></div></div>
+      <div class="include-content">
+        <p>We connect up to five standard platforms or data sources, such as:</p>
+        <ul>
+          <li>Shopify or another e-commerce platform</li>
+          <li>GA4</li>
+          <li>Meta Ads</li>
+          <li>Google Ads</li>
+          <li>Klaviyo or another CRM</li>
+          <li>Product-cost spreadsheet</li>
+          <li>Inventory file</li>
+          <li>Returns or refunds file</li>
+          <li>Google Sheets</li>
+          <li>Existing reporting files</li>
+        </ul>
+        <div class="insight-box"><b>Note:</b> The final sources depend on your dashboard objective and the availability of suitable data.</div>
+      </div>
+    </div>
+
+    <div class="include-block scroll-reveal">
+      <div class="include-header"><div class="include-num">02</div><div class="include-title"><h3>Cloud Data Environment</h3><span>We configure the required environment for storing and organizing your connected business data</span></div></div>
+      <div class="include-content">
+        <p>This may include:</p>
+        <ul>
+          <li>Cloud project configuration</li>
+          <li>BigQuery dataset setup</li>
+          <li>Data storage structure</li>
+          <li>Source-to-destination mapping</li>
+          <li>Secure access configuration</li>
+          <li>Required dataset organization</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="include-block scroll-reveal">
+      <div class="include-header"><div class="include-num">03</div><div class="include-title"><h3>Data Pipeline Setup</h3><span>We build the agreed process for bringing data from the selected sources into the reporting environment</span></div></div>
+      <div class="include-content">
+        <p>This may include:</p>
+        <ul>
+          <li>API-based data connection</li>
+          <li>File-based data collection</li>
+          <li>Data extraction setup</li>
+          <li>BigQuery load setup</li>
+          <li>Source mapping</li>
+          <li>Data transfer configuration</li>
+          <li>Data relationship preparation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="include-block scroll-reveal">
+      <div class="include-header"><div class="include-num">04</div><div class="include-title"><h3>Data Cleaning and Standardization</h3><span>We prepare the connected data for consistent dashboard reporting</span></div></div>
+      <div class="include-content">
+        <p>This may include:</p>
+        <ul>
+          <li>Standardizing field names</li>
+          <li>Aligning date formats</li>
+          <li>Aligning time zones</li>
+          <li>Standardizing currencies</li>
+          <li>Mapping product and variant identifiers</li>
+          <li>Mapping customer and order identifiers</li>
+          <li>Standardizing order statuses</li>
+          <li>Aligning channel and source names</li>
+          <li>Reviewing missing values</li>
+          <li>Reviewing duplicate records</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="include-block scroll-reveal">
+      <div class="include-header"><div class="include-num">05</div><div class="include-title"><h3>Data Modeling and Transformation</h3><span>We organize the data so the selected dashboard metrics can be calculated and displayed consistently</span></div></div>
+      <div class="include-content">
+        <p>This may include:</p>
+        <ul>
+          <li>Connecting orders with products</li>
+          <li>Connecting customers with orders</li>
+          <li>Mapping campaigns and channels</li>
+          <li>Aligning product and category fields</li>
+          <li>Connecting cost fields</li>
+          <li>Connecting returns and refunds</li>
+          <li>Creating agreed calculated KPIs</li>
+          <li>Preparing relationships between relevant data sources</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="include-block scroll-reveal">
+      <div class="include-header"><div class="include-num">06</div><div class="include-title"><h3>Custom KPI Dashboard</h3><span>We build a dashboard around the agreed business requirements</span></div></div>
+      <div class="include-content">
+        <p>Depending on the selected scope, it may include:</p>
+        <ul>
+          <li>KPI cards</li>
+          <li>Trend charts</li>
+          <li>Period comparisons</li>
+          <li>Channel comparisons</li>
+          <li>Product rankings</li>
+          <li>Customer metrics</li>
+          <li>Profitability views</li>
+          <li>Funnel views</li>
+          <li>Filters and date controls</li>
+          <li>Data-source summaries</li>
+        </ul>
+        <div class="insight-box"><b>Note:</b> The final number of pages, charts, filters, and calculated metrics depends on the selected dashboard scope and data complexity.</div>
+      </div>
+    </div>
+
+    <div class="include-block scroll-reveal">
+      <div class="include-header"><div class="include-num">07</div><div class="include-title"><h3>Data Validation and Initial Error Check</h3><span>Before handover, we review the initial setup</span></div></div>
+      <div class="include-content">
+        <p>We check for:</p>
+        <ul>
+          <li>Failed connections</li>
+          <li>Missing data</li>
+          <li>Duplicate records</li>
+          <li>Unexpected data gaps</li>
+          <li>Formatting problems</li>
+          <li>Broken data relationships</li>
+          <li>Loading issues</li>
+          <li>Unexpected metric differences</li>
+        </ul>
+        <div class="insight-box"><b>Note:</b> This is an initial setup check. Ongoing refresh monitoring, automated alerts, and recurring error handling are available through the optional automation upgrade.</div>
+      </div>
+    </div>
+
+    <div class="include-block scroll-reveal">
+      <div class="include-header"><div class="include-num">08</div><div class="include-title"><h3>Technical Handover</h3><span>You receive documentation covering</span></div></div>
+      <div class="include-content">
+        <ul>
+          <li>Connected data sources</li>
+          <li>Main data structure</li>
+          <li>Dashboard sections</li>
+          <li>KPI definitions</li>
+          <li>Data limitations</li>
+          <li>Important assumptions</li>
+          <li>Access and usage notes</li>
+          <li>Technical handover information</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- DASHBOARD VIEWS -->
+<section id="views" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Dashboard Views</div>
+      <h2>Dashboard Views</h2>
+      <p>Detailed views that may be included depending on available data.</p>
+    </div>
+
+    <div class="view-block scroll-reveal">
+      <div class="view-block-header"><div class="view-block-icon"><i class="fa-solid fa-chart-line"></i></div><h3>Overall Business Performance</h3></div>
+      <p class="view-sub">Depending on the available data, this view may include:</p>
+      <ul>
+        <li>Total revenue</li><li>Net revenue</li><li>Orders</li><li>Units sold</li>
+        <li>Average order value</li><li>New customers</li><li>Returning customers</li><li>Refunds</li>
+        <li>Discounts</li><li>Sales trend</li><li>Order trend</li>
+      </ul>
+    </div>
+
+    <div class="view-block scroll-reveal">
+      <div class="view-block-header"><div class="view-block-icon"><i class="fa-solid fa-bullhorn"></i></div><h3>Marketing Performance</h3></div>
+      <p class="view-sub">Where advertising data is connected, this view may include:</p>
+      <ul>
+        <li>Marketing spend</li><li>Impressions</li><li>Reach</li><li>Clicks</li>
+        <li>CTR</li><li>CPC</li><li>CPM</li><li>Conversions</li>
+        <li>Cost per purchase</li><li>Reported revenue</li><li>Reported ROAS</li><li>Channel comparison</li>
+        <li>Campaign comparison</li>
+      </ul>
+    </div>
+
+    <div class="view-block scroll-reveal">
+      <div class="view-block-header"><div class="view-block-icon"><i class="fa-solid fa-users"></i></div><h3>Customer and Retention</h3></div>
+      <p class="view-sub">Where customer or CRM data is available, this view may include:</p>
+      <ul>
+        <li>New customers</li><li>Returning customers</li><li>Repeat-purchase rate</li><li>Customer revenue</li>
+        <li>Order frequency</li><li>Average customer value</li><li>Customer segments</li><li>First-purchase trend</li>
+        <li>Returning-customer trend</li>
+      </ul>
+    </div>
+
+    <div class="view-block scroll-reveal">
+      <div class="view-block-header"><div class="view-block-icon"><i class="fa-solid fa-boxes-stacked"></i></div><h3>Product Performance</h3></div>
+      <p class="view-sub">Where product data is available, this view may include:</p>
+      <ul>
+        <li>Product revenue</li><li>Units sold</li><li>Top products</li><li>Product sales trends</li>
+        <li>Category performance</li><li>Product contribution</li><li>Product-cost fields</li><li>Margin signals</li>
+        <li>Product comparison</li><li>Low-performing products</li>
+      </ul>
+    </div>
+
+    <div class="view-block scroll-reveal">
+      <div class="view-block-header"><div class="view-block-icon"><i class="fa-solid fa-coins"></i></div><h3>Profitability</h3></div>
+      <p class="view-sub">Where reliable cost data is available, this view may include:</p>
+      <ul>
+        <li>Product cost</li><li>Gross margin</li><li>Margin percentage</li><li>Contribution-margin signals</li>
+        <li>Marketing cost</li><li>Discount impact</li><li>Refund impact</li><li>Return impact</li>
+        <li>Revenue versus profit trend</li><li>Cost trend</li>
+      </ul>
+      <div class="insight-box"><b>Note:</b> Without reliable cost data, the dashboard may show revenue and profitability signals rather than a complete profit view.</div>
+    </div>
+
+    <div class="view-block scroll-reveal">
+      <div class="view-block-header"><div class="view-block-icon"><i class="fa-solid fa-filter"></i></div><h3>Conversion and Funnel</h3></div>
+      <p class="view-sub">Where GA4 or another analytics platform is connected, this view may include:</p>
+      <ul>
+        <li>Users</li><li>Sessions</li><li>Product views</li><li>Add-to-cart events</li>
+        <li>Checkout activity</li><li>Purchases</li><li>Conversion rate</li><li>Funnel drop-off</li>
+        <li>Device performance</li><li>Traffic-source performance</li><li>Landing-page performance</li>
+      </ul>
+    </div>
+
+    <div class="view-block scroll-reveal">
+      <div class="view-block-header"><div class="view-block-icon"><i class="fa-solid fa-warehouse"></i></div><h3>Inventory and Returns</h3></div>
+      <p class="view-sub">Where inventory and returns data is available, this view may include:</p>
+      <ul>
+        <li>Current stock</li><li>Units sold</li><li>Sales velocity</li><li>Low-stock signals</li>
+        <li>Overstock signals</li><li>Return rate</li><li>Refund amount</li><li>Return reasons</li>
+        <li>Product-level returns</li><li>Revenue affected by refunds</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- EXAMPLE DASHBOARD CONFIGURATIONS -->
+<section id="examples" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Examples</div>
+      <h2>Example Dashboard Configurations</h2>
+      <p>Four example configurations showing how data sources map to dashboard views.</p>
+    </div>
+    <div class="config-grid">
+      <div class="config-card scroll-reveal">
+        <div class="config-icon"><i class="fa-solid fa-bullhorn"></i></div>
+        <h4>Marketing and Sales Dashboard</h4>
+        <div class="config-label">Data sources</div>
+        <div class="config-code">Shopify + GA4 + Meta Ads + Google Ads</div>
+        <div class="config-label">Possible views</div>
+        <ul>
+          <li>Revenue</li><li>Orders</li><li>Conversion rate</li><li>Marketing spend</li>
+          <li>ROAS</li><li>Cost per purchase</li><li>Channel comparison</li><li>Campaign performance</li>
+          <li>Funnel performance</li>
+        </ul>
+      </div>
+      <div class="config-card scroll-reveal">
+        <div class="config-icon"><i class="fa-solid fa-coins"></i></div>
+        <h4>Product and Profitability Dashboard</h4>
+        <div class="config-label">Data sources</div>
+        <div class="config-code">Shopify + Product Cost File + Inventory File + Returns File</div>
+        <div class="config-label">Possible views</div>
+        <ul>
+          <li>Product revenue</li><li>Product cost</li><li>Margin signals</li><li>Inventory movement</li>
+          <li>Return rate</li><li>Refund impact</li><li>Product performance</li><li>Slow-moving product signals</li>
+        </ul>
+      </div>
+      <div class="config-card scroll-reveal">
+        <div class="config-icon"><i class="fa-solid fa-users"></i></div>
+        <h4>Customer and Retention Dashboard</h4>
+        <div class="config-label">Data sources</div>
+        <div class="config-code">Shopify + GA4 + Klaviyo + Meta Ads</div>
+        <div class="config-label">Possible views</div>
+        <ul>
+          <li>New and returning customers</li><li>Repeat-purchase rate</li><li>Email revenue</li><li>Customer segments</li>
+          <li>Customer-value signals</li><li>Channel comparison</li><li>Retention trends</li>
+        </ul>
+      </div>
+      <div class="config-card scroll-reveal">
+        <div class="config-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h4>Multi-Area E-Commerce Dashboard</h4>
+        <div class="config-label">Data sources</div>
+        <div class="config-code">Shopify + GA4 + Meta Ads + Google Ads + Product Cost File</div>
+        <div class="config-label">Possible views</div>
+        <ul>
+          <li>Overall business performance</li><li>Marketing performance</li><li>Customer performance</li><li>Product performance</li>
+          <li>Profitability</li><li>Conversion funnel</li><li>Revenue and spend trends</li>
+        </ul>
+      </div>
+    </div>
+    <div class="boundary-note scroll-reveal" style="max-width:860px; margin:32px auto 0;">
+      <p style="font-size:15px; color:var(--text) !important;">A multi-area dashboard can include sales, marketing, customer, product, and profitability views. The exact scope depends on the required KPIs, calculations, dashboard pages, and data relationships.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- UP TO FIVE STANDARD DATA SOURCES -->
+<section id="data-sources" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Data Sources</div>
+      <h2>Up to Five Standard Data Sources</h2>
+      <p>"Up to five standard data sources" means that the agreed dashboard can use data from a maximum of five standard platforms, files, or business data sources.</p>
+    </div>
+    <div style="max-width:860px; margin:0 auto;">
+      <p style="font-size:15px; margin-bottom:12px;"><strong>For example:</strong></p>
+      <div style="background:var(--surface-2); border:1px solid var(--border); border-radius:8px; padding:16px 20px; margin-bottom:24px; font-family:'JetBrains Mono', monospace; font-size:14px; color:var(--text);">
+        Shopify<br/>GA4<br/>Meta Ads<br/>Google Ads<br/>Product Cost Spreadsheet
+      </div>
+      <p style="font-size:15px; margin-bottom:12px;"><strong>A data source is where the information comes from. It is not the same as a dashboard page.</strong></p>
+      <p style="font-size:15px; margin-bottom:12px;">For example, four data sources may support several dashboard views:</p>
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:24px; text-align:center;">
+        <div style="font-family:'JetBrains Mono', monospace; font-size:14px; color:var(--text); margin-bottom:16px;">Shopify + GA4 + Meta Ads + Product Cost File</div>
+        <div style="font-size:24px; color:var(--accent); margin-bottom:16px;"><i class="fa-solid fa-arrow-down"></i></div>
+        <div style="font-size:15px; font-weight:600; color:var(--text);">Sales + Marketing + Customer + Product + Profitability Views</div>
+      </div>
+      <p style="font-size:15px; margin-top:24px; margin-bottom:8px;"><strong>The final dashboard scope depends on:</strong></p>
+      <ul class="price-factor-list" style="list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Selected data sources</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Required business areas</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>KPI count</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Historical data period</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Data quality</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Required calculations</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Dashboard pages</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Integration complexity</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- OPTIONAL ADD-ON -->
+<section id="addon" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Optional Add-On</div>
+      <h2>Automated Scheduling, Refresh Monitoring &amp; Error Alerts</h2>
+      <p>Add recurring data refresh and automated monitoring to keep your dashboard updated.</p>
+    </div>
+    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <p style="font-size:15px; margin-bottom:16px;"><strong>May include:</strong></p>
+      <ul style="list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:24px;">
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Daily, weekly, or agreed refresh schedule</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Automated pipeline execution</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Refresh-status monitoring</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Failed-refresh alerts</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Missing-data alerts</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Data-loading error notifications</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Refresh and error logs</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Automated data validation</li>
+      </ul>
+      <div style="text-align:center; padding:20px; background:var(--surface); border:2px solid var(--accent); border-radius:var(--radius); margin-bottom:24px;">
+        <div style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:4px;">Starting from</div>
+        <div style="font-size:32px; font-weight:800; color:var(--accent); font-family:'Manrope', sans-serif;">$200</div>
+      </div>
+      <p style="font-size:14px; margin-bottom:8px;"><strong>The final add-on price depends on:</strong></p>
+      <ul class="price-factor-list">
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Refresh frequency</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Number of data sources</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Data volume</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>API limitations</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Pipeline complexity</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Alert requirements</li>
+      </ul>
+      <div class="insight-box"><b>Note:</b> Cloud hosting, software, API, and third-party platform costs are separate unless explicitly included in the proposal.</div>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="/book?package=e-commerce-intelligence-dashboard" class="btn btn-primary">Add Automated Refresh</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- HOW THE SERVICE WORKS -->
+<section id="process" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Process</div>
+      <h2>How the Service Works</h2>
+      <p>From objective definition to validation and handover in eight steps.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step scroll-reveal">
+        <div class="step-num">1</div>
+        <h4>Define the Dashboard Objective</h4>
+        <p>We confirm what you want to monitor and which business areas matter most.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">2</div>
+        <h4>Confirm the Data Sources</h4>
+        <p>We identify the platforms, files, access requirements, historical period, and relevant data fields.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">3</div>
+        <h4>Review Data Availability</h4>
+        <p>We check whether the required data is available, accessible, and consistent enough for the selected dashboard scope.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">4</div>
+        <h4>Configure the Data Environment</h4>
+        <p>We set up the required cloud storage, database, access, and data structure.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">5</div>
+        <h4>Connect and Prepare the Data</h4>
+        <p>We connect the agreed sources, clean the data, standardize key fields, and prepare the required relationships.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">6</div>
+        <h4>Build the Dashboard</h4>
+        <p>We configure the selected KPI views, charts, filters, comparisons, and dashboard sections.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">7</div>
+        <h4>Add Optional Automation</h4>
+        <p>If selected, we add the audit intelligence module, automated scheduling, refresh monitoring, and error alerts.</p>
+      </div>
+      <div class="process-step scroll-reveal">
+        <div class="step-num">8</div>
+        <h4>Validate and Handover</h4>
+        <p>We test the setup, document the system, and provide the dashboard and technical handover information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT YOU NEED TO PROVIDE -->
+<section id="provide" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Your Requirements</div>
+      <h2>What You Need to Provide</h2>
+      <p>Depending on the selected scope, you may need to provide:</p>
+    </div>
+    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <ul style="list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Platform access</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>API permissions</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Historical data exports</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Product and cost files</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Inventory data</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Return and refund data</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Existing KPI definitions</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Existing reports or dashboards</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Preferred reporting period</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Required business metrics</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>A technical contact, where necessary</li>
+      </ul>
+      <div class="insight-box"><b>Note:</b> The quality of the dashboard depends on the completeness, consistency, and accessibility of the source data.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT IS NOT INCLUDED -->
+<section id="not-included" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Scope Boundary</div>
+      <h2>What Is Not Included</h2>
+      <p>The following are not included in the standard dashboard setup unless specifically agreed:</p>
+    </div>
+    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <ul class="not-included">
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited data sources</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited dashboard pages</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Unlimited metrics or visualizations</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Advanced predictive analytics</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Machine-learning models</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Advanced attribution modeling</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Advanced customer identity resolution</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Complex financial modeling</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Formal accounting or bookkeeping</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Full ERP implementation</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Custom software application development</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Daily human analysis</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Ongoing business consulting</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Campaign management</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Website implementation</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Email or CRM campaign execution</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Inventory management</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Pipeline maintenance</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Continuous technical support</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Cloud, API, or software fees</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Automated scheduling, unless added separately</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Recurring refreshes, unless added separately</li>
+        <li style="font-size:14px;"><i class="fa-solid fa-xmark" style="color:var(--danger); margin-right:8px;"></i>Audit automation modules, unless added separately</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ADDITIONAL SCOPE AND PRICING -->
+<section id="additional-scope" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Additional Scope</div>
+      <h2>Additional Scope and Pricing</h2>
+      <p>The published starting price applies to a standard dashboard setup using up to five standard data sources and an agreed dashboard scope.</p>
+    </div>
+    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <p style="font-size:15px; margin-bottom:16px;"><strong>Additional scope may require a separate quotation for:</strong></p>
+      <ul class="price-factor-list">
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Multiple stores</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Multiple countries or currencies</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Complex APIs</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Large historical datasets</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Extensive data cleaning</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Complex customer matching</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Complex SKU or variant mapping</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Advanced cost allocation</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Accounting or ERP connections</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Additional dashboard pages</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Advanced visualizations</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Complex calculations</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Custom alert logic</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Higher refresh frequency</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Additional audit automation modules</li>
+        <li><i class="fa-solid fa-circle" style="font-size:5px; color:var(--accent); margin-right:8px; vertical-align:middle;"></i>Ongoing maintenance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing" style="background: var(--bg);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Pricing</div>
+      <h2>Pricing</h2>
+      <p>Three pricing options depending on the scope of your requirements.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card featured scroll-reveal">
+        <div class="eyebrow" style="margin: 0 auto;">Core Service</div>
+        <h3 style="font-size: 20px; margin-top: 16px;">E-Commerce Intelligence Dashboard</h3>
+        <div class="price-amt">Starting from $850</div>
+        <p class="price-sub">Typical timeline: 5&ndash;7 business days</p>
+        <ul class="price-features">
+          <li><i class="fa-solid fa-check"></i> Up to 5 standard data sources</li>
+          <li><i class="fa-solid fa-check"></i> Custom KPI dashboard</li>
+          <li><i class="fa-solid fa-check"></i> Data pipeline build</li>
+          <li><i class="fa-solid fa-check"></i> Cloud data environment</li>
+          <li><i class="fa-solid fa-check"></i> Technical handover</li>
+        </ul>
+        <a href="/book?package=e-commerce-intelligence-dashboard" class="btn btn-primary" style="width: 100%; justify-content: center;">Build My Intelligence Dashboard</a>
+      </div>
+      <div class="pricing-card scroll-reveal">
+        <div class="eyebrow" style="margin: 0 auto;">Optional Add-On</div>
+        <h3 style="font-size: 20px; margin-top: 16px;">Automated Audit Intelligence</h3>
+        <div class="price-amt">Custom Quote</div>
+        <p class="price-sub">Add deeper monitoring to your dashboard</p>
+        <ul class="price-features">
+          <li><i class="fa-solid fa-check"></i> Marketing Performance Automation</li>
+          <li><i class="fa-solid fa-check"></i> Customer Retention &amp; LTV Automation</li>
+          <li><i class="fa-solid fa-check"></i> Product Profitability Automation</li>
+          <li><i class="fa-solid fa-check"></i> E-Commerce Profitability Automation</li>
+          <li><i class="fa-solid fa-check"></i> Operations Efficiency Automation</li>
+        </ul>
+        <a href="/book?package=e-commerce-intelligence-dashboard" class="btn btn-primary" style="width: 100%; justify-content: center;">Add Audit Automation</a>
+      </div>
+      <div class="pricing-card scroll-reveal">
+        <div class="eyebrow" style="margin: 0 auto;">Optional Add-On</div>
+        <h3 style="font-size: 20px; margin-top: 16px;">Scheduling &amp; Alerts</h3>
+        <div class="price-amt">Starting from $200</div>
+        <p class="price-sub">Automated refresh &amp; error alerts</p>
+        <ul class="price-features">
+          <li><i class="fa-solid fa-check"></i> Daily/weekly refresh schedule</li>
+          <li><i class="fa-solid fa-check"></i> Failed-refresh alerts</li>
+          <li><i class="fa-solid fa-check"></i> Missing-data alerts</li>
+          <li><i class="fa-solid fa-check"></i> Refresh &amp; error logs</li>
+          <li><i class="fa-solid fa-check"></i> Automated data validation</li>
+        </ul>
+        <a href="/book?package=e-commerce-intelligence-dashboard" class="btn btn-primary" style="width: 100%; justify-content: center;">Add Automated Refresh</a>
+      </div>
+    </div>
+    <div class="boundary-note scroll-reveal" style="max-width:860px; margin:32px auto 0;">
+      <h4><i class="fa-solid fa-circle-info"></i> Pricing Note</h4>
+      <p>Final pricing is confirmed after reviewing the selected data sources, dashboard views, KPI requirements, historical data, automation needs, and technical complexity.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section id="faq" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-container" style="max-width:800px; margin:0 auto;">
+      <div class="faq-item active scroll-reveal">
+        <div class="faq-q">What is included in the $850 starting price? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The starting price covers a standard data pipeline and custom dashboard setup using up to five standard data sources within an agreed dashboard scope.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can the dashboard include sales, marketing, customers, products, and profitability? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. These areas can be included as dashboard views where the required data is available. The final scope depends on the number of KPIs, calculations, pages, and data relationships required.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Does five data sources mean five dashboard pages? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. Data sources are where the data comes from. Dashboard views are the business areas created from that data. One source can support several dashboard views, and several sources may be combined into one view.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can Shopify, GA4, Meta Ads, and Google Ads be connected? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes, where the required access and data are available.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Will the dashboard show true profit? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Only when reliable cost data is available. Without product costs, shipping, payment fees, discounts, refunds, returns, and other relevant cost inputs, the dashboard may show revenue and profitability signals rather than a complete profit figure.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Will the dashboard update automatically? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Not in the standard setup. Automated updates are available through the Automated Scheduling, Refresh Monitoring &amp; Error Alerts add-on.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Will I receive error alerts? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The standard setup includes initial validation and an initial pipeline error check. Live scheduled-refresh and failure alerts require the automation add-on.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can I add audit automation later? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. Marketing, retention, product, profitability, and operations automation can be added later, subject to data availability and technical scope.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Does audit automation include a written insight report? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The selected audit automation module may include text-based insight summaries and basic recommendations inside the dashboard or agreed reporting output. The depth depends on the selected module and scope.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can I add another data source later? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. Additional sources can be added later, subject to compatibility, data complexity, and additional scope.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Can I change the KPIs later? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Yes. KPI changes or additional calculations can be scoped after the initial setup. Major dashboard redesigns or new data models may require an additional fee.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Are cloud and software costs included? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. Cloud hosting, software, API, and third-party platform costs are separate unless explicitly included in the proposal.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">Is ongoing maintenance included? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No. The setup includes the initial build and handover. Ongoing maintenance can be scoped separately.</div>
+      </div>
+      <div class="faq-item scroll-reveal">
+        <div class="faq-q">How long does setup take? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">The standard dashboard setup typically takes 5&ndash;7 business days after the required access and data are available.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section style="background: var(--bg); text-align:center; padding: 80px 0;">
+  <div class="container">
+    <div style="max-width:720px; margin:0 auto;">
+      <h2 style="font-size: 32px; margin-bottom: 16px;">Build One Clear View of Your E-Commerce Business</h2>
+      <p style="font-size: 17px; color: var(--muted) !important; margin-bottom: 16px;">Connect your important business data, organize the information, and monitor the performance metrics that matter most.</p>
+      <p style="font-size: 15px; color: var(--muted) !important; margin-bottom: 32px;">Then add deeper audit intelligence, automated refreshes, monitoring, and error alerts when your business requires them.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="/book?package=e-commerce-intelligence-dashboard" class="btn btn-primary">Build My Intelligence Dashboard</a>
+        <a href="/book?package=e-commerce-intelligence-dashboard" class="btn btn-outline" style="border-color:var(--border-dark);">Discuss My Dashboard Requirements</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="padding: 40px 0; text-align: center; color: var(--muted); font-size: 14px;">&copy; 2025 Moz Intelligence. All rights reserved.</footer>
