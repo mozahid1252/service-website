@@ -26,8 +26,13 @@ span{color:var(--muted) !important}
 .data-source-item span{color:var(--muted) !important}
 .insight-box{color:var(--muted) !important}
 .insight-box b{color:var(--text) !important}
-.arch-flow-node{color:var(--text) !important}
-.arch-flow-node.accent{color:var(--accent-dark) !important}
+.outcome-card h4{color:var(--text) !important}
+.outcome-card p{color:var(--muted) !important}
+.view-grid li{color:var(--muted) !important}
+.card-section h3{color:var(--text) !important}
+.card-section .card-sub{color:var(--muted) !important}
+.card-section .card-price{color:var(--text) !important}
+.card-section .card-timeline{color:var(--muted) !important}
 </style>
 
 
@@ -35,231 +40,180 @@ span{color:var(--muted) !important}
   <div class="nav-inner">
     <a href="#" class="logo">Moz <span>Intelligence</span></a>
     <ul class="nav-links" style="gap:24px; list-style:none;">
-      <li><a href="#dashboard" style="color:var(--muted); font-size:14px;">Intelligence Dashboard</a></li>
-      <li><a href="#automation" style="color:var(--muted); font-size:14px;">Audit Automation</a></li>
-      <li><a href="#scheduling" style="color:var(--muted); font-size:14px;">Scheduling &amp; Alerts</a></li>
-      <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
+      <li><a href="#views" style="color:var(--muted); font-size:14px;">What You See</a></li>
+      <li><a href="#signs" style="color:var(--muted); font-size:14px;">Warning Signs</a></li>
+      <li><a href="#sections" style="color:var(--muted); font-size:14px;">3 Sections</a></li>
       <li><a href="/" style="color:var(--muted); font-size:14px;">Back to MozIntelligence</a></li>
     </ul>
 
 <!-- Mobile Hamburger Menu -->
 <button class="nav-hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-    <a href="#pricing" class="nav-cta">Get Started</a>
+    <a href="#sections" class="nav-cta">Get Started</a>
   </div>
 </nav>
 <div class="nav-mobile-menu" id="mobile-menu-intelligence">
-    <a href="#dashboard">Intelligence Dashboard</a>
-    <a href="#automation">Audit Automation</a>
-    <a href="#scheduling">Scheduling &amp; Alerts</a>
-    <a href="#pricing">Pricing</a>
+    <a href="#views">What You See</a>
+    <a href="#signs">Warning Signs</a>
+    <a href="#sections">3 Sections</a>
     <a href="/">Back to MozIntelligence</a>
-    <a href="#pricing" class="nav-mobile-cta">Get Started</a>
+    <a href="#sections" class="nav-mobile-cta">Get Started</a>
   </div>
 
 
 <header class="hero">
   <div class="container">
     <div class="eyebrow" style="margin: 0 auto;">Bundle 02 &middot; E-Commerce Intelligence &amp; Audit Automation</div>
-    <h1>Connect Your Data. See Your Business Clearly. <em>Automate Important Signals.</em></h1>
-    <p>Bring your business data into one custom dashboard, then add deeper monitoring for the areas that matter most.</p>
-    <div class="arch-flow">
-      <div class="arch-flow-node">Data Sources</div>
-      <div class="arch-flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="arch-flow-node accent">Custom Intelligence Dashboard</div>
-      <div class="arch-flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="arch-flow-node">Audit-Specific Automation Modules</div>
-      <div class="arch-flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
-      <div class="arch-flow-node accent">Automated Scheduling, Monitoring &amp; Alerts</div>
+    <h1>Connect Your Data. Build a <em>Clearer View</em> of Your Business.</h1>
+    <p style="font-size: 17px; color: var(--muted) !important; max-width: 720px; margin: 0 auto 16px;">Your business data may be spread across your e-commerce platform, analytics tools, advertising accounts, CRM, spreadsheets, and inventory files.</p>
+    <p style="font-size: 17px; color: var(--text) !important; max-width: 720px; margin: 0 auto 32px;">This service connects the relevant data sources, organizes the information, and turns it into one custom dashboard where you can monitor your most important business performance metrics.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:32px; justify-content:center; margin-bottom:32px;">
+      <div>
+        <div style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:4px;">Timeline</div>
+        <div style="font-size:18px; font-weight:700; color:var(--text);">Typically 7&ndash;10 business days</div>
+      </div>
+      <div>
+        <div style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:4px;">Investment</div>
+        <div style="font-size:18px; font-weight:700; color:var(--accent);">Starting from $850</div>
+      </div>
+      <div>
+        <div style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:4px;">Data Sources</div>
+        <div style="font-size:18px; font-weight:700; color:var(--text);">Up to 5 standard platforms</div>
+      </div>
     </div>
-    <div class="hero-cta" style="margin-top: 32px;">
-      <a href="#pricing" class="btn btn-primary">Build My Intelligence Dashboard</a>
-      <a href="#dashboard" class="btn btn-outline" style="border-color:var(--border-dark);">Explore the Dashboard</a>
+    <div class="hero-cta">
+      <a href="#sections" class="btn btn-primary">Build My Business Dashboard</a>
+      <a href="#views" class="btn btn-outline" style="border-color:var(--border-dark);">What You See</a>
     </div>
+    <p style="font-size: 13px; color: var(--light) !important; margin-top: 20px; font-style: italic;">One-time data pipeline and dashboard setup. Automated scheduling, recurring refreshes, and live refresh alerts are available as an optional upgrade.</p>
   </div>
 </header>
 
 
-<!-- SECTION 1: E-COMMERCE INTELLIGENCE DASHBOARD -->
-<section id="dashboard" style="background: var(--surface);">
+<!-- WHAT THIS DASHBOARD HELPS YOU SEE -->
+<section id="views" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">Section 01</div>
-      <h2>E-Commerce Intelligence Dashboard</h2>
-      <p>One Custom Dashboard for Your Business</p>
+      <div class="eyebrow">Core Views</div>
+      <h2>What This Dashboard Helps You See</h2>
+      <p>Depending on your selected data sources and business requirements, your dashboard may include core views for:</p>
     </div>
-    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
-      <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:center; margin-bottom:24px;">
-        <div>
-          <div style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:4px;">Investment</div>
-          <div style="font-size:28px; font-weight:800; color:var(--text); font-family:'Manrope', sans-serif;">Starting from $850</div>
-        </div>
-        <div>
-          <div style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:4px;">Timeline</div>
-          <div style="font-size:16px; font-weight:600; color:var(--text);">Typically 5&ndash;7 business days</div>
-        </div>
-      </div>
-      <p style="font-size:15px; margin-bottom:16px;">Connect up to five standard data sources and monitor the key areas of your e-commerce business in one dashboard.</p>
-      <p style="font-size:15px; margin-bottom:10px;"><strong>Dashboard may include:</strong></p>
-      <ul class="dash-include-list">
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Overall sales performance</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Marketing performance</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Customer and retention metrics</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Product performance</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Profitability metrics</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Conversion and funnel metrics</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Inventory and returns metrics</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Business performance trends</li>
-      </ul>
-    </div>
-    <div style="max-width:860px; margin:32px auto 0;">
-      <p style="font-size:15px; margin-bottom:12px;"><strong>Includes:</strong></p>
-      <ul class="dash-include-list">
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Cloud infrastructure setup</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Up to 5 standard data sources</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Data pipeline build</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Data cleaning and standardization</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Data modeling and transformation</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Multi-source data integration</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>BigQuery setup</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Secure credential configuration</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Custom KPI dashboard</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Data validation and initial pipeline error check</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Technical handover</li>
-      </ul>
-    </div>
-    <div style="text-align:center; margin-top:32px;">
-      <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary">Build My Intelligence Dashboard</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- SECTION 2: AUTOMATED AUDIT INTELLIGENCE -->
-<section id="automation" style="background: var(--bg);">
-  <div class="container">
-    <div class="header-center">
-      <div class="eyebrow">Section 02</div>
-      <h2>Automated Audit Intelligence</h2>
-      <p>Add Deeper Monitoring to Your Dashboard</p>
-    </div>
-    <div style="max-width:860px; margin:0 auto 48px; text-align:center;">
-      <p style="font-size:16px;">The standard dashboard shows your important business metrics. Audit Automation adds deeper calculations, classifications, performance signals, insight summaries, and basic recommendations for a selected business area.</p>
-    </div>
-
-    <div class="module-grid">
-      <!-- Module 1: Marketing Performance -->
-      <div class="module-card scroll-reveal">
-        <div class="module-icon"><i class="fa-solid fa-bullhorn"></i></div>
-        <div class="module-label">Module 01</div>
-        <h4>Marketing Performance Automation</h4>
-        <p style="font-size:13px; margin-bottom:12px;"><strong>Monitor:</strong></p>
-        <ul>
-          <li>Channel performance</li>
-          <li>CAC</li>
-          <li>ROAS</li>
-          <li>Marketing spend</li>
-          <li>Campaign trends</li>
-          <li>Channel efficiency signals</li>
-          <li>Budget-review alerts</li>
-          <li>Basic insight summaries</li>
-        </ul>
-      </div>
-      <!-- Module 2: Customer Retention & LTV -->
-      <div class="module-card scroll-reveal">
-        <div class="module-icon"><i class="fa-solid fa-users"></i></div>
-        <div class="module-label">Module 02</div>
-        <h4>Customer Retention &amp; LTV Automation</h4>
-        <p style="font-size:13px; margin-bottom:12px;"><strong>Monitor:</strong></p>
-        <ul>
-          <li>Repeat-purchase rate</li>
-          <li>Customer segments</li>
-          <li>RFM groups</li>
-          <li>Cohort retention</li>
-          <li>LTV signals</li>
-          <li>Inactivity signals</li>
-          <li>Retention trends</li>
-          <li>Basic retention recommendations</li>
-        </ul>
-      </div>
-      <!-- Module 3: Product Profitability -->
-      <div class="module-card scroll-reveal">
-        <div class="module-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-        <div class="module-label">Module 03</div>
-        <h4>Product Profitability Automation</h4>
-        <p style="font-size:13px; margin-bottom:12px;"><strong>Monitor:</strong></p>
-        <ul>
-          <li>Product revenue</li>
-          <li>Product margin signals</li>
-          <li>ABC classification</li>
-          <li>Sales velocity</li>
-          <li>Return rate</li>
-          <li>Slow-moving products</li>
-          <li>Bundle opportunities</li>
-          <li>Product-priority signals</li>
-        </ul>
-      </div>
-      <!-- Module 4: E-Commerce Profitability -->
-      <div class="module-card scroll-reveal">
-        <div class="module-icon"><i class="fa-solid fa-coins"></i></div>
-        <div class="module-label">Module 04</div>
-        <h4>E-Commerce Profitability Automation</h4>
-        <p style="font-size:13px; margin-bottom:12px;"><strong>Monitor:</strong></p>
-        <ul>
-          <li>Product contribution</li>
-          <li>Channel contribution</li>
-          <li>Cost growth</li>
-          <li>Discount impact</li>
-          <li>Refund and return impact</li>
-          <li>Revenue-versus-profit trend</li>
-          <li>Break-even indicators</li>
-          <li>Margin-pressure alerts</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- What each automation module adds -->
-    <div style="max-width:860px; margin:48px auto 0; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
-      <div class="header-center" style="margin-bottom:24px;">
-        <h3 style="font-size:20px;">What Each Automation Module Adds</h3>
-      </div>
-      <ul class="dash-include-list">
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Audit-specific KPI calculations</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Deeper data interpretation</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Segmenting or scoring</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Status labels such as Monitor, Review, Maintain, Test, or Reduce</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Text-based insight summaries</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Basic recommendations</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Audit-specific dashboard views</li>
-        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Relevant alerts</li>
-      </ul>
-    </div>
-    <div style="text-align:center; margin-top:32px;">
-      <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary">Add Audit Automation</a>
+    <div class="view-grid" style="list-style:none; max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <li style="padding:14px 18px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-chart-line" style="color:var(--accent); margin-right:8px;"></i>Sales and revenue</li>
+      <li style="padding:14px 18px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-bullhorn" style="color:var(--accent); margin-right:8px;"></i>Marketing performance</li>
+      <li style="padding:14px 18px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-users" style="color:var(--accent); margin-right:8px;"></i>Customer and retention</li>
+      <li style="padding:14px 18px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-boxes-stacked" style="color:var(--accent); margin-right:8px;"></i>Product performance</li>
+      <li style="padding:14px 18px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-coins" style="color:var(--accent); margin-right:8px;"></i>Profitability</li>
+      <li style="padding:14px 18px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-filter" style="color:var(--accent); margin-right:8px;"></i>Conversion and funnel activity</li>
+      <li style="padding:14px 18px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-warehouse" style="color:var(--accent); margin-right:8px;"></i>Inventory and returns</li>
+      <li style="padding:14px 18px; background:var(--surface-2); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-arrow-trend-up" style="color:var(--accent); margin-right:8px;"></i>Business performance trends</li>
     </div>
     <div class="boundary-note scroll-reveal" style="max-width:860px; margin:32px auto 0;">
-      <h4><i class="fa-solid fa-circle-info"></i> Note</h4>
-      <p>Audit automation modules are selected and priced separately according to the business area, data requirements, KPI depth, and dashboard scope.</p>
+      <p style="font-size:15px; color:var(--text) !important;">You do not need to monitor multiple platforms separately. The relevant data is organized into one reporting environment with the KPIs that matter to your business.</p>
     </div>
   </div>
 </section>
 
 
-<!-- SECTION 3: AUTOMATED SCHEDULING, REFRESH MONITORING & ERROR ALERTS -->
-<section id="scheduling" style="background: var(--surface);">
+<!-- IS YOUR BUSINESS DATA DIFFICULT TO MONITOR? -->
+<section id="signs" style="background: var(--bg);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">Section 03</div>
-      <h2>Automated Scheduling, Refresh Monitoring &amp; Error Alerts</h2>
-      <p>Keep Your Dashboard Updated Automatically</p>
+      <div class="eyebrow">Warning Signs</div>
+      <h2>Is Your Business Data Difficult to Monitor?</h2>
+      <p>This setup may be useful if:</p>
     </div>
-    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
-      <div style="margin-bottom:24px;">
-        <div style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:4px;">Investment</div>
-        <div style="font-size:28px; font-weight:800; color:var(--text); font-family:'Manrope', sans-serif;">Starting from $200</div>
+    <ul class="signs-list" style="list-style:none; max-width:860px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <li style="padding:12px 16px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Your data is spread across multiple platforms</li>
+      <li style="padding:12px 16px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You manually export reports every week or month</li>
+      <li style="padding:12px 16px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Shopify, GA4, Meta, and Google Ads show different numbers</li>
+      <li style="padding:12px 16px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Your team cannot see sales, marketing, product, and customer data together</li>
+      <li style="padding:12px 16px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>Monthly reporting takes too much time</li>
+      <li style="padding:12px 16px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You rely on disconnected spreadsheets</li>
+      <li style="padding:12px 16px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You want one dashboard for management visibility</li>
+      <li style="padding:12px 16px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You need a structured data foundation for recurring reporting</li>
+      <li style="padding:12px 16px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You want to reduce repetitive data preparation</li>
+      <li style="padding:12px 16px; background:var(--surface); border:1px solid var(--border); border-radius:8px; border-left:3px solid var(--accent); font-size:14px;"><i class="fa-solid fa-circle-exclamation" style="color:var(--accent); margin-right:8px;"></i>You need clearer visibility before making business decisions</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- 3 SECTIONS: 1st and 2nd side by side, 3rd below -->
+<section id="sections" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">3 Sections</div>
+      <h2>What This Service Includes</h2>
+      <p>Build the dashboard, add audit automation, then add scheduling and alerts.</p>
+    </div>
+
+    <!-- 1st and 2nd cards side by side -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:1000px; margin:0 auto 24px;">
+
+      <!-- Card 1: E-Commerce Intelligence Dashboard -->
+      <div class="card-section" style="background:var(--surface); border:2px solid var(--accent); border-radius:var(--radius-lg); padding:32px; box-shadow:0 20px 40px -10px rgba(79,70,229,0.15);">
+        <div style="font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">Section 01</div>
+        <h3 style="font-size:22px; margin-bottom:8px;">E-Commerce Intelligence Dashboard</h3>
+        <p class="card-sub" style="font-size:15px; margin-bottom:20px;">One Custom Dashboard for Your Business</p>
+        <p style="font-size:14px; margin-bottom:20px;">Connect up to five standard data sources and monitor the key areas of your e-commerce business in one dashboard.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
+          <div>
+            <div style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:2px;">Investment</div>
+            <div class="card-price" style="font-size:20px; font-weight:800;">Starting from $850</div>
+          </div>
+          <div>
+            <div style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:2px;">Timeline</div>
+            <div class="card-timeline" style="font-size:14px; font-weight:600;">Typically 5&ndash;7 business days</div>
+          </div>
+        </div>
+        <p style="font-size:14px; margin-bottom:10px;"><strong>Dashboard may include:</strong></p>
+        <ul class="dash-include-list" style="margin-bottom:24px;">
+          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Overall sales performance</li>
+          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Marketing performance</li>
+          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Customer and retention metrics</li>
+          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Product performance</li>
+          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Profitability metrics</li>
+          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Conversion and funnel metrics</li>
+          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Inventory and returns metrics</li>
+          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Business performance trends</li>
+        </ul>
+        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:12px;">Build My Intelligence Dashboard</a>
+        <a href="#sections" class="btn btn-outline" style="width:100%; justify-content:center; border-color:var(--border-dark);">View Details</a>
       </div>
-      <p style="font-size:15px; margin-bottom:16px;">Add recurring data refresh and monitoring to your dashboard or selected audit automation module.</p>
-      <p style="font-size:15px; margin-bottom:10px;"><strong>May include:</strong></p>
-      <ul class="dash-include-list">
+
+      <!-- Card 2: Automated Audit Intelligence -->
+      <div class="card-section" style="background:var(--surface); border:2px solid var(--border-dark); border-radius:var(--radius-lg); padding:32px; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
+        <div style="font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">Section 02</div>
+        <h3 style="font-size:22px; margin-bottom:8px;">Automated Audit Intelligence</h3>
+        <p class="card-sub" style="font-size:15px; margin-bottom:20px;">Add Deeper Monitoring to Your Dashboard</p>
+        <p style="font-size:14px; margin-bottom:20px;">The standard dashboard shows your important business metrics. Audit Automation adds deeper calculations, classifications, performance signals, insight summaries, and basic recommendations for a selected business area.</p>
+        <p style="font-size:14px; margin-bottom:10px;"><strong>Available modules:</strong></p>
+        <ul class="dash-include-list" style="margin-bottom:24px;">
+          <li><i class="fa-solid fa-bullhorn" style="color:var(--accent); margin-right:8px;"></i>Marketing Performance &amp; Profitability Automation</li>
+          <li><i class="fa-solid fa-users" style="color:var(--accent); margin-right:8px;"></i>Customer Retention &amp; LTV Automation</li>
+          <li><i class="fa-solid fa-boxes-stacked" style="color:var(--accent); margin-right:8px;"></i>Product Profitability &amp; Portfolio Automation</li>
+          <li><i class="fa-solid fa-coins" style="color:var(--accent); margin-right:8px;"></i>E-Commerce Profitability Automation</li>
+          <li><i class="fa-solid fa-gears" style="color:var(--accent); margin-right:8px;"></i>Operations Efficiency Automation</li>
+        </ul>
+        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:12px;">Add Audit Automation</a>
+        <a href="#sections" class="btn btn-outline" style="width:100%; justify-content:center; border-color:var(--border-dark);">View Details</a>
+      </div>
+    </div>
+
+    <!-- 3rd card below (full width, centered) -->
+    <div class="card-section" style="background:var(--surface); border:2px solid var(--border-dark); border-radius:var(--radius-lg); padding:32px; max-width:700px; margin:0 auto; transition: border-color 0.3s ease, box-shadow 0.3s ease;">
+      <div style="font-size:13px; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">Section 03</div>
+      <h3 style="font-size:22px; margin-bottom:8px;">Automated Scheduling, Refresh Monitoring &amp; Error Alerts</h3>
+      <p class="card-sub" style="font-size:15px; margin-bottom:20px;">Keep Your Dashboard Updated Automatically</p>
+      <p style="font-size:14px; margin-bottom:20px;">Add recurring data refresh and monitoring to your dashboard or selected audit automation module.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:20px;">
+        <div>
+          <div style="font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:2px;">Investment</div>
+          <div class="card-price" style="font-size:20px; font-weight:800;">Starting from $200</div>
+        </div>
+      </div>
+      <p style="font-size:14px; margin-bottom:10px;"><strong>May include:</strong></p>
+      <ul class="dash-include-list" style="margin-bottom:24px;">
         <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Daily, weekly, or agreed refresh schedule</li>
         <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Automated pipeline execution</li>
         <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Refresh monitoring</li>
@@ -269,81 +223,21 @@ span{color:var(--muted) !important}
         <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Refresh and error logs</li>
         <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Automated data validation</li>
       </ul>
-    </div>
-    <div style="text-align:center; margin-top:32px;">
-      <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary">Add Automated Refresh</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- PRICING -->
-<section id="pricing" style="background: var(--bg);">
-  <div class="container">
-    <div class="header-center">
-      <div class="eyebrow">Pricing</div>
-      <h2>Pricing</h2>
-      <p>Three layers: build the dashboard, add audit automation, then add scheduling and alerts.</p>
-    </div>
-    <div class="pricing-grid">
-      <!-- Pricing Card 1 -->
-      <div class="pricing-card scroll-reveal">
-        <div class="eyebrow" style="margin: 0 auto;">Section 01</div>
-        <h3 style="font-size: 20px; margin-top: 16px;">Intelligence Dashboard</h3>
-        <div class="price-amt" style="font-size: 32px;">From $850</div>
-        <p class="price-sub">One custom dashboard for your business &middot; 5&ndash;7 business days</p>
-        <ul class="price-features" style="grid-template-columns: 1fr;">
-          <li><i class="fa-solid fa-check"></i> Up to 5 data sources</li>
-          <li><i class="fa-solid fa-check"></i> Custom KPI dashboard</li>
-          <li><i class="fa-solid fa-check"></i> Data pipeline build</li>
-          <li><i class="fa-solid fa-check"></i> BigQuery setup</li>
-          <li><i class="fa-solid fa-check"></i> Technical handover</li>
-        </ul>
-        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width: 100%; justify-content: center;">Build My Dashboard</a>
-      </div>
-      <!-- Pricing Card 2 (Featured) -->
-      <div class="pricing-card featured scroll-reveal">
-        <div class="eyebrow" style="margin: 0 auto;">Section 02</div>
-        <h3 style="font-size: 20px; margin-top: 16px;">Audit Automation Modules</h3>
-        <div class="price-amt" style="font-size: 28px;">Custom Quote</div>
-        <p class="price-sub">Add deeper monitoring to your dashboard &middot; Priced per module</p>
-        <ul class="price-features" style="grid-template-columns: 1fr;">
-          <li><i class="fa-solid fa-check"></i> Marketing Performance Automation</li>
-          <li><i class="fa-solid fa-check"></i> Customer Retention &amp; LTV Automation</li>
-          <li><i class="fa-solid fa-check"></i> Product Profitability Automation</li>
-          <li><i class="fa-solid fa-check"></i> E-Commerce Profitability Automation</li>
-          <li><i class="fa-solid fa-check"></i> Insight summaries &amp; alerts</li>
-        </ul>
-        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width: 100%; justify-content: center;">Add Audit Automation</a>
-      </div>
-      <!-- Pricing Card 3 -->
-      <div class="pricing-card scroll-reveal">
-        <div class="eyebrow" style="margin: 0 auto;">Section 03</div>
-        <h3 style="font-size: 20px; margin-top: 16px;">Scheduling &amp; Alerts</h3>
-        <div class="price-amt" style="font-size: 32px;">From $200</div>
-        <p class="price-sub">Automated refresh, monitoring &amp; error alerts</p>
-        <ul class="price-features" style="grid-template-columns: 1fr;">
-          <li><i class="fa-solid fa-check"></i> Daily/weekly refresh schedule</li>
-          <li><i class="fa-solid fa-check"></i> Failed-refresh alerts</li>
-          <li><i class="fa-solid fa-check"></i> Missing-data alerts</li>
-          <li><i class="fa-solid fa-check"></i> Refresh &amp; error logs</li>
-          <li><i class="fa-solid fa-check"></i> Automated data validation</li>
-        </ul>
-        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width: 100%; justify-content: center;">Add Automated Refresh</a>
-      </div>
+      <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width:100%; justify-content:center; margin-bottom:12px;">Add Automated Refresh</a>
+      <a href="#sections" class="btn btn-outline" style="width:100%; justify-content:center; border-color:var(--border-dark);">View Details</a>
     </div>
   </div>
 </section>
 
 
 <!-- FINAL CTA -->
-<section style="background: var(--surface); text-align:center; padding: 80px 0;">
+<section style="background: var(--bg); text-align:center; padding: 80px 0;">
   <div class="container">
     <div style="max-width:720px; margin:0 auto;">
-      <h2 style="font-size: 32px; margin-bottom: 16px;">Connect Your Data. Automate Your Insights.</h2>
+      <h2 style="font-size: 32px; margin-bottom: 16px;">Connect Your Data. See Your Business Clearly.</h2>
       <p style="font-size: 17px; color: var(--muted) !important; margin-bottom: 32px;">Build one custom intelligence dashboard, then add deeper audit automation and automated scheduling to keep your business signals fresh and reliable.</p>
       <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary">Build My Intelligence Dashboard</a>
+        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary">Build My Business Dashboard</a>
         <a href="/" class="btn btn-outline" style="border-color:var(--border-dark);">Back to MozIntelligence</a>
       </div>
     </div>

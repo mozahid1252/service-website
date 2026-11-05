@@ -160,12 +160,20 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
 .insight-box { background: var(--surface-2); border-left: 4px solid var(--accent); padding: 16px; border-radius: 0 8px 8px 0; margin-top: 16px; font-size: 14px; }
 .insight-box b { color: var(--text); }
 
+/* ===== VIEW GRID (What You See) ===== */
+.view-grid li { color: var(--muted); }
+
+/* ===== CARD SECTION ===== */
+.card-section:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.card-section { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 900px) {
   .module-grid, .dash-include-list, .two-col-grid, .pricing-grid, .data-source-grid { grid-template-columns: 1fr !important; }
   .signs-list { display: flex !important; flex-direction: column !important; gap: 12px !important; }
-  .arch-flow { max-width: 100%; }
-  .arch-flow-node { max-width: 100%; }
+  .view-grid { display: flex !important; flex-direction: column !important; gap: 12px !important; }
+  /* Stack side-by-side cards on mobile */
+  .card-section { max-width: 100% !important; }
 }
 
 /* Light Dashboard Mockup Styles */
