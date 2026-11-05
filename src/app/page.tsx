@@ -1676,6 +1676,10 @@ function ServicesSection() {
                     <div className="infra-card-inner">
                       <h4 className="text-white font-bold text-lg mb-1">E-Commerce Intelligence &amp; Audit Automation Dashboard</h4>
                       <p className="text-[#A0B0C0] text-xs mb-4 leading-relaxed">Connect your business data, monitor your most important e-commerce metrics, and add deeper automated insights across marketing, customers, products, and profitability.</p>
+                      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] bg-[rgba(0,198,255,0.05)] mb-4 w-fit">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        Timeline: 7–10 days
+                      </div>
                       <div className="space-y-2 mb-4">
                         <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
                           <span className="text-[#8899AA] text-xs">Dashboard setup</span>
