@@ -1622,6 +1622,54 @@ function ServicesSection() {
           {/* Bundle Cards — features merged in (comparison table removed) */}
           <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {DATA_BUNDLES.map((bundle, i) => {
+              if (i === 0) {
+                return (
+                  <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
+                    <div className="infra-card-inner">
+                      <h4 className="text-white font-bold text-lg mb-1">Data Preparation &amp; Integration</h4>
+                      <p className="text-[#8899AA] text-sm italic mb-2">Prepare the data behind better e-commerce decisions.</p>
+                      <p className="text-[#A0B0C0] text-xs mb-3 leading-relaxed">Connect, clean, organize, and validate the data required for your selected audit, Health Check, or custom analysis.</p>
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] bg-[rgba(0,198,255,0.05)] mb-4">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+                        Up to 5 standard platforms or data sources
+                      </div>
+                      {/* Pricing Tiers */}
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
+                          <span className="text-[#8899AA] text-xs">Specialist Audit Data Preparation</span>
+                          <span className="gradient-text-gold text-xs font-bold">$99–$199</span>
+                        </div>
+                        <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
+                          <span className="text-[#8899AA] text-xs">Health Check Data Preparation</span>
+                          <span className="gradient-text-gold text-xs font-bold">$299–$599</span>
+                        </div>
+                        <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
+                          <span className="text-[#8899AA] text-xs">Custom Analysis Requests</span>
+                          <span className="gradient-text-gold text-xs font-bold">From $99</span>
+                        </div>
+                      </div>
+                      {/* Includes List */}
+                      <div className="mb-4">
+                        <div className="text-[#8899AA] text-xs uppercase tracking-wider font-semibold mb-2">Includes</div>
+                        <div className="space-y-1.5">
+                          {['Data collection or connection','Basic cleaning and standardization','Required field mapping','Missing and duplicate-data review','Audit-ready data preparation'].map((item, ii) => (
+                            <div key={ii} className="flex items-start gap-2 text-[#A0B0C0]">
+                              <span className="text-[#00E676] mt-0.5 shrink-0">{FeatureCheckIcon}</span>
+                              <span className="text-xs">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <a href={`/book?package=data-preparation-integration`} className="infra-book-btn">
+                        Prepare My Data →
+                      </a>
+                      <a href={`${basePath}/data-preparation-integration`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline w-full">
+                        <ExternalLink size={12} /> View Details
+                      </a>
+                    </div>
+                  </div>
+                );
+              }
               const tierKey = BUNDLE_TIER_KEYS[i];
               return (
                 <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
