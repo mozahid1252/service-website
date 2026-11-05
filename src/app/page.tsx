@@ -1670,6 +1670,32 @@ function ServicesSection() {
                   </div>
                 );
               }
+              if (i === 1) {
+                return (
+                  <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
+                    <div className="infra-card-inner">
+                      <h4 className="text-white font-bold text-lg mb-1">E-Commerce Intelligence &amp; Audit Automation Dashboard</h4>
+                      <p className="text-[#A0B0C0] text-xs mb-4 leading-relaxed">Connect your business data, monitor your most important e-commerce metrics, and add deeper automated insights across marketing, customers, products, and profitability.</p>
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
+                          <span className="text-[#8899AA] text-xs">Dashboard setup</span>
+                          <span className="gradient-text-gold text-xs font-bold">From $850</span>
+                        </div>
+                        <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
+                          <span className="text-[#8899AA] text-xs">Audit automation &amp; scheduled refresh</span>
+                          <span className="text-[#8899AA] text-xs font-medium">Available as add-ons</span>
+                        </div>
+                      </div>
+                      <a href={`${basePath}/data-pipeline-dashboard-setup`} target="_blank" rel="noopener noreferrer" className="infra-book-btn">
+                        Explore Intelligence &amp; Automation →
+                      </a>
+                      <a href={`${basePath}/data-pipeline-dashboard-setup`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline w-full">
+                        <ExternalLink size={12} /> View Details
+                      </a>
+                    </div>
+                  </div>
+                );
+              }
               const tierKey = BUNDLE_TIER_KEYS[i];
               return (
                 <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
