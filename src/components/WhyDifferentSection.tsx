@@ -89,7 +89,7 @@ const whyDifferent = {
     { category: "Data Infrastructure", name: "Data Cleaning & Standardization", builtIn: "✕ Not Available", apps: "⚠ Varies", moz: "✓ Continuous Data Auditing & Cleaning" },
     { category: "Data Infrastructure", name: "Automated Data Refresh", builtIn: "⚠ Platform Dependent", apps: "✓ Available (Limited Depth)", moz: "✓ Real-Time Automated Data Refresh" },
     { category: "Strategic Advisory", name: "Strategic Recommendations", builtIn: "⚠ Basic (Platform Insights)", apps: "⚠ Limited", moz: "✓ Strategic Advisory & Actionable Roadmaps" },
-    { category: "Implementation", name: "Implementation Support", builtIn: "✕ Not Available", apps: "⚠ Usually Separate", moz: "✓ Full Done-for-You Implementation" },
+    { category: "Implementation", name: "Implementation Support", builtIn: "✕ Not Available", apps: "⚠ Usually Separate", moz: "✓ Clear, Prioritized Action Plan" },
   ] satisfies CapabilityRow[],
   answer: {
     label: "The Strategic Answer",
@@ -147,11 +147,11 @@ const whyDifferent = {
     ],
     implementation: {
       title: "Implementation Support",
-      subtitle: "Done-for-You Implementation",
+      subtitle: "Clear, Actionable Guidance",
       rows: [
         { tier: "Built-In Analytics", verdict: "no", text: "Not Available" },
         { tier: "Other Analytics Apps", verdict: "warn", text: "Usually Separate" },
-        { tier: "MozIntelligence", verdict: "yes", text: "Full Done-for-You Implementation" },
+        { tier: "MozIntelligence", verdict: "yes", text: "Clear, Prioritized Action Plan" },
       ],
     },
   },

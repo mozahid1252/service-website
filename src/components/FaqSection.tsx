@@ -67,7 +67,7 @@ const faqs = [
   {
     question: "I don't have a marketing team. Will I actually be able to implement your recommendations?",
     answer:
-      "Absolutely. I make every recommendation simple enough for a founder or small team to understand and implement without needing a technical background or a dedicated marketing team. You won't get complicated instructions or a 50-page technical report. Every finding comes with a clear, prioritized action plan written in plain business language, such as \"Pause this ad,\" \"Fix this checkout step,\" or \"Target these high-value customers.\" And if you still don't have the time, resources, or confidence to implement something yourself, that's where my Implementation Add-Ons come in. You can choose Done-With-You support for guided implementation or Done-for-You support where I handle the implementation for you. So you can either implement it yourself with clear guidance, or have me help you put it into action.",
+      "Absolutely. I make every recommendation simple enough for a founder or small team to understand and implement without needing a technical background or a dedicated marketing team. You won't get complicated instructions or a 50-page technical report. Every finding comes with a clear, prioritized action plan written in plain business language, such as \"Pause this ad,\" \"Fix this checkout step,\" or \"Target these high-value customers.\" And if you need help putting recommendations into action, custom implementation support is available on request based on your specific scope and requirements.",
   },
   {
     question: "I'm nervous about giving access to my Shopify and ad accounts. Is my data secure?",

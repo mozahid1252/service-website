@@ -108,7 +108,6 @@ const footerData = {
     { label: "Specialized Add-On Packages", href: "/specialized-add-on-packages" },
     { label: "Data Setup & Infrastructure", href: "/data-setup-infrastructure" },
     { label: "Custom Analytics & Insights", href: "/#custom-analytics" },
-    { label: "Implementation Add-Ons", href: "/#implementation" },
   ],
   detailsSetup: [
     { label: "E-Commerce Health Check", href: "/health-check" },
