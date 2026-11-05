@@ -1,14 +1,43 @@
 <!-- MOBILE-OVERRIDE-SAFETY -->
-<style>@media(max-width:900px){.outcomes-grid,.info-grid,.ba-grid,.tech-grid,.inclusion-grid,.service-content,.ld-body,.ld-chart-area,.ld-kpi-row{display:flex !important;flex-direction:column !important}.service-text,.service-visual{min-width:0 !important;max-width:100% !important}.light-dashboard-mock{max-width:100% !important;overflow:hidden}.light-dashboard-mock .ld-body,.light-dashboard-mock .ld-chart-area{overflow-x:auto;-webkit-overflow-scrolling:touch}.light-dashboard-mock .ld-header{flex-wrap:wrap}.ld-table-area{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}.ld-table{min-width:280px}}</style>
+<style>
+@media(max-width:900px){.outcomes-grid,.outcomes-grid.cols-3,.outcomes-grid.cols-4{display:flex !important;flex-direction:column !important;gap:16px !important}}
+
+/* ===== GLOBAL COLOR OVERRIDES (prevents globals.css strong { color:#FFFFFF }) ===== */
+h1,h2,h3,h4,h5{color:var(--text) !important}
+h1 em,h2 em,h3 em{color:var(--accent) !important}
+strong,b{color:var(--text) !important}
+p{color:var(--muted) !important}
+.hero p{color:var(--muted) !important}
+.header-center p{color:var(--muted) !important}
+.eyebrow{color:var(--accent-dark) !important}
+li{color:var(--muted) !important}
+span{color:var(--muted) !important}
+.logo span{color:var(--accent) !important}
+.signs-list li{color:var(--muted) !important}
+.module-card ul li{color:var(--muted) !important}
+.module-card h4{color:var(--text) !important}
+.dash-include-list li{color:var(--muted) !important}
+.boundary-note p{color:var(--muted) !important}
+.boundary-note h4{color:var(--warning) !important}
+.faq-q{color:var(--text) !important}
+.faq-a{color:var(--muted) !important}
+.pricing-features li{color:var(--muted) !important}
+.pricing-card .price-sub{color:var(--muted) !important}
+.data-source-item span{color:var(--muted) !important}
+.insight-box{color:var(--muted) !important}
+.insight-box b{color:var(--text) !important}
+.arch-flow-node{color:var(--text) !important}
+.arch-flow-node.accent{color:var(--accent-dark) !important}
+</style>
 
 
 <nav class="nav">
   <div class="nav-inner">
     <a href="#" class="logo">Moz <span>Intelligence</span></a>
-    <ul class="nav-links" style="gap:32px; list-style:none;">
-      <li><a href="#included" style="color:var(--muted); font-size:14px;">Included</a></li>
-      <li><a href="#services" style="color:var(--muted); font-size:14px;">Services</a></li>
-      <li><a href="#faq" style="color:var(--muted); font-size:14px;">FAQ</a></li>
+    <ul class="nav-links" style="gap:24px; list-style:none;">
+      <li><a href="#dashboard" style="color:var(--muted); font-size:14px;">Intelligence Dashboard</a></li>
+      <li><a href="#automation" style="color:var(--muted); font-size:14px;">Audit Automation</a></li>
+      <li><a href="#scheduling" style="color:var(--muted); font-size:14px;">Scheduling &amp; Alerts</a></li>
       <li><a href="#pricing" style="color:var(--muted); font-size:14px;">Pricing</a></li>
       <li><a href="/" style="color:var(--muted); font-size:14px;">Back to MozIntelligence</a></li>
     </ul>
@@ -18,10 +47,10 @@
     <a href="#pricing" class="nav-cta">Get Started</a>
   </div>
 </nav>
-<div class="nav-mobile-menu" id="mobile-menu-fullpipelinesetup">
-    <a href="#included">Included</a>
-    <a href="#services">Services</a>
-    <a href="#faq">FAQ</a>
+<div class="nav-mobile-menu" id="mobile-menu-intelligence">
+    <a href="#dashboard">Intelligence Dashboard</a>
+    <a href="#automation">Audit Automation</a>
+    <a href="#scheduling">Scheduling &amp; Alerts</a>
     <a href="#pricing">Pricing</a>
     <a href="/">Back to MozIntelligence</a>
     <a href="#pricing" class="nav-mobile-cta">Get Started</a>
@@ -30,442 +59,295 @@
 
 <header class="hero">
   <div class="container">
-    <div class="eyebrow" style="margin: 0 auto;">Bundle 02 · Data Pipeline & Dashboard Setup</div>
-    <h1>BUILD A PERMANENT <em>DATA INFRASTRUCTURE.</em></h1>
-    <p>For ongoing and recurring analytics. We engineer a structured data pipeline that merges all your platforms into one central BigQuery database, giving you reliable, automated reporting without manual exports.</p>
-    <div class="hero-cta">
-      <a href="#pricing" class="btn btn-primary">Build the Pipeline</a>
-      <a href="#included" class="btn btn-outline" style="border-color:var(--border-dark);">What's Included</a>
+    <div class="eyebrow" style="margin: 0 auto;">Bundle 02 &middot; E-Commerce Intelligence &amp; Audit Automation</div>
+    <h1>Connect Your Data. See Your Business Clearly. <em>Automate Important Signals.</em></h1>
+    <p>Bring your business data into one custom dashboard, then add deeper monitoring for the areas that matter most.</p>
+    <div class="arch-flow">
+      <div class="arch-flow-node">Data Sources</div>
+      <div class="arch-flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      <div class="arch-flow-node accent">Custom Intelligence Dashboard</div>
+      <div class="arch-flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      <div class="arch-flow-node">Audit-Specific Automation Modules</div>
+      <div class="arch-flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+      <div class="arch-flow-node accent">Automated Scheduling, Monitoring &amp; Alerts</div>
+    </div>
+    <div class="hero-cta" style="margin-top: 32px;">
+      <a href="#pricing" class="btn btn-primary">Build My Intelligence Dashboard</a>
+      <a href="#dashboard" class="btn btn-outline" style="border-color:var(--border-dark);">Explore the Dashboard</a>
     </div>
   </div>
 </header>
 
-<section id="included" style="background: var(--surface);">
+
+<!-- SECTION 1: E-COMMERCE INTELLIGENCE DASHBOARD -->
+<section id="dashboard" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">The Upgrade</div>
-      <h2>Everything Included in Basic Setup</h2>
-      <p>This package is an upgrade, not a replacement. It includes 100% of the Basic Setup, plus advanced engineering components.</p>
+      <div class="eyebrow">Section 01</div>
+      <h2>E-Commerce Intelligence Dashboard</h2>
+      <p>One Custom Dashboard for Your Business</p>
     </div>
-    <div class="inclusion-grid">
-      <div class="inclusion-card">
-        <h3>Basic Setup Inclusions</h3>
-        <ul class="inclusion-list">
-          <li><i class="fa-solid fa-check-circle"></i> Includes everything in Basic Setup</li>
-          <li><i class="fa-solid fa-check-circle"></i> Relevant Platform API Connections (2-3)</li>
-          <li><i class="fa-solid fa-check-circle"></i> Data Pipeline Build (Extraction)</li>
-          <li><i class="fa-solid fa-check-circle"></i> Basic Data Cleaning</li>
-        </ul>
+    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <div style="display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:center; margin-bottom:24px;">
+        <div>
+          <div style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:4px;">Investment</div>
+          <div style="font-size:28px; font-weight:800; color:var(--text); font-family:'Manrope', sans-serif;">Starting from $850</div>
+        </div>
+        <div>
+          <div style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:4px;">Timeline</div>
+          <div style="font-size:16px; font-weight:600; color:var(--text);">Typically 5&ndash;7 business days</div>
+        </div>
       </div>
-      <div class="inclusion-card" style="background: var(--accent-light); border-color: var(--accent);">
-        <h3>Full Pipeline Additions</h3>
-        <ul class="inclusion-list">
-          <li><i class="fa-solid fa-plus-circle"></i> All Platform APIs (5+)</li>
-          <li><i class="fa-solid fa-plus-circle"></i> Multi-Platform Merge Logic</li>
-          <li><i class="fa-solid fa-plus-circle"></i> BigQuery Load Script</li>
-          <li><i class="fa-solid fa-plus-circle"></i> Dashboard Data-Source Connection</li>
-        </ul>
-      </div>
+      <p style="font-size:15px; margin-bottom:16px;">Connect up to five standard data sources and monitor the key areas of your e-commerce business in one dashboard.</p>
+      <p style="font-size:15px; margin-bottom:10px;"><strong>Dashboard may include:</strong></p>
+      <ul class="dash-include-list">
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Overall sales performance</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Marketing performance</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Customer and retention metrics</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Product performance</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Profitability metrics</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Conversion and funnel metrics</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Inventory and returns metrics</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Business performance trends</li>
+      </ul>
+    </div>
+    <div style="max-width:860px; margin:32px auto 0;">
+      <p style="font-size:15px; margin-bottom:12px;"><strong>Includes:</strong></p>
+      <ul class="dash-include-list">
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Cloud infrastructure setup</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Up to 5 standard data sources</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Data pipeline build</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Data cleaning and standardization</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Data modeling and transformation</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Multi-source data integration</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>BigQuery setup</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Secure credential configuration</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Custom KPI dashboard</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Data validation and initial pipeline error check</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Technical handover</li>
+      </ul>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary">Build My Intelligence Dashboard</a>
     </div>
   </div>
 </section>
 
-<!-- Engineering Workflow -->
-<section style="background: var(--bg);">
+
+<!-- SECTION 2: AUTOMATED AUDIT INTELLIGENCE -->
+<section id="automation" style="background: var(--bg);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">System Architecture</div>
-      <h2>Engineering Workflow</h2>
-      <p>How data moves from disparate platforms into a unified BigQuery database.</p>
+      <div class="eyebrow">Section 02</div>
+      <h2>Automated Audit Intelligence</h2>
+      <p>Add Deeper Monitoring to Your Dashboard</p>
     </div>
-    <div class="arch-diagram scroll-reveal">
-      <div class="arch-node"><i class="fa-solid fa-bag-shopping"></i><h5>E-commerce Platforms</h5></div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node"><i class="fa-solid fa-bullhorn"></i><h5>Meta Ads</h5></div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node"><i class="fa-solid fa-code-merge"></i><h5>Merge Logic</h5></div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node"><i class="fa-solid fa-database"></i><h5>BigQuery DB</h5></div>
-      <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-      <div class="arch-node"><i class="fa-solid fa-chart-pie"></i><h5>Live Dashboard</h5></div>
-    </div>
-  </div>
-</section>
-
-<!-- Service Breakdown -->
-<section id="services" style="background: var(--surface);">
-  <div class="container">
-    <div class="header-center">
-      <div class="eyebrow">Technical Scope</div>
-      <h2>What We Build</h2>
-      <p>The core engineering components that transform raw data from multiple platforms into a unified, analysis-ready database.</p>
+    <div style="max-width:860px; margin:0 auto 48px; text-align:center;">
+      <p style="font-size:16px;">The standard dashboard shows your important business metrics. Audit Automation adds deeper calculations, classifications, performance signals, insight summaries, and basic recommendations for a selected business area.</p>
     </div>
 
-    <div class="service-block scroll-reveal">
-      <div class="service-header">
-        <h3>1. Multi-Platform Merge Logic</h3>
-      </div>
-      <div class="service-content">
-        <div class="service-text">
-          <p><strong>Purpose:</strong> Create a Single Source of Truth by connecting data from multiple business platforms.</p>
-          <p><strong>What We Configure:</strong> SQL and Python logic to join data from platforms such as Shopify, WooCommerce, BigCommerce, GA4, Meta Ads, Google Ads, and other relevant sources using unified identifiers such as Order ID, Customer ID, Product ID, User ID, and Date.</p>
-          <p><strong>Why It Matters:</strong> Without proper merge logic, your business data remains in separate silos. We connect the relevant data so you can analyze relationships such as:</p>
-          <div class="insight-box" style="margin-top: 12px;">
-            Ad Spend → Customers → Orders → Revenue → Profit<br>
-            inside one unified data environment.
-          </div>
-        </div>
-        <div class="service-visual">
-          <div class="code-snippet">
-            # Multi-Platform Merge Logic<br>
-            SELECT <br>
-            &nbsp;&nbsp;s.order_id, s.revenue, a.ad_spend<br>
-            FROM shopify.orders s<br>
-            JOIN meta.ads a <br>
-            &nbsp;&nbsp;ON s.date = a.date
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="service-block scroll-reveal">
-      <div class="service-header">
-        <h3>2. BigQuery Load Script</h3>
-      </div>
-      <div class="service-content">
-        <div class="service-text">
-          <p><strong>Purpose:</strong> Persist your data in the cloud data warehouse.</p>
-          <p><strong>What We Configure:</strong> Automated scripts that load cleaned and merged data into structured BigQuery tables.</p>
-          <p><strong>Why It Matters:</strong> Moves your processed data into a permanent, queryable database structure, making it ready for reliable analysis, reporting, dashboards, and future data workflows.</p>
-        </div>
-        <div class="service-visual">
-           <div class="arch-diagram" style="padding: 16px; background: var(--surface); border: none; box-shadow: none;">
-            <div class="arch-node"><i class="fa-solid fa-file-code"></i><h5>Clean Data</h5></div>
-            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="arch-node"><i class="fa-solid fa-upload"></i><h5>Load Script</h5></div>
-            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            <div class="arch-node" style="border-color: var(--accent);"><i class="fa-solid fa-database" style="color:var(--accent);"></i><h5 style="color:var(--accent);">BigQuery</h5></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="service-block scroll-reveal">
-      <div class="service-header">
-        <h3>3. Dashboard Data-Source Connection</h3>
-      </div>
-      <div class="service-content">
-        <div class="service-text">
-          <p><strong>Purpose:</strong> Connect your centralized business data directly to your dashboard so your reports stay updated without repeated manual uploads.</p>
-          <p><strong>What We Configure:</strong> We connect your cloud data warehouse or database, such as BigQuery, Snowflake, Amazon Redshift, or other supported data environments, to reporting platforms such as Power BI, Looker Studio, or other compatible BI tools.</p>
-          
-          <p><strong>Example Flow:</strong></p>
-          <ul style="list-style: none; margin-bottom: 16px; padding-left: 16px; color: var(--muted); font-size: 14px;">
-            <li>E-commerce Data ↓</li>
-            <li>Cloud Data Warehouse ↓</li>
-            <li>Power BI / Looker Studio ↓</li>
-            <li>Interactive Dashboard</li>
-          </ul>
-
-          <p><strong>Example dashboard metrics:</strong></p>
-          <ul style="list-style: none; margin-bottom: 16px; padding-left: 16px; color: var(--muted); font-size: 14px; columns: 2; gap: 8px;">
-            <li>• Revenue & Profit</li>
-            <li>• Product Performance</li>
-            <li>• Customer Segments</li>
-            <li>• Marketing Spend & ROAS</li>
-            <li>• Conversion Rate</li>
-            <li>• Inventory Levels</li>
-            <li>• Customer LTV</li>
-            <li>• Sales Trends</li>
-          </ul>
-
-          <p><strong>Why It Matters:</strong> Instead of exporting CSV files every time, your dashboard reads directly from your connected data warehouse. This creates a centralized, connected, and reliable reporting workflow.</p>
-          <p><strong>Example:</strong> A store's daily sales data is loaded into the cloud database. Power BI or Looker Studio automatically reads that data and updates dashboards showing revenue, profit, product performance, customer analytics, and marketing performance.</p>
-        </div>
-        <div class="service-visual" style="display: block; padding: 0; border: none; background: transparent;">
-          <!-- Light Premium Dashboard Mockup -->
-          <div class="light-dashboard-mock">
-            <div class="ld-header">
-              <div class="ld-title"><i class="fa-solid fa-chart-line" style="color: var(--accent);"></i> Live E-commerce Dashboard</div>
-              <div class="ld-live">Auto-refresh: ON</div>
-            </div>
-            <div class="ld-body">
-              <div class="ld-kpi">
-                <div class="ld-kpi-label">Revenue</div>
-                <div class="ld-kpi-val">$84.2K</div>
-                <div class="ld-kpi-trend" style="color: var(--success);"><i class="fa-solid fa-arrow-up"></i> +12.4%</div>
-              </div>
-              <div class="ld-kpi">
-                <div class="ld-kpi-label">ROAS</div>
-                <div class="ld-kpi-val">3.8x</div>
-                <div class="ld-kpi-trend" style="color: var(--success);"><i class="fa-solid fa-arrow-up"></i> +0.4x</div>
-              </div>
-              <div class="ld-kpi">
-                <div class="ld-kpi-label">Avg LTV</div>
-                <div class="ld-kpi-val">$127</div>
-                <div class="ld-kpi-trend" style="color: var(--success);"><i class="fa-solid fa-arrow-up"></i> +$15</div>
-              </div>
-              <div class="ld-kpi">
-                <div class="ld-kpi-label">Conv. Rate</div>
-                <div class="ld-kpi-val">1.9%</div>
-                <div class="ld-kpi-trend" style="color: var(--success);"><i class="fa-solid fa-arrow-up"></i> +0.3%</div>
-              </div>
-              
-              <div class="ld-chart-area">
-                <div class="ld-chart-box">
-                  <div class="ld-chart-title">Revenue & Profit Trend (30 Days)</div>
-                  <div class="ld-bars">
-                    <div class="ld-bar-row"><span class="ld-bar-label">Revenue</span><div class="ld-bar-track"><div class="ld-bar-fill" style="width: 85%; background: var(--accent);"></div></div><span class="ld-bar-val">84K</span></div>
-                    <div class="ld-bar-row"><span class="ld-bar-label">Profit</span><div class="ld-bar-track"><div class="ld-bar-fill" style="width: 35%; background: var(--success);"></div></div><span class="ld-bar-val">34K</span></div>
-                    <div class="ld-bar-row"><span class="ld-bar-label">Ad Spend</span><div class="ld-bar-track"><div class="ld-bar-fill" style="width: 45%; background: var(--warning);"></div></div><span class="ld-bar-val">22K</span></div>
-                  </div>
-                </div>
-                <div class="ld-chart-box">
-                  <div class="ld-chart-title">Traffic Source</div>
-                  <div class="ld-donut-wrap">
-                    <div class="ld-donut"></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="ld-table-area">
-                <div class="ld-chart-title">Product Performance</div>
-                <table class="ld-table">
-                  <thead>
-                    <tr>
-                      <th>Product</th>
-                      <th>Units</th>
-                      <th>Revenue</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Vitamin C Serum</td>
-                      <td>420</td>
-                      <td>$12.6K</td>
-                      <td><span class="ld-status-pill ld-status-active">Active</span></td>
-                    </tr>
-                    <tr>
-                      <td>SPF 50 Sunscreen</td>
-                      <td>280</td>
-                      <td>$8.4K</td>
-                      <td><span class="ld-status-pill ld-status-active">Active</span></td>
-                    </tr>
-                    <tr>
-                      <td>Retinol Cream</td>
-                      <td>150</td>
-                      <td>$4.5K</td>
-                      <td><span class="ld-status-pill ld-status-watch">Watch</span></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="service-block scroll-reveal">
-      <div class="service-header">
-        <h3>4. Credential Security</h3>
-      </div>
-      <div class="service-content">
-        <div class="service-text">
-          <p><strong>Purpose:</strong> Protect your business data and API credentials from unauthorized access.</p>
-          <p><strong>What We Configure:</strong> API keys, access tokens, and other sensitive credentials are securely stored using appropriate methods such as secure environment variables or supported secret management systems. Credentials are never hardcoded directly into scripts.</p>
-          <p><strong>Why It Matters:</strong> Secure credential handling reduces the risk of accidental exposure, unauthorized access, and compromised data connections while keeping your connected platforms protected.</p>
-        </div>
-        <div class="service-visual">
-          <div class="code-snippet">
-            # Secure Credential Storage<br>
-            import os<br>
-            from secret_manager import access_secret<br>
-            <br>
-            # Credentials loaded securely<br>
-            API_KEY = os.getenv("API_KEY")<br>
-            DB_TOKEN = access_secret("db-token")<br>
-            <br>
-            # No hardcoded credentials<br>
-            # No plaintext secrets in scripts
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Before vs After -->
-<section style="background: var(--bg);">
-  <div class="container">
-    <div class="header-center">
-      <div class="eyebrow">The Transformation</div>
-      <h2>Without Proper Data Infrastructure vs With Our Infrastructure</h2>
-    </div>
-    <div class="ba-grid">
-      <div class="ba-card bad scroll-reveal">
-        <h4>Without Setup</h4>
-        <ul class="ba-list">
-          <li><i class="fa-solid fa-times-circle"></i> Disconnected Platforms</li>
-          <li><i class="fa-solid fa-times-circle"></i> Duplicate Data Entries</li>
-          <li><i class="fa-solid fa-times-circle"></i> Manual CSV Exports</li>
-          <li><i class="fa-solid fa-times-circle"></i> Scattered Information</li>
+    <div class="module-grid">
+      <!-- Module 1: Marketing Performance -->
+      <div class="module-card scroll-reveal">
+        <div class="module-icon"><i class="fa-solid fa-bullhorn"></i></div>
+        <div class="module-label">Module 01</div>
+        <h4>Marketing Performance Automation</h4>
+        <p style="font-size:13px; margin-bottom:12px;"><strong>Monitor:</strong></p>
+        <ul>
+          <li>Channel performance</li>
+          <li>CAC</li>
+          <li>ROAS</li>
+          <li>Marketing spend</li>
+          <li>Campaign trends</li>
+          <li>Channel efficiency signals</li>
+          <li>Budget-review alerts</li>
+          <li>Basic insight summaries</li>
         </ul>
       </div>
-      <div class="ba-card good scroll-reveal">
-        <h4>With Full Pipeline</h4>
-        <ul class="ba-list">
-          <li><i class="fa-solid fa-check-circle"></i> Unified Master Table</li>
-          <li><i class="fa-solid fa-check-circle"></i> Single Source of Truth</li>
-          <li><i class="fa-solid fa-check-circle"></i> Centralized BigQuery DB</li>
-          <li><i class="fa-solid fa-check-circle"></i> Live Dashboard Connection</li>
+      <!-- Module 2: Customer Retention & LTV -->
+      <div class="module-card scroll-reveal">
+        <div class="module-icon"><i class="fa-solid fa-users"></i></div>
+        <div class="module-label">Module 02</div>
+        <h4>Customer Retention &amp; LTV Automation</h4>
+        <p style="font-size:13px; margin-bottom:12px;"><strong>Monitor:</strong></p>
+        <ul>
+          <li>Repeat-purchase rate</li>
+          <li>Customer segments</li>
+          <li>RFM groups</li>
+          <li>Cohort retention</li>
+          <li>LTV signals</li>
+          <li>Inactivity signals</li>
+          <li>Retention trends</li>
+          <li>Basic retention recommendations</li>
+        </ul>
+      </div>
+      <!-- Module 3: Product Profitability -->
+      <div class="module-card scroll-reveal">
+        <div class="module-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+        <div class="module-label">Module 03</div>
+        <h4>Product Profitability Automation</h4>
+        <p style="font-size:13px; margin-bottom:12px;"><strong>Monitor:</strong></p>
+        <ul>
+          <li>Product revenue</li>
+          <li>Product margin signals</li>
+          <li>ABC classification</li>
+          <li>Sales velocity</li>
+          <li>Return rate</li>
+          <li>Slow-moving products</li>
+          <li>Bundle opportunities</li>
+          <li>Product-priority signals</li>
+        </ul>
+      </div>
+      <!-- Module 4: E-Commerce Profitability -->
+      <div class="module-card scroll-reveal">
+        <div class="module-icon"><i class="fa-solid fa-coins"></i></div>
+        <div class="module-label">Module 04</div>
+        <h4>E-Commerce Profitability Automation</h4>
+        <p style="font-size:13px; margin-bottom:12px;"><strong>Monitor:</strong></p>
+        <ul>
+          <li>Product contribution</li>
+          <li>Channel contribution</li>
+          <li>Cost growth</li>
+          <li>Discount impact</li>
+          <li>Refund and return impact</li>
+          <li>Revenue-versus-profit trend</li>
+          <li>Break-even indicators</li>
+          <li>Margin-pressure alerts</li>
         </ul>
       </div>
     </div>
+
+    <!-- What each automation module adds -->
+    <div style="max-width:860px; margin:48px auto 0; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <div class="header-center" style="margin-bottom:24px;">
+        <h3 style="font-size:20px;">What Each Automation Module Adds</h3>
+      </div>
+      <ul class="dash-include-list">
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Audit-specific KPI calculations</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Deeper data interpretation</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Segmenting or scoring</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Status labels such as Monitor, Review, Maintain, Test, or Reduce</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Text-based insight summaries</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Basic recommendations</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Audit-specific dashboard views</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Relevant alerts</li>
+      </ul>
+    </div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary">Add Audit Automation</a>
+    </div>
+    <div class="boundary-note scroll-reveal" style="max-width:860px; margin:32px auto 0;">
+      <h4><i class="fa-solid fa-circle-info"></i> Note</h4>
+      <p>Audit automation modules are selected and priced separately according to the business area, data requirements, KPI depth, and dashboard scope.</p>
+    </div>
   </div>
 </section>
 
-<!-- Business Benefits & Tech Stack -->
-<section style="background: var(--surface);">
+
+<!-- SECTION 3: AUTOMATED SCHEDULING, REFRESH MONITORING & ERROR ALERTS -->
+<section id="scheduling" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
-      <div class="eyebrow">Business Impact</div>
-      <h2>What This Means For Your Business</h2>
+      <div class="eyebrow">Section 03</div>
+      <h2>Automated Scheduling, Refresh Monitoring &amp; Error Alerts</h2>
+      <p>Keep Your Dashboard Updated Automatically</p>
     </div>
-    <div class="info-grid" style="margin-bottom: 64px;">
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-cube"></i></div><h4>Scalable Analytics</h4><p>A reliable data environment built to handle growing volumes of historical, customer, product, marketing, and operational data.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-handshake-angle"></i></div><h4>Reduced Manual Work</h4><p>No more repeatedly exporting, cleaning, and combining spreadsheets to prepare reports and analysis.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-link"></i></div><h4>Connected Reporting</h4><p>Your centralized data stays connected to dashboards and analysis tools, making reporting more consistent and reliable.</p></div>
-      <div class="info-card scroll-reveal" style="grid-column: span 3; display: flex; flex-direction: row; align-items: center; text-align: left;">
-        <div class="info-icon" style="margin-bottom: 0; margin-right: 20px; width: 50px; height: 50px; font-size: 22px;">
-          <i class="fa-solid fa-rocket"></i>
-        </div>
-        <div>
-          <h4>Future-Ready Infrastructure</h4>
-          <p>A strong data foundation that can support additional platforms, advanced analytics, automation, AI, and machine learning as your business grows.</p>
-        </div>
+    <div style="max-width:860px; margin:0 auto; background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px;">
+      <div style="margin-bottom:24px;">
+        <div style="font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; margin-bottom:4px;">Investment</div>
+        <div style="font-size:28px; font-weight:800; color:var(--text); font-family:'Manrope', sans-serif;">Starting from $200</div>
       </div>
-      <div class="info-card scroll-reveal" style="grid-column: span 3; display: flex; flex-direction: row; align-items: center; text-align: left;">
-        <div class="info-icon" style="margin-bottom: 0; margin-right: 20px; width: 50px; height: 50px; font-size: 22px;">
-          <i class="fa-solid fa-shield-halved"></i>
-        </div>
-        <div>
-          <h4>Secure Data Access</h4>
-          <p>Your API keys, access tokens, and other sensitive credentials are protected instead of being exposed inside scripts, reducing the risk of unauthorized access and compromised data connections.</p>
-        </div>
-      </div>
+      <p style="font-size:15px; margin-bottom:16px;">Add recurring data refresh and monitoring to your dashboard or selected audit automation module.</p>
+      <p style="font-size:15px; margin-bottom:10px;"><strong>May include:</strong></p>
+      <ul class="dash-include-list">
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Daily, weekly, or agreed refresh schedule</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Automated pipeline execution</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Refresh monitoring</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Failed-refresh alerts</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Missing-data alerts</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Data-loading error notifications</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Refresh and error logs</li>
+        <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Automated data validation</li>
+      </ul>
     </div>
-
-    <div class="header-center">
-      <div class="eyebrow">Infrastructure</div>
-      <h2>Technology Stack</h2>
-    </div>
-    <div class="tech-grid">
-      <div class="tech-card scroll-reveal"><i class="fa-brands fa-shopify"></i><span>Shopify / E-commerce Platform</span></div>
-      <div class="tech-card scroll-reveal"><i class="fa-solid fa-chart-line"></i><span>GA4</span></div>
-      <div class="tech-card scroll-reveal"><i class="fa-brands fa-meta"></i><span>Meta Ads</span></div>
-      <div class="tech-card scroll-reveal"><i class="fa-solid fa-database"></i><span>BigQuery</span></div>
-      <div class="tech-card scroll-reveal"><i class="fa-solid fa-display"></i><span>Looker Studio / Power BI</span></div>
-      <div class="tech-card scroll-reveal"><i class="fa-solid fa-user-shield"></i><span>Secret Manager</span></div>
+    <div style="text-align:center; margin-top:32px;">
+      <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary">Add Automated Refresh</a>
     </div>
   </div>
 </section>
 
-<!-- Who This Is For & Deliverables -->
-<section style="background: var(--bg);">
-  <div class="container">
-    <div class="header-center">
-      <div class="eyebrow">Target Fit</div>
-      <h2>Who This Package Is For</h2>
-    </div>
-    <div class="info-grid" style="margin-bottom: 64px;">
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-layer-group"></i></div><h4>Growth Package & Data-Driven Growth System Clients</h4><p>Businesses investing in deeper growth analysis and data-driven decision-making.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-store"></i></div><h4>Established E-commerce Stores</h4><p>Businesses with consistent sales volume and enough customer data to support deeper growth analysis.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-building"></i></div><h4>Scaling Brands</h4><p>Businesses ready to move beyond basic reporting and identify the biggest opportunities for revenue and profit growth.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-rotate"></i></div><h4>Multi-Channel Businesses</h4><p>Brands selling across multiple channels that need a clearer view of customers, products, marketing, and revenue performance.</p></div>
-      <div class="info-card scroll-reveal" style="grid-column: span 2; display: flex; flex-direction: row; align-items: center; text-align: left;">
-        <div class="info-icon" style="margin-bottom: 0; margin-right: 20px; width: 50px; height: 50px; font-size: 22px;">
-          <i class="fa-solid fa-file-export"></i>
-        </div>
-        <div>
-          <h4>Businesses Tired of Manual Reporting</h4>
-          <p>Teams spending too much time exporting spreadsheets, combining data, and manually preparing reports instead of focusing on growth.</p>
-        </div>
-      </div>
-    </div>
 
-    <div class="header-center">
-      <div class="eyebrow">Handover</div>
-      <h2>What You'll Receive</h2>
-    </div>
-    <div class="info-grid">
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-database"></i></div><h4>Cloud Data Warehouse</h4><p>A fully structured cloud data warehouse built for centralized business data.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-code-merge"></i></div><h4>Merged Master Dataset</h4><p>One unified dataset combining relevant business metrics from your connected platforms.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-link"></i></div><h4>Connected Dashboard Data Source</h4><p>A direct data connection ready for Power BI, Looker Studio, or other compatible reporting tools.</p></div>
-      <div class="info-card scroll-reveal"><div class="info-icon"><i class="fa-solid fa-book"></i></div><h4>Data Documentation</h4><p>Schema definitions, data structure details, and pipeline architecture documentation.</p></div>
-      <div class="info-card scroll-reveal" style="grid-column: span 2; display: flex; flex-direction: row; align-items: center; text-align: left;">
-        <div class="info-icon" style="margin-bottom: 0; margin-right: 20px; width: 50px; height: 50px; font-size: 22px;">
-          <i class="fa-solid fa-gears"></i>
-        </div>
-        <div>
-          <h4>Automated Data Pipeline</h4>
-          <p>Configured data workflows for reliable extraction, processing, merging, and loading of your business data.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" style="background: var(--surface);">
-  <div class="container">
-    <div class="header-center">
-      <div class="eyebrow">FAQ</div>
-      <h2>Frequently Asked Questions</h2>
-      <p>Everything you need to know.</p>
-    </div>
-    <div class="faq-container">
-      <div class="faq-item active scroll-reveal">
-        <div class="faq-q">How is this different from the Basic Setup? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">The Data Preparation & Integration package pulls data once for a single audit. The Data Pipeline & Dashboard Setup builds a permanent BigQuery database with merge logic, connecting all platforms into a "Single Source of Truth" that can be refreshed regularly for ongoing analytics.</div>
-      </div>
-      <div class="faq-item scroll-reveal">
-        <div class="faq-q">Does this update automatically every day? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">Not in this bundle. The Data Pipeline & Dashboard Setup creates the infrastructure to load data into BigQuery, but the data refresh is manual. For daily automated refreshes, you need the Automated Dashboard & Analytics System bundle.</div>
-      </div>
-      <div class="faq-item scroll-reveal">
-        <div class="faq-q">Do I own the BigQuery database? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a">Yes. The GCP project and BigQuery database are created under your account. You own 100% of the infrastructure and data.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Pricing -->
+<!-- PRICING -->
 <section id="pricing" style="background: var(--bg);">
   <div class="container">
-    <div class="pricing-card scroll-reveal">
-      <div class="eyebrow" style="margin: 0 auto;">Data Pipeline & Dashboard Setup</div>
-      <h3 style="font-size: 28px; margin-top: 16px;">Data Warehouse Build</h3>
-      <div class="price-amt">$500–$900</div>
-      <p class="price-sub">One-time fee · 5–7 Business Days</p>
-      <ul class="price-features">
-        <li><i class="fa-solid fa-check"></i> Everything in Basic Setup</li>
-        <li><i class="fa-solid fa-check"></i> All Platform API Connections</li>
-        <li><i class="fa-solid fa-check"></i> Multi-Platform Merge Logic</li>
-        <li><i class="fa-solid fa-check"></i> BigQuery Load Script</li>
-        <li><i class="fa-solid fa-check"></i> Dashboard Connection</li>
-        <li><i class="fa-solid fa-check"></i> Credential Security Setup</li>
-      </ul>
-      <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width: 100%; justify-content: center;">Build the Pipeline</a>
+    <div class="header-center">
+      <div class="eyebrow">Pricing</div>
+      <h2>Pricing</h2>
+      <p>Three layers: build the dashboard, add audit automation, then add scheduling and alerts.</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- Pricing Card 1 -->
+      <div class="pricing-card scroll-reveal">
+        <div class="eyebrow" style="margin: 0 auto;">Section 01</div>
+        <h3 style="font-size: 20px; margin-top: 16px;">Intelligence Dashboard</h3>
+        <div class="price-amt" style="font-size: 32px;">From $850</div>
+        <p class="price-sub">One custom dashboard for your business &middot; 5&ndash;7 business days</p>
+        <ul class="price-features" style="grid-template-columns: 1fr;">
+          <li><i class="fa-solid fa-check"></i> Up to 5 data sources</li>
+          <li><i class="fa-solid fa-check"></i> Custom KPI dashboard</li>
+          <li><i class="fa-solid fa-check"></i> Data pipeline build</li>
+          <li><i class="fa-solid fa-check"></i> BigQuery setup</li>
+          <li><i class="fa-solid fa-check"></i> Technical handover</li>
+        </ul>
+        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width: 100%; justify-content: center;">Build My Dashboard</a>
+      </div>
+      <!-- Pricing Card 2 (Featured) -->
+      <div class="pricing-card featured scroll-reveal">
+        <div class="eyebrow" style="margin: 0 auto;">Section 02</div>
+        <h3 style="font-size: 20px; margin-top: 16px;">Audit Automation Modules</h3>
+        <div class="price-amt" style="font-size: 28px;">Custom Quote</div>
+        <p class="price-sub">Add deeper monitoring to your dashboard &middot; Priced per module</p>
+        <ul class="price-features" style="grid-template-columns: 1fr;">
+          <li><i class="fa-solid fa-check"></i> Marketing Performance Automation</li>
+          <li><i class="fa-solid fa-check"></i> Customer Retention &amp; LTV Automation</li>
+          <li><i class="fa-solid fa-check"></i> Product Profitability Automation</li>
+          <li><i class="fa-solid fa-check"></i> E-Commerce Profitability Automation</li>
+          <li><i class="fa-solid fa-check"></i> Insight summaries &amp; alerts</li>
+        </ul>
+        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width: 100%; justify-content: center;">Add Audit Automation</a>
+      </div>
+      <!-- Pricing Card 3 -->
+      <div class="pricing-card scroll-reveal">
+        <div class="eyebrow" style="margin: 0 auto;">Section 03</div>
+        <h3 style="font-size: 20px; margin-top: 16px;">Scheduling &amp; Alerts</h3>
+        <div class="price-amt" style="font-size: 32px;">From $200</div>
+        <p class="price-sub">Automated refresh, monitoring &amp; error alerts</p>
+        <ul class="price-features" style="grid-template-columns: 1fr;">
+          <li><i class="fa-solid fa-check"></i> Daily/weekly refresh schedule</li>
+          <li><i class="fa-solid fa-check"></i> Failed-refresh alerts</li>
+          <li><i class="fa-solid fa-check"></i> Missing-data alerts</li>
+          <li><i class="fa-solid fa-check"></i> Refresh &amp; error logs</li>
+          <li><i class="fa-solid fa-check"></i> Automated data validation</li>
+        </ul>
+        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width: 100%; justify-content: center;">Add Automated Refresh</a>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>© 2025 Moz Intelligence. All rights reserved.</footer>
 
+<!-- FINAL CTA -->
+<section style="background: var(--surface); text-align:center; padding: 80px 0;">
+  <div class="container">
+    <div style="max-width:720px; margin:0 auto;">
+      <h2 style="font-size: 32px; margin-bottom: 16px;">Connect Your Data. Automate Your Insights.</h2>
+      <p style="font-size: 17px; color: var(--muted) !important; margin-bottom: 32px;">Build one custom intelligence dashboard, then add deeper audit automation and automated scheduling to keep your business signals fresh and reliable.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary">Build My Intelligence Dashboard</a>
+        <a href="/" class="btn btn-outline" style="border-color:var(--border-dark);">Back to MozIntelligence</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-
+<footer>&copy; 2025 Moz Intelligence. All rights reserved.</footer>

@@ -114,6 +114,60 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
 .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
 @media (prefers-reduced-motion: reduce) { .scroll-reveal { opacity: 1; transform: none; transition: none; } * { transition: none !important; animation: none !important; } }
 
+/* ===== SIGNS LIST ===== */
+.signs-list li { color: var(--muted); }
+
+/* ===== ARCH FLOW (hero) ===== */
+.arch-flow { display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 500px; margin: 32px auto 0; }
+.arch-flow-node { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 24px; font-size: 14px; font-weight: 600; color: var(--text); text-align: center; box-shadow: var(--shadow); width: 100%; max-width: 380px; }
+.arch-flow-node.accent { background: var(--accent-light); border-color: var(--accent); color: var(--accent-dark); }
+.arch-flow-arrow { color: var(--accent); font-size: 20px; }
+
+/* ===== MODULE GRID (Audit Automation) ===== */
+.module-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+.module-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; }
+.module-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+.module-card .module-icon { width: 44px; height: 44px; background: var(--accent-light); color: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 16px; }
+.module-card h4 { font-size: 17px; margin-bottom: 12px; }
+.module-card .module-label { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+.module-card ul { list-style: none; padding: 0; }
+.module-card ul li { font-size: 13px; color: var(--muted); padding: 4px 0; padding-left: 18px; position: relative; }
+.module-card ul li::before { content: '\2022'; color: var(--accent); position: absolute; left: 0; font-weight: 700; }
+
+/* ===== DASHBOARD INCLUDE LIST ===== */
+.dash-include-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.dash-include-list li { font-size: 14px; }
+
+/* ===== BOUNDARY NOTE ===== */
+.boundary-note { max-width: 800px; margin: 0 auto; background: var(--warning-light); border: 1px solid rgba(217,119,6,0.2); border-radius: var(--radius); padding: 24px 28px; }
+.boundary-note h4 { color: var(--warning); font-size: 16px; margin-bottom: 10px; }
+.boundary-note p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+/* ===== TWO-COL GRID ===== */
+.two-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 860px; margin: 0 auto; }
+
+/* ===== PRICING GRID (3 cards) ===== */
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1000px; margin: 0 auto; align-items: start; }
+.pricing-grid .pricing-card { max-width: none; border-width: 1px; }
+.pricing-grid .pricing-card.featured { border: 2px solid var(--accent); box-shadow: 0 20px 40px -10px rgba(79,70,229,0.2); }
+
+/* ===== DATA SOURCE GRID ===== */
+.data-source-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 900px; margin: 0 auto; }
+.data-source-item { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; font-size: 14px; }
+.data-source-item i { color: var(--accent); }
+
+/* ===== INSIGHT BOX (accent variant) ===== */
+.insight-box { background: var(--surface-2); border-left: 4px solid var(--accent); padding: 16px; border-radius: 0 8px 8px 0; margin-top: 16px; font-size: 14px; }
+.insight-box b { color: var(--text); }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .module-grid, .dash-include-list, .two-col-grid, .pricing-grid, .data-source-grid { grid-template-columns: 1fr !important; }
+  .signs-list { display: flex !important; flex-direction: column !important; gap: 12px !important; }
+  .arch-flow { max-width: 100%; }
+  .arch-flow-node { max-width: 100%; }
+}
+
 /* Light Dashboard Mockup Styles */
 .light-dashboard-mock { background: #FFFFFF; border: 1px solid var(--border-dark); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); overflow: hidden; max-width: 900px; margin: 40px auto 0; color: var(--text); border: 1px solid #E2E8F0; }
 .ld-header { background: #F8FAFC; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0; }
