@@ -1618,9 +1618,12 @@ function ServicesSection() {
           </p>
 
           {/* ════════ SECTION 01: Data Preparation & Integration ════════ */}
-          <div className="reveal-stagger rounded-2xl overflow-hidden mb-10" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.98) 0%, rgba(0,30,50,0.92) 100%)', border: '1px solid rgba(0,198,255,0.18)', boxShadow: '0 0 40px rgba(0,198,255,0.06), 0 12px 40px rgba(0,0,0,0.4)' }}>
-            <div className="h-1" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #0072FF 100%)' }}></div>
-            <div className="p-6 sm:p-10">
+          <div className="reveal-stagger rounded-2xl overflow-hidden mb-10 relative" style={{ background: 'linear-gradient(145deg, rgba(10,16,26,0.98) 0%, rgba(0,25,45,0.95) 40%, rgba(5,12,22,0.98) 100%)', border: '1px solid rgba(0,198,255,0.22)', boxShadow: '0 0 50px rgba(0,198,255,0.08), 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(0,198,255,0.08)' }}>
+            {/* Decorative glow orbs */}
+            <div className="absolute top-0 right-0 w-72 h-72 pointer-events-none" style={{ background: 'radial-gradient(circle at 80% 20%, rgba(0,198,255,0.10) 0%, transparent 60%)' }}></div>
+            <div className="absolute bottom-0 left-0 w-56 h-56 pointer-events-none" style={{ background: 'radial-gradient(circle at 20% 80%, rgba(0,114,255,0.06) 0%, transparent 60%)' }}></div>
+            <div className="h-1 relative z-10" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #0072FF 60%, rgba(0,198,255,0.3) 100%)' }}></div>
+            <div className="p-6 sm:p-10 relative z-10">
               {/* Section header */}
               <div className="flex items-center gap-3 mb-4">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl font-bold text-sm" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', color: '#FFF', boxShadow: '0 4px 14px rgba(0,198,255,0.3)' }}>01</span>
@@ -1651,16 +1654,16 @@ function ServicesSection() {
                   <div>
                     <div className="text-[#8899AA] text-xs uppercase tracking-wider font-semibold mb-3">Available Options</div>
                     <div className="space-y-2">
-                      <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-[rgba(255,255,255,0.03)] border border-[rgba(0,198,255,0.15)]">
-                        <span className="text-[#8899AA] text-xs">Specialist Audit Data Preparation</span>
+                      <div className="flex items-center justify-between px-3.5 py-3 rounded-lg transition-all duration-300 hover:translate-x-1 hover:border-[rgba(0,198,255,0.4)] hover:bg-[rgba(0,198,255,0.05)]" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(0,198,255,0.15)', borderLeft: '2px solid rgba(0,198,255,0.4)' }}>
+                        <span className="text-[#A0B0C0] text-xs font-medium">Specialist Audit Data Preparation</span>
                         <span className="gradient-text-gold text-xs font-bold">$99&ndash;$199</span>
                       </div>
-                      <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-[rgba(255,255,255,0.03)] border border-[rgba(0,198,255,0.15)]">
-                        <span className="text-[#8899AA] text-xs">Health Check Data Preparation</span>
+                      <div className="flex items-center justify-between px-3.5 py-3 rounded-lg transition-all duration-300 hover:translate-x-1 hover:border-[rgba(0,198,255,0.4)] hover:bg-[rgba(0,198,255,0.05)]" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(0,198,255,0.15)', borderLeft: '2px solid rgba(0,198,255,0.4)' }}>
+                        <span className="text-[#A0B0C0] text-xs font-medium">Health Check Data Preparation</span>
                         <span className="gradient-text-gold text-xs font-bold">$299&ndash;$599</span>
                       </div>
-                      <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-[rgba(255,255,255,0.03)] border border-[rgba(0,198,255,0.15)]">
-                        <span className="text-[#8899AA] text-xs">Custom Analysis Data Preparation</span>
+                      <div className="flex items-center justify-between px-3.5 py-3 rounded-lg transition-all duration-300 hover:translate-x-1 hover:border-[rgba(0,198,255,0.4)] hover:bg-[rgba(0,198,255,0.05)]" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(0,198,255,0.15)', borderLeft: '2px solid rgba(0,198,255,0.4)' }}>
+                        <span className="text-[#A0B0C0] text-xs font-medium">Custom Analysis Data Preparation</span>
                         <span className="gradient-text-gold text-xs font-bold">From $99</span>
                       </div>
                     </div>
@@ -1708,9 +1711,12 @@ function ServicesSection() {
           </div>
 
           {/* ════════ SECTION 02: E-Commerce Intelligence & Audit Automation ════════ */}
-          <div className="reveal-stagger rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.98) 0%, rgba(0,30,50,0.92) 100%)', border: '1px solid rgba(0,198,255,0.18)', boxShadow: '0 0 40px rgba(0,198,255,0.06), 0 12px 40px rgba(0,0,0,0.4)' }}>
-            <div className="h-1" style={{ background: 'linear-gradient(90deg, #00E676 0%, #00C6FF 50%, #F5A623 100%)' }}></div>
-            <div className="p-6 sm:p-10">
+          <div className="reveal-stagger rounded-2xl overflow-hidden relative" style={{ background: 'linear-gradient(145deg, rgba(10,16,26,0.98) 0%, rgba(0,28,48,0.95) 40%, rgba(5,12,22,0.98) 100%)', border: '1px solid rgba(0,230,118,0.20)', boxShadow: '0 0 50px rgba(0,198,255,0.06), 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(0,230,118,0.08)' }}>
+            {/* Decorative glow orbs */}
+            <div className="absolute top-0 right-0 w-72 h-72 pointer-events-none" style={{ background: 'radial-gradient(circle at 80% 20%, rgba(0,230,118,0.10) 0%, transparent 60%)' }}></div>
+            <div className="absolute bottom-0 left-0 w-56 h-56 pointer-events-none" style={{ background: 'radial-gradient(circle at 20% 80%, rgba(0,198,255,0.06) 0%, transparent 60%)' }}></div>
+            <div className="h-1 relative z-10" style={{ background: 'linear-gradient(90deg, #00E676 0%, #00C6FF 50%, #F5A623 100%)' }}></div>
+            <div className="p-6 sm:p-10 relative z-10">
               {/* Section header */}
               <div className="flex items-center gap-3 mb-4">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl font-bold text-sm" style={{ background: 'linear-gradient(135deg, #00E676, #00B853)', color: '#FFF', boxShadow: '0 4px 14px rgba(0,230,118,0.3)' }}>02</span>
@@ -1746,37 +1752,37 @@ function ServicesSection() {
                 {/* 3 layers */}
                 <div className="lg:col-span-2 space-y-3">
                   {/* Layer 1: Dashboard */}
-                  <div className="rounded-xl p-4" style={{ background: 'rgba(0,198,255,0.04)', border: '1px solid rgba(0,198,255,0.20)', borderLeft: '3px solid #00C6FF' }}>
-                    <div className="flex items-center justify-between mb-1">
+                  <div className="rounded-xl p-4 transition-all duration-300 hover:translate-x-1 hover:shadow-lg" style={{ background: 'linear-gradient(145deg, rgba(0,198,255,0.06) 0%, rgba(0,198,255,0.02) 100%)', border: '1px solid rgba(0,198,255,0.20)', borderLeft: '3px solid #00C6FF', boxShadow: 'inset 0 1px 0 rgba(0,198,255,0.06)' }}>
+                    <div className="flex items-center justify-between mb-1.5">
                       <div className="flex items-center gap-2">
                         <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full" style={{ background: 'rgba(0,198,255,0.15)', color: '#00C6FF' }}>Layer 1</span>
                         <span className="text-white font-bold text-sm">Intelligence Dashboard</span>
                       </div>
                       <span className="gradient-text-gold text-sm font-bold">From $850</span>
                     </div>
-                    <p className="text-[#8899AA] text-xs leading-relaxed">One connected custom dashboard with up to 5 standard data sources, data pipeline, KPI views, and technical handover.</p>
+                    <p className="text-[#8899AA] text-xs leading-relaxed ml-1">One connected custom dashboard with up to 5 standard data sources, data pipeline, KPI views, and technical handover.</p>
                   </div>
                   {/* Layer 2: Audit Intelligence */}
-                  <div className="rounded-xl p-4" style={{ background: 'rgba(0,230,118,0.04)', border: '1px solid rgba(0,230,118,0.20)', borderLeft: '3px solid #00E676' }}>
-                    <div className="flex items-center justify-between mb-1">
+                  <div className="rounded-xl p-4 transition-all duration-300 hover:translate-x-1 hover:shadow-lg" style={{ background: 'linear-gradient(145deg, rgba(0,230,118,0.06) 0%, rgba(0,230,118,0.02) 100%)', border: '1px solid rgba(0,230,118,0.20)', borderLeft: '3px solid #00E676', boxShadow: 'inset 0 1px 0 rgba(0,230,118,0.06)' }}>
+                    <div className="flex items-center justify-between mb-1.5">
                       <div className="flex items-center gap-2">
                         <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full" style={{ background: 'rgba(0,230,118,0.15)', color: '#00E676' }}>Layer 2 &middot; Optional</span>
                         <span className="text-white font-bold text-sm">Audit Intelligence</span>
                       </div>
                       <span className="gradient-text-gold text-sm font-bold">From $650/module</span>
                     </div>
-                    <p className="text-[#8899AA] text-xs leading-relaxed">Deeper calculations, classifications, insight summaries, and basic recommendations for marketing, retention, product, profitability, or operations.</p>
+                    <p className="text-[#8899AA] text-xs leading-relaxed ml-1">Deeper calculations, classifications, insight summaries, and basic recommendations for marketing, retention, product, profitability, or operations.</p>
                   </div>
                   {/* Layer 3: Automation */}
-                  <div className="rounded-xl p-4" style={{ background: 'rgba(245,166,35,0.04)', border: '1px solid rgba(245,166,35,0.20)', borderLeft: '3px solid #F5A623' }}>
-                    <div className="flex items-center justify-between mb-1">
+                  <div className="rounded-xl p-4 transition-all duration-300 hover:translate-x-1 hover:shadow-lg" style={{ background: 'linear-gradient(145deg, rgba(245,166,35,0.06) 0%, rgba(245,166,35,0.02) 100%)', border: '1px solid rgba(245,166,35,0.20)', borderLeft: '3px solid #F5A623', boxShadow: 'inset 0 1px 0 rgba(245,166,35,0.06)' }}>
+                    <div className="flex items-center justify-between mb-1.5">
                       <div className="flex items-center gap-2">
                         <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full" style={{ background: 'rgba(245,166,35,0.15)', color: '#F5A623' }}>Layer 3 &middot; Optional</span>
                         <span className="text-white font-bold text-sm">Automated Scheduling &amp; Alerts</span>
                       </div>
                       <span className="gradient-text-gold text-sm font-bold">From $200</span>
                     </div>
-                    <p className="text-[#8899AA] text-xs leading-relaxed">Recurring refresh schedule, refresh monitoring, failed-refresh alerts, missing-data alerts, error notifications, and automated data validation.</p>
+                    <p className="text-[#8899AA] text-xs leading-relaxed ml-1">Recurring refresh schedule, refresh monitoring, failed-refresh alerts, missing-data alerts, error notifications, and automated data validation.</p>
                   </div>
                 </div>
               </div>
@@ -1802,11 +1808,11 @@ function ServicesSection() {
           <p className="text-white text-lg sm:text-xl font-semibold mb-3">Built Around Your Business Questions</p>
           <p className="text-[#8899AA] text-sm leading-relaxed mb-12 pl-4 max-w-3xl" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>Not every business problem fits into a standard audit or dashboard. We build custom analyses, KPI systems, dashboards, and reporting solutions around your specific business question, data, and goals.</p>
 
-          <div className="rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(0,198,255,0.20)] relative" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.98) 0%, rgba(0,30,50,0.95) 50%, rgba(13,21,32,0.98) 100%)', border: '1px solid rgba(0,198,255,0.25)', boxShadow: '0 0 40px rgba(0,198,255,0.08), 0 16px 48px rgba(0,0,0,0.5)' }}>
+          <div className="rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(0,198,255,0.20)] relative" style={{ background: 'linear-gradient(145deg, rgba(10,16,26,0.98) 0%, rgba(0,28,48,0.95) 40%, rgba(5,12,22,0.98) 100%)', border: '1px solid rgba(0,198,255,0.25)', boxShadow: '0 0 50px rgba(0,198,255,0.08), 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(0,198,255,0.08)' }}>
 
             {/* Decorative glow orbs */}
-            <div className="absolute top-0 right-0 w-64 h-64 pointer-events-none" style={{ background: 'radial-gradient(circle at 70% 30%, rgba(0,198,255,0.12) 0%, transparent 60%)' }}></div>
-            <div className="absolute bottom-0 left-0 w-56 h-56 pointer-events-none" style={{ background: 'radial-gradient(circle at 30% 70%, rgba(0,230,118,0.08) 0%, transparent 60%)' }}></div>
+            <div className="absolute top-0 right-0 w-72 h-72 pointer-events-none" style={{ background: 'radial-gradient(circle at 80% 20%, rgba(0,198,255,0.12) 0%, transparent 60%)' }}></div>
+            <div className="absolute bottom-0 left-0 w-56 h-56 pointer-events-none" style={{ background: 'radial-gradient(circle at 20% 80%, rgba(0,230,118,0.08) 0%, transparent 60%)' }}></div>
 
             {/* Top accent bar — tri-color gradient */}
             <div className="h-1 relative z-10" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #00E676 50%, #F5A623 100%)' }}></div>
