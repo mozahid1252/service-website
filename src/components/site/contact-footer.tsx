@@ -70,7 +70,6 @@ const finalCta = {
 
 const serviceOptions = [
   "E-Commerce Health Check",
-  "Revenue Growth Accelerator",
   "Data-Driven Growth System",
   "Marketing Spend Audit",
   "Customer Retention Audit",
@@ -111,7 +110,6 @@ const footerData = {
   ],
   detailsSetup: [
     { label: "E-Commerce Health Check", href: "/health-check" },
-    { label: "Revenue Growth Accelerator", href: "/revenue-growth-accelerator" },
     { label: "Data-Driven Growth System", href: "/data-driven-growth-system" },
     { label: "Data Preparation & Integration", href: "/data-preparation-integration" },
     { label: "Data Pipeline & Dashboard Setup", href: "/data-pipeline-dashboard-setup" },

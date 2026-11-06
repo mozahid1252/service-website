@@ -13,7 +13,6 @@ interface BookingModalProps {
 const SERVICE_PACKAGES = [
   { label: '─ Part 1: Core E-Commerce Packages ─', options: [
     'E-Commerce Health Check',
-    'Revenue Growth Accelerator',
     'Data-Driven Growth System',
   ]},
   { label: '─ Part 2: Specialized Add-On Packages ─', options: [

@@ -123,7 +123,6 @@ When the user asks "which package is right for me?" or similar package selection
 
 2. Part 1 — Core E-Commerce Packages (with prices and timelines):
    - E-Commerce Health Check — $150–$300, 5–7 Days. Starter diagnostic for immediate revenue/profitability leaks.
-   - Revenue Growth Accelerator — $600–$1,200, 10–14 Days. Deeper RFM, LTV, churn analysis.
    - Data-Driven Growth System — $2,000–$4,000, 20–30 Days. Full 15-analysis system with live dashboard.
 
 3. Part 2 — Specialized Add-On Packages (ALL 7, with short descriptions):

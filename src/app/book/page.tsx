@@ -39,7 +39,6 @@ const COUNTRIES = [
 const PACKAGE_MAP: Record<string, string> = {
   'e-commerce-health-check': 'E-Commerce Health Check',
   'health-check': 'E-Commerce Health Check',
-  'revenue-growth-accelerator': 'E-Commerce Growth & Profit Intelligence',
   'data-driven-growth-system': 'Data-Driven Growth System',
   'marketing-spend-audit': 'Marketing Spend Audit',
   'customer-retention-audit': 'Customer Retention Audit',

@@ -18,12 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/revenue-growth-accelerator`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
       url: `${baseUrl}/data-driven-growth-system`,
       lastModified,
       changeFrequency: "monthly",
