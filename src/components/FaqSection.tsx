@@ -16,68 +16,95 @@ import { ChevronDown } from "lucide-react";
    1) DATA — sob ekhane edit korba
    ------------------------------------------------------------ */
 const faqHeading = {
-  kicker: "Still have questions?",
-  title: "Let's find your next $10,000.",
-  description: "Everything you need to know before we work together.",
+  kicker: "Still Have Questions?",
+  title: "Let's Find the Right Starting Point for Your Business",
+  description: "Whether you need a full business diagnosis, a focused audit, prepared data, a custom dashboard, or a longer-term growth engagement, we'll help you choose the service that fits your actual situation.",
 };
 
 const faqs = [
   {
-    question:
-      "I've already bought the Health Check or Growth Package. Do I have to pay full price again to upgrade?",
-    answer:
-      "No, absolutely not. You only pay for what's new. If you start with a smaller package and want to upgrade later, every dollar you already spent is deducted from the new package price. We simply subtract your previous payment and focus on delivering the new analyses and automated tools you need.",
+    question: "Which service should I start with?",
+    answer: "That depends on the problem you are trying to solve. Choose the E-Commerce Health Check Audit if you are not sure where the main problem is and need a broad diagnosis. Choose a Specialized E-Commerce Audit if you already know the area that needs attention — for example profitability, marketing performance, CRO, customer retention, products, operations, or Meta Ads. Choose Data Preparation & Integration if your data needs to be collected, cleaned, or organized before an audit or analysis. Choose the E-Commerce Intelligence & Audit Automation Dashboard if you want a connected dashboard, deeper automated insights, or recurring monitoring. For a unique business question, choose Custom Analytics & Decision Support.",
   },
   {
-    question: "My marketing agency already provides dashboards. Why do I need you?",
-    answer:
-      "That's not a problem. Your agency focuses on running and optimizing your marketing. I focus on understanding the business behind the numbers. I go beyond ROAS and campaign metrics by connecting your marketing data with product costs, returns, shipping, customer value, and true profitability. This helps reveal what your dashboards may not show: where you're actually making money, where you're losing it, and what you should do next. Your agency optimizes the campaigns. I uncover the business opportunities behind them.",
+    question: "What is the difference between the E-Commerce Health Check and a Specialized Audit?",
+    answer: "The E-Commerce Health Check Audit is a broader review of the overall business. It helps identify the main areas creating revenue leaks, profit pressure, tracking problems, conversion issues, or operational risk. A Specialized Audit focuses on one specific business area, such as: E-Commerce Profitability, Marketing Performance & Profitability, Meta Ads Measurement & Profitability, CRO, Customer Retention & LTV, Product Profitability & Portfolio, Operations Efficiency, or Marketing Measurement & Attribution. You do not need to purchase both. The right starting point depends on how clearly you already understand the problem.",
+  },
+  {
+    question: "I know my problem already. Do I need to buy a full Health Check?",
+    answer: "No. If you already know that the problem is related to marketing, Meta Ads, conversion, retention, products, profitability, operations, or measurement, you can start with the relevant Specialized Audit. The Health Check is more suitable when the problem is broader or unclear.",
   },
   {
     question: "Do I need to have my data perfectly organized before we work together?",
-    answer:
-      "Absolutely not. Most founders have messy data spread across Shopify, GA4, and ad platforms that don't talk to each other. That's exactly what my Data Setup & Infrastructure service fixes. I handle 100% of the backend engineering (SQL, Python, BigQuery) to clean, merge, and structure your data. You never have to touch a single line of code.",
+    answer: "No. Your data does not need to be perfect before you contact us. If your data is scattered across Shopify, GA4, Meta Ads, Google Ads, CRM platforms, spreadsheets, inventory files, or other sources, we can first assess what is available and what is missing. If preparation is required, you can add Data Preparation & Integration. This service prepares the required data for a selected audit, Health Check, or custom analysis.",
   },
   {
-    question: "Why is there a separate fee for the Data Setup? Can't you just look at my Shopify dashboard?",
-    answer:
-      "Shopify's default dashboard only shows about 10% of the picture. To find the hidden profit leaks, I have to pull raw data from all your platforms, align currencies and timezones, and merge them into one central database. This is a one-time investment that pays for itself with every decision you make going forward. You only pay for the platforms you actually use.",
+    question: "Why is there a separate fee for Data Preparation & Integration?",
+    answer: "Data preparation is a separate technical service because collecting, cleaning, mapping, organizing, and validating data requires additional work. A Shopify dashboard alone may not contain all the information needed to review: product profitability, marketing efficiency, customer retention, attribution, refunds and returns, contribution margin, product costs, or channel economics. Data Preparation & Integration allows us to create a more reliable dataset before the actual analysis begins.",
   },
   {
-    question: "Does my store really need all 15 analyses in the Data-Driven Growth System?",
-    answer:
-      "Not always. We can build all 15 for you, or fully customize them based on your needs. If you want the complete picture, we are happy to run all 15 deep analyses. However, every store gets our 8 Core Analytics Foundations (Revenue, Margins, RFM Segments, LTV, Funnels, and Live Dashboards), and for the rest, we can pick only the modules that make the most sense for your business: If you have many products: We activate Inventory Forecasting & Return Pattern Analysis. If you have a few core products: We focus heavily on Market Basket Cross-Sells & LTV Cohorts. If you run heavy discounts: We prioritize Margin Erosion & Promo Strategy Analysis. During onboarding, you can choose to get all 15 analyses or customize the remaining modules so you get zero fluff and 100% actionable data.",
+    question: "What is the difference between Data Preparation and the Intelligence Dashboard?",
+    answer: "Data Preparation & Integration prepares the data for a specific audit or analysis. The E-Commerce Intelligence Dashboard connects data sources into a custom reporting environment where you can monitor business KPIs over time. In simple terms: Data Preparation = Prepare the data for analysis. Intelligence Dashboard = Build a connected system to monitor the business. The dashboard may include sales, marketing, customer, product, profitability, conversion, inventory, and returns views depending on the selected scope.",
   },
   {
-    question:
-      "I have a specific, urgent problem (like high return rates or declining ad performance). Do I have to buy a full $1,500 package?",
-    answer:
-      "No. You don't need to commit to a full package if you only need help solving one specific problem. You can choose one of my Specialized Add-On Audits, such as a CRO/Website Audit, Profitability Audit, Marketing Audit, or another focused audit designed around a specific business issue. These are deep-dive, standalone engagements delivered in 7–14 days. If your problem doesn't fit into a predefined audit, you can also use Custom Analytics & Insights. I can build a custom analysis specifically around the business question you need answered, using the data and context relevant to your situation. You pay for the problem you need solved, not for analysis you don't need.",
+    question: "If I buy an automated module directly, do I need to buy the full audit first?",
+    answer: "No. You can purchase an Automated Audit Intelligence module directly if the required data and dashboard foundation are available. The module includes the limited initial data and logic review required to configure: KPIs, calculations, segments, thresholds, status labels, insight rules, and dashboard views. This setup review is not a full one-time strategic audit. It does not include a complete audit report, detailed business investigation, or implementation plan unless separately scoped.",
   },
   {
-    question: "My revenue is growing, but I don't feel like I'm making more money. Can you help?",
-    answer:
-      'This is the most common scenario I see. Revenue is vanity; profit is sanity. I will run a Profit Reality Check on your top products, calculate your true margins (after COGS, ad spend, returns, and shipping), and show you exactly which "best-sellers" are quietly draining your bank account.',
+    question: "Does the automated system provide recommendations?",
+    answer: "Selected Automated Audit Intelligence modules may provide: text-based insight summaries, performance signals, status labels, and basic recommended next steps. Examples include: Review, Monitor, Maintain, Test, Prioritize, Investigate, or Reduce. These are decision-support signals. They are not guaranteed instructions, and they do not replace business judgment or implementation work.",
   },
   {
-    question: "How much of my time is required during the engagement?",
-    answer:
-      "Very little. I built this process specifically for busy founders. I handle the data extraction, engineering, and analysis. You simply provide initial platform access, and then join me for the final strategy call to review the findings and action plan. You don't need to babysit the project.",
+    question: "I already have a dashboard. Can you still help?",
+    answer: "Yes. If your existing dashboard and data structure are usable, we may be able to add: new KPI views, audit-specific intelligence, business rules, insight summaries, basic recommendations, monitoring logic, scheduled refreshes, or error alerts. The exact scope depends on the dashboard platform, data access, data quality, and current architecture.",
   },
   {
-    question: "I don't have a marketing team. Will I actually be able to implement your recommendations?",
-    answer:
-      "Absolutely. I make every recommendation simple enough for a founder or small team to understand and implement without needing a technical background or a dedicated marketing team. You won't get complicated instructions or a 50-page technical report. Every finding comes with a clear, prioritized action plan written in plain business language, such as \"Pause this ad,\" \"Fix this checkout step,\" or \"Target these high-value customers.\" And if you need help putting recommendations into action, custom implementation support is available on request based on your specific scope and requirements.",
+    question: "Does the dashboard update automatically?",
+    answer: "Not by default. The standard E-Commerce Intelligence Dashboard is a one-time setup and handover service. Automated updates are available through Automated Scheduling, Refresh Monitoring & Error Alerts. This optional add-on starts from $200.",
   },
   {
-    question: "I'm nervous about giving access to my Shopify and ad accounts. Is my data secure?",
-    answer:
-      "100% secure. I use strict, permission-based API connections. For live dashboard and retainer clients, I store all API keys and tokens securely using environment variables or Secret Manager — never exposed, never at risk. Your data is used solely for your analysis and is never shared.",
+    question: "Are error alerts included in the dashboard setup?",
+    answer: "The standard setup includes initial data validation and an initial pipeline error check before handover. Ongoing alerts require the automation add-on, which may include: failed-refresh alerts, missing-data alerts, data-loading error notifications, refresh logs, or automated validation. The dashboard and data preparation services generally support up to five standard data sources, unless a larger custom scope is agreed.",
   },
   {
-    question: "How fast can we start? I'm bleeding money.",
-    answer:
-      "The E-Commerce Health Check is delivered in exactly 5–7 days. If your business is losing $1,690 a month, you don't have 3 months to wait for a consultant to figure it out. You need to know exactly what to fix this week.",
+    question: "Will Shopify, GA4, Meta, and Google Ads show the same numbers?",
+    answer: "Not necessarily. Different platforms use different attribution windows, tracking methods, time zones, definitions, and reporting models. The goal is not always to force every platform to show the exact same number. The goal is to: identify why the numbers differ, find missing or duplicate data, clarify which source is suitable for which decision, improve confidence in the reporting, and highlight important measurement limitations. For this type of review, you may need: Marketing Measurement & Attribution Review, Meta Ads Measurement & Profitability Review, or Data Preparation & Integration.",
+  },
+  {
+    question: "Can you fix the problems you identify?",
+    answer: "The audit or review will identify the problem, explain its likely impact, and provide a prioritized action plan. Implementation may be scoped separately, including: tracking correction, pixel or CAPI implementation, GTM or GA4 changes, dashboard changes, website or landing-page improvements, campaign restructuring, creative testing, CRM or retention implementation, or operations improvements. The base audit price does not automatically include implementation.",
+  },
+  {
+    question: "I have a specific urgent problem. Do I have to buy a large package?",
+    answer: "No. You can start with a focused service such as: Meta Ads Measurement & Profitability Review, E-Commerce CRO Audit, Customer Retention & LTV Audit, Product Profitability & Portfolio Audit, Operations Efficiency Audit, or Marketing Measurement & Attribution Review. If your question does not fit an existing service, you can request Custom Analytics & Decision Support.",
+  },
+  {
+    question: "My revenue is growing, but I do not feel like I am making more money. Can you help?",
+    answer: "Yes. The best starting points may be: E-Commerce Profitability Audit, Product Profitability & Portfolio Audit, Marketing Performance & Profitability Audit, or Customer Retention & LTV Audit. The review may examine: product costs, marketing costs, discounts, refunds and returns, shipping and payment fees, channel economics, customer value, contribution-margin signals, or revenue versus profit trends. Complete profitability analysis depends on the availability and quality of the required cost data.",
+  },
+  {
+    question: "How much of my time is required?",
+    answer: "Usually, we need your help during: initial scope confirmation, data and platform access, business context clarification, review of important findings, and final walkthrough or strategy call (where included). The exact time required depends on the service, data availability, access requirements, and complexity.",
+  },
+  {
+    question: "I do not have a marketing or analytics team. Will I be able to use the findings?",
+    answer: "Yes. The deliverables are designed to make the findings understandable and actionable. Depending on the selected service, you may receive: a decision-ready report, prioritized findings, scorecards or comparison tables, clear action categories, recommended next steps, a roadmap, or a review call. Implementation support can be scoped separately if you need help carrying out the recommendations.",
+  },
+  {
+    question: "Is my business data secure?",
+    answer: "We only request the access and data required for the agreed scope. Where possible, access should be provided through appropriate permissions rather than unnecessary full-account access. Credentials, files, and data handling should follow the agreed secure process. You should also avoid sharing passwords directly when a platform supports user invitations, partner access, API permissions, or restricted roles.",
+  },
+  {
+    question: "How quickly can we start?",
+    answer: "The start date depends on: service availability, scope confirmation, platform access, data delivery, required files, and technical complexity. Work usually begins after the scope, access, and required data have been confirmed.",
+  },
+  {
+    question: "Are cloud, software, and third-party connector costs included?",
+    answer: "Not always. Cloud hosting, BigQuery, software subscriptions, third-party connectors, API fees, and other external platform costs may be quoted separately unless specifically included in your proposal.",
+  },
+  {
+    question: "Is ongoing maintenance included?",
+    answer: "No. One-time audits, data preparation, dashboard setup, and intelligence module configuration include the agreed initial scope and handover. Ongoing maintenance may be scoped separately for: source changes, API changes, dashboard updates, KPI changes, rule changes, pipeline troubleshooting, scheduled refresh monitoring, or additional data sources.",
   },
 ];
 
