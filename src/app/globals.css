@@ -646,18 +646,19 @@ strong { color: #FFFFFF; font-weight: 700; }
   inset: -2px;
   border-radius: 20px;
   background: conic-gradient(from var(--angle, 0deg), transparent 25%, var(--glow-color) 45%, var(--bright-color) 50%, var(--glow-color) 55%, transparent 75%);
-  animation: none;
+  animation: rotate-border 5s linear infinite;
   opacity: 0;
   transition: opacity 0.4s ease;
 }
-.addon-card-wrapper:hover::before { opacity: 0; }
+.addon-card-wrapper:hover::before { opacity: 1; }
 .addon-card-wrapper::after {
   content: '';
   position: absolute;
   inset: -1px;
   border-radius: 19px;
-  opacity: 0;
+  opacity: 0.06;
   filter: blur(10px);
+  animation: pulse-glow 4s ease-in-out infinite;
 }
 .addon-card-inner {
   position: relative;
