@@ -183,6 +183,15 @@ const CORE_PACKAGES = [
 ];
 
 const ADD_ON_PACKAGES = [
+  // ── Core Business Performance Audits (1–6) ──
+  {
+    name: 'E-Commerce Profitability Audit',
+    price: 'Starting from $650 · 10–14 Days',
+    problem: '"Revenue grows but profit doesn\'t."',
+    promise: 'You will know your true profit margin on every product/channel, exactly where revenue is leaking into cost, if your promotions are eroding profit, and when your cash will be tight in coming months.',
+    cssClass: 'profitability',
+    route: '/profitability-audit',
+  },
   {
     name: 'Marketing Performance & Profitability Audit',
     price: 'Starting from $350 · 5–7 Days',
@@ -191,6 +200,14 @@ const ADD_ON_PACKAGES = [
     cssClass: 'marketing',
     route: '/marketing-spend-audit',
     cta: 'Explore Marketing Audit',
+  },
+  {
+    name: 'E-Commerce CRO Audit',
+    price: 'Starting at $900 · 10–15 Days',
+    problem: '"Traffic is there but nobody\'s buying."',
+    promise: 'You will know where customers are dropping off across 11 CRO analyses, whether the issue is traffic or experience, which device or segment converts poorly, and receive a prioritized, testable conversion improvement roadmap.',
+    cssClass: 'cro',
+    route: '/cro-audit',
   },
   {
     name: 'Customer Retention & LTV Audit',
@@ -210,22 +227,6 @@ const ADD_ON_PACKAGES = [
     route: '/product-portfolio-audit',
   },
   {
-    name: 'E-Commerce CRO Audit',
-    price: 'Starting at $900 · 10–15 Days',
-    problem: '"Traffic is there but nobody\'s buying."',
-    promise: 'You will know where customers are dropping off across 11 CRO analyses, whether the issue is traffic or experience, which device or segment converts poorly, and receive a prioritized, testable conversion improvement roadmap.',
-    cssClass: 'cro',
-    route: '/cro-audit',
-  },
-  {
-    name: 'E-Commerce Profitability Audit',
-    price: 'Starting from $650 · 10–14 Days',
-    problem: '"Revenue grows but profit doesn\'t."',
-    promise: 'You will know your true profit margin on every product/channel, exactly where revenue is leaking into cost, if your promotions are eroding profit, and when your cash will be tight in coming months.',
-    cssClass: 'profitability',
-    route: '/profitability-audit',
-  },
-  {
     name: 'Operations Efficiency Audit',
     price: 'Starting from $850 · 10–14 Days',
     problem: '"Returns climbing, inventory out of control."',
@@ -233,6 +234,7 @@ const ADD_ON_PACKAGES = [
     cssClass: 'operations',
     route: '/operations-efficiency-audit',
   },
+  // ── Channel & Measurement Reviews (7–8) ──
   {
     name: 'Meta Ads Measurement & Profitability Review',
     price: 'Starting at $900 · 10–14 Days',
@@ -1511,45 +1513,98 @@ function ServicesSection() {
 
         {/* Part 2: Add-On Packages */}
         <div id="part-2" className="mb-20">
-          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 2: Specialized Add-On Audits</h3>
+          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 2: Specialized E-Commerce Audits</h3>
           <p className="text-white text-lg sm:text-xl font-semibold mb-3">Have One Specific Problem?</p>
-          <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>Seven focused audits, each one built around a single critical business question. Delivered in 7&ndash;14 days.</p>
+          <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>Focused audits designed to investigate one critical business question and give you clear findings, priorities, and next steps. Typically delivered within 7&ndash;14 business days.</p>
 
-          <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ADD_ON_PACKAGES.map((pkg, i) => (
-              <div key={i} className={`addon-card-wrapper ${pkg.cssClass}`}>
-                <div className="addon-card-inner">
-                <h4 className="text-white font-bold text-base mb-1">{pkg.name}</h4>
-                <div className="flex items-start justify-between mb-3">
+          {/* ── Category 1: Core Business Performance Audits ── */}
+          <div className="reveal-stagger mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-[#00C6FF] text-xs font-bold tracking-[0.12em] uppercase">Core Business Performance Audits</span>
+              <span className="flex-1 h-px" style={{ background: 'linear-gradient(90deg, rgba(0,198,255,0.3), transparent)' }}></span>
+              <span className="text-[#8899AA] text-xs font-medium">6 Audits</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {ADD_ON_PACKAGES.slice(0, 6).map((pkg, i) => (
+                <div key={i} className={`addon-card-wrapper ${pkg.cssClass}`}>
+                  <div className="addon-card-inner">
+                  <h4 className="text-white font-bold text-base mb-1">{pkg.name}</h4>
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <div className="text-[#8899AA] text-xs">Timeline</div>
+                      <div className="text-white text-sm font-medium">{pkg.price.split(' · ')[1] || '7–14 Days'}</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-[#8899AA] text-xs">Investment</div>
+                      <div className="gradient-text-gold text-sm font-bold">{pkg.price.split(' · ')[0]}</div>
+                    </div>
+                      {pkg.tagline && <div className="text-[#00C6FF] text-xs font-medium mt-2 leading-snug">{pkg.tagline}</div>}
+                  </div>
+                  <div className="mb-3">
+                    <div className="text-[#FF4444] text-xs font-semibold mb-1">Problem:</div>
+                    <p className="text-[#8899AA] text-sm">{pkg.problem}</p>
+                  </div>
                   <div>
-                    <div className="text-[#8899AA] text-xs">Timeline</div>
-                    <div className="text-white text-sm font-medium">{pkg.price.split(' · ')[1] || '7–14 Days'}</div>
+                    <div className="text-[#00E676] text-xs font-semibold mb-1">Our Promise:</div>
+                    <p className="text-[#F0F4F8] text-sm leading-relaxed"><PromiseText text={pkg.promise} /></p>
                   </div>
-                  <div className="text-right">
-                    <div className="text-[#8899AA] text-xs">Investment</div>
-                    <div className="gradient-text-gold text-sm font-bold">{pkg.price.split(' · ')[0]}</div>
+                  <div className="flex items-stretch gap-2 mt-4">
+                    <a href={`/book?package=${pkg.route.replace('/', '')}`} className="addon-book-btn flex-1 items-center">
+                      {pkg.cta ? `${pkg.cta} →` : `Book the ${pkg.name} →`}
+                    </a>
+                    <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline whitespace-nowrap self-stretch">
+                      <ExternalLink size={12} /> View Details
+                    </a>
                   </div>
-                    {pkg.tagline && <div className="text-[#00C6FF] text-xs font-medium mt-2 leading-snug">{pkg.tagline}</div>}
+                  </div>
                 </div>
-                <div className="mb-3">
-                  <div className="text-[#FF4444] text-xs font-semibold mb-1">Problem:</div>
-                  <p className="text-[#8899AA] text-sm">{pkg.problem}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* ── Category 2: Channel & Measurement Reviews ── */}
+          <div className="reveal-stagger">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-[#F5A623] text-xs font-bold tracking-[0.12em] uppercase">Channel &amp; Measurement Reviews</span>
+              <span className="flex-1 h-px" style={{ background: 'linear-gradient(90deg, rgba(245,166,35,0.3), transparent)' }}></span>
+              <span className="text-[#8899AA] text-xs font-medium">2 Reviews</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {ADD_ON_PACKAGES.slice(6, 8).map((pkg, i) => (
+                <div key={i} className={`addon-card-wrapper ${pkg.cssClass}`}>
+                  <div className="addon-card-inner">
+                  <h4 className="text-white font-bold text-base mb-1">{pkg.name}</h4>
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <div className="text-[#8899AA] text-xs">Timeline</div>
+                      <div className="text-white text-sm font-medium">{pkg.price.split(' · ')[1] || '7–14 Days'}</div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-[#8899AA] text-xs">Investment</div>
+                      <div className="gradient-text-gold text-sm font-bold">{pkg.price.split(' · ')[0]}</div>
+                    </div>
+                      {pkg.tagline && <div className="text-[#00C6FF] text-xs font-medium mt-2 leading-snug">{pkg.tagline}</div>}
+                  </div>
+                  <div className="mb-3">
+                    <div className="text-[#FF4444] text-xs font-semibold mb-1">Problem:</div>
+                    <p className="text-[#8899AA] text-sm">{pkg.problem}</p>
+                  </div>
+                  <div>
+                    <div className="text-[#00E676] text-xs font-semibold mb-1">Our Promise:</div>
+                    <p className="text-[#F0F4F8] text-sm leading-relaxed"><PromiseText text={pkg.promise} /></p>
+                  </div>
+                  <div className="flex items-stretch gap-2 mt-4">
+                    <a href={`/book?package=${pkg.route.replace('/', '')}`} className="addon-book-btn flex-1 items-center">
+                      {pkg.cta ? `${pkg.cta} →` : `Book the ${pkg.name} →`}
+                    </a>
+                    <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline whitespace-nowrap self-stretch">
+                      <ExternalLink size={12} /> View Details
+                    </a>
+                  </div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-[#00E676] text-xs font-semibold mb-1">Our Promise:</div>
-                  <p className="text-[#F0F4F8] text-sm leading-relaxed"><PromiseText text={pkg.promise} /></p>
-                </div>
-                <div className="flex items-stretch gap-2 mt-4">
-                  <a href={`/book?package=${pkg.route.replace('/', '')}`} className="addon-book-btn flex-1 items-center">
-                    {pkg.cta ? `${pkg.cta} →` : `Book the ${pkg.name} →`}
-                  </a>
-                  <a href={`${basePath}${pkg.route}`} target="_blank" rel="noopener noreferrer" className="btn-press px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline whitespace-nowrap self-stretch">
-                    <ExternalLink size={12} /> View Details
-                  </a>
-                </div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
         </div>
