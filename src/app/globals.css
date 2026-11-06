@@ -656,9 +656,8 @@ strong { color: #FFFFFF; font-weight: 700; }
   position: absolute;
   inset: -1px;
   border-radius: 19px;
-  opacity: 0.06;
+  opacity: 0;
   filter: blur(10px);
-  animation: pulse-glow 4s ease-in-out infinite;
 }
 .addon-card-inner {
   position: relative;
