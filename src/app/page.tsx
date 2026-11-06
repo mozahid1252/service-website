@@ -1669,36 +1669,84 @@ function ServicesSection() {
 
         </div>
 
-        {/* ── Part 4: Custom Analytics & Insights (single card + CTA) ── */}
+        {/* ── Custom Analytics & Insights (single card + CTA) ── */}
         <div id="part-4" className="mb-20">
-          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 4: Custom Analytics &amp; Insights</h3>
-          <p className="text-[#00C6FF] text-base font-semibold mb-1">Built Around Your Business Questions</p>
-          <p className="text-[#8899AA] text-sm mb-8 max-w-3xl">Not every business problem fits into a standard package. If you need a specific analysis, dashboard, KPI system, or custom report that isn&apos;t covered by our existing services, we can build it around your exact business question, data, and goals.</p>
+          <div className="rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_50px_rgba(0,198,255,0.18)]" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.98) 0%, rgba(0,198,255,0.08) 100%)', border: '1px solid rgba(0,198,255,0.25)', boxShadow: '0 0 40px rgba(0,198,255,0.10), 0 12px 40px rgba(0,0,0,0.5)' }}>
 
-          <div className="reveal-stagger">
-            <div className="rounded-2xl p-8 sm:p-10 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,198,255,0.15)]" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.95) 0%, rgba(0,198,255,0.06) 100%)', border: '1px solid rgba(0,198,255,0.20)', borderLeft: '4px solid #00C6FF', boxShadow: '0 0 30px rgba(0,198,255,0.08), 0 8px 32px rgba(0,0,0,0.4)' }}>
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8">
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(0,198,255,0.1)', border: '1px solid rgba(0,198,255,0.3)' }}>
-                  <Lightbulb size={26} className="text-[#00C6FF]" />
+            {/* Top accent bar */}
+            <div className="h-1" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #00E676 50%, #F5A623 100%)' }}></div>
+
+            <div className="p-8 sm:p-12">
+
+              {/* Header row: icon + title + eyebrow */}
+              <div className="flex items-start gap-5 mb-7">
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 relative" style={{ background: 'linear-gradient(135deg, rgba(0,198,255,0.15) 0%, rgba(0,114,255,0.15) 100%)', border: '1px solid rgba(0,198,255,0.35)', boxShadow: '0 0 24px rgba(0,198,255,0.15) inset' }}>
+                  <Lightbulb size={30} className="text-[#00C6FF]" />
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-white font-bold text-xl mb-2">Custom Analytics &amp; Insights</h4>
-                  <p className="text-[#8899AA] text-sm leading-relaxed mb-4 max-w-2xl">Six tailored services built around your exact business questions &mdash; Custom Business Analysis, E-Commerce Analysis, Custom Dashboards, KPI &amp; Reporting Systems, Multi-Platform Data Analysis, and Conversion &amp; Experiment Analysis. Custom pricing based on scope.</p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] bg-[rgba(0,198,255,0.05)]">6 Custom Services</span>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-[#00E676] border border-[rgba(0,230,118,0.3)] bg-[rgba(0,230,118,0.05)]">Custom Pricing &middot; Based on Scope</span>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-[#F5A623] border border-[rgba(245,166,35,0.3)] bg-[rgba(245,166,35,0.05)]">4 Simple Steps</span>
+                <div className="flex-1 pt-1">
+                  <div className="flex items-center gap-3 mb-1.5">
+                    <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#00C6FF]">Custom Service</span>
+                    <span className="text-[#475569]">·</span>
+                    <span className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.08em] uppercase text-[#F5A623]"><i className="text-[8px]">●</i>Based on Scope</span>
                   </div>
-                </div>
-                <div className="flex flex-col gap-3 shrink-0 w-full md:w-auto">
-                  <a href={`${basePath}/custom-analytics-insights`} target="_blank" rel="noopener noreferrer" className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md text-sm font-semibold text-[#000000] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.4)] no-underline" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
-                    <ExternalLink size={15} /> View Details
-                  </a>
-                  <a href="#contact" className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md text-sm font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] no-underline">
-                    Get Custom Analytics
-                  </a>
+                  <h3 className="text-white font-bold text-2xl sm:text-3xl tracking-tight mb-1.5" style={{ fontFamily: 'Manrope, sans-serif' }}>Custom Analytics &amp; Insights</h3>
+                  <p className="text-[#00C6FF] text-sm font-semibold">Built Around Your Business Questions</p>
                 </div>
               </div>
+
+              {/* Description */}
+              <p className="text-[#A0B0C0] text-sm sm:text-base leading-relaxed mb-8 max-w-3xl">Not every business problem fits into a standard package. If you need a specific analysis, dashboard, KPI system, or custom report that isn&apos;t covered by our existing services, we can build it around your exact business question, data, and goals.</p>
+
+              {/* 6 services preview — 3 column grid */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
+                {[
+                  { n: '01', t: 'Custom Business Analysis', c: '#00C6FF' },
+                  { n: '02', t: 'Custom E-Commerce Analysis', c: '#00E676' },
+                  { n: '03', t: 'Custom Dashboard', c: '#F5A623' },
+                  { n: '04', t: 'Custom KPI & Reporting System', c: '#00C6FF' },
+                  { n: '05', t: 'Custom Data Analysis', c: '#00E676' },
+                  { n: '06', t: 'Conversion & Experiment Analysis', c: '#F5A623' },
+                ].map((s, si) => (
+                  <div key={si} className="flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-300 hover:translate-x-1" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderLeft: `2px solid ${s.c}` }}>
+                    <span className="text-xs font-bold shrink-0" style={{ color: s.c, fontFamily: 'Manrope, sans-serif' }}>{s.n}</span>
+                    <span className="text-[#C0D0E0] text-[13px] font-medium leading-tight">{s.t}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Stat strip */}
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-3 mb-8 pb-7" style={{ borderBottom: '1px solid rgba(0,198,255,0.12)' }}>
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-extrabold text-white" style={{ fontFamily: 'Manrope, sans-serif' }}>6</span>
+                  <span className="text-[#8899AA] text-xs leading-tight">Custom<br/>Services</span>
+                </div>
+                <div className="w-px h-8" style={{ background: 'rgba(255,255,255,0.08)' }}></div>
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-extrabold text-[#00E676]" style={{ fontFamily: 'Manrope, sans-serif' }}>4</span>
+                  <span className="text-[#8899AA] text-xs leading-tight">Simple<br/>Steps</span>
+                </div>
+                <div className="w-px h-8" style={{ background: 'rgba(255,255,255,0.08)' }}></div>
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-extrabold text-[#F5A623]" style={{ fontFamily: 'Manrope, sans-serif' }}>100%</span>
+                  <span className="text-[#8899AA] text-xs leading-tight">Tailored<br/>to You</span>
+                </div>
+                <div className="w-px h-8" style={{ background: 'rgba(255,255,255,0.08)' }}></div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-bold text-[#00C6FF]" style={{ fontFamily: 'Manrope, sans-serif' }}>Custom</span>
+                  <span className="text-[#8899AA] text-xs leading-tight">Pricing<br/>Based on Scope</span>
+                </div>
+              </div>
+
+              {/* CTA row */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                <a href={`${basePath}/custom-analytics-insights`} target="_blank" rel="noopener noreferrer" className="btn-press inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-bold text-[#000000] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.5)] no-underline flex-1 sm:flex-initial" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 24px rgba(0,198,255,0.35)' }}>
+                  <ExternalLink size={16} /> View Details
+                </a>
+                <a href="#contact" className="btn-press inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold text-[#00C6FF] border border-[rgba(0,198,255,0.35)] bg-[rgba(0,198,255,0.04)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.12)] hover:border-[rgba(0,198,255,0.5)] no-underline flex-1 sm:flex-initial">
+                  Get Custom Analytics <ArrowRight size={16} />
+                </a>
+              </div>
+
             </div>
           </div>
         </div>
