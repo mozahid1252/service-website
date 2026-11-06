@@ -1477,7 +1477,7 @@ function ServicesSection() {
 
         {/* Part 1: Core Packages */}
         <div id="part-1" className="mb-20">
-          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>E-Commerce Growth Framework</h3>
+          <h3 className="text-white text-xl sm:text-2xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>E-Commerce Growth Framework</h3>
           <div className="h-0.5 w-24 mb-4" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #0072FF 50%, transparent 100%)', borderRadius: '2px' }}></div>
           <p className="text-white text-lg sm:text-xl font-semibold mb-3">From Diagnosis to Sustainable Growth</p>
           <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>We help e-commerce businesses understand what is holding them back, improve the highest-priority problems, and build a clearer path to sustainable growth.</p>
@@ -1514,7 +1514,7 @@ function ServicesSection() {
 
         {/* Part 2: Add-On Packages */}
         <div id="part-2" className="mb-20">
-          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Specialized E-Commerce Audits</h3>
+          <h3 className="text-white text-xl sm:text-2xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Specialized E-Commerce Audits</h3>
           <div className="h-0.5 w-24 mb-4" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #0072FF 50%, transparent 100%)', borderRadius: '2px' }}></div>
           <p className="text-white text-lg sm:text-xl font-semibold mb-3">Have One Specific Problem?</p>
           <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>Focused audits designed to investigate one critical business question and give you clear findings, priorities, and next steps. Typically delivered within 7&ndash;14 business days.</p>
@@ -1613,7 +1613,7 @@ function ServicesSection() {
 
         {/* Part 3: Data & Intelligence Services */}
         <div id="part-3">
-          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Data Infrastructure &amp; Intelligence Systems</h3>
+          <h3 className="text-white text-xl sm:text-2xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Data Infrastructure &amp; Intelligence Systems</h3>
           <div className="h-0.5 w-24 mb-4" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #0072FF 50%, transparent 100%)', borderRadius: '2px' }}></div>
           <p className="text-white text-lg sm:text-xl font-semibold mb-3">Two Separate Ways to Strengthen Your E-Commerce Decision-Making</p>
           <p className="text-[#8899AA] text-sm leading-relaxed mb-10 pl-4 max-w-3xl" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>
@@ -1803,7 +1803,7 @@ function ServicesSection() {
 
         {/* ── Custom Analytics & Insights (single card + CTA) ── */}
         <div id="part-4" className="mb-20 mt-20">
-          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Custom Analytics &amp; Decision Support</h3>
+          <h3 className="text-white text-xl sm:text-2xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Custom Analytics &amp; Decision Support</h3>
           <div className="h-0.5 w-24 mb-4" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #0072FF 50%, transparent 100%)', borderRadius: '2px' }}></div>
           <p className="text-white text-lg sm:text-xl font-semibold mb-3">Built Around Your Business Questions</p>
           <p className="text-[#8899AA] text-sm leading-relaxed mb-12 pl-4 max-w-3xl" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>Not every business problem fits into a standard audit or dashboard. We build custom analyses, KPI systems, dashboards, and reporting solutions around your specific business question, data, and goals.</p>
