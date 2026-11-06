@@ -99,13 +99,9 @@ const footerData = {
     { label: "Case Studies", href: "/#case-studies" },
     { label: "Process", href: "/#process" },
     { label: "Contact", href: "/#contact" },
-    { label: "Infrastructure", href: "/data-setup-infrastructure" },
     { label: "Why We're Different", href: "/#why-different" },
   ],
   services: [
-    { label: "Core E-Commerce Packages", href: "/core-packages" },
-    { label: "Specialized Add-On Packages", href: "/specialized-add-on-packages" },
-    { label: "Data Setup & Infrastructure", href: "/data-setup-infrastructure" },
     { label: "Custom Analytics & Insights", href: "/#custom-analytics" },
   ],
   detailsSetup: [
