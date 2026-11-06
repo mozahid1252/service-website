@@ -159,7 +159,7 @@ span{color:var(--muted) !important}
 </section>
 
 
-<!-- 2 SECTIONS: side by side -->
+<!-- 2 SECTIONS: side by side (scope-card design) -->
 <section id="sections" style="background: var(--surface);">
   <div class="container">
     <div class="header-center">
@@ -167,95 +167,128 @@ span{color:var(--muted) !important}
       <h2>What This Service Includes</h2>
       <p>Build the dashboard, then add audit automation.</p>
     </div>
+    <div class="scope-grid">
 
-    <!-- All 2 cards side by side -->
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:880px; margin:0 auto;">
-
-      <!-- Card 1: E-Commerce Intelligence Dashboard -->
-      <div class="card-section featured-card" style="background:var(--surface); border:2px solid var(--accent); border-radius:var(--radius-lg); padding:32px; box-shadow:0 20px 40px -10px rgba(79,70,229,0.15);">
-        <div class="card-top-bar"></div>
-        <div class="card-num-badge" style="margin-bottom:8px;">Section 01</div>
-        <h3 style="font-size:20px; margin-bottom:4px;">E-Commerce Intelligence Dashboard</h3>
-        <p class="card-sub" style="font-size:14px; margin:0 0 20px 0;">One Custom Dashboard for Your Business</p>
-        <p style="font-size:14px; margin-bottom:20px;">Connect up to five standard data sources and monitor the key areas of your e-commerce business in one dashboard.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px;">
-          <div class="card-stat-pill">
-            <div class="pill-icon"><i class="fa-solid fa-dollar-sign"></i></div>
-            <div>
-              <div class="pill-label">Investment</div>
-              <div class="pill-value accent">Starting from $850</div>
-            </div>
-          </div>
-          <div class="card-stat-pill">
-            <div class="pill-icon"><i class="fa-solid fa-clock"></i></div>
-            <div>
-              <div class="pill-label">Timeline</div>
-              <div class="pill-value">5&ndash;7 business days</div>
-            </div>
-          </div>
-        </div>
-        <div class="card-list-label">Dashboard may include</div>
-        <ul class="dash-include-list" style="margin-bottom:24px;">
-          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Overall sales performance</li>
-          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Marketing performance</li>
-          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Customer and retention metrics</li>
-          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Product performance</li>
-          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Profitability metrics</li>
-          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Conversion and funnel metrics</li>
-          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Inventory and returns metrics</li>
-          <li><i class="fa-solid fa-check" style="color:var(--success); margin-right:8px;"></i>Business performance trends</li>
+      <!-- Scope 01: E-Commerce Intelligence Dashboard -->
+      <div class="scope-card featured scroll-reveal">
+        <span class="scope-num">01 &mdash; E-Commerce Intelligence Dashboard</span>
+        <h3>One Custom Dashboard for Your Business</h3>
+        <p class="scope-sub">Connect up to five standard data sources and monitor the key areas of your e-commerce business in one dashboard.</p>
+        <h5>Dashboard may include</h5>
+        <ul>
+          <li>Overall sales performance</li>
+          <li>Marketing performance</li>
+          <li>Customer and retention metrics</li>
+          <li>Product performance</li>
+          <li>Profitability metrics</li>
+          <li>Conversion and funnel metrics</li>
+          <li>Inventory and returns metrics</li>
+          <li>Business performance trends</li>
         </ul>
-        <div class="card-cta-group">
-          <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary"><i class="fa-solid fa-arrow-right" style="margin-right:8px;"></i>Build My Intelligence Dashboard</a>
-          <a href="/e-commerce-intelligence-dashboard" class="btn btn-outline" style="border-color:var(--border-dark);"><i class="fa-solid fa-eye" style="margin-right:6px;"></i>View Details</a>
+        <h5>Best for</h5>
+        <ul>
+          <li>Businesses that want one connected view of their performance</li>
+          <li>Teams monitoring sales, marketing, customers, products, or profitability</li>
+          <li>Brands using multiple data platforms</li>
+          <li>Businesses tired of manually combining reports</li>
+        </ul>
+        <div class="scope-meta">
+          <p class="scope-timeline"><i class="fa-solid fa-clock" style="color:var(--accent); margin-right:6px;"></i>Timeline: 5&ndash;7 business days</p>
+          <div class="scope-price">Starting from $850</div>
+          <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width:100%; justify-content:center;">Build My Intelligence Dashboard</a>
+          <a href="/e-commerce-intelligence-dashboard" class="btn btn-outline" style="width:100%; justify-content:center; margin-top:10px; border-color:var(--border-dark);"><i class="fa-solid fa-eye" style="margin-right:6px;"></i>View Details</a>
         </div>
       </div>
 
-      <!-- Card 2: Automated Audit Intelligence -->
-      <div class="card-section" style="background:var(--surface); border:2px solid var(--border-dark); border-radius:var(--radius-lg); padding:32px; position:relative; overflow:hidden; box-shadow:0 12px 32px -12px rgba(15,23,42,0.10), 0 2px 8px -4px rgba(15,23,42,0.05);">
-        <div class="card-top-bar" style="height:4px;"></div>
-        <!-- decorative glow -->
-        <div style="position:absolute; top:-40px; right:-40px; width:140px; height:140px; background:radial-gradient(circle, rgba(79,70,229,0.10) 0%, transparent 70%); border-radius:50%; pointer-events:none;"></div>
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:4px; margin-bottom:12px; position:relative;">
-          <div class="card-num-badge" style="margin-bottom:0;">Section 02</div>
-          <div class="mod-count-badge"><i class="fa-solid fa-layer-group" style="font-size:10px;"></i>5 Modules</div>
-        </div>
-        <h3 style="font-size:20px; margin-bottom:4px; position:relative;">Automated Audit Intelligence</h3>
-        <p class="card-sub" style="font-size:14px; margin:0 0 16px 0; position:relative;">Add Deeper Monitoring to Your Dashboard</p>
-        <p style="font-size:14px; margin-bottom:20px; position:relative;">The standard dashboard shows your important business metrics. Audit Automation adds deeper calculations, classifications, performance signals, insight summaries, and basic recommendations for a selected business area.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:24px; position:relative;">
-          <div class="card-stat-pill">
-            <div class="pill-icon"><i class="fa-solid fa-dollar-sign"></i></div>
-            <div>
-              <div class="pill-label">Starting from</div>
-              <div class="pill-value accent">$650 <span style="font-size:11px; font-weight:600; color:var(--muted);">/ module</span></div>
-            </div>
-          </div>
-          <div class="card-stat-pill">
-            <div class="pill-icon"><i class="fa-solid fa-plus"></i></div>
-            <div>
-              <div class="pill-label">Type</div>
-              <div class="pill-value" style="font-size:13px;">Optional Add-On</div>
-            </div>
-          </div>
-        </div>
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:12px; position:relative;">
-          <div class="card-list-label" style="margin-bottom:0;">Available modules</div>
-          <span class="mod-choose">Choose any</span>
-        </div>
-        <ul style="list-style:none; display:flex; flex-direction:column; gap:8px; margin-bottom:24px; position:relative;">
-          <li class="mod-item"><span class="mod-icon-wrap"><i class="fa-solid fa-bullhorn"></i></span><span class="mod-name">Marketing Performance &amp; Profitability</span><i class="fa-solid fa-chevron-right mod-chev"></i></li>
-          <li class="mod-item"><span class="mod-icon-wrap"><i class="fa-solid fa-users"></i></span><span class="mod-name">Customer Retention &amp; LTV</span><i class="fa-solid fa-chevron-right mod-chev"></i></li>
-          <li class="mod-item"><span class="mod-icon-wrap"><i class="fa-solid fa-boxes-stacked"></i></span><span class="mod-name">Product Profitability &amp; Portfolio</span><i class="fa-solid fa-chevron-right mod-chev"></i></li>
-          <li class="mod-item"><span class="mod-icon-wrap"><i class="fa-solid fa-coins"></i></span><span class="mod-name">E-Commerce Profitability</span><i class="fa-solid fa-chevron-right mod-chev"></i></li>
-          <li class="mod-item"><span class="mod-icon-wrap"><i class="fa-solid fa-gears"></i></span><span class="mod-name">Operations Efficiency</span><i class="fa-solid fa-chevron-right mod-chev"></i></li>
+      <!-- Scope 02: Automated Audit Intelligence -->
+      <div class="scope-card scroll-reveal">
+        <span class="scope-num">02 &mdash; Automated Audit Intelligence</span>
+        <h3>Add Deeper Monitoring to Your Dashboard</h3>
+        <p class="scope-sub">The standard dashboard shows your important business metrics. Audit Automation adds deeper calculations, classifications, performance signals, insight summaries, and basic recommendations for a selected business area.</p>
+        <h5>Available modules</h5>
+        <ul>
+          <li>Marketing Performance &amp; Profitability Automation</li>
+          <li>Customer Retention &amp; LTV Automation</li>
+          <li>Product Profitability &amp; Portfolio Automation</li>
+          <li>E-Commerce Profitability Automation</li>
+          <li>Operations Efficiency Automation</li>
         </ul>
-        <div class="card-cta-group" style="position:relative;">
-          <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary"><i class="fa-solid fa-plus" style="margin-right:8px;"></i>Add Audit Automation</a>
-          <a href="/automated-audit-intelligence" class="btn btn-outline" style="border-color:var(--border-dark);"><i class="fa-solid fa-eye" style="margin-right:6px;"></i>View Details</a>
+        <h5>Best for</h5>
+        <ul>
+          <li>Businesses that want deeper automated business signals</li>
+          <li>Teams needing insight summaries and recommendations</li>
+          <li>Clients monitoring a specific business area in depth</li>
+          <li>Businesses ready to add intelligence to an existing dashboard</li>
+        </ul>
+        <div class="scope-meta">
+          <p class="scope-timeline"><i class="fa-solid fa-clock" style="color:var(--accent); margin-right:6px;"></i>Add-on to the Intelligence Dashboard</p>
+          <div class="scope-price">Starting from $650 <span style="font-size:13px; font-weight:600; color:var(--muted);">/ module</span></div>
+          <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width:100%; justify-content:center;"><i class="fa-solid fa-plus" style="margin-right:6px;"></i>Add Audit Automation</a>
+          <a href="/automated-audit-intelligence" class="btn btn-outline" style="width:100%; justify-content:center; margin-top:10px; border-color:var(--border-dark);"><i class="fa-solid fa-eye" style="margin-right:6px;"></i>View Details</a>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing" style="background: var(--surface);">
+  <div class="container">
+    <div class="header-center">
+      <div class="eyebrow">Pricing</div>
+      <h2>Pricing</h2>
+      <p>Three pricing options depending on the scope of your dashboard, audit intelligence, and automation needs.</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- Pricing Card 1 -->
+      <div class="pricing-card scroll-reveal">
+        <div class="eyebrow" style="margin: 0 auto;">Core Service</div>
+        <h3 style="font-size: 20px; margin-top: 16px;">Intelligence Dashboard</h3>
+        <div class="price-amt" style="font-size: 32px;">Starting from $850</div>
+        <p class="price-sub">One custom e-commerce dashboard with up to 5 standard data sources, data pipeline, KPI views, and technical handover.</p>
+        <ul class="price-features" style="grid-template-columns: 1fr;">
+          <li><i class="fa-solid fa-check"></i> Typical timeline: 5&ndash;7 business days</li>
+          <li><i class="fa-solid fa-check"></i> Up to 5 standard data sources</li>
+          <li><i class="fa-solid fa-check"></i> Custom KPI dashboard</li>
+          <li><i class="fa-solid fa-check"></i> Data pipeline &amp; cloud environment</li>
+        </ul>
+        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width: 100%; justify-content: center;">Build My Intelligence Dashboard</a>
+      </div>
+      <!-- Pricing Card 2 (Featured) -->
+      <div class="pricing-card featured scroll-reveal">
+        <div class="eyebrow" style="margin: 0 auto;">Optional Add-On</div>
+        <h3 style="font-size: 20px; margin-top: 16px;">Audit Intelligence</h3>
+        <div class="price-amt" style="font-size: 32px;">Starting from $650<span style="font-size:16px; color:var(--muted); font-weight:600;"> / module</span></div>
+        <p class="price-sub">Deeper calculations, classifications, insight summaries, and basic recommendations for a selected business area.</p>
+        <ul class="price-features" style="grid-template-columns: 1fr;">
+          <li><i class="fa-solid fa-check"></i> 5 available modules</li>
+          <li><i class="fa-solid fa-check"></i> Performance signals &amp; insight summaries</li>
+          <li><i class="fa-solid fa-check"></i> Basic recommendations</li>
+          <li><i class="fa-solid fa-check"></i> Choose any module(s)</li>
+        </ul>
+        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width: 100%; justify-content: center;">Add Audit Automation</a>
+      </div>
+      <!-- Pricing Card 3 -->
+      <div class="pricing-card scroll-reveal">
+        <div class="eyebrow" style="margin: 0 auto;">Optional Add-On</div>
+        <h3 style="font-size: 20px; margin-top: 16px;">Automated Scheduling &amp; Alerts</h3>
+        <div class="price-amt" style="font-size: 32px;">Starting from $200</div>
+        <p class="price-sub">Recurring data refresh, refresh monitoring, failed-refresh alerts, missing-data alerts, and automated data validation.</p>
+        <ul class="price-features" style="grid-template-columns: 1fr;">
+          <li><i class="fa-solid fa-check"></i> Daily/weekly refresh schedule</li>
+          <li><i class="fa-solid fa-check"></i> Failed-refresh &amp; missing-data alerts</li>
+          <li><i class="fa-solid fa-check"></i> Refresh &amp; error logs</li>
+          <li><i class="fa-solid fa-check"></i> Automated data validation</li>
+        </ul>
+        <a href="/book?package=data-pipeline-dashboard-setup" class="btn btn-primary" style="width: 100%; justify-content: center;">Add Automated Refresh</a>
+      </div>
+    </div>
+    <div class="boundary-note scroll-reveal" style="max-width:860px; margin:32px auto 0;">
+      <h4><i class="fa-solid fa-circle-info"></i> Pricing Note</h4>
+      <p>Dashboard setup, audit intelligence modules, and automated refresh are scoped as separate components. Final pricing is confirmed after reviewing the selected data sources, dashboard views, KPI requirements, and technical complexity.</p>
+    </div>
   </div>
 </section>
 

@@ -151,6 +151,22 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
 .pricing-grid .pricing-card { max-width: none; border-width: 1px; }
 .pricing-grid .pricing-card.featured { border: 2px solid var(--accent); box-shadow: 0 20px 40px -10px rgba(79,70,229,0.2); }
 
+/* ===== SCOPE CARDS (2 cards, matches data-preparation-integration design) ===== */
+.scope-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto; }
+.scope-card { background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius-lg); padding: 32px; transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; position: relative; }
+.scope-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+.scope-card.featured { border-color: var(--accent); box-shadow: 0 20px 40px -10px rgba(79,70,229,0.15); }
+.scope-card .scope-num { display: inline-block; font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+.scope-card h3 { font-size: 20px; margin-bottom: 8px; }
+.scope-card .scope-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+.scope-card h5 { font-size: 13px; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.05em; margin: 20px 0 10px; }
+.scope-card ul { list-style: none; padding: 0; }
+.scope-card ul li { font-size: 13px; color: var(--muted); padding: 4px 0; padding-left: 20px; position: relative; line-height: 1.5; }
+.scope-card ul li::before { content: '\2713'; color: var(--success); position: absolute; left: 0; font-weight: 700; font-size: 12px; }
+.scope-card .scope-meta { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+.scope-card .scope-timeline { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+.scope-card .scope-price { font-size: 22px; font-weight: 800; color: var(--text); font-family: 'Manrope', sans-serif; margin-bottom: 16px; }
+
 /* ===== DATA SOURCE GRID ===== */
 .data-source-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 900px; margin: 0 auto; }
 .data-source-item { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; font-size: 14px; }
@@ -213,7 +229,7 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .module-grid, .dash-include-list, .two-col-grid, .pricing-grid, .data-source-grid { grid-template-columns: 1fr !important; }
+  .module-grid, .dash-include-list, .two-col-grid, .pricing-grid, .scope-grid, .data-source-grid { grid-template-columns: 1fr !important; }
   .signs-list { display: flex !important; flex-direction: column !important; gap: 12px !important; }
   .view-grid { display: flex !important; flex-direction: column !important; gap: 12px !important; }
   /* Stack side-by-side cards on mobile */
