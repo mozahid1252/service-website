@@ -1611,7 +1611,7 @@ function ServicesSection() {
 
         {/* Part 3: Data & Intelligence Services */}
         <div id="part-3">
-          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 3: Data &amp; Intelligence Services</h3>
+          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 3: Data Infrastructure &amp; Intelligence Systems</h3>
           <p className="text-white text-lg sm:text-xl font-semibold mb-3">Two Separate Ways to Strengthen Your E-Commerce Decision-Making</p>
           <p className="text-[#8899AA] text-sm leading-relaxed mb-10 pl-4 max-w-3xl" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>
             Prepare the data for a specific analysis, or build a connected dashboard and intelligence system for ongoing visibility.
