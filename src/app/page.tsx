@@ -1611,10 +1611,10 @@ function ServicesSection() {
 
         {/* Part 3: Data Infrastructure */}
         <div id="part-3">
-          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 3: Data Setup &amp; Infrastructure</h3>
-          <p className="text-white text-lg sm:text-xl font-semibold mb-3">The Technical Foundation</p>
-          <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>
-            Before any analysis, your data must be connected and cleaned. We handle the entire backend engineering (GCP, BigQuery, API pipelines). You never touch a line of code. Pay only for what your stack actually needs.
+          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 3: Data Infrastructure &amp; Intelligence Systems</h3>
+          <p className="text-white text-lg sm:text-xl font-semibold mb-3">Build the Data Foundation Behind Better Decisions</p>
+          <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4 max-w-3xl" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>
+            Before reliable analysis is possible, your business data needs to be collected, organized, connected, and prepared properly. We handle the technical setup behind your reporting and analytics environment, including data preparation, platform connections, cloud infrastructure, data pipelines, dashboard configuration, and selected automation. You do not need to manage the technical setup yourself &mdash; we configure the required system around your actual data and business needs.
           </p>
 
           {/* Bundle Cards — features merged in (comparison table removed) */}
@@ -1635,14 +1635,14 @@ function ServicesSection() {
                       <div className="space-y-2 mb-4">
                         <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
                           <span className="text-[#8899AA] text-xs">Specialist Audit Data Preparation</span>
-                          <span className="gradient-text-gold text-xs font-bold">$99–$199</span>
+                          <span className="gradient-text-gold text-xs font-bold">$99&ndash;$199</span>
                         </div>
                         <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
                           <span className="text-[#8899AA] text-xs">Health Check Data Preparation</span>
-                          <span className="gradient-text-gold text-xs font-bold">$299–$599</span>
+                          <span className="gradient-text-gold text-xs font-bold">$299&ndash;$599</span>
                         </div>
                         <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
-                          <span className="text-[#8899AA] text-xs">Custom Analysis Requests</span>
+                          <span className="text-[#8899AA] text-xs">Custom Analysis Data Preparation</span>
                           <span className="gradient-text-gold text-xs font-bold">From $99</span>
                         </div>
                       </div>
@@ -1650,7 +1650,7 @@ function ServicesSection() {
                       <div className="mb-4">
                         <div className="text-[#8899AA] text-xs uppercase tracking-wider font-semibold mb-2">Includes</div>
                         <div className="space-y-1.5">
-                          {['Data collection or connection','Basic cleaning and standardization','Required field mapping','Missing and duplicate-data review','Audit-ready data preparation'].map((item, ii) => (
+                          {['Data collection or connection','Required file and platform review','Basic data cleaning','Field mapping','Date and format standardization','Missing-data review','Duplicate-data review','Audit-ready data preparation','Data-quality notes'].map((item, ii) => (
                             <div key={ii} className="flex items-start gap-2 text-[#A0B0C0]">
                               <span className="text-[#00E676] mt-0.5 shrink-0">{FeatureCheckIcon}</span>
                               <span className="text-xs">{item}</span>
@@ -1664,6 +1664,10 @@ function ServicesSection() {
                       <a href={`${basePath}/data-preparation-integration`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline w-full">
                         <ExternalLink size={12} /> View Details
                       </a>
+                      {/* Card footer note */}
+                      <div className="mt-4 pt-3 text-center" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                        <p className="text-[#6B7C8E] text-[11px] leading-relaxed">One-time data preparation service. Audits, dashboards, recommendations, and automation are separate services.</p>
+                      </div>
                     </div>
                   </div>
                 );
@@ -1673,19 +1677,25 @@ function ServicesSection() {
                   <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
                     <div className="infra-card-inner">
                       <h4 className="text-white font-bold text-lg mb-1">E-Commerce Intelligence &amp; Audit Automation Dashboard</h4>
-                      <p className="text-[#A0B0C0] text-xs mb-4 leading-relaxed">Connect your business data, monitor your most important e-commerce metrics, and add deeper automated insights across marketing, customers, products, and profitability.</p>
+                      <p className="text-[#8899AA] text-sm italic mb-2">Connect your data. Monitor the signals that matter.</p>
+                      <p className="text-[#A0B0C0] text-xs mb-4 leading-relaxed">Build one connected e-commerce dashboard and add deeper automated intelligence for marketing, customers, products, profitability, and other important business areas.</p>
                       <div className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] bg-[rgba(0,198,255,0.05)] mb-4 w-fit">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        Timeline: 7–10 days
+                        Timeline: 7&ndash;10 days
                       </div>
+                      {/* Pricing Tiers */}
                       <div className="space-y-2 mb-4">
                         <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
-                          <span className="text-[#8899AA] text-xs">Dashboard setup</span>
+                          <span className="text-[#8899AA] text-xs">Intelligence Dashboard</span>
                           <span className="gradient-text-gold text-xs font-bold">From $850</span>
                         </div>
                         <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
-                          <span className="text-[#8899AA] text-xs">Audit automation &amp; scheduled refresh</span>
-                          <span className="text-[#8899AA] text-xs font-medium">Available as add-ons</span>
+                          <span className="text-[#8899AA] text-xs">Audit Intelligence</span>
+                          <span className="gradient-text-gold text-xs font-bold">From $650/module</span>
+                        </div>
+                        <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
+                          <span className="text-[#8899AA] text-xs">Automated Scheduling &amp; Alerts</span>
+                          <span className="gradient-text-gold text-xs font-bold">From $200</span>
                         </div>
                       </div>
                       {/* Feature List */}
@@ -1714,6 +1724,10 @@ function ServicesSection() {
                       <a href={`${basePath}/data-pipeline-dashboard-setup`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline w-full">
                         <ExternalLink size={12} /> View Details
                       </a>
+                      {/* Card footer note */}
+                      <div className="mt-4 pt-3 text-center" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                        <p className="text-[#6B7C8E] text-[11px] leading-relaxed">Dashboard setup, audit intelligence, and automated refresh are scoped as separate components within the same system.</p>
+                      </div>
                     </div>
                   </div>
                 );
