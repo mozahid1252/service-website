@@ -119,6 +119,29 @@ const footerData = {
     { label: "Operations Efficiency Audit", href: "/operations-efficiency-audit" },
     { label: "Meta Ads Performance Audit", href: "/meta-ads-performance-audit" },
   ],
+  corePackages: [
+    { label: "E-Commerce Health Check", href: "/health-check" },
+    { label: "Data-Driven Growth System", href: "/data-driven-growth-system" },
+  ],
+  dataInfrastructure: [
+    { label: "Data Preparation & Integration", href: "/data-preparation-integration" },
+    { label: "Data Pipeline & Dashboard Setup", href: "/data-pipeline-dashboard-setup" },
+    { label: "E-Commerce Intelligence Dashboard", href: "/e-commerce-intelligence-dashboard" },
+    { label: "Automated Audit Intelligence", href: "/automated-audit-intelligence" },
+  ],
+  specializedAudits: [
+    { label: "Marketing Performance Audit", href: "/marketing-spend-audit" },
+    { label: "Customer Retention Audit", href: "/customer-retention-audit" },
+    { label: "Product Portfolio Audit", href: "/product-portfolio-audit" },
+    { label: "E-Commerce CRO Audit", href: "/cro-audit" },
+    { label: "Profitability Audit", href: "/profitability-audit" },
+    { label: "Operations Efficiency Audit", href: "/operations-efficiency-audit" },
+    { label: "Meta Ads Performance Audit", href: "/meta-ads-performance-audit" },
+    { label: "Measurement & Attribution Review", href: "/e-commerce-tracking-attribution-review" },
+  ],
+  customAnalytics: [
+    { label: "Custom Analytics & Insights", href: "/custom-analytics-insights" },
+  ],
   connect: [
     { label: "LinkedIn", href: "https://linkedin.com/in/mozahidul-islam-analyst", icon: "linkedin" },
     { label: "WhatsApp", href: "https://wa.me/8801940131074", icon: "whatsapp" },
@@ -470,15 +493,16 @@ const connectIconMap = {
 export function SiteFooter() {
   const columns: { title: string; links: readonly { label: string; href: string }[] }[] = [
     { title: "Quick Links", links: footerData.quickLinks },
-    { title: "Services", links: footerData.services },
-    { title: "Details", links: footerData.detailsSetup },
-    { title: "Details", links: footerData.detailsAudits },
+    { title: "Core Packages", links: footerData.corePackages },
+    { title: "Data & Intelligence", links: footerData.dataInfrastructure },
+    { title: "Specialized Audits", links: footerData.specializedAudits },
+    { title: "Custom Analytics", links: footerData.customAnalytics },
   ];
 
   return (
     <footer className="mt-auto bg-footer-purple text-white">
       {/* Main footer */}
-      <div className="container-site grid gap-10 py-14 sm:py-16 lg:grid-cols-[1.3fr_repeat(4,1fr)] lg:gap-8">
+      <div className="container-site grid gap-10 py-14 sm:py-16 lg:grid-cols-[1.2fr_repeat(5,1fr)] lg:gap-6">
         {/* Brand column */}
         <div className="flex flex-col gap-5">
           <a href="/" className="flex items-center gap-2.5" aria-label="MozIntelligence — Home">
