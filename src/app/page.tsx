@@ -1475,9 +1475,9 @@ function ServicesSection() {
 
         {/* Part 1: Core Packages */}
         <div id="part-1" className="mb-20">
-          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 1: Core E-Commerce Packages</h3>
-          <p className="text-white text-base font-semibold mb-1">From Diagnosis to Sustainable Growth</p>
-          <p className="text-[#8899AA] text-sm mb-8">We help e-commerce businesses understand what is holding them back, improve the highest-priority problems, and build a clearer path to sustainable growth.</p>
+          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 1: E-Commerce Growth Framework</h3>
+          <p className="text-white text-lg sm:text-xl font-semibold mb-3">From Diagnosis to Sustainable Growth</p>
+          <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>We help e-commerce businesses understand what is holding them back, improve the highest-priority problems, and build a clearer path to sustainable growth.</p>
 
           <div className="packages-grid mb-6">
             {CORE_PACKAGES.slice(0, 3).map((pkg) => (
@@ -1511,9 +1511,9 @@ function ServicesSection() {
 
         {/* Part 2: Add-On Packages */}
         <div id="part-2" className="mb-20">
-          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 2: Specialized Packages</h3>
-          <p className="text-[#00C6FF] text-base font-semibold mb-1">Have One Specific Problem?</p>
-          <p className="text-[#8899AA] text-sm mb-8">Seven focused audits, each one built around a single critical business question. Delivered in 7–14 days.</p>
+          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 2: Specialized Add-On Audits</h3>
+          <p className="text-white text-lg sm:text-xl font-semibold mb-3">Have One Specific Problem?</p>
+          <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>Seven focused audits, each one built around a single critical business question. Delivered in 7&ndash;14 days.</p>
 
           <div className="reveal-stagger grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {ADD_ON_PACKAGES.map((pkg, i) => (
@@ -1556,9 +1556,9 @@ function ServicesSection() {
 
         {/* Part 3: Data Infrastructure */}
         <div id="part-3">
-          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 3: Data Setup &amp; Infrastructure</h3>
-          <p className="gradient-text text-base font-semibold mb-1">The Technical Foundation.</p>
-          <p className="text-[#8899AA] text-sm mb-8">
+          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 3: Data Setup &amp; Infrastructure</h3>
+          <p className="text-white text-lg sm:text-xl font-semibold mb-3">The Technical Foundation</p>
+          <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>
             Before any analysis, your data must be connected and cleaned. We handle the entire backend engineering (GCP, BigQuery, API pipelines). You never touch a line of code. Pay only for what your stack actually needs.
           </p>
 
@@ -1671,9 +1671,9 @@ function ServicesSection() {
 
         {/* ── Custom Analytics & Insights (single card + CTA) ── */}
         <div id="part-4" className="mb-20">
-          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Custom Analytics &amp; Insights</h3>
-          <p className="text-[#00C6FF] text-base font-semibold mb-1">Built Around Your Business Questions</p>
-          <p className="text-[#8899AA] text-sm mb-8 max-w-3xl">Not every business problem fits into a standard package. If you need a specific analysis, dashboard, KPI system, or custom report that isn&apos;t covered by our existing services, we can build it around your exact business question, data, and goals.</p>
+          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 4: Custom Analytics &amp; Insights</h3>
+          <p className="text-white text-lg sm:text-xl font-semibold mb-3">Built Around Your Business Questions</p>
+          <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4 max-w-3xl" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>Not every business problem fits into a standard package. If you need a specific analysis, dashboard, KPI system, or custom report that isn&apos;t covered by our existing services, we can build it around your exact business question, data, and goals.</p>
 
           <div className="rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(0,198,255,0.20)] relative" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.98) 0%, rgba(0,30,50,0.95) 50%, rgba(13,21,32,0.98) 100%)', border: '1px solid rgba(0,198,255,0.25)', boxShadow: '0 0 40px rgba(0,198,255,0.08), 0 16px 48px rgba(0,0,0,0.5)' }}>
 
