@@ -1609,131 +1609,189 @@ function ServicesSection() {
 
         </div>
 
-        {/* Part 3: Data Infrastructure */}
+        {/* Part 3: Data & Intelligence Services */}
         <div id="part-3">
-          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 3: Data Infrastructure &amp; Intelligence Systems</h3>
-          <p className="text-white text-lg sm:text-xl font-semibold mb-3">Build the Data Foundation Behind Better Decisions</p>
-          <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4 max-w-3xl" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>
-            Before reliable analysis is possible, your business data needs to be collected, organized, connected, and prepared properly. We handle the technical setup behind your reporting and analytics environment, including data preparation, platform connections, cloud infrastructure, data pipelines, dashboard configuration, and selected automation. You do not need to manage the technical setup yourself &mdash; we configure the required system around your actual data and business needs.
+          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 3: Data &amp; Intelligence Services</h3>
+          <p className="text-white text-lg sm:text-xl font-semibold mb-3">Two Separate Ways to Strengthen Your E-Commerce Decision-Making</p>
+          <p className="text-[#8899AA] text-sm leading-relaxed mb-10 pl-4 max-w-3xl" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>
+            Prepare the data for a specific analysis, or build a connected dashboard and intelligence system for ongoing visibility.
           </p>
 
-          {/* Bundle Cards — features merged in (comparison table removed) */}
-          <div className="reveal-stagger grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {DATA_BUNDLES.map((bundle, i) => {
-              if (i === 0) {
-                return (
-                  <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
-                    <div className="infra-card-inner">
-                      <h4 className="text-white font-bold text-lg mb-1">Data Preparation &amp; Integration</h4>
-                      <p className="text-[#8899AA] text-sm italic mb-2">Prepare the data behind better e-commerce decisions.</p>
-                      <p className="text-[#A0B0C0] text-xs mb-3 leading-relaxed">Connect, clean, organize, and validate the data required for your selected audit, Health Check, or custom analysis.</p>
-                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] bg-[rgba(0,198,255,0.05)] mb-4">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-                        Up to 5 standard platforms or data sources
+          {/* ════════ SECTION 01: Data Preparation & Integration ════════ */}
+          <div className="reveal-stagger rounded-2xl overflow-hidden mb-10" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.98) 0%, rgba(0,30,50,0.92) 100%)', border: '1px solid rgba(0,198,255,0.18)', boxShadow: '0 0 40px rgba(0,198,255,0.06), 0 12px 40px rgba(0,0,0,0.4)' }}>
+            <div className="h-1" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #0072FF 100%)' }}></div>
+            <div className="p-6 sm:p-10">
+              {/* Section header */}
+              <div className="flex items-center gap-3 mb-4">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl font-bold text-sm" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', color: '#FFF', boxShadow: '0 4px 14px rgba(0,198,255,0.3)' }}>01</span>
+                <div>
+                  <div className="text-[#00C6FF] text-[11px] font-bold tracking-[0.12em] uppercase mb-0.5">Section 01</div>
+                  <h4 className="text-white font-bold text-xl sm:text-2xl tracking-tight">Data Preparation &amp; Integration</h4>
+                </div>
+              </div>
+              <p className="text-[#00C6FF] text-sm font-semibold mb-2">Prepare the Data Behind Better E-Commerce Decisions</p>
+              <p className="text-[#A0B0C0] text-sm leading-relaxed mb-4 max-w-3xl">Before an audit or custom analysis can begin, the required business data needs to be collected, organized, cleaned, and validated. This service prepares the data required for a selected audit, Health Check, or custom analysis. We work with your existing platform data, files, and reports so the final dataset is ready for reliable analysis.</p>
+
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-6">
+                {/* Left column: Best for + Pricing */}
+                <div className="lg:col-span-1">
+                  {/* Best for */}
+                  <div className="mb-6">
+                    <div className="text-[#8899AA] text-xs uppercase tracking-wider font-semibold mb-3">Best For</div>
+                    <ul className="space-y-2">
+                      {['A selected specialist audit','E-Commerce Health Check','Custom business analysis','Businesses with scattered data','Businesses using multiple spreadsheets or exports','Clients who need analysis-ready data before starting a project'].map((item, ii) => (
+                        <li key={ii} className="flex items-start gap-2 text-[#A0B0C0] text-xs leading-relaxed">
+                          <span className="text-[#00C6FF] mt-0.5 shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg></span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {/* Available options */}
+                  <div>
+                    <div className="text-[#8899AA] text-xs uppercase tracking-wider font-semibold mb-3">Available Options</div>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-[rgba(255,255,255,0.03)] border border-[rgba(0,198,255,0.15)]">
+                        <span className="text-[#8899AA] text-xs">Specialist Audit Data Preparation</span>
+                        <span className="gradient-text-gold text-xs font-bold">$99&ndash;$199</span>
                       </div>
-                      {/* Pricing Tiers */}
-                      <div className="space-y-2 mb-4">
-                        <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
-                          <span className="text-[#8899AA] text-xs">Specialist Audit Data Preparation</span>
-                          <span className="gradient-text-gold text-xs font-bold">$99&ndash;$199</span>
-                        </div>
-                        <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
-                          <span className="text-[#8899AA] text-xs">Health Check Data Preparation</span>
-                          <span className="gradient-text-gold text-xs font-bold">$299&ndash;$599</span>
-                        </div>
-                        <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
-                          <span className="text-[#8899AA] text-xs">Custom Analysis Data Preparation</span>
-                          <span className="gradient-text-gold text-xs font-bold">From $99</span>
-                        </div>
+                      <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-[rgba(255,255,255,0.03)] border border-[rgba(0,198,255,0.15)]">
+                        <span className="text-[#8899AA] text-xs">Health Check Data Preparation</span>
+                        <span className="gradient-text-gold text-xs font-bold">$299&ndash;$599</span>
                       </div>
-                      {/* Includes List */}
-                      <div className="mb-4">
-                        <div className="text-[#8899AA] text-xs uppercase tracking-wider font-semibold mb-2">Includes</div>
-                        <div className="space-y-1.5">
-                          {['Data collection or connection','Required file and platform review','Basic data cleaning','Field mapping','Date and format standardization','Missing-data review','Duplicate-data review','Audit-ready data preparation','Data-quality notes'].map((item, ii) => (
-                            <div key={ii} className="flex items-start gap-2 text-[#A0B0C0]">
-                              <span className="text-[#00E676] mt-0.5 shrink-0">{FeatureCheckIcon}</span>
-                              <span className="text-xs">{item}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      <a href={`/book?package=data-preparation-integration`} className="infra-book-btn">
-                        Prepare My Data →
-                      </a>
-                      <a href={`${basePath}/data-preparation-integration`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline w-full">
-                        <ExternalLink size={12} /> View Details
-                      </a>
-                      {/* Card footer note */}
-                      <div className="mt-4 pt-3 text-center" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                        <p className="text-[#6B7C8E] text-[11px] leading-relaxed">One-time data preparation service. Audits, dashboards, recommendations, and automation are separate services.</p>
+                      <div className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-[rgba(255,255,255,0.03)] border border-[rgba(0,198,255,0.15)]">
+                        <span className="text-[#8899AA] text-xs">Custom Analysis Data Preparation</span>
+                        <span className="gradient-text-gold text-xs font-bold">From $99</span>
                       </div>
                     </div>
                   </div>
-                );
-              }
-              if (i === 1) {
-                return (
-                  <div key={i} className={`infra-card-wrapper ${bundle.cssClass}`}>
-                    <div className="infra-card-inner">
-                      <h4 className="text-white font-bold text-lg mb-1">E-Commerce Intelligence &amp; Audit Automation Dashboard</h4>
-                      <p className="text-[#8899AA] text-sm italic mb-2">Connect your data. Monitor the signals that matter.</p>
-                      <p className="text-[#A0B0C0] text-xs mb-4 leading-relaxed">Build one connected e-commerce dashboard and add deeper automated intelligence for marketing, customers, products, profitability, and other important business areas.</p>
-                      <div className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] bg-[rgba(0,198,255,0.05)] mb-4 w-fit">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        Timeline: 7&ndash;10 days
-                      </div>
-                      {/* Pricing Tiers */}
-                      <div className="space-y-2 mb-4">
-                        <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
-                          <span className="text-[#8899AA] text-xs">Intelligence Dashboard</span>
-                          <span className="gradient-text-gold text-xs font-bold">From $850</span>
-                        </div>
-                        <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
-                          <span className="text-[#8899AA] text-xs">Audit Intelligence</span>
-                          <span className="gradient-text-gold text-xs font-bold">From $650/module</span>
-                        </div>
-                        <div className="flex items-center justify-between px-3 py-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.06)]">
-                          <span className="text-[#8899AA] text-xs">Automated Scheduling &amp; Alerts</span>
-                          <span className="gradient-text-gold text-xs font-bold">From $200</span>
-                        </div>
-                      </div>
-                      {/* Feature List */}
-                      <div className="infra-feature-list">
-                        {BUNDLE_FEATURES.map((feat, fi) => {
-                          if (feat.feature === 'Basic KPI Dashboard') return null;
-                          const val = feat['auto' as keyof typeof feat];
-                          const has = val === true || typeof val === 'string';
-                          const note = typeof val === 'string' ? val : null;
-                          return (
-                            <div key={fi} className={`infra-feature-row ${has ? 'has' : 'not'}`}>
-                              <span className={`feature-icon ${has ? 'feature-yes' : 'feature-no'}`}>
-                                {has ? FeatureCheckIcon : FeatureCrossIcon}
-                              </span>
-                              <span className="feature-name">
-                                {feat.feature}
-                                {note && <span className="feature-note">{note}</span>}
-                              </span>
-                            </div>
-                          );
-                        })}
-                      </div>
-                      <a href={`${basePath}/data-pipeline-dashboard-setup`} target="_blank" rel="noopener noreferrer" className="infra-book-btn">
-                        Explore Intelligence &amp; Automation →
-                      </a>
-                      <a href={`${basePath}/data-pipeline-dashboard-setup`} target="_blank" rel="noopener noreferrer" className="btn-press mt-3 px-4 py-2.5 rounded-md text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.1)] hover:shadow-[0_0_20px_rgba(0,198,255,0.15)] inline-flex items-center justify-center gap-1.5 cursor-pointer no-underline w-full">
-                        <ExternalLink size={12} /> View Details
-                      </a>
-                      {/* Card footer note */}
-                      <div className="mt-4 pt-3 text-center" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                        <p className="text-[#6B7C8E] text-[11px] leading-relaxed">Dashboard setup, audit intelligence, and automated refresh are scoped as separate components within the same system.</p>
-                      </div>
-                    </div>
+                </div>
+
+                {/* Right column: Includes list */}
+                <div className="lg:col-span-2">
+                  <div className="flex flex-wrap items-center gap-2 mb-4">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] bg-[rgba(0,198,255,0.05)]">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+                      Up to 5 standard platforms or data sources
+                    </span>
                   </div>
-                );
-              }
-              return null;
-            })}
+                  <div className="text-[#8899AA] text-xs uppercase tracking-wider font-semibold mb-3">Includes</div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                    {['Data collection or connection','Required file and platform review','Basic data cleaning','Field mapping','Date and format standardization','Missing-data review','Duplicate-data review','Audit-ready data preparation','Data-quality notes'].map((item, ii) => (
+                      <div key={ii} className="flex items-start gap-2 text-[#A0B0C0]">
+                        <span className="text-[#00E676] mt-0.5 shrink-0">{FeatureCheckIcon}</span>
+                        <span className="text-xs">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA + footer */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-6 pt-6" style={{ borderTop: '1px solid rgba(0,198,255,0.12)' }}>
+                <a href="/book?package=data-preparation-integration" className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-bold text-[#000000] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(0,198,255,0.5)] no-underline" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
+                  Prepare My Data →
+                </a>
+                <a href={`${basePath}/data-preparation-integration`} target="_blank" rel="noopener noreferrer" className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-[#00C6FF] border border-[rgba(0,198,255,0.35)] bg-[rgba(0,198,255,0.04)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.12)] no-underline">
+                  <ExternalLink size={14} /> View Details
+                </a>
+                <p className="text-[#6B7C8E] text-[11px] leading-relaxed sm:ml-auto sm:text-right sm:max-w-xs">One-time data preparation service. Audits, dashboards, recommendations, and automation are separate services.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* ════════ Divider ════════ */}
+          <div className="flex items-center gap-4 my-8">
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(148,163,184,0.3), transparent)' }}></div>
+            <span className="text-[#8899AA] text-xs font-bold tracking-[0.15em] uppercase">Then</span>
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(148,163,184,0.3), transparent)' }}></div>
+          </div>
+
+          {/* ════════ SECTION 02: E-Commerce Intelligence & Audit Automation ════════ */}
+          <div className="reveal-stagger rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.98) 0%, rgba(0,30,50,0.92) 100%)', border: '1px solid rgba(0,198,255,0.18)', boxShadow: '0 0 40px rgba(0,198,255,0.06), 0 12px 40px rgba(0,0,0,0.4)' }}>
+            <div className="h-1" style={{ background: 'linear-gradient(90deg, #00E676 0%, #00C6FF 50%, #F5A623 100%)' }}></div>
+            <div className="p-6 sm:p-10">
+              {/* Section header */}
+              <div className="flex items-center gap-3 mb-4">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl font-bold text-sm" style={{ background: 'linear-gradient(135deg, #00E676, #00B853)', color: '#FFF', boxShadow: '0 4px 14px rgba(0,230,118,0.3)' }}>02</span>
+                <div>
+                  <div className="text-[#00E676] text-[11px] font-bold tracking-[0.12em] uppercase mb-0.5">Section 02</div>
+                  <h4 className="text-white font-bold text-xl sm:text-2xl tracking-tight">E-Commerce Intelligence &amp; Audit Automation</h4>
+                </div>
+              </div>
+              <p className="text-[#00C6FF] text-sm font-semibold mb-2">Connect Your Data. Build a Clearer View of Your Business.</p>
+              <p className="text-[#A0B0C0] text-sm leading-relaxed mb-4 max-w-3xl">This is a separate system-building service for businesses that want their data connected into a custom dashboard and may later add deeper business intelligence and automated monitoring. We connect the relevant data sources, organize the information, build the dashboard, and configure optional intelligence and automation layers according to your requirements.</p>
+
+              {/* Best for + Timeline */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-6">
+                {/* Best for */}
+                <div className="lg:col-span-1">
+                  <div className="mb-6">
+                    <div className="text-[#8899AA] text-xs uppercase tracking-wider font-semibold mb-3">Best For</div>
+                    <ul className="space-y-2">
+                      {['Businesses that want one connected view of their performance','Teams monitoring sales, marketing, customers, products, or profitability','Businesses tired of manually combining reports','Brands using multiple data platforms','Businesses that want deeper automated business signals','Clients who need recurring dashboard refreshes and technical alerts'].map((item, ii) => (
+                        <li key={ii} className="flex items-start gap-2 text-[#A0B0C0] text-xs leading-relaxed">
+                          <span className="text-[#00E676] mt-0.5 shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg></span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium text-[#00C6FF] border border-[rgba(0,198,255,0.3)] bg-[rgba(0,198,255,0.05)]">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Timeline: 7&ndash;10 days
+                  </div>
+                </div>
+
+                {/* 3 layers */}
+                <div className="lg:col-span-2 space-y-3">
+                  {/* Layer 1: Dashboard */}
+                  <div className="rounded-xl p-4" style={{ background: 'rgba(0,198,255,0.04)', border: '1px solid rgba(0,198,255,0.20)', borderLeft: '3px solid #00C6FF' }}>
+                    <div className="flex items-center justify-between mb-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full" style={{ background: 'rgba(0,198,255,0.15)', color: '#00C6FF' }}>Layer 1</span>
+                        <span className="text-white font-bold text-sm">Intelligence Dashboard</span>
+                      </div>
+                      <span className="gradient-text-gold text-sm font-bold">From $850</span>
+                    </div>
+                    <p className="text-[#8899AA] text-xs leading-relaxed">One connected custom dashboard with up to 5 standard data sources, data pipeline, KPI views, and technical handover.</p>
+                  </div>
+                  {/* Layer 2: Audit Intelligence */}
+                  <div className="rounded-xl p-4" style={{ background: 'rgba(0,230,118,0.04)', border: '1px solid rgba(0,230,118,0.20)', borderLeft: '3px solid #00E676' }}>
+                    <div className="flex items-center justify-between mb-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full" style={{ background: 'rgba(0,230,118,0.15)', color: '#00E676' }}>Layer 2 &middot; Optional</span>
+                        <span className="text-white font-bold text-sm">Audit Intelligence</span>
+                      </div>
+                      <span className="gradient-text-gold text-sm font-bold">From $650/module</span>
+                    </div>
+                    <p className="text-[#8899AA] text-xs leading-relaxed">Deeper calculations, classifications, insight summaries, and basic recommendations for marketing, retention, product, profitability, or operations.</p>
+                  </div>
+                  {/* Layer 3: Automation */}
+                  <div className="rounded-xl p-4" style={{ background: 'rgba(245,166,35,0.04)', border: '1px solid rgba(245,166,35,0.20)', borderLeft: '3px solid #F5A623' }}>
+                    <div className="flex items-center justify-between mb-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full" style={{ background: 'rgba(245,166,35,0.15)', color: '#F5A623' }}>Layer 3 &middot; Optional</span>
+                        <span className="text-white font-bold text-sm">Automated Scheduling &amp; Alerts</span>
+                      </div>
+                      <span className="gradient-text-gold text-sm font-bold">From $200</span>
+                    </div>
+                    <p className="text-[#8899AA] text-xs leading-relaxed">Recurring refresh schedule, refresh monitoring, failed-refresh alerts, missing-data alerts, error notifications, and automated data validation.</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* CTA + footer */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 mt-6 pt-6" style={{ borderTop: '1px solid rgba(0,198,255,0.12)' }}>
+                <a href={`${basePath}/data-pipeline-dashboard-setup`} target="_blank" rel="noopener noreferrer" className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-bold text-[#000000] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_24px_rgba(0,198,255,0.5)] no-underline" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 20px rgba(0,198,255,0.3)' }}>
+                  Explore Intelligence &amp; Automation →
+                </a>
+                <a href={`${basePath}/data-pipeline-dashboard-setup`} target="_blank" rel="noopener noreferrer" className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-[#00C6FF] border border-[rgba(0,198,255,0.35)] bg-[rgba(0,198,255,0.04)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.12)] no-underline">
+                  <ExternalLink size={14} /> View Details
+                </a>
+                <p className="text-[#6B7C8E] text-[11px] leading-relaxed sm:ml-auto sm:text-right sm:max-w-xs">Dashboard setup, audit intelligence, and automated refresh are scoped as separate components within the same system.</p>
+              </div>
+            </div>
           </div>
 
         </div>
