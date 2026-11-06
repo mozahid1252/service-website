@@ -660,6 +660,11 @@ strong { color: #FFFFFF; font-weight: 700; }
   filter: blur(10px);
   animation: pulse-glow 4s ease-in-out infinite;
 }
+
+/* ===== Static cards — no light animation (Part 3 & Part 4) ===== */
+.addon-card-wrapper.static-card::before { animation: none; }
+.addon-card-wrapper.static-card:hover::before { opacity: 0; }
+.addon-card-wrapper.static-card::after { opacity: 0; animation: none; }
 .addon-card-inner {
   position: relative;
   border-radius: 16px;

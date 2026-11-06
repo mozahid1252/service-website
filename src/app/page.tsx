@@ -1621,7 +1621,7 @@ function ServicesSection() {
           </p>
 
           {/* ════════ SECTION 01: Data Preparation & Integration ════════ */}
-          <div className="addon-card-wrapper marketing reveal-stagger mb-10">
+          <div className="addon-card-wrapper marketing static-card reveal-stagger mb-10">
             <div className="addon-card-inner">
             {/* Top accent bar */}
             <div className="h-1 mb-6 rounded-full" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #0072FF 60%, rgba(0,198,255,0.3) 100%)' }}></div>
@@ -1712,7 +1712,7 @@ function ServicesSection() {
           </div>
 
           {/* ════════ SECTION 02: E-Commerce Intelligence & Audit Automation ════════ */}
-          <div className="addon-card-wrapper cro reveal-stagger">
+          <div className="addon-card-wrapper cro static-card reveal-stagger">
             <div className="addon-card-inner">
             {/* Top accent bar */}
             <div className="h-1 mb-6 rounded-full" style={{ background: 'linear-gradient(90deg, #00E676 0%, #00C6FF 50%, #F5A623 100%)' }}></div>
@@ -1808,7 +1808,7 @@ function ServicesSection() {
           <p className="text-white text-lg sm:text-xl font-semibold mb-3">Built Around Your Business Questions</p>
           <p className="text-[#8899AA] text-sm leading-relaxed mb-12 pl-4 max-w-3xl" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>Not every business problem fits into a standard audit or dashboard. We build custom analyses, KPI systems, dashboards, and reporting solutions around your specific business question, data, and goals.</p>
 
-          <div className="addon-card-wrapper marketing reveal-stagger">
+          <div className="addon-card-wrapper marketing static-card reveal-stagger">
 
             <div className="addon-card-inner">
 
