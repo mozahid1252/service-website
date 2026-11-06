@@ -1726,9 +1726,9 @@ function ServicesSection() {
 
         {/* ── Custom Analytics & Insights (single card + CTA) ── */}
         <div id="part-4" className="mb-20">
-          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 4: Custom Analytics &amp; Insights</h3>
+          <h3 className="text-white text-3xl sm:text-4xl font-extrabold mb-3 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Part 4: Custom Analytics &amp; Decision Support</h3>
           <p className="text-white text-lg sm:text-xl font-semibold mb-3">Built Around Your Business Questions</p>
-          <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4 max-w-3xl" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>Not every business problem fits into a standard package. If you need a specific analysis, dashboard, KPI system, or custom report that isn&apos;t covered by our existing services, we can build it around your exact business question, data, and goals.</p>
+          <p className="text-[#8899AA] text-sm leading-relaxed mb-8 pl-4 max-w-3xl" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>Not every business problem fits into a standard audit or dashboard. We build custom analyses, KPI systems, dashboards, and reporting solutions around your specific business question, data, and goals.</p>
 
           <div className="rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(0,198,255,0.20)] relative" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.98) 0%, rgba(0,30,50,0.95) 50%, rgba(13,21,32,0.98) 100%)', border: '1px solid rgba(0,198,255,0.25)', boxShadow: '0 0 40px rgba(0,198,255,0.08), 0 16px 48px rgba(0,0,0,0.5)' }}>
 
@@ -1786,11 +1786,11 @@ function ServicesSection() {
 
                 {/* CTA buttons */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                  <a href={`${basePath}/custom-analytics-insights`} target="_blank" rel="noopener noreferrer" className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-sm font-bold text-[#000000] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.5)] no-underline" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 24px rgba(0,198,255,0.35)' }}>
-                    <ExternalLink size={16} /> View Details
-                  </a>
-                  <a href="#contact" className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold text-[#00C6FF] border border-[rgba(0,198,255,0.35)] bg-[rgba(0,198,255,0.04)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.12)] hover:border-[rgba(0,198,255,0.5)] no-underline">
+                  <a href="#contact" className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-sm font-bold text-[#000000] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.5)] no-underline" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 24px rgba(0,198,255,0.35)' }}>
                     Get Custom Analytics <ArrowRight size={16} />
+                  </a>
+                  <a href={`${basePath}/custom-analytics-insights`} target="_blank" rel="noopener noreferrer" className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold text-[#00C6FF] border border-[rgba(0,198,255,0.35)] bg-[rgba(0,198,255,0.04)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.12)] hover:border-[rgba(0,198,255,0.5)] no-underline">
+                    <ExternalLink size={16} /> View Details
                   </a>
                 </div>
 
