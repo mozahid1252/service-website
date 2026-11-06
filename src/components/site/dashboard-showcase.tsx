@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Clock3, Wallet } from "lucide-react";
 import { FadeIn } from "./reveal";
 
 /* ================================================================
@@ -203,52 +202,9 @@ function DashCard({ item, index }: { item: ShowcaseItem; index: number }) {
           </div>
         </div>
 
-        {/* Caption */}
-        <figcaption className="border-t border-white/10 bg-[#131024] p-5 sm:p-6">
-          {item.kicker ? (
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-brand/20 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-brand-light">
-              <span aria-hidden="true" className="h-1 w-1 rounded-full bg-brand-light" />
-              {item.kicker}
-            </span>
-          ) : null}
-          <div className="flex items-start justify-between gap-3">
-            <h3
-              className={`text-base font-semibold leading-snug text-white sm:text-lg ${
-                item.kicker ? "mt-3" : ""
-              }`}
-            >
-              {item.name}
-            </h3>
-            <span
-              aria-hidden="true"
-              className="shrink-0 text-[11px] font-semibold tracking-[0.24em] text-white/30"
-            >
-              {String(index + 1).padStart(2, "0")}
-            </span>
-          </div>
-          <p className="mt-2 line-clamp-2 text-sm italic leading-relaxed text-white/55">
-            {item.quote}
-          </p>
-          <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2 rounded-md bg-white/[0.04] px-4 py-2.5 ring-1 ring-white/10">
-            {item.timeline ? (
-              <div className="flex items-center gap-2">
-                <Clock3 aria-hidden="true" className="h-3.5 w-3.5 text-brand-light" />
-                <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/40">
-                  Timeline
-                </span>
-                <span className="text-xs font-semibold text-white/85">{item.timeline}</span>
-              </div>
-            ) : null}
-            {item.investment ? (
-              <div className="flex items-center gap-2">
-                <Wallet aria-hidden="true" className="h-3.5 w-3.5 text-brand-light" />
-                <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-white/40">
-                  Investment
-                </span>
-                <span className="text-xs font-semibold text-brand-light">{item.investment}</span>
-              </div>
-            ) : null}
-          </div>
+        {/* Caption removed per user request — keep only the dashboard screenshot */}
+        <figcaption className="border-t border-white/10 bg-[#131024] p-3 sm:p-4">
+          <h3 className="sr-only">{item.name}</h3>
         </figcaption>
       </div>
     </figure>
@@ -304,13 +260,10 @@ export function DashboardShowcaseSection() {
         <div className="absolute inset-0 opacity-[0.13] [background-image:radial-gradient(rgba(255,255,255,0.5)_1px,transparent_1px)] [background-size:22px_22px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
       </div>
 
-      {/* Two marquee rows — SWAPPED: audits on top (left scroll), packages on bottom (left scroll) */}
+      {/* Single marquee row — audits only (package row removed per user request) */}
       <div className="relative space-y-6 pb-16 pt-14 sm:space-y-8 sm:pb-24 sm:pt-20">
         <FadeIn>
           <DashRow items={auditItems} startIndex={0} direction="right" />
-        </FadeIn>
-        <FadeIn delay={120}>
-          <DashRow items={packageItems} startIndex={auditItems.length} direction="left" />
         </FadeIn>
       </div>
     </section>
