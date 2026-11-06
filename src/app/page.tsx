@@ -1808,16 +1808,12 @@ function ServicesSection() {
           <p className="text-white text-lg sm:text-xl font-semibold mb-3">Built Around Your Business Questions</p>
           <p className="text-[#8899AA] text-sm leading-relaxed mb-12 pl-4 max-w-3xl" style={{ borderLeft: '3px solid rgba(148,163,184,0.4)' }}>Not every business problem fits into a standard audit or dashboard. We build custom analyses, KPI systems, dashboards, and reporting solutions around your specific business question, data, and goals.</p>
 
-          <div className="rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(0,198,255,0.20)] relative" style={{ background: 'linear-gradient(145deg, rgba(10,16,26,0.98) 0%, rgba(0,28,48,0.95) 40%, rgba(5,12,22,0.98) 100%)', border: '1px solid rgba(0,198,255,0.25)', boxShadow: '0 0 50px rgba(0,198,255,0.08), 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(0,198,255,0.08)' }}>
+          <div className="addon-card-wrapper marketing reveal-stagger">
 
-            {/* Decorative glow orbs */}
-            <div className="absolute top-0 right-0 w-72 h-72 pointer-events-none" style={{ background: 'radial-gradient(circle at 80% 20%, rgba(0,198,255,0.12) 0%, transparent 60%)' }}></div>
-            <div className="absolute bottom-0 left-0 w-56 h-56 pointer-events-none" style={{ background: 'radial-gradient(circle at 20% 80%, rgba(0,230,118,0.08) 0%, transparent 60%)' }}></div>
+            <div className="addon-card-inner">
 
             {/* Top accent bar — tri-color gradient */}
-            <div className="h-1 relative z-10" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #00E676 50%, #F5A623 100%)' }}></div>
-
-            <div className="p-8 sm:p-10 relative z-10">
+            <div className="h-1 mb-6 rounded-full" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #00E676 50%, #F5A623 100%)' }}></div>
 
               {/* 6 services preview — 3 column grid with icons */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-7">
