@@ -1671,80 +1671,74 @@ function ServicesSection() {
 
         {/* ── Custom Analytics & Insights (single card + CTA) ── */}
         <div id="part-4" className="mb-20">
-          <div className="rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_50px_rgba(0,198,255,0.18)]" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.98) 0%, rgba(0,198,255,0.08) 100%)', border: '1px solid rgba(0,198,255,0.25)', boxShadow: '0 0 40px rgba(0,198,255,0.10), 0 12px 40px rgba(0,0,0,0.5)' }}>
+          <h3 className="text-white text-xl font-bold mb-2 uppercase tracking-tight part-gold-heading sg-sk-text" ref={(el) => { if (el && !el.dataset.split) { el.dataset.split = '1'; const words = el.textContent.trim().split(/\s+/); el.innerHTML = words.map((w,i) => `<span class="sgw" style="transition-delay:${i*0.08}s">${w}</span>`).join(' '); } }}>Custom Analytics &amp; Insights</h3>
+          <p className="text-[#00C6FF] text-base font-semibold mb-1">Built Around Your Business Questions</p>
+          <p className="text-[#8899AA] text-sm mb-8 max-w-3xl">Not every business problem fits into a standard package. If you need a specific analysis, dashboard, KPI system, or custom report that isn&apos;t covered by our existing services, we can build it around your exact business question, data, and goals.</p>
 
-            {/* Top accent bar */}
-            <div className="h-1" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #00E676 50%, #F5A623 100%)' }}></div>
+          <div className="rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_60px_rgba(0,198,255,0.20)] relative" style={{ background: 'linear-gradient(145deg, rgba(13,21,32,0.98) 0%, rgba(0,30,50,0.95) 50%, rgba(13,21,32,0.98) 100%)', border: '1px solid rgba(0,198,255,0.25)', boxShadow: '0 0 40px rgba(0,198,255,0.08), 0 16px 48px rgba(0,0,0,0.5)' }}>
 
-            <div className="p-8 sm:p-12">
+            {/* Decorative glow orbs */}
+            <div className="absolute top-0 right-0 w-64 h-64 pointer-events-none" style={{ background: 'radial-gradient(circle at 70% 30%, rgba(0,198,255,0.12) 0%, transparent 60%)' }}></div>
+            <div className="absolute bottom-0 left-0 w-56 h-56 pointer-events-none" style={{ background: 'radial-gradient(circle at 30% 70%, rgba(0,230,118,0.08) 0%, transparent 60%)' }}></div>
 
-              {/* Header row: icon + title + eyebrow */}
-              <div className="flex items-start gap-5 mb-7">
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center shrink-0 relative" style={{ background: 'linear-gradient(135deg, rgba(0,198,255,0.15) 0%, rgba(0,114,255,0.15) 100%)', border: '1px solid rgba(0,198,255,0.35)', boxShadow: '0 0 24px rgba(0,198,255,0.15) inset' }}>
-                  <Lightbulb size={30} className="text-[#00C6FF]" />
-                </div>
-                <div className="flex-1 pt-1">
-                  <div className="flex items-center gap-3 mb-1.5">
-                    <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#00C6FF]">Custom Service</span>
-                    <span className="text-[#475569]">·</span>
-                    <span className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.08em] uppercase text-[#F5A623]"><i className="text-[8px]">●</i>Based on Scope</span>
-                  </div>
-                  <h3 className="text-white font-bold text-2xl sm:text-3xl tracking-tight mb-1.5" style={{ fontFamily: 'Manrope, sans-serif' }}>Custom Analytics &amp; Insights</h3>
-                  <p className="text-[#00C6FF] text-sm font-semibold">Built Around Your Business Questions</p>
-                </div>
-              </div>
+            {/* Top accent bar — tri-color gradient */}
+            <div className="h-1 relative z-10" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #00E676 50%, #F5A623 100%)' }}></div>
 
-              {/* Description */}
-              <p className="text-[#A0B0C0] text-sm sm:text-base leading-relaxed mb-8 max-w-3xl">Not every business problem fits into a standard package. If you need a specific analysis, dashboard, KPI system, or custom report that isn&apos;t covered by our existing services, we can build it around your exact business question, data, and goals.</p>
+            <div className="p-8 sm:p-10 relative z-10">
 
-              {/* 6 services preview — 3 column grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8">
+              {/* 6 services preview — 3 column grid with icons */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-7">
                 {[
-                  { n: '01', t: 'Custom Business Analysis', c: '#00C6FF' },
-                  { n: '02', t: 'Custom E-Commerce Analysis', c: '#00E676' },
-                  { n: '03', t: 'Custom Dashboard', c: '#F5A623' },
-                  { n: '04', t: 'Custom KPI & Reporting System', c: '#00C6FF' },
-                  { n: '05', t: 'Custom Data Analysis', c: '#00E676' },
-                  { n: '06', t: 'Conversion & Experiment Analysis', c: '#F5A623' },
+                  { n: '01', t: 'Custom Business Analysis', c: '#00C6FF', bg: 'rgba(0,198,255,0.10)', icon: 'M9 21h6m-3-3v3M5 3h14a1 1 0 011 1v9a1 1 0 01-1 1H5a1 1 0 01-1-1V4a1 1 0 011-1zm3 5h8M8 11h8M8 15h5' },
+                  { n: '02', t: 'Custom E-Commerce Analysis', c: '#00E676', bg: 'rgba(0,230,118,0.10)', icon: 'M3 3h18v6H3V3zm0 10h18v8H3v-8zm4 4h2m4 0h6' },
+                  { n: '03', t: 'Custom Dashboard', c: '#F5A623', bg: 'rgba(245,166,35,0.10)', icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm1 1v5h12V6H5zm0 7v6h5v-6H5zm7 0v6h5v-6h-5z' },
+                  { n: '04', t: 'Custom KPI & Reporting System', c: '#00C6FF', bg: 'rgba(0,198,255,0.10)', icon: 'M9 17v-6m3 6V7m3 10v-4M5 21h14a1 1 0 001-1V4a1 1 0 00-1-1H5a1 1 0 00-1 1v16a1 1 0 001 1z' },
+                  { n: '05', t: 'Custom Data Analysis', c: '#00E676', bg: 'rgba(0,230,118,0.10)', icon: 'M4 7l4-4 4 4M4 17l4 4 4-4M20 7l-4-4-4 4m8 14l-4 4-4-4M12 3v18' },
+                  { n: '06', t: 'Conversion & Experiment Analysis', c: '#F5A623', bg: 'rgba(245,166,35,0.10)', icon: 'M7 4l5 5 5-5M7 20l5-5 5 5M12 9v6' },
                 ].map((s, si) => (
-                  <div key={si} className="flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-300 hover:translate-x-1" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderLeft: `2px solid ${s.c}` }}>
-                    <span className="text-xs font-bold shrink-0" style={{ color: s.c, fontFamily: 'Manrope, sans-serif' }}>{s.n}</span>
-                    <span className="text-[#C0D0E0] text-[13px] font-medium leading-tight">{s.t}</span>
+                  <div key={si} className="group flex items-center gap-3 px-3.5 py-3 rounded-xl transition-all duration-300 hover:translate-x-1 hover:shadow-lg cursor-default" style={{ background: s.bg, border: '1px solid rgba(255,255,255,0.06)', borderLeft: `3px solid ${s.c}` }}>
+                    <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110" style={{ background: s.c === '#00C6FF' ? 'rgba(0,198,255,0.12)' : s.c === '#00E676' ? 'rgba(0,230,118,0.12)' : 'rgba(245,166,35,0.12)', border: `1px solid ${s.c}40` }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={s.c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d={s.icon} /></svg>
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-[10px] font-bold tracking-wider mb-0.5" style={{ color: s.c }}>SERVICE {s.n}</div>
+                      <div className="text-[#D0DCE8] text-[12.5px] font-semibold leading-tight">{s.t}</div>
+                    </div>
                   </div>
                 ))}
               </div>
 
-              {/* Stat strip */}
-              <div className="flex flex-wrap items-center gap-x-8 gap-y-3 mb-8 pb-7" style={{ borderBottom: '1px solid rgba(0,198,255,0.12)' }}>
-                <div className="flex items-center gap-2">
-                  <span className="text-2xl font-extrabold text-white" style={{ fontFamily: 'Manrope, sans-serif' }}>6</span>
-                  <span className="text-[#8899AA] text-xs leading-tight">Custom<br/>Services</span>
-                </div>
-                <div className="w-px h-8" style={{ background: 'rgba(255,255,255,0.08)' }}></div>
-                <div className="flex items-center gap-2">
-                  <span className="text-2xl font-extrabold text-[#00E676]" style={{ fontFamily: 'Manrope, sans-serif' }}>4</span>
-                  <span className="text-[#8899AA] text-xs leading-tight">Simple<br/>Steps</span>
-                </div>
-                <div className="w-px h-8" style={{ background: 'rgba(255,255,255,0.08)' }}></div>
-                <div className="flex items-center gap-2">
-                  <span className="text-2xl font-extrabold text-[#F5A623]" style={{ fontFamily: 'Manrope, sans-serif' }}>100%</span>
-                  <span className="text-[#8899AA] text-xs leading-tight">Tailored<br/>to You</span>
-                </div>
-                <div className="w-px h-8" style={{ background: 'rgba(255,255,255,0.08)' }}></div>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-bold text-[#00C6FF]" style={{ fontFamily: 'Manrope, sans-serif' }}>Custom</span>
-                  <span className="text-[#8899AA] text-xs leading-tight">Pricing<br/>Based on Scope</span>
-                </div>
-              </div>
+              {/* Stat strip + CTA side by side */}
+              <div className="flex flex-col lg:flex-row items-stretch gap-6 pt-6" style={{ borderTop: '1px solid rgba(0,198,255,0.12)' }}>
 
-              {/* CTA row */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                <a href={`${basePath}/custom-analytics-insights`} target="_blank" rel="noopener noreferrer" className="btn-press inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-bold text-[#000000] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.5)] no-underline flex-1 sm:flex-initial" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 24px rgba(0,198,255,0.35)' }}>
-                  <ExternalLink size={16} /> View Details
-                </a>
-                <a href="#contact" className="btn-press inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg text-sm font-semibold text-[#00C6FF] border border-[rgba(0,198,255,0.35)] bg-[rgba(0,198,255,0.04)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.12)] hover:border-[rgba(0,198,255,0.5)] no-underline flex-1 sm:flex-initial">
-                  Get Custom Analytics <ArrowRight size={16} />
-                </a>
+                {/* Stats */}
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-3 lg:gap-x-8 flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl font-extrabold text-[#00C6FF]" style={{ fontFamily: 'Manrope, sans-serif' }}>6</span>
+                    <span className="text-[#8899AA] text-xs leading-tight">Custom<br/>Services</span>
+                  </div>
+                  <div className="w-px h-8" style={{ background: 'rgba(255,255,255,0.08)' }}></div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl font-extrabold text-[#00E676]" style={{ fontFamily: 'Manrope, sans-serif' }}>4</span>
+                    <span className="text-[#8899AA] text-xs leading-tight">Simple<br/>Steps</span>
+                  </div>
+                  <div className="w-px h-8" style={{ background: 'rgba(255,255,255,0.08)' }}></div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl font-extrabold text-[#F5A623]" style={{ fontFamily: 'Manrope, sans-serif' }}>100%</span>
+                    <span className="text-[#8899AA] text-xs leading-tight">Tailored<br/>to You</span>
+                  </div>
+                </div>
+
+                {/* CTA buttons */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                  <a href={`${basePath}/custom-analytics-insights`} target="_blank" rel="noopener noreferrer" className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-sm font-bold text-[#000000] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,198,255,0.5)] no-underline" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', boxShadow: '0 0 24px rgba(0,198,255,0.35)' }}>
+                    <ExternalLink size={16} /> View Details
+                  </a>
+                  <a href="#contact" className="btn-press inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg text-sm font-semibold text-[#00C6FF] border border-[rgba(0,198,255,0.35)] bg-[rgba(0,198,255,0.04)] transition-all duration-300 hover:bg-[rgba(0,198,255,0.12)] hover:border-[rgba(0,198,255,0.5)] no-underline">
+                    Get Custom Analytics <ArrowRight size={16} />
+                  </a>
+                </div>
+
               </div>
 
             </div>
