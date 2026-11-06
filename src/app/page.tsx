@@ -1621,12 +1621,10 @@ function ServicesSection() {
           </p>
 
           {/* ════════ SECTION 01: Data Preparation & Integration ════════ */}
-          <div className="reveal-stagger rounded-2xl overflow-hidden mb-10 relative" style={{ background: 'linear-gradient(145deg, rgba(10,16,26,0.98) 0%, rgba(0,25,45,0.95) 40%, rgba(5,12,22,0.98) 100%)', border: '1px solid rgba(0,198,255,0.22)', boxShadow: '0 0 50px rgba(0,198,255,0.08), 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(0,198,255,0.08)' }}>
-            {/* Decorative glow orbs */}
-            <div className="absolute top-0 right-0 w-72 h-72 pointer-events-none" style={{ background: 'radial-gradient(circle at 80% 20%, rgba(0,198,255,0.10) 0%, transparent 60%)' }}></div>
-            <div className="absolute bottom-0 left-0 w-56 h-56 pointer-events-none" style={{ background: 'radial-gradient(circle at 20% 80%, rgba(0,114,255,0.06) 0%, transparent 60%)' }}></div>
-            <div className="h-1 relative z-10" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #0072FF 60%, rgba(0,198,255,0.3) 100%)' }}></div>
-            <div className="p-6 sm:p-10 relative z-10">
+          <div className="addon-card-wrapper marketing reveal-stagger mb-10">
+            <div className="addon-card-inner">
+            {/* Top accent bar */}
+            <div className="h-1 mb-6 rounded-full" style={{ background: 'linear-gradient(90deg, #00C6FF 0%, #0072FF 60%, rgba(0,198,255,0.3) 100%)' }}></div>
               {/* Section header */}
               <div className="flex items-center gap-3 mb-4">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl font-bold text-sm" style={{ background: 'linear-gradient(135deg, #00C6FF, #0072FF)', color: '#FFF', boxShadow: '0 4px 14px rgba(0,198,255,0.3)' }}>01</span>
@@ -1714,12 +1712,10 @@ function ServicesSection() {
           </div>
 
           {/* ════════ SECTION 02: E-Commerce Intelligence & Audit Automation ════════ */}
-          <div className="reveal-stagger rounded-2xl overflow-hidden relative" style={{ background: 'linear-gradient(145deg, rgba(10,16,26,0.98) 0%, rgba(0,28,48,0.95) 40%, rgba(5,12,22,0.98) 100%)', border: '1px solid rgba(0,230,118,0.20)', boxShadow: '0 0 50px rgba(0,198,255,0.06), 0 20px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(0,230,118,0.08)' }}>
-            {/* Decorative glow orbs */}
-            <div className="absolute top-0 right-0 w-72 h-72 pointer-events-none" style={{ background: 'radial-gradient(circle at 80% 20%, rgba(0,230,118,0.10) 0%, transparent 60%)' }}></div>
-            <div className="absolute bottom-0 left-0 w-56 h-56 pointer-events-none" style={{ background: 'radial-gradient(circle at 20% 80%, rgba(0,198,255,0.06) 0%, transparent 60%)' }}></div>
-            <div className="h-1 relative z-10" style={{ background: 'linear-gradient(90deg, #00E676 0%, #00C6FF 50%, #F5A623 100%)' }}></div>
-            <div className="p-6 sm:p-10 relative z-10">
+          <div className="addon-card-wrapper cro reveal-stagger">
+            <div className="addon-card-inner">
+            {/* Top accent bar */}
+            <div className="h-1 mb-6 rounded-full" style={{ background: 'linear-gradient(90deg, #00E676 0%, #00C6FF 50%, #F5A623 100%)' }}></div>
               {/* Section header */}
               <div className="flex items-center gap-3 mb-4">
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl font-bold text-sm" style={{ background: 'linear-gradient(135deg, #00E676, #00B853)', color: '#FFF', boxShadow: '0 4px 14px rgba(0,230,118,0.3)' }}>02</span>
