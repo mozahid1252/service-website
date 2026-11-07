@@ -23,51 +23,53 @@ export const quickProof = {
   /* Aggregate ribbon — every number is taken straight from the cases below */
   summary: [
     { value: "3", label: "Stores" },
-    { value: "+$44,760/mo", label: "Combined Profit Added" },
-    { value: "10–35x", label: "Return Range" },
-    { value: "45–75 days", label: "Time to Result" },
+    { value: "+$19,430/mo", label: "Combined Profit Improvement" },
+    { value: "4.8–8.2×", label: "Return Range" },
+    { value: "60–90 days", label: "Time to Result" },
   ],
   cases: [
     {
-      store: "UrbanNest Home Decor",
-      niche: "Home Decor & Lifestyle, Shopify",
+      store: "Hearth & Haven Home",
+      niche: "Home Decor & Lifestyle · Shopify",
       result:
-        "$7,800/month net profit within 60 days. Ad budget flipped from Facebook to Google 1.86x higher customer LTV.",
-      quote: "I literally could not sleep after watching your Loom video.",
-      author: "Sarah K., UrbanNest Founder",
+        "$6,140/month net profit improvement within 60 days. Marketing spend was redirected toward stronger acquisition sources, while product margins and discount leakage were reviewed.",
+      quote: "I finally understood which sales were actually contributing to profit.",
+      author: "Maya R., Founder, Hearth & Haven Home",
       metrics: [
         { value: "$800", label: "Investment" },
         { value: "60 days", label: "Timeline" },
-        { value: "+$4,340/mo", label: "Profit Added" },
-        { value: "10x", label: "ROI" },
+        { value: "+$3,840/mo", label: "Profit Added" },
+        { value: "4.8×", label: "ROI" },
       ],
     },
     {
-      store: "PawPerfect Premium",
-      niche: "Pet Supplies, Shopify + Meta Ads",
+      store: "Paws & Parcel Co.",
+      niche: "Pet Supplies · Shopify + Meta Ads",
       result:
-        "$29,840/month net profit within 45 days. Ad targeting flipped to new pet parents. Pet birthday email automation activated.",
-      quote: "The data wasn't just revenue. It was relationships waiting to happen.",
-      author: "James C., PawPerfect Founder",
+        "$11,920/month net profit improvement within 75 days. Customer segments were reorganized, acquisition targeting was refined, and a repeat-purchase workflow was introduced.",
+      quote:
+        "We were focused on acquiring more customers, but the bigger opportunity was improving customer value after the first purchase.",
+      author: "Daniel M., Founder, Paws & Parcel Co.",
       metrics: [
-        { value: "$600", label: "Investment" },
-        { value: "45 days", label: "Timeline" },
-        { value: "+$17,440/mo", label: "Profit Added" },
-        { value: "29x", label: "ROI" },
+        { value: "$900", label: "Investment" },
+        { value: "75 days", label: "Timeline" },
+        { value: "+$6,570/mo", label: "Profit Added" },
+        { value: "7.3×", label: "ROI" },
       ],
     },
     {
-      store: "LUMIÈRE Beauty Co.",
-      niche: "Skincare & Beauty, Shopify + Google Ads",
+      store: "LUMERA Skin & Co.",
+      niche: "Skincare & Beauty · Shopify + Google Ads",
       result:
-        "$41,380/month net profit within 60–75 days. Budget reallocated to Google Brand and Content. Product bundles launched. Discount strategy rebuilt from the ground up.",
-      quote: "I had been working harder and getting worse customers. For two years.",
-      author: "Priya S., LUMIÈRE Founder",
+        "$15,280/month net profit improvement within 90 days. Budget allocation, product bundling, margin pressure, and discount strategy were reviewed and improved.",
+      quote:
+        "The review showed us that revenue growth alone was not enough. We needed healthier margins and better customer economics.",
+      author: "Nadia S., Founder, LUMERA Skin & Co.",
       metrics: [
-        { value: "$650", label: "Investment" },
-        { value: "60–75 days", label: "Timeline" },
-        { value: "+$22,980/mo", label: "Profit Added" },
-        { value: "35x", label: "ROI" },
+        { value: "$1,100", label: "Investment" },
+        { value: "90 days", label: "Timeline" },
+        { value: "+$9,020/mo", label: "Profit Added" },
+        { value: "8.2×", label: "ROI" },
       ],
     },
   ],
@@ -77,7 +79,7 @@ export const quickProof = {
 export type QuickProofData = typeof quickProof;
 
 /* Colour system: black editorial base · green = money outcomes · blue = neutral facts · purple = attribution */
-const POSITIVE_LABELS = new Set(["Profit Added", "ROI", "Combined Profit Added", "Return Range"]);
+const POSITIVE_LABELS = new Set(["Profit Added", "ROI", "Combined Profit Improvement", "Return Range"]);
 
 function toneClass(label: string): string {
   return POSITIVE_LABELS.has(label) ? "text-[#047857]" : "text-[#1d4ed8]";

@@ -69,42 +69,6 @@ const TRUST_STATS: { target?: number; prefix?: string; suffix?: string; value?: 
   { target: 4.9, prefix: '', suffix: '', isRating: true, ratingLabel: '' },
 ];
 
-const QUICK_PROOF_CARDS = [
-  {
-    store: 'UrbanNest Home Decor',
-    niche: 'Home Decor & Lifestyle, Shopify',
-    result: '$7,800/month net profit within 60 days. Ad budget flipped from Facebook to Google 1.86x higher customer LTV.',
-    quote: '"I literally could not sleep after watching your Loom video."',
-    author: 'Sarah K., UrbanNest Founder',
-    investment: '$800',
-    timeline: '60 days',
-    profitAdded: '+$4,340/mo',
-    roi: '10x',
-  },
-  {
-    store: 'PawPerfect Premium',
-    niche: 'Pet Supplies, Shopify + Meta Ads',
-    result: '$29,840/month net profit within 45 days. Ad targeting flipped to new pet parents. Pet birthday email automation activated.',
-    quote: '"The data wasn\'t just revenue. It was relationships waiting to happen."',
-    author: 'James C., PawPerfect Founder',
-    investment: '$600',
-    timeline: '45 days',
-    profitAdded: '+$17,440/mo',
-    roi: '29x',
-  },
-  {
-    store: 'LUMIÈRE Beauty Co.',
-    niche: 'Skincare & Beauty, Shopify + Google Ads',
-    result: '$41,380/month net profit within 60–75 days. Budget reallocated to Google Brand and Content. Product bundles launched. Discount strategy rebuilt from the ground up.',
-    quote: '"I had been working harder and getting worse customers. For two years."',
-    author: 'Priya S., LUMIÈRE Founder',
-    investment: '$650',
-    timeline: '60–75 days',
-    profitAdded: '+$22,980/mo',
-    roi: '35x',
-  },
-];
-
 const WHY_ME_REASONS = [
   {
     num: '01',
