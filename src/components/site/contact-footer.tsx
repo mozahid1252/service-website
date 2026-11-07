@@ -72,9 +72,9 @@ const finalCta = {
    Part 1 Core Packages · Part 2 Specialized Audits · Part 3 Data Infrastructure · Part 4 Custom Analytics */
 const serviceGroups: { label: string; options: readonly string[] }[] = [
   {
-    label: "Core Packages",
+    label: "E-Commerce Growth Framework",
     options: [
-      "E-Commerce Health Check",
+      "E-Commerce Health Check Audit",
       "E-Commerce Performance Improvement",
       "E-Commerce Growth Intelligence Partnership",
     ],
@@ -133,27 +133,10 @@ const footerData = {
     { label: "Contact", href: "/#contact" },
     { label: "Why We're Different", href: "/#why-different" },
   ],
-  services: [
-    { label: "Custom Analytics & Insights", href: "/#custom-analytics" },
-  ],
-  detailsSetup: [
-    { label: "E-Commerce Health Check", href: "/health-check" },
-    { label: "Data-Driven Growth System", href: "/data-driven-growth-system" },
-    { label: "Data Preparation & Integration", href: "/data-preparation-integration" },
-    { label: "Data Pipeline & Dashboard Setup", href: "/data-pipeline-dashboard-setup" },
-  ],
-  detailsAudits: [
-    { label: "Marketing Audit", href: "/marketing-spend-audit" },
-    { label: "Customer Retention Audit", href: "/customer-retention-audit" },
-    { label: "Product Portfolio Audit", href: "/product-portfolio-audit" },
-    { label: "CRO / Website Audit", href: "/cro-audit" },
-    { label: "Profitability Audit", href: "/profitability-audit" },
-    { label: "Operations Efficiency Audit", href: "/operations-efficiency-audit" },
-    { label: "Meta Ads Performance Audit", href: "/meta-ads-performance-audit" },
-  ],
   corePackages: [
-    { label: "E-Commerce Health Check", href: "/health-check" },
-    { label: "Data-Driven Growth System", href: "/data-driven-growth-system" },
+    { label: "E-Commerce Health Check Audit", href: "/health-check" },
+    { label: "E-Commerce Performance Improvement", href: "/performance-improvement" },
+    { label: "E-Commerce Growth Intelligence Partnership", href: "/growth-partnership" },
   ],
   dataInfrastructure: [
     { label: "Data Preparation & Integration", href: "/data-preparation-integration" },
@@ -162,14 +145,14 @@ const footerData = {
     { label: "Automated Audit Intelligence", href: "/automated-audit-intelligence" },
   ],
   specializedAudits: [
-    { label: "Marketing Performance Audit", href: "/marketing-spend-audit" },
-    { label: "Customer Retention Audit", href: "/customer-retention-audit" },
-    { label: "Product Portfolio Audit", href: "/product-portfolio-audit" },
+    { label: "Marketing Performance & Profitability Audit", href: "/marketing-spend-audit" },
+    { label: "Customer Retention & LTV Audit", href: "/customer-retention-audit" },
+    { label: "Product Profitability & Portfolio Audit", href: "/product-portfolio-audit" },
     { label: "E-Commerce CRO Audit", href: "/cro-audit" },
-    { label: "Profitability Audit", href: "/profitability-audit" },
+    { label: "E-Commerce Profitability Audit", href: "/profitability-audit" },
     { label: "Operations Efficiency Audit", href: "/operations-efficiency-audit" },
-    { label: "Meta Ads Performance Audit", href: "/meta-ads-performance-audit" },
-    { label: "Measurement & Attribution Review", href: "/e-commerce-tracking-attribution-review" },
+    { label: "Meta Ads Measurement & Profitability Review", href: "/meta-ads-performance-audit" },
+    { label: "Marketing Measurement & Attribution Review", href: "/e-commerce-tracking-attribution-review" },
   ],
   customAnalytics: [
     { label: "Custom Analytics & Insights", href: "/custom-analytics-insights" },
@@ -529,7 +512,7 @@ const connectIconMap = {
 export function SiteFooter() {
   const columns: { title: string; links: readonly { label: string; href: string }[] }[] = [
     { title: "Quick Links", links: footerData.quickLinks },
-    { title: "Core Packages", links: footerData.corePackages },
+    { title: "E-Commerce Growth Framework", links: footerData.corePackages },
     { title: "Data & Intelligence", links: footerData.dataInfrastructure },
     { title: "Specialized Audits", links: footerData.specializedAudits },
     { title: "Custom Analytics", links: footerData.customAnalytics },

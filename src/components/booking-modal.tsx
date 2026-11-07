@@ -11,26 +11,29 @@ interface BookingModalProps {
 
 // All service packages organized by category
 const SERVICE_PACKAGES = [
-  { label: '─ Part 1: Core E-Commerce Packages ─', options: [
-    'E-Commerce Health Check',
-    'Data-Driven Growth System',
+  { label: '─ Part 1: E-Commerce Growth Framework ─', options: [
+    'E-Commerce Health Check Audit',
+    'E-Commerce Performance Improvement',
+    'E-Commerce Growth Intelligence Partnership',
   ]},
-  { label: '─ Part 2: Specialized Add-On Packages ─', options: [
-    'Marketing Spend Audit',
-    'Customer Retention Audit',
-    'Product Portfolio Audit',
-    'CRO/Website Audit',
-    'Profitability Audit',
+  { label: '─ Part 2: Specialized E-Commerce Audits ─', options: [
+    'E-Commerce Profitability Audit',
+    'Marketing Performance & Profitability Audit',
+    'E-Commerce CRO Audit',
+    'Customer Retention & LTV Audit',
+    'Product Profitability & Portfolio Audit',
     'Operations Efficiency Audit',
-    'Meta Ads Performance Audit',
+    'Meta Ads Measurement & Profitability Review',
+    'Marketing Measurement & Attribution Review',
   ]},
-  { label: '─ Part 3: Data Setup & Infrastructure ─', options: [
-    'Basic Setup',
-    'Full Pipeline Setup',
-    'Full Pipeline + Automation',
+  { label: '─ Part 3: Data Infrastructure & Intelligence ─', options: [
+    'Data Preparation & Integration',
+    'Data Pipeline & Dashboard Setup',
+    'E-Commerce Intelligence Dashboard',
+    'Automated Audit Intelligence',
   ]},
   { label: '─ Other ─', options: [
-    'Custom Analytics Setup',
+    'Custom Analytics & Insights',
     'Not sure yet (Need advice)',
   ]},
 ];

@@ -27,7 +27,7 @@ const faqs = [
     answer: "That depends on the problem you are trying to solve. Choose the E-Commerce Health Check Audit if you are not sure where the main problem is and need a broad diagnosis. Choose a Specialized E-Commerce Audit if you already know the area that needs attention — for example profitability, marketing performance, CRO, customer retention, products, operations, or Meta Ads. Choose Data Preparation & Integration if your data needs to be collected, cleaned, or organized before an audit or analysis. Choose the E-Commerce Intelligence & Audit Automation Dashboard if you want a connected dashboard, deeper automated insights, or recurring monitoring. For a unique business question, choose Custom Analytics & Decision Support.",
   },
   {
-    question: "What is the difference between the E-Commerce Health Check and a Specialized Audit?",
+    question: "What is the difference between the E-Commerce Health Check Audit and a Specialized Audit?",
     answer: "The E-Commerce Health Check Audit is a broader review of the overall business. It helps identify the main areas creating revenue leaks, profit pressure, tracking problems, conversion issues, or operational risk. A Specialized Audit focuses on one specific business area, such as: E-Commerce Profitability, Marketing Performance & Profitability, Meta Ads Measurement & Profitability, CRO, Customer Retention & LTV, Product Profitability & Portfolio, Operations Efficiency, or Marketing Measurement & Attribution. You do not need to purchase both. The right starting point depends on how clearly you already understand the problem.",
   },
   {

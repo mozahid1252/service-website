@@ -6,10 +6,10 @@ import Image from 'next/image';
 import { Loader2, CheckCircle2, AlertCircle, ArrowRight, ChevronLeft } from 'lucide-react';
 
 const SERVICE_PACKAGES = [
-  { label: '─ Part 1: Core E-Commerce Packages ─', options: ['E-Commerce Health Check', 'E-Commerce Growth & Profit Intelligence', 'Data-Driven Growth System'] },
-  { label: '─ Part 2: Specialized Add-On Packages ─', options: ['Marketing Spend Audit', 'Customer Retention Audit', 'Product Portfolio Audit', 'CRO/Website Audit', 'Profitability Audit', 'Operations Efficiency Audit', 'Meta Ads Performance Audit'] },
-  { label: '─ Part 3: Data Setup & Infrastructure ─', options: ['Data Preparation & Integration', 'Data Pipeline & Dashboard Setup'] },
-  { label: '─ Other ─', options: ['Custom Analytics Setup', 'Not sure yet (Need advice)'] },
+  { label: '─ Part 1: E-Commerce Growth Framework ─', options: ['E-Commerce Health Check Audit', 'E-Commerce Performance Improvement', 'E-Commerce Growth Intelligence Partnership'] },
+  { label: '─ Part 2: Specialized E-Commerce Audits ─', options: ['E-Commerce Profitability Audit', 'Marketing Performance & Profitability Audit', 'E-Commerce CRO Audit', 'Customer Retention & LTV Audit', 'Product Profitability & Portfolio Audit', 'Operations Efficiency Audit', 'Meta Ads Measurement & Profitability Review', 'Marketing Measurement & Attribution Review'] },
+  { label: '─ Part 3: Data Infrastructure & Intelligence ─', options: ['Data Preparation & Integration', 'Data Pipeline & Dashboard Setup', 'E-Commerce Intelligence Dashboard', 'Automated Audit Intelligence'] },
+  { label: '─ Other ─', options: ['Custom Analytics & Insights', 'Not sure yet (Need advice)'] },
 ];
 
 const REVENUE_RANGES = ['Below $1k / Mo', '$1k – $10k / Mo', '$10k – $20k / Mo', '$20k – $40k / Mo', '$40k – $60k / Mo', '$60k – $100k / Mo', '$100k+ / Mo'];
@@ -37,18 +37,30 @@ const COUNTRIES = [
 ];
 
 const PACKAGE_MAP: Record<string, string> = {
-  'e-commerce-health-check': 'E-Commerce Health Check',
-  'health-check': 'E-Commerce Health Check',
-  'data-driven-growth-system': 'Data-Driven Growth System',
-  'marketing-spend-audit': 'Marketing Spend Audit',
-  'customer-retention-audit': 'Customer Retention Audit',
-  'product-portfolio-audit': 'Product Portfolio Audit',
-  'cro-audit': 'CRO/Website Audit',
-  'profitability-audit': 'Profitability Audit',
+  'e-commerce-health-check': 'E-Commerce Health Check Audit',
+  'health-check': 'E-Commerce Health Check Audit',
+  'health-check-standard': 'E-Commerce Health Check Audit',
+  'health-check-deep': 'E-Commerce Health Check Audit',
+  'health-check-help': 'E-Commerce Health Check Audit',
+  'performance-improvement': 'E-Commerce Performance Improvement',
+  'growth-partnership': 'E-Commerce Growth Intelligence Partnership',
+  'growth-advisory': 'E-Commerce Growth Intelligence Partnership',
+  'growth-performance-partnership': 'E-Commerce Growth Intelligence Partnership',
+  'analytics-partner-retainer': 'E-Commerce Growth Intelligence Partnership',
+  'marketing-spend-audit': 'Marketing Performance & Profitability Audit',
+  'customer-retention-audit': 'Customer Retention & LTV Audit',
+  'product-portfolio-audit': 'Product Profitability & Portfolio Audit',
+  'cro-audit': 'E-Commerce CRO Audit',
+  'profitability-audit': 'E-Commerce Profitability Audit',
   'operations-efficiency-audit': 'Operations Efficiency Audit',
-  'meta-ads-performance-audit': 'Meta Ads Performance Audit',
+  'meta-ads-performance-audit': 'Meta Ads Measurement & Profitability Review',
+  'e-commerce-tracking-attribution-review': 'Marketing Measurement & Attribution Review',
   'data-preparation-integration': 'Data Preparation & Integration',
   'data-pipeline-dashboard-setup': 'Data Pipeline & Dashboard Setup',
+  'e-commerce-intelligence-dashboard': 'E-Commerce Intelligence Dashboard',
+  'automated-audit-intelligence': 'Automated Audit Intelligence',
+  'full-pipeline-setup': 'Data Pipeline & Dashboard Setup',
+  'full-pipeline-automation': 'Data Pipeline & Dashboard Setup',
 };
 
 interface FormData { full_name: string; email: string; phone: string; website_url: string; service_package: string; monthly_revenue: string; country: string; city: string; preferred_time: string; additional_notes: string; }

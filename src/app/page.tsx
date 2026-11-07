@@ -83,7 +83,7 @@ const WHY_ME_REASONS = [
   {
     num: '03',
     title: 'From Data to Decision in Days, Not Months.',
-    text: 'Most consultants take 8–12 weeks to deliver a strategy document you\'ll never fully implement. I deliver your complete E-Commerce Health Check in 7 days. Why? Because if your store is bleeding $1,690 a month in hidden losses, you don\'t have 3 months. You need to know exactly what to fix this week, not next quarter.',
+    text: 'Most consultants take 8–12 weeks to deliver a strategy document you\'ll never fully implement. I deliver your complete E-Commerce Health Check Audit in 3–5 business days. Why? Because if your store is bleeding $1,690 a month in hidden losses, you don\'t have 3 months. You need to know exactly what to fix this week, not next quarter.',
   },
   {
     num: '04',
@@ -1607,7 +1607,7 @@ function ServicesSection() {
                   <div className="mb-6">
                     <div className="text-[#8899AA] text-xs uppercase tracking-wider font-semibold mb-3">Best For</div>
                     <ul className="space-y-2">
-                      {['A selected specialist audit','E-Commerce Health Check','Custom business analysis','Businesses with scattered data','Businesses using multiple spreadsheets or exports','Clients who need analysis-ready data before starting a project'].map((item, ii) => (
+                      {['A selected specialist audit','E-Commerce Health Check Audit','Custom business analysis','Businesses with scattered data','Businesses using multiple spreadsheets or exports','Clients who need analysis-ready data before starting a project'].map((item, ii) => (
                         <li key={ii} className="flex items-start gap-2 text-[#A0B0C0] text-xs leading-relaxed">
                           <span className="text-[#00C6FF] mt-0.5 shrink-0"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg></span>
                           <span>{item}</span>
