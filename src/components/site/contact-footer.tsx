@@ -68,21 +68,53 @@ const finalCta = {
   secondaryCta: { label: "Email Me", href: "mailto:mojahidulislam101010@gmail.com" },
 };
 
-const serviceOptions = [
-  "E-Commerce Health Check",
-  "Data-Driven Growth System",
-  "Marketing Spend Audit",
-  "Customer Retention Audit",
-  "Product Portfolio Audit",
-  "CRO & Checkout Audit",
-  "Profitability & COGS Audit",
-  "Operations & Automation Audit",
-  "Basic Data Setup",
-  "Full Data Pipeline",
-  "Full Pipeline + Automation",
-  "Not sure — help me figure it out",
-  "Custom / Something else",
-] as const;
+/* Service dropdown options — mirrors the site's current 4-part service structure:
+   Part 1 Core Packages · Part 2 Specialized Audits · Part 3 Data Infrastructure · Part 4 Custom Analytics */
+const serviceGroups: { label: string; options: readonly string[] }[] = [
+  {
+    label: "Core Packages",
+    options: [
+      "E-Commerce Health Check",
+      "E-Commerce Performance Improvement",
+      "E-Commerce Growth Intelligence Partnership",
+    ],
+  },
+  {
+    label: "Specialized E-Commerce Audits",
+    options: [
+      "E-Commerce Profitability Audit",
+      "Marketing Performance & Profitability Audit",
+      "E-Commerce CRO Audit",
+      "Customer Retention & LTV Audit",
+      "Product Profitability & Portfolio Audit",
+      "Operations Efficiency Audit",
+      "Meta Ads Measurement & Profitability Review",
+      "Marketing Measurement & Attribution Review",
+    ],
+  },
+  {
+    label: "Data Infrastructure & Intelligence",
+    options: [
+      "Data Preparation & Integration",
+      "Data Pipeline & Dashboard Setup",
+      "E-Commerce Intelligence Dashboard",
+      "Automated Audit Intelligence",
+    ],
+  },
+  {
+    label: "Custom Analytics",
+    options: [
+      "Custom Analytics & Insights",
+    ],
+  },
+  {
+    label: "Other",
+    options: [
+      "Not sure — help me figure it out",
+      "Custom / Something else",
+    ],
+  },
+];
 
 const budgetOptions = [
   "$150 – $500",
@@ -355,10 +387,14 @@ export function ContactForm({ variant = "full" }: ContactFormProps) {
             <option value="" disabled>
               What do you need help with?
             </option>
-            {serviceOptions.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
+            {serviceGroups.map((group) => (
+              <optgroup key={group.label} label={group.label}>
+                {group.options.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
+                ))}
+              </optgroup>
             ))}
           </select>
         </div>
