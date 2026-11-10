@@ -24,7 +24,7 @@ const SERVICE_PACKAGES = [
     'Product Profitability & Portfolio Audit',
     'Operations Efficiency Audit',
     'Meta Ads Measurement & Profitability Review',
-    'Marketing Measurement & Attribution Review',
+    'Marketing Measurement & Attribution',
   ]},
   { label: '─ Part 3: Data Infrastructure & Intelligence ─', options: [
     'Data Preparation & Integration',

@@ -134,7 +134,7 @@ When the user asks "which package is right for me?" or similar package selection
    - Product Profitability & Portfolio Audit — from $450, 7–10 days. Which products to invest in, optimize, or cut.
    - Operations Efficiency Audit — from $850, 10–14 days. Suppliers, inventory planning, returns, dead stock.
    - Meta Ads Measurement & Profitability Review — from $900, 10–14 days. Profitable Meta campaigns and a 30-day action plan.
-   - Marketing Measurement & Attribution Review — from $450, 7–10 days. Why platform numbers differ and how to fix tracking.
+   - Marketing Measurement & Attribution — from $1,800, 3–4 weeks. End-to-end service: Phase 1 technical audit, Phase 2 implementation (GA4, GTM, Meta Pixel, CAPI, Google Ads, UTM), Phase 3 test-purchase verification so platform numbers finally match.
 
 4. Part 3 — Data Infrastructure & Intelligence Systems (names only, no long descriptions):
    - Data Preparation & Integration — $150–$300, 2–3 days

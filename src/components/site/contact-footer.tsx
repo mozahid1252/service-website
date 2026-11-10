@@ -89,7 +89,7 @@ const serviceGroups: { label: string; options: readonly string[] }[] = [
       "Product Profitability & Portfolio Audit",
       "Operations Efficiency Audit",
       "Meta Ads Measurement & Profitability Review",
-      "Marketing Measurement & Attribution Review",
+      "Marketing Measurement & Attribution",
     ],
   },
   {
@@ -152,7 +152,7 @@ const footerData = {
     { label: "E-Commerce Profitability Audit", href: "/profitability-audit" },
     { label: "Operations Efficiency Audit", href: "/operations-efficiency-audit" },
     { label: "Meta Ads Measurement & Profitability Review", href: "/meta-ads-performance-audit" },
-    { label: "Marketing Measurement & Attribution Review", href: "/e-commerce-tracking-attribution-review" },
+    { label: "Marketing Measurement & Attribution", href: "/e-commerce-tracking-attribution-review" },
   ],
   customAnalytics: [
     { label: "Custom Analytics & Insights", href: "/custom-analytics-insights" },

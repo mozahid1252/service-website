@@ -68,7 +68,7 @@ const faqs = [
   },
   {
     question: "Will Shopify, GA4, Meta, and Google Ads show the same numbers?",
-    answer: "Not necessarily. Different platforms use different attribution windows, tracking methods, time zones, definitions, and reporting models. The goal is not always to force every platform to show the exact same number. The goal is to: identify why the numbers differ, find missing or duplicate data, clarify which source is suitable for which decision, improve confidence in the reporting, and highlight important measurement limitations. For this type of review, you may need: Marketing Measurement & Attribution Review, Meta Ads Measurement & Profitability Review, or Data Preparation & Integration.",
+    answer: "Not necessarily. Different platforms use different attribution windows, tracking methods, time zones, definitions, and reporting models. The goal is not always to force every platform to show the exact same number. The goal is to: identify why the numbers differ, find missing or duplicate data, clarify which source is suitable for which decision, improve confidence in the reporting, and highlight important measurement limitations. For this type of review, you may need: Marketing Measurement & Attribution (end-to-end service), Meta Ads Measurement & Profitability Review, or Data Preparation & Integration.",
   },
   {
     question: "Can you fix the problems you identify?",
@@ -76,7 +76,7 @@ const faqs = [
   },
   {
     question: "I have a specific urgent problem. Do I have to buy a large package?",
-    answer: "No. You can start with a focused service such as: Meta Ads Measurement & Profitability Review, E-Commerce CRO Audit, Customer Retention & LTV Audit, Product Profitability & Portfolio Audit, Operations Efficiency Audit, or Marketing Measurement & Attribution Review. If your question does not fit an existing service, you can request Custom Analytics & Decision Support.",
+    answer: "No. You can start with a focused service such as: Meta Ads Measurement & Profitability Review, E-Commerce CRO Audit, Customer Retention & LTV Audit, Product Profitability & Portfolio Audit, Operations Efficiency Audit, or Marketing Measurement & Attribution (end-to-end). If your question does not fit an existing service, you can request Custom Analytics & Decision Support.",
   },
   {
     question: "My revenue is growing, but I do not feel like I am making more money. Can you help?",

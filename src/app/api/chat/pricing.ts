@@ -84,11 +84,11 @@ export const AUTHORITATIVE_PRICING: PackageInfo[] = [
     description: "Which Meta campaigns, audiences, creatives, and placements drive profitable results, plus a 30-day prioritized action plan.",
   },
   {
-    name: "Marketing Measurement & Attribution Review",
+    name: "Marketing Measurement & Attribution",
     category: "Part 2 — Specialized E-Commerce Audits",
-    price: "Starting at $450",
-    timeline: "7–10 days",
-    description: "Why Shopify, GA4, Meta, and Google Ads numbers differ, where tracking breaks, and a prioritized correction roadmap.",
+    price: "Starting at $1,800",
+    timeline: "3–4 weeks (15–20 business days)",
+    description: "End-to-end service: Phase 1 technical audit, Phase 2 implementation (GA4, GTM, Meta Pixel, CAPI, Google Ads, UTM), and Phase 3 test-purchase verification — so Shopify, GA4, Meta, and Google numbers finally match.",
   },
   // PART 3 — DATA INFRASTRUCTURE & INTELLIGENCE SYSTEMS
   {

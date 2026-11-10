@@ -7,7 +7,7 @@ import { Loader2, CheckCircle2, AlertCircle, ArrowRight, ChevronLeft } from 'luc
 
 const SERVICE_PACKAGES = [
   { label: '─ Part 1: E-Commerce Growth Framework ─', options: ['E-Commerce Health Check Audit', 'E-Commerce Performance Improvement', 'E-Commerce Growth Intelligence Partnership'] },
-  { label: '─ Part 2: Specialized E-Commerce Audits ─', options: ['E-Commerce Profitability Audit', 'Marketing Performance & Profitability Audit', 'E-Commerce CRO Audit', 'Customer Retention & LTV Audit', 'Product Profitability & Portfolio Audit', 'Operations Efficiency Audit', 'Meta Ads Measurement & Profitability Review', 'Marketing Measurement & Attribution Review'] },
+  { label: '─ Part 2: Specialized E-Commerce Audits ─', options: ['E-Commerce Profitability Audit', 'Marketing Performance & Profitability Audit', 'E-Commerce CRO Audit', 'Customer Retention & LTV Audit', 'Product Profitability & Portfolio Audit', 'Operations Efficiency Audit', 'Meta Ads Measurement & Profitability Review', 'Marketing Measurement & Attribution'] },
   { label: '─ Part 3: Data Infrastructure & Intelligence ─', options: ['Data Preparation & Integration', 'Data Pipeline & Dashboard Setup', 'E-Commerce Intelligence Dashboard', 'Automated Audit Intelligence'] },
   { label: '─ Other ─', options: ['Custom Analytics & Insights', 'Not sure yet (Need advice)'] },
 ];
@@ -54,7 +54,7 @@ const PACKAGE_MAP: Record<string, string> = {
   'profitability-audit': 'E-Commerce Profitability Audit',
   'operations-efficiency-audit': 'Operations Efficiency Audit',
   'meta-ads-performance-audit': 'Meta Ads Measurement & Profitability Review',
-  'e-commerce-tracking-attribution-review': 'Marketing Measurement & Attribution Review',
+  'e-commerce-tracking-attribution-review': 'Marketing Measurement & Attribution',
   'data-preparation-integration': 'Data Preparation & Integration',
   'data-pipeline-dashboard-setup': 'Data Pipeline & Dashboard Setup',
   'e-commerce-intelligence-dashboard': 'E-Commerce Intelligence Dashboard',

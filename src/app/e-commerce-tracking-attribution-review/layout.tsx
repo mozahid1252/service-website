@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Marketing Measurement & Attribution Review | Moz Intelligence',
-  description: 'A measurement and attribution review that explains why Shopify, GA4, Meta, and Google numbers differ, and delivers a prioritized tracking correction roadmap.',
+  title: 'Marketing Measurement & Attribution | Moz Intelligence',
+  description: 'An end-to-end service that audits your tracking, implements the fixes (GA4, GTM, Meta Pixel, CAPI, Google Ads, UTM), and verifies everything with test purchases — so Shopify, GA4, Meta, and Google numbers finally match.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

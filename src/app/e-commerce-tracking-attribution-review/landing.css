@@ -72,7 +72,7 @@ a { text-decoration: none; color: inherit; }
 .faq-q i { color: var(--accent); transition: transform 0.3s ease; font-size: 14px; }
 .faq-item.active .faq-q i { transform: rotate(45deg); }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 24px; color: var(--muted); font-size: 15px; line-height: 1.6; }
-.faq-item.active .faq-a { max-height: 200px; padding-bottom: 24px; }
+.faq-item.active .faq-a { max-height: 460px; padding-bottom: 24px; }
 .pricing-card { max-width: 500px; margin: 0 auto; background: var(--surface); border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 40px; text-align: center; box-shadow: 0 20px 40px -10px rgba(232,84,45,0.2); }
 .price-amt { font-size: 40px; font-weight: 800; margin: 16px 0 8px; }
 .price-sub { color: var(--muted); margin-bottom: 32px; }
@@ -199,6 +199,39 @@ footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14
   .nav-cta { display: none; }
   .nav { border-radius: 16px; }
 }
+
+/* ===== END-TO-END PHASE / PROCESS SECTION ===== */
+.phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.phase-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow); position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+.phase-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.phase-card .phase-step { display: inline-flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+.phase-card .phase-step::before { content: ''; width: 28px; height: 2px; background: var(--accent); border-radius: 2px; }
+.phase-card .phase-icon { width: 52px; height: 52px; background: var(--accent-light); color: var(--accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 22px; }
+.phase-card h3 { font-size: 20px; margin-bottom: 4px; }
+.phase-card .phase-tagline { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
+.phase-card .phase-list { list-style: none; padding: 0; margin: 0 0 18px 0; }
+.phase-card .phase-list li { font-size: 14px; color: var(--muted); padding: 9px 0; border-bottom: 1px dashed var(--border); display: flex; gap: 10px; align-items: flex-start; line-height: 1.45; }
+.phase-card .phase-list li:last-child { border-bottom: none; }
+.phase-card .phase-list i { color: var(--success); margin-top: 4px; font-size: 12px; flex-shrink: 0; }
+.phase-card .phase-output { background: var(--surface-2); border-radius: 8px; padding: 14px 16px; font-size: 13px; color: var(--muted); margin-top: auto; }
+.phase-card .phase-output b { color: var(--text); display: block; margin-bottom: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
+.phase-card .phase-meta { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); font-weight: 600; margin-bottom: 16px; }
+.phase-card .phase-meta i { color: var(--accent); }
+
+/* ===== COMPARISON: Audit-Only vs End-to-End ===== */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 880px; margin: 0 auto; }
+.compare-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow); }
+.compare-card.compare-full { border: 2px solid var(--accent); background: var(--accent-light); }
+.compare-card .compare-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 5px 12px; border-radius: 100px; margin-bottom: 14px; }
+.compare-card .compare-tag.tag-limited { background: var(--surface-2); color: var(--muted); }
+.compare-card .compare-tag.tag-full { background: var(--accent); color: #FFF; }
+.compare-card h4 { font-size: 18px; margin-bottom: 6px; }
+.compare-card .compare-sub { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+.compare-card ul { list-style: none; padding: 0; margin: 0; }
+.compare-card ul li { font-size: 14px; padding: 7px 0; display: flex; gap: 10px; align-items: flex-start; color: var(--muted); }
+.compare-card ul li i { margin-top: 4px; font-size: 12px; flex-shrink: 0; }
+
+@media (max-width: 900px) { .phase-grid, .compare-grid { grid-template-columns: 1fr; } }
 
 /* ===== GRID COLUMN MODIFIERS (replaces inline styles) ===== */
 /* Desktop-only: column counts for specific grids. On mobile (<=900px),
