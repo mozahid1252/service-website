@@ -60,7 +60,6 @@ const PACKAGE_MAP: Record<string, string> = {
   'e-commerce-intelligence-dashboard': 'E-Commerce Intelligence Dashboard',
   'automated-audit-intelligence': 'Automated Audit Intelligence',
   'full-pipeline-setup': 'Data Pipeline & Dashboard Setup',
-  'full-pipeline-automation': 'Data Pipeline & Dashboard Setup',
 };
 
 interface FormData { full_name: string; email: string; phone: string; website_url: string; service_package: string; monthly_revenue: string; country: string; city: string; preferred_time: string; additional_notes: string; }

@@ -25,7 +25,6 @@ const KEYWORD_MAP: Record<string, string[]> = {
   "meta-ads-performance-audit": ["meta ads", "facebook ads", "instagram ads", "meta ads performance", "ad performance"],
   "e-commerce-tracking-attribution-review": ["tracking", "attribution", "ga4", "pixel", "conversion tracking", "event tracking", "numbers don't match", "numbers do not match", "reconciliation", "utm", "capi", "server-side", "double counted", "tracking review", "attribution review"],
   "full-pipeline-setup": ["full pipeline", "pipeline setup", "bigquery", "data warehouse", "etl", "sql", "python"],
-  "full-pipeline-automation": ["automation", "automated", "full pipeline automation", "cloud functions", "cloud run", "real-time"],
   "homepage": ["about", "why moz", "case study", "case studies", "faq", "process", "tech stack", "technical portfolio", "contact", "book", "mozahidul", "brand", "positioning"],
 };
 
