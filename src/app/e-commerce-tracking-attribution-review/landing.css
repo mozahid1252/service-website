@@ -79,6 +79,7 @@ a { text-decoration: none; color: inherit; }
 .price-features { text-align: left; list-style: none; margin-bottom: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .price-features li { display: flex; gap: 10px; font-size: 14px; color: var(--muted); align-items: flex-start; }
 .price-features i { color: var(--success); margin-top: 4px; }
+.price-features strong { color: var(--text); font-weight: 800; }
 footer { padding: 40px 0; text-align: center; color: var(--muted); font-size: 14px; }
 .deliverable-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: left; }
 .deliverable-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
