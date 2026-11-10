@@ -45,7 +45,7 @@ export const AUTHORITATIVE_PRICING: PackageInfo[] = [
     name: "Marketing Performance & Profitability Audit",
     category: "Part 2 — Specialized E-Commerce Audits",
     price: "Starting from $750",
-    timeline: "5–7 days",
+    timeline: "10–14 days",
     description: "Channel efficiency, acquisition cost, profitability signals, and where marketing investment may need to change.",
   },
   {

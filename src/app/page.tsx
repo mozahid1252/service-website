@@ -158,7 +158,7 @@ const ADD_ON_PACKAGES = [
   },
   {
     name: 'Marketing Performance & Profitability Audit',
-    price: 'Starting from $750 · 5–7 Days',
+    price: 'Starting from $750 · 10–14 Days',
     problem: '"My marketing spend is growing, but I cannot see the real business return."',
     promise: 'Understand channel efficiency, acquisition cost, profitability signals, and where marketing investment may need to change.',
     cssClass: 'marketing',

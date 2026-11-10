@@ -128,7 +128,7 @@ When the user asks "which package is right for me?" or similar package selection
 
 3. Part 2 — Specialized E-Commerce Audits (ALL 8, with short descriptions):
    - E-Commerce Profitability Audit — from $650, 10–14 days. True margins per product/channel and profit leaks.
-   - Marketing Performance & Profitability Audit — from $750, 5–7 days. Channel efficiency and acquisition cost signals.
+   - Marketing Performance & Profitability Audit — from $750, 10–14 days. Channel efficiency and acquisition cost signals.
    - E-Commerce CRO Audit — from $900, 10–15 days. 11 CRO analyses with a prioritized conversion roadmap.
    - Customer Retention & LTV Audit — from $400, 7–10 days. Churn risk, loyal-customer channels, segmented lists.
    - Product Profitability & Portfolio Audit — from $450, 7–10 days. Which products to invest in, optimize, or cut.
