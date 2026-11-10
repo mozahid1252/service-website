@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: 'Standard E-Commerce Health Check Audit | Moz Intelligence',
-  description: 'A rapid business diagnostic to identify the biggest revenue, profit, marketing, tracking, funnel, and customer health risks in your e-commerce business. Starting at $599, delivered in 3-5 business days.',
+  description: 'A rapid business diagnostic to identify the biggest revenue, profit, marketing, tracking, funnel, and customer health risks in your e-commerce business. Starting at $599, delivered in 7-12 business days.',
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

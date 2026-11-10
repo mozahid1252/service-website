@@ -16,7 +16,7 @@ export const AUTHORITATIVE_PRICING: PackageInfo[] = [
     name: "E-Commerce Health Check Audit",
     category: "Part 1 — E-Commerce Growth Framework",
     price: "Standard from $599 · Deep $1,490–$1,990",
-    timeline: "Standard: 3–5 business days · Deep: 10–12 business days",
+    timeline: "Standard: 7–12 business days · Deep: 15–20 business days",
     description: "Full-store diagnostic audit that reveals revenue leaks, profit risks, tracking gaps, and conversion bottlenecks. Two tiers: Standard and Deep.",
   },
   {

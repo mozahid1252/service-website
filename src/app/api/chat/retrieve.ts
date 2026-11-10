@@ -15,7 +15,7 @@ const knowledgeBase: KBPage[] = kbData as KBPage[];
 
 // Keywords that map to specific pages/categories
 const KEYWORD_MAP: Record<string, string[]> = {
-  "health-check": ["health check", "health-check", "starter", "$599", "$1,490", "$1,990", "3-5 business days", "diagnostic", "tier 1"],
+  "health-check": ["health check", "health-check", "starter", "$599", "$1,490", "$1,990", "7-12 business days", "diagnostic", "tier 1"],
   "marketing-spend-audit": ["marketing spend", "marketing audit", "ad spend", "roas", "cac", "budget optimization", "marketing performance"],
   "customer-retention-audit": ["retention", "customer retention", "churn", "repurchase", "win-back", "retention audit"],
   "product-portfolio-audit": ["product portfolio", "product audit", "inventory", "product performance", "bundle", "cross-sell"],
