@@ -1,20 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import {
-  ArrowRight,
   BarChart3,
   Database,
-  Gem,
   Mail,
   Megaphone,
-  PlugZap,
-  Route,
   ScanSearch,
   ShoppingBag,
-  SlidersHorizontal,
+  TrendingUp,
   TriangleAlert,
+  Wrench,
   type LucideIcon,
 } from "lucide-react";
 
@@ -46,7 +42,7 @@ function FadeIn({
           obs.disconnect();
         }
       },
-      { threshold: 0.08 }
+      { threshold: 0.08 },
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -59,7 +55,7 @@ function FadeIn({
       className={cn(
         "transition-all duration-700 ease-out",
         inView ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0",
-        className
+        className,
       )}
     >
       {children}
@@ -71,95 +67,102 @@ function FadeIn({
    What We Do — verbatim copy (client-approved)
    ================================================================ */
 
-const whatWeDoData = {
-  lead: "What We Do",
-  title: "What MozIntelligence Actually Does",
-  intro:
-    "MozIntelligence is an e-commerce growth analytics and profitability consultancy explicitly tailored for modern Ecommerce platforms - Shopify, direct-to-consumer (DTC), and online brands. We take 100% of the technical data engineering workload off your hands—extracting, cleaning, and merging fragmented data across your e-commerce platforms & stores into One Source of Truth so you know exactly where every dollar is going.",
-  problem: {
-    titleLead: "The Core Problem We Solve:",
-    titleRest: "Too Much Data, Zero Clarity",
-    paragraphs: [
-      "Every online store owner faces the same massive headache: you have a ton of data spread across different systems, but no clear picture of your actual net profit. For high-growth online brands and direct-to-consumer (DTC) companies, more revenue does not automatically mean more profit.",
-      "When data sits completely siloed across various e-commerce platforms & stores, you miss hidden profit leaks that quietly eat away your net margins:",
-    ],
-    silos: [
-      {
-        title: "Shopify & E-Commerce Platforms",
-        body: "Your core sales data, inventory values, and dynamic transaction records are trapped inside your store.",
-      },
-      {
-        title: "Google Analytics 4",
-        body: "Your traffic patterns and conversion funnel metrics live in a separate silo.",
-      },
-      {
-        title: "Meta & Google Ads",
-        body: "Your customer acquisition cost (CAC) and marketing spend data are completely split up here.",
-      },
-      {
-        title: "Klaviyo",
-        body: "Your critical retention, customer lifetime value (LTV), and repeat-buyer numbers are isolated here.",
-      },
-    ],
-    callout:
-      "Without a central ecosystem connecting these channels, direct-to-consumer (DTC) operators suffer from unoptimized discount strategies, unmonitored refund rates, hidden shipping fees, and wasteful ad spend.",
-  },
-  howItWorks: {
-    titleLead: "How It Works:",
-    titleRest: "Tech Infrastructure + Deep Growth Analysis",
-    lead: "You don't need to hire expensive data engineers or write complex SQL code to audit your online operations. We do the heavy lifting so you get the insights. MozIntelligence completely manages the technical analytics infrastructure for your e-commerce platforms & stores end-to-end:",
-    steps: [
-      {
-        title: "Extract",
-        body: "We securely connect directly to your entire tech stack, pulling raw data straight from Shopify, GA4, Meta Ads, Google Ads, and Klaviyo.",
-      },
-      {
-        title: "Clean & Standardize",
-        body: "We filter out the noise, fix broken tracking errors, and perfectly align conflicting metric definitions across all channels.",
-      },
-      {
-        title: "Merge & Centralize",
-        body: "We pipe all of your processed raw data from your online brands into a secure, centralized cloud database to create a One Source of Truth.",
-      },
-    ],
-  },
-  growth: {
-    titleLead: "Turning Raw Data Into",
-    titleRest: "High-Margin Growth",
-    lead: "Building the dashboard is just the beginning. Our real impact comes from what we do next:",
-    items: [
-      {
-        title: "Deep Advanced Analysis",
-        body: "We look beyond basic vanity metrics. We run rigorous data forensics to calculate your true product-level margins, customer acquisition economics, and cohort behaviors.",
-      },
-      {
-        title: "Uncovering True Value",
-        body: "We pinpoint exactly which products, channels, and campaigns are driving real cash flow, and which ones are secretly draining your budget.",
-      },
-      {
-        title: "Actionable Growth Recommendations",
-        body: "We provide a clear, prioritized strategic roadmap. We don't just show you past metrics; we give you specific, data-backed recommendations on pricing, ad spend redistribution, and retention strategies to unlock maximum efficiency and aggressively scale the growth of your e-commerce platforms & stores.",
-      },
-    ],
-  },
-};
-
-/* ---------- What We Do section ---------- */
-
-const SILO_ICONS: LucideIcon[] = [ShoppingBag, BarChart3, Megaphone, Mail];
-const STEP_ICONS: LucideIcon[] = [PlugZap, SlidersHorizontal, Database];
-const GROWTH_ICONS: LucideIcon[] = [ScanSearch, Gem, Route];
+const EYEBROW = "What MozIntelligence Does";
+const TITLE_LEAD = "What MozIntelligence";
+const TITLE_ACCENT = "Actually";
+const TITLE_TAIL = "Does";
+const INTRO =
+  "MozIntelligence — E-Commerce Growth Intelligence Partner. Analytics, Automation & Profitability for Shopify and DTC Brands. We uncover where your store is leaking profit, fix what's holding it back, and partner with you to drive sustainable growth.";
 
 const PLATFORMS = [
-  "Shopify & E-Commerce Platforms",
+  "Shopify / E-Commerce Platform",
   "Google Analytics 4",
-  "Meta & Google Ads",
+  "Meta & Google & TikTok Ads",
   "Klaviyo",
 ];
 
-export function WhatWeDoSection() {
-  const { problem, howItWorks, growth } = whatWeDoData;
+const PROBLEM_PARA_1 =
+  "More revenue doesn't automatically mean more profit. Your business data is scattered across disconnected platforms. Meanwhile, hidden profit leaks — from excessive discounts and unmonitored refunds to rising shipping costs and wasted ad spend — quietly erode your margins.";
+const PROBLEM_CALLOUT =
+  "Your data tells a story. We help you understand what it's really costing you.";
 
+const PROBLEM_CARDS: { title: string; body: string }[] = [
+  {
+    title: "Shopify / E-Commerce Platform",
+    body: "Your core sales, orders, and product data.",
+  },
+  {
+    title: "Google Analytics 4",
+    body: "Your traffic, sessions, and funnel behavior.",
+  },
+  {
+    title: "Meta & Google & TikTok Ads",
+    body: "Your ad spend, CAC, and campaign performance.",
+  },
+  {
+    title: "Klaviyo",
+    body: "Your retention, LTV, and repeat-buyer data.",
+  },
+];
+
+const PROBLEM_CARD_ICONS: LucideIcon[] = [ShoppingBag, BarChart3, Megaphone, Mail];
+
+const HOW_WE_WORK_LEAD =
+  "We turn fragmented business data into actionable intelligence, measurable improvements, and sustainable growth.";
+
+type CtaLink = { label: string; href: string };
+
+const STEPS: {
+  label: string;
+  Icon: LucideIcon;
+  title: string;
+  body: string;
+  ctas: CtaLink[];
+}[] = [
+  {
+    label: "01 — Diagnose",
+    Icon: ScanSearch,
+    title: "Find Where Your Profit Is Leaking.",
+    body: "We integrate your Shopify, GA4, advertising, and customer data to uncover the real drivers of your profitability. We analyze product margins, channel profitability, customer acquisition costs, retention, and purchasing behavior. You receive a clear business scorecard and a prioritized action roadmap.",
+    ctas: [
+      { label: "Health Check", href: "/health-check" },
+      { label: "Specialized Audits", href: "#part-2" },
+    ],
+  },
+  {
+    label: "Step 2: Fix",
+    Icon: Wrench,
+    title: "Turn Insights Into Measurable Results.",
+    body: "We implement high-impact improvements based on your business priorities. From repairing broken tracking and reallocating ad spend to improving conversion, retention, pricing, and product performance — we help turn recommendations into action.",
+    ctas: [
+      { label: "Performance Improvement", href: "/performance-improvement" },
+      {
+        label: "Marketing Measurement & Attribution",
+        href: "/e-commerce-tracking-attribution-review",
+      },
+    ],
+  },
+  {
+    label: "Step 3: Grow",
+    Icon: TrendingUp,
+    title: "Your Ongoing Growth Intelligence Partner.",
+    body: "We continuously monitor performance, identify emerging opportunities, track profitability, and support strategic decisions through ongoing analytics and testing.",
+    ctas: [{ label: "Growth Partnership", href: "/growth-partnership" }],
+  },
+];
+
+const FOUNDATION_PARA =
+  "Your business shouldn't depend on disconnected reports and conflicting numbers. We connect your Shopify store, GA4, Meta Ads, Google Ads, and Klaviyo into a unified data infrastructure and centralized live dashboards. So your team can monitor performance, understand profitability, and make better decisions — all from one place.";
+
+const FOUNDATION_CTAS: CtaLink[] = [
+  { label: "Data Preparation & Integration", href: "/data-preparation-integration" },
+  { label: "Data Pipeline & Dashboard Setup", href: "/data-pipeline-dashboard-setup" },
+  { label: "E-Commerce Intelligence Dashboard", href: "/e-commerce-intelligence-dashboard" },
+];
+
+/* ---------- What We Do section ---------- */
+
+export function WhatWeDoSection() {
   return (
     <section
       id="what-we-do"
@@ -167,98 +170,70 @@ export function WhatWeDoSection() {
       className="scroll-mt-20 border-y border-border bg-white py-16 sm:py-24"
     >
       <div className="container-site">
-        {/* Section header */}
+        {/* 1 · Section header */}
         <FadeIn className="flex flex-col items-start">
           <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-heading">
             <span aria-hidden="true" className="h-px w-8 bg-border" />
             <span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand" />
-            {whatWeDoData.lead}
+            {EYEBROW}
           </span>
           <h2
             id="what-we-do-heading"
             className="mt-4 text-3xl font-semibold leading-tight text-heading sm:text-4xl"
           >
-            What MozIntelligence <span className="text-brand">Actually</span> Does
+            {TITLE_LEAD} <span className="text-brand">{TITLE_ACCENT}</span> {TITLE_TAIL}
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-body-text sm:text-lg">
-            {whatWeDoData.intro.split("One Source of Truth")[0]}
-            <span className="font-semibold text-heading">One Source of Truth</span>
-            {whatWeDoData.intro.split("One Source of Truth")[1]}
+            {INTRO}
           </p>
         </FadeIn>
 
-        {/* Hero board */}
-        <FadeIn className="mt-10 sm:mt-12" delay={60}>
-          <figure className="overflow-hidden rounded-[5px] border border-border bg-white p-2 shadow-[0_1px_3px_rgba(31,31,31,0.05)] sm:p-3">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-[3px] lg:aspect-[21/9]">
-              <Image
-                src="/images/whatwedo-hero-dashboard.jpg"
-                alt="E-commerce analytics dashboard with sales charts on a laptop"
-                fill
-                sizes="(min-width: 1240px) 1200px, 100vw"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="flex flex-wrap items-center gap-x-6 gap-y-2 px-2 py-3 sm:px-3">
-              {PLATFORMS.map((platform) => (
+        {/* 2 · Platform strip */}
+        <FadeIn className="mt-8 sm:mt-10" delay={60}>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 rounded-[5px] border border-border bg-white px-5 py-4">
+            {PLATFORMS.map((platform) => (
+              <span
+                key={platform}
+                className="inline-flex items-center gap-2 text-xs font-semibold tracking-wide text-heading/75 sm:text-sm"
+              >
                 <span
-                  key={platform}
-                  className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-wide text-heading/70 sm:text-xs"
-                >
-                  <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-brand" />
-                  {platform}
-                </span>
-              ))}
-            </figcaption>
-          </figure>
+                  aria-hidden="true"
+                  className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand"
+                />
+                {platform}
+              </span>
+            ))}
+          </div>
         </FadeIn>
 
-        {/* 1 · The core problem */}
+        {/* 3 · The Problem */}
         <FadeIn className="mt-14 sm:mt-20" delay={60}>
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
-            <div>
-              <SubHeading num="01" lead={problem.titleLead} rest={problem.titleRest} />
-              <div className="mt-6 space-y-4">
-                {problem.paragraphs.map((p, i) => (
-                  <p key={i} className="max-w-xl text-sm leading-relaxed text-body-text">
-                    {i === 0 ? (
-                      p
-                    ) : (
-                      <>
-                        {p.split("hidden profit leaks")[0]}
-                        <span className="font-semibold text-heading">hidden profit leaks</span>
-                        {p.split("hidden profit leaks")[1]}
-                      </>
-                    )}
-                  </p>
-                ))}
-              </div>
-              <div className="mt-6 flex items-start gap-3 rounded-[5px] border border-border border-l-4 border-l-[#1d4ed8] bg-white p-5">
-                <TriangleAlert aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-[#1d4ed8]" />
-                <p className="text-sm leading-relaxed text-body-text">
-                  {problem.callout.split("unoptimized discount strategies")[0]}
-                  <span className="font-semibold text-heading">
-                    unoptimized discount strategies, unmonitored refund rates, hidden shipping fees,
-                    and wasteful ad spend
-                  </span>
-                  .
-                </p>
-              </div>
-            </div>
-            <PhotoFrame
-              src="/images/whatwedo-problem-data.jpg"
-              alt="Team working through charts and reports spread across a desk"
+          <SubHeading num="01" lead="The Problem:" rest="Too Much Data, Zero Clarity" />
+
+          <div className="mt-6 max-w-3xl space-y-4">
+            <p className="text-sm leading-relaxed text-body-text sm:text-base">
+              {PROBLEM_PARA_1}
+            </p>
+          </div>
+
+          <div className="mt-6 flex max-w-3xl items-start gap-3 rounded-[5px] border border-border border-l-4 border-l-brand bg-white p-5">
+            <TriangleAlert
+              aria-hidden="true"
+              className="mt-0.5 h-5 w-5 shrink-0 text-brand"
             />
+            <p className="text-sm font-semibold leading-relaxed text-heading">
+              {PROBLEM_CALLOUT}
+            </p>
           </div>
 
           {/* Siloed platform cards */}
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {problem.silos.map((silo, i) => {
-              const Icon = SILO_ICONS[i % SILO_ICONS.length];
+            {PROBLEM_CARDS.map((card, i) => {
+              const Icon = PROBLEM_CARD_ICONS[i % PROBLEM_CARD_ICONS.length];
               return (
                 <article
-                  key={silo.title}
-                  className="group flex flex-col rounded-[5px] border border-heading/20 border-l-4 border-l-heading bg-white p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-heading/60 hover:border-l-brand hover:shadow-[0_18px_44px_rgba(31,31,31,0.10)]"
+                  key={card.title}
+                  className="group flex flex-col rounded-[5px] border border-heading/20 border-l-4 border-l-brand bg-white p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-heading/60 hover:shadow-[0_18px_44px_rgba(31,31,31,0.10)]"
                 >
                   <span
                     aria-hidden="true"
@@ -266,89 +241,89 @@ export function WhatWeDoSection() {
                   >
                     <Icon className="h-5 w-5" />
                   </span>
-                  <h4 className="mt-4 text-[15px] font-semibold leading-snug text-heading">{silo.title}</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-body-text">{silo.body}</p>
+                  <h4 className="mt-4 text-[15px] font-semibold leading-snug text-heading">
+                    {card.title}
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-body-text">{card.body}</p>
                 </article>
               );
             })}
           </div>
         </FadeIn>
 
-        {/* 2 · How it works */}
+        {/* 4 · How We Work */}
         <FadeIn className="mt-14 sm:mt-20" delay={60}>
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
-            <PhotoFrame
-              className="lg:order-1"
-              src="/images/whatwedo-how-analyst.jpg"
-              alt="Analyst reviewing performance charts on a desktop monitor"
-            />
-            <div className="lg:order-2">
-              <SubHeading num="02" lead={howItWorks.titleLead} rest={howItWorks.titleRest} />
-              <p className="mt-6 max-w-xl text-sm leading-relaxed text-body-text">{howItWorks.lead}</p>
-            </div>
-          </div>
+          <SubHeading
+            lead="How We Work:"
+            rest="Diagnose → Fix → Grow"
+          />
+          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-body-text sm:text-base">
+            {HOW_WE_WORK_LEAD}
+          </p>
 
-          {/* Connected step flow */}
-          <div className="mt-8 grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-[1fr_auto_1fr_auto_1fr] lg:gap-4">
-            {howItWorks.steps.map((step, i) => {
-              const Icon = STEP_ICONS[i % STEP_ICONS.length];
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+            {STEPS.map((step) => {
+              const Icon = step.Icon;
               return (
-                <FadeStep key={step.title} index={i}>
-                  <article className="group relative flex h-full flex-col rounded-[5px] border border-heading/20 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-heading/60 hover:shadow-[0_18px_44px_rgba(31,31,31,0.10)]">
+                <article
+                  key={step.label}
+                  className="group flex h-full flex-col rounded-[5px] border border-heading/20 bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-heading/60 hover:shadow-[0_18px_44px_rgba(31,31,31,0.10)]"
+                >
+                  <div className="flex items-center justify-between gap-3">
                     <span
                       aria-hidden="true"
-                      className="absolute right-5 top-5 text-xs font-semibold tracking-[0.2em] text-heading/35"
-                    >
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[5px] bg-heading text-white"
+                      className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[5px] bg-brand text-white"
                     >
                       <Icon className="h-5 w-5" />
                     </span>
-                    <h4 className="mt-4 text-base font-semibold text-heading">{step.title}</h4>
-                    <p className="mt-2 text-sm leading-relaxed text-body-text">{step.body}</p>
-                  </article>
-                </FadeStep>
+                    <span className="text-xs font-semibold tracking-[0.12em] text-brand">
+                      {step.label}
+                    </span>
+                  </div>
+                  <h4 className="mt-4 text-base font-semibold leading-snug text-heading">
+                    {step.title}
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-body-text">{step.body}</p>
+                  <div className="mt-5 flex flex-wrap gap-2 pt-1">
+                    {step.ctas.map((cta) => (
+                      <CtaPill key={cta.href + cta.label} href={cta.href}>
+                        {cta.label}
+                      </CtaPill>
+                    ))}
+                  </div>
+                </article>
               );
             })}
           </div>
         </FadeIn>
 
-        {/* 3 · Growth impact */}
+        {/* 5 · The Foundation */}
         <FadeIn className="mt-14 sm:mt-20" delay={60}>
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
-            <div>
-              <SubHeading num="03" lead={growth.titleLead} rest={growth.titleRest} restTone="green" />
-              <p className="mt-6 max-w-xl text-sm leading-relaxed text-body-text">{growth.lead}</p>
-            </div>
-            <PhotoFrame
-              accent="green"
-              src="/images/whatwedo-growth-team.jpg"
-              alt="Business team reviewing growth charts together in an office"
-            />
-          </div>
+          <SubHeading
+            num="02"
+            lead="The Foundation:"
+            rest="One Source of Truth. Complete Business Visibility."
+          />
 
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {growth.items.map((item, i) => {
-              const Icon = GROWTH_ICONS[i % GROWTH_ICONS.length];
-              return (
-                <article
-                  key={item.title}
-                  className="group flex flex-col rounded-[5px] border border-heading/20 border-l-4 border-l-[#047857] bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-heading/60 hover:border-l-[#047857] hover:shadow-[0_18px_44px_rgba(31,31,31,0.10)]"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[5px] bg-[#047857] text-white"
-                  >
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <h4 className="mt-4 text-base font-semibold text-heading">{item.title}</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-body-text">{item.body}</p>
-                </article>
-              );
-            })}
+          <div className="mt-6 grid gap-6 lg:grid-cols-[auto_1fr] lg:items-start">
+            <span
+              aria-hidden="true"
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[5px] bg-heading text-white"
+            >
+              <Database className="h-6 w-6" />
+            </span>
+            <div>
+              <p className="max-w-3xl text-sm leading-relaxed text-body-text sm:text-base">
+                {FOUNDATION_PARA}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {FOUNDATION_CTAS.map((cta) => (
+                  <CtaPill key={cta.href + cta.label} href={cta.href}>
+                    {cta.label}
+                  </CtaPill>
+                ))}
+              </div>
+            </div>
           </div>
         </FadeIn>
       </div>
@@ -356,52 +331,34 @@ export function WhatWeDoSection() {
   );
 }
 
-function PhotoFrame({
-  src,
-  alt,
-  className,
-  accent,
-}: {
-  src: string;
-  alt: string;
-  className?: string;
-  accent?: "green";
-}) {
+/* ---------- CTA pill ---------- */
+function CtaPill({ href, children }: { href: string; children: ReactNode }) {
   return (
-    <figure
-      className={cn(
-        "relative overflow-hidden rounded-[5px] border border-border bg-white p-2 shadow-[0_1px_3px_rgba(31,31,31,0.05)]",
-        accent === "green" && "border-l-4 border-l-[#047857]",
-        className,
-      )}
+    <a
+      href={href}
+      className="inline-flex items-center rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-heading transition-colors hover:border-brand hover:bg-brand/10 hover:text-brand"
     >
-      <div className="relative aspect-[4/3] overflow-hidden rounded-[3px]">
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes="(min-width: 1024px) 560px, 100vw"
-          className="object-cover"
-        />
-      </div>
-    </figure>
+      {children}
+    </a>
   );
 }
 
+/* ---------- SubHeading ---------- */
 function SubHeading({
   num,
   lead,
   rest,
-  restTone = "brand",
 }: {
   num?: string;
   lead: string;
   rest: string;
-  restTone?: "brand" | "green";
 }) {
   return (
     <div className="flex items-start gap-3">
-      <span aria-hidden="true" className="mt-1.5 h-6 w-1 shrink-0 rounded-[2px] bg-brand" />
+      <span
+        aria-hidden="true"
+        className="mt-1.5 h-6 w-1 shrink-0 rounded-[2px] bg-brand"
+      />
       <div>
         {num && (
           <span
@@ -413,22 +370,9 @@ function SubHeading({
         )}
         <h3 className="text-xl font-semibold leading-snug text-heading sm:text-2xl">
           <span className="text-body-text">{lead}</span>{" "}
-          <span className={cn(restTone === "green" ? "text-[#047857]" : "text-brand")}>{rest}</span>
+          <span className="text-brand">{rest}</span>
         </h3>
       </div>
     </div>
-  );
-}
-
-function FadeStep({ index, children }: { index: number; children: ReactNode }) {
-  return (
-    <>
-      <div className={cn(index === 2 ? "sm:col-span-2 lg:col-span-1" : undefined)}>{children}</div>
-      {index < 2 && (
-        <div aria-hidden="true" className="hidden items-center justify-center self-center lg:flex">
-          <ArrowRight className="h-6 w-6 text-brand/50" />
-        </div>
-      )}
-    </>
   );
 }
